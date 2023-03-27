@@ -1,10 +1,8 @@
 #!/bin/bash
-
 SHARED_DIR="$HOME/git/configs"
 
-cp ~/.bashrc "$SHARED_DIR/.bashrc"
-cp ~/.bash_aliases "$SHARED_DIR/.bash_aliases"
-cp ~/.vimrc "$SHARED_DIR/.vimrc"
-cp ~/.tmux.conf "$SHARED_DIR/.tmux.conf"
-
-echo "Configuration files copied to $SHARED_DIR"
+FILES=(".bashrc" ".bash_aliases" ".vimrc" ".tmux.conf")
+for file in "${FILES[@]}"; do
+    cp "$HOME/$file" "$SHARED_DIR/$file"
+    echo "copied $file to $SHARED_DIR"
+done
