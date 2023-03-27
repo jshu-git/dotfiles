@@ -113,8 +113,8 @@ shopt -s globstar
 [[ $- == *i* ]] && stty -ixon
 
 # aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
 fi
 
 # work aliases
