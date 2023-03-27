@@ -4,7 +4,6 @@ alias apti='sudo apt install'
 
 # python
 alias py='python'
-alias python='python3.11'
 alias pipu="pip freeze | cut -d'=' -f1 | xargs -n1 pip install -U"
 alias req='pip freeze > requirements.txt'
 alias act='source .venv/bin/activate'
@@ -20,6 +19,7 @@ alias tmrc='vi ~/.tmux.conf'
 alias tm='tmux'
 alias a='attach'
 alias tmk='tmkill'
+alias tmn='pane_name'
 
 # new named session
 new() {
@@ -44,7 +44,15 @@ tmkill() {
     if [ "$#" -eq 0 ]; then
         echo 'no arguments provided'
     else
-        tmux kill-session -t "$1"
+        tm kill-session -t "$1"
+    fi
+}
+
+pane_name() {
+    if [ "$#" -eq 0 ]; then
+        echo 'no arguments provided'
+    else
+        printf '\033]2;%s\033\\' "$*"
     fi
 }
 

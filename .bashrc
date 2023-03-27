@@ -116,7 +116,6 @@ shopt -s globstar
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
-
 # work aliases
 if [ -f ~/.work_aliases ]; then
     . ~/.work_aliases
