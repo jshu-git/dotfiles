@@ -53,6 +53,7 @@ tmname() {
 }
 
 # nav
+alias ll='ls -lAth'
 alias h='cd ~'
 alias desk='cc /mnt/c/Users/jshu/Desktop'
 alias g='cd ~/git && ls'
