@@ -1,0 +1,74 @@
+# python
+alias py='python'
+alias pipu="pip freeze | cut -d'=' -f1 | xargs -n1 pip install -U"
+alias req='pip freeze > requirements.txt'
+alias act='source .venv/bin/activate'
+
+# vim/bash
+alias v='vim'
+alias sz='exec zsh'
+
+# tmux
+alias tm='tmux'
+alias a='attach'
+alias tmk='tmkill'
+alias tmn='tmname'
+
+# new named session
+new() {
+    if [ "$#" -eq 0 ]; then
+        echo 'no arguments provided'
+    else
+        tm new -s "$1"
+    fi
+}
+
+# attach session
+attach() {
+    if [ "$#" -eq 0 ]; then
+        echo 'no arguments provided'
+    else
+        tm attach -t "$1"
+    fi
+}
+
+# kill session
+tmkill() {
+    if [ "$#" -eq 0 ]; then
+        echo 'no arguments provided'
+    else
+        tm kill-session -t "$1"
+    fi
+}
+
+tmname() {
+    if [ "$#" -eq 0 ]; then
+        echo 'no arguments provided'
+    else
+        printf '\033]2;%s\033\\' "$*"
+    fi
+}
+
+# nav
+alias h='cd ~'
+alias desk='cc /mnt/c/Users/jshu/Desktop'
+alias g='cd ~/git && ls'
+alias mnt='mount | grep -E ^/dev | column -t'
+alias path='echo -e ${PATH//:/\\n}'
+alias env="env | sort | awk -F= '{printf \"%-30s %s\n\", \$1, \$2}'"
+
+up() {
+    local count=${1:-1}
+    while [ $count -gt 0 ]; do
+        cd ..
+        let count--
+    done
+}
+
+cc() {
+    if [ "$#" -eq 0 ]; then
+        cd .. && ll
+    else
+        cd "$@" && ll
+    fi
+}
