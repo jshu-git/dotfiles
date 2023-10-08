@@ -1,43 +1,44 @@
-### apps
+- apps
+  - [Arc](https://arc.net/)
+  - [Visual Studio Code](https://code.visualstudio.com/)
+  - [AppCleaner](https://freemacsoft.net/appcleaner/)
+- shortcuts
+  - [Contexts 3](https://contexts.co/)
+  - [Raycast](https://www.raycast.com/)
+  - [Hyperkey](https://hyperkey.app/)
+  - [Hammerspoon](https://www.hammerspoon.org/)
+  - [Rectangle](https://rectangleapp.com/)
+  - [MiddleClick](https://github.com/artginzburg/MiddleClick-Sonoma)
+  - [KeyCastr](https://github.com/keycastr/keycastr)
+- dotfiles
+  - [yadm](https://yadm.io/docs/getting_started)
 
-- [Arc](https://arc.net/)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Contexts 3](https://contexts.co/)
-- [Raycast](https://www.raycast.com/)
-- [Hyperkey](https://hyperkey.app/)
-- [Hammerspoon](https://www.hammerspoon.org/)
-- [Rectangle](https://rectangleapp.com/)
-- [MiddleClick](https://github.com/artginzburg/MiddleClick-Sonoma)
-- [KeyCastr](https://github.com/keycastr/keycastr)
-- [AppCleaner](https://freemacsoft.net/appcleaner/)
+      ```shell
+      brew install yadm
+      yadm clone https://github.com/jshu-git/dotfiles.git
+      ```
 
-### [oh-my-zsh](https://ohmyz.sh/#install)
+  - [oh-my-zsh](https://ohmyz.sh/#install)
+    - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
 
-#### plugins
+        ```shell
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        ```
 
-- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+    - [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete#manual-installation)
 
-    ```git
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    ```
+        ```shell
+        git clone --depth 1 https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
+        ```
 
-- [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete#manual-installation)
+    - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting#oh-my-zsh)
 
-    ```git
-    git clone --depth 1 https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
-    ```
+        ```shell
+        git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+        ```
 
-- [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting#oh-my-zsh)
+    - [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
 
-    ```git
-    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
-    ```
-
-### themes
-
-- [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
-
-    ```git
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-    ```
-
+        ```shell
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+        ```
