@@ -11,3 +11,8 @@ for i, app in ipairs(apps) do
         hs.application.launchOrFocus(app[2])
     end)
 end
+
+-- show desktop
+hs.hotkey.bind(hyper, "D", function()
+    hs.spaces.toggleShowDesktop()
+end)
