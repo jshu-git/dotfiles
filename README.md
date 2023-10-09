@@ -2,6 +2,8 @@
   - [Arc](https://arc.net/)
   - [Visual Studio Code](https://code.visualstudio.com/)
   - [AppCleaner](https://freemacsoft.net/appcleaner/)
+  - [Mousecape](https://github.com/alexzielenski/Mousecape)
+    - [cursor-library](http://www.rw-designer.com/cursor-library)
 - shortcuts
   - [Contexts 3](https://contexts.co/)
   - [Raycast](https://www.raycast.com/)
