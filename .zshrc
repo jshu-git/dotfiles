@@ -13,7 +13,7 @@ DISABLE_MAGIC_FUNCTIONS="true"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(zsh-autosuggestions zsh-autocomplete fast-syntax-highlighting) # git
+plugins=(zsh-autosuggestions zsh-autocomplete fast-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -30,9 +30,24 @@ setopt HIST_IGNORE_SPACE      # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS      # Do not write a duplicate event to the history file.
 setopt HIST_VERIFY            # Do not execute immediately upon history expansion.
 
+# zsh-autocomplete
+# Make Tab go straight to the menu and cycle there
+bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+# Autocompletion
+zstyle ':autocomplete:*' list-lines 5
+# Override history search.
+zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 3
+# History menu.
+zstyle ':autocomplete:history-search-backward:*' list-lines 3
+
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# path+=('/Library/TeX/texbin/tex')
+# path+=('/usr/local/texlive/2023basic/bin/universal-darwin')
+PATH=/usr/local/texlive/2023basic/bin/universal-darwin:$PATH
