@@ -6,6 +6,7 @@
     - [cursor-library](http://www.rw-designer.com/cursor-library)
 
 - shortcuts
+  - [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
   - [Alfred 5](https://www.alfredapp.com/)
   - [Contexts 3](https://contexts.co/)
   - [Hyperkey](https://hyperkey.app/)
@@ -13,6 +14,7 @@
   - [Rectangle](https://rectangleapp.com/)
   - [MiddleClick](https://github.com/artginzburg/MiddleClick-Sonoma)
   - [KeyCastr](https://github.com/keycastr/keycastr)
+  - [Maacy](https://github.com/p0deje/Maccy)
 
 - dotfiles
   - [yadm](https://yadm.io/docs/getting_started)
