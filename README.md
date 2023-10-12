@@ -13,7 +13,6 @@
   - [Hammerspoon](https://www.hammerspoon.org/)
   - [Rectangle](https://rectangleapp.com/)
   - [MiddleClick](https://github.com/artginzburg/MiddleClick-Sonoma)
-  - [KeyCastr](https://github.com/keycastr/keycastr)
   - [Maacy](https://github.com/p0deje/Maccy)
 
 - dotfiles
