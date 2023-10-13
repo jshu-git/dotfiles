@@ -1,15 +1,11 @@
-hyper = {'ctrl', 'cmd', 'alt', 'shift'}
+hyper = {'ctrl', 'cmd', 'alt'}
 
--- application switcher
+-- hyper application switcher
 apps = {
-    {'A', 'company.thebrowser.Browser'}, -- for some reason, only arc doesn't allow for hiding
-    {'V', 'com.microsoft.VSCode'},
-    {'F', 'com.apple.finder'},
-
-    {'1', 'company.thebrowser.Browser'},
+    {'1', 'company.thebrowser.Browser'}, -- for some reason, only arc doesn't allow for hiding
     {'2', 'com.microsoft.VSCode'},
+    {'F', 'com.apple.finder'},
 }
-
 for i, app in ipairs(apps) do
     hs.hotkey.bind(hyper, app[1], function()
         local appObj = hs.application.get(app[2])
@@ -32,12 +28,9 @@ hs.hotkey.bind(hyper, 'D', function()
     hs.spaces.toggleShowDesktop()
 end)
 
--- hide all
+-- hide all except current focused window (cmd + alt + h)
 hs.hotkey.bind(hyper, 'H', function()
-    hs.fnutils.each(hs.application.runningApplications(), function(app)
-        app:hide()
+    hs.timer.doAfter(0.1, function()
+        hs.eventtap.keyStroke({'cmd', 'alt'}, 'H')
     end)
-
-    -- send the 'command + option + h' keystroke to the system
-    -- hs.eventtap.keyStroke({'cmd', 'option'}, 'h')
 end)
