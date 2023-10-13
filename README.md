@@ -20,6 +20,7 @@
       brew install yadm
       yadm clone https://github.com/jshu-git/dotfiles.git
       ```
+- zsh
   - [oh-my-zsh](https://ohmyz.sh/#install)
     - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
         ```shell
@@ -36,3 +37,4 @@
     - [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
         ```shell
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+        ```
