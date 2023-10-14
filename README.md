@@ -1,3 +1,6 @@
+[keyboard map](https://archie-adams.github.io/keyboard-shortcut-map-maker/)
+![keyboard](.config/keyboard.png)
+
 - apps
   - [Arc](https://arc.net/)
   - [Visual Studio Code](https://code.visualstudio.com/)
@@ -51,6 +54,3 @@
 
 - extra
   - exclude Dropbox.app from spotlight search
-
-[keyboard map](https://archie-adams.github.io/keyboard-shortcut-map-maker/)
-![keyboard](.config/keyboard.png)
