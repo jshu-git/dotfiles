@@ -16,10 +16,20 @@ alias tmn='tmname'
 
 # yadm
 alias y='yadm'
+alias ys='y status'
+alias yd='y diff'
+
+function yy() {
+    y add -u
+    ys
+    echo "enter commit message:"
+    read commit_msg
+    y commit -m "$commit_msg" && y push
+}
 
 # new named session
 new() {
-    if [ "$#" -eq 0 ]; then
+    if [ -z "$1" ]; then
         echo 'no arguments provided'
     else
         tm new -s "$1"
@@ -28,7 +38,7 @@ new() {
 
 # attach session
 attach() {
-    if [ "$#" -eq 0 ]; then
+    if [ -z "$1" ]; then
         echo 'no arguments provided'
     else
         tm attach -t "$1"
@@ -37,7 +47,7 @@ attach() {
 
 # kill session
 tmkill() {
-    if [ "$#" -eq 0 ]; then
+    if [ -z "$1" ]; then
         echo 'no arguments provided'
     else
         tm kill-session -t "$1"
@@ -45,7 +55,7 @@ tmkill() {
 }
 
 tmname() {
-    if [ "$#" -eq 0 ]; then
+    if [ -z "$1" ]; then
         echo 'no arguments provided'
     else
         printf '\033]2;%s\033\\' "$*"
@@ -70,7 +80,7 @@ up() {
 }
 
 cc() {
-    if [ "$#" -eq 0 ]; then
+    if [ -z "$1" ]; then
         cd .. && ll
     else
         cd "$@" && ll

@@ -1,6 +1,6 @@
 hyper = {'ctrl', 'cmd', 'alt'}
 
--- hyper application switcher
+-- application switcher
 apps = {
     {'1', 'company.thebrowser.Browser'}, -- for some reason, only arc doesn't allow for hiding
     {'2', 'com.microsoft.VSCode'},
