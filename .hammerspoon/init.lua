@@ -28,11 +28,32 @@ hs.hotkey.bind(hyper, 'D', function()
     hs.spaces.toggleShowDesktop()
 end)
 
--- hide all except current focused window (cmd + alt + h)
+-- minimize all except current focused window
 hs.hotkey.bind(hyper, 'H', function()
-    hs.timer.doAfter(0.2, function()
-        hs.eventtap.keyStroke({'cmd', 'alt'}, 'H')
-    end)
+    local windows = hs.window.visibleWindows()
+    local focusedWindow = hs.window.focusedWindow()
+    for i, window in ipairs(windows) do
+        if window ~= focusedWindow then
+            window:minimize()
+        end
+    end
+end)
+
+-- minimize/unminimize all windows
+hs.hotkey.bind(hyper, 'M', function()
+    local visibleWindows = hs.window.visibleWindows()
+
+    -- Finder is always visible
+    if #visibleWindows == 1 then
+        local minimizedWindows = hs.window.minimizedWindows()
+        for i, window in ipairs(minimizedWindows) do
+            window:unminimize()
+        end
+    else
+        for i, window in ipairs(visibleWindows) do
+            window:minimize()
+        end
+    end
 end)
 
 -- alfred universal search
@@ -41,3 +62,4 @@ hs.hotkey.bind(hyper, 'A', function()
         hs.eventtap.keyStroke({'cmd'}, '/')
     end)
 end)
+
