@@ -1,7 +1,9 @@
 - apps
   - [Arc](https://arc.net/)
   - [Visual Studio Code](https://code.visualstudio.com/)
-    - use editor Settings Sync
+    - `Settings Sync` for profile
+  - [1Password](https://1password.com/downloads/mac/)
+  - [Dropbox](https://www.dropbox.com/downloading?os=mac)
   - [AppCleaner](https://freemacsoft.net/appcleaner/)
 
 - shortcuts
@@ -46,3 +48,7 @@
       ```shell
       git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
       ```
+
+
+- extra configs
+  - exclude Dropbox.app from spotlight search
