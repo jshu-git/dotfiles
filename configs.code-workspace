@@ -4,13 +4,7 @@
 			"path": "./.hammerspoon"
 		},
 		{
-			"path": "./git/dotfiles"
-		},
-		{
 			"path": "./.config"
-		},
-		{
-			"path": "Library/Application Support/Code/User/profiles"
 		},
 		{
 			"path": "Library/Application Support/Alfred"
