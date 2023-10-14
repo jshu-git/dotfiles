@@ -53,9 +53,9 @@
 				<key>keyword</key>
 				<string>configs</string>
 				<key>subtext</key>
-				<string></string>
+				<string>~/configs.code-workspace</string>
 				<key>text</key>
-				<string>open home configs</string>
+				<string>configs</string>
 				<key>withspace</key>
 				<false/>
 			</dict>

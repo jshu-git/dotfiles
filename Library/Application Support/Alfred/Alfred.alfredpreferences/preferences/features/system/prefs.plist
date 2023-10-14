@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>forcequitKeywordEnabled</key>
-	<false/>
+	<key>forcequitKeyword</key>
+	<string>q</string>
 	<key>hideKeywordEnabled</key>
 	<false/>
 	<key>lockKeywordEnabled</key>
@@ -15,9 +15,7 @@
 	<key>quitallConfirm</key>
 	<true/>
 	<key>quitallKeyword</key>
-	<string>quit</string>
-	<key>quitallKeywordEnabled</key>
-	<false/>
+	<string>qa</string>
 	<key>restartKeywordEnabled</key>
 	<false/>
 	<key>screensaverKeywordEnabled</key>

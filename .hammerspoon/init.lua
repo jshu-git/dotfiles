@@ -30,7 +30,14 @@ end)
 
 -- hide all except current focused window (cmd + alt + h)
 hs.hotkey.bind(hyper, 'H', function()
-    hs.timer.doAfter(0.1, function()
+    hs.timer.doAfter(0.2, function()
         hs.eventtap.keyStroke({'cmd', 'alt'}, 'H')
+    end)
+end)
+
+-- alfred universal search
+hs.hotkey.bind(hyper, 'A', function()
+    hs.timer.doAfter(0.2, function()
+        hs.eventtap.keyStroke({'cmd'}, '/')
     end)
 end)

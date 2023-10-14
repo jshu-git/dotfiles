@@ -5,6 +5,7 @@
 	<key>scope</key>
 	<array>
 		<string>/Applications</string>
+		<string>~</string>
 		<string>~/Desktop</string>
 		<string>~/git</string>
 		<string>~/Library/CloudStorage/Dropbox</string>
