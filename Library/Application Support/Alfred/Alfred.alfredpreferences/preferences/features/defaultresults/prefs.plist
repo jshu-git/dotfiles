@@ -14,8 +14,6 @@
 	<true/>
 	<key>showImages</key>
 	<true/>
-	<key>showPreferences</key>
-	<false/>
 	<key>showTextFiles</key>
 	<true/>
 </dict>
