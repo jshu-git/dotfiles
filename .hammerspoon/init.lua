@@ -62,3 +62,21 @@ hs.hotkey.bind(hyper, 'A', function()
         hs.eventtap.keyStroke({'cmd'}, '/')
     end)
 end)
+
+-- open latest Desktop file
+hs.hotkey.bind(hyper, 'S', function()
+    local command = [[
+    DOWNLOADS="$HOME/Desktop"
+    if [ -n "$(ls $DOWNLOADS)" ]; then
+        RECENT=$(mdls -name kMDItemFSName -name kMDItemDateAdded ~/Desktop/* | \
+        awk 'NR%2{printf "%s ",$0;next;}1' | \
+        sort -r | \
+        awk -F\\\" '{print $2}' | \
+        head -n1)
+        open -R "$DOWNLOADS/$RECENT"
+    else
+        open "$DOWNLOADS"
+    fi
+    ]]
+    hs.execute(command)
+end)
