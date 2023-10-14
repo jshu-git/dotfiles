@@ -52,6 +52,5 @@
 - extra
   - exclude Dropbox.app from spotlight search
 
-
 [keyboard map](https://archie-adams.github.io/keyboard-shortcut-map-maker/)
-  ![keyboard](.config/keyboard.png)
+![keyboard](.config/keyboard.png)
