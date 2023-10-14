@@ -49,6 +49,9 @@
       git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
       ```
 
-
-- extra configs
+- extra
   - exclude Dropbox.app from spotlight search
+
+
+[keyboard map](https://archie-adams.github.io/keyboard-shortcut-map-maker/)
+  ![keyboard](.config/keyboard.png)
