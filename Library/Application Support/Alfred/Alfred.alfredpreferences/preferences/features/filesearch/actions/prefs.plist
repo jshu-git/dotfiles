@@ -54,8 +54,6 @@
 		<key>string</key>
 		<string>/</string>
 	</dict>
-	<key>showWithCtrl</key>
-	<false/>
 	<key>showWithFn</key>
 	<false/>
 	<key>showWithRightArrow</key>

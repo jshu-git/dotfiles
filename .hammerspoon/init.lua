@@ -59,14 +59,6 @@ end)
 -- alfred universal action
 hs.hotkey.bind(hyper, 'A', function()
     hs.timer.doAfter(0.2, function()
-        hs.eventtap.keyStroke({'cmd', 'alt'}, '/')
-    end)
-end)
-
--- alfred universal selection
-hs.hotkey.bind(hyper, 'S', function()
-    hs.timer.doAfter(0.2, function()
         hs.eventtap.keyStroke({'cmd'}, '/')
     end)
 end)
-
