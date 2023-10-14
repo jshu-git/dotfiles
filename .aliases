@@ -73,10 +73,7 @@ alias env="env | sort | awk -F= '{printf \"%-30s %s\n\", \$1, \$2}'"
 
 up() {
     local count=${1:-1}
-    while [ $count -gt 0 ]; do
-        cd ..
-        let count--
-    done
+    cd $(printf "%0.s../" $(seq 1 $count))
 }
 
 cc() {
