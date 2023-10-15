@@ -15,8 +15,6 @@
   - [Hyperkey](https://hyperkey.app/)
   - [Hammerspoon](https://www.hammerspoon.org/)
     - `.hammerspoon/init.lua`
-  - [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
-    - `.config/karabiner/karabiner.json`
   - [Contexts 3](https://contexts.co/)
   - [MiddleClick](https://github.com/artginzburg/MiddleClick-Sonoma)
   - [Rectangle](https://rectangleapp.com/)
