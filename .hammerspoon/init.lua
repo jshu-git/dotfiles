@@ -32,13 +32,13 @@ end)
 hs.hotkey.bind(hyper, 'H', function()
     local windows = hs.window.visibleWindows()
     local focusedWindow = hs.window.focusedWindow()
+
     for i, window in ipairs(windows) do
         if window ~= focusedWindow then
             window:minimize()
         end
     end
 end)
-
 -- minimize/unminimize all windows
 hs.hotkey.bind(hyper, 'M', function()
     local visibleWindows = hs.window.visibleWindows()
@@ -80,3 +80,13 @@ hs.hotkey.bind(hyper, 'S', function()
     ]]
     hs.execute(command)
 end)
+
+-- shift deletes
+local shiftDelete = function()
+    hs.eventtap.keyStroke({'ctrl'}, 'd', 20000)
+end
+local shiftCmdDelete = function()
+    hs.eventtap.keyStroke({'ctrl'}, 'k', 20000)
+end
+hs.hotkey.bind({"shift"}, 'delete', shiftDelete, nil, shiftDelete)
+hs.hotkey.bind({"cmd", "shift"}, 'delete', shiftCmdDelete, nil, shiftCmdDelete)
