@@ -5,6 +5,10 @@
   - [Arc](https://arc.net/)
   - [Visual Studio Code](https://code.visualstudio.com/)
     - `Settings Sync` for profile
+  - [Alacritty](https://alacritty.org/)
+    - `.config/alacritty/alacritty.yml`
+    - [themes](https://github.com/alacritty/alacritty-theme)
+      - `.config/alacritty/themes`
   - [1Password](https://1password.com/downloads/mac/)
   - [Dropbox](https://www.dropbox.com/downloading?os=mac)
   - [AppCleaner](https://freemacsoft.net/appcleaner/)
