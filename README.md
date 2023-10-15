@@ -1,5 +1,5 @@
-[keyboard map](https://archie-adams.github.io/keyboard-shortcut-map-maker/)
-![keyboard](keyboard.png)
+[keyboard shortcuts](http://www.keyboard-layout-editor.com/)
+![keyboard shortcuts](keyboard.jpg)
 
 - apps
   - [Arc](https://arc.net/)
