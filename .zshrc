@@ -24,11 +24,11 @@ KEYTIMEOUT=1
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-zstyle ':omz:update' mode reminder # just remind me to update when it's time
 ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
 plugins=(zsh-autosuggestions fast-syntax-highlighting)
+zstyle ':omz:update' mode reminder # just remind me to update when it's time
 source $ZSH/oh-my-zsh.sh
 
 if [ -f ~/.aliases ]; then

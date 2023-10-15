@@ -4,28 +4,20 @@
 path+=/usr/local/texlive/2023basic/bin/universal-darwin
 alias alacritty='/Applications/Alacritty.app/Contents/MacOS/alacritty'
 
+alias v='vim'
+alias sz='exec zsh'
+
 # python
 alias py='python'
 alias pipu="pip freeze | cut -d'=' -f1 | xargs -n1 pip install -U"
 alias req='pip freeze > requirements.txt'
 alias act='source .venv/bin/activate'
 
-# vim/bash
-alias v='vim'
-alias sz='exec zsh'
-
-# tmux
-alias tm='tmux'
-alias a='attach'
-alias tmk='tmkill'
-alias tmn='tmname'
-
 # yadm
 alias y='yadm'
 alias ys='y status'
 alias yd='y diff'
 alias yp='y pull'
-
 function yy() {
     y add -u
     ys
@@ -34,38 +26,31 @@ function yy() {
     y commit -m "$commit_msg" && y push
 }
 
+# tmux
+alias tm='tmux'
+alias a='attach'
 # new named session
-new() {
+function new() {
     if [ -z "$1" ]; then
-        echo 'no arguments provided'
+        echo 'specify session name'
     else
         tm new -s "$1"
     fi
 }
-
 # attach session
-attach() {
+function attach() {
     if [ -z "$1" ]; then
-        echo 'no arguments provided'
+        echo 'specify session name'
     else
         tm attach -t "$1"
     fi
 }
-
 # kill session
-tmkill() {
+function tmk() {
     if [ -z "$1" ]; then
-        echo 'no arguments provided'
+        echo 'specify session name'
     else
         tm kill-session -t "$1"
-    fi
-}
-
-tmname() {
-    if [ -z "$1" ]; then
-        echo 'no arguments provided'
-    else
-        printf '\033]2;%s\033\\' "$*"
     fi
 }
 
@@ -77,13 +62,11 @@ alias g='cd ~/git && ls'
 alias mnt='mount | grep -E ^/dev | column -t'
 alias path='echo -e ${PATH//:/\\n}'
 alias env="env | sort | awk -F= '{printf \"%-30s %s\n\", \$1, \$2}'"
-
-up() {
+function up() {
     local count=${1:-1}
     cd $(printf "%0.s../" $(seq 1 $count))
 }
-
-cc() {
+function cc() {
     if [ -z "$1" ]; then
         cd .. && ll
     else
