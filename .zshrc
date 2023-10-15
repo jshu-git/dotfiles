@@ -27,8 +27,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 zstyle ':omz:update' mode reminder # just remind me to update when it's time
 ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(zsh-autosuggestions fast-syntax-highlighting)
 HIST_STAMPS="yyyy-mm-dd"
+plugins=(zsh-autosuggestions fast-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 if [ -f ~/.aliases ]; then
