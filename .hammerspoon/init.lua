@@ -4,6 +4,7 @@ hyper = {'ctrl', 'cmd', 'alt'}
 apps = {
     {'1', 'company.thebrowser.Browser'}, -- for some reason, only arc doesn't allow for hiding
     {'2', 'com.microsoft.VSCode'},
+    {'3', 'org.alacritty'},
     {'F', 'com.apple.finder'},
 }
 for i, app in ipairs(apps) do
@@ -90,3 +91,12 @@ local shiftCmdDelete = function()
 end
 hs.hotkey.bind({"shift"}, 'delete', shiftDelete, nil, shiftDelete)
 hs.hotkey.bind({"cmd", "shift"}, 'delete', shiftCmdDelete, nil, shiftCmdDelete)
+
+
+-- alacritty hotkey window
+doubleTap = require("modifierDoubleTap")
+doubleTap.modifier = 'alt'
+doubleTap.action = function ()
+    -- hs.application.launchOrFocusByBundleID('org.alacritty')
+    hs.eventtap.keyStroke(hyper, '3')
+end

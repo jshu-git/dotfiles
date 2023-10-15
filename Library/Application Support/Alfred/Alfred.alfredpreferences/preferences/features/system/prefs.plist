@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>forcequitKeyword</key>
-	<string>q</string>
+	<string>quit</string>
 	<key>hideKeywordEnabled</key>
 	<false/>
 	<key>lockKeywordEnabled</key>
@@ -14,8 +14,6 @@
 	<false/>
 	<key>quitallConfirm</key>
 	<true/>
-	<key>quitallKeyword</key>
-	<string>qa</string>
 	<key>restartKeywordEnabled</key>
 	<false/>
 	<key>screensaverKeywordEnabled</key>

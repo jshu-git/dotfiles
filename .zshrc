@@ -50,4 +50,4 @@ fi
 
 # path+=('/Library/TeX/texbin/tex')
 # path+=('/usr/local/texlive/2023basic/bin/universal-darwin')
-PATH=/usr/local/texlive/2023basic/bin/universal-darwin:$PATH
+path+=/usr/local/texlive/2023basic/bin/universal-darwin

@@ -25,5 +25,7 @@
 	<false/>
 	<key>snippetsWhenSearching</key>
 	<false/>
+	<key>viewerKeywordEnabled</key>
+	<false/>
 </dict>
 </plist>
