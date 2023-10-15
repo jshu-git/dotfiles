@@ -35,11 +35,11 @@ setopt HIST_VERIFY            # Do not execute immediately upon history expansio
 bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
 bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 # Autocompletion
-zstyle ':autocomplete:*' list-lines 5
+zstyle ':autocomplete:*' list-lines 10
 # Override history search.
-zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 3
+zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 10
 # History menu.
-zstyle ':autocomplete:history-search-backward:*' list-lines 3
+zstyle ':autocomplete:history-search-backward:*' list-lines 10
 
 if [ -f ~/.aliases ]; then
     . ~/.aliases

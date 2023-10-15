@@ -92,11 +92,10 @@ end
 hs.hotkey.bind({"shift"}, 'delete', shiftDelete, nil, shiftDelete)
 hs.hotkey.bind({"cmd", "shift"}, 'delete', shiftCmdDelete, nil, shiftCmdDelete)
 
-
 -- alacritty hotkey window
-doubleTap = require("modifierDoubleTap")
-doubleTap.modifier = 'alt'
-doubleTap.action = function ()
-    -- hs.application.launchOrFocusByBundleID('org.alacritty')
-    hs.eventtap.keyStroke(hyper, '3')
-end
+-- doubleTap = require("modifierDoubleTap")
+-- doubleTap.modifier = 'alt'
+-- doubleTap.action = function ()
+--     -- hs.application.launchOrFocusByBundleID('org.alacritty')
+--     hs.eventtap.keyStroke(hyper, '3')
+-- end
