@@ -18,6 +18,9 @@ setopt HIST_IGNORE_SPACE      # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS      # Do not write a duplicate event to the history file.
 setopt HIST_VERIFY            # Do not execute immediately upon history expansion.
 
+# https://www.johnhawthorn.com/2012/09/vi-escape-delays/
+KEYTIMEOUT=1
+
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -38,6 +41,10 @@ fi
 # fzf + fd
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 FD_EXCLUDE_OPTS="--exclude node_modules --exclude .git --exclude .venv --exclude .DS_Store --exclude .gitignore --exclude .github"
-export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden $FD_EXCLUDE_OPTS"
+FD_OPTS="--follow --hidden"
 export FZF_DEFAULT_OPTS="--multi --info=right --height 20% --layout=reverse --border=sharp --no-separator --prompt=fzf:"
+export FZF_DEFAULT_COMMAND="fd --type f --type l $FD_OPTS $FD_EXCLUDE_OPTS"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d $FD_OPTS $FD_EXCLUDE_OPTS"
+# zsh + fzf + alacritty:
+bindkey "ç" fzf-cd-widget

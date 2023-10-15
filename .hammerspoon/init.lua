@@ -89,13 +89,18 @@ end
 local shiftCmdDelete = function()
     hs.eventtap.keyStroke({'ctrl'}, 'k', 20000)
 end
-hs.hotkey.bind({"shift"}, 'delete', shiftDelete, nil, shiftDelete)
-hs.hotkey.bind({"cmd", "shift"}, 'delete', shiftCmdDelete, nil, shiftCmdDelete)
+hs.hotkey.bind({'shift'}, 'delete', shiftDelete, nil, shiftDelete)
+hs.hotkey.bind({'cmd', 'shift'}, 'delete', shiftCmdDelete, nil, shiftCmdDelete)
 
 -- alacritty hotkey window
--- doubleTap = require("modifierDoubleTap")
+-- doubleTap = require('modifierDoubleTap')
 -- doubleTap.modifier = 'alt'
 -- doubleTap.action = function ()
 --     -- hs.application.launchOrFocusByBundleID('org.alacritty')
 --     hs.eventtap.keyStroke(hyper, '3')
 -- end
+
+-- zsh + fzf + alacritty keybind for fzf-cd-widget FZF_ALT_C_COMMAND
+hs.hotkey.bind({'ctrl'}, 'f', function()
+    hs.eventtap.keyStroke({'alt'}, 'c')
+end)
