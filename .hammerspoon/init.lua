@@ -99,8 +99,3 @@ hs.hotkey.bind({'cmd', 'shift'}, 'delete', shiftCmdDelete, nil, shiftCmdDelete)
 --     -- hs.application.launchOrFocusByBundleID('org.alacritty')
 --     hs.eventtap.keyStroke(hyper, '3')
 -- end
-
--- zsh + fzf + alacritty keybind for fzf-cd-widget FZF_ALT_C_COMMAND
-hs.hotkey.bind({'ctrl'}, 'f', function()
-    hs.eventtap.keyStroke({'alt'}, 'c')
-end)
