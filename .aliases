@@ -18,6 +18,7 @@ alias tmn='tmname'
 alias y='yadm'
 alias ys='y status'
 alias yd='y diff'
+alias yp='y pull'
 
 function yy() {
     y add -u

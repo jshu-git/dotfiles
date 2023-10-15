@@ -3,3 +3,5 @@
 	email = jasonshu@terpmail.umd.edu
 [core]
 	pager = cat
+[pull]
+	rebase = true
