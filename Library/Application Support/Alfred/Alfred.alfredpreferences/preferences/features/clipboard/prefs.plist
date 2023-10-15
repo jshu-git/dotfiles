@@ -11,10 +11,12 @@
 		<key>key</key>
 		<integer>9</integer>
 		<key>mod</key>
-		<integer>524288</integer>
+		<integer>1835008</integer>
 		<key>string</key>
 		<string>V</string>
 	</dict>
+	<key>ignoreRemoteClipboard</key>
+	<true/>
 	<key>persistFor</key>
 	<integer>3</integer>
 	<key>snippetKeywordEnabled</key>
