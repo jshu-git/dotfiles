@@ -18,9 +18,8 @@
     - [MiddleClick](https://github.com/artginzburg/MiddleClick-Sonoma)
     - [Rectangle](https://rectangleapp.com/)
 
-- dotfile manager
-  - [yadm](https://yadm.io/docs/getting_started)
-    `yadm clone https://github.com/jshu-git/dotfiles.git`
+- dotfile manager: [yadm](https://yadm.io/docs/getting_started)
+  - `yadm clone https://github.com/jshu-git/dotfiles.git`
 
 - zsh
   - [oh-my-zsh](https://ohmyz.sh/#install)
