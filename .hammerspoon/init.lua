@@ -1,28 +1,28 @@
 hyper = {'ctrl', 'cmd', 'alt'}
 
 -- application switcher
-apps = {
-    {'1', 'company.thebrowser.Browser'}, -- for some reason, only arc doesn't allow for hiding
-    {'2', 'com.microsoft.VSCode'},
-    {'3', 'org.alacritty'},
-    {'F', 'com.apple.finder'},
-}
-for i, app in ipairs(apps) do
-    hs.hotkey.bind(hyper, app[1], function()
-        local appObj = hs.application.get(app[2])
+-- apps = {
+    -- {'1', 'company.thebrowser.Browser'}, -- for some reason, only arc doesn't allow for hiding
+    -- {'2', 'com.microsoft.VSCode'},
+    -- {'3', 'org.alacritty'},
+    -- {'F', 'com.apple.finder'},
+-- }
+-- for i, app in ipairs(apps) do
+--     hs.hotkey.bind(hyper, app[1], function()
+--         local appObj = hs.application.get(app[2])
 
-        if not appObj then
-            -- The app is not running, so launch it
-            hs.application.launchOrFocusByBundleID(app[2])
-        elseif appObj:isFrontmost() then
-            -- The app is running and in focus, so send it to the back
-            appObj:hide()
-        else
-            -- The app is running but not in focus, so focus it
-            hs.application.launchOrFocusByBundleID(app[2])
-        end
-    end)
-end
+--         if not appObj then
+--             -- The app is not running, so launch it
+--             hs.application.launchOrFocusByBundleID(app[2])
+--         elseif appObj:isFrontmost() then
+--             -- The app is running and in focus, so send it to the back
+--             appObj:hide()
+--         else
+--             -- The app is running but not in focus, so focus it
+--             hs.application.launchOrFocusByBundleID(app[2])
+--         end
+--     end)
+-- end
 
 -- show desktop
 hs.hotkey.bind(hyper, 'D', function()
@@ -30,16 +30,16 @@ hs.hotkey.bind(hyper, 'D', function()
 end)
 
 -- minimize all except current focused window
-hs.hotkey.bind(hyper, 'H', function()
-    local windows = hs.window.visibleWindows()
-    local focusedWindow = hs.window.focusedWindow()
+-- hs.hotkey.bind(hyper, 'H', function()
+--     local windows = hs.window.visibleWindows()
+--     local focusedWindow = hs.window.focusedWindow()
 
-    for i, window in ipairs(windows) do
-        if window ~= focusedWindow then
-            window:minimize()
-        end
-    end
-end)
+--     for i, window in ipairs(windows) do
+--         if window ~= focusedWindow then
+--             window:minimize()
+--         end
+--     end
+-- end)
 -- minimize/unminimize all windows
 hs.hotkey.bind(hyper, 'M', function()
     local visibleWindows = hs.window.visibleWindows()
@@ -84,7 +84,7 @@ end)
 
 -- shift deletes
 local shiftDelete = function()
-    hs.eventtap.keyStroke({'ctrl'}, 'd', 20000)
+    hs.eventtap.keyStroke({}, 'forwarddelete', 20000)
 end
 local shiftCmdDelete = function()
     hs.eventtap.keyStroke({'ctrl'}, 'k', 20000)
