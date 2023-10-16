@@ -16,7 +16,7 @@
     - [Hammerspoon](https://www.hammerspoon.org/)
     - [Contexts 3](https://contexts.co/)
     - [MiddleClick](https://github.com/artginzburg/MiddleClick-Sonoma)
-    - [Rectangle](https://rectangleapp.com/)
+    - [Amethyst](https://ianyh.com/amethyst/)
 
 - dotfile manager: [yadm](https://yadm.io/docs/getting_started)
   - `yadm clone https://github.com/jshu-git/dotfiles.git`
