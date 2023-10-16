@@ -25,7 +25,6 @@
   - [oh-my-zsh](https://ohmyz.sh/#install)
     - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
     - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting#oh-my-zsh)
-    - [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
 
 - brew apps
   - [yadm](https://yadm.io/docs/getting_started)
