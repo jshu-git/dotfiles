@@ -19,6 +19,7 @@ alias ys='y status'
 alias yd='y diff'
 alias yp='y pull'
 function yy() {
+    yp
     y add -u
     ys
     echo "enter commit message:"
@@ -42,7 +43,7 @@ function attach() {
     if [ -z "$1" ]; then
         echo 'specify session name'
     else
-        tm attach -t "$1"
+        tm attach -d -t "$1"
     fi
 }
 # kill session
