@@ -65,7 +65,7 @@ hs.hotkey.bind(hyper, 'A', function()
 end)
 
 -- open latest Desktop file
-hs.hotkey.bind(hyper, 'S', function()
+hs.hotkey.bind(hyper, 'O', function()
     local command = [[
     DOWNLOADS="$HOME/Desktop"
     if [ -n "$(ls $DOWNLOADS)" ]; then
