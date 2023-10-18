@@ -4,27 +4,27 @@ hyper = {'ctrl', 'cmd', 'alt'}
 hs.window.animationDuration = 0
 -- toggle maximize/center
 hs.hotkey.bind(hyper, 'return', function()
-    local win         = hs.window.focusedWindow()
-    local centerFrame = win:frame()
-    if centerFrame.x ~= 300 and
-       centerFrame.y ~= 100 and
-       centerFrame.w ~= 800 and
-       centerFrame.h ~= 600 then
-        centerFrame.x = 300
-        centerFrame.y = 100
-        centerFrame.w = 800
-        centerFrame.h = 600
-        win:setFrame(centerFrame)
+    local win   = hs.window.focusedWindow()
+    local frame = win:frame()
+    local max   = win:screen():frame()
+    if frame.x == max.x and
+       frame.y == max.y and
+       frame.w == max.w and
+       frame.h == max.h then
+        frame.x = 300
+        frame.y = 100
+        frame.w = 800
+        frame.h = 600
+        win:setFrame(frame)
     else
         win:maximize()
     end
 end)
 -- decrease window size
 hs.hotkey.bind(hyper, '-', function()
-    local win    = hs.window.focusedWindow()
-    local f      = win:frame()
-    local screen = win:screen()
-    local max    = screen:frame()
+    local win = hs.window.focusedWindow()
+    local f   = win:frame()
+    local max = screen:frame()
 
     f.x = f.x + (max.w / 30)
     f.y = f.y + (max.h / 30)
@@ -34,10 +34,9 @@ hs.hotkey.bind(hyper, '-', function()
 end)
 -- increase window size
 hs.hotkey.bind(hyper, '=', function()
-    local win    = hs.window.focusedWindow()
-    local f      = win:frame()
-    local screen = win:screen()
-    local max    = screen:frame()
+    local win = hs.window.focusedWindow()
+    local f   = win:frame()
+    local max = screen:frame()
 
     f.x = f.x - (max.w / 30)
     f.y = f.y - (max.h / 30)
