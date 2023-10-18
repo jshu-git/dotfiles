@@ -1,5 +1,51 @@
 hyper = {'ctrl', 'cmd', 'alt'}
 
+-- window management
+hs.window.animationDuration = 0
+-- toggle maximize/center
+hs.hotkey.bind(hyper, 'return', function()
+    local win         = hs.window.focusedWindow()
+    local centerFrame = win:frame()
+    if centerFrame.x ~= 300 and
+       centerFrame.y ~= 100 and
+       centerFrame.w ~= 800 and
+       centerFrame.h ~= 600 then
+        centerFrame.x = 300
+        centerFrame.y = 100
+        centerFrame.w = 800
+        centerFrame.h = 600
+        win:setFrame(centerFrame)
+    else
+        win:maximize()
+    end
+end)
+-- decrease window size
+hs.hotkey.bind(hyper, '-', function()
+    local win    = hs.window.focusedWindow()
+    local f      = win:frame()
+    local screen = win:screen()
+    local max    = screen:frame()
+
+    f.x = f.x + (max.w / 30)
+    f.y = f.y + (max.h / 30)
+    f.w = f.w - (max.w / 15)
+    f.h = f.h - (max.h / 15)
+    win:setFrame(f)
+end)
+-- increase window size
+hs.hotkey.bind(hyper, '=', function()
+    local win    = hs.window.focusedWindow()
+    local f      = win:frame()
+    local screen = win:screen()
+    local max    = screen:frame()
+
+    f.x = f.x - (max.w / 30)
+    f.y = f.y - (max.h / 30)
+    f.w = f.w + (max.w / 15)
+    f.h = f.h + (max.h / 15)
+    win:setFrame(f)
+end)
+
 -- application switcher
 -- apps = {
     -- {'1', 'company.thebrowser.Browser'}, -- for some reason, only arc doesn't allow for hiding
