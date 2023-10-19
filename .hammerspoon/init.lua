@@ -11,10 +11,10 @@ hs.hotkey.bind(hyper, 'return', function()
        frame.y == max.y and
        frame.w == max.w and
        frame.h == max.h then
-        frame.x = 300
-        frame.y = 100
-        frame.w = 800
-        frame.h = 600
+        frame.w = max.w * 0.8
+        frame.h = max.h * 0.8
+        frame.x = (max.w - frame.w) / 2
+        frame.y = (max.h - frame.h) / 2
         win:setFrame(frame)
     else
         win:maximize()
