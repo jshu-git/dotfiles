@@ -5,7 +5,6 @@
   - [Arc](https://arc.net/)
   - [Visual Studio Code](https://code.visualstudio.com/)
   - [Alacritty](https://alacritty.org/)
-    - [themes](https://github.com/alacritty/alacritty-theme)
   - [1Password](https://1password.com/downloads/mac/)
   - [Dropbox](https://www.dropbox.com/downloading?os=mac)
   - [AppCleaner](https://freemacsoft.net/appcleaner/)
