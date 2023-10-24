@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>forcequitKeyword</key>
-	<string>quit</string>
+	<string>fquit</string>
+	<key>forcequitKeywordEnabled</key>
+	<false/>
 	<key>hideKeywordEnabled</key>
 	<false/>
 	<key>lockKeywordEnabled</key>
