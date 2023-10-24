@@ -1,16 +1,16 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
 fi
 
 # Auto-completion
 # ---------------
-source "/usr/local/opt/fzf/shell/completion.zsh"
+source "/opt/homebrew/opt/fzf/shell/completion.zsh"
 
 # Key bindings
 # ------------
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
 FD_EXCLUDE_OPTS="--exclude node_modules --exclude .git --exclude .venv --exclude .DS_Store --exclude .gitignore --exclude .github"
 FD_OPTS="--follow --hidden"
