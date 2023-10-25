@@ -1,21 +1,26 @@
 [keyboard shortcuts](http://www.keyboard-layout-editor.com/)
 ![keyboard shortcuts](keyboard.jpg)
 
-- apps
+- general
   - [Arc](https://arc.net/)
   - [Visual Studio Code](https://code.visualstudio.com/)
   - [Alacritty](https://alacritty.org/)
-  - [1Password](https://1password.com/downloads/mac/)
   - [Dropbox](https://www.dropbox.com/downloading?os=mac)
+  - [1Password](https://1password.com/downloads/mac/)
   - [AppCleaner](https://freemacsoft.net/appcleaner/)
 
-- shortcuts
+- productivity
   - [Alfred 5](https://www.alfredapp.com/)
   - [Hyperkey](https://hyperkey.app/)
   - [Hammerspoon](https://www.hammerspoon.org/)
   - [Contexts 3](https://contexts.co/)
   - [MiddleClick](https://github.com/artginzburg/MiddleClick-Sonoma)
-  - [Amethyst](https://ianyh.com/amethyst/)
+  - [Bartender](https://www.macbartender.com/Bartender5/)
+
+- misc
+  - [Basic TeX](https://tug.org/mactex/morepackages.html)
+  - [TopNotch](https://topnotch.app/)
+  - [BatFi](https://app.gumroad.com/d/2fa184d3e33101e9b092db49751f4d9f)
 
 - dotfile manager: [yadm](https://yadm.io/docs/getting_started)
 
@@ -29,7 +34,3 @@
   - [tmux](https://github.com/tmux/tmux/wiki)
   - [fzf](https://github.com/junegunn/fzf)
     - [fd](https://github.com/sharkdp/fd)
-
-- misc
-  - [TopNotch](https://topnotch.app/)
-  - [Basic TeX](https://tug.org/mactex/morepackages.html)
