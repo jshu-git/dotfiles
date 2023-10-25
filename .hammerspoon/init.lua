@@ -5,12 +5,14 @@ hs.window.animationDuration = 0
 leftPositions = {
     hs.layout.left30,
     hs.layout.left50,
-    hs.layout.left70
+    hs.layout.left70,
+    hs.layout.maximized
 }
 rightPositions = {
     hs.layout.right30,
     hs.layout.right50,
     hs.layout.right70,
+    hs.layout.maximized
 }
 -- toggle maximize/center
 hs.hotkey.bind(hyper, 'return', function()
