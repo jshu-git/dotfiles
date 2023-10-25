@@ -2,6 +2,16 @@ hyper = {'ctrl', 'cmd', 'alt'}
 
 -- window management
 hs.window.animationDuration = 0
+leftPositions = {
+    hs.layout.left30,
+    hs.layout.left50,
+    hs.layout.left70
+}
+rightPositions = {
+    hs.layout.right30,
+    hs.layout.right50,
+    hs.layout.right70,
+}
 -- toggle maximize/center
 hs.hotkey.bind(hyper, 'return', function()
     local win   = hs.window.focusedWindow()
@@ -43,6 +53,30 @@ hs.hotkey.bind(hyper, '=', function()
     f.w = f.w + (max.w / 15)
     f.h = f.h + (max.h / 15)
     win:setFrame(f)
+end)
+-- cycle maximize left
+local leftCounter = 1
+hs.hotkey.bind(hyper, 'left', function()
+    local win = hs.window.focusedWindow()
+    win:moveToUnit(leftPositions[leftCounter])
+
+    if leftCounter == #leftPositions then
+        leftCounter = 1
+    else
+        leftCounter = leftCounter + 1
+    end
+end)
+-- cycle maximize right
+local rightCounter = 1
+hs.hotkey.bind(hyper, 'right', function()
+    local win = hs.window.focusedWindow()
+    win:moveToUnit(rightPositions[rightCounter])
+
+    if rightCounter == #rightPositions then
+        rightCounter = 1
+    else
+        rightCounter = rightCounter + 1
+    end
 end)
 
 -- application switcher
