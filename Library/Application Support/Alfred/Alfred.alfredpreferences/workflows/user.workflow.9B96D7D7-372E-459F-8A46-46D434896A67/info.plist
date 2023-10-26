@@ -19,6 +19,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>CE91A81B-70E6-448B-93CB-69315918A951</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C7ACCF23-F4A6-48EB-A674-E370D319A15E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>jshu</string>
@@ -30,6 +43,31 @@
 	<string>code</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query=$1
+
+code $query</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C7ACCF23-F4A6-48EB-A674-E370D319A15E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -99,25 +137,66 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>anchorfields</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
 				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>query=$1
-
-code $query</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
+				<key>keyword</key>
+				<string>code</string>
+				<key>limit</key>
+				<integer>0</integer>
+				<key>runningsubtext</key>
 				<string></string>
-				<key>type</key>
-				<integer>11</integer>
+				<key>scopes</key>
+				<array/>
+				<key>sortmode</key>
+				<integer>0</integer>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>open with vscode</string>
+				<key>types</key>
+				<array/>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.filefilter</string>
 			<key>uid</key>
-			<string>C7ACCF23-F4A6-48EB-A674-E370D319A15E</string>
+			<string>CE91A81B-70E6-448B-93CB-69315918A951</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -139,6 +218,13 @@ code $query</string>
 			<real>280</real>
 			<key>ypos</key>
 			<real>50</real>
+		</dict>
+		<key>CE91A81B-70E6-448B-93CB-69315918A951</key>
+		<dict>
+			<key>xpos</key>
+			<real>55</real>
+			<key>ypos</key>
+			<real>180</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
