@@ -139,11 +139,11 @@ hs.hotkey.bind(hyper, 'M', function()
 end)
 
 -- alfred universal action
-hs.hotkey.bind(hyper, 'A', function()
-    hs.timer.doAfter(0.2, function()
-        hs.eventtap.keyStroke({'cmd'}, '/')
-    end)
-end)
+-- hs.hotkey.bind(hyper, 'A', function()
+--     hs.timer.doAfter(0.2, function()
+--         hs.eventtap.keyStroke({'cmd'}, '/')
+--     end)
+-- end)
 
 -- open Desktop folder
 hs.hotkey.bind(hyper, 'O', function()
