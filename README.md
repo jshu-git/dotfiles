@@ -18,9 +18,10 @@
   - [Bartender](https://www.macbartender.com/Bartender5/)
 
 - misc
-  - [Basic TeX](https://tug.org/mactex/morepackages.html)
   - [TopNotch](https://topnotch.app/)
   - [BatFi](https://app.gumroad.com/d/2fa184d3e33101e9b092db49751f4d9f)
+  - [Shottr](https://shottr.cc/)
+  - [Basic TeX](https://tug.org/mactex/morepackages.html)
 
 - dotfile manager: [yadm](https://yadm.io/docs/getting_started)
 
