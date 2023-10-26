@@ -145,8 +145,8 @@ end)
 --     end)
 -- end)
 
--- open Desktop folder
-hs.hotkey.bind(hyper, 'O', function()
+-- open Finder (Desktop folder)
+hs.hotkey.bind(hyper, 'F', function()
     local command = [[ open $HOME/Desktop ]]
     hs.execute(command)
 end)
