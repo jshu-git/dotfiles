@@ -17,7 +17,7 @@ KEYTIMEOUT=1
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="jshu"
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
 plugins=(zsh-autosuggestions fast-syntax-highlighting)
