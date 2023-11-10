@@ -1,7 +1,5 @@
 # paths
-# path+=('/Library/TeX/texbin/tex')
-# path+=('/usr/local/texlive/2023basic/bin/universal-darwin')
-path+=/usr/local/texlive/2023basic/bin/universal-darwin
+path+=/Library/TeX/texbin/tex
 alias alacritty='/Applications/Alacritty.app/Contents/MacOS/alacritty'
 
 alias v='vim'
