@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>customSites</key>
+	<dict>
+		<key>352FCA42-D6F5-4A8E-A6F4-5D0CD82EB3F8</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>gr</string>
+			<key>text</key>
+			<string>Seach Google with reddit for {query}</string>
+			<key>url</key>
+			<string>https://www.google.com/search?q={query}+site:reddit.com</string>
+		</dict>
+	</dict>
 	<key>onlyShowEnabledInPrefs</key>
 	<true/>
 </dict>

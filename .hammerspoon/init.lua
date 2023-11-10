@@ -168,3 +168,14 @@ hs.hotkey.bind({'cmd', 'shift'}, 'delete', shiftCmdDelete, nil, shiftCmdDelete)
 --     -- hs.application.launchOrFocusByBundleID('org.alacritty')
 --     hs.eventtap.keyStroke(hyper, '3')
 -- end
+
+-- function systemKey(key)
+--     hs.eventtap.event.newSystemKeyEvent(string.upper(key), true):post()
+--     hs.eventtap.event.newSystemKeyEvent(string.upper(key), false):post()
+-- end
+-- hs.hotkey.bind({'cmd'}, "j", function()
+--     systemKey("BRIGHTNESS_DOWN")
+-- end, nil, function()
+--     systemKey("BRIGHTNESS_DOWN")
+-- end)
+

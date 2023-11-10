@@ -5,6 +5,8 @@
 	<key>fallbacks</key>
 	<array>
 		<string>features.websearch.google.fallback</string>
+		<string>features.websearch.youtube.fallback</string>
+		<string>features.websearch.custom.352FCA42-D6F5-4A8E-A6F4-5D0CD82EB3F8.fallback</string>
 	</array>
 	<key>showContacts</key>
 	<false/>
