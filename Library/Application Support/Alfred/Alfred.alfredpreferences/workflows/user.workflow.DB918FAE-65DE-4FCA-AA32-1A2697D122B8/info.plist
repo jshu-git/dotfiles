@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>1CF0AAFA-AA80-4123-9C9B-EC59BAFCC38B</string>
+				<string>5A4F9434-523F-4F88-93E0-5651E3BD4EEA</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -33,27 +33,17 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>query=$1
-
-code $query</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
+				<key>openwith</key>
 				<string></string>
-				<key>type</key>
-				<integer>11</integer>
+				<key>sourcefile</key>
+				<string>~/configs.code-workspace</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.action.openfile</string>
 			<key>uid</key>
-			<string>1CF0AAFA-AA80-4123-9C9B-EC59BAFCC38B</string>
+			<string>5A4F9434-523F-4F88-93E0-5651E3BD4EEA</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -81,17 +71,17 @@ code $query</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>1CF0AAFA-AA80-4123-9C9B-EC59BAFCC38B</key>
-		<dict>
-			<key>xpos</key>
-			<real>260</real>
-			<key>ypos</key>
-			<real>225</real>
-		</dict>
 		<key>4969DD89-13CC-41B5-9F00-BEE778D25461</key>
 		<dict>
 			<key>xpos</key>
 			<real>80</real>
+			<key>ypos</key>
+			<real>225</real>
+		</dict>
+		<key>5A4F9434-523F-4F88-93E0-5651E3BD4EEA</key>
+		<dict>
+			<key>xpos</key>
+			<real>255</real>
 			<key>ypos</key>
 			<real>225</real>
 		</dict>
