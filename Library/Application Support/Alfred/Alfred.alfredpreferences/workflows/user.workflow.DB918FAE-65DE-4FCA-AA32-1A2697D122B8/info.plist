@@ -33,6 +33,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>configs</string>
+				<key>subtext</key>
+				<string>~/configs.code-workspace</string>
+				<key>text</key>
+				<string>open configs</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4969DD89-13CC-41B5-9F00-BEE778D25461</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>openwith</key>
 				<string></string>
 				<key>sourcefile</key>
@@ -45,27 +66,6 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>configs</string>
-				<key>subtext</key>
-				<string>~/configs.code-workspace</string>
-				<key>text</key>
-				<string>configs</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>4969DD89-13CC-41B5-9F00-BEE778D25461</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -74,16 +74,16 @@
 		<key>4969DD89-13CC-41B5-9F00-BEE778D25461</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<real>30</real>
 			<key>ypos</key>
-			<real>225</real>
+			<real>15</real>
 		</dict>
 		<key>5A4F9434-523F-4F88-93E0-5651E3BD4EEA</key>
 		<dict>
 			<key>xpos</key>
-			<real>255</real>
+			<real>205</real>
 			<key>ypos</key>
-			<real>225</real>
+			<real>15</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>

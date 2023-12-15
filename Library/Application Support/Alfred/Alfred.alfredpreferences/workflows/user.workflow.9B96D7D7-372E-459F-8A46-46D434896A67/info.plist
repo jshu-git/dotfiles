@@ -46,31 +46,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>query=$1
-
-code $query</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>11</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>C7ACCF23-F4A6-48EB-A674-E370D319A15E</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>anchorfields</key>
 				<true/>
 				<key>argumenttrimmode</key>
@@ -131,6 +106,31 @@ code $query</string>
 			<string>alfred.workflow.input.filefilter</string>
 			<key>uid</key>
 			<string>BFCE61A9-49B2-4094-A23B-B3536AF01FA5</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query=$1
+
+code $query</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C7ACCF23-F4A6-48EB-A674-E370D319A15E</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -208,23 +208,23 @@ code $query</string>
 		<key>BFCE61A9-49B2-4094-A23B-B3536AF01FA5</key>
 		<dict>
 			<key>xpos</key>
-			<real>55</real>
+			<real>30</real>
 			<key>ypos</key>
-			<real>50</real>
+			<real>15</real>
 		</dict>
 		<key>C7ACCF23-F4A6-48EB-A674-E370D319A15E</key>
 		<dict>
 			<key>xpos</key>
-			<real>280</real>
+			<real>250</real>
 			<key>ypos</key>
-			<real>50</real>
+			<real>75</real>
 		</dict>
 		<key>CE91A81B-70E6-448B-93CB-69315918A951</key>
 		<dict>
 			<key>xpos</key>
-			<real>55</real>
+			<real>30</real>
 			<key>ypos</key>
-			<real>180</real>
+			<real>145</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
