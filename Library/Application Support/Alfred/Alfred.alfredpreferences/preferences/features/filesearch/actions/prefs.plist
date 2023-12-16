@@ -48,11 +48,11 @@
 	<key>finderSelectionHotkey</key>
 	<dict>
 		<key>key</key>
-		<integer>44</integer>
+		<integer>-1</integer>
 		<key>mod</key>
-		<integer>1048576</integer>
+		<integer>-1</integer>
 		<key>string</key>
-		<string>/</string>
+		<string></string>
 	</dict>
 	<key>showWithFn</key>
 	<false/>
