@@ -2,7 +2,7 @@
 ![keyboard shortcuts](keyboard.jpg)
 
 - general
-  - [Arc](https://arc.net/)
+  - [Orion](https://kagi.com/orion/)
   - [Visual Studio Code](https://code.visualstudio.com/)
   - [Alacritty](https://alacritty.org/)
   - [Dropbox](https://www.dropbox.com/downloading?os=mac)
