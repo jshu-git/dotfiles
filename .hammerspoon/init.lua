@@ -23,10 +23,16 @@ hs.hotkey.bind(hyper, 'return', function()
        frame.y == max.y and
        frame.w == max.w and
        frame.h == max.h then
-        frame.w = max.w * 0.75
-        frame.h = max.h * 0.75
-        frame.x = (max.w - frame.w) / 2
-        frame.y = (max.h - frame.h) / 2
+        -- store ratio in a variable
+        local ratio = 0.7
+        frame.x = max.x + (max.w * (1 - ratio) / 2)
+        frame.y = max.y + (max.h * (1 - ratio) / 2)
+        frame.w = max.w * ratio
+        frame.h = max.h * ratio
+        -- frame.x = max.x + (max.w / 6)
+        -- frame.y = max.y + (max.h / 6)
+        -- frame.w = max.w / 1.5
+        -- frame.h = max.h / 1.5
         win:setFrame(frame)
     else
         win:maximize()
@@ -37,7 +43,6 @@ hs.hotkey.bind(hyper, '-', function()
     local win = hs.window.focusedWindow()
     local f   = win:frame()
     local max = win:screen():frame()
-
     f.x = f.x + (max.w / 30)
     f.y = f.y + (max.h / 30)
     f.w = f.w - (max.w / 15)
@@ -49,7 +54,6 @@ hs.hotkey.bind(hyper, '=', function()
     local win = hs.window.focusedWindow()
     local f   = win:frame()
     local max = win:screen():frame()
-
     f.x = f.x - (max.w / 30)
     f.y = f.y - (max.h / 30)
     f.w = f.w + (max.w / 15)
