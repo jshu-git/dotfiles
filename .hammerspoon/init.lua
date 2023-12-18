@@ -29,10 +29,6 @@ hs.hotkey.bind(hyper, 'return', function()
         frame.y = max.y + (max.h * (1 - ratio) / 2)
         frame.w = max.w * ratio
         frame.h = max.h * ratio
-        -- frame.x = max.x + (max.w / 6)
-        -- frame.y = max.y + (max.h / 6)
-        -- frame.w = max.w / 1.5
-        -- frame.h = max.h / 1.5
         win:setFrame(frame)
     else
         win:maximize()
