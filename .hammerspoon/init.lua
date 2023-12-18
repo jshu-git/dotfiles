@@ -23,8 +23,8 @@ hs.hotkey.bind(hyper, 'return', function()
        frame.y == max.y and
        frame.w == max.w and
        frame.h == max.h then
-        frame.w = max.w * 0.8
-        frame.h = max.h * 0.8
+        frame.w = max.w * 0.75
+        frame.h = max.h * 0.75
         frame.x = (max.w - frame.w) / 2
         frame.y = (max.h - frame.h) / 2
         win:setFrame(frame)
@@ -161,14 +161,6 @@ end
 hs.hotkey.bind({'shift'}, 'delete', shiftDelete, nil, shiftDelete)
 hs.hotkey.bind({'cmd', 'shift'}, 'delete', shiftCmdDelete, nil, shiftCmdDelete)
 
--- alacritty hotkey window
--- doubleTap = require('modifierDoubleTap')
--- doubleTap.modifier = 'alt'
--- doubleTap.action = function ()
---     -- hs.application.launchOrFocusByBundleID('org.alacritty')
---     hs.eventtap.keyStroke(hyper, '3')
--- end
-
 -- function systemKey(key)
 --     hs.eventtap.event.newSystemKeyEvent(string.upper(key), true):post()
 --     hs.eventtap.event.newSystemKeyEvent(string.upper(key), false):post()
@@ -178,4 +170,3 @@ hs.hotkey.bind({'cmd', 'shift'}, 'delete', shiftCmdDelete, nil, shiftCmdDelete)
 -- end, nil, function()
 --     systemKey("BRIGHTNESS_DOWN")
 -- end)
-
