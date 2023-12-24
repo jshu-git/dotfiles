@@ -19,10 +19,10 @@ export FZF_DEFAULT_COMMAND="fd --type f --type l $FD_OPTS $FD_EXCLUDE_OPTS"
 # ctrl + f (file)
 export FZF_CTRL_T_OPTS="--prompt=file:"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-bindkey '^F' fzf-file-widget
-# ctrl + e (dir)
+bindkey "^F" fzf-file-widget
+# ctrl + t (dir) can't do ctrl+e because that's command+right arrow
 export FZF_ALT_C_OPTS="--prompt=dir:"
 export FZF_ALT_C_COMMAND="fd --type d $FD_OPTS $FD_EXCLUDE_OPTS"
-bindkey "^E" fzf-cd-widget
+bindkey "^T" fzf-cd-widget
 # ctrl + r (history)
 export FZF_CTRL_R_OPTS="--prompt=hist:"
