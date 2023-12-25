@@ -14,25 +14,31 @@ rightPositions = {
     hs.layout.right70,
     hs.layout.maximized
 }
--- toggle maximize/center
+-- toggle maximize/center/stage manager size
 hs.hotkey.bind(hyper, 'return', function()
-    local win   = hs.window.focusedWindow()
-    local frame = win:frame()
-    local max   = win:screen():frame()
-    if frame.x == max.x and
-       frame.y == max.y and
-       frame.w == max.w and
-       frame.h == max.h then
-        -- store ratio in a variable
+    local win    = hs.window.focusedWindow()
+    local frame  = win:frame()
+    local max    = win:screen():frame()
+    local custom = {x = 47, y = max.y, w = max.w, h = max.h}
+
+    if frame.x == max.x and frame.y == max.y and frame.w == max.w and frame.h == max.h then
+        -- if the window is maximized, set to custom size
+        frame.x = custom.x
+        frame.y = custom.y
+        frame.w = custom.w
+        frame.h = custom.h
+    elseif frame.x == custom.x and frame.w == custom.w and frame.h == custom.h then
+        -- if the window is at custom size, set to centered size
         local ratio = 0.8
         frame.x = max.x + (max.w * (1 - ratio) / 2)
         frame.y = max.y + (max.h * (1 - ratio) / 2)
         frame.w = max.w * ratio
         frame.h = max.h * ratio
-        win:setFrame(frame)
     else
-        win:maximize()
+        -- if the window is at centered size, maximize it
+        frame = max
     end
+    win:setFrame(frame)
 end)
 -- decrease window size
 hs.hotkey.bind(hyper, '-', function()
@@ -84,28 +90,28 @@ hs.hotkey.bind(hyper, 'right', function()
 end)
 
 -- application switcher
-apps = {
-    -- {'1', 'company.thebrowser.Browser'}, -- for some reason, only arc doesn't allow for hiding
-    -- {'2', 'com.microsoft.VSCode'},
-    {'A', 'org.alacritty'},
-    -- {'F', 'com.apple.finder'},
-}
-for i, app in ipairs(apps) do
-    hs.hotkey.bind(hyper, app[1], function()
-        local appObj = hs.application.get(app[2])
+-- apps = {
+--     -- {'1', 'company.thebrowser.Browser'}, -- for some reason, only arc doesn't allow for hiding
+--     -- {'2', 'com.microsoft.VSCode'},
+--     {'A', 'org.alacritty'},
+--     -- {'F', 'com.apple.finder'},
+-- }
+-- for i, app in ipairs(apps) do
+--     hs.hotkey.bind(hyper, app[1], function()
+--         local appObj = hs.application.get(app[2])
 
-        if not appObj then
-            -- The app is not running, so launch it
-            hs.application.launchOrFocusByBundleID(app[2])
-        elseif appObj:isFrontmost() then
-            -- The app is running and in focus, so send it to the back
-            appObj:hide()
-        else
-            -- The app is running but not in focus, so focus it
-            hs.application.launchOrFocusByBundleID(app[2])
-        end
-    end)
-end
+--         if not appObj then
+--             -- The app is not running, so launch it
+--             hs.application.launchOrFocusByBundleID(app[2])
+--         elseif appObj:isFrontmost() then
+--             -- The app is running and in focus, so send it to the back
+--             appObj:hide()
+--         else
+--             -- The app is running but not in focus, so focus it
+--             hs.application.launchOrFocusByBundleID(app[2])
+--         end
+--     end)
+-- end
 
 -- show desktop
 hs.hotkey.bind(hyper, 'D', function()
@@ -124,21 +130,21 @@ end)
 --     end
 -- end)
 -- minimize/unminimize all windows
-hs.hotkey.bind(hyper, 'M', function()
-    local visibleWindows = hs.window.visibleWindows()
+-- hs.hotkey.bind(hyper, 'M', function()
+--     local visibleWindows = hs.window.visibleWindows()
 
-    -- Finder is always visible
-    if #visibleWindows == 1 then
-        local minimizedWindows = hs.window.minimizedWindows()
-        for i, window in ipairs(minimizedWindows) do
-            window:unminimize()
-        end
-    else
-        for i, window in ipairs(visibleWindows) do
-            window:minimize()
-        end
-    end
-end)
+--     -- Finder is always visible
+--     if #visibleWindows == 1 then
+--         local minimizedWindows = hs.window.minimizedWindows()
+--         for i, window in ipairs(minimizedWindows) do
+--             window:unminimize()
+--         end
+--     else
+--         for i, window in ipairs(visibleWindows) do
+--             window:minimize()
+--         end
+--     end
+-- end)
 
 -- alfred universal action
 -- hs.hotkey.bind(hyper, 'A', function()
