@@ -114,16 +114,16 @@ window:
   #   - None (default)
   # option_as_alt: None
 
-scrolling:
+# scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  history: 10000
+#  history: 10000
 
   # Scrolling distance multiplier.
-  multiplier: 1
+#  multiplier: 1
 
   # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
+#  auto_scroll: false
 
 # Font configuration
 font:
@@ -390,15 +390,15 @@ font:
   #
   #command: None
 
-selection:
+#selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+#  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  save_to_clipboard: true
+#  save_to_clipboard: true
 
-cursor:
+#cursor:
   # Cursor style
   style:
     # Cursor shape
@@ -407,7 +407,7 @@ cursor:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    shape: Beam
+#    shape: Beam
 
     # Cursor blinking state
     #
@@ -416,7 +416,7 @@ cursor:
     #   - Off: Disable blinking by default
     #   - On: Enable blinking by default
     #   - Always: Force the cursor to always blink
-    blinking: Always
+#    blinking: Always
 
   # Vi mode cursor style
   #
@@ -427,7 +427,7 @@ cursor:
   #vi_mode_style: None
 
   # Cursor blinking interval in milliseconds.
-  blink_interval: 250
+  blink_interval: 200
 
   # Time after which cursor stops blinking, in seconds.
   #
@@ -558,10 +558,10 @@ cursor:
 # And optionally:
 #
 # - `mods` (see key bindings)
-mouse_bindings:
+#mouse_bindings:
 #  - { mouse: Right,                 action: ExpandSelection }
 #  - { mouse: Right,  mods: Control, action: ExpandSelection }
-  - { mouse: Middle, action: PasteSelection }
+# - { mouse: Middle, action: PasteSelection }
 
 # Key bindings
 #
