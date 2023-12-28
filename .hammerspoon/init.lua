@@ -19,7 +19,7 @@ hs.hotkey.bind(hyper, 'return', function()
     local win    = hs.window.focusedWindow()
     local frame  = win:frame()
     local max    = win:screen():frame()
-    local custom = {x = 47, y = max.y, w = max.w, h = max.h}
+    local custom = {x = 47, y = max.y, w = max.w - 47, h = max.h}
 
     if frame.x == max.x and frame.y == max.y and frame.w == max.w and frame.h == max.h then
         -- if the window is maximized, set to custom size
