@@ -14,6 +14,7 @@ source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
 FD_EXCLUDE_OPTS="--exclude node_modules --exclude .git --exclude .venv --exclude .DS_Store --exclude .gitignore --exclude .github"
 FD_OPTS="--follow --hidden"
+# export FZF_TMUX_OPTS='-p'
 export FZF_DEFAULT_OPTS="--multi --info=right --height 20% --layout=reverse --border=sharp --no-separator"
 export FZF_DEFAULT_COMMAND="fd --type f --type l $FD_OPTS $FD_EXCLUDE_OPTS"
 # ctrl + f (file)
