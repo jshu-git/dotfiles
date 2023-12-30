@@ -1,29 +1,29 @@
 env:
-  TERM: xterm-256color 
+    TERM: xterm-256color
 
 window:
-  dimensions:
-   columns: 0
-   lines: 0
-  padding:
-   x: 0
-   y: 0
-  dynamic_padding: false
-  decorations: buttonless 
-  opacity: 0.8
-  option_as_alt: OnlyLeft
-  history: 10000
-  auto_scroll: true
-  startup_mode: maximized
+    dimensions:
+        columns: 0
+        lines: 0
+    padding:
+        x: 0
+        y: 0
+    dynamic_padding: false
+    decorations: buttonless
+    opacity: 0.8
+    option_as_alt: OnlyLeft
+    history: 10000
+    auto_scroll: true
+    startup_mode: maximized
 
 font:
-  normal:
-    family: FiraCode Nerd Font
-  size: 14.0
+    normal:
+        family: FiraCode Nerd Font
+    size: 14.0
 
 cursor:
-  style:
-   shape: Beam
-   blinking: never 
-  blink_interval: 200
-  unfocused_hollow: true
+    style:
+        shape: Beam
+        blinking: never
+    blink_interval: 200
+    unfocused_hollow: true

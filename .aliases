@@ -26,6 +26,7 @@ function yy() {
 }
 
 # tmux
+alias tm='tmux'
 alias tml='tmux list'
 alias a='attach'
 # new named session
