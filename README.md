@@ -27,4 +27,4 @@
   - [tmux](https://github.com/tmux/tmux/wiki)
   - [fzf](https://github.com/junegunn/fzf)
     - [fd](https://github.com/sharkdp/fd)
-  - [exa](https://github.com/ogham/exa)
+  - [eza](https://github.com/eza-community/eza)
