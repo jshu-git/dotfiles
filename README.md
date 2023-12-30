@@ -23,5 +23,6 @@
     - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
     - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting#oh-my-zsh)
 
-- [brew](https://brew.sh/)
+- cli tools
+  - [brew](https://brew.sh/)
   - `brew install tmux fd fzf eza bat tree tldr`
