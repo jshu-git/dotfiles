@@ -24,7 +24,4 @@
     - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting#oh-my-zsh)
 
 - [brew](https://brew.sh/)
-  - [tmux](https://github.com/tmux/tmux/wiki)
-  - [fzf](https://github.com/junegunn/fzf)
-    - [fd](https://github.com/sharkdp/fd)
-  - [eza](https://github.com/eza-community/eza)
+  - `brew install tmux fd fzf eza bat tree tldr`
