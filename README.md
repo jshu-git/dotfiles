@@ -1,19 +1,14 @@
-[keyboard shortcuts](http://www.keyboard-layout-editor.com/)
-![keyboard shortcuts](keyboard.jpg)
-
 - general
   - [Orion](https://kagi.com/orion/)
   - [Visual Studio Code](https://code.visualstudio.com/)
-  - [Alacritty](https://alacritty.org/)
   - [Dropbox](https://www.dropbox.com/downloading?os=mac)
   - [1Password](https://1password.com/downloads/mac/)
   - [AppCleaner](https://freemacsoft.net/appcleaner/)
-
 - productivity
-  - [Alfred 5](https://www.alfredapp.com/)
+  - [Alfred](https://www.alfredapp.com/)
   - [Hyperkey](https://hyperkey.app/)
   - [Hammerspoon](https://www.hammerspoon.org/)
-  - [Contexts 3](https://contexts.co/)
+  - [Contexts](https://contexts.co/)
   - [MiddleClick](https://github.com/artginzburg/MiddleClick-Sonoma)
   - [Bartender](https://www.macbartender.com/Bartender5/)
 
@@ -29,7 +24,7 @@
     - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting#oh-my-zsh)
 
 - [brew](https://brew.sh/)
-  - [yadm](https://yadm.io/docs/getting_started)
   - [tmux](https://github.com/tmux/tmux/wiki)
   - [fzf](https://github.com/junegunn/fzf)
     - [fd](https://github.com/sharkdp/fd)
+  - [exa](https://github.com/ogham/exa)
