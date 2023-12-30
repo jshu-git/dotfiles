@@ -22,6 +22,7 @@ export FZF_DEFAULT_COMMAND="fd --type f --type l $FD_OPTS $FD_EXCLUDE_OPTS"
 # ctrl + f (file)
 export FZF_CTRL_T_OPTS="--prompt=file:"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+bindkey -r "^T"
 bindkey "^F" fzf-file-widget
 
 # ctrl + t (dir) can't do ctrl+e because that's command+right arrow

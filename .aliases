@@ -1,5 +1,5 @@
 # paths
-path+=/Library/TeX/texbin/tex
+export PATH="/Library/TeX/texbin/tex:$PATH"
 alias alacritty='/Applications/Alacritty.app/Contents/MacOS/alacritty'
 
 alias v='vim'
@@ -54,17 +54,21 @@ function tmk() {
 }
 
 # nav
+alias l='ls'
 alias ll='ls -lAth'
 alias h='cd ~'
-alias desk='cc /mnt/c/Users/jshu/Desktop'
+alias desk='cd ~/Desktop'
 alias g='cd ~/git && ls'
 alias mnt='mount | grep -E ^/dev | column -t'
 alias path='echo -e ${PATH//:/\\n}'
 alias env="env | sort | awk -F= '{printf \"%-30s %s\n\", \$1, \$2}'"
-function up() {
+
+# [b]ack [n] directories
+function b() {
     local count=${1:-1}
     cd $(printf "%0.s../" $(seq 1 $count))
 }
+
 function cc() {
     if [ -z "$1" ]; then
         cd .. && ll
