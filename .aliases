@@ -72,7 +72,7 @@ alias b='b() { cd $(printf "%0.s../" $(seq 1 ${1:-1})); } && b'
 
 # always ls after cd
 alias cd='cd() { builtin cd "${1:-..}" && ls; }; cd'
-alias cc='cd'
+alias d='cd'
 
 # bat
 alias cat='bat'
