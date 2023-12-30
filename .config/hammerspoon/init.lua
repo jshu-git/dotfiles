@@ -1,3 +1,6 @@
+-- https://github.com/Hammerspoon/hammerspoon/pull/582
+-- defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon/init.lua"
+
 local geometry = require("hs.geometry")
 hyper = { "ctrl", "cmd", "alt" }
 
