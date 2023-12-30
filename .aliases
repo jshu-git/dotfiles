@@ -79,3 +79,6 @@ alias cat='bat'
 
 # ripgrep config files
 alias rgc="yadm list | grep '^\.' | xargs rg"
+
+# zellij
+alias z='zellij'
