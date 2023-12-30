@@ -55,7 +55,7 @@ function tmk() {
 
 # nav
 alias l='ls'
-alias ll='ls -lAth'
+alias ll='l -ltA'
 alias h='cd ~'
 alias desk='cd ~/Desktop'
 alias g='cd ~/git && ls'
@@ -71,8 +71,8 @@ function b() {
 
 function cc() {
     if [ -z "$1" ]; then
-        cd .. && ll
+        cd .. && ls
     else
-        cd "$@" && ll
+        cd "$@" && ls
     fi
 }

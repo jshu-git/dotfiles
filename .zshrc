@@ -24,10 +24,6 @@ plugins=(zsh-autosuggestions fast-syntax-highlighting)
 zstyle ':omz:update' mode reminder # just remind me to update when it's time
 source $ZSH/oh-my-zsh.sh
 
-if [ -f ~/.aliases ]; then
-  . ~/.aliases
-fi
-
 # fzf + fd
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -37,4 +33,8 @@ if (($ + commands[exa])); then
   alias ls="~/.eza/eza-wrapper.sh"
 else
   alias ls="command ls $LS_OPTIONS"
+fi
+
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
 fi
