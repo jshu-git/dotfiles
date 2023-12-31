@@ -13,7 +13,7 @@ source "/opt/homebrew/opt/fzf/shell/completion.zsh"
 source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
 FD_OPTS="--follow --hidden"
-export FZF_DEFAULT_OPTS="--multi --info=right --height 20% --layout=reverse --border=sharp --no-separator"
+export FZF_DEFAULT_OPTS="--multi --info=inline-right --height 30% --layout=reverse --border=sharp --no-separator"
 export FZF_DEFAULT_COMMAND="fd --type f --type l $FD_OPTS"
 
 # ctrl + [f]ile
@@ -22,6 +22,7 @@ export FZF_CTRL_T_OPTS="
   --preview 'bat {}'
   --header '<C-x> vscode'
   --bind 'ctrl-x:execute(code {})+abort'
+
 "
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 bindkey -r "^T"
