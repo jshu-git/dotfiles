@@ -27,7 +27,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 bindkey -r "^T"
 bindkey "^F" fzf-file-widget
 
-# ctrl + t (dir) can't do ctrl+e because that's command+right arrow
+# ctrl + t (dir) can't do ctrl+d or ctrl+e
 export FZF_ALT_C_OPTS="
   --prompt=dir:
   --preview 'tree -C {}'

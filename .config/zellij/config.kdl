@@ -57,7 +57,7 @@ keybinds clear-defaults=true {
 
     // status bar
     shared_except "pane" "locked" {
-        bind "Ctrl a" { SwitchToMode "Pane";    }
+        bind "Ctrl q" { SwitchToMode "Pane";    }
     }
     shared_except "session" "locked" {
         bind "Ctrl s" { SwitchToMode "Session"; }
