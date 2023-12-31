@@ -251,3 +251,10 @@ layout_dir "/Users/jshu/.config/zellij/layouts/"
 // Default: true
 //
 // styled_underlines false
+
+ui {
+    pane_frames {
+        hide_session_name true
+        rounded_corners false
+    }
+}
