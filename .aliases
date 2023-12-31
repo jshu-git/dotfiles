@@ -25,39 +25,6 @@ function yy() {
     y commit -m "$commit_msg" && y push
 }
 
-# tmux
-alias tm='tmux'
-alias tml='tmux list'
-alias a='attach'
-# new named session
-new() {
-    if [ -z "$1" ]; then
-        echo 'specify session name'
-    else
-        tmux new -s "$1"
-    fi
-}
-# attach session
-attach() {
-    if [ -z "$1" ]; then
-        echo 'specify session name'
-    else
-        tmux attach -d -t "$1"
-    fi
-}
-# kill session
-tmk() {
-    if [ -z "$1" ]; then
-        echo 'specify session name'
-    else
-        tmux kill-session -t "$1"
-    fi
-}
-# kill server
-tmks() {
-    tmux kill-server
-}
-
 # nav
 alias l='ls'
 alias ll='ls -ltA'
@@ -83,3 +50,18 @@ alias rgc="yadm list | grep '^\.' | xargs rg"
 
 # zellij
 alias z='zellij'
+alias a='attach'
+new() {
+    if [ -z "$1" ]; then
+        echo 'specify session name'
+    else
+        z -s "$1"
+    fi
+}
+attach() {
+    if [ -z "$1" ]; then
+        echo 'specify session name'
+    else
+        z a "$1"
+    fi
+}
