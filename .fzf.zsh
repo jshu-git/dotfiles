@@ -41,12 +41,12 @@ bindkey "^T" fzf-cd-widget
 # ctrl + histo[r]y
 export FZF_CTRL_R_OPTS="
   --prompt=hist:
-  --header '<C-x> copy, <C-r> toggle sort, <S-enter> run'
+  --header '<C-x> copy, <C-r> toggle sort'
   --bind 'ctrl-x:execute-silent(echo -n {2..} | pbcopy)+abort'
   --bind 'ctrl-r:toggle-sort'
-  --bind 'shift-enter:execute-silent(echo {2..} | xargs -I % sh -c %)+abort'
+  --bind 'alt-enter:execute-silent(echo {2..} | xargs -I % sh -c %)+abort'
   --layout=default
 "
 # bind up arrow key to fzf history widget
-bindkey "^[OA" fzf-history-widget
-# bindkey "^[[A" fzf-history-widget
+# bindkey "^[OA" fzf-history-widget
+bindkey "^[[A" fzf-history-widget
