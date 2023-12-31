@@ -27,8 +27,7 @@ source $ZSH/oh-my-zsh.sh
 # fzf + fd
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
-# eza
-# https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
+# eza https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
 if (($ + commands[exa])); then
   alias ls="$HOME/.config/eza/eza-wrapper.sh"
 else
