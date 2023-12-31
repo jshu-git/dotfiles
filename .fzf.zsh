@@ -12,12 +12,9 @@ source "/opt/homebrew/opt/fzf/shell/completion.zsh"
 # ------------
 source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
-FD_EXCLUDE_OPTS="--exclude node_modules --exclude .git --exclude .venv --exclude .DS_Store --exclude .gitignore --exclude .github"
 FD_OPTS="--follow --hidden"
-
-# export FZF_TMUX_OPTS='-p' # preview in tmux
 export FZF_DEFAULT_OPTS="--multi --info=right --height 20% --layout=reverse --border=sharp --no-separator"
-export FZF_DEFAULT_COMMAND="fd --type f --type l $FD_OPTS $FD_EXCLUDE_OPTS"
+export FZF_DEFAULT_COMMAND="fd --type f --type l $FD_OPTS"
 
 # ctrl + [f]ile
 export FZF_CTRL_T_OPTS="
@@ -37,7 +34,7 @@ export FZF_ALT_C_OPTS="
   --header '<C-x> vscode'
   --bind 'ctrl-x:execute(code {})+abort'
 "
-export FZF_ALT_C_COMMAND="fd --type d $FD_OPTS $FD_EXCLUDE_OPTS"
+export FZF_ALT_C_COMMAND="fd --type d $FD_OPTS"
 bindkey "^T" fzf-cd-widget
 
 # ctrl + histo[r]y

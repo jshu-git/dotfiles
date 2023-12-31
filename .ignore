@@ -1,4 +1,4 @@
-# ripgrep
+# fd (used with fzf) and ripgrep
 Library
 Pictures
 Music
@@ -7,5 +7,11 @@ Movies
 go
 .Trash*
 .*_history
-
 .DS_Store
+node_modules
+.git
+.venv
+.gitignore
+.github
+.tldrc
+.vscode

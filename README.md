@@ -25,4 +25,4 @@
 
 - cli tools
   - [brew](https://brew.sh/)
-  - `brew install zellij fd fzf eza bat tree tldr`
+  - `brew install bat eza fd fzf ripgrep tree yadm zellij`
