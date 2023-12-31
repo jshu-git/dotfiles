@@ -3,14 +3,14 @@
 
 keybinds clear-defaults=true {
     // modes
-    resize {
-        bind "Left"  { Resize "Increase Left";  }
-        bind "Down"  { Resize "Increase Down";  }
-        bind "Up"    { Resize "Increase Up";    }
-        bind "Right" { Resize "Increase Right"; }
-        bind "="     { Resize "Increase";       }
-        bind "-"     { Resize "Decrease";       }
-    }
+    // resize {
+    //     bind "Left"  { Resize "Increase Left";  }
+    //     bind "Down"  { Resize "Increase Down";  }
+    //     bind "Up"    { Resize "Increase Up";    }
+    //     bind "Right" { Resize "Increase Right"; }
+    //     bind "="     { Resize "Increase";       }
+    //     bind "-"     { Resize "Decrease";       }
+    // }
     pane {
         // bind "n" { NewPane; SwitchToMode "Normal"; }
         bind "Left"  { MovePane     "Left";                              }
