@@ -50,18 +50,11 @@ alias rgc="yadm list | grep '^\.' | xargs rg"
 
 # zellij
 alias z='zellij'
-alias a='attach'
-new() {
+zz() {
+    # default to 'dev' session
     if [ -z "$1" ]; then
-        echo 'specify session name'
+        z a dev
     else
         z -s "$1"
-    fi
-}
-attach() {
-    if [ -z "$1" ]; then
-        echo 'specify session name'
-    else
-        z a "$1"
     fi
 }
