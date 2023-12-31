@@ -13,7 +13,7 @@ source "/opt/homebrew/opt/fzf/shell/completion.zsh"
 source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
 FD_OPTS="--follow --hidden"
-export FZF_DEFAULT_OPTS="--multi --info=inline-right --height 30% --layout=reverse --border=sharp --no-separator"
+export FZF_DEFAULT_OPTS="--multi --info=inline-right --height 20% --layout=reverse --border=sharp --no-separator"
 export FZF_DEFAULT_COMMAND="fd --type f --type l $FD_OPTS"
 
 # ctrl + [f]ile
@@ -41,6 +41,12 @@ bindkey "^T" fzf-cd-widget
 # ctrl + histo[r]y
 export FZF_CTRL_R_OPTS="
   --prompt=hist:
-  --header '<C-x> copy, <C-r> toggle sort'
+  --header '<C-x> copy, <C-r> toggle sort, <S-enter> run'
   --bind 'ctrl-x:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --bind 'ctrl-r:toggle-sort'
+  --bind 'shift-enter:execute-silent(echo {2..} | xargs -I % sh -c %)+abort'
+  --layout=default
 "
+# bind up arrow key to fzf history widget
+bindkey "^[OA" fzf-history-widget
+# bindkey "^[[A" fzf-history-widget

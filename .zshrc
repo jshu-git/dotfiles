@@ -15,14 +15,10 @@ setopt HIST_VERIFY            # Do not execute immediately upon history expansio
 KEYTIMEOUT=1
 
 # oh-my-zsh
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="jshu"
-# ENABLE_CORRECTION="true"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-HIST_STAMPS="yyyy-mm-dd"
-plugins=(zsh-autosuggestions fast-syntax-highlighting)
-zstyle ':omz:update' mode reminder # just remind me to update when it's time
-source $ZSH/oh-my-zsh.sh
+export ZSH="$HOME/.config/zsh"
+source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/jshu.zsh-theme
 
 # fzf
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
