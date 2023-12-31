@@ -26,22 +26,24 @@ function yy() {
 }
 
 # nav
-alias l='ls'
-alias ll='ls -ltA'
 alias h='cd ~'
 alias desk='cd ~/Desktop'
 alias g='cd ~/git'
 alias mnt='mount | grep -E ^/dev | column -t'
 alias path='echo -e ${PATH//:/\\n}'
 alias env="env | sort | awk -F= '{printf \"%-30s %s\n\", \$1, \$2}'"
-
 # [b]ack [n] directories
 alias b='b() { cd $(printf "%0.s../" $(seq 1 ${1:-1})); } && b'
-
 # always ls after cd
 alias cd='cd() { builtin cd "${1:-..}" && ls; }; cd'
 alias d='cd'
 
+# eza ~/.eza/eza-wrapper.sh
+alias l='ls'
+# [l]ong [A]lmost all [o]ctal perms [t]ime modified
+alias ll='ls -lAot'
+# [T]ree [L]evel
+alias llt='ll -T -L'
 # bat
 alias cat='bat'
 

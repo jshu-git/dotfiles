@@ -7,6 +7,8 @@ keybinds clear-defaults=true {
         bind "Down"  { MovePane     "Down";                              }
         bind "Up"    { MovePane     "Up";                                }
         bind "Right" { MovePane     "Right";                             }
+        bind "="     { Resize       "Increase";                          }
+        bind "-"     { Resize       "Decrease";                          }
         bind "r"     { SwitchToMode "RenamePane"; PaneNameInput 0;       }
         bind "h"     { NewPane      "Down";       SwitchToMode "Normal"; }
         bind "v"     { NewPane      "Right";      SwitchToMode "Normal"; }
@@ -15,12 +17,12 @@ keybinds clear-defaults=true {
         bind "b"     { BreakPane;                 SwitchToMode "Normal"; }
         bind "]"     { BreakPaneRight;            SwitchToMode "Normal"; }
         bind "["     { BreakPaneLeft;             SwitchToMode "Normal"; }
+
     }
     tab {
         bind "Left"  { GoToPreviousTab;                                 }
         bind "Right" { GoToNextTab;                                     }
         bind "Tab"   { ToggleTab;                                       }
-        bind "Enter" { SwitchToMode "Normal";                           }
         bind "r"     { SwitchToMode "RenameTab"; TabNameInput 0;        }
         bind "n"     { NewTab;                   SwitchToMode "Normal"; }
         bind "x"     { CloseTab;                 SwitchToMode "Normal"; }
@@ -47,49 +49,39 @@ keybinds clear-defaults=true {
     }
     // special modes
     renamepane {
-        bind "Enter" { SwitchToMode    "Normal";              }
-        bind "Esc"   { UndoRenamePane; SwitchToMode "Normal"; }
+        bind "Esc" { UndoRenamePane; SwitchToMode "Normal"; }
     }
     renametab {
-        bind "Enter" { SwitchToMode   "Normal";               }
-        bind "Esc"   { UndoRenameTab; SwitchToMode "Normal";  }
+        bind "Esc" { UndoRenameTab; SwitchToMode "Normal";  }
     }
-    // resize {
-    //     bind "Left"  { Resize "Increase Left";  }
-    //     bind "Down"  { Resize "Increase Down";  }
-    //     bind "Up"    { Resize "Increase Up";    }
-    //     bind "Right" { Resize "Increase Right"; }
-    //     bind "="     { Resize "Increase";       }
-    //     bind "-"     { Resize "Decrease";       }
-    // }
 
     // status bar
     shared_except "pane" "locked" {
-        bind "Ctrl p" { SwitchToMode "Pane"; }
+        bind "Ctrl q" { SwitchToMode "Pane";    }
     }
     shared_except "session" "locked" {
         bind "Ctrl s" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
-        bind "Ctrl t" { SwitchToMode "Tab"; }
+        bind "Ctrl w" { SwitchToMode "Tab";     }
     }
-    // shared_except "resize" "locked" {
-    //     bind "Ctrl r" { SwitchToMode "Resize"; }
-    // }
 
     // lock/unlocking
     locked {
-        bind "Ctrl a" { SwitchToMode "Normal"; }
+        bind "Ctrl g" { SwitchToMode "Normal"; }
     }
     shared_except "locked" {
-        bind "Ctrl a" { SwitchToMode "Locked"; }
+        bind "Ctrl g" { SwitchToMode "Locked"; }
     }
 
     // escaping modes
-    // for all modes except renaming modes, you can escape with esc/q
-    // for renaming modes, you can escape with esc. and enter performs the action and escapes
+    // for all modes, you can escape with enter and esc
+    shared_except "normal" "locked" {
+        bind "Enter" "Esc" { SwitchToMode "Normal"; }
+    }
+    // for all modes except renaming modes, you can also escape with q
     shared_except "normal" "locked" "renamepane" "renametab" {
-        bind "Esc" "q" { SwitchToMode "Normal"; }
+        bind "q" { SwitchToMode "Normal"; }
     }
 }
 
