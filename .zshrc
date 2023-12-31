@@ -24,7 +24,7 @@ plugins=(zsh-autosuggestions fast-syntax-highlighting)
 zstyle ':omz:update' mode reminder # just remind me to update when it's time
 source $ZSH/oh-my-zsh.sh
 
-# fzf + fd
+# fzf
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 # eza https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
