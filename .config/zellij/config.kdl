@@ -3,16 +3,7 @@
 
 keybinds clear-defaults=true {
     // modes
-    // resize {
-    //     bind "Left"  { Resize "Increase Left";  }
-    //     bind "Down"  { Resize "Increase Down";  }
-    //     bind "Up"    { Resize "Increase Up";    }
-    //     bind "Right" { Resize "Increase Right"; }
-    //     bind "="     { Resize "Increase";       }
-    //     bind "-"     { Resize "Decrease";       }
-    // }
     pane {
-        // bind "n" { NewPane; SwitchToMode "Normal"; }
         bind "Left"  { MovePane     "Left";                              }
         bind "Down"  { MovePane     "Down";                              }
         bind "Up"    { MovePane     "Up";                                }
@@ -66,20 +57,28 @@ keybinds clear-defaults=true {
         bind "Enter"        { SwitchToMode   "Normal";               }
         bind "Ctrl c" "Esc" { UndoRenameTab; SwitchToMode "Normal";  }
     }
+    // resize {
+    //     bind "Left"  { Resize "Increase Left";  }
+    //     bind "Down"  { Resize "Increase Down";  }
+    //     bind "Up"    { Resize "Increase Up";    }
+    //     bind "Right" { Resize "Increase Right"; }
+    //     bind "="     { Resize "Increase";       }
+    //     bind "-"     { Resize "Decrease";       }
+    // }
 
     // status bar
     shared_except "pane" "locked" {
         bind "Ctrl p" { SwitchToMode "Pane"; }
     }
-    // shared_except "resize" "locked" { // temporary until mouse mode is implemented
-    //     bind "Ctrl r" { SwitchToMode "Resize"; }
-    // }
     shared_except "session" "locked" {
         bind "Ctrl s" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
         bind "Ctrl t" { SwitchToMode "Tab"; }
     }
+    // shared_except "resize" "locked" {
+    //     bind "Ctrl r" { SwitchToMode "Resize"; }
+    // }
 
     // lock/unlocking
     locked {
@@ -91,7 +90,7 @@ keybinds clear-defaults=true {
 
     // escaping modes
     // for all modes except renaming modes, you can quit out with esc/C-c/q
-    // for renaming modes, you can quit out with only esc/C-c. and enter performs the action and quits
+    // for renaming modes, you can quit out with esc/C-c. and enter performs the action and quits
     shared_except "normal" "locked" "renamepane" "renametab" {
         bind "Ctrl c" "Esc" "q" { SwitchToMode "Normal"; }
     }
