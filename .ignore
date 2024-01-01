@@ -1,10 +1,10 @@
 # fd (used with fzf) and ripgrep
 
-# ignore everything in Library except for vscode
+# ignore all of Library except for vscode
 Library/*
-Library/Application\ Support
-!Library/Application\ Support
-!/Library/Application\ Support/Code
+Library/Application\ Support/*
+!Library/Application\ Support/
+!/Library/Application\ Support/Code/
 
 Pictures
 Music
