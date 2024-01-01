@@ -1,7 +1,11 @@
 # fd (used with fzf) and ripgrep
 
-Library/Containers
-Library/Caches
+# ignore everything in Library except for vscode
+Library/*
+Library/Application\ Support
+!Library/Application\ Support
+!/Library/Application\ Support/Code
+
 Pictures
 Music
 Applications
@@ -19,3 +23,7 @@ node_modules
 .tldrc
 .vscode
 .npm
+.cache
+.dropbox
+.local
+.config/zsh

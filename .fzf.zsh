@@ -20,8 +20,9 @@ export FZF_DEFAULT_COMMAND="fd --type f --type l $FD_OPTS"
 export FZF_CTRL_T_OPTS="
   --prompt=file:
   --preview 'bat {}'
-  --header '<C-x> vscode'
+  --header '<C-x> vscode <C-o> finder'
   --bind 'ctrl-x:execute(code {})+abort'
+  --bind 'ctrl-o:execute(open -R {})+abort'
 
 "
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -32,8 +33,9 @@ bindkey "^F" fzf-file-widget
 export FZF_ALT_C_OPTS="
   --prompt=dir:
   --preview 'tree -C {}'
-  --header '<C-x> vscode'
+  --header '<C-x> vscode <C-o> finder'
   --bind 'ctrl-x:execute(code {})+abort'
+  --bind 'ctrl-o:execute(open -R {})+abort'
 "
 export FZF_ALT_C_COMMAND="fd --type d $FD_OPTS"
 bindkey "^T" fzf-cd-widget
@@ -41,7 +43,7 @@ bindkey "^T" fzf-cd-widget
 # ctrl + histo[r]y
 export FZF_CTRL_R_OPTS="
   --prompt=hist:
-  --header '<C-x> copy, <C-r> toggle sort'
+  --header '<C-x> copy <C-r> toggle sort'
   --bind 'ctrl-x:execute-silent(echo -n {2..} | pbcopy)+abort'
   --bind 'ctrl-r:toggle-sort'
   --bind 'alt-enter:execute-silent(echo {2..} | xargs -I % sh -c %)+abort'
