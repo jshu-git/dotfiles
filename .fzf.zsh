@@ -45,9 +45,10 @@ bindkey "^T" fzf-cd-widget
 # ctrl + histo[r]y
 export FZF_CTRL_R_OPTS="
   --prompt=hist:
-  --header '<C-y> copy <C-r> sort'
+  --header '<C-y> copy <C-r> sort <C-h> history'
   --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
   --bind 'ctrl-r:toggle-sort'
+  --bind 'ctrl-h:execute(code "$HOME/.zsh_history")+abort'
   --layout=default
 "
 # bind up arrow key to fzf history widget
