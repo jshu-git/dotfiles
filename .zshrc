@@ -18,7 +18,7 @@ KEYTIMEOUT=1
 export ZSH="$HOME/.config/zsh"
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH/jshu.zsh-theme
+source $ZSH/theme.zsh
 
 # fzf
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
