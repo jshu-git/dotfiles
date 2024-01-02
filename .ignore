@@ -1,4 +1,4 @@
-# fd (used with fzf) and ripgrep
+<!-- # fd (used with fzf) and ripgrep
 Library
 Pictures
 Music
@@ -20,4 +20,4 @@ node_modules
 .cache
 .dropbox
 .local
-.config/zsh
+.config/zsh -->

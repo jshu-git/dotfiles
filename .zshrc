@@ -24,14 +24,10 @@ source $ZSH/theme.zsh
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 # eza https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
-if (($ + commands[exa])); then
-  alias ls="$HOME/.config/eza/eza-wrapper.sh"
-else
-  alias ls="command ls $LS_OPTIONS"
-fi
+[ -f $HOME/.config/eza/eza-wrapper.sh ] && alias ls="$HOME/.config/eza/eza-wrapper.sh"
 
 # ripgrep
-export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+[ -f $HOME/.ripgreprc ] && export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 if [ -f $HOME/.aliases ]; then
   . $HOME/.aliases

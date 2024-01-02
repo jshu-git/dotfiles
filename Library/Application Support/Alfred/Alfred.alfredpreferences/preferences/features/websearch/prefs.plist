@@ -13,7 +13,7 @@
 			<key>text</key>
 			<string>Seach reddit for '{query}'</string>
 			<key>url</key>
-			<string>https://duckduckgo.com/?q={query}+site:reddit.com</string>
+			<string>https://www.google.com/search?&amp;q={query}+site:reddit.com</string>
 		</dict>
 	</dict>
 	<key>onlyShowEnabledInPrefs</key>
