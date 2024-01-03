@@ -1,6 +1,5 @@
 - general
-  - Safari
-    - [Wipr](https://apps.apple.com/us/app/wipr/id1320666476)
+  - [Orion](https://kagi.com/orion/)
   - [Visual Studio Code](https://code.visualstudio.com/)
   - [Dropbox](https://www.dropbox.com/downloading?os=mac)
   - [1Password](https://1password.com/downloads/mac/)
