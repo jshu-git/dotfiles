@@ -40,8 +40,8 @@ if [ -f $CONFIG/.fzf.zsh ]; then
     --layout=default
     "
     # bind up arrow key to fzf history widget
-    # bindkey "^[OA" fzf-history-widget
     bindkey -r "^R"
+    # bindkey "^[OA" fzf-history-widget
     bindkey "^[[A" fzf-history-widget
 fi
 
@@ -77,5 +77,3 @@ if command -v zellij >/dev/null 2>&1; then
         fi
     }
 fi
-
-

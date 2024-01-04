@@ -28,3 +28,5 @@ source $ZSH/theme.zsh
 
 [ -f $CONFIG/.aliases.zsh ] && source $CONFIG/.aliases.zsh
 [ -f $CONFIG/.plugins.zsh ] && source $CONFIG/.plugins.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
