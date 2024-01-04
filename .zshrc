@@ -14,6 +14,9 @@ setopt HIST_VERIFY            # Do not execute immediately upon history expansio
 # https://www.johnhawthorn.com/2012/09/vi-escape-delays/
 KEYTIMEOUT=1
 
+# https://superuser.com/questions/148207/how-can-i-make-zsh-completion-behave-like-bash-completion
+setopt noautomenu
+
 # ~/.config
 CONFIG="$HOME/.config"
 
@@ -23,13 +26,5 @@ source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/theme.zsh
 
-# fzf
-[ -f $CONFIG/.fzf.zsh ] && source $CONFIG/.fzf.zsh
-
-# eza https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
-[ -f $CONFIG/eza/eza-wrapper.sh ] && alias ls="$CONFIG/eza/eza-wrapper.sh"
-
-# ripgrep
-[ -f $CONFIG/.ripgreprc ] && export RIPGREP_CONFIG_PATH="$CONFIG/.ripgreprc"
-
-[ -f $CONFIG/.aliases ] && source $CONFIG/.aliases
+[ -f $CONFIG/.aliases.zsh ] && source $CONFIG/.aliases.zsh
+[ -f $CONFIG/.plugins.zsh ] && source $CONFIG/.plugins.zsh

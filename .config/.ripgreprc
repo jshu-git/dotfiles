@@ -6,7 +6,7 @@
 --hidden
 
 # Set the colors.
---colors=line:none
+# --colors=line:none
 # --colors=line:style:bold
 
 # Because who cares about case!?
@@ -15,3 +15,7 @@
 --max-depth=8
 # Follow symbolic links while recursively searching.
 --follow
+
+--line-number
+--no-heading
+--color=always

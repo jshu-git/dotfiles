@@ -20,4 +20,5 @@ node_modules
 .cache
 .dropbox
 .local
-# .config/zsh/plugins
+.config/zsh/plugins
+.zcompdump*
