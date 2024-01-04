@@ -32,7 +32,7 @@ alias env="env | sort | awk -F= '{printf \"%-30s %s\n\", \$1, \$2}'"
 alias b='b() { cd $(printf "%0.s../" $(seq 1 ${1:-1})); } && b'
 # ls
 alias l='ls'
-# [l]ong [A]lmost all [o]ctal perms [t]ime modified
+# [l]ong [A]lmost all [o]ctal [t]ime modified
 alias ll='ls -lAot'
 # [T]ree [L]evel
 alias llt='ll -T -L'
@@ -55,13 +55,12 @@ function dd() {
 alias cat='bat'
 
 # zellij
-alias z='zellij'
 zz() {
     # default to 'dev' session
     if [ -z "$1" ]; then
-        z a dev
+        zellij a dev
     else
-        z -s "$1"
+        zellij -s "$1"
     fi
 }
 

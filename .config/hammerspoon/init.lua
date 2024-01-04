@@ -11,7 +11,7 @@ hs.window.animationDuration = 0
 windowPositions = {
     hs.layout.maximized,
     -- centered
-    geometry.rect(0.1, 0.1, 0.8, 0.8),
+    geometry.rect(0.2, 0.1, 0.6, 0.8),
     hs.layout.left50,
     hs.layout.right50,
 }
@@ -79,3 +79,27 @@ local shiftCmdDelete = function()
 end
 hs.hotkey.bind({ "shift" }, "delete", shiftDelete, nil, shiftDelete)
 hs.hotkey.bind({ "cmd", "shift" }, "delete", shiftCmdDelete, nil, shiftCmdDelete)
+
+-- application switcher
+apps = {
+    -- {'1', 'company.thebrowser.Browser'}, -- for some reason, only arc doesn't allow for hiding
+    -- {'2', 'com.microsoft.VSCode'},
+    {'A', 'org.alacritty'},
+    -- {'F', 'com.apple.finder'},
+}
+for i, app in ipairs(apps) do
+    hs.hotkey.bind(hyper, app[1], function()
+        local appObj = hs.application.get(app[2])
+
+        if not appObj then
+            -- The app is not running, so launch it
+            hs.application.launchOrFocusByBundleID(app[2])
+        elseif appObj:isFrontmost() then
+            -- The app is running and in focus, so send it to the back
+            appObj:hide()
+        else
+            -- The app is running but not in focus, so focus it
+            hs.application.launchOrFocusByBundleID(app[2])
+        end
+    end)
+end
