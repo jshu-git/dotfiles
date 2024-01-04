@@ -14,21 +14,22 @@ setopt HIST_VERIFY            # Do not execute immediately upon history expansio
 # https://www.johnhawthorn.com/2012/09/vi-escape-delays/
 KEYTIMEOUT=1
 
+# ~/.config
+CONFIG="$HOME/.config"
+
 # oh-my-zsh
-export ZSH="$HOME/.config/zsh"
+export ZSH="$CONFIG/zsh"
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/theme.zsh
 
 # fzf
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+[ -f $CONFIG/.fzf.zsh ] && source $CONFIG/.fzf.zsh
 
 # eza https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
-[ -f $HOME/.config/eza/eza-wrapper.sh ] && alias ls="$HOME/.config/eza/eza-wrapper.sh"
+[ -f $CONFIG/eza/eza-wrapper.sh ] && alias ls="$CONFIG/eza/eza-wrapper.sh"
 
 # ripgrep
-[ -f $HOME/.ripgreprc ] && export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+[ -f $CONFIG/.ripgreprc ] && export RIPGREP_CONFIG_PATH="$CONFIG/.ripgreprc"
 
-if [ -f $HOME/.aliases ]; then
-  . $HOME/.aliases
-fi
+[ -f $CONFIG/.aliases ] && source $CONFIG/.aliases
