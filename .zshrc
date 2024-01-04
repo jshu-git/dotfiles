@@ -24,9 +24,8 @@ CONFIG="$HOME/.config"
 export ZSH="$CONFIG/zsh"
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source $ZSH/plugins/fzf-tab/fzf-tab.plugin.zsh
 source $ZSH/theme.zsh
 
 [ -f $CONFIG/.aliases.zsh ] && source $CONFIG/.aliases.zsh
 [ -f $CONFIG/.plugins.zsh ] && source $CONFIG/.plugins.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

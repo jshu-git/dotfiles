@@ -43,6 +43,7 @@ if [ -f $CONFIG/.fzf.zsh ]; then
     bindkey -r "^R"
     # bindkey "^[OA" fzf-history-widget
     bindkey "^[[A" fzf-history-widget
+    bindkey "^I" fzf-completion
 fi
 
 # eza https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
