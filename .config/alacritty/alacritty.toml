@@ -1,0 +1,53 @@
+# https://github.com/alacritty/alacritty/issues/6999
+# man 5 alacritty
+
+# general
+live_config_reload    = true
+
+#[shell]
+
+[env]
+#TERM                  = "xterm-256color"
+TERM                   = "alacritty"
+
+[window]
+decorations           = "None"
+opacity               = 0.8
+startup_mode          = "Maximized"
+dynamic_title         = false
+option_as_alt         = "OnlyLeft"
+
+[scrolling]
+multiplier            = 1
+
+[font]
+normal                = { family = "FiraCode Nerd Font", style = "Light" }
+size                  = 16.0
+
+[colors]
+transparent_background_colors = true
+draw_bold_text_with_bright_colors = true
+
+[bell]
+
+[selection]
+semantic_escape_chars = ",│‘|:\"' ()[]{}<>"
+save_to_clipboard     = true
+
+[cursor]
+style                 = { shape = "Beam", blinking = "Always" }
+# not working for some reason
+vi_mode_style         = { shape = "Block", blinking = "Always" }
+blink_interval        = 500
+blink_timeout         = 0
+thickness             = 0.1
+
+[terminal]
+
+[mouse]
+
+[hints]
+
+[keyboard]
+
+[debug]
