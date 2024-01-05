@@ -12,8 +12,8 @@ windowPositions = {
     hs.layout.maximized,
     -- centered
     geometry.rect(0.2, 0.1, 0.6, 0.8),
-    hs.layout.left50,
-    hs.layout.right50,
+    -- hs.layout.left50,
+    -- hs.layout.right50,
 }
 
 -- cycle through window positions
