@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>5A4F9434-523F-4F88-93E0-5651E3BD4EEA</string>
+				<string>C49969A0-1EF3-4D98-A80D-E1AADF5E59FF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -27,20 +27,43 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>configs</string>
+	<string>home</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>code ~</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C49969A0-1EF3-4D98-A80D-E1AADF5E59FF</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>configs</string>
+				<string>home</string>
 				<key>subtext</key>
-				<string>~/configs.code-workspace</string>
+				<string>code ~</string>
 				<key>text</key>
-				<string>open configs</string>
+				<string>open vscode home</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -50,21 +73,6 @@
 			<string>4969DD89-13CC-41B5-9F00-BEE778D25461</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string>~/configs.code-workspace</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>5A4F9434-523F-4F88-93E0-5651E3BD4EEA</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -78,10 +86,10 @@
 			<key>ypos</key>
 			<real>15</real>
 		</dict>
-		<key>5A4F9434-523F-4F88-93E0-5651E3BD4EEA</key>
+		<key>C49969A0-1EF3-4D98-A80D-E1AADF5E59FF</key>
 		<dict>
 			<key>xpos</key>
-			<real>205</real>
+			<real>185</real>
 			<key>ypos</key>
 			<real>15</real>
 		</dict>
