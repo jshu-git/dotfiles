@@ -12,7 +12,7 @@ setopt HIST_SAVE_NO_DUPS      # Do not write a duplicate event to the history fi
 setopt HIST_VERIFY            # Do not execute immediately upon history expansion.
 
 # https://www.johnhawthorn.com/2012/09/vi-escape-delays/
-KEYTIMEOUT=1
+KEYTIMEOUT=w
 
 # https://superuser.com/questions/148207/how-can-i-make-zsh-completion-behave-like-bash-completion
 setopt noautomenu

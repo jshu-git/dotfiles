@@ -10,8 +10,8 @@ keybinds clear-defaults=true {
         bind "="     { Resize       "Increase";                          }
         bind "-"     { Resize       "Decrease";                          }
         // bind "r"     { SwitchToMode "RenamePane"; PaneNameInput 0;       }
-        bind "q"     { NewPane      "Right";      SwitchToMode "Normal"; }
-        bind "w"     { NewPane      "Down";       SwitchToMode "Normal"; }
+        bind "s"     { NewPane      "Right";      SwitchToMode "Normal"; }
+        bind "a"     { NewPane      "Down";       SwitchToMode "Normal"; }
         bind "f"     { ToggleFloatingPanes;       SwitchToMode "Normal"; }
         bind "e"     { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
         // bind "b"     { BreakPane;                 SwitchToMode "Normal"; }
@@ -57,7 +57,7 @@ keybinds clear-defaults=true {
 
     // status bar
     shared_except "pane" "locked" {
-        bind "Ctrl q" { SwitchToMode "Pane";    }
+        bind "Ctrl a" { SwitchToMode "Pane";    }
     }
     shared_except "session" "locked" {
         bind "Ctrl s" { SwitchToMode "Session"; }
