@@ -54,7 +54,7 @@ if [ -f $CONFIG/.ripgreprc ]; then
     export RIPGREP_CONFIG_PATH="$CONFIG/.ripgreprc"
 
     # fzf with ripgrep https://github.com/junegunn/fzf/issues/2789 https://news.ycombinator.com/item?id=38471822
-    function frg {
+    function rgg {
         result=$(rg "$@" | fzf --delimiter ':' --prompt="grep ("$@")": --header '<Enter> vscode')
         file=${result%%:*}
         linenumber=$(echo "${result}" | cut -d: -f2)

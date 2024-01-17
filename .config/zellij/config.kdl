@@ -17,7 +17,6 @@ keybinds clear-defaults=true {
         // bind "b"     { BreakPane;                 SwitchToMode "Normal"; }
         // bind "]"     { BreakPaneRight;            SwitchToMode "Normal"; }
         // bind "["     { BreakPaneLeft;             SwitchToMode "Normal"; }
-
     }
     tab {
         bind "Left"  { GoToPreviousTab;                                 }
