@@ -77,4 +77,21 @@ if command -v zellij >/dev/null 2>&1; then
             zellij -s "$1"
         fi
     }
+    alias zr='zellij run -f -- '
+fi
+
+# yadm
+if command -v yadm >/dev/null 2>&1; then
+    alias y='yadm'
+    alias ys='y status'
+    alias yd='y diff'
+    alias yp='y pull'
+    function yy() {
+        yadm pull
+        yadm add -u
+        yadm status
+        echo "enter commit message:"
+        read commit_msg
+        yadm commit -m "$commit_msg" && yadm push
+    }
 fi
