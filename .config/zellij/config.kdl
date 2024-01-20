@@ -3,12 +3,12 @@
 keybinds clear-defaults=true {
     // modes
     pane {
-        bind "Left"  { MovePane     "Left";                              }
-        bind "Down"  { MovePane     "Down";                              }
-        bind "Up"    { MovePane     "Up";                                }
-        bind "Right" { MovePane     "Right";                             }
-        bind "="     { Resize       "Increase";                          }
-        bind "-"     { Resize       "Decrease";                          }
+        bind "Left"  { MovePane     "Left";     }
+        bind "Down"  { MovePane     "Down";     }
+        bind "Up"    { MovePane     "Up";       }
+        bind "Right" { MovePane     "Right";    }
+        bind "="     { Resize       "Increase"; }
+        bind "-"     { Resize       "Decrease"; }
         // bind "r"     { SwitchToMode "RenamePane"; PaneNameInput 0;       }
         bind "s"     { NewPane      "Right";      SwitchToMode "Normal"; }
         bind "a"     { NewPane      "Down";       SwitchToMode "Normal"; }
@@ -79,9 +79,9 @@ keybinds clear-defaults=true {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
     // for all modes except renaming modes, you can also escape with q
-    // shared_except "normal" "locked" "renamepane" "renametab" {
-    //     bind "q" { SwitchToMode "Normal"; }
-    // }
+    shared_except "normal" "locked" "renamepane" "renametab" {
+        bind "q" { SwitchToMode "Normal"; }
+    }
 }
 
 plugins {
@@ -177,7 +177,7 @@ theme "gruvbox-dark"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "vertical"
+default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal

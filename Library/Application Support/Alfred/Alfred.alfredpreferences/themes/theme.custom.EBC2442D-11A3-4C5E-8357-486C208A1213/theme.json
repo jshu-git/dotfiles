@@ -5,7 +5,7 @@
       "subtext" : {
         "size" : 12,
         "colorSelected" : "#FFFFFFCC",
-        "font" : "Fira Code",
+        "font" : "FiraCode Nerd Font",
         "color" : "#FFFFFF66"
       },
       "shortcut" : {
@@ -18,7 +18,7 @@
       "text" : {
         "size" : 20,
         "colorSelected" : "#FFFFFFFF",
-        "font" : "Fira Code",
+        "font" : "FiraCode Nerd Font",
         "color" : "#FFFFFFD8"
       },
       "iconPaddingHorizontal" : 0,
@@ -33,7 +33,7 @@
       "text" : {
         "size" : 36,
         "colorSelected" : "#FFFFFFFF",
-        "font" : "Fira Code",
+        "font" : "FiraCode Nerd Font",
         "color" : "#FFFFFFFF"
       },
       "background" : "#0000007F",
