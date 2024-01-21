@@ -35,10 +35,10 @@ keybinds clear-defaults=true {
         // bind "7"     { GoToTab 7;                SwitchToMode "Normal"; }
         // bind "8"     { GoToTab 8;                SwitchToMode "Normal"; }
         // bind "9"     { GoToTab 9;                SwitchToMode "Normal"; }
-    }
-    session {
+
+        // session
         bind "d" { Detach; }
-        bind "w" {
+        bind "m" {
             LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
                 move_to_focused_tab true
@@ -46,6 +46,16 @@ keybinds clear-defaults=true {
             SwitchToMode "Normal"
         }
     }
+    // session {
+    //     bind "d" { Detach; }
+    //     bind "w" {
+    //         LaunchOrFocusPlugin "zellij:session-manager" {
+    //             floating true
+    //             move_to_focused_tab true
+    //         };
+    //         SwitchToMode "Normal"
+    //     }
+    // }
     // special modes
     renamepane {
         bind "Esc" { UndoRenamePane; SwitchToMode "Normal"; }
@@ -54,7 +64,7 @@ keybinds clear-defaults=true {
         bind "Esc" { UndoRenameTab; SwitchToMode "Normal";  }
     }
 
-    // status bar
+    // main modes
     shared_except "pane" "locked" {
         bind "Ctrl a" { SwitchToMode "Pane"; }
     }
