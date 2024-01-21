@@ -49,7 +49,7 @@ up    = "no_op"
 down  = "no_op"
 left  = "no_op"
 right = "no_op"
-A-c = "copy_selection_on_prev_line"
+A-c   = "copy_selection_on_prev_line"
 # paragraph navigation
 "{"   = "goto_prev_paragraph"
 "}"   = "goto_next_paragraph"

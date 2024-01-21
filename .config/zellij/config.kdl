@@ -19,7 +19,7 @@ keybinds clear-defaults=true {
         // bind "["     { BreakPaneLeft;             SwitchToMode "Normal"; }
 
         // tab
-        bind "Tab"   { ToggleTab;                                       }
+        // bind "Tab"   { ToggleTab;                                       }
         bind "r"     { SwitchToMode "RenameTab"; TabNameInput 0;        }
         bind "w"     { NewTab;                   SwitchToMode "Normal"; }
         // bind "x"     { CloseTab;                 SwitchToMode "Normal"; }

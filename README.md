@@ -26,7 +26,7 @@
     - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
 
 - [brew](https://brew.sh/)
-  - `brew install bat eza fd fzf helix ripgrep tldr tree yadm zellij`
+  - `brew install bat eza fd fzf helix ripgrep tree yadm zellij`
 
 - macos
   - [increase key repeat](https://gist.github.com/hofmannsven/ff21749b0e6afc50da458bebbd9989c5)
