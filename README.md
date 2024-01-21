@@ -24,6 +24,5 @@
     - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
     - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting#oh-my-zsh)
 
-- cli tools
-  - [brew](https://brew.sh/)
+- [brew](https://brew.sh/)
   - `brew install bat eza fd fzf helix ripgrep tldr tree yadm zellij`
