@@ -17,24 +17,18 @@ keybinds clear-defaults=true {
         // bind "b"     { BreakPane;                 SwitchToMode "Normal"; }
         // bind "]"     { BreakPaneRight;            SwitchToMode "Normal"; }
         // bind "["     { BreakPaneLeft;             SwitchToMode "Normal"; }
-    }
-    tab {
-        // bind "Left"  { GoToPreviousTab;                                 }
-        // bind "Right" { GoToNextTab;                                     }
+
+        // tab
         bind "Tab"   { ToggleTab;                                       }
         bind "r"     { SwitchToMode "RenameTab"; TabNameInput 0;        }
         bind "w"     { NewTab;                   SwitchToMode "Normal"; }
-        bind "x"     { CloseTab;                 SwitchToMode "Normal"; }
-        bind "s"     { ToggleActiveSyncTab;      SwitchToMode "Normal"; }
+        // bind "x"     { CloseTab;                 SwitchToMode "Normal"; }
+        // bind "s"     { ToggleActiveSyncTab;      SwitchToMode "Normal"; }
         bind "1"     { GoToTab 1;                SwitchToMode "Normal"; }
         bind "2"     { GoToTab 2;                SwitchToMode "Normal"; }
         bind "3"     { GoToTab 3;                SwitchToMode "Normal"; }
         bind "4"     { GoToTab 4;                SwitchToMode "Normal"; }
         bind "5"     { GoToTab 5;                SwitchToMode "Normal"; }
-        // bind "6"     { GoToTab 6;                SwitchToMode "Normal"; }
-        // bind "7"     { GoToTab 7;                SwitchToMode "Normal"; }
-        // bind "8"     { GoToTab 8;                SwitchToMode "Normal"; }
-        // bind "9"     { GoToTab 9;                SwitchToMode "Normal"; }
 
         // session
         bind "d" { Detach; }
@@ -46,6 +40,24 @@ keybinds clear-defaults=true {
             SwitchToMode "Normal"
         }
     }
+    // tab {
+    //     // bind "Left"  { GoToPreviousTab;                                 }
+    //     // bind "Right" { GoToNextTab;                                     }
+    //     bind "Tab"   { ToggleTab;                                       }
+    //     bind "r"     { SwitchToMode "RenameTab"; TabNameInput 0;        }
+    //     bind "w"     { NewTab;                   SwitchToMode "Normal"; }
+    //     bind "x"     { CloseTab;                 SwitchToMode "Normal"; }
+    //     bind "s"     { ToggleActiveSyncTab;      SwitchToMode "Normal"; }
+    //     bind "1"     { GoToTab 1;                SwitchToMode "Normal"; }
+    //     bind "2"     { GoToTab 2;                SwitchToMode "Normal"; }
+    //     bind "3"     { GoToTab 3;                SwitchToMode "Normal"; }
+    //     bind "4"     { GoToTab 4;                SwitchToMode "Normal"; }
+    //     bind "5"     { GoToTab 5;                SwitchToMode "Normal"; }
+    //     // bind "6"     { GoToTab 6;                SwitchToMode "Normal"; }
+    //     // bind "7"     { GoToTab 7;                SwitchToMode "Normal"; }
+    //     // bind "8"     { GoToTab 8;                SwitchToMode "Normal"; }
+    //     // bind "9"     { GoToTab 9;                SwitchToMode "Normal"; }
+    // }
     // session {
     //     bind "d" { Detach; }
     //     bind "w" {
@@ -56,24 +68,25 @@ keybinds clear-defaults=true {
     //         SwitchToMode "Normal"
     //     }
     // }
+
     // special modes
-    renamepane {
-        bind "Esc" { UndoRenamePane; SwitchToMode "Normal"; }
-    }
+    // renamepane {
+    //     bind "Esc" { UndoRenamePane; SwitchToMode "Normal"; }
+    // }
     renametab {
         bind "Esc" { UndoRenameTab; SwitchToMode "Normal";  }
     }
 
-    // main modes
+    // accessing modes
     shared_except "pane" "locked" {
         bind "Ctrl a" { SwitchToMode "Pane"; }
     }
     // shared_except "session" "locked" {
     //     bind "Ctrl s" { SwitchToMode "Session"; }
     // }
-    shared_except "tab" "locked" {
-        bind "Ctrl w" { SwitchToMode "Tab"; }
-    }
+    // shared_except "tab" "locked" {
+    //     bind "Ctrl w" { SwitchToMode "Tab"; }
+    // }
 
     // lock/unlocking
     locked {
@@ -88,10 +101,6 @@ keybinds clear-defaults=true {
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
-    // for all modes except renaming modes, you can also escape with q
-    // shared_except "normal" "locked" "renamepane" "renametab" {
-    //     bind "q" { SwitchToMode "Normal"; }
-    // }
 }
 
 plugins {

@@ -1,7 +1,8 @@
-theme = "gruvbox_dark_hard"
+theme = "gruvbox_material_dark_hard"
 
 [editor]
 line-number  = "relative"
+# mouse        = false
 scroll-lines = 1
 # cursorline   = true
 # cursorcolumn = true
@@ -22,6 +23,9 @@ min-width = 1
 
 [editor.indent-guides]
 render = true
+
+[editor.search]
+wrap-around = false
 
 [editor.statusline]
 mode.normal = "NORMAL"
@@ -45,18 +49,23 @@ up    = "no_op"
 down  = "no_op"
 left  = "no_op"
 right = "no_op"
+A-c = "copy_selection_on_prev_line"
 # paragraph navigation
 "{"   = "goto_prev_paragraph"
 "}"   = "goto_next_paragraph"
 # buffer navigation
-"["   = { b = "goto_previous_buffer" }
-"]"   = { b = "goto_next_buffer" }
+"["   = { "[" = "goto_previous_buffer" }
+"]"   = { "]" = "goto_next_buffer" }
 # move lines
 C-j   = ["extend_to_line_bounds", "delete_selection", "paste_after"] 
 C-k   = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+# better jumplist
+C-i   = "jump_backward"
+C-o   = "jump_forward"
 
 [keys.select]
 esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
+# paragraph navigation
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
 

@@ -21,7 +21,7 @@ setopt noautomenu
 CONFIG="$HOME/.config"
 
 # oh-my-zsh
-export ZSH="$CONFIG/zsh"
+ZSH="$CONFIG/zsh"
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source $ZSH/plugins/fzf-tab/fzf-tab.plugin.zsh
