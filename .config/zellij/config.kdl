@@ -19,8 +19,8 @@ keybinds clear-defaults=true {
         // bind "["     { BreakPaneLeft;             SwitchToMode "Normal"; }
     }
     tab {
-        bind "Left"  { GoToPreviousTab;                                 }
-        bind "Right" { GoToNextTab;                                     }
+        // bind "Left"  { GoToPreviousTab;                                 }
+        // bind "Right" { GoToNextTab;                                     }
         bind "Tab"   { ToggleTab;                                       }
         bind "r"     { SwitchToMode "RenameTab"; TabNameInput 0;        }
         bind "w"     { NewTab;                   SwitchToMode "Normal"; }
@@ -31,10 +31,10 @@ keybinds clear-defaults=true {
         bind "3"     { GoToTab 3;                SwitchToMode "Normal"; }
         bind "4"     { GoToTab 4;                SwitchToMode "Normal"; }
         bind "5"     { GoToTab 5;                SwitchToMode "Normal"; }
-        bind "6"     { GoToTab 6;                SwitchToMode "Normal"; }
-        bind "7"     { GoToTab 7;                SwitchToMode "Normal"; }
-        bind "8"     { GoToTab 8;                SwitchToMode "Normal"; }
-        bind "9"     { GoToTab 9;                SwitchToMode "Normal"; }
+        // bind "6"     { GoToTab 6;                SwitchToMode "Normal"; }
+        // bind "7"     { GoToTab 7;                SwitchToMode "Normal"; }
+        // bind "8"     { GoToTab 8;                SwitchToMode "Normal"; }
+        // bind "9"     { GoToTab 9;                SwitchToMode "Normal"; }
     }
     session {
         bind "d" { Detach; }
@@ -56,13 +56,13 @@ keybinds clear-defaults=true {
 
     // status bar
     shared_except "pane" "locked" {
-        bind "Ctrl a" { SwitchToMode "Pane";    }
+        bind "Ctrl a" { SwitchToMode "Pane"; }
     }
-    shared_except "session" "locked" {
-        bind "Ctrl s" { SwitchToMode "Session"; }
-    }
+    // shared_except "session" "locked" {
+    //     bind "Ctrl s" { SwitchToMode "Session"; }
+    // }
     shared_except "tab" "locked" {
-        bind "Ctrl w" { SwitchToMode "Tab";     }
+        bind "Ctrl w" { SwitchToMode "Tab"; }
     }
 
     // lock/unlocking
@@ -79,9 +79,9 @@ keybinds clear-defaults=true {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
     // for all modes except renaming modes, you can also escape with q
-    shared_except "normal" "locked" "renamepane" "renametab" {
-        bind "q" { SwitchToMode "Normal"; }
-    }
+    // shared_except "normal" "locked" "renamepane" "renametab" {
+    //     bind "q" { SwitchToMode "Normal"; }
+    // }
 }
 
 plugins {
