@@ -1,7 +1,8 @@
 - workflow
   - [Orion](https://kagi.com/orion/)
-  - [Visual Studio Code](https://code.visualstudio.com/)
+  - [Helix](https://helix-editor.com/)
   - [Alacritty](https://github.com/alacritty/alacritty)
+
 - productivity
   - [Alfred](https://www.alfredapp.com/)
   - [Hyperkey](https://hyperkey.app/)
@@ -25,4 +26,4 @@
 
 - cli tools
   - [brew](https://brew.sh/)
-  - `brew install bat eza fd fzf ripgrep tldr tree yadm zellij`
+  - `brew install bat eza fd fzf helix ripgrep tldr tree yadm zellij`
