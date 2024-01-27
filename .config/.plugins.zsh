@@ -95,3 +95,6 @@ if command -v yadm >/dev/null 2>&1; then
         yadm commit -m "$commit_msg" && yadm push
     }
 fi
+
+# zoxide
+eval "$(zoxide init zsh --cmd d)"
