@@ -24,6 +24,9 @@ min-width = 1
 [editor.indent-guides]
 render = true
 
+[editor.lsp]
+display-inlay-hints = true
+
 [editor.search]
 wrap-around = false
 
@@ -57,7 +60,7 @@ A-c   = "copy_selection_on_prev_line"
 "["   = { "[" = "goto_previous_buffer" }
 "]"   = { "]" = "goto_next_buffer" }
 # move lines
-C-j   = ["extend_to_line_bounds", "delete_selection", "paste_after"] 
+C-j   = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k   = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 # better jumplist
 C-i   = "jump_backward"

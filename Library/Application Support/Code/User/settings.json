@@ -1,0 +1,186 @@
+{
+    "apc.activityBar": {
+        "hideSettings": true,
+        "position": "top",
+        "size": 35
+    },
+    "apc.electron": {
+        "frame": false,
+        "opacity": 0.96,
+        "titleBarStyle": "hidden",
+        "trafficLightPosition": {
+            "x": 9,
+            "y": 9
+        }
+    },
+    "apc.listRow": {
+        "height": 16,
+        "parts": {
+            "extensions-list": {
+                "height": 60
+            },
+            "results": {
+                "height": 20
+            },
+            "scm-view": {
+                "height": 24
+            }
+        }
+    },
+    "apc.parts.font.family": {
+        "sidebar": "FiraCode Nerd Font"
+    },
+    "apc.sidebar.titlebar": {
+        "height": 24 // required for .sidebar .composite.title to be hidden properly
+    },
+    "apc.statusBar": {
+        "height": 18,
+        "position": "editor-bottom"
+    },
+    "apc.stylesheet": {
+        // remove hover text from activity bar
+        ".context-view > .workbench-hover-container": "display: none !important",
+        // activity bar title
+        ".sidebar .composite.title": "display: none !important",
+        // hide scm buttons
+        "li.action-item[title='Commit']": "display: none !important"
+    },
+    "breadcrumbs.symbolPath": "off",
+    "diffEditor.experimental.showMoves": true,
+    "diffEditor.hideUnchangedRegions.contextLineCount": 5,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "diffEditor.renderSideBySide": false,
+    "docsView.documentationView.updateMode": "sticky",
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.find.addExtraSpaceOnTop": false,
+    "editor.find.cursorMoveOnType": false,
+    "editor.find.seedSearchStringFromSelection": "selection",
+    "editor.foldingHighlight": false,
+    "editor.fontFamily": "FiraCode Nerd Font",
+    "editor.fontSize": 14,
+    "editor.glyphMargin": false,
+    "editor.guides.bracketPairs": "active",
+    "editor.hover.delay": 400,
+    "editor.lightbulb.enabled": false,
+    "editor.lineDecorationsWidth": 2,
+    "editor.lineHeight": 16,
+    "editor.lineNumbers": "relative",
+    "editor.linkedEditing": true,
+    "editor.minimap.enabled": false,
+    "editor.occurrencesHighlight": "multiFile",
+    "editor.renderLineHighlight": "gutter",
+    "editor.scrollbar.horizontalScrollbarSize": 8,
+    "editor.scrollbar.vertical": "visible",
+    "editor.scrollbar.verticalScrollbarSize": 8,
+    "editor.scrollBeyondLastLine": false,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.semanticTokenColorCustomizations": {},
+    "editor.showFoldingControls": "always",
+    "editor.smartSelect.selectSubwords": false,
+    "editor.smoothScrolling": true,
+    "editor.tokenColorCustomizations": {
+        "[*]": {
+            "textMateRules": [
+                {
+                    "name": "remove italics",
+                    "scope": [
+                        "comment",
+                        "storage.modifier",
+                        "punctuation.definition.comment"
+                    ],
+                    "settings": {
+                        "fontStyle": ""
+                    }
+                }
+            ]
+        }
+    },
+    "explorer.autoReveal": "focusNoScroll",
+    "explorer.compactFolders": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.copyRelativePathSeparator": "/",
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "extensions.ignoreRecommendations": true,
+    "files.insertFinalNewline": true,
+    "files.simpleDialog.enable": true,
+    "files.trimTrailingWhitespace": true,
+    "git.autofetch": true,
+    "git.autofetchPeriod": 600,
+    "git.autoStash": true,
+    "git.branchPrefix": "feature/",
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "git.openRepositoryInParentFolders": "always",
+    "git.rebaseWhenSync": true,
+    "gitblame.inlineMessageFormat": "${author.name}: ${commit.summary} (${time.ago})",
+    "gitblame.inlineMessageMargin": 4,
+    "gitblame.statusBarMessageClickAction": "Open tool URL",
+    "github.copilot.enable": {
+        "*": true,
+        "markdown": "true",
+        "plaintext": "true",
+        "scminput": "true"
+    },
+    "go.inlayHints.assignVariableTypes": true,
+    "go.inlayHints.compositeLiteralFields": true,
+    "go.inlayHints.compositeLiteralTypes": true,
+    "go.inlayHints.constantValues": true,
+    "go.inlayHints.functionTypeParameters": true,
+    "go.inlayHints.parameterNames": true,
+    "go.inlayHints.rangeVariableTypes": true,
+    "go.lintFlags": [
+        "--fast"
+    ],
+    "go.lintTool": "golangci-lint",
+    "material-icon-theme.folders.theme": "classic",
+    "material-icon-theme.hidesExplorerArrows": true,
+    "prettier.tabWidth": 4,
+    "remote.downloadExtensionsLocally": true,
+    "scm.alwaysShowActions": true,
+    "scm.alwaysShowRepositories": true,
+    "scm.defaultViewMode": "tree",
+    "search.defaultViewMode": "tree",
+    "search.followSymlinks": false,
+    "search.showLineNumbers": true,
+    "search.smartCase": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.macOptionIsMeta": true,
+    "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.showExitAlert": false,
+    "terminal.integrated.tabs.enabled": false,
+    "vim.cursorStylePerMode.insert": "line-thin",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.cursorStylePerMode.visual": "underline-thin",
+    "vim.cursorStylePerMode.visualblock": "underline-thin",
+    "vim.cursorStylePerMode.visualline": "underline-thin",
+    "vim.foldfix": true,
+    "vim.highlightedyank.enable": true,
+    "vim.smartRelativeLine": true,
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "$HOME/.config/.vimrc",
+    "window.titleBarStyle": "native",
+    "workbench.colorTheme": "Nightfox",
+    "workbench.editor.doubleClickTabToToggleEditorGroupSizes": "maximize",
+    "workbench.editor.tabActionCloseVisibility": false,
+    "workbench.editor.tabSizing": "fixed",
+    "workbench.editor.tabSizingFixedMaxWidth": 80,
+    "workbench.editor.tabSizingFixedMinWidth": 80,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.list.smoothScrolling": true,
+    "workbench.productIconTheme": "fluent-icons",
+    "workbench.sideBar.location": "right",
+    "workbench.tree.indent": 12,
+    "workbench.tree.renderIndentGuides": "none",
+    "workbench.statusBar.visible": false
+}
