@@ -62,6 +62,7 @@
     "editor.linkedEditing": true,
     "editor.minimap.enabled": false,
     "editor.occurrencesHighlight": "multiFile",
+    "editor.renderLineHighlight": "all",
     "editor.scrollBeyondLastLine": false,
     "editor.semanticHighlighting.enabled": true,
     "editor.showFoldingControls": "always",
@@ -116,9 +117,7 @@
     "go.inlayHints.functionTypeParameters": true,
     "go.inlayHints.parameterNames": true,
     "go.inlayHints.rangeVariableTypes": true,
-    "go.lintFlags": [
-        "--fast"
-    ],
+    "go.lintFlags": ["--fast"],
     "go.lintTool": "golangci-lint",
     "material-icon-theme.folders.theme": "classic",
     "material-icon-theme.hidesExplorerArrows": true,
@@ -138,10 +137,15 @@
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.fontSize": 14,
+    "terminal.integrated.macOptionIsMeta": true,
     "terminal.integrated.scrollback": 10000,
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.tabs.enabled": false,
     "window.titleBarStyle": "native",
+    "workbench.colorCustomizations": {
+        "editor.lineHighlightBackground": "#202d3e",
+        "editor.lineHighlightBorder": "#202d3e"
+    },
     "workbench.colorTheme": "Nightfox",
     "workbench.editor.doubleClickTabToToggleEditorGroupSizes": "maximize",
     "workbench.editor.tabActionCloseVisibility": false,
@@ -153,11 +157,5 @@
     "workbench.sideBar.location": "right",
     "workbench.tree.indent": 12,
     "workbench.tree.renderIndentGuides": "none",
-    "editor.renderLineHighlight": "all",
-    "workbench.statusBar.visible": false,
-    "workbench.colorCustomizations": {
-        "editor.lineHighlightBackground": "#202d3e",
-        "editor.lineHighlightBorder": "#202d3e"
-    },
-    "terminal.integrated.macOptionIsMeta": true
+    "workbench.statusBar.visible": false
 }
