@@ -1,8 +1,26 @@
+CONFIG="$HOME/.config"
+ZSH="$CONFIG/zsh"
+source $ZSH/theme.zsh
+
+# zsh plugins
+if [ -d $ZSH/plugins ]; then
+    source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+    source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
 # fzf
 if [ -f $CONFIG/.fzf.zsh ]; then
     source $CONFIG/.fzf.zsh
-
-    export FZF_DEFAULT_OPTS="--multi --info=inline-right --height 10% --layout=reverse --border=sharp --no-separator --ansi"
+    export FZF_DEFAULT_OPTS="
+    --no-multi
+    --info=inline-right
+    --height 10%
+    --layout=reverse
+    --border=sharp
+    --no-separator
+    --ansi
+    --prompt=file:
+    "
     export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden"
 
     # ctrl + [f]ile https://github.com/sharkdp/bat
@@ -43,7 +61,6 @@ if [ -f $CONFIG/.fzf.zsh ]; then
     bindkey -r "^R"
     # bindkey "^[OA" fzf-history-widget
     bindkey "^[[A" fzf-history-widget
-    bindkey "^I" fzf-completion
 fi
 
 # eza https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
@@ -97,4 +114,6 @@ if command -v yadm >/dev/null 2>&1; then
 fi
 
 # zoxide
-eval "$(zoxide init zsh --cmd d)"
+if command -v zoxide > dev/null 2>&1; then
+    eval "$(zoxide init zsh --cmd d)"
+fi

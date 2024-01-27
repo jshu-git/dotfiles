@@ -17,15 +17,12 @@ KEYTIMEOUT=1
 # https://superuser.com/questions/148207/how-can-i-make-zsh-completion-behave-like-bash-completion
 setopt noautomenu
 
+# completions
+autoload -Uz compinit
+compinit
+compdef _gnu_generic fzf
+
 # ~/.config
 CONFIG="$HOME/.config"
-
-# oh-my-zsh
-ZSH="$CONFIG/zsh"
-source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source $ZSH/plugins/fzf-tab/fzf-tab.plugin.zsh
-source $ZSH/theme.zsh
-
 [ -f $CONFIG/.aliases.zsh ] && source $CONFIG/.aliases.zsh
 [ -f $CONFIG/.plugins.zsh ] && source $CONFIG/.plugins.zsh
