@@ -1,6 +1,6 @@
 - workflow
+  - editor: [Visual Studio Code](https://code.visualstudio.com/)
   - terminal: [Alacritty](https://github.com/alacritty/alacritty)
-  - editor: [Helix](https://helix-editor.com/)
   - terminal multiplexer: [Zellij](https://zellij.dev/)
   - browser: [Orion](https://kagi.com/orion/)
 
