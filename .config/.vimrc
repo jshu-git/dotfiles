@@ -63,3 +63,10 @@ nnoremap <right> <nop>
 " inoremap <down> <nop>
 " inoremap <left> <nop>
 " inoremap <right> <nop>
+
+
+
+" plugins
+" vim-indent-object
+nnoremap <leader>i vii
+nnoremap <leader>I vai
