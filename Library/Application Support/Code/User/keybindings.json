@@ -387,26 +387,6 @@
         "command": "workbench.action.decreaseViewSize"
     },
     {
-        "key": "alt+w",
-        "command": "editor.action.smartSelect.expand",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+shift+right",
-        "command": "-editor.action.smartSelect.expand",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "shift+alt+w",
-        "command": "editor.action.smartSelect.shrink",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+shift+left",
-        "command": "-editor.action.smartSelect.shrink",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "cmd+1",
         "command": "-workbench.action.focusFirstEditorGroup"
     },
@@ -453,13 +433,7 @@
         "command": "terminalHere.create"
     },
     {
-        "key": "alt+x",
-        "command": "editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "shift+cmd+k",
-        "command": "-editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
+        "key": "alt+a",
+        "command": "extension.autoalign"
     }
 ]

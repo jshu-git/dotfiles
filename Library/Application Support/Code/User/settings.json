@@ -41,6 +41,7 @@
         // hide scm buttons
         "li.action-item[title='Commit']": "display: none !important"
     },
+    "autoalign.minSeparationLeft": 1,
     "breadcrumbs.symbolPath": "off",
     "diffEditor.hideUnchangedRegions.enabled": true,
     "diffEditor.renderSideBySide": false,
@@ -165,7 +166,6 @@
     "workbench.editor.tabSizingFixedMaxWidth": 80,
     "workbench.editor.tabSizingFixedMinWidth": 80,
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.productIconTheme": "fluent-icons",
     "workbench.sideBar.location": "right",
     "workbench.tree.indent": 12,
     "workbench.tree.renderIndentGuides": "none"

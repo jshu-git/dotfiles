@@ -50,6 +50,10 @@ nnoremap <bs> X
 inoremap ll <right>
 inoremap hh <left>
 
+
+
+
+
 " disable arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
