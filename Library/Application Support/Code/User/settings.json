@@ -117,7 +117,9 @@
     "go.inlayHints.functionTypeParameters": true,
     "go.inlayHints.parameterNames": true,
     "go.inlayHints.rangeVariableTypes": true,
-    "go.lintFlags": ["--fast"],
+    "go.lintFlags": [
+        "--fast"
+    ],
     "go.lintTool": "golangci-lint",
     "material-icon-theme.folders.theme": "classic",
     "material-icon-theme.hidesExplorerArrows": true,
@@ -155,7 +157,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.productIconTheme": "fluent-icons",
     "workbench.sideBar.location": "right",
+    "workbench.statusBar.visible": false,
     "workbench.tree.indent": 12,
-    "workbench.tree.renderIndentGuides": "none",
-    "workbench.statusBar.visible": false
+    "workbench.tree.renderIndentGuides": "none"
 }
