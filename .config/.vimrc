@@ -31,7 +31,7 @@ map H ^"0
 map K 6k
 map J 6j
 
-" better movement for word wrap
+" better movement
 nnoremap j gj
 nnoremap k gk
 
@@ -63,13 +63,12 @@ nnoremap <leader>I vai
 
 " copy under
 nnoremap <leader>y "+yG
-" delete under
-nnoremap <leader>d dG
-
 
 " unintuitive mappings but very useful
 " change word
 nnoremap S ciw
+" nnoremap <leader>c ciw
 
 " delete word
 nnoremap X daw
+" nnoremap <leader>d daw
