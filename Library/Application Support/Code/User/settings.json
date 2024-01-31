@@ -23,7 +23,7 @@
                 "height": 20
             },
             "scm-view": {
-                "height": 24
+                "height": 22
             }
         }
     },
@@ -46,9 +46,11 @@
     "diffEditor.hideUnchangedRegions.enabled": true,
     "diffEditor.renderSideBySide": false,
     "docsView.documentationView.updateMode": "sticky",
+    "editor.accessibilitySupport": "off",
     "editor.cursorBlinking": "smooth",
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.find.addExtraSpaceOnTop": false,
     "editor.find.cursorMoveOnType": false,
     "editor.find.seedSearchStringFromSelection": "selection",
     "editor.foldingHighlight": false,
@@ -64,9 +66,9 @@
     "editor.minimap.enabled": false,
     "editor.occurrencesHighlight": "multiFile",
     "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "boundary",
     "editor.scrollBeyondLastLine": false,
     "editor.semanticHighlighting.enabled": true,
-    "editor.showFoldingControls": "always",
     "editor.smartSelect.selectSubwords": false,
     "editor.tokenColorCustomizations": {
         "[*]": {
@@ -129,6 +131,8 @@
     "scm.alwaysShowActions": true,
     "scm.alwaysShowRepositories": true,
     "scm.defaultViewMode": "tree",
+    "scm.diffDecorations": "gutter",
+    "scm.diffDecorationsGutterWidth": 5,
     "search.defaultViewMode": "tree",
     "search.followSymlinks": false,
     "search.showLineNumbers": true,
@@ -142,6 +146,7 @@
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.macOptionIsMeta": true,
     "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.tabs.enabled": false,
     "vim.cursorStylePerMode.insert": "line-thin",
@@ -149,6 +154,7 @@
     "vim.cursorStylePerMode.visual": "underline-thin",
     "vim.cursorStylePerMode.visualblock": "underline-thin",
     "vim.cursorStylePerMode.visualline": "underline-thin",
+    "vim.foldfix": true,
     "vim.highlightedyank.enable": true,
     "vim.leader": " ",
     "vim.smartRelativeLine": true,
@@ -165,6 +171,7 @@
     "workbench.editor.tabSizing": "fixed",
     "workbench.editor.tabSizingFixedMaxWidth": 80,
     "workbench.editor.tabSizingFixedMinWidth": 80,
+    "workbench.editor.wrapTabs": true,
     "workbench.iconTheme": "material-icon-theme",
     "workbench.sideBar.location": "right",
     "workbench.tree.indent": 12,

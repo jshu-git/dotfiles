@@ -1,3 +1,5 @@
+set nocompatible
+
 " yank to system clipboard
 nnoremap y "+y
 xnoremap y "+y
@@ -18,30 +20,24 @@ nnoremap <S-Tab> <<
 xnoremap <Tab> >gv
 xnoremap <S-Tab> <gv
 
-" enter for empty line below
-nnoremap <CR> o<Esc>
+" add line above/below
+nnoremap <CR> o<Esc>O<Esc>
 
 " move to beginning/end of line
 map L $
-map H 0
+map H ^"0
 
 " move 6 lines up/down
 map K 6k
 map J 6j
 
-" map j and k to - and +
-nnoremap j +
-nnoremap k -
+" better movement for word wrap
+nnoremap j gj
+nnoremap k gk
 
 " repeat visual line/block to select more
 xnoremap V j
 xnoremap <C-v> j
-
-" change word
-nnoremap S ciw
-
-" delete word
-nnoremap X daw
 
 " delete backwards
 nnoremap <bs> X
@@ -50,23 +46,30 @@ nnoremap <bs> X
 inoremap ll <right>
 inoremap hh <left>
 
-
-
-
-
 " disable arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-" inoremap <up> <nop>
-" inoremap <down> <nop>
-" inoremap <left> <nop>
-" inoremap <right> <nop>
+xnoremap <up> <nop>
+xnoremap <down> <nop>
+xnoremap <left> <nop>
+xnoremap <right> <nop>
 
-
-
-" plugins
-" vim-indent-object
+" leader mappings
+" vim-indent-object plugin
 nnoremap <leader>i vii
 nnoremap <leader>I vai
+
+" copy under
+nnoremap <leader>y "+yG
+" delete under
+nnoremap <leader>d dG
+
+
+" unintuitive mappings but very useful
+" change word
+nnoremap S ciw
+
+" delete word
+nnoremap X daw
