@@ -1,11 +1,7 @@
 set nocompatible
 
-" yank to system clipboard
-nnoremap y "+y
-xnoremap y "+y
-
 " yank to end of line
-nnoremap Y y$
+nnoremap Y yg$
 
 " undo
 noremap U <C-r>
@@ -20,8 +16,9 @@ nnoremap <S-Tab> <<
 xnoremap <Tab> >gv
 xnoremap <S-Tab> <gv
 
-" add line above/below
-nnoremap <CR> o<Esc>O<Esc>
+" add line below
+" nnoremap <CR> o<Esc>O<Esc>
+nnoremap <CR> o<Esc>
 
 " move to beginning/end of line
 map L $
@@ -58,17 +55,20 @@ xnoremap <right> <nop>
 
 " leader mappings
 " vim-indent-object plugin
-nnoremap <leader>i vii
-nnoremap <leader>I vai
+" nnoremap <leader>i vii
+" nnoremap <leader>I vai
 
-" copy under
-nnoremap <leader>y "+yG
+" replace with yanked text without changing the default register
+xnoremap <leader>p "_dP
 
-" unintuitive mappings but very useful
-" change word
-nnoremap S ciw
-" nnoremap <leader>c ciw
+" yank to system clipboard
+nnoremap <leader>y "+y
+nmap <leader>Y "+Y
 
-" delete word
+" unintuitive mappings but very useful. also playing around with what feels best
+" change [i] word
+nnoremap s ciw
+nnoremap S caw
+" delete [a] word
 nnoremap X daw
-" nnoremap <leader>d daw
+" nmap <leader><leader> a

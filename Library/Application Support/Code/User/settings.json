@@ -41,6 +41,7 @@
         // hide scm buttons
         "li.action-item[title='Commit']": "display: none !important"
     },
+    "autoalign.columnWidth": 1,
     "autoalign.minSeparationLeft": 1,
     "breadcrumbs.symbolPath": "off",
     "diffEditor.hideUnchangedRegions.enabled": true,
@@ -102,6 +103,7 @@
     "git.autoStash": true,
     "git.branchPrefix": "feature/",
     "git.confirmSync": false,
+    "git.enableSmartCommit": true,
     "git.openRepositoryInParentFolders": "always",
     "git.rebaseWhenSync": true,
     "gitblame.inlineMessageFormat": "${author.name}: ${commit.summary} (${time.ago})",
@@ -149,7 +151,6 @@
     "terminal.integrated.shellIntegration.decorationsEnabled": "never",
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.tabs.enabled": false,
-    "vim.cursorStylePerMode.insert": "line-thin",
     "vim.cursorStylePerMode.normal": "block",
     "vim.cursorStylePerMode.visual": "underline-thin",
     "vim.cursorStylePerMode.visualblock": "underline-thin",
