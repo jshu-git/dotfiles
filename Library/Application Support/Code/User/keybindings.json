@@ -190,10 +190,6 @@
         "when": "editorFocus"
     },
     {
-        "key": "ctrl+g",
-        "command": "-workbench.action.gotoLine"
-    },
-    {
         "key": "shift+cmd+,",
         "command": "-editor.action.inPlaceReplace.up",
         "when": "editorTextFocus && !editorReadonly"
@@ -279,11 +275,6 @@
         "command": "workbench.action.toggleStatusbarVisibility"
     },
     {
-        "key": "shift+cmd+c",
-        "command": "-workbench.action.terminal.openNativeConsole",
-        "when": "!terminalFocus"
-    },
-    {
         "key": "cmd+t",
         "command": "workbench.action.togglePanel"
     },
@@ -314,14 +305,6 @@
         "command": "workbench.action.increaseViewSize"
     },
     {
-        "key": "alt+q",
-        "command": "editor.togglequotes"
-    },
-    {
-        "key": "cmd+'",
-        "command": "-editor.togglequotes"
-    },
-    {
         "key": "ctrl+w",
         "command": "-expand_region",
         "when": "editorTextFocus"
@@ -334,19 +317,6 @@
     {
         "key": "shift+cmd+w",
         "command": "-workbench.action.closeWindow"
-    },
-    {
-        "key": "shift+cmd+m",
-        "command": "-workbench.actions.view.problems",
-        "when": "workbench.panel.markers.view.active"
-    },
-    {
-        "key": "shift+cmd+m",
-        "command": "projectManager.listProjects"
-    },
-    {
-        "key": "alt+cmd+p",
-        "command": "-projectManager.listProjects"
     },
     {
         "key": "shift+cmd+1",
@@ -368,27 +338,8 @@
         "command": "-workbench.action.focusSecondEditorGroup"
     },
     {
-        "key": "shift+cmd+s",
-        "command": "workbench.view.scm",
-        "when": "workbench.scm.active"
-    },
-    {
-        "key": "ctrl+shift+g",
-        "command": "-workbench.view.scm",
-        "when": "workbench.scm.active"
-    },
-    {
-        "key": "shift+cmd+d",
-        "command": "-workbench.view.debug",
-        "when": "viewContainer.workbench.view.debug.enabled"
-    },
-    {
         "key": "cmd+-",
         "command": "workbench.action.decreaseViewSize"
-    },
-    {
-        "key": "cmd+1",
-        "command": "-workbench.action.focusFirstEditorGroup"
     },
     {
         "key": "tab",
@@ -411,19 +362,6 @@
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
     },
     {
-        "key": "shift+cmd+d",
-        "command": "docsView.documentation.focus"
-    },
-    {
-        "key": "shift+cmd+r",
-        "command": "-rerunSearchEditorSearch",
-        "when": "inSearchEditor"
-    },
-    {
-        "key": "shift+cmd+s",
-        "command": "-workbench.action.files.saveAs"
-    },
-    {
         "key": "shift+cmd+s",
         "command": "-workbench.action.files.saveLocalFile",
         "when": "remoteFileDialogVisible"
@@ -435,5 +373,14 @@
     {
         "key": "alt+a",
         "command": "extension.autoalign"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "cmd+r",
+        "command": "workbench.action.nextSideBarView"
     }
 ]

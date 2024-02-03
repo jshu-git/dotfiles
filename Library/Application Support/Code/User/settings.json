@@ -7,7 +7,7 @@
     "apc.electron": {
         "frame": false,
         "opacity": 0.96,
-        "titleBarStyle": "hidden",
+        "titleBarStyle": "hiddenInset",
         "trafficLightPosition": {
             "x": 9,
             "y": 9
@@ -30,14 +30,11 @@
     "apc.parts.font.family": {
         "sidebar": "FiraCode Nerd Font"
     },
-    "apc.sidebar.titlebar": {
-        "height": 24 // required for .sidebar .composite.title to be hidden properly
-    },
     "apc.stylesheet": {
         // remove hover text from activity bar
         ".context-view > .workbench-hover-container": "display: none !important",
         // activity bar title
-        ".sidebar .composite.title": "display: none !important",
+        ".monaco-workbench .part.sidebar>.title>.title-label h2": "text-transform: none",
         // hide scm buttons
         "li.action-item[title='Commit']": "display: none !important"
     },
@@ -60,7 +57,7 @@
     "editor.glyphMargin": false,
     "editor.guides.bracketPairs": "active",
     "editor.hover.delay": 400,
-    "editor.lightbulb.enabled": false,
+    "editor.lightbulb.enabled": "off",
     "editor.lineDecorationsWidth": 2,
     "editor.lineHeight": 18,
     "editor.linkedEditing": true,
@@ -70,6 +67,7 @@
     "editor.renderWhitespace": "boundary",
     "editor.scrollBeyondLastLine": false,
     "editor.semanticHighlighting.enabled": true,
+    "editor.showFoldingControls": "always",
     "editor.smartSelect.selectSubwords": false,
     "editor.tokenColorCustomizations": {
         "[*]": {
@@ -136,7 +134,6 @@
     "scm.diffDecorations": "gutter",
     "scm.diffDecorationsGutterWidth": 5,
     "search.defaultViewMode": "tree",
-    "search.followSymlinks": false,
     "search.showLineNumbers": true,
     "search.smartCase": true,
     "security.workspace.trust.untrustedFiles": "open",
@@ -144,7 +141,7 @@
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
-    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.macOptionIsMeta": true,
     "terminal.integrated.scrollback": 10000,
@@ -152,15 +149,16 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.tabs.enabled": false,
     "vim.cursorStylePerMode.normal": "block",
-    "vim.cursorStylePerMode.visual": "underline-thin",
-    "vim.cursorStylePerMode.visualblock": "underline-thin",
-    "vim.cursorStylePerMode.visualline": "underline-thin",
+    "vim.cursorStylePerMode.visual": "underline",
+    "vim.cursorStylePerMode.visualblock": "underline",
+    "vim.cursorStylePerMode.visualline": "underline",
     "vim.foldfix": true,
     "vim.highlightedyank.enable": true,
     "vim.leader": " ",
     "vim.smartRelativeLine": true,
     "vim.vimrc.enable": true,
     "vim.vimrc.path": "$HOME/.config/.vimrc",
+    "window.customTitleBarVisibility": "never",
     "window.titleBarStyle": "native",
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#202d3e",
