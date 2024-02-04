@@ -85,17 +85,17 @@ if command -v bat >/dev/null 2>&1; then
 fi
 
 # zellij
-if command -v zellij >/dev/null 2>&1; then
-    function zz() {
-        # default to 'dev' session
-        if [ -z "$1" ]; then
-            zellij a dev
-        else
-            zellij -s "$1"
-        fi
-    }
-    alias zr='zellij run -f -- '
-fi
+# if command -v zellij >/dev/null 2>&1; then
+#     function zz() {
+#         # default to 'dev' session
+#         if [ -z "$1" ]; then
+#             zellij a dev
+#         else
+#             zellij -s "$1"
+#         fi
+#     }
+#     alias zr='zellij run -f -- '
+# fi
 
 # yadm
 if command -v yadm >/dev/null 2>&1; then
@@ -116,4 +116,9 @@ fi
 # zoxide
 if command -v zoxide > /dev/null 2>&1; then
     eval "$(zoxide init zsh)"
+fi
+
+# wezterm
+if command -v wezterm > /dev/null 2>&1; then
+    alias wz='wezterm'
 fi
