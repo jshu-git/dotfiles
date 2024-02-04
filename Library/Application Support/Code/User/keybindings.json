@@ -380,14 +380,6 @@
         "when": "!terminalFocus"
     },
     {
-        "key": "cmd+r",
-        "command": "workbench.action.nextSideBarView"
-    },
-    {
-        "key": "shift+cmd+r",
-        "command": "workbench.action.previousSideBarView"
-    },
-    {
         "key": "shift+cmd+r",
         "command": "-rerunSearchEditorSearch",
         "when": "inSearchEditor"
