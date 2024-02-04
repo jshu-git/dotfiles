@@ -84,7 +84,8 @@ hs.hotkey.bind({ "cmd", "shift" }, "delete", shiftCmdDelete, nil, shiftCmdDelete
 apps = {
     -- {'1', 'company.thebrowser.Browser'}, -- for some reason, only arc doesn't allow for hiding
     -- {'2', 'com.microsoft.VSCode'},
-    {'A', 'org.alacritty'},
+    -- {'A', 'org.alacritty'},
+    {'A', 'com.github.wez.wezterm'},
     -- {'F', 'com.apple.finder'},
 }
 for i, app in ipairs(apps) do

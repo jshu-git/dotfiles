@@ -67,7 +67,7 @@ nmap <leader>Y "+Y
 
 " unintuitive mappings but very useful. also playing around with what feels best
 " change [i] word
-nnoremap s viw
-nnoremap S vaw
+nnoremap s ciw
+nnoremap S Caw
 " delete [a] word
 nnoremap X daw
