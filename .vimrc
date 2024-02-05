@@ -66,15 +66,15 @@ call plug#end()
 
 let mapleader = " "
 
-" make v and y consistent with c and d
-nnoremap V vg$
+" make v and y consistent with cc, C, dd, D
+nnoremap V v$
 nnoremap vv V
 " repeat to select more, shift for less
 xnoremap v j
 xnoremap <C-v> j
 xnoremap V k
 " yank to end of line
-nnoremap Y yg$
+nnoremap Y y$
 
 " center cursor
 noremap n nzz
@@ -100,14 +100,6 @@ xnoremap <S-Tab> <gv
 " add line below
 nnoremap <CR> o<Esc>
 
-" move to beginning/end of line
-map L g$
-map H ^"0
-
-" move 6 lines up/down
-map K 6k
-map J 6j
-
 " better movement
 nnoremap j gj
 nnoremap k gk
@@ -124,16 +116,11 @@ xnoremap <leader>p "_dP
 
 " yank to system clipboard
 nnoremap <leader>y "+y
-nmap <leader>Y "+Y
+xnoremap <leader>y "+y
 
 " fast save
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <Esc>:w<CR>
-
-" change word
-nmap S ciw
-" delete word
-nmap X daw
 
 " buffer navigation
 noremap <leader>b[ :bp<CR>
@@ -141,6 +128,25 @@ noremap <leader>b] :bn<CR>
 noremap <leader>bd :bd<CR>
 
 
+
+
+
+
+" recursive maps
+nmap <leader>Y "+Y
+" move to beginning/end of line
+map L g$
+map H ^"0
+
+" move 6 lines up/down
+map K 6k
+map J 6j
+
+" change word
+nmap s ciw
+nmap S caw
+" delete word
+nmap X daw
 
 
 
