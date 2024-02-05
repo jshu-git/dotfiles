@@ -23,6 +23,10 @@ set timeoutlen=400
 let &t_SI="\e[6 q"
 let &t_EI="\e[2 q"
 
+
+
+
+
 " plugins
 " https://github.com/junegunn/vim-plug
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
@@ -36,9 +40,8 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 call plug#begin()
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'                 " end structures
-Plug 'tpope/vim-sleuth'                  " automatically set shiftwidth and expandtab
+Plug 'tpope/vim-commentary'              " commenting
+Plug 'tpope/vim-endwise'                 " auto complete statements
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -54,9 +57,16 @@ Plug 'vim-airline/vim-airline'           " status line
 Plug 'chaoren/vim-wordmotion'            " better word motions
 call plug#end()
 
+
+
+
+
+
+
+
 let mapleader = " "
 
-" make v and y consistent
+" make v and y consistent with c and d
 nnoremap V vg$
 nnoremap vv V
 " repeat to select more, shift for less
@@ -129,6 +139,14 @@ nmap X daw
 noremap <leader>b[ :bp<CR>
 noremap <leader>b] :bn<CR>
 noremap <leader>bd :bd<CR>
+
+
+
+
+
+
+
+
 
 " plugins
 " commenting
