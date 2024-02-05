@@ -157,7 +157,7 @@
     "vim.leader": " ",
     "vim.smartRelativeLine": true,
     "vim.vimrc.enable": true,
-    "vim.vimrc.path": "$HOME/.config/.vimrc",
+    "vim.vimrc.path": "$HOME/.vimrc",
     "window.customTitleBarVisibility": "never",
     "window.titleBarStyle": "native",
     "workbench.colorCustomizations": {
@@ -174,5 +174,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.sideBar.location": "right",
     "workbench.tree.indent": 12,
-    "workbench.tree.renderIndentGuides": "none"
+    "workbench.tree.renderIndentGuides": "none",
+    "workbench.tree.enableStickyScroll": false,
+    "window.zoomLevel": 1
 }

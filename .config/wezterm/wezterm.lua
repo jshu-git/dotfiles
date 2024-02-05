@@ -11,12 +11,12 @@ wezterm.on('gui-startup', function(cmd)
 
   -- configs
   main_tab:set_title 'configs'
-  pane:send_text 'cd .config && hx ~/README.md ~/.zshrc\n'
+  pane:send_text 'cd .config && vim ~/README.md ~/.zshrc'
 
   -- shokz
   local tab, pane, window = window:spawn_tab {}
   tab:set_title 'shokz'
-  pane:send_text 'cd ~/git/shokz_downloader && hx .\n'
+  pane:send_text 'cd ~/git/shokz_downloader && vim .'
 
   main_tab:activate()
 end)

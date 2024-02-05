@@ -24,6 +24,6 @@ compdef _gnu_generic fzf
 
 # ~/.config
 CONFIG="$HOME/.config"
-alias vim='vim -u $CONFIG/.vimrc'
+# alias vim='vim -u $CONFIG/.vimrc'
 [ -f $CONFIG/.aliases.zsh ] && source $CONFIG/.aliases.zsh
 [ -f $CONFIG/.plugins.zsh ] && source $CONFIG/.plugins.zsh

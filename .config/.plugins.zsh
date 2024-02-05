@@ -85,17 +85,17 @@ if command -v bat >/dev/null 2>&1; then
 fi
 
 # zellij
-# if command -v zellij >/dev/null 2>&1; then
-#     function zz() {
-#         # default to 'dev' session
-#         if [ -z "$1" ]; then
-#             zellij a dev
-#         else
-#             zellij -s "$1"
-#         fi
-#     }
-#     alias zr='zellij run -f -- '
-# fi
+if command -v zellij >/dev/null 2>&1; then
+    function zz() {
+        # default to 'dev' session
+        if [ -z "$1" ]; then
+            zellij a dev
+        else
+            zellij -s "$1"
+        fi
+    }
+    alias zr='zellij run -f -- '
+fi
 
 # yadm
 if command -v yadm >/dev/null 2>&1; then
