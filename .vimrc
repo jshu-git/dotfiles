@@ -19,7 +19,7 @@ set nrformats-=octal
 set backspace=indent,eol,start
 set hidden
 set timeoutlen=400
-" https://stackoverflow.com/questions/6488683/how-to-change-the-cursor-between-normal-and-insert-modes-in-vim
+" change cursor in modes https://stackoverflow.com/questions/6488683/how-to-change-the-cursor-between-normal-and-insert-modes-in-vim
 let &t_SI="\e[6 q"
 let &t_EI="\e[2 q"
 
@@ -40,9 +40,8 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 call plug#begin()
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'              " commenting
-Plug 'tpope/vim-endwise'                 " auto complete statements
-Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -66,13 +65,10 @@ call plug#end()
 
 let mapleader = " "
 
-" make v and y consistent with cc, C, dd, D
-nnoremap V v$
-nnoremap vv V
-" repeat to select more, shift for less
+" repeat v to select more in visual
 xnoremap v j
+xnoremap V j
 xnoremap <C-v> j
-xnoremap V k
 " yank to end of line
 nnoremap Y y$
 
@@ -84,8 +80,7 @@ noremap { {zz
 noremap } }zz
 
 " undo
-noremap u uzz
-noremap U <C-r>zz
+noremap U <C-r>
 
 " cw 'standard' behavior https://stackoverflow.com/a/41793667
 nnoremap cw dwi
@@ -122,10 +117,9 @@ xnoremap <leader>y "+y
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <Esc>:w<CR>
 
-" buffer navigation
-noremap <leader>b[ :bp<CR>
-noremap <leader>b] :bn<CR>
-noremap <leader>bd :bd<CR>
+" fast reload
+noremap <C-r> :source $MYVIMRC<CR>
+
 
 
 
@@ -159,27 +153,30 @@ nmap X daw
 nmap <C-c> gcc
 xmap <C-c> gc
 
+" easy align
+map ga <Plug>(EasyAlign)
+
 " yank highlight
 let g:highlightedyank_highlight_duration = 100
 
 " strip whitespace
 let g:better_whitespace_enabled = 1
 let g:strip_whitespace_on_save  = 1
+let g:strip_whitespace_confirm  = 0
 
 " rainbow parentheses
 let g:rainbow_active    = 1
 " disable parentheses highlighting
 let g:loaded_matchparen = 1
 
-" easy align
-map ga <Plug>(EasyAlign)
-
-" repeat.vim
-silent! call repeat#set("\<Plug>EasyAlign", v:count)
-
 " fzf
 noremap <leader>ff :Files<CR>
+nnoremap <leader>fr :RG<CR>
+" buffer navigation
 noremap <leader>bb :Buffers<CR>
+noremap <leader>b[ :bp<CR>
+noremap <leader>b] :bn<CR>
+noremap <leader>bd :bd<CR>
 
 " airline
 let g:airline#extensions#tabline#enabled       = 1
