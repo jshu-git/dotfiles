@@ -14,9 +14,9 @@ syntax on
 " https://old.reddit.com/r/vim/comments/11ntbmv/whats_your_vimrc_setup_for_2023/
 filetype on
 set autoindent
-set expandtab " use spaces instead of tabs
+set expandtab    " use spaces instead of tabs
 set hidden
-set hlsearch  " highlight search results
+set hlsearch     " highlight search results
 set nobackup
 set noswapfile
 set number
@@ -25,7 +25,8 @@ set softtabstop=4
 set tabstop=4
 set background=dark
 set laststatus=2 " always show status line
-set noshowmode " don't show mode as lightline already does
+set noshowmode   " don't show mode as lightline already does
+set updatetime=100
 
 " change cursor in modes https://stackoverflow.com/questions/6488683/how-to-change-the-cursor-between-normal-and-insert-modes-in-vim
 let &t_EI="\e[2 q"
@@ -48,7 +49,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 call plug#begin()
-Plug 'chaoren/vim-wordmotion'
+Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-sort-motion'
 Plug 'github/copilot.vim'
 Plug 'itchyny/lightline.vim'
@@ -64,6 +65,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'  " more text objects
+Plug 'yggdroot/indentline'
 call plug#end()
 
 
@@ -132,7 +134,7 @@ xnoremap <leader>y "+y
 
 " fast save
 nnoremap <C-s> :w<CR>
-inoremap <C-s> <Esc>:w<CR>
+inoremap <C-s> <Esc>:w<CR>l
 
 " fast reload
 noremap <C-r> :source $MYVIMRC<CR>
@@ -192,22 +194,28 @@ noremap <leader>ff :Files<CR>
 noremap <leader>fr :RG<CR>
 " buffer navigation
 noremap <leader>bb :Buffers<CR>
-noremap <leader>b[ :bp<CR>
-noremap <leader>b] :bn<CR>
-noremap <leader>bd :bd<CR>
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
 
 " vim-cool
 let g:cool_total_matches = 1
 
 " lightline
 let g:lightline = {
-      \ 'colorscheme': '16rosepine',
+      \ 'colorscheme': 'rosepine_moon',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'filename', 'modified' ] ],
+      \   'left': [ [ 'mode', 'paste', 'modified' ], [ 'gitbranch', 'filename' ] ],
       \   'right': [ [ 'readonly' ], ]
       \    },
       \ }
 
 " no more auto commenting https://vi.stackexchange.com/questions/1983/how-can-i-get-vim-to-stop-putting-comments-in-front-of-new-lines
 au FileType * set fo-=c fo-=r fo-=o
+
+" gitgutter
+highlight! link SignColumn LineNr
+
+" indentline
+let g:indentLine_char = '▏'
+let g:indentLine_enabled = 1
 
