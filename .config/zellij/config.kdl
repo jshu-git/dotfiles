@@ -11,8 +11,8 @@ keybinds clear-defaults=true {
         bind "J"     { MovePane  "Down";  SwitchToMode "Normal"; }
         bind "K"     { MovePane  "Up";    SwitchToMode "Normal"; }
         bind "L"     { MovePane  "Right"; SwitchToMode "Normal"; }
-        bind "s"     { NewPane   "Down";  SwitchToMode "Normal"; }
-        bind "v"     { NewPane   "Right"; SwitchToMode "Normal"; }
+        bind "a"     { NewPane   "Down";  SwitchToMode "Normal"; }
+        bind "s"     { NewPane   "Right"; SwitchToMode "Normal"; }
         bind "X"     { CloseFocus;        SwitchToMode "Normal"; }
         // resize
         bind "Left"  { Resize "Increase Left"; }

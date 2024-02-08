@@ -27,7 +27,7 @@ set background=dark
 set laststatus=2 " always show status line
 set noshowmode   " don't show mode as lightline already does
 set updatetime=100
-set splitbelow " automatically focus new window splits
+set splitbelow   " automatically focus new window splits
 set splitright
 set ignorecase
 
@@ -52,6 +52,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 call plug#begin()
+Plug 'EdenEast/nightfox.nvim'            " https://github.com/EdenEast/nightfox.nvim
 Plug 'airblade/vim-gitgutter'            " https://github.com/airblade/vim-gitgutter
 Plug 'christoomey/vim-sort-motion'       " https://github.com/christoomey/vim-sort-motion
 Plug 'dhruvasagar/vim-zoom'              " https://github.com/dhruvasagar/vim-zoom
@@ -67,11 +68,10 @@ Plug 'romainl/vim-cool'                  " https://github.com/romainl/vim-cool
 Plug 'tpope/vim-commentary'              " https://github.com/tpope/vim-commentary
 Plug 'tpope/vim-endwise'                 " https://github.com/tpope/vim-endwise
 Plug 'tpope/vim-surround'                " https://github.com/tpope/vim-surround
-Plug 'wellle/targets.vim'                " https://github.com/wellle/targets.vim
-Plug 'yggdroot/indentline'               " https://github.com/yggdroot/indentline
-Plug 'EdenEast/nightfox.nvim'            " https://github.com/EdenEast/nightfox.nvim
 Plug 'vim-airline/vim-airline'           " https://github.com/vim-airline/vim-airline
 Plug 'vim-airline/vim-airline-themes'
+Plug 'wellle/targets.vim'                " https://github.com/wellle/targets.vim
+Plug 'yggdroot/indentline'               " https://github.com/yggdroot/indentline
 call plug#end()
 
 colorscheme nightfox
@@ -125,7 +125,7 @@ inoremap <C-s> <Esc>:w<CR>l
 " fast reload
 noremap <C-r> :source $MYVIMRC<CR>
 " fast quit
-noremap <C-q> :q<CR>
+noremap <leader>q :q<CR>
 " fast buffer close
 noremap <leader>d :bd<CR>
 
@@ -145,7 +145,7 @@ noremap <C-u> <C-u>zz
 noremap { {zz
 noremap } }zz
 
-" delete backwards
+" backspace delete backwards
 nnoremap <bs> X
 " cw 'standard' behavior https://stackoverflow.com/a/41793667
 nnoremap cw dwi
@@ -173,6 +173,8 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+noremap <C-\> :vsplit<CR>
+noremap <C-]> :split<CR>
 " window resizing
 noremap <C-Right> 4<C-w><
 noremap <C-Left> 4<C-w>>
