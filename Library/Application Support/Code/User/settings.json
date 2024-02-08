@@ -176,5 +176,8 @@
     "workbench.tree.indent": 12,
     "workbench.tree.renderIndentGuides": "none",
     "workbench.tree.enableStickyScroll": false,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "files.associations": {
+        "*.nxsuite": "yaml"
+    }
 }

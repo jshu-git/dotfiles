@@ -7,7 +7,7 @@ set nrformats-=octal           " don't recognize octal for C-a and C-x
 set ruler
 set showcmd                    " display incomplete commands
 set ttimeout                   " timeout for key codes
-set ttimeoutlen=100            " wait upt to 100ms after Esc for special key
+set ttimeoutlen=100            " wait up to 100ms after Esc fo  special key
 set wildmenu                   " display completion matches in a status line
 syntax on
 
@@ -27,6 +27,9 @@ set background=dark
 set laststatus=2 " always show status line
 set noshowmode   " don't show mode as lightline already does
 set updatetime=100
+set splitbelow " automatically focus new window splits
+set splitright
+set ignorecase
 
 " change cursor in modes https://stackoverflow.com/questions/6488683/how-to-change-the-cursor-between-normal-and-insert-modes-in-vim
 let &t_EI="\e[2 q"
@@ -49,26 +52,29 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 call plug#begin()
-Plug 'airblade/vim-gitgutter'
-Plug 'christoomey/vim-sort-motion'
-Plug 'github/copilot.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'airblade/vim-gitgutter'            " https://github.com/airblade/vim-gitgutter
+Plug 'christoomey/vim-sort-motion'       " https://github.com/christoomey/vim-sort-motion
+Plug 'dhruvasagar/vim-zoom'              " https://github.com/dhruvasagar/vim-zoom
+Plug 'github/copilot.vim'                " https://github.com/github/copilot.vim
+Plug 'jeffkreeftmeijer/vim-numbertoggle' " https://github.com/jeffkreeftmeijer/vim-numbertoggle
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'luochen1990/rainbow' " rainbow parentheses
-Plug 'machakann/vim-highlightedyank'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'romainl/vim-cool'    " disable search highlighting after
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-surround'
-Plug 'wellle/targets.vim'  " more text objects
-Plug 'yggdroot/indentline'
+Plug 'junegunn/fzf.vim'                  " https://github.com/junegunn/fzf.vim
+Plug 'junegunn/vim-easy-align'           " https://github.com/junegunn/vim-easy-align
+Plug 'luochen1990/rainbow'               " https://github.com/luochen1990/rainbow
+Plug 'machakann/vim-highlightedyank'     " https://github.com/machakann/vim-highlightedyank
+Plug 'ntpeters/vim-better-whitespace'    " https://github.com/ntpeters/vim-better-whitespace
+Plug 'romainl/vim-cool'                  " https://github.com/romainl/vim-cool
+Plug 'tpope/vim-commentary'              " https://github.com/tpope/vim-commentary
+Plug 'tpope/vim-endwise'                 " https://github.com/tpope/vim-endwise
+Plug 'tpope/vim-surround'                " https://github.com/tpope/vim-surround
+Plug 'wellle/targets.vim'                " https://github.com/wellle/targets.vim
+Plug 'yggdroot/indentline'               " https://github.com/yggdroot/indentline
+Plug 'EdenEast/nightfox.nvim'            " https://github.com/EdenEast/nightfox.nvim
+Plug 'vim-airline/vim-airline'           " https://github.com/vim-airline/vim-airline
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-
+colorscheme nightfox
 
 
 
@@ -88,24 +94,18 @@ xnoremap # y?<C-R>"<CR>
 xnoremap v j
 xnoremap V j
 xnoremap <C-v> j
+
 " yank to end of line
 nnoremap Y y$
-
-" center cursor
-noremap n nzz
-noremap <C-d> <C-d>zz
-noremap <C-u> <C-u>zz
-noremap { {zz
-noremap } }zz
+nmap <leader>Y "+Y
+" yank to system clipboard
+nnoremap <leader>y "+y
+xnoremap <leader>y "+y
 
 " undo
 noremap U <C-r>
 
-" cw 'standard' behavior https://stackoverflow.com/a/41793667
-nnoremap cw dwi
-nnoremap cW dWi
-
-" indent/outdent with tab/shift-tab
+" indent/outdent with tab/shift-tab and keep selected
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 xnoremap <Tab> >gv
@@ -114,53 +114,70 @@ xnoremap <S-Tab> <gv
 " add line below
 nnoremap <CR> o<Esc>
 
-" better movement
-nnoremap j gj
-nnoremap k gk
-
-" delete backwards
-nnoremap <bs> X
-
-" move one character to the left/right in insert mode
-inoremap ll <right>
-inoremap hh <left>
-
-" replace with yanked text without changing the default register
-xnoremap <leader>p "_dP
-
-" yank to system clipboard
-nnoremap <leader>y "+y
-xnoremap <leader>y "+y
+" paste without changing the default register
+xnoremap p "_dP
+" format pasted line
+nnoremap p p==
 
 " fast save
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <Esc>:w<CR>l
-
 " fast reload
 noremap <C-r> :source $MYVIMRC<CR>
+" fast quit
+noremap <C-q> :q<CR>
+" fast buffer close
+noremap <leader>d :bd<CR>
+
+" better movement
+nnoremap j gj
+nnoremap k gk
+" move to beginning/end of line
+map L g$
+map H ^"0
+" move 6 lines up/down
+map K 6k
+map J 6j
+" center cursor
+noremap n nzz
+noremap <C-d> <C-d>zz
+noremap <C-u> <C-u>zz
+noremap { {zz
+noremap } }zz
+
+" delete backwards
+nnoremap <bs> X
+" cw 'standard' behavior https://stackoverflow.com/a/41793667
+nnoremap cw dwi
+nnoremap cW dWi
+" change word
+nmap s ciw
+nmap S caw
+" delete word
+nmap X daw
+" delete to black hole register
+nnoremap x "_x
+xnoremap x "_x
 
 " insert mode mappings
 " move to end of word
 inoremap <C-f> <Esc>ea
 " move to beginning of word
 inoremap <C-b> <Esc>bi
+" move one character to the left/right in insert mode
+inoremap ll <right>
+inoremap hh <left>
 
-" recursive maps
-nmap <leader>Y "+Y
-" move to beginning/end of line
-map L g$
-map H ^"0
-
-" move 6 lines up/down
-map K 6k
-map J 6j
-
-" change word
-nmap s ciw
-nmap S caw
-" delete word
-nmap X daw
-
+" window movement
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+" window resizing
+noremap <C-Right> 4<C-w><
+noremap <C-Left> 4<C-w>>
+noremap <C-Up> 4<C-w>+
+noremap <C-Down> 4<C-w>-
 
 
 
@@ -175,6 +192,16 @@ xmap <C-c> gc
 " easy align
 map ga <Plug>(EasyAlign)
 
+" fzf
+noremap <leader>ff :Files<CR>
+noremap <leader>fr :RG<CR>
+noremap <leader>fc :Commands<CR>
+noremap <leader>fw :Windows<CR>
+noremap <leader>fm :Maps<CR>
+" buffer navigation
+noremap <leader>b :Buffers<CR>
+noremap <C-N> :bprev<CR>
+noremap <C-P> :bnext<CR>
 
 " yank highlight
 let g:highlightedyank_highlight_duration = 100
@@ -189,33 +216,44 @@ let g:rainbow_active    = 1
 " disable parentheses highlighting
 let g:loaded_matchparen = 1
 
-" fzf
-noremap <leader>ff :Files<CR>
-noremap <leader>fr :RG<CR>
-" buffer navigation
-noremap <leader>bb :Buffers<CR>
-nnoremap <C-N> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
-
 " vim-cool
 let g:cool_total_matches = 1
 
-" lightline
-let g:lightline = {
-      \ 'colorscheme': 'rosepine_moon',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste', 'modified' ], [ 'gitbranch', 'filename' ] ],
-      \   'right': [ [ 'readonly' ], ]
-      \    },
-      \ }
+" indentline
+let g:indentLine_char    = '▏'
+let g:indentLine_enabled = 1
 
-" no more auto commenting https://vi.stackexchange.com/questions/1983/how-can-i-get-vim-to-stop-putting-comments-in-front-of-new-lines
-au FileType * set fo-=c fo-=r fo-=o
+" airline
+let g:airline#extensions#tabline#enabled       = 1
+let g:airline#extensions#tabline#formatter     = 'unique_tail'
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline_theme                            = 'minimalist'
+let g:airline_section_z                        = ''
+let g:airline_mode_map = {
+    \ '__'     : '-',
+    \ 'c'      : 'C',
+    \ 'i'      : 'I',
+    \ 'ic'     : 'I',
+    \ 'ix'     : 'I',
+    \ 'n'      : 'N',
+    \ 'multi'  : 'M',
+    \ 'ni'     : 'N',
+    \ 'no'     : 'N',
+    \ 'R'      : 'R',
+    \ 'Rv'     : 'R',
+    \ 's'      : 'S',
+    \ 'S'      : 'S',
+    \ ''     : 'S',
+    \ 't'      : 'T',
+    \ 'v'      : 'V',
+    \ 'V'      : 'V',
+    \ ''     : 'V',
+\ }
+
 
 " gitgutter
 highlight! link SignColumn LineNr
 
-" indentline
-let g:indentLine_char = '▏'
-let g:indentLine_enabled = 1
+" no more auto commenting https://vi.stackexchange.com/questions/1983/how-can-i-get-vim-to-stop-putting-comments-in-front-of-new-lines
+au FileType * set fo-=c fo-=r fo-=o
 

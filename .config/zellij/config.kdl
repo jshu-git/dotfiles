@@ -7,18 +7,25 @@ keybinds clear-defaults=true {
         bind "l"     { MoveFocus "Right"; SwitchToMode "Normal"; }
         bind "j"     { MoveFocus "Down";  SwitchToMode "Normal"; }
         bind "k"     { MoveFocus "Up";    SwitchToMode "Normal"; }
-        bind "Left"  { MovePane  "Left";  SwitchToMode "Normal"; }
-        bind "Down"  { MovePane  "Down";  SwitchToMode "Normal"; }
-        bind "Up"    { MovePane  "Up";    SwitchToMode "Normal"; }
-        bind "Right" { MovePane  "Right"; SwitchToMode "Normal"; }
-        bind "a"     { NewPane   "Down";  SwitchToMode "Normal"; }
-        bind "s"     { NewPane   "Right"; SwitchToMode "Normal"; }
+        bind "H"     { MovePane  "Left";  SwitchToMode "Normal"; }
+        bind "J"     { MovePane  "Down";  SwitchToMode "Normal"; }
+        bind "K"     { MovePane  "Up";    SwitchToMode "Normal"; }
+        bind "L"     { MovePane  "Right"; SwitchToMode "Normal"; }
+        bind "s"     { NewPane   "Down";  SwitchToMode "Normal"; }
+        bind "v"     { NewPane   "Right"; SwitchToMode "Normal"; }
+        bind "X"     { CloseFocus;        SwitchToMode "Normal"; }
+        // resize
+        bind "Left"  { Resize "Increase Left"; }
+        bind "Down"  { Resize "Increase Down"; }
+        bind "Up"    { Resize "Increase Up"; }
+        bind "Right" { Resize "Increase Right"; }
+
         // toggles
         bind "f"     { ToggleFloatingPanes;       SwitchToMode "Normal"; }
         bind "e"     { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
         bind "F"     { TogglePaneFrames; SwitchToMode "Normal";          }
         /* bind "R"     { SwitchToMode "RenamePane"; PaneNameInput 0;       } */
-        // bind "b"     { BreakPane;                 SwitchToMode "Normal"; }
+        // bind "B"     { BreakPane;                 SwitchToMode "Normal"; }
         // bind "]"     { BreakPaneRight;            SwitchToMode "Normal"; }
         // bind "["     { BreakPaneLeft;             SwitchToMode "Normal"; }
 
@@ -32,7 +39,6 @@ keybinds clear-defaults=true {
         bind "5" { GoToTab 5;                SwitchToMode "Normal"; }
         bind "S" { ToggleActiveSyncTab;      SwitchToMode "Normal"; }
         // bind "x"     { CloseTab;                 SwitchToMode "Normal"; }
-        // bind "Tab"   { ToggleTab;                                       }
 
         // session
         bind "D" { Detach; }
