@@ -1,4 +1,5 @@
-" https://github.com/vim/vim/blob/master/runtime/defaults.vimset backspace=indent,eol,start " allow backspacing over everything in insert mode
+" https://github.com/vim/vim/blob/master/runtime/defaults.vim
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set history=200
 set mouse=a                    " enable mouse support
 set nocompatible
