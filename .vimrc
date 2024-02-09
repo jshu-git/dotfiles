@@ -1,5 +1,4 @@
-" https://github.com/vim/vim/blob/master/runtime/defaults.vim
-set backspace=indent,eol,start " allow backspacing over everything in insert mode
+" https://github.com/vim/vim/blob/master/runtime/defaults.vimset backspace=indent,eol,start " allow backspacing over everything in insert mode
 set history=200
 set mouse=a                    " enable mouse support
 set nocompatible
@@ -72,6 +71,7 @@ Plug 'vim-airline/vim-airline'           " https://github.com/vim-airline/vim-ai
 Plug 'vim-airline/vim-airline-themes'
 Plug 'wellle/targets.vim'                " https://github.com/wellle/targets.vim
 Plug 'yggdroot/indentline'               " https://github.com/yggdroot/indentline
+Plug 'mg979/vim-visual-multi'            " https://github.com/mg979/vim-visual-multi
 call plug#end()
 
 colorscheme nightfox
@@ -174,7 +174,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-\> :vsplit<CR>
-noremap <C-]> :split<CR>
+noremap <C--> :split<CR>
 " window resizing
 noremap <C-Right> 4<C-w><
 noremap <C-Left> 4<C-w>>
@@ -202,8 +202,13 @@ noremap <leader>fw :Windows<CR>
 noremap <leader>fm :Maps<CR>
 " buffer navigation
 noremap <leader>b :Buffers<CR>
-noremap <C-N> :bprev<CR>
-noremap <C-P> :bnext<CR>
+noremap <C-]> :bnext<CR>
+noremap <C-[> :bprev<CR>
+
+" copilot
+" ctrl+space
+nnoremap <C-@> :Copilot panel<CR>
+inoremap <C-@> <Esc>:Copilot panel<CR>
 
 " yank highlight
 let g:highlightedyank_highlight_duration = 100
