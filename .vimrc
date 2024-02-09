@@ -30,6 +30,8 @@ set updatetime=100
 set splitbelow   " automatically focus new window splits
 set splitright
 set ignorecase
+set nowildmenu
+set wildmode=list:longest,full
 
 " change cursor in modes https://stackoverflow.com/questions/6488683/how-to-change-the-cursor-between-normal-and-insert-modes-in-vim
 let &t_EI="\e[2 q"
@@ -175,7 +177,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-\> :vsplit<CR>
-noremap <C--> :split<CR>
+noremap <C-_> :split<CR>
 " window resizing
 noremap <C-Right> 4<C-w><
 noremap <C-Left> 4<C-w>>

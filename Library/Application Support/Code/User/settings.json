@@ -161,10 +161,9 @@
     "window.customTitleBarVisibility": "never",
     "window.titleBarStyle": "native",
     "workbench.colorCustomizations": {
-        "editor.lineHighlightBackground": "#202d3e",
-        "editor.lineHighlightBorder": "#202d3e"
+        "editor.lineHighlightBackground": "#2d2d2d",
+        "editor.lineHighlightBorder": "#2d2d2d"
     },
-    "workbench.colorTheme": "Nightfox",
     "workbench.editor.doubleClickTabToToggleEditorGroupSizes": "maximize",
     "workbench.editor.tabActionCloseVisibility": false,
     "workbench.editor.tabSizing": "fixed",
@@ -179,5 +178,6 @@
     "window.zoomLevel": 1,
     "files.associations": {
         "*.nxsuite": "yaml"
-    }
+    },
+    "workbench.colorTheme": "Dark Low Contrast Fire"
 }
