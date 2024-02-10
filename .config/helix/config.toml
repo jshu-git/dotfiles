@@ -52,10 +52,10 @@ H   = "goto_line_start"
 G   = "goto_last_line"
 "{" = ["goto_prev_paragraph"]
 "}" = ["goto_next_paragraph"]
-C-k = "select_prev_sibling"
-C-h = "shrink_selection"
-C-l = "expand_selection"
-C-j = "select_next_sibling"
+# C-k = "select_prev_sibling"
+# C-h = "shrink_selection"
+# C-l = "expand_selection"
+# C-j = "select_next_sibling"
 
 # selection/changes
 s           = ["move_prev_word_start", "move_next_word_end"]
@@ -81,8 +81,8 @@ C-u = ["half_page_up", "align_view_center"]
 # buffer navigation
 "[" = { "[" = "goto_previous_buffer" }
 "]" = { "]" = "goto_next_buffer" }
-# C-n = [":buffer-next"]
-# C-p = [":buffer-previous"]
+C-n = [":buffer-next"]
+C-p = [":buffer-previous"]
 
 # unbinds
 # g     = { "n" = "no_op", "p" = "no_op"}
@@ -91,10 +91,10 @@ C-u = ["half_page_up", "align_view_center"]
 C-r = ":config-reload"
 C-s = ":w"
 # window navigation
-# C-h = "jump_view_left"
-# C-j = "jump_view_down"
-# C-k = "jump_view_up"
-# C-l = "jump_view_right"
+C-h = "jump_view_left"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+C-l = "jump_view_right"
 C-4 = "vsplit" # C-\
 C-7 = "hsplit" # C-minus
 
@@ -102,6 +102,10 @@ C-7 = "hsplit" # C-minus
 [keys.normal.space]
 q = ":quit"
 d = ":buffer-close"
+
+# zellij run
+[keys.normal."+"]
+b = ":run-shell-command zellij run -f -- yadm diff"
 
 [keys.insert]
 esc = ["collapse_selection", "normal_mode"]
