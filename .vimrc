@@ -65,6 +65,7 @@ Plug 'junegunn/fzf.vim'                  " https://github.com/junegunn/fzf.vim
 Plug 'junegunn/vim-easy-align'           " https://github.com/junegunn/vim-easy-align
 Plug 'luochen1990/rainbow'               " https://github.com/luochen1990/rainbow
 Plug 'machakann/vim-highlightedyank'     " https://github.com/machakann/vim-highlightedyank
+Plug 'mg979/vim-visual-multi'            " https://github.com/mg979/vim-visual-multi
 Plug 'ntpeters/vim-better-whitespace'    " https://github.com/ntpeters/vim-better-whitespace
 Plug 'romainl/vim-cool'                  " https://github.com/romainl/vim-cool
 Plug 'tpope/vim-commentary'              " https://github.com/tpope/vim-commentary
@@ -74,7 +75,6 @@ Plug 'vim-airline/vim-airline'           " https://github.com/vim-airline/vim-ai
 Plug 'vim-airline/vim-airline-themes'
 Plug 'wellle/targets.vim'                " https://github.com/wellle/targets.vim
 Plug 'yggdroot/indentline'               " https://github.com/yggdroot/indentline
-Plug 'mg979/vim-visual-multi'            " https://github.com/mg979/vim-visual-multi
 call plug#end()
 
 colorscheme nightfox
@@ -205,8 +205,8 @@ noremap <leader>fw :Windows<CR>
 noremap <leader>fm :Maps<CR>
 " buffer navigation
 noremap <leader>b :Buffers<CR>
-noremap <C-]> :bnext<CR>
-noremap <C-[> :bprev<CR>
+" noremap <C-]> :bnext<CR>
+" noremap <C-[> :bprev<CR>
 
 " copilot
 " ctrl+space
@@ -259,6 +259,8 @@ let g:airline_mode_map = {
     \ 'V'      : 'V',
     \ ''     : 'V',
 \ }
+let g:airline#extensions#tabline#left_sep     = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
 
 
 " gitgutter
