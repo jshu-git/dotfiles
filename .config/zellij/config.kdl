@@ -3,31 +3,22 @@
 keybinds clear-defaults=true {
     tmux {
         // pane
-        bind "h"     { MoveFocus "Left";  SwitchToMode "Normal"; }
-        bind "l"     { MoveFocus "Right"; SwitchToMode "Normal"; }
-        bind "j"     { MoveFocus "Down";  SwitchToMode "Normal"; }
-        bind "k"     { MoveFocus "Up";    SwitchToMode "Normal"; }
-        bind "a"     { NewPane   "Down";  SwitchToMode "Normal"; }
-        bind "s"     { NewPane   "Right"; SwitchToMode "Normal"; }
-        bind "X"     { CloseFocus;        SwitchToMode "Normal"; }
-        // move
-        bind "H"     { MovePane  "Left";  }
-        bind "J"     { MovePane  "Down";  }
-        bind "K"     { MovePane  "Up";    }
-        bind "L"     { MovePane  "Right"; }
-        // resize
-        // bind "Left"  { Resize "Increase Left"; }
-        // bind "Down"  { Resize "Increase Down"; }
-        // bind "Up"    { Resize "Increase Up"; }
-        // bind "Right" { Resize "Increase Right"; }
+        bind "h" { MoveFocus "Left";  SwitchToMode "Normal"; }
+        bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
+        bind "j" { MoveFocus "Down";  SwitchToMode "Normal"; }
+        bind "k" { MoveFocus "Up";    SwitchToMode "Normal"; }
+        bind "a" { NewPane   "Down";  SwitchToMode "Normal"; }
+        bind "s" { NewPane   "Right"; SwitchToMode "Normal"; }
+        bind "X" { CloseFocus;        SwitchToMode "Normal"; }
+        // bind "R" { SwitchToMode "RenamePane"; PaneNameInput 0; }
+        // quick resize
         bind "=" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
 
         // toggles
-        bind "f"     { ToggleFloatingPanes;       SwitchToMode "Normal"; }
-        bind "e"     { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
-        bind "F"     { TogglePaneFrames; SwitchToMode "Normal";          }
-        /* bind "R"     { SwitchToMode "RenamePane"; PaneNameInput 0;       } */
+        bind "f" { ToggleFloatingPanes;       SwitchToMode "Normal"; }
+        bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
+        bind "F" { TogglePaneFrames;          SwitchToMode "Normal"; }
         // bind "B"     { BreakPane;                 SwitchToMode "Normal"; }
         // bind "]"     { BreakPaneRight;            SwitchToMode "Normal"; }
         // bind "["     { BreakPaneLeft;             SwitchToMode "Normal"; }
@@ -53,6 +44,24 @@ keybinds clear-defaults=true {
             SwitchToMode "Normal"
         }
     }
+    move {
+        bind "h" { MovePane "Left"; }
+        bind "j" { MovePane "Down"; }
+        bind "k" { MovePane "Up"; }
+        bind "l" { MovePane "Right"; }
+    }
+    resize {
+        bind "h" { Resize "Increase Left"; }
+        bind "j" { Resize "Increase Down"; }
+        bind "k" { Resize "Increase Up"; }
+        bind "l" { Resize "Increase Right"; }
+        // bind "H" { Resize "Decrease Left"; }
+        // bind "J" { Resize "Decrease Down"; }
+        // bind "K" { Resize "Decrease Up"; }
+        // bind "L" { Resize "Decrease Right"; }
+        bind "=" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
+    }
 
     // renaming modes
     renamepane {
@@ -62,9 +71,15 @@ keybinds clear-defaults=true {
         bind "Esc" { UndoRenameTab; SwitchToMode "Normal";  }
     }
 
-    // main mode (tmux)
+    // modes
     shared_except "tmux" "locked" {
         bind "Ctrl a" { SwitchToMode "Tmux"; }
+    }
+    shared_except "move" "locked" {
+        bind "Ctrl h" { SwitchToMode "Move"; }
+    }
+    shared_except "resize" "locked" {
+        bind "Ctrl n" { SwitchToMode "Resize"; }
     }
 
     // lock/unlocking
