@@ -64,14 +64,13 @@ C-w = "no_op"
 
 # overrides/vim habits
 C-v   = "copy_selection_on_next_line"
-C-b   = "remove_primary_selection"
 A-v   = "copy_selection_on_prev_line"
 V     = "extend_to_line_end"
 C-f   = "search"
 "ret" = ["open_below", "normal_mode"]
 S     = ["move_prev_word_start", "move_next_word_end"]
-# C   = ["extend_to_line_end", "yank", "delete_selection", "insert_mode"]
-# D   = ["extend_to_line_end", "yank", "delete_selection"]
+C     = ["extend_to_line_end", "yank", "delete_selection", "insert_mode"]
+D     = ["extend_to_line_end", "yank", "delete_selection"]
 # i           = ["insert_mode", "collapse_selection"]
 # a           = ["append_mode", "collapse_selection"]
 
@@ -92,6 +91,7 @@ A-k         = ["yank", "paste_before", "collapse_selection"]
 
 # selection manipulation
 ";" = "flip_selections"
+"," = "remove_primary_selection"
 X   = "extend_line_above"
 "{" = ["goto_prev_paragraph", "align_view_center"]
 "}" = ["goto_next_paragraph", "align_view_center"]
@@ -122,11 +122,18 @@ C-7 = "hsplit" # C-minus
 # leader
 [keys.normal.space]
 q = ":quit"
-d = ":buffer-close"
+x = ":buffer-close"
+# unbinds
+k = "no_op"
+h = "no_op"
+a = "no_op"
+g = "no_op"
+
 # zellij run
-[keys.normal.space.r]
+[keys.normal.space.z]
 y = ":run-shell-command zellij run -f -- yadm status"
 g = ":run-shell-command zellij run -f -- lazygit"
+
 # unbinds
 [keys.normal.space.w]
 "C-w"   = "no_op"
@@ -150,14 +157,20 @@ g = ":run-shell-command zellij run -f -- lazygit"
 
 # goto mode
 [keys.normal.g]
+k = "hover"
+a = "code_action"
+s = "select_references_to_symbol_under_cursor"
 # unbinds
 e = "no_op"
 h = "no_op"
 l = "no_op"
 j = "no_op"
-k = "no_op"
 n = "no_op"
 p = "no_op"
+t = "no_op"
+c = "no_op"
+b = "no_op"
+m = "no_op"
 
 [keys.select]
 esc = ["collapse_selection", "normal_mode"]
@@ -173,6 +186,7 @@ G = "goto_last_line"
 
 # selection manipulation
 ";" = "flip_selections"
+"," = "remove_primary_selection"
 X   = "extend_line_above"
 "{" = ["goto_prev_paragraph", "align_view_center"]
 "}" = ["goto_next_paragraph", "align_view_center"]
