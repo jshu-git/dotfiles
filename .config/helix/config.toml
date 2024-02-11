@@ -124,7 +124,7 @@ C-7 = "hsplit" # C-minus
 q = ":quit"
 d = ":buffer-close"
 # zellij run
-[keys.normal.space.z]
+[keys.normal.space.r]
 y = ":run-shell-command zellij run -f -- yadm status"
 g = ":run-shell-command zellij run -f -- lazygit"
 # unbinds
