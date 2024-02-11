@@ -76,19 +76,19 @@ keybinds clear-defaults=true {
         bind "Ctrl a" { SwitchToMode "Tmux"; }
     }
     shared_except "move" "locked" {
-        bind "Ctrl h" { SwitchToMode "Move"; }
+        bind "Ctrl g" { SwitchToMode "Move"; }
     }
     shared_except "resize" "locked" {
-        bind "Ctrl n" { SwitchToMode "Resize"; }
+        bind "Ctrl y" { SwitchToMode "Resize"; }
     }
 
     // lock/unlocking
-    locked {
-        bind "Ctrl g" { SwitchToMode "Normal"; }
-    }
-    shared_except "locked" {
-        bind "Ctrl g" { SwitchToMode "Locked"; }
-    }
+    // locked {
+    //     bind "Ctrl g" { SwitchToMode "Normal"; }
+    // }
+    // shared_except "locked" {
+    //     bind "Ctrl g" { SwitchToMode "Locked"; }
+    // }
 
     // escaping modes
     shared_except "normal" "locked" {
