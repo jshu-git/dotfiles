@@ -65,23 +65,25 @@ C-r = ":config-reload"
 C-s = ":w"
 # unbinds
 C-w = "no_op"
-# x   = "no_op"
+x   = "no_op"
 
 # vim habits (shared with normal/select mode)
-V           = ["select_mode", "extend_to_line_bounds"]
+V           = ["select_mode", "extend_line_below"]
 C-v         = ["select_mode", "copy_selection_on_next_line"]
 A-v         = ["select_mode", "copy_selection_on_prev_line"]
-S           = ["move_prev_word_start", "move_next_word_end"]
 C           = ["extend_to_line_end", "yank", "delete_selection", "insert_mode"]
 D           = ["extend_to_line_end", "yank", "delete_selection"]
 "ret"       = ["open_below", "normal_mode"]
 "backspace" = "delete_char_backward"
 C-f         = "search"
-A-j = ["yank", "paste_after",  "collapse_selection"]
-A-k = ["yank", "paste_before", "collapse_selection"]
+A-j         = ["yank", "paste_after",  "collapse_selection"]
+A-k         = ["yank", "paste_before", "collapse_selection"]
+"tab"       = "goto_next_buffer"
+"S-tab"     = "goto_previous_buffer"
 # testing
-x           = "select_textobject_inner"
-X           = "select_textobject_around"
+# S           = ["move_prev_word_start", "move_next_word_end"]
+q           = "select_textobject_inner"
+Q           = "select_textobject_around"
 
 # movement
 J = ["move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down"]
@@ -107,9 +109,9 @@ C-u = ["half_page_up",   "align_view_center"]
 u   = ["undo",           "align_view_center"]
 U   = ["redo",           "align_view_center"]
 
-# buffer navigation
-"[" = { "[" = "goto_previous_buffer" }
-"]" = { "]" = "goto_next_buffer" }
+# unimpairs unbinds
+"[" = { "space" = "no_op", T = "no_op" }
+"]" = { "space" = "no_op", T = "no_op" }
 
 # window navigation
 C-h = "jump_view_left"
@@ -123,6 +125,10 @@ C-7 = "hsplit" # C-minus
 [keys.normal.space]
 q = ":quit"
 x = ":buffer-close"
+# zellij run
+y = ":run-shell-command zellij run -f -- yadm status"
+l = ":run-shell-command zellij run -fc -- lazygit"
+# l = ":run-shell-command zellij run -ci -- lazygit"
 # unbinds
 k = "no_op"
 h = "no_op"
@@ -130,10 +136,6 @@ a = "no_op"
 g = "no_op"
 r = "no_op"
 
-# zellij run
-[keys.normal.space.z]
-y = ":run-shell-command zellij run -f -- yadm status"
-g = ":run-shell-command zellij run -f -- lazygit"
 
 # unbinds
 [keys.normal.space.w]
@@ -179,20 +181,20 @@ m = "no_op"
 esc = ["collapse_selection", "normal_mode"]
 
 # vim habits (shared with normal/select mode)
-V           = ["extend_line_down", "extend_to_line_bounds"]
+V           = ["extend_line_below", "extend_to_line_bounds"]
 C-v         = "copy_selection_on_next_line"
 A-v         = "copy_selection_on_prev_line"
-S           = ["move_prev_word_start", "move_next_word_end"]
 C           = ["extend_to_line_end", "yank", "delete_selection", "insert_mode"]
 D           = ["extend_to_line_end", "yank", "delete_selection"]
 "ret"       = ["open_below", "normal_mode"]
 "backspace" = "delete_char_backward"
 C-f         = "search"
-A-j = ["yank", "paste_after",  "collapse_selection"]
-A-k = ["yank", "paste_before", "collapse_selection"]
+A-j         = ["yank", "paste_after",  "collapse_selection"]
+A-k         = ["yank", "paste_before", "collapse_selection"]
 # testing
-x           = "select_textobject_inner"
-X           = "select_textobject_around"
+# S           = ["move_prev_word_start", "move_next_word_end"]
+q           = "select_textobject_inner"
+Q           = "select_textobject_around"
 
 # movement
 L = "goto_line_end"
