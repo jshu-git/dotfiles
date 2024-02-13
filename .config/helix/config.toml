@@ -125,10 +125,12 @@ C-7 = "hsplit" # C-minus
 [keys.normal.space]
 q = ":quit"
 x = ":buffer-close"
+
 # zellij run
 y = ":run-shell-command zellij run -f -- yadm status"
 l = ":run-shell-command zellij run -fc -- lazygit"
 # l = ":run-shell-command zellij run -ci -- lazygit"
+
 # unbinds
 k = "no_op"
 h = "no_op"
@@ -136,9 +138,9 @@ a = "no_op"
 g = "no_op"
 r = "no_op"
 
-
-# unbinds
+# window mode
 [keys.normal.space.w]
+# unbinds
 "C-w"   = "no_op"
 "C-s"   = "no_op"
 "C-v"   = "no_op"
@@ -181,7 +183,7 @@ m = "no_op"
 esc = ["collapse_selection", "normal_mode"]
 
 # vim habits (shared with normal/select mode)
-V           = ["extend_line_below", "extend_to_line_bounds"]
+V           = "extend_line_below"
 C-v         = "copy_selection_on_next_line"
 A-v         = "copy_selection_on_prev_line"
 C           = ["extend_to_line_end", "yank", "delete_selection", "insert_mode"]
