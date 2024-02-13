@@ -7,12 +7,12 @@ theme = "nightfox"
 # theme = "tokyonight_storm"
 
 [editor]
-line-number  = "relative"
-cursorline   = true
-cursorcolumn = true
-bufferline   = "always"
-auto-format  = true
-color-modes  = true
+line-number            = "relative"
+cursorline             = true
+cursorcolumn           = true
+completion-trigger-len = 1
+bufferline             = "always"
+color-modes            = true
 
 [editor.statusline]
 left        = ["mode", "spacer", "version-control", "file-name", "file-encoding", "read-only-indicator"]
@@ -84,13 +84,14 @@ A-k         = ["yank", "paste_before", "collapse_selection"]
 # S           = ["move_prev_word_start", "move_next_word_end"]
 q           = "select_textobject_inner"
 Q           = "select_textobject_around"
+S           = "surround_add"
 
 # movement
 J = ["move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down"]
 K = ["move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up"]
 L = "goto_line_end"
 H = "goto_line_start"
-G = "goto_last_line"
+G = "goto_file_end"
 
 # selection manipulation
 ";" = "flip_selections"
@@ -114,12 +115,14 @@ U   = ["redo",           "align_view_center"]
 "]" = { "space" = "no_op", T = "no_op" }
 
 # window navigation
-C-h = "jump_view_left"
-C-j = "jump_view_down"
-C-k = "jump_view_up"
-C-l = "jump_view_right"
-C-4 = "vsplit" # C-\
-C-7 = "hsplit" # C-minus
+C-h       = "jump_view_left"
+C-j       = "jump_view_down"
+C-k       = "jump_view_up"
+C-l       = "jump_view_right"
+C-4       = "vsplit" # C-\
+C-7       = "hsplit" # C-minus
+"A-\\"    = "vsplit_new"
+"A-minus" = "hsplit_new"
 
 # leader
 [keys.normal.space]
@@ -167,9 +170,9 @@ k = "hover"
 a = "code_action"
 s = "select_references_to_symbol_under_cursor"
 R = "rename_symbol"
+h = "signature_help"
 # unbinds
 e = "no_op"
-h = "no_op"
 l = "no_op"
 j = "no_op"
 n = "no_op"
@@ -198,11 +201,12 @@ A-k         = ["yank", "paste_before", "collapse_selection"]
 # S           = ["move_prev_word_start", "move_next_word_end"]
 q           = "select_textobject_inner"
 Q           = "select_textobject_around"
+S           = "surround_add"
 
 # movement
 L = "goto_line_end"
 H = "goto_line_start"
-G = "goto_last_line"
+G = "goto_file_end"
 
 # selection manipulation
 ";" = "flip_selections"
