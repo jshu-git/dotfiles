@@ -125,6 +125,7 @@ C-7 = "hsplit" # C-minus
 [keys.normal.space]
 q = ":quit"
 x = ":buffer-close"
+F = "file_picker_in_current_buffer_directory"
 
 # zellij run
 y = ":run-shell-command zellij run -f -- yadm status"
