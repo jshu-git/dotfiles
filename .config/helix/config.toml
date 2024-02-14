@@ -34,8 +34,8 @@ select = "underline"
 hidden = false
 
 [editor.whitespace.render]
-space = "all"
-tab = "all"
+space   = "all"
+tab     = "all"
 newline = "none"
 
 [editor.indent-guides]
@@ -70,34 +70,27 @@ x   = "no_op"
 # vim habits (shared with normal/select mode)
 V           = ["select_mode", "extend_line_below"]
 C-v         = ["select_mode", "copy_selection_on_next_line"]
-A-v         = ["select_mode", "copy_selection_on_prev_line"]
 C           = ["extend_to_line_end", "yank", "delete_selection", "insert_mode"]
 D           = ["extend_to_line_end", "yank", "delete_selection"]
 "ret"       = ["open_below", "normal_mode"]
 "backspace" = "delete_char_backward"
-C-f         = "search"
 A-j         = ["yank", "paste_after",  "collapse_selection"]
 A-k         = ["yank", "paste_before", "collapse_selection"]
 "tab"       = "goto_next_buffer"
 "S-tab"     = "goto_previous_buffer"
+"{"         = "goto_prev_paragraph"
+"}"         = "goto_next_paragraph"
+S           = "surround_add"
 # testing
-# S           = ["move_prev_word_start", "move_next_word_end"]
 q           = "select_textobject_inner"
 Q           = "select_textobject_around"
-S           = "surround_add"
 
 # movement
-J = ["move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down"]
-K = ["move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up"]
+K = ["half_page_up",   "align_view_center"]
+J = ["half_page_down", "align_view_center"]
 L = "goto_line_end"
 H = "goto_line_start"
 G = "goto_file_end"
-
-# selection manipulation
-";" = "flip_selections"
-"," = "remove_primary_selection"
-"{" = "goto_prev_paragraph"
-"}" = "goto_next_paragraph"
 
 # search
 "*" = ["move_prev_word_start", "move_next_word_end", "search_selection"]
@@ -105,10 +98,13 @@ G = "goto_file_end"
 # recentering
 n   = ["search_next",    "align_view_center"]
 N   = ["search_prev",    "align_view_center"]
-C-d = ["half_page_down", "align_view_center"]
-C-u = ["half_page_up",   "align_view_center"]
-u   = ["undo",           "align_view_center"]
 U   = ["redo",           "align_view_center"]
+C-u = ["half_page_up",   "align_view_center"]
+C-d = ["half_page_down", "align_view_center"]
+C-b = ["page_up",        "align_view_center"]
+C-f = ["page_down",      "align_view_center"]
+C-i = ["jump_forward",   "align_view_center"]
+C-o = ["jump_backward",  "align_view_center"]
 
 # unimpairs unbinds
 "[" = { "space" = "no_op", T = "no_op" }
@@ -126,14 +122,15 @@ C-7       = "hsplit" # C-minus
 
 # leader
 [keys.normal.space]
-q = ":quit"
-x = ":buffer-close"
-F = "file_picker_in_current_buffer_directory"
+q       = ":quit"
+x       = ":buffer-close"
+F       = "file_picker_in_current_buffer_directory"
+"space" = "goto_last_accessed_file"
 
 # zellij run
-y = ":run-shell-command zellij run -f -- yadm status"
-l = ":run-shell-command zellij run -fc -- lazygit"
-# l = ":run-shell-command zellij run -ci -- lazygit"
+# y = ":run-shell-command zellij run --floating -- yadm status"
+l = ":run-shell-command zellij run --floating --close-on-exit -- lazygit"
+# l = ":run-shell-command zellij run --close-onexit --in-place -- lazygit"
 
 # unbinds
 k = "no_op"
@@ -144,6 +141,7 @@ r = "no_op"
 
 # window mode
 [keys.normal.space.w]
+W = "rotate_view_reverse"
 # unbinds
 "C-w"   = "no_op"
 "C-s"   = "no_op"
@@ -171,6 +169,7 @@ a = "code_action"
 s = "select_references_to_symbol_under_cursor"
 R = "rename_symbol"
 h = "signature_help"
+f = "goto_file_vsplit"
 # unbinds
 e = "no_op"
 l = "no_op"
@@ -189,30 +188,25 @@ esc = ["collapse_selection", "normal_mode"]
 # vim habits (shared with normal/select mode)
 V           = "extend_line_below"
 C-v         = "copy_selection_on_next_line"
-A-v         = "copy_selection_on_prev_line"
 C           = ["extend_to_line_end", "yank", "delete_selection", "insert_mode"]
 D           = ["extend_to_line_end", "yank", "delete_selection"]
 "ret"       = ["open_below", "normal_mode"]
 "backspace" = "delete_char_backward"
-C-f         = "search"
 A-j         = ["yank", "paste_after",  "collapse_selection"]
 A-k         = ["yank", "paste_before", "collapse_selection"]
+"{"         = "goto_prev_paragraph"
+"}"         = "goto_next_paragraph"
+S           = "surround_add"
 # testing
-# S           = ["move_prev_word_start", "move_next_word_end"]
 q           = "select_textobject_inner"
 Q           = "select_textobject_around"
-S           = "surround_add"
 
 # movement
+K = ["half_page_up",   "align_view_center"]
+J = ["half_page_down", "align_view_center"]
 L = "goto_line_end"
 H = "goto_line_start"
 G = "goto_file_end"
-
-# selection manipulation
-";" = "flip_selections"
-"," = "remove_primary_selection"
-"{" = "goto_prev_paragraph"
-"}" = "goto_next_paragraph"
 
 [keys.insert]
 esc = ["collapse_selection", "normal_mode"]
