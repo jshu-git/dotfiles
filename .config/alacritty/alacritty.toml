@@ -5,7 +5,7 @@ import = [
 ]
 
 [env]
-TERM = "xterm-256color"
+# TERM = "xterm-256color"
 
 [window]
 decorations   = "None"
@@ -19,6 +19,7 @@ multiplier = 1
 [font]
 normal = { family = "FiraCode Nerd Font"}
 size   = 16.0
+offset = { x = 0, y = -4 }
 
 [colors]
 transparent_background_colors     = true
@@ -38,5 +39,9 @@ save_to_clipboard = true
 [hints]
 
 [keyboard]
+bindings = [
+    { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+    { key = "L", mods = "Control|Shift", chars = "l" },
+]
 
 [debug]

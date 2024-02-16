@@ -10,26 +10,59 @@ wezterm.on('gui-startup', function(cmd)
   window:gui_window():maximize()
 
   -- configs
-  main_tab:set_title 'configs'
-  pane:send_text 'cd .config && vim ~/README.md ~/.zshrc'
+  -- main_tab:set_title 'configs'
+  -- pane:send_text 'cd .config && vim ~/README.md ~/.zshrc'
 
   -- shokz
-  local tab, pane, window = window:spawn_tab {}
-  tab:set_title 'shokz'
-  pane:send_text 'cd ~/git/shokz_downloader && vim .'
+  -- local tab, pane, window = window:spawn_tab {}
+  -- tab:set_title 'shokz'
+  -- pane:send_text 'cd ~/git/shokz_downloader && vim .'
 
-  main_tab:activate()
+  -- main_tab:activate()
 end)
 
--- apply modules
-require('cursor').apply_to_config(config)
-require('font').apply_to_config(config)
+-- cursor
+config.hide_mouse_cursor_when_typing = false
+
+-- font
+config.font        = wezterm.font 'FiraCode Nerd Font'
+config.font_size   = 16.0
+config.line_height = 0.9
+
+-- keys
 require('keys/custom').apply_to_config(config)
-require('pane').apply_to_config(config)
-require('status_bar').apply_to_config(config)
-require('tab_bar').apply_to_config(config)
-require('theme').apply_to_config(config)
-require('window').apply_to_config(config)
+
+-- pane
+config.inactive_pane_hsb = {
+  saturation = 1,
+  brightness = 1,
+}
+
+-- status bar
+wezterm.on('update-right-status', function(window, pane)
+  local cwd       = pane:get_current_working_dir().file_path
+  local workspace = window:active_workspace()
+
+  local elements = {
+    { Text = ' ' .. cwd },
+    { Text = ' [' .. workspace .. ']' },
+  }
+  window:set_right_status(wezterm.format(elements))
+end)
+
+-- tab bar
+config.enable_tab_bar            = false
+-- config.use_fancy_tab_bar         = false
+-- config.tab_bar_at_bottom         = true
+-- config.show_tab_index_in_tab_bar = false
+
+-- theme
+config.color_scheme = 'nightfox'
+
+-- window
+config.window_padding            = { left = 0, right = 0, top = 0, bottom = 0 }
+config.window_background_opacity = 0.85
+config.window_decorations        = 'RESIZE'
 
 -- misc
 config.adjust_window_size_when_changing_font_size = false
