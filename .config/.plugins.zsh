@@ -23,7 +23,7 @@ if [ -f $CONFIG/.fzf.zsh ]; then
     "
     export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden"
 
-    # ctrl + [f]ile https://github.com/sharkdp/bat
+    # ctrl + [f]ile
     export FZF_CTRL_T_OPTS="
     --prompt=file:
     --preview 'bat --color=always --style=numbers --line-range=:500 --style=numbers {}'
@@ -96,7 +96,6 @@ if command -v zellij >/dev/null 2>&1; then
             zellij -s "$1"
         fi
     }
-    alias zr='zellij run -f -- '
 fi
 
 # yadm

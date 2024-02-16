@@ -26,8 +26,8 @@ config.hide_mouse_cursor_when_typing = false
 
 -- font
 config.font        = wezterm.font 'FiraCode Nerd Font'
-config.font_size   = 16.0
-config.line_height = 0.9
+config.font_size   = 18.0
+config.line_height = 0.85
 
 -- keys
 require('keys/custom').apply_to_config(config)
