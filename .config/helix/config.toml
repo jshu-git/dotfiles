@@ -128,6 +128,7 @@ x       = ":buffer-close"
 F       = "file_picker_in_current_buffer_directory"
 "space" = "goto_last_modified_file"
 c       = ":lsp-workspace-command"
+r       = "replace_selections_with_clipboard"
 
 # zellij run
 # y = ":sh zellij run --floating -- yadm status"
@@ -142,7 +143,7 @@ k = "no_op"
 h = "no_op"
 a = "no_op"
 g = "no_op"
-r = "no_op"
+R = "no_op"
 
 # window mode
 [keys.normal.space.w]

@@ -7,7 +7,7 @@
     - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
   - browser: [Orion](https://kagi.com/orion/)
   - cli tools
-    - ([brew](https://brew.sh/))
+    - [brew](https://brew.sh/)
     - `bat eza fd fzf lazygit ripgrep tree zoxide`
   - dotfile manager: [yadm](https://yadm.io/docs/getting_started)
 
