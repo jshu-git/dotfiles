@@ -3,10 +3,10 @@
 keybinds clear-defaults=true {
     tmux {
         // pane
-        bind "h" { MoveFocus "Left";                         }
-        bind "l" { MoveFocus "Right";                        }
-        bind "j" { MoveFocus "Down";                         }
-        bind "k" { MoveFocus "Up";                           }
+        bind "h" { MoveFocus "Left";  SwitchToMode "Normal"; }
+        bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
+        bind "j" { MoveFocus "Down";  SwitchToMode "Normal"; }
+        bind "k" { MoveFocus "Up";    SwitchToMode "Normal"; }
         bind "a" { NewPane   "Down";  SwitchToMode "Normal"; }
         bind "s" { NewPane   "Right"; SwitchToMode "Normal"; }
         bind "X" { CloseFocus;        SwitchToMode "Normal"; }

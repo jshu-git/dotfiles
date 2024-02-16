@@ -46,7 +46,8 @@ if [ -f $CONFIG/.fzf.zsh ]; then
     --bind 'ctrl-o:execute(open -R {})+abort'
     "
     export FZF_ALT_C_COMMAND="fd --type d --follow --hidden"
-    bindkey "^T" fzf-cd-widget
+    bindkey -r "^E"
+    bindkey "^E" fzf-cd-widget
 
     # ctrl + histo[r]y
     export FZF_CTRL_R_OPTS="
