@@ -82,6 +82,7 @@ fi
 # bat
 if command -v bat >/dev/null 2>&1; then
     export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+    alias cat=bat
 fi
 
 # zellij
@@ -111,14 +112,4 @@ if command -v yadm >/dev/null 2>&1; then
         read commit_msg
         yadm commit -m "$commit_msg" && yadm push
     }
-fi
-
-# zoxide
-if command -v zoxide > /dev/null 2>&1; then
-    eval "$(zoxide init zsh)"
-fi
-
-# wezterm
-if command -v wezterm > /dev/null 2>&1; then
-    alias wz='wezterm'
 fi
