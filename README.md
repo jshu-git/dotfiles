@@ -1,16 +1,15 @@
 - workflow
   - editor: [Helix](https://helix-editor.com/)
   - terminal: [Alacritty](https://alacritty.org/)
-  - terminal multiplexer: [zellij](https://zellij.dev/)
+  - terminal multiplexeR: [Zellij](https://zellij.dev/)
   - shell: [zsh](https://www.zsh.org/)
     - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting#oh-my-zsh)
     - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
   - browser: [Orion](https://kagi.com/orion/)
-
-- dotfile manager: [yadm](https://yadm.io/docs/getting_started)
-
-- cli tools ([brew](https://brew.sh/))
-  - `brew install bat eza fd fzf lazygit ripgrep tree zoxide`
+  - cli tools
+    - ([brew](https://brew.sh/))
+    - `bat eza fd fzf lazygit ripgrep tree zoxide`
+  - dotfile manager: [yadm](https://yadm.io/docs/getting_started)
 
 - macos
   - [increase key repeat](https://gist.github.com/hofmannsven/ff21749b0e6afc50da458bebbd9989c5)
