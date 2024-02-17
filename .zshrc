@@ -27,7 +27,8 @@ bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 bindkey "^[[1;9D" beginning-of-line
 bindkey "^[[1;9C" end-of-line
-bindkey "^?"      kill-whole-line
+bindkey "^Z"      undo
+bindkey "^Y"      redo
 
 CONFIG="$HOME/.config"
 # zoxide needs to run first since it replaces cd

@@ -19,6 +19,7 @@ keybinds clear-defaults=true {
         bind "f" { ToggleFloatingPanes;       SwitchToMode "Normal"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
         bind "F" { TogglePaneFrames;          SwitchToMode "Normal"; }
+        bind "d" { ToggleFocusFullscreen;     SwitchToMode "Normal"; }
         // bind "B"     { BreakPane;                 SwitchToMode "Normal"; }
         // bind "]"     { BreakPaneRight;            SwitchToMode "Normal"; }
         // bind "["     { BreakPaneLeft;             SwitchToMode "Normal"; }
