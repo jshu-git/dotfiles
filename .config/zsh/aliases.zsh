@@ -2,15 +2,12 @@ alias sz='exec zsh'
 
 # python
 alias python='python3'
-alias req='pip freeze > requirements.txt'
 alias act='source .venv/bin/activate'
 
 # paths
 alias h='cd ~ && ls'
 alias desk='cd ~/Desktop && ls'
 alias g='cd ~/git && ls'
-alias vv='vim ~/.vimrc'
-alias v='vim'
 
 alias mnt='mount | grep -E ^/dev | column -t'
 alias path='echo -e ${PATH//:/\\n}'

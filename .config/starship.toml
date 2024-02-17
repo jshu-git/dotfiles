@@ -1,0 +1,31 @@
+# https://starship.rs/config/#prompt
+"$schema" = 'https://starship.rs/config-schema.json'
+# add_newline = false
+
+[character]
+error_symbol = "[✗](bold red)"
+
+[cmd_duration]
+min_time          = 2_000
+show_milliseconds = true
+
+[directory]
+truncation_length = 8
+truncate_to_repo  = false
+
+[git_branch]
+always_show_remote = true
+
+[hostname]
+ssh_only = false
+
+# [line_break]
+# disabled = true
+
+[localip]
+# ssh_only = false
+disabled = false
+
+[time]
+format   = '[$time]($style) '
+disabled = false

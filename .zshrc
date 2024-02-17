@@ -34,13 +34,29 @@ bindkey "^Y"      redo
 export PATH=/opt/homebrew/bin:$PATH
 
 CONFIG="$HOME/.config"
-ZSH="$CONFIG/zsh"
-# zoxide needs to run first since it replaces cd
+# zoxide replaces cd
 if command -v zoxide > /dev/null 2>&1; then
     eval "$(zoxide init --cmd cd zsh)"
+fi
+# eza replaces ls https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
+if command -v eza > /dev/null 2>&1; then
+    [ -f $CONFIG/eza/eza-wrapper.sh ] && alias ls="$CONFIG/eza/eza-wrapper.sh"
+fi
+
+# zsh
+ZSH="$CONFIG/zsh"
+# source $ZSH/theme.zsh
+if [ -d $ZSH/plugins/fast-syntax-highlighting ]; then
+    source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+fi
+if [ -d $ZSH/plugins/zsh-autosuggestions ]; then
+    source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 [ -f $ZSH/aliases.zsh ] && source $ZSH/aliases.zsh
 [ -f $ZSH/plugins.zsh ] && source $ZSH/plugins.zsh
 
-# open configs
+# starship
+eval "$(starship init zsh)"
+
+# helix: quick open configs
 alias hxc="hx $HOME/README.md $HOME/.zshrc $CONFIG/alacritty/alacritty.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml"

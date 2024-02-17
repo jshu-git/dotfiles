@@ -12,7 +12,7 @@ fgp=0
 # Don't show hardlinks column
 lnk=1
 # Show file git status automatically (can cause a slight delay in large repo trees)
-git=1
+git=0
 # Show icons
 ico=1
 # Show column headers

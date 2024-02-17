@@ -1,14 +1,4 @@
 CONFIG="$HOME/.config"
-ZSH="$CONFIG/zsh"
-source $ZSH/theme.zsh
-
-# zsh plugins
-if [ -d $ZSH/plugins/fast-syntax-highlighting ]; then
-    source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-fi
-if [ -d $ZSH/plugins/zsh-autosuggestions ]; then
-    source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
 
 # fzf
 if [ -f $CONFIG/.fzf.zsh ]; then
@@ -60,9 +50,6 @@ if [ -f $CONFIG/.fzf.zsh ]; then
     # bindkey "^[OA" fzf-history-widget
     bindkey "^[[A" fzf-history-widget
 fi
-
-# eza https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
-[ -f $CONFIG/eza/eza-wrapper.sh ] && alias ls="$CONFIG/eza/eza-wrapper.sh"
 
 # ripgrep
 if [ -f $CONFIG/.ripgreprc ]; then
