@@ -30,6 +30,9 @@ bindkey "^[[1;9C" end-of-line
 bindkey "^Z"      undo
 bindkey "^Y"      redo
 
+# brew
+export PATH=/opt/homebrew/bin:$PATH
+
 CONFIG="$HOME/.config"
 ZSH="$CONFIG/zsh"
 # zoxide needs to run first since it replaces cd
@@ -38,3 +41,4 @@ if command -v zoxide > /dev/null 2>&1; then
 fi
 [ -f $ZSH/aliases.zsh ] && source $ZSH/aliases.zsh
 [ -f $ZSH/plugins.zsh ] && source $ZSH/plugins.zsh
+
