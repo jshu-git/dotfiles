@@ -3,8 +3,10 @@ ZSH="$CONFIG/zsh"
 source $ZSH/theme.zsh
 
 # zsh plugins
-if [ -d $ZSH/plugins ]; then
+if [ -d $ZSH/plugins/fast-syntax-highlighting ]; then
     source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+fi
+if [ -d $ZSH/plugins/zsh-autosuggestions ]; then
     source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
@@ -69,7 +71,6 @@ fi
 
 # bat
 if command -v bat >/dev/null 2>&1; then
-    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
     alias cat=bat
 fi
 

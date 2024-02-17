@@ -23,7 +23,7 @@ compinit
 compdef _gnu_generic fzf
 
 # macos arrow keys https://linux.die.net/man/1/zshzle
-bindkey "^[[1;3C" forward-word  
+bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 bindkey "^[[1;9D" beginning-of-line
 bindkey "^[[1;9C" end-of-line
@@ -31,11 +31,10 @@ bindkey "^Z"      undo
 bindkey "^Y"      redo
 
 CONFIG="$HOME/.config"
+ZSH="$CONFIG/zsh"
 # zoxide needs to run first since it replaces cd
 if command -v zoxide > /dev/null 2>&1; then
     eval "$(zoxide init --cmd cd zsh)"
 fi
-[ -f $CONFIG/.aliases.zsh ] && source $CONFIG/.aliases.zsh
-[ -f $CONFIG/.plugins.zsh ] && source $CONFIG/.plugins.zsh
-
-#
+[ -f $ZSH/aliases.zsh ] && source $ZSH/aliases.zsh
+[ -f $ZSH/plugins.zsh ] && source $ZSH/plugins.zsh
