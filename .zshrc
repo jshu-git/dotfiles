@@ -53,10 +53,44 @@ if [ -d $ZSH/plugins/zsh-autosuggestions ]; then
     source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 [ -f $ZSH/aliases.zsh ] && source $ZSH/aliases.zsh
-[ -f $ZSH/plugins.zsh ] && source $ZSH/plugins.zsh
 
+# yadm
+if command -v yadm >/dev/null 2>&1; then
+    alias y='yadm'
+    alias ys='y status'
+    alias yd='y diff'
+    alias yp='y pull'
+    alias yl='y enter lazygit'
+fi
+
+# zellij
+if command -v zellij >/dev/null 2>&1; then
+    function zz() {
+        # default to 'dev' session
+        if [ -z "$1" ]; then
+            zellij a dev
+        else
+            zellij -s "$1"
+        fi
+    }
+fi
+
+# fzf
+if command -v fzf >/dev/null 2>&1; then
+    [ -f $CONFIG/.fzf.sh ] && source $CONFIG/.fzf.zsh
+fi
+# ripgrep
+if [ -f $CONFIG/.ripgreprc ]; then
+    export RIPGREP_CONFIG_PATH="$CONFIG/.ripgreprc"
+fi
+# bat
+if command -v bat >/dev/null 2>&1; then
+    alias cat=bat
+fi
 # starship
-eval "$(starship init zsh)"
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init zsh)"
+fi
 
-# helix: quick open configs
-alias hxc="hx $HOME/README.md $HOME/.zshrc $CONFIG/alacritty/alacritty.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml"
+# helix
+alias hxc="hx $HOME/README.md $HOME/.zshrc $CONFIG/starship.toml $CONFIG/alacritty/alacritty.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml"
