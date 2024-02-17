@@ -45,7 +45,6 @@ fi
 
 # zsh
 ZSH="$CONFIG/zsh"
-# source $ZSH/theme.zsh
 if [ -d $ZSH/plugins/fast-syntax-highlighting ]; then
     source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 fi
@@ -62,7 +61,6 @@ if command -v yadm >/dev/null 2>&1; then
     alias yp='y pull'
     alias yl='y enter lazygit'
 fi
-
 # zellij
 if command -v zellij >/dev/null 2>&1; then
     function zz() {
@@ -74,14 +72,13 @@ if command -v zellij >/dev/null 2>&1; then
         fi
     }
 fi
-
 # fzf
 if command -v fzf >/dev/null 2>&1; then
-    [ -f $CONFIG/.fzf.sh ] && source $CONFIG/.fzf.zsh
+    [ -f $CONFIG/.fzf.zsh ] && source "$CONFIG/.fzf.zsh"
 fi
 # ripgrep
-if [ -f $CONFIG/.ripgreprc ]; then
-    export RIPGREP_CONFIG_PATH="$CONFIG/.ripgreprc"
+if command -v ripgrep >/dev/null 2>&1; then
+    [ -f $CONFIG/.ripgreprc ] && export RIPGREP_CONFIG_PATH="$CONFIG/.ripgreprc"
 fi
 # bat
 if command -v bat >/dev/null 2>&1; then
@@ -91,6 +88,7 @@ fi
 if command -v starship >/dev/null 2>&1; then
     eval "$(starship init zsh)"
 fi
-
 # helix
-alias hxc="hx $HOME/README.md $HOME/.zshrc $CONFIG/starship.toml $CONFIG/alacritty/alacritty.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml"
+if command -v hx >/dev/null 2>&1; then
+    alias hxc="hx $HOME/README.md $HOME/.zshrc $CONFIG/starship.toml $CONFIG/alacritty/alacritty.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml"
+fi
