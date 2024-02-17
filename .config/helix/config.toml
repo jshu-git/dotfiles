@@ -2,9 +2,11 @@
 # https://github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs
 # https://github.com/LGUG2Z/helix-vim/blob/master/config.toml
 # https://github.com/helix-editor/helix/wiki/Migrating-from-Vim
-theme = "nightfox"
+# theme = "nightfox"
 # theme = "ayu_mirage"
 # theme = "tokyonight_storm"
+# theme = "kanagawa"
+theme = "rose_pine"
 
 [editor]
 line-number            = "relative"
@@ -38,10 +40,10 @@ hidden = false
 [editor.search]
 wrap-around = false
 
-[editor.whitespace.render]
-space   = "all"
-tab     = "all"
-newline = "none"
+# [editor.whitespace.render]
+# space   = "all"
+# tab     = "all"
+# newline = "none"
 
 [editor.indent-guides]
 render      = true
@@ -115,7 +117,7 @@ w       = ":write"
 q       = ":quit"
 x       = ":buffer-close"
 F       = "file_picker_in_current_buffer_directory"
-"space" = "goto_last_modified_file"
+# "space" = "goto_last_modified_file"
 c       = ":lsp-workspace-command"
 r       = "replace_selections_with_clipboard"
 R       = ":config-reload"
