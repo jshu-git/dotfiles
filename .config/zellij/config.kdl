@@ -10,7 +10,7 @@ keybinds clear-defaults=true {
         bind "a" { NewPane   "Down";  SwitchToMode "Normal"; }
         bind "s" { NewPane   "Right"; SwitchToMode "Normal"; }
         bind "X" { CloseFocus;        SwitchToMode "Normal"; }
-        // bind "R" { SwitchToMode "RenamePane"; PaneNameInput 0; }
+        bind "R" { SwitchToMode "RenamePane"; PaneNameInput 0; }
         // quick resize
         bind "=" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
@@ -36,9 +36,15 @@ keybinds clear-defaults=true {
         bind "S" { ToggleActiveSyncTab;      SwitchToMode "Normal"; }
         // bind "x"     { CloseTab;                 SwitchToMode "Normal"; }
 
+        // move
+        bind "Left" { MovePane "Left"; }
+        bind "Down" { MovePane "Down"; }
+        bind "Up" { MovePane "Up"; }
+        bind "Right" { MovePane "Right"; }
+
         // session
         bind "D" { Detach; }
-        bind "M" {
+        bind "m" {
             LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
                 move_to_focused_tab true
@@ -57,11 +63,6 @@ keybinds clear-defaults=true {
         bind "L" { Resize "Decrease Right"; }
         bind "=" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
-        // move
-        bind "Left" { MovePane "Left"; }
-        bind "Down" { MovePane "Down"; }
-        bind "Up" { MovePane "Up"; }
-        bind "Right" { MovePane "Right"; }
     }
 
     // renaming modes

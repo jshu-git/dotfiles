@@ -57,22 +57,14 @@ max-indent-retain = 0
 wrap-indicator    = ""
 
 
-
-
-
-
-
 [keys.normal]
 # better defaults
 esc     = ["collapse_selection", "keep_primary_selection"]
 i       = ["insert_mode",        "collapse_selection"]
 a       = ["append_mode",        "collapse_selection"]
-C-r     = ":config-reload"
-C-s     = ":write"
 "tab"   = "goto_next_buffer"
 "S-tab" = "goto_previous_buffer"
 "*"     = ["move_prev_word_start", "move_next_word_end", "search_selection"]
-C-w     = "no_op"
 
 # shared with normal/select
 S           = "surround_add"
@@ -107,10 +99,6 @@ C-f = ["page_down",      "align_view_center"]
 C-i = ["jump_forward",   "align_view_center"]
 C-o = ["jump_backward",  "align_view_center"]
 
-# unimpairs unbinds
-"[" = { "space" = "no_op", T = "no_op" }
-"]" = { "space" = "no_op", T = "no_op" }
-
 # window navigation
 C-h       = "jump_view_left"
 C-j       = "jump_view_down"
@@ -121,14 +109,21 @@ C-7       = "hsplit" # C-minus
 "A-\\"    = "vsplit_new"
 "A-minus" = "hsplit_new"
 
-# leader
+# leader https://docs.helix-editor.com/keymap.html#space-mode
 [keys.normal.space]
+w       = ":write"
 q       = ":quit"
 x       = ":buffer-close"
 F       = "file_picker_in_current_buffer_directory"
 "space" = "goto_last_modified_file"
 c       = ":lsp-workspace-command"
 r       = "replace_selections_with_clipboard"
+R       = ":config-reload"
+# unbinds
+k = "no_op"
+h = "no_op"
+a = "no_op"
+g = "no_op"
 
 # zellij run
 # y = ":sh zellij run --floating -- yadm status"
@@ -138,38 +133,7 @@ l = ":sh zellij run --floating --close-on-exit -- lazygit"
 # e = ":sh zellij run --direction 'Right' -- $HOME/.config/eza/eza-wrapper.sh -lAot -T -L 3"
 # e = ":sh zellij run --direction 'Right' -- tree -L 3"
 
-# unbinds
-k = "no_op"
-h = "no_op"
-a = "no_op"
-g = "no_op"
-R = "no_op"
-
-# window mode
-[keys.normal.space.w]
-W = "rotate_view_reverse"
-# unbinds
-"C-w"   = "no_op"
-"C-s"   = "no_op"
-"C-v"   = "no_op"
-"C-t"   = "no_op"
-"C-q"   = "no_op"
-"C-o"   = "no_op"
-"C-h"   = "no_op"
-"C-j"   = "no_op"
-"C-k"   = "no_op"
-"C-l"   = "no_op"
-"left"  = "no_op"
-"right" = "no_op"
-"up"    = "no_op"
-"down"  = "no_op"
-"h"     = "no_op"
-"j"     = "no_op"
-"k"     = "no_op"
-"l"     = "no_op"
-"q"     = "no_op"
-
-# goto mode
+# goto mode https://docs.helix-editor.com/keymap.html#goto-mode
 [keys.normal.g]
 k = "hover"
 a = "code_action"
@@ -187,6 +151,7 @@ t = "no_op"
 c = "no_op"
 b = "no_op"
 m = "no_op"
+
 
 [keys.select]
 # esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
@@ -214,9 +179,9 @@ L = "extend_to_line_end"
 H = "extend_to_line_start"
 G = "goto_file_end"
 
+
 [keys.insert]
 esc = ["collapse_selection", "normal_mode"]
-# esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
 C-c = "toggle_comments"
 C-l = "move_char_right"
 C-h = "move_char_left"
