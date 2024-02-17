@@ -42,3 +42,5 @@ fi
 [ -f $ZSH/aliases.zsh ] && source $ZSH/aliases.zsh
 [ -f $ZSH/plugins.zsh ] && source $ZSH/plugins.zsh
 
+# open configs
+alias hxc="hx $HOME/README.md $HOME/.zshrc $CONFIG/alacritty/alacritty.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml"
