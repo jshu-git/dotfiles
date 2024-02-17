@@ -27,10 +27,8 @@ if [ -f $CONFIG/.fzf.zsh ]; then
     export FZF_CTRL_T_OPTS="
     --prompt=file:
     --preview 'bat --color=always --style=numbers --line-range=:500 --style=numbers {}'
-    --header '<C-x> vscode <C-y> copy <C-o> finder'
-    --bind 'ctrl-x:execute(code {})+abort'
-    --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-    --bind 'ctrl-o:execute(open -R {})+abort'
+    --header '<C-x> hx'
+    --bind 'ctrl-x:execute(hx {})+abort'
     "
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     bindkey -r "^T"
@@ -40,10 +38,8 @@ if [ -f $CONFIG/.fzf.zsh ]; then
     export FZF_ALT_C_OPTS="
     --prompt=dir:
     --preview 'tree -C {}'
-    --header '<C-x> vscode <C-y> copy <C-o> finder'
-    --bind 'ctrl-x:execute(code {})+abort'
-    --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-    --bind 'ctrl-o:execute(open -R {})+abort'
+    --header '<C-x> hx'
+    --bind 'ctrl-x:execute(hx {})+abort'
     "
     export FZF_ALT_C_COMMAND="fd --type d --follow --hidden"
     bindkey -r "^E"
@@ -52,10 +48,9 @@ if [ -f $CONFIG/.fzf.zsh ]; then
     # ctrl + histo[r]y
     export FZF_CTRL_R_OPTS="
     --prompt=hist:
-    --header '<C-y> copy <C-r> sort <C-h> history'
-    --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+    --header '<C-x> open history <C-r> sort'
+    --bind 'ctrl-x:execute(hx "$HOME/.zsh_history")+abort'
     --bind 'ctrl-r:toggle-sort'
-    --bind 'ctrl-h:execute(code "$HOME/.zsh_history")+abort'
     --layout=default
     "
     # bind up arrow key to fzf history widget
@@ -70,14 +65,6 @@ fi
 # ripgrep
 if [ -f $CONFIG/.ripgreprc ]; then
     export RIPGREP_CONFIG_PATH="$CONFIG/.ripgreprc"
-
-    # fzf with ripgrep https://github.com/junegunn/fzf/issues/2789 https://news.ycombinator.com/item?id=38471822
-    function rgg {
-        result=$(rg "$@" | fzf --delimiter ':' --prompt="grep ("$@")": --header '<Enter> vscode')
-        file=${result%%:*}
-        linenumber=$(echo "${result}" | cut -d: -f2)
-        code -g "$file:$linenumber"
-    }
 fi
 
 # bat
