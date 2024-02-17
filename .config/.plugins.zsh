@@ -104,6 +104,7 @@ if command -v yadm >/dev/null 2>&1; then
     alias ys='y status'
     alias yd='y diff'
     alias yp='y pull'
+    alias yl='y enter lazygit'
     function yy() {
         yadm pull
         yadm add -u

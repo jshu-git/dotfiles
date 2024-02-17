@@ -128,7 +128,7 @@ g = "no_op"
 # zellij run
 # y = ":sh zellij run --floating -- yadm status"
 l = ":sh zellij run --floating --close-on-exit -- lazygit"
-# l = ":sh zellij run --close-onexit --in-place -- lazygit"
+L = ":sh zellij run --close-on-exit --in-place -- yadm enter lazygit"
 # hacked explorer
 # e = ":sh zellij run --direction 'Right' -- $HOME/.config/eza/eza-wrapper.sh -lAot -T -L 3"
 # e = ":sh zellij run --direction 'Right' -- tree -L 3"
