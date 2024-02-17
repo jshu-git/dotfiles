@@ -117,7 +117,7 @@ plugins {
 //    - true
 //    - false (Default)
 //
-simplified_ui true
+// simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -133,7 +133,7 @@ simplified_ui true
 //   - true (default)
 //   - false
 
-pane_frames false
+// pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:

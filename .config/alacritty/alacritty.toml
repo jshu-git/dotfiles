@@ -1,7 +1,7 @@
 # https://alacritty.org/config-alacritty.html
 # https://github.com/alacritty/alacritty/issues/6999#issuecomment-1903342590# man 5 alacritty
 import = [
-    "~/.config/alacritty/themes/themes/nightfox.toml"
+    "~/.config/alacritty/nightfox.toml"
 ]
 
 [env]
