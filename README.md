@@ -1,10 +1,13 @@
 - workflow
   - editor: [Helix](https://helix-editor.com/)
   - terminal: [Alacritty](https://alacritty.org/)
-  - terminal multiplexeR: [Zellij](https://zellij.dev/)
+  - terminal multiplexer: [Zellij](https://zellij.dev/)
   - shell: [zsh](https://www.zsh.org/)
-    - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting#oh-my-zsh)
-    - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+    - prompt: [Starship](https://starship.rs/)
+    - plugins:
+      - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting#oh-my-zsh)
+      - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+  - font: [FiraCode Nerd Font](https://www.nerdfonts.com/)
   - browser: [Orion](https://kagi.com/orion/)
   - cli tools
     - [brew](https://brew.sh/)
