@@ -7,6 +7,7 @@
     - plugins:
       - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting#oh-my-zsh)
       - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+  - theme: [Rosé Pine](https://rosepinetheme.com/)
   - font: [FiraCode Nerd Font](https://www.nerdfonts.com/)
   - browser: [Orion](https://kagi.com/orion/)
   - cli tools

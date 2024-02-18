@@ -27,8 +27,8 @@ keybinds clear-defaults=true {
         // tab
         bind "t" { NewTab;                   SwitchToMode "Normal"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0;        }
-        bind "H" { GoToPreviousTab;                                 }
-        bind "L" { GoToNextTab;                                     }
+        bind "p" { GoToPreviousTab;                                 }
+        bind "n" { GoToNextTab;                                     }
         bind "1" { GoToTab 1;                SwitchToMode "Normal"; }
         bind "2" { GoToTab 2;                SwitchToMode "Normal"; }
         bind "3" { GoToTab 3;                SwitchToMode "Normal"; }
@@ -125,7 +125,7 @@ plugins {
 //   - true (default)
 //   - false
 
-// pane_frames false
+pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -257,7 +257,7 @@ default_layout "compact"
 
 // The folder in which Zellij will look for layouts
 //
-layout_dir "/Users/jshu/.config/zellij/layouts/"
+// layout_dir "/Users/jshu/.config/zellij/layouts/"
 
 // The folder in which Zellij will look for themes
 //
