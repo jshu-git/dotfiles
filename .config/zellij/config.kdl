@@ -2,7 +2,7 @@
 // https://github.com/zellij-org/zellij/blob/main/zellij-utils/assets/config/default.kdl
 keybinds clear-defaults=true {
     normal {
-        // new floating pane
+        // new floating pane https://github.com/zellij-org/zellij/discussions/2518
         bind "Ctrl n" {
             Run "zellij" "action" "new-pane" "--floating" {
                 close_on_exit true
@@ -29,7 +29,7 @@ keybinds clear-defaults=true {
 
         // toggles
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
-        bind "F" { TogglePaneFrames;          SwitchToMode "Normal"; }
+        bind "f" { TogglePaneFrames;                                 }
 
         // tab
         bind "t" { NewTab;                   SwitchToMode "Normal"; }
@@ -44,6 +44,9 @@ keybinds clear-defaults=true {
         bind "S" { ToggleActiveSyncTab;      SwitchToMode "Normal"; }
         // bind "x"     { CloseTab;                 SwitchToMode "Normal"; }
 
+        // layout
+        bind "Space" { NextSwapLayout; }
+
         // resize
         bind "H" { Resize "Increase Left"; }
         bind "J" { Resize "Increase Down"; }
@@ -55,9 +58,6 @@ keybinds clear-defaults=true {
         bind "Down"  { MovePane "Down"; }
         bind "Up"    { MovePane "Up"; }
         bind "Right" { MovePane "Right"; }
-
-        // layout
-        bind "Space" { NextSwapLayout; }
 
         // session
         bind "d" { Detach; }
