@@ -3,7 +3,7 @@
 keybinds clear-defaults=true {
     normal {
         // new floating pane https://github.com/zellij-org/zellij/discussions/2518
-        bind "Ctrl n" {
+        bind "Ctrl t" {
             Run "zellij" "action" "new-pane" "--floating" {
                 close_on_exit true
           }
