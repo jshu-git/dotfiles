@@ -38,16 +38,16 @@ keybinds clear-defaults=true {
         // bind "x"     { CloseTab;                 SwitchToMode "Normal"; }
 
         // resize
-        bind "Left"  { Resize "Increase Left"; }
-        bind "Down"  { Resize "Increase Down"; }
-        bind "Up"    { Resize "Increase Up"; }
-        bind "Right" { Resize "Increase Right"; }
+        bind "H" { Resize "Increase Left"; }
+        bind "J" { Resize "Increase Down"; }
+        bind "K" { Resize "Increase Up"; }
+        bind "L" { Resize "Increase Right"; }
 
         // move
-        // bind "Left" { MovePane "Left"; }
-        // bind "Down" { MovePane "Down"; }
-        // bind "Up" { MovePane "Up"; }
-        // bind "Right" { MovePane "Right"; }
+        bind "Left"  { MovePane "Left"; }
+        bind "Down"  { MovePane "Down"; }
+        bind "Up"    { MovePane "Up"; }
+        bind "Right" { MovePane "Right"; }
 
         // session
         bind "D" { Detach; }
