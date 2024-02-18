@@ -67,6 +67,7 @@ a       = ["append_mode",        "collapse_selection"]
 "tab"   = "goto_next_buffer"
 "S-tab" = "goto_previous_buffer"
 "*"     = ["move_prev_word_start", "move_next_word_end", "search_selection"]
+"C-f"   = "search"
 
 # shared with normal/select
 S           = "surround_add"
@@ -95,7 +96,7 @@ U   = ["redo",                "align_view_center"]
 C-u = ["half_page_up",        "align_view_center"]
 C-d = ["half_page_down",      "align_view_center"]
 C-b = ["page_up",             "align_view_center"]
-C-f = ["page_down",           "align_view_center"]
+# C-f = ["page_down",           "align_view_center"]
 C-i = ["jump_forward",        "align_view_center"]
 C-o = ["jump_backward",       "align_view_center"]
 "{" = ["goto_prev_paragraph", "align_view_center"]
