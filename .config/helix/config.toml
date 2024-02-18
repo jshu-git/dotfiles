@@ -21,7 +21,7 @@ color-modes            = true
 [editor.statusline]
 left        = ["mode", "register", "spacer", "version-control", "file-name", "file-encoding", "read-only-indicator"]
 # center      = ["selections", "primary-selection-length"]
-right       = ["spinner", "diagnostics", "position", "position-percentage", "spacer", "separator", "total-line-numbers"]
+right       = ["spinner", "diagnostics", "position", "position-percentage", "total-line-numbers"]
 mode.normal = "[N]"
 mode.insert = "[I]"
 mode.select = "[S]"
