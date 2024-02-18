@@ -1,6 +1,18 @@
 // https://zellij.dev/documentation/keybindings
 // https://github.com/zellij-org/zellij/blob/main/zellij-utils/assets/config/default.kdl
 keybinds clear-defaults=true {
+    normal {
+        // new floating pane
+        bind "Ctrl n" {
+            Run "zellij" "action" "new-pane" "--floating" {
+                close_on_exit true
+          }
+        }
+        // toggle floating panes
+        bind "Ctrl f" { ToggleFloatingPanes; }
+        // toggle focus
+        // bind "Alt f"  { ToggleFocusFullscreen; }
+    }
     tmux {
         // pane
         bind "h" { MoveFocus "Left";  SwitchToMode "Normal"; }
@@ -16,13 +28,8 @@ keybinds clear-defaults=true {
         bind "-" { Resize "Decrease"; }
 
         // toggles
-        bind "f" { ToggleFloatingPanes;       SwitchToMode "Normal"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
         bind "F" { TogglePaneFrames;          SwitchToMode "Normal"; }
-        bind "d" { ToggleFocusFullscreen;     SwitchToMode "Normal"; }
-        // bind "B"     { BreakPane;                 SwitchToMode "Normal"; }
-        // bind "]"     { BreakPaneRight;            SwitchToMode "Normal"; }
-        // bind "["     { BreakPaneLeft;             SwitchToMode "Normal"; }
 
         // tab
         bind "t" { NewTab;                   SwitchToMode "Normal"; }
@@ -49,8 +56,11 @@ keybinds clear-defaults=true {
         bind "Up"    { MovePane "Up"; }
         bind "Right" { MovePane "Right"; }
 
+        // layout
+        bind "Space" { NextSwapLayout; }
+
         // session
-        bind "D" { Detach; }
+        bind "d" { Detach; }
         bind "m" {
             LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
@@ -65,7 +75,6 @@ keybinds clear-defaults=true {
         bind "Esc" { UndoRenamePane; SwitchToMode "Normal"; }
     }
     renametab {
-
         bind "Esc" { UndoRenameTab; SwitchToMode "Normal";  }
     }
 
@@ -257,7 +266,7 @@ default_layout "compact"
 
 // The folder in which Zellij will look for layouts
 //
-// layout_dir "/Users/jshu/.config/zellij/layouts/"
+layout_dir "/Users/jshu/.config/zellij/layouts/"
 
 // The folder in which Zellij will look for themes
 //

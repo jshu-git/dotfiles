@@ -32,7 +32,6 @@ display-messages    = true
 
 [editor.cursor-shape]
 insert = "bar"
-# select = "underline"
 
 [editor.file-picker]
 hidden = false
@@ -40,9 +39,9 @@ hidden = false
 [editor.search]
 wrap-around = false
 
-# [editor.whitespace.render]
+[editor.whitespace.render]
 # space   = "all"
-# tab     = "all"
+tab     = "all"
 # newline = "none"
 
 [editor.indent-guides]
@@ -50,7 +49,7 @@ render      = true
 skip-levels = 1
 
 [editor.gutters.line-numbers]
-min-width = 1
+min-width = 3
 
 [editor.soft-wrap]
 enable            = true
@@ -67,7 +66,6 @@ a       = ["append_mode",        "collapse_selection"]
 "tab"   = "goto_next_buffer"
 "S-tab" = "goto_previous_buffer"
 "*"     = ["move_prev_word_start", "move_next_word_end", "search_selection"]
-"C-f"   = "search"
 
 # shared with normal/select
 S           = "surround_add"
@@ -130,9 +128,6 @@ g = "no_op"
 
 # zellij run
 l = ":sh zellij run --close-on-exit --in-place -- lazygit"
-# hacked explorer
-# e = ":sh zellij run --direction 'Right' -- $HOME/.config/eza/eza-wrapper.sh -lAot -T -L 3"
-# e = ":sh zellij run --direction 'Right' -- tree -L 3"
 
 # goto mode https://docs.helix-editor.com/keymap.html#goto-mode
 [keys.normal.g]

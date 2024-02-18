@@ -1,0 +1,7 @@
+// https://github.com/zellij-org/zellij/blob/main/zellij-utils/assets/layouts/compact.kdl
+layout {
+    pane
+    pane size=1 borderless=true {
+        plugin location="zellij:compact-bar"
+    }
+}
