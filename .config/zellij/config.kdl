@@ -23,9 +23,6 @@ keybinds clear-defaults=true {
         bind "s" { NewPane   "Right"; SwitchToMode "Normal"; }
         bind "X" { CloseFocus;        SwitchToMode "Normal"; }
         bind "R" { SwitchToMode "RenamePane"; PaneNameInput 0; }
-        // quick resize
-        bind "=" { Resize "Increase"; }
-        bind "-" { Resize "Decrease"; }
 
         // toggles
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
@@ -48,6 +45,8 @@ keybinds clear-defaults=true {
         bind "Space" { NextSwapLayout; }
 
         // resize
+        bind "=" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
         bind "H" { Resize "Increase Left"; }
         bind "J" { Resize "Increase Down"; }
         bind "K" { Resize "Increase Up"; }
