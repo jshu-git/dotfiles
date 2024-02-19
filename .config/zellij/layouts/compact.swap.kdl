@@ -7,16 +7,16 @@ tab_template name="ui" {
 }
 
 // normal
-swap_tiled_layout name="stacked" {
-    ui min_panes=2 {
-        pane stacked=true { children; }
-    }
-}
 swap_tiled_layout name="horizontal" {
     ui min_panes=2 {
         pane
         pane
         pane { children; }
+    }
+}
+swap_tiled_layout name="stacked" {
+    ui min_panes=2 {
+        pane stacked=true { children; }
     }
 }
 swap_tiled_layout name="vertical" {
@@ -30,6 +30,9 @@ swap_tiled_layout name="vertical" {
 }
 
 // floating
+swap_floating_layout name="staggered" {
+    floating_panes
+}
 swap_floating_layout name="enlarged" {
     floating_panes max_panes=10 {
         pane { x "5%"; y 1; width "90%"; height "90%"; }
@@ -43,7 +46,4 @@ swap_floating_layout name="enlarged" {
         pane { x "5%"; y 9; width "90%"; height "90%"; }
         pane focus=true { x 10; y 10; width "90%"; height "90%"; }
     }
-}
-swap_floating_layout name="staggered" {
-    floating_panes
 }
