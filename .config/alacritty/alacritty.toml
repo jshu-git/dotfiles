@@ -1,7 +1,8 @@
 # https://alacritty.org/config-alacritty.html
 # https://github.com/alacritty/alacritty/issues/6999#issuecomment-1903342590# man 5 alacritty
 import = [
-    "~/.config/alacritty/themes/catppuccin-mocha.toml"
+    # "~/.config/alacritty/themes/gruvbox-dark.toml"
+    "~/.config/alacritty/themes/rose-pine.toml"
 ]
 
 [env]
@@ -10,21 +11,21 @@ TERM = "xterm-256color"
 [window]
 padding       = { x = 10, y = 5 }
 decorations   = "None"
-opacity       = 0.95
+opacity       = 0.80
 startup_mode  = "Maximized"
 option_as_alt = "Both"
-# blur          = true
+blur          = true
 
 [scrolling]
 
 [font]
 normal = { family = "FiraCode Nerd Font"}
 size   = 18.0
-offset = { x = 0, y = -2 }
+offset = { x = 0, y = 1 }
 
 [colors]
 transparent_background_colors     = true
-draw_bold_text_with_bright_colors = true
+# draw_bold_text_with_bright_colors = true
 
 [bell]
 

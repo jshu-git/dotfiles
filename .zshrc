@@ -46,7 +46,6 @@ fi
 # zsh
 ZSH="$CONFIG/zsh"
 if [ -d $ZSH/plugins/fast-syntax-highlighting ]; then
-    [ -f $ZSH/plugins/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh ] && source $ZSH/plugins/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
     source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 fi
 if [ -d $ZSH/plugins/zsh-autosuggestions ]; then

@@ -2,7 +2,9 @@
 # https://github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs
 # https://github.com/LGUG2Z/helix-vim/blob/master/config.toml
 # https://github.com/helix-editor/helix/wiki/Migrating-from-Vim
-theme = "catppuccin_mocha"
+# https://github.com/helix-editor/helix/tree/master/runtime/themes
+# theme = "gruvbox_dark_hard"
+theme = "rose_pine"
 
 [editor]
 line-number            = "relative"

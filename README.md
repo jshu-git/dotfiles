@@ -9,7 +9,7 @@
 - cli tools
   - [brew](https://brew.sh/)
   - `bat eza fd fzf lazygit ripgrep tree zoxide`
-- theme: [Catppuccin (Mocha)](https://github.com/catppuccin/catppuccin)
+- theme: [Rosé Pine](https://rosepinetheme.com/)
 - font: [FiraCode Nerd Font](https://www.nerdfonts.com/)
 
 - dotfile manager: [yadm](https://yadm.io/docs/getting_started)
