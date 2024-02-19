@@ -2,11 +2,7 @@
 # https://github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs
 # https://github.com/LGUG2Z/helix-vim/blob/master/config.toml
 # https://github.com/helix-editor/helix/wiki/Migrating-from-Vim
-# theme = "nightfox"
-# theme = "ayu_mirage"
-# theme = "tokyonight_storm"
-# theme = "kanagawa"
-theme = "rose_pine"
+theme = "catppuccin_mocha"
 
 [editor]
 line-number            = "relative"
@@ -71,7 +67,7 @@ C-p = "goto_previous_buffer"
 
 # shared with normal/select
 S           = "surround_add"
-X           = "extend_line_above"
+X           = "extend_line_up"
 "ret"       = ["open_below", "normal_mode"]
 "backspace" = "delete_char_backward"
 A-j         = ["yank", "paste_after",  "collapse_selection"]
@@ -158,7 +154,7 @@ esc = ["collapse_selection", "normal_mode"]
 
 # shared with normal/select
 S           = "surround_add"
-X           = "extend_line_above"
+X           = "extend_line_up"
 "ret"       = ["open_below", "normal_mode"]
 "backspace" = "delete_char_backward"
 A-j         = ["yank", "paste_after",  "collapse_selection"]

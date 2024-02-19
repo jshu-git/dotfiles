@@ -46,6 +46,7 @@ fi
 # zsh
 ZSH="$CONFIG/zsh"
 if [ -d $ZSH/plugins/fast-syntax-highlighting ]; then
+    [ -f $ZSH/plugins/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh ] && source $ZSH/plugins/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
     source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 fi
 if [ -d $ZSH/plugins/zsh-autosuggestions ]; then
@@ -93,7 +94,7 @@ if command -v hx >/dev/null 2>&1; then
     # use source
     alias hx=$HOME/.cargo/bin/hx
     alias hxc="
-    hx $HOME/README.md $HOME/.zshrc $CONFIG/starship.toml $CONFIG/alacritty/alacritty.toml $CONFIG/zellij/config.kdl $CONFIG/zellij/layouts/compact.swap.kdl $CONFIG/helix/config.toml
+    hx $HOME/README.md $HOME/.zshrc $CONFIG/starship.toml $CONFIG/alacritty/alacritty.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml
     "
     export VISUAL=hx
     export EDITOR="$VISUAL"
