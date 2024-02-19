@@ -62,8 +62,8 @@ a   = ["append_mode",        "collapse_selection"]
 C-n = "goto_next_buffer"
 C-p = "goto_previous_buffer"
 "*" = ["move_prev_word_start", "move_next_word_end", "search_selection"]
-# "tab" = "move_parent_node_end"
-# "S-tab" = "move_parent_node_start"
+"tab"   = "goto_next_paragraph"
+"S-tab" = "goto_prev_paragraph"
 
 # shared with normal/select
 S           = "surround_add"
