@@ -17,11 +17,11 @@ color-modes            = true
 
 [editor.statusline]
 left        = ["mode", "register", "spacer", "version-control", "file-name", "file-encoding", "read-only-indicator"]
-# center      = ["selections", "primary-selection-length"]
+center      = ["selections", "primary-selection-length"]
 right       = ["spinner", "diagnostics", "position", "position-percentage", "total-line-numbers"]
-mode.normal = "N"
-mode.insert = "I"
-mode.select = "S"
+mode.normal = "NOR"
+mode.insert = "INS"
+mode.select = "SEL"
 
 [editor.lsp]
 display-messages    = true
@@ -146,7 +146,6 @@ c = "no_op"
 b = "no_op"
 m = "no_op"
 
-
 [keys.select]
 # esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
 esc = ["collapse_selection", "normal_mode"]
@@ -171,7 +170,6 @@ K = ["extend_line_up", "extend_line_up", "extend_line_up", "extend_line_up", "ex
 L = "extend_to_line_end"
 H = "extend_to_line_start"
 G = "goto_file_end"
-
 
 [keys.insert]
 esc = ["collapse_selection", "normal_mode"]

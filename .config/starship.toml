@@ -60,9 +60,10 @@ style    = "bg:hl_low"
 format   = '[[ $time ](fg:subtle bg:hl_low)]($style)'
 
 [character]
-disabled     = false
-error_symbol = "[✗](bold red)"
-format       = ' $symbol '
+disabled       = false
+success_symbol = '[❯](bold foam)'
+error_symbol   = "[✗](bold love)"
+format         = ' $symbol '
 
 [cmd_duration]
 disabled          = false

@@ -30,7 +30,7 @@ swap_tiled_layout name="vertical" {
 }
 
 // floating
-swap_floating_layout name="floating:enlarged" {
+swap_floating_layout name="enlarged" {
     floating_panes max_panes=10 {
         pane { x "5%"; y 1; width "90%"; height "90%"; }
         pane { x "5%"; y 2; width "90%"; height "90%"; }
@@ -44,6 +44,6 @@ swap_floating_layout name="floating:enlarged" {
         pane focus=true { x 10; y 10; width "90%"; height "90%"; }
     }
 }
-swap_floating_layout name="floating:staggered" {
+swap_floating_layout name="staggered" {
     floating_panes
 }
