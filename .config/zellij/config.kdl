@@ -10,9 +10,8 @@ keybinds clear-defaults=true {
                 close_on_exit true
           }
         }
-        // toggle floating panes
         bind "Ctrl f" { ToggleFloatingPanes; }
-        // toggle focus
+        bind "Ctrl s" { NextSwapLayout;      }
         // bind "Alt f"  { ToggleFocusFullscreen; }
     }
     normal {
@@ -46,9 +45,6 @@ keybinds clear-defaults=true {
         bind "S" { ToggleActiveSyncTab;      SwitchToMode "Locked"; }
         // bind "x"     { CloseTab;                 SwitchToMode "Locked"; }
 
-        // layout
-        bind "Space" { NextSwapLayout; }
-
         // resize
         bind "=" { Resize "Increase";       }
         bind "-" { Resize "Decrease";       }
@@ -58,9 +54,9 @@ keybinds clear-defaults=true {
         bind "L" { Resize "Increase Right"; }
 
         // move
-        bind "Left"  { MovePane "Left"; }
-        bind "Down"  { MovePane "Down"; }
-        bind "Up"    { MovePane "Up"; }
+        bind "Left"  { MovePane "Left";  }
+        bind "Down"  { MovePane "Down";  }
+        bind "Up"    { MovePane "Up";    }
         bind "Right" { MovePane "Right"; }
 
         // session
@@ -70,16 +66,17 @@ keybinds clear-defaults=true {
                 floating true
                 move_to_focused_tab true
             };
+            SwitchToMode "Locked"
         }
     }
     // renaming modes
     renamepane {
         bind "Esc"   { UndoRenamePane; SwitchToMode "Locked"; }
-        bind "Enter" { SwitchToMode "Locked"; }
+        bind "Enter" { SwitchToMode "Locked";                 }
     }
     renametab {
         bind "Esc" { UndoRenameTab; SwitchToMode "Locked";  }
-        bind "Enter" { SwitchToMode "Locked"; }
+        bind "Enter" { SwitchToMode "Locked";               }
     }
 }
 

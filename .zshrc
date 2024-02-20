@@ -63,6 +63,8 @@ if command -v yadm >/dev/null 2>&1; then
 fi
 # zellij
 if command -v zellij >/dev/null 2>&1; then
+    # use source
+    # alias zellij=$HOME/.cargo/bin/zellij
     function zz() {
         # default to 'dev' session
         if [ -z "$1" ]; then
