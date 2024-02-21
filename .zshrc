@@ -15,18 +15,19 @@ setopt HIST_VERIFY            # Do not execute immediately upon history expansio
 KEYTIMEOUT=1
 
 # https://superuser.com/questions/148207/how-can-i-make-zsh-completion-behave-like-bash-completion
-setopt noautomenu
+# setopt noautomenu
+# setopt noautomenu
 
 # completions
 autoload -Uz compinit
 compinit
-compdef _gnu_generic fzf
 
 # macos arrow keys https://linux.die.net/man/1/zshzle
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
-bindkey "^[[1;9D" beginning-of-line
-bindkey "^[[1;9C" end-of-line
+bindkey "^[[1;3C" forward-word          # A-right
+bindkey "^[[1;3D" backward-word         # A-left
+bindkey "^[[1;9D" beginning-of-line     # Cmd-left
+bindkey "^[[1;9C" end-of-line           # Cmd-right
+bindkey "^[[Z"    reverse-menu-complete # S-Tab
 bindkey "^Z"      undo
 bindkey "^Y"      redo
 
@@ -41,6 +42,14 @@ fi
 # eza replaces ls https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
 if command -v eza > /dev/null 2>&1; then
     [ -f $CONFIG/eza/eza-wrapper.sh ] && alias ls="$CONFIG/eza/eza-wrapper.sh"
+fi
+
+# fzf
+if command -v fzf >/dev/null 2>&1; then
+    FZF=$CONFIG/fzf
+    [ -f $FZF/.fzf.zsh ] && source "$FZF/.fzf.zsh"
+    # source $FZF/fzf-tab/fzf-tab.plugin.zsh
+    source $FZF/fzf-tab-completion/zsh/fzf-zsh-completion.sh
 fi
 
 # zsh
@@ -61,6 +70,7 @@ if command -v yadm >/dev/null 2>&1; then
     alias yp='y pull'
     alias yl='y enter lazygit'
 fi
+
 # zellij
 if command -v zellij >/dev/null 2>&1; then
     # use source
@@ -74,22 +84,22 @@ if command -v zellij >/dev/null 2>&1; then
         fi
     }
 fi
-# fzf
-if command -v fzf >/dev/null 2>&1; then
-    [ -f $CONFIG/.fzf.zsh ] && source "$CONFIG/.fzf.zsh"
-fi
+
 # ripgrep
 if command -v ripgrep >/dev/null 2>&1; then
     [ -f $CONFIG/.ripgreprc ] && export RIPGREP_CONFIG_PATH="$CONFIG/.ripgreprc"
 fi
+
 # bat
 if command -v bat >/dev/null 2>&1; then
     alias cat=bat
 fi
+
 # starship
 if command -v starship >/dev/null 2>&1; then
     eval "$(starship init zsh)"
 fi
+
 # helix
 if command -v hx >/dev/null 2>&1; then
     # use source
@@ -99,4 +109,5 @@ if command -v hx >/dev/null 2>&1; then
     "
     export VISUAL=hx
     export EDITOR="$VISUAL"
+    alias xx=hx
 fi

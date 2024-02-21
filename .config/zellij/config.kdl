@@ -5,17 +5,17 @@ keybinds clear-defaults=true {
     locked {
         bind "Ctrl a" { SwitchToMode "Normal"; }
         // https://github.com/zellij-org/zellij/discussions/2518
-        bind "Ctrl w" {
-            Run "zellij" "action" "new-pane" "--floating" {
-                close_on_exit true
-          }
-        }
+        // bind "Ctrl w" {
+        //     Run "zellij" "action" "new-pane" "--floating" {
+        //         close_on_exit true
+        //   }
+        // }
         bind "Ctrl f" { ToggleFloatingPanes; }
         // bind "Alt f"  { ToggleFocusFullscreen; }
     }
     normal {
         // lock
-        bind "Esc" { SwitchToMode "locked"; }
+        bind "Esc" "Enter" { SwitchToMode "locked"; }
         
         // pane
         bind "h" { MoveFocus "Left";  SwitchToMode "Locked"; }
@@ -34,8 +34,8 @@ keybinds clear-defaults=true {
         // tab
         bind "t" { NewTab;                   SwitchToMode "Locked"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0;        }
-        bind "p" { GoToPreviousTab;                                 }
-        bind "n" { GoToNextTab;                                     }
+        // bind "p" { GoToPreviousTab;                                 }
+        bind "Tab" { GoToNextTab;                                     }
         bind "1" { GoToTab 1;                SwitchToMode "Locked"; }
         bind "2" { GoToTab 2;                SwitchToMode "Locked"; }
         bind "3" { GoToTab 3;                SwitchToMode "Locked"; }
