@@ -11,7 +11,6 @@ keybinds clear-defaults=true {
           }
         }
         bind "Ctrl f" { ToggleFloatingPanes; }
-        bind "Ctrl s" { NextSwapLayout;      }
         // bind "Alt f"  { ToggleFocusFullscreen; }
     }
     normal {
@@ -68,6 +67,9 @@ keybinds clear-defaults=true {
             };
             SwitchToMode "Locked"
         }
+
+        // layout
+        bind "Space" { NextSwapLayout; }
     }
     // renaming modes
     renamepane {
