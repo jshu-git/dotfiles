@@ -15,8 +15,10 @@ setopt HIST_VERIFY            # Do not execute immediately upon history expansio
 KEYTIMEOUT=1
 
 # https://superuser.com/questions/148207/how-can-i-make-zsh-completion-behave-like-bash-completion
+setopt noautomenu
 # setopt noautomenu
-# setopt noautomenu
+
+setopt globdots
 
 # completions
 autoload -Uz compinit
@@ -48,8 +50,7 @@ fi
 if command -v fzf >/dev/null 2>&1; then
     FZF=$CONFIG/fzf
     [ -f $FZF/.fzf.zsh ] && source "$FZF/.fzf.zsh"
-    # source $FZF/fzf-tab/fzf-tab.plugin.zsh
-    source $FZF/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+    [ -f $FZF/fzf-tab/fzf-tab.plugin.zsh ] && source $FZF/fzf-tab/fzf-tab.plugin.zsh
 fi
 
 # zsh

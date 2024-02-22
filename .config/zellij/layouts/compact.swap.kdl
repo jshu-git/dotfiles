@@ -45,8 +45,5 @@ swap_floating_layout name="enlarged" {
     }
 }
 swap_floating_layout name="staggered" {
-    // hack to let enlarged by the default
-    // ui min_panes=2 {
     floating_panes
-    // }
 }

@@ -5,11 +5,11 @@ keybinds clear-defaults=true {
     locked {
         bind "Ctrl a" { SwitchToMode "Normal"; }
         // https://github.com/zellij-org/zellij/discussions/2518
-        // bind "Ctrl w" {
-        //     Run "zellij" "action" "new-pane" "--floating" {
-        //         close_on_exit true
-        //   }
-        // }
+        bind "Ctrl w" {
+            Run "zellij" "action" "new-pane" "--floating" {
+                close_on_exit true
+          }
+        }
         bind "Ctrl f" { ToggleFloatingPanes; }
         // bind "Alt f"  { ToggleFocusFullscreen; }
     }
