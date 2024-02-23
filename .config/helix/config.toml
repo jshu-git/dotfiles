@@ -118,7 +118,6 @@ F       = "file_picker_in_current_buffer_directory"
 "space" = "last_picker"
 c       = ":lsp-workspace-command"
 r       = ":config-reload"
-R       = "replace_selections_with_clipboard"
 # unbinds
 k   = "no_op"
 h   = "no_op"

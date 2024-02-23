@@ -16,7 +16,6 @@ KEYTIMEOUT=1
 
 # https://superuser.com/questions/148207/how-can-i-make-zsh-completion-behave-like-bash-completion
 setopt noautomenu
-# setopt noautomenu
 
 setopt globdots
 
