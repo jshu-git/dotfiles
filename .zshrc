@@ -100,6 +100,8 @@ fi
 
 # starship
 if command -v starship >/dev/null 2>&1; then
+    # https://github.com/spaceship-prompt/spaceship-prompt/issues/462
+    precmd() { precmd() { echo } }
     eval "$(starship init zsh)"
 fi
 

@@ -40,7 +40,7 @@ format   = '[[($all_status$ahead_behind )](fg:foam bg:hl_high)]($style)'
 
 [golang]
 disabled = false
-symbol   = ""
+symbol   = ""
 style    = "bg:hl_mid"
 format   = '[[ $symbol ($version) ](fg:foam bg:hl_mid)]($style)'
 [rust]
@@ -61,7 +61,11 @@ format   = '[[ $time ](fg:subtle bg:hl_low)]($style)'
 
 [character]
 disabled       = false
-success_symbol = '[❯](bold foam)'
+# success_symbol = '[❯](bold foam)'
+# https://www.nerdfonts.com/cheat-sheet
+success_symbol = '[](bold foam)'
+# 󱍿
+# 󱣀
 error_symbol   = "[✗](bold love)"
 format         = ' $symbol '
 
