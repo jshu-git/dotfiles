@@ -66,8 +66,8 @@ a       = ["append_mode",        "collapse_selection"]
 S           = "surround_add"
 X           = "extend_line_up"
 "backspace" = "delete_char_backward"
-A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
-A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-k         = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A-j         = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 # personal preference
 q   = "select_textobject_inner"
 Q   = "select_textobject_around"
@@ -110,18 +110,21 @@ C-7       = "hsplit" # C-minus
 # leader https://docs.helix-editor.com/keymap.html#space-mode
 [keys.normal.space]
 w       = ":write"
+W       = ":write!"
 q       = ":quit"
+Q       = ":quit!"
 x       = ":buffer-close"
 F       = "file_picker_in_current_buffer_directory"
-# "space" = "goto_last_accessed_file"
+"space" = "last_picker"
 c       = ":lsp-workspace-command"
-r       = "replace_selections_with_clipboard"
-R       = ":config-reload"
+r       = ":config-reload"
+R       = "replace_selections_with_clipboard"
 # unbinds
-k = "no_op"
-h = "no_op"
-a = "no_op"
-g = "no_op"
+k   = "no_op"
+h   = "no_op"
+a   = "no_op"
+g   = "no_op"
+"'" = "no_op"
 
 # zellij run
 l = ":sh zellij run --close-on-exit --in-place -- lazygit"
