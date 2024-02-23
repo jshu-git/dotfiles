@@ -54,7 +54,6 @@ enable            = true
 max-indent-retain = 0
 wrap-indicator    = ""
 
-
 [keys.normal]
 esc     = ["collapse_selection", "keep_primary_selection"]
 i       = ["insert_mode",        "collapse_selection"]
@@ -66,10 +65,9 @@ a       = ["append_mode",        "collapse_selection"]
 # shared with normal/select
 S           = "surround_add"
 X           = "extend_line_up"
-# "ret"       = ["open_below", "normal_mode"]
 "backspace" = "delete_char_backward"
-A-j         = ["yank", "paste_after",  "collapse_selection"]
-A-k         = ["yank", "paste_before", "collapse_selection"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 # personal preference
 q   = "select_textobject_inner"
 Q   = "select_textobject_around"
@@ -77,14 +75,14 @@ Q   = "select_textobject_around"
 "," = "remove_primary_selection"
 # movement
 J = ["move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "align_view_center"]
-K = ["move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "align_view_center"]
+K = ["move_visual_line_up",   "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "align_view_center"]
 L = "extend_to_line_end"
 H = "extend_to_line_start"
 G = "goto_file_end"
 
 # recentering
-n   = ["search_next",         "align_view_center"]
-N   = ["search_prev",         "align_view_center"]
+n = ["search_next", "align_view_center"]
+N = ["search_prev", "align_view_center"]
 # U   = ["redo",                "align_view_center"]
 # C-u = ["half_page_up",        "align_view_center"]
 # C-d = ["half_page_down",      "align_view_center"]
@@ -115,7 +113,7 @@ w       = ":write"
 q       = ":quit"
 x       = ":buffer-close"
 F       = "file_picker_in_current_buffer_directory"
-"space" = "goto_last_accessed_file"
+# "space" = "goto_last_accessed_file"
 c       = ":lsp-workspace-command"
 r       = "replace_selections_with_clipboard"
 R       = ":config-reload"
@@ -135,7 +133,6 @@ a = "code_action"
 s = "select_references_to_symbol_under_cursor"
 R = "rename_symbol"
 h = "signature_help"
-f = "goto_file_vsplit"
 # unbinds
 e = "no_op"
 l = "no_op"
@@ -158,8 +155,8 @@ S           = "surround_add"
 X           = "extend_line_up"
 "ret"       = ["open_below", "normal_mode"]
 "backspace" = "delete_char_backward"
-A-j         = ["yank", "paste_after",  "collapse_selection"]
-A-k         = ["yank", "paste_before", "collapse_selection"]
+A-k         = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A-j         = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 # personal preference
 q   = "select_textobject_inner"
 Q   = "select_textobject_around"
@@ -167,7 +164,7 @@ Q   = "select_textobject_around"
 "," = "remove_primary_selection"
 # movement
 J = ["extend_line_down", "extend_line_down", "extend_line_down", "extend_line_down", "extend_line_down", "extend_line_down"]
-K = ["extend_line_up", "extend_line_up", "extend_line_up", "extend_line_up", "extend_line_up", "extend_line_up"]
+K = ["extend_line_up",   "extend_line_up", "extend_line_up", "extend_line_up", "extend_line_up", "extend_line_up"]
 L = "extend_to_line_end"
 H = "extend_to_line_start"
 G = "goto_file_end"

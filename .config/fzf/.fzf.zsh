@@ -26,7 +26,7 @@ export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden"
 # ctrl + [f]ile
 # export FZF_CTRL_T_OPTS="
 # --prompt=file:
-# --preview 'bat --color=always --style=numbers --line-range=:500 --style=numbers {}'
+# --preview 'cat --color=always --style=numbers --line-range=:500 --style=numbers {}'
 # --header '<C-x> hx'
 # --bind 'ctrl-x:execute(hx {})+abort'
 # "
@@ -48,7 +48,6 @@ export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden"
 # ctrl + histo[r]y
 export FZF_CTRL_R_OPTS="
   --layout=default
-  --bind 'tab:toggle-up,btab:toggle-down'
 "
 # bind up arrow key to fzf history widget instead of C-r
 bindkey -r "^R"
