@@ -35,4 +35,3 @@ function dd() {
         cd "$1" && ll
     fi
 }
-

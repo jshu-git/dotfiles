@@ -46,11 +46,7 @@ fi
 
 # fzf
 if command -v fzf >/dev/null 2>&1; then
-    FZF=$CONFIG/fzf
-    [ -f $FZF/.fzf.zsh ] && source "$FZF/.fzf.zsh"
-    [ -f $FZF/fzf-tab/fzf-tab.plugin.zsh ] && source $FZF/fzf-tab/fzf-tab.plugin.zsh
-    # https://github.com/Aloxaf/fzf-tab/issues/362
-    zstyle ':fzf-tab:*' fzf-flags --height 10%
+    [ -f $CONFIG/fzf/.fzf.zsh ] && source "$CONFIG/fzf/.fzf.zsh"
 fi
 
 # zsh

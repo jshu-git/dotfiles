@@ -21,7 +21,7 @@ export FZF_DEFAULT_OPTS="--no-multi \
   --border=sharp \
   --bind 'tab:toggle-down,btab:toggle-up'
 "
-FD_EXCLUDE="--exclude .git --exclude .cache --exclude .vscode --exclude .cargo --exclude .DS_* --exclude .rustup"
+FD_EXCLUDE="--exclude .git --exclude .cache --exclude .vscode --exclude .cargo --exclude .DS_* --exclude .rustup --exclude .npm"
 export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden $FD_EXCLUDE"
 
 # ctrl + [f]ile
@@ -34,7 +34,7 @@ export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden $FD_EXCLUDE"
 # export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # bindkey -r "^T"
 # bindkey "^F" fzf-file-widget
-# 
+#
 # # ctrl + t (dir) can't do ctrl+d or ctrl+e
 # export FZF_ALT_C_OPTS="
 # --prompt=dir:
@@ -53,3 +53,10 @@ export FZF_CTRL_R_OPTS="
 # bind up arrow key to fzf history widget instead of C-r
 bindkey -r "^R"
 bindkey "^[[A" fzf-history-widget
+
+# fzf-tab
+if [ -d $HOME/.config/fzf/fzf-tab ]; then
+    source $HOME/.config/fzf/fzf-tab/fzf-tab.plugin.zsh
+    # https://github.com/Aloxaf/fzf-tab/issues/362
+    zstyle ':fzf-tab:*' fzf-flags --height 10%
+fi

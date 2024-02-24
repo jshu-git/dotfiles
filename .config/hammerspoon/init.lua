@@ -2,13 +2,11 @@
 -- defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon/init.lua"
 
 local geometry = require("hs.geometry")
-hyper = { "ctrl", "cmd", "alt" }
+local hyper    = { "ctrl", "cmd", "alt" }
 
----------------------------
----- window management ----
----------------------------
+-- window positions
 hs.window.animationDuration = 0
-windowPositions = {
+local windowPositions = {
     hs.layout.maximized,
     -- centered
     geometry.rect(0.2, 0.1, 0.6, 0.8),
@@ -32,7 +30,7 @@ end)
 -- decrease window size
 hs.hotkey.bind(hyper, "-", function()
     local win = hs.window.focusedWindow()
-    local f = win:frame()
+    local f   = win:frame()
     local max = win:screen():frame()
 
     f.x = f.x + (max.w / 30)
@@ -45,7 +43,7 @@ end)
 -- increase window size
 hs.hotkey.bind(hyper, "=", function()
     local win = hs.window.focusedWindow()
-    local f = win:frame()
+    local f   = win:frame()
     local max = win:screen():frame()
 
     f.x = f.x - (max.w / 30)
@@ -56,9 +54,6 @@ hs.hotkey.bind(hyper, "=", function()
 end)
 
 
-----------------
----- others ----
-----------------
 -- show desktop
 hs.hotkey.bind(hyper, "D", function()
     hs.spaces.toggleShowDesktop()
@@ -81,10 +76,10 @@ hs.hotkey.bind({ "shift" }, "delete", shiftDelete, nil, shiftDelete)
 hs.hotkey.bind({ "cmd", "shift" }, "delete", shiftCmdDelete, nil, shiftCmdDelete)
 
 -- application switcher
-apps = {
+local apps = {
     -- {'1', 'company.thebrowser.Browser'}, -- for some reason, only arc doesn't allow for hiding
-    -- {'2', 'com.microsoft.VSCode'},
     {'A', 'org.alacritty'},
+    {'C', 'com.microsoft.VSCode'},
     -- {'A', 'com.github.wez.wezterm'},
     -- {'F', 'com.apple.finder'},
 }
