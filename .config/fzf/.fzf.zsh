@@ -21,7 +21,8 @@ export FZF_DEFAULT_OPTS="--no-multi \
   --border=sharp \
   --bind 'tab:toggle-down,btab:toggle-up'
 "
-export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden"
+FD_EXCLUDE="--exclude .git --exclude .cache --exclude .vscode --exclude .cargo --exclude .DS_* --exclude .rustup"
+export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden $FD_EXCLUDE"
 
 # ctrl + [f]ile
 # export FZF_CTRL_T_OPTS="
