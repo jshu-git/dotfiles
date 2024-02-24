@@ -8,7 +8,7 @@ hru=1
 # Show file sizes in decimal (1KB=1000 bytes) as opposed to binary units (1KiB=1024 bytes)
 meb=0
 # Don't show group column
-fgp=0
+fgp=1
 # Don't show hardlinks column
 lnk=1
 # Show file git status automatically (can cause a slight delay in large repo trees)
