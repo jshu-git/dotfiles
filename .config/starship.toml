@@ -52,7 +52,7 @@ format   = '[[ $symbol ($version) ](fg:foam bg:hl_mid)]($style)'
 disabled = false
 symbol   = ""
 style    = "bg:hl_mid"
-format   = '[[ $symbol ($version) ](fg:foam bg:hl_mid)]($style)'
+format   = '[[ $symbol ($version) ($virtualenv) ](fg:foam bg:hl_mid)]($style)'
 
 [time]
 disabled = false

@@ -17,9 +17,8 @@ KEYTIMEOUT=1
 # https://superuser.com/questions/148207/how-can-i-make-zsh-completion-behave-like-bash-completion
 setopt noautomenu
 
-setopt globdots
-
 # completions
+setopt globdots
 autoload -Uz compinit
 compinit
 
@@ -66,11 +65,10 @@ fi
 
 # yadm
 if command -v yadm >/dev/null 2>&1; then
-    alias y='yadm'
-    alias ys='y status'
-    alias yd='y diff'
-    alias yp='y pull'
-    alias yl='y enter lazygit'
+    alias ys='yadm status'
+    alias yd='yadm diff'
+    alias yp='yadm pull'
+    alias yl='cd ; yadm enter lazygit ; cd -'
 fi
 
 # zellij
@@ -109,9 +107,9 @@ if command -v hx >/dev/null 2>&1; then
     # use source
     alias hx=$HOME/.cargo/bin/hx
     alias hxc="
-    hx $HOME/README.md $HOME/.zshrc $CONFIG/starship.toml $CONFIG/alacritty/alacritty.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml
+    hx $HOME/README.md $CONFIG/hammerspoon/init.lua $HOME/.zshrc $CONFIG/starship.toml $CONFIG/alacritty/alacritty.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml
     "
     export VISUAL=hx
-    export EDITOR="$VISUAL"
+    export EDITOR=$VISUAL
     alias xx=hx
 fi
