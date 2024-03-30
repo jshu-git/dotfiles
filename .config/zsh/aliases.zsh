@@ -8,6 +8,7 @@ alias act='source .venv/bin/activate'
 alias h='cd ~ && ls'
 alias desk='cd ~/Desktop && ls'
 alias g='cd ~/git && ls'
+alias ppwd='pwd -P'
 
 alias mnt='mount | grep -E ^/dev | column -t'
 alias path='echo -e ${PATH//:/\\n}'

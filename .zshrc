@@ -103,9 +103,10 @@ if command -v hx >/dev/null 2>&1; then
     # use source
     alias hx=$HOME/.cargo/bin/hx
     alias hxc="
-    hx $HOME/README.md $HOME/.zshrc $CONFIG/starship.toml $CONFIG/alacritty/alacritty.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml
+    hx $HOME/README.md $HOME/.zshrc $CONFIG/zsh/aliases.zsh $CONFIG/fzf/.fzf.zsh $CONFIG/starship.toml $CONFIG/alacritty/alacritty.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml $CONFIG/helix/languages.toml
     "
     export VISUAL=hx
     export EDITOR=$VISUAL
     alias xx=hx
 fi
+
