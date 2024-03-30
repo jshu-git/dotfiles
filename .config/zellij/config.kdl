@@ -4,19 +4,22 @@
 keybinds clear-defaults=true {
     locked {
         bind "Ctrl a" { SwitchToMode "Normal"; }
-        // https://github.com/zellij-org/zellij/discussions/2518
-        bind "Ctrl w" {
-            Run "zellij" "action" "new-pane" "--floating" {
-                close_on_exit true
-          }
-        }
         bind "Ctrl f" { ToggleFloatingPanes; }
-        // bind "Alt f"  { ToggleFocusFullscreen; }
+        bind "Alt f"  { ToggleFocusFullscreen; }
     }
     normal {
         // lock
         bind "Esc" "Enter" { SwitchToMode "locked"; }
-        
+
+        // add floating pane
+        // https://github.com/zellij-org/zellij/discussions/2518
+        bind "f" {
+            Run "zellij" "action" "new-pane" "--floating" {
+                close_on_exit true
+            }
+            SwitchToMode "Locked"
+        }
+
         // pane
         bind "h" { MoveFocus "Left";  SwitchToMode "Locked"; }
         bind "l" { MoveFocus "Right"; SwitchToMode "Locked"; }
@@ -29,7 +32,7 @@ keybinds clear-defaults=true {
 
         // toggles
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
-        bind "F" { TogglePaneFrames;                                 }
+        bind "F" { TogglePaneFrames;          SwitchToMode "Locked"; }
 
         // tab
         bind "t" { NewTab;                   SwitchToMode "Locked"; }
@@ -103,7 +106,7 @@ plugins {
 //    - true
 //    - false (Default)
 //
-simplified_ui true
+// simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
