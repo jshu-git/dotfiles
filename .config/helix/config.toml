@@ -110,47 +110,46 @@ C-7       = "hsplit" # C-minus
 "A-\\"    = "vsplit_new"
 "A-minus" = "hsplit_new"
 
-# leader https://docs.helix-editor.com/keymap.html#space-mode
+# zellij mode
+[keys.normal.z]
+# lazygit
+l = ":sh zellij run --close-on-exit --floating -- lazygit"
+
+# space mode https://docs.helix-editor.com/master/keymap.html#space-mode
 [keys.normal.space]
-w       = ":write"
-W       = ":write!"
-q       = ":quit"
-Q       = ":quit!"
-x       = ":buffer-close"
-X       = ":buffer-close!"
-F       = "file_picker_in_current_buffer_directory"
-"space" = "last_picker"
-c       = ":lsp-workspace-command"
-r       = ":config-reload"
+n = ":new"
+w = ":write"
+W = ":write!"
+q = ":quit"
+Q = ":quit!"
+x = ":buffer-close"
+X = ":buffer-close!"
+F = "file_picker_in_current_buffer_directory"
+c = ":lsp-workspace-command"
+r = ":config-reload"
 # unbinds
-k   = "no_op"
-h   = "no_op"
-a   = "no_op"
-g   = "no_op"
-"'" = "no_op"
-C   = "no_op"
-A-c = "no_op"
+g   = "no_op" # Debug (experimental) N/A
+k   = "no_op" # hover
+a   = "no_op" # code_action
+h   = "no_op" # select_references_to_symbol_under_cursor
+A-c = "no_op" # toggle_line_comments
 
-# zellij run
-l = ":sh zellij run --close-on-exit --in-place -- lazygit"
-
-# goto mode https://docs.helix-editor.com/keymap.html#goto-mode
+# goto mode https://docs.helix-editor.com/master/keymap.html#goto-mode
 [keys.normal.g]
 k = "hover"
 a = "code_action"
 s = "select_references_to_symbol_under_cursor"
 R = "rename_symbol"
-h = "signature_help"
 # unbinds
-e = "no_op"
-l = "no_op"
-j = "no_op"
-n = "no_op"
-p = "no_op"
-t = "no_op"
-c = "no_op"
-b = "no_op"
-m = "no_op"
+e = "no_op" # goto_last_line
+t = "no_op" # goto_window_top
+c = "no_op" # goto_window_center
+b = "no_op" # goto_window_bottom
+# a = "no_op" # goto_last_accessed_file
+m = "no_op" # goto_last_modified_file
+n = "no_op" # goto_next_buffer
+p = "no_op" # goto_previous_buffer
+j = "no_op" # move_line_down
 
 [keys.select]
 # esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
