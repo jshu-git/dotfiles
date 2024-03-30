@@ -6,14 +6,18 @@
 theme = "rose_pine"
 
 [editor]
-line-number            = "relative"
-cursorline             = true
-cursorcolumn           = true
-completion-trigger-len = 1
-true-color             = true
-undercurl              = true
-bufferline             = "always"
-color-modes            = true
+line-number               = "relative"
+cursorline                = true
+cursorcolumn              = true
+completion-trigger-len    = 1
+idle-timeout              = 50
+completion-timeout        = 50
+preview-completion-insert = false
+true-color                = true
+undercurl                 = true
+rulers                    = [80]
+bufferline                = "always"
+color-modes               = true
 
 [editor.statusline]
 left        = ["mode", "register", "spacer", "version-control", "file-name", "file-encoding", "read-only-indicator"]
@@ -44,6 +48,9 @@ newline = "none"
 [editor.indent-guides]
 render      = true
 skip-levels = 1
+
+[editor.gutters]
+layout = ["diagnostics", "line-numbers", "spacer", "diff"]
 
 [editor.gutters.line-numbers]
 min-width = 3
@@ -84,14 +91,10 @@ G = "goto_file_end"
 n = ["search_next", "align_view_center"]
 N = ["search_prev", "align_view_center"]
 # U   = ["redo",                "align_view_center"]
-# C-u = ["half_page_up",        "align_view_center"]
-# C-d = ["half_page_down",      "align_view_center"]
-# C-b = ["page_up",             "align_view_center"]
-# C-f = ["page_down",           "align_view_center"]
-C-d = "no_op"
-C-u = "no_op"
-C-f = "no_op"
-C-b = "no_op"
+C-u = ["half_page_up",        "align_view_center"]
+C-d = ["half_page_down",      "align_view_center"]
+C-b = ["page_up",             "align_view_center"]
+C-f = ["page_down",           "align_view_center"]
 C-i = ["jump_forward",        "align_view_center"]
 C-o = ["jump_backward",       "align_view_center"]
 "{" = ["goto_prev_paragraph", "align_view_center"]
@@ -114,6 +117,7 @@ W       = ":write!"
 q       = ":quit"
 Q       = ":quit!"
 x       = ":buffer-close"
+X       = ":buffer-close!"
 F       = "file_picker_in_current_buffer_directory"
 "space" = "last_picker"
 c       = ":lsp-workspace-command"
@@ -124,6 +128,8 @@ h   = "no_op"
 a   = "no_op"
 g   = "no_op"
 "'" = "no_op"
+C   = "no_op"
+A-c = "no_op"
 
 # zellij run
 l = ":sh zellij run --close-on-exit --in-place -- lazygit"
