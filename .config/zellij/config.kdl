@@ -4,8 +4,8 @@
 keybinds clear-defaults=true {
     locked {
         bind "Ctrl a" { SwitchToMode "Normal"; }
-        bind "Ctrl f" { ToggleFloatingPanes; }
-        bind "Alt f"  { ToggleFocusFullscreen; }
+        bind "Ctrl f" { ToggleFloatingPanes;   }
+        bind "Alt  f" { ToggleFocusFullscreen; }
     }
     normal {
         // lock
@@ -28,7 +28,7 @@ keybinds clear-defaults=true {
         bind "a" { NewPane   "Down";  SwitchToMode "Locked"; }
         bind "s" { NewPane   "Right"; SwitchToMode "Locked"; }
         bind "X" { CloseFocus;        SwitchToMode "Locked"; }
-        bind "R" { SwitchToMode "RenamePane"; PaneNameInput 0; }
+        // bind "R" { SwitchToMode "RenamePane"; PaneNameInput 0; }
 
         // toggles
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
