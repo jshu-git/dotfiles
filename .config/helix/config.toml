@@ -18,6 +18,8 @@ undercurl                 = true
 rulers                    = [80]
 bufferline                = "always"
 color-modes               = true
+popup-border              = "all"
+popup-border-style        = "rounded"
 
 [editor.statusline]
 left        = ["mode", "register", "spacer", "version-control", "file-name", "file-encoding", "read-only-indicator"]
@@ -160,7 +162,6 @@ esc = ["collapse_selection", "normal_mode"]
 # shared with normal/select
 S           = "surround_add"
 X           = "extend_line_up"
-"ret"       = ["open_below", "normal_mode"]
 "backspace" = "delete_char_backward"
 A-k         = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 A-j         = ["extend_to_line_bounds", "delete_selection", "paste_after"]

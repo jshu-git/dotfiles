@@ -60,12 +60,12 @@ fi
 [ -f $ZSH/aliases.zsh ] && source $ZSH/aliases.zsh
 
 # yadm
-if command -v yadm >/dev/null 2>&1; then
-    alias ys='yadm status'
-    alias yd='yadm diff'
-    alias yp='yadm pull'
-    alias yl='cd ; yadm enter lazygit ; cd -'
-fi
+# if command -v yadm >/dev/null 2>&1; then
+#     alias ys='yadm status'
+#     alias yd='yadm diff'
+#     alias yp='yadm pull'
+#     alias yl='cd ; yadm enter lazygit ; cd -'
+# fi
 
 # zellij
 if command -v zellij >/dev/null 2>&1; then
@@ -110,3 +110,8 @@ if command -v hx >/dev/null 2>&1; then
     alias xx=hx
 fi
 
+# lazygit
+if command -v lazygit >/dev/null 2>&1; then
+    alias gg=lazygit
+    alias yy='cd ; yadm enter lazygit ; cd -'
+fi
