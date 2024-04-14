@@ -1,7 +1,17 @@
 // https://github.com/zellij-org/zellij/blob/main/zellij-utils/assets/layouts/compact.kdl
 layout {
-    pane
-    pane size=1 borderless=true {
-        plugin location="zellij:compact-bar"
+    tab hide_floating_panes=false {
+        pane
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        floating_panes {
+            pane {
+                x      "5%"
+                y      "5%"
+                width  "90%"
+                height "90%"
+            }
+        }
     }
 }

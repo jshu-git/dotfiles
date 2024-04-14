@@ -6,6 +6,7 @@ keybinds clear-defaults=true {
         bind "Ctrl a" { SwitchToMode "Normal"; }
         bind "Ctrl f" { ToggleFloatingPanes;   }
         bind "Alt  f" { ToggleFocusFullscreen; }
+        // bind "Ctrl Tab" { GoToNextTab;         }
     }
     normal {
         // lock
@@ -13,12 +14,12 @@ keybinds clear-defaults=true {
 
         // add floating pane
         // https://github.com/zellij-org/zellij/discussions/2518
-        bind "f" {
-            Run "zellij" "action" "new-pane" "--floating" {
-                close_on_exit true
-            }
-            SwitchToMode "Locked"
-        }
+        // bind "f" {
+        //     Run "zellij" "action" "new-pane" "--floating" {
+        //         close_on_exit true
+        //     }
+        //     SwitchToMode "Locked"
+        // }
 
         // pane
         bind "h" { MoveFocus "Left";  SwitchToMode "Locked"; }
@@ -37,15 +38,16 @@ keybinds clear-defaults=true {
         // tab
         bind "t" { NewTab;                   SwitchToMode "Locked"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0;        }
-        // bind "p" { GoToPreviousTab;                                 }
         bind "Tab" { GoToNextTab;                                     }
+        // bind "Shift Tab" { GoToPreviousTab;                                 }
         bind "1" { GoToTab 1;                SwitchToMode "Locked"; }
         bind "2" { GoToTab 2;                SwitchToMode "Locked"; }
         bind "3" { GoToTab 3;                SwitchToMode "Locked"; }
         bind "4" { GoToTab 4;                SwitchToMode "Locked"; }
         bind "5" { GoToTab 5;                SwitchToMode "Locked"; }
         bind "S" { ToggleActiveSyncTab;      SwitchToMode "Locked"; }
-        // bind "x"     { CloseTab;                 SwitchToMode "Locked"; }
+        // bind "X"     { CloseTab;                 SwitchToMode "Locked"; }
+        // bind "o" { MoveTab "Right"; }
 
         // resize
         bind "=" { Resize "Increase";       }
