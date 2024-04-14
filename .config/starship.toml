@@ -3,8 +3,8 @@
 
 add_newline = false
 palette     = "rose_pine"
+# [░▒▓](foam)\
 format      = """
-[░▒▓](foam)\
 $directory\
 $git_branch\
 $git_status\
@@ -23,56 +23,47 @@ disabled          = false
 truncation_length = 4
 truncation_symbol = "…/"
 truncate_to_repo  = false
-style             = "fg:foam bg:pine"
+style             = "fg:iris bg:overlay"
 format            = "[ $path ]($style)"
 
 [git_branch]
 disabled           = false
 symbol             = ""
 always_show_remote = true
-style              = "bg:hl_high"
-format             = '[[ $symbol $branch ](fg:foam bg:hl_high)]($style)'
-
+format             = '[[ $symbol $branch ](fg:rose bg:hl_low)]($style)'
 [git_status]
 disabled = false
-style    = "bg:hl_high"
-format   = '[[($all_status$ahead_behind )](fg:foam bg:hl_high)]($style)'
+format   = '[[($all_status$ahead_behind )](fg:rose bg:hl_low)]($style)'
 
 [golang]
 disabled = false
 symbol   = ""
-style    = "bg:hl_mid"
-format   = '[[ $symbol ($version) ](fg:foam bg:hl_mid)]($style)'
-
+format   = '[[ $symbol ($version) ](fg:foam bg:hl_low)]($style)'
 [rust]
 disabled = false
 symbol   = ""
-style    = "bg:hl_mid"
-format   = '[[ $symbol ($version) ](fg:foam bg:hl_mid)]($style)'
-
+format   = '[[ $symbol ($version) ](fg:foam bg:hl_low)]($style)'
 [python]
 disabled = false
 symbol   = ""
-style    = "bg:hl_mid"
-format   = '[[ $symbol ($version) ($virtualenv) ](fg:foam bg:hl_mid)]($style)'
+format   = '[[ $symbol ($version) ($virtualenv) ](fg:foam bg:hl_low)]($style)'
 
 [time]
 disabled = false
-style    = "bg:hl_low"
-format   = '[[ $time ](fg:subtle bg:hl_low)]($style)'
+format   = '[[ $time ](fg:subtle)]($style)'
 
 [character]
 disabled       = false
-# success_symbol = '[❯](bold foam)'
+success_symbol = '[❯](bold foam)'
 # https://www.nerdfonts.com/cheat-sheet
-success_symbol = '[](bold foam)' # 󱍿 󱣀
 error_symbol   = "[✗](bold love)"
-format         = ' $symbol '
+format         = '$symbol '
 
 [cmd_duration]
 disabled          = false
-min_time          = 2_000
+min_time          = 2_00
 show_milliseconds = true
+format            = '[[$duration](fg:subtle)]($style)'
 
 # https://rosepinetheme.com/palette/ingredients/#rose-pine
 [palettes.rose_pine]
