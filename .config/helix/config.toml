@@ -254,7 +254,7 @@ wrap-indicator    = ""
 "r"     = "no_op" # "rename_symbol"                            # Rename symbol (LSP)
 "a"     = "no_op" # "code_action"                              # Apply code action (LSP)
 "h"     = "no_op" # "select_references_to_symbol_under_cursor" # Select symbol references (LSP)
-"'"     = "no_op" # "last_picker"                              # Open last fuzzy picker
+"'"     = "last_picker"                              # Open last fuzzy picker
 # "w"     = "N/A"                                      # Enter window mode
 "c"     = "no_op" # "toggle_comments"                          # Comment/uncomment selections
 "C"     = "no_op" # "toggle_block_comments"                    # Block comment/uncomment selections
@@ -274,7 +274,7 @@ wrap-indicator    = ""
 "x" = ":buffer-close"
 "X" = ":buffer-close!"
 # Picker mode
-"f" = { "f" = "file_picker", "F" = "file_picker_in_current_buffer_directory", "b" = "buffer_picker", "j" = "jumplist_picker", "g" = "changed_file_picker", "s" = "symbol_picker", "S" = "workspace_symbol_picker", "d" = "diagnostics_picker", "D" = "workspace_diagnostics_picker", "'" = "last_picker" }
+"f" = { "f" = "file_picker", "F" = "file_picker_in_current_buffer_directory", "b" = "buffer_picker", "j" = "jumplist_picker", "g" = "changed_file_picker", "s" = "symbol_picker", "S" = "workspace_symbol_picker", "d" = "diagnostics_picker", "D" = "workspace_diagnostics_picker" }
 
 # Select/extend mode
 [keys.select]

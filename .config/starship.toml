@@ -43,11 +43,13 @@ disabled = false
 symbol   = ""
 style    = "bg:hl_mid"
 format   = '[[ $symbol ($version) ](fg:foam bg:hl_mid)]($style)'
+
 [rust]
 disabled = false
 symbol   = ""
 style    = "bg:hl_mid"
 format   = '[[ $symbol ($version) ](fg:foam bg:hl_mid)]($style)'
+
 [python]
 disabled = false
 symbol   = ""
@@ -63,9 +65,7 @@ format   = '[[ $time ](fg:subtle bg:hl_low)]($style)'
 disabled       = false
 # success_symbol = '[❯](bold foam)'
 # https://www.nerdfonts.com/cheat-sheet
-success_symbol = '[](bold foam)'
-# 󱍿
-# 󱣀
+success_symbol = '[](bold foam)' # 󱍿 󱣀
 error_symbol   = "[✗](bold love)"
 format         = ' $symbol '
 

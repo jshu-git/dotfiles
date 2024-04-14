@@ -23,11 +23,11 @@ autoload -Uz compinit
 compinit
 
 # macos arrow keys https://linux.die.net/man/1/zshzle
-bindkey "^[[1;3C" forward-word          # A-right
-bindkey "^[[1;3D" backward-word         # A-left
+bindkey "^[[1;3C" forward-word          # Alt-right
+bindkey "^[[1;3D" backward-word         # Alt-left
 bindkey "^[[1;9D" beginning-of-line     # Cmd-left
 bindkey "^[[1;9C" end-of-line           # Cmd-right
-bindkey "^[[Z"    reverse-menu-complete # S-Tab
+# bindkey "^[[Z"    reverse-menu-complete # Shift-Tab
 bindkey "^Z"      undo
 bindkey "^Y"      redo
 
@@ -35,10 +35,6 @@ bindkey "^Y"      redo
 export PATH=/opt/homebrew/bin:$PATH
 
 CONFIG="$HOME/.config"
-# zoxide replaces cd
-if command -v zoxide > /dev/null 2>&1; then
-    eval "$(zoxide init --cmd cd zsh)"
-fi
 # eza replaces ls https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
 if command -v eza > /dev/null 2>&1; then
     [ -f $CONFIG/eza/eza-wrapper.sh ] && alias ls="$CONFIG/eza/eza-wrapper.sh"
@@ -59,13 +55,10 @@ if [ -d $ZSH/plugins/zsh-autosuggestions ]; then
 fi
 [ -f $ZSH/aliases.zsh ] && source $ZSH/aliases.zsh
 
-# yadm
-# if command -v yadm >/dev/null 2>&1; then
-#     alias ys='yadm status'
-#     alias yd='yadm diff'
-#     alias yp='yadm pull'
-#     alias yl='cd ; yadm enter lazygit ; cd -'
-# fi
+# zoxide
+if command -v zoxide > /dev/null 2>&1; then
+    eval "$(zoxide init zsh)"
+fi
 
 # zellij
 if command -v zellij >/dev/null 2>&1; then
@@ -79,11 +72,6 @@ if command -v zellij >/dev/null 2>&1; then
             zellij -s "$1"
         fi
     }
-fi
-
-# ripgrep
-if command -v ripgrep >/dev/null 2>&1; then
-    [ -f $CONFIG/.ripgreprc ] && export RIPGREP_CONFIG_PATH="$CONFIG/.ripgreprc"
 fi
 
 # bat
@@ -103,7 +91,7 @@ if command -v hx >/dev/null 2>&1; then
     # use source
     alias hx=$HOME/.cargo/bin/hx
     alias hxc="
-    hx $HOME/README.md $HOME/.zshrc $CONFIG/zsh/aliases.zsh $CONFIG/fzf/.fzf.zsh $CONFIG/starship.toml $CONFIG/alacritty/alacritty.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml $CONFIG/helix/languages.toml
+    hx $HOME/README.md $CONFIG/alacritty/alacritty.toml $HOME/.zshrc $CONFIG/zsh/aliases.zsh $CONFIG/fzf/.fzf.zsh $CONFIG/starship.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml $CONFIG/helix/languages.toml
     "
     export VISUAL=hx
     export EDITOR=$VISUAL
@@ -113,5 +101,6 @@ fi
 # lazygit
 if command -v lazygit >/dev/null 2>&1; then
     alias gg=lazygit
+    # yadm
     alias yy='cd ; yadm enter lazygit ; cd -'
 fi
