@@ -34,6 +34,7 @@ bindkey "^Y"      redo
 # brew
 export PATH=/opt/homebrew/bin:$PATH
 
+# cli tools
 CONFIG="$HOME/.config"
 # eza replaces ls https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
 if command -v eza > /dev/null 2>&1; then
@@ -63,13 +64,15 @@ fi
 # zellij
 if command -v zellij >/dev/null 2>&1; then
     # use source
-    # alias zellij=$HOME/.cargo/bin/zellij
+    alias zellij=$HOME/.cargo/bin/zellij
     function zz() {
         # default to 'dev' session
         if [ -z "$1" ]; then
-            zellij a dev
+            # zellij a dev
+            $HOME/.cargo/bin/zellij a dev
         else
-            zellij -s "$1"
+            # zellij -s "$1"
+            $HOME/.cargo/bin/zellij -s "$1"
         fi
     }
 fi
