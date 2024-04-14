@@ -61,7 +61,7 @@ format         = ' $symbol '
 
 [cmd_duration]
 disabled          = false
-min_time          = 2_00
+min_time          = 2_000
 show_milliseconds = true
 format            = '[[$duration](fg:subtle)]($style)'
 

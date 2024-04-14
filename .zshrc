@@ -64,15 +64,15 @@ fi
 # zellij
 if command -v zellij >/dev/null 2>&1; then
     # use source
-    alias zellij=$HOME/.cargo/bin/zellij
+    # alias zellij=$HOME/.cargo/bin/zellij
     function zz() {
         # default to 'dev' session
         if [ -z "$1" ]; then
-            # zellij a dev
-            $HOME/.cargo/bin/zellij a dev
+            zellij a dev
+            # $HOME/.cargo/bin/zellij a dev
         else
-            # zellij -s "$1"
-            $HOME/.cargo/bin/zellij -s "$1"
+            zellij -s "$1"
+            # $HOME/.cargo/bin/zellij -s "$1"
         fi
     }
 fi
