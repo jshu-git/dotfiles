@@ -50,14 +50,14 @@ format   = '[[ $symbol ($version) ($virtualenv) ](fg:foam bg:hl_low)]($style)'
 
 [time]
 disabled = false
-format   = '[[ $time ](fg:subtle)]($style)'
+format   = '[[ $time ](fg:subtle bg:surface)]($style)'
 
 [character]
 disabled       = false
 success_symbol = '[❯](bold foam)'
 # https://www.nerdfonts.com/cheat-sheet
 error_symbol   = "[✗](bold love)"
-format         = '$symbol '
+format         = ' $symbol '
 
 [cmd_duration]
 disabled          = false
