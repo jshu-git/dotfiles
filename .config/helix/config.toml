@@ -6,19 +6,36 @@
 theme = "rose_pine"
 
 [editor]
+scrolloff                 = 0
+# mouse                     = true
+# middle-click-paste        = true
+# scroll-lines              = 3
+# shell                     = ["sh", "-c"]
 line-number               = "relative"
 cursorline                = true
 cursorcolumn              = true
-completion-trigger-len    = 1
+# gutters                   = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+# auto-completion           = true
+# auto-format               = true
+# auto-save                 = false
 idle-timeout              = 50
 completion-timeout        = 50
 preview-completion-insert = false
+completion-trigger-len    = 1
+completion-replace        = true
+# auto-info                 = true
 true-color                = true
 undercurl                 = true
-rulers                    = [80]
+# rulers                    = []
 bufferline                = "always"
 color-modes               = true
+text-width                = 80
+# workspace-lsp-roots       = []
+# default-line-ending       = "native"
+# insert-final-newline      = true
 popup-border              = "all"
+# indent-heuristic          = "hybrid"
+# jump-label-alphabet       = "abcdefghijklmnopqrstuvwxyz"
 
 [editor.statusline]
 left        = ["mode", "spacer", "version-control", "file-name", "file-encoding", "read-only-indicator"]
@@ -29,11 +46,12 @@ mode.insert = "INS"
 mode.select = "SEL"
 
 [editor.lsp]
-display-messages    = true
+display-messages = true
 # display-inlay-hints = true
 
 [editor.cursor-shape]
 insert = "bar"
+select = "underline"
 
 [editor.file-picker]
 hidden = false
@@ -44,7 +62,9 @@ wrap-around = false
 [editor.whitespace.render]
 # space   = "all"
 tab     = "all"
-newline = "none"
+# newline = "all"
+# [editor.whitespace.characters]
+# newline = ""
 
 [editor.indent-guides]
 render      = true
@@ -54,7 +74,7 @@ skip-levels = 1
 layout = ["diagnostics", "line-numbers", "spacer", "diff"]
 
 [editor.gutters.line-numbers]
-min-width = 3
+min-width = 1
 
 [editor.soft-wrap]
 enable            = true
@@ -62,13 +82,25 @@ max-wrap          = 0
 max-indent-retain = 0
 wrap-indicator    = ""
 
+# [editor.smart-tab]
+# supersede-menu  = true
+
 [keys.normal]
 "esc" = ["collapse_selection", "keep_primary_selection"]
 "C-r" = ":config-reload"
+"K"   = "hover"
 
 # Movement
-"J" = ["move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "align_view_center"]
-"K" = ["move_visual_line_up",   "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "align_view_center"]
+# "A-." = "repeat_last_motion"    # Repeat last motion
+# "C-b" = "page_up"               # Move page up
+# "C-f" = "page_down"             # Move page down
+# "C-u" = "page_cursor_half_up"   # Move cursor and page half page up
+# "C-d" = "page_cursor_half_down" # Move cursor and page half page down
+# "C-i" = "jump_forward"          # Jump forward on the jumplist
+# "C-o" = "jump_backward"         # Jump backward on the jumplist
+# "C-s" = "save_selection"        # Save the current selection to the jumplist
+"C-d" = ["page_cursor_half_down", "align_view_center"]
+"C-u" = ["page_cursor_half_up",   "align_view_center"]
 "L" = "extend_to_line_end"
 "H" = "extend_to_line_start"
 
@@ -178,9 +210,6 @@ wrap-indicator    = ""
 "C-7" = "hsplit" # C-minus
 # Insert mode
 "backspace" = "delete_char_backward"
-# Unimpaired
-"{" = "goto_prev_paragraph"
-"}" = "goto_next_paragraph"
 
 # Goto mode
 [keys.normal.g]
@@ -206,7 +235,6 @@ wrap-indicator    = ""
 # "k" = "move_line_up"             # Move up textual (instead of visual) line
 # "w" = "goto_word"                # Show labels at each word and select the word that belongs to the entered labels
 "s" = "select_references_to_symbol_under_cursor"
-"k" = "hover"
 "R" = "rename_symbol"
 "a" = "code_action"
 
@@ -228,17 +256,16 @@ wrap-indicator    = ""
 "h"     = "no_op" # "select_references_to_symbol_under_cursor" # Select symbol references (LSP)
 "'"     = "no_op" # "last_picker"                              # Open last fuzzy picker
 # "w"     = "N/A"                                      # Enter window mode
-# "c"     = "toggle_comments"                          # Comment/uncomment selections
+"c"     = "no_op" # "toggle_comments"                          # Comment/uncomment selections
 "C"     = "no_op" # "toggle_block_comments"                    # Block comment/uncomment selections
 "A-c"   = "no_op" # "toggle_line_comments"                     # Line comment/uncomment selections
 # "p"     = "paste_clipboard_after"                    # Paste system clipboard after selections
 # "P"     = "paste_clipboard_before"                   # Paste system clipboard before selections
 # "y"     = "yank_to_clipboard"                        # Yank selections to clipboard
 # "Y"     = "yank_main_selection_to_clipboard"         # Yank main selection to clipboard
-# "R"     =  "replace_selections_with_clipboard"        # Replace selections by clipboard contents
+# "R"     = "replace_selections_with_clipboard"        # Replace selections by clipboard contents
 # "/"     = "global_search"                            # Global search in workspace folder
 # "?"     = "command_palette"                          # Open command palette
-"c" = "toggle_block_comments"
 "n" = ":new"
 "w" = ":write"
 "W" = ":write!"
@@ -253,8 +280,8 @@ wrap-indicator    = ""
 [keys.select]
 # esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
 "esc" = ["collapse_selection", "normal_mode"]
-"J"   = ["extend_line_down", "extend_line_down", "extend_line_down", "extend_line_down", "extend_line_down", "extend_line_down"]
-"K"   = ["extend_line_up",   "extend_line_up", "extend_line_up", "extend_line_up", "extend_line_up", "extend_line_up"]
+"C-d" = "page_cursor_half_down"
+"C-u" = "page_cursor_half_up" 
 "L"   = "extend_to_line_end"
 "H"   = "extend_to_line_start"
 "A-k" = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
@@ -264,8 +291,6 @@ wrap-indicator    = ""
 ","   = "remove_primary_selection"
 "G"   = "goto_file_end"
 "S"   = "surround_add"
-"{"   = "goto_prev_paragraph"
-"}"   = "goto_next_paragraph"
 
 # Insert mode
 [keys.insert]
