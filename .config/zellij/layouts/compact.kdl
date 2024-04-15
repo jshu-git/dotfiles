@@ -9,7 +9,7 @@ layout {
             x      "5%"
             y      "5%"
             width  "90%"
-            height "90%"
+            height "80%"
         }
     }
 }
