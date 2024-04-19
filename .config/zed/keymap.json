@@ -1,0 +1,163 @@
+[
+  {
+    "bindings": {
+      "cmd-shift-,": "zed::OpenDefaultSettings",
+      "cmd-shift-k": "zed::OpenDefaultKeymap",
+      "cmd-d": "workspace::ToggleZoom",
+      "cmd-e": "workspace::ToggleRightDock",
+      "cmd-t": "workspace::ToggleBottomDock",
+      "cmd-r": "pane::RevealInProjectPanel",
+      "alt-r": "editor::RevealInFinder",
+      "alt-c": "editor::CopyPath",
+      "ctrl-tab": "pane::ActivateNextItem",
+      "ctrl-shift-tab": "pane::ActivatePrevItem",
+      "cmd-j": "journal::NewJournalEntry"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"]
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"]
+    }
+  },
+  // vscode bindings
+  {
+    "context": "Editor",
+    "bindings": {
+      // "ctrl-shift-right": "editor::SelectLargerSyntaxNode",
+      // "ctrl-shift-left": "editor::SelectSmallerSyntaxNode",
+      // "alt-r": "editor::SelectAllMatches"
+      // "f2": "editor::Rename",
+      // "f12": "editor::GoToDefinition",
+      // "alt-f12": "editor::GoToDefinitionSplit",
+      // "cmd-f12": "editor::GoToTypeDefinition",
+      // "shift-f12": "editor::GoToImplementation",
+      // "alt-cmd-f12": "editor::GoToTypeDefinitionSplit",
+      // "alt-shift-f12": "editor::FindAllReferences",
+      // "ctrl-m": "editor::MoveToEnclosingBracket",
+      // "alt-cmd-[": "editor::Fold",
+      // "alt-cmd-]": "editor::UnfoldLines",
+      // "ctrl-space": "editor::ShowCompletions",
+      // "cmd-.": "editor::ToggleCodeActions",
+      // "alt-cmd-r": "editor::RevealInFinder",
+      // "ctrl-cmd-c": "editor::DisplayCursorNames"
+    }
+  },
+  // vim bindings
+  {
+    // normal + visual
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      // movement
+      "shift-h": "vim::FirstNonWhitespace",
+      "shift-l": "vim::EndOfLine",
+      // "ctrl-d": ["workspace::SendKeystroke", "ctrl-d z z"],
+      // "ctrl-u": ["workspace::SendKeystroke", "ctrl-u z z"],
+      "shift-j": ["workspace::SendKeystrokes", "6 j"],
+      "shift-k": ["workspace::SendKeystrokes", "6 k"],
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+
+      // windows
+      "ctrl-w v": "pane::SplitRight",
+      "ctrl-w s": "pane::SplitDown",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      // "ctrl-right": "increase pane size"
+
+      // g actions
+      // lsp
+      // "shift-k": "editor::Hover",
+      "g h": "editor::Hover",
+      "g r": "editor::FindAllReferences",
+      "g d": "editor::GoToDefinitionSplit",
+      "g shift-d": "editor::GoToTypeDefinitionSplit",
+      "g f": "editor::OpenExcerpts",
+      "g s": "outline::Toggle",
+      "g shift-s": "project_symbols::Toggle",
+      "g shift-a": "editor::ToggleCodeActions",
+      // selection
+      "g o": "editor::OpenUrl",
+      "g a": "editor::SelectAllMatches",
+      "g n": [
+        "editor::SelectNext",
+        {
+          "replace_newest": false
+        }
+      ],
+      "g p": [
+        "editor::SelectPrevious",
+        {
+          "replace_newest": false
+        }
+      ],
+      "g N": [
+        "editor::SelectNext",
+        {
+          "replace_newest": true
+        }
+      ],
+      "g P": [
+        "editor::SelectPrevious",
+        {
+          "replace_newest": true
+        }
+      ],
+
+      // unimpaired
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPrevDiagnostic",
+      "] c": "editor::GoToHunk",
+      "[ c": "editor::GoToPrevHunk",
+
+      // leader
+      "space f": "file_finder::Toggle",
+      "space w": "workspace::Save",
+
+      // unimpaired
+      "] g": "editor::GoToDiagnostic",
+      "[ g": "editor::GoToPrevDiagnostic",
+
+      // search
+      // "*": "buffer_search::Deploy",
+
+      // misc
+      // "shift-y": ["workspace::SendKeystroke", "v $ y"],
+      "ctrl-space": "editor::ShowCompletions",
+      "s": ["workspace::SendKeystrokes", "c i w"],
+      "shift-u": "editor::Redo",
+      "ctrl-c": "editor::ToggleComments"
+    }
+  },
+  {
+    // normal mode
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {}
+  },
+  {
+    // visual, visual line & visual block modes
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      "shift-v": "vim::Down",
+      "ctrl-v": "vim::Down"
+    }
+  },
+  {
+    // insert mode
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in insert mode
+      // e.g.
+      // "j j": "vim::NormalBefore" // remap jj in insert mode to escape.
+      // "ctrl-x": "editor::ShowCompletions"
+    }
+  }
+]
