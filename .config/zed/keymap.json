@@ -3,6 +3,7 @@
     "bindings": {
       "cmd-shift-,": "zed::OpenDefaultSettings",
       "cmd-shift-k": "zed::OpenDefaultKeymap",
+      "cmd-shift-x": "zed::Extensions",
       "cmd-d": "workspace::ToggleZoom",
       "cmd-e": "workspace::ToggleRightDock",
       "cmd-t": "workspace::ToggleBottomDock",
@@ -26,27 +27,10 @@
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"]
     }
   },
-  // vscode bindings
   {
-    "context": "Editor",
+    "context": "BufferSearchBar",
     "bindings": {
-      // "ctrl-shift-right": "editor::SelectLargerSyntaxNode",
-      // "ctrl-shift-left": "editor::SelectSmallerSyntaxNode",
-      // "alt-r": "editor::SelectAllMatches"
-      // "f2": "editor::Rename",
-      // "f12": "editor::GoToDefinition",
-      // "alt-f12": "editor::GoToDefinitionSplit",
-      // "cmd-f12": "editor::GoToTypeDefinition",
-      // "shift-f12": "editor::GoToImplementation",
-      // "alt-cmd-f12": "editor::GoToTypeDefinitionSplit",
-      // "alt-shift-f12": "editor::FindAllReferences",
-      // "ctrl-m": "editor::MoveToEnclosingBracket",
-      // "alt-cmd-[": "editor::Fold",
-      // "alt-cmd-]": "editor::UnfoldLines",
-      // "ctrl-space": "editor::ShowCompletions",
-      // "cmd-.": "editor::ToggleCodeActions",
-      // "alt-cmd-r": "editor::RevealInFinder",
-      // "ctrl-cmd-c": "editor::DisplayCursorNames"
+      // "enter": "search::SelectNextMatch"
     }
   },
   // vim bindings
@@ -64,6 +48,10 @@
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp",
 
+      // selection
+      "ctrl-]": "editor::SelectLargerSyntaxNode",
+      "ctrl-[": "editor::SelectSmallerSyntaxNode",
+
       // windows
       "ctrl-w v": "pane::SplitRight",
       "ctrl-w s": "pane::SplitDown",
@@ -75,9 +63,9 @@
 
       // g actions
       // lsp
-      // "shift-k": "editor::Hover",
       "g h": "editor::Hover",
       "g r": "editor::FindAllReferences",
+      "g shift-r": "editor::Rename",
       "g d": "editor::GoToDefinitionSplit",
       "g shift-d": "editor::GoToTypeDefinitionSplit",
       "g f": "editor::OpenExcerpts",
@@ -121,16 +109,15 @@
       // leader
       "space f": "file_finder::Toggle",
       "space w": "workspace::Save",
-
-      // unimpaired
-      "] g": "editor::GoToDiagnostic",
-      "[ g": "editor::GoToPrevDiagnostic",
+      "space d": "diagnostics::Deploy",
+      "space shift-f": "project_search::ToggleFocus", // bugged
 
       // search
-      // "*": "buffer_search::Deploy",
+      "*": "buffer_search::Deploy",
 
       // misc
       // "shift-y": ["workspace::SendKeystroke", "v $ y"],
+      "=": "editor::Format",
       "ctrl-space": "editor::ShowCompletions",
       "s": ["workspace::SendKeystrokes", "c i w"],
       "shift-u": "editor::Redo",
