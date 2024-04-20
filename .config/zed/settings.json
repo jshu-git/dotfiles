@@ -1,5 +1,6 @@
 {
   "theme": "Rosé Pine",
+  // "base_keymap": "None",
   "buffer_font_family": "FiraCode Nerd Font",
   "buffer_font_size": 18,
   "buffer_line_height": "standard",
@@ -16,7 +17,7 @@
   },
   "vertical_scroll_margin": 10,
   // "relative_line_numbers": true,
-  "seed_search_query_from_cursor": "selection",
+  // "seed_search_query_from_cursor": "selection",
   "project_panel": {
     "dock": "right",
     "indent_size": 8

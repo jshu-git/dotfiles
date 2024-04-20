@@ -1,19 +1,23 @@
 [
-  // global
   {
     "bindings": {
-      "cmd-shift-,": "zed::OpenDefaultSettings",
-      "cmd-shift-k": "zed::OpenDefaultKeymap",
-      "cmd-shift-x": "zed::Extensions",
-      "cmd-shift-j": "journal::NewJournalEntry",
       "cmd-d": "workspace::ToggleZoom",
       "cmd-e": "workspace::ToggleRightDock",
       "cmd-t": "workspace::ToggleBottomDock",
       "cmd-r": "pane::RevealInProjectPanel",
+      "cmd-shift-,": "zed::OpenDefaultSettings",
+      "cmd-shift-j": "journal::NewJournalEntry",
+      "cmd-shift-r": "search::ToggleReplace",
+      "alt-t": "workspace::NewTerminal",
       "alt-r": "editor::RevealInFinder",
       "alt-c": "editor::CopyPath",
+      "alt-shift-c": "editor::CopyRelativePath",
       "ctrl-tab": "pane::ActivateNextItem",
-      "ctrl-shift-tab": "pane::ActivatePrevItem"
+      "ctrl-shift-tab": "pane::ActivatePrevItem",
+      "tab": "menu::SelectNext",
+      "shift-tab": "menu::SelectPrev",
+      // special override for insert mode
+      "ctrl-e": "editor::Cancel"
     }
   },
   {
@@ -25,25 +29,6 @@
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
     }
   },
-  // search bindings
-  {
-    "context": "BufferSearchBar",
-    "bindings": {
-      "enter": "search::SelectNextMatch",
-      "cmd-shift-r": "search::ToggleReplace"
-      // "tab": "buffer_search::FocusEditor",
-      // selecting
-      // "shift-enter": "search::SelectPrevMatch"
-      // "alt-enter": "search::SelectAllMatches",
-    }
-  },
-  {
-    "context": "BufferSearchBar && !in_replace > Editor",
-    "bindings": {
-      "ctrl-p": "search::PreviousHistoryQuery",
-      "ctrl-n": "search::NextHistoryQuery"
-    }
-  },
   // vim bindings
   {
     // normal + visual
@@ -51,10 +36,14 @@
     "bindings": {
       // leader
       "space w": "workspace::Save",
+      // pickers
       "space f f": "file_finder::Toggle",
+      "space f r": "projects::OpenRecent",
       "space f d": "diagnostics::Deploy",
-      "space f s": "pane::DeploySearch",
-      // "space f b": "tab_switcher::Toggle",
+      "space f g": "pane::DeploySearch",
+      "space f k": "zed::OpenKeymap",
+      "space f shift-k": "zed::OpenDefaultKeymap",
+      "space f shift-v": "vim::OpenDefaultKeymap",
       "space space": "tab_switcher::Toggle",
 
       // movement
@@ -66,14 +55,18 @@
       "alt-k": "editor::MoveLineUp",
       // "ctrl-d": ["workspace::SendKeystroke", "ctrl-d z z"],
       // "ctrl-u": ["workspace::SendKeystroke", "ctrl-u z z"],
-
-      // windows
-      "ctrl-\\": "pane::SplitRight",
-      "ctrl--": "pane::SplitDown",
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+
+      // windows
+      "ctrl-\\": "pane::SplitRight",
+      "ctrl--": "pane::SplitDown",
+      "alt-\\": ["workspace::NewFileInDirection", "Right"],
+      "alt--": ["workspace::NewFileInDirection", "Down"],
+      "ctrl-w s": "pane::SplitDown",
+      "ctrl-w v": "pane::SplitRight",
       // "ctrl-right": "increase pane size"
 
       // g actions
@@ -87,7 +80,6 @@
       "g shift-d": "editor::GoToTypeDefinitionSplit",
       "g s": "outline::Toggle",
       "g shift-s": "project_symbols::Toggle",
-      // "g shift-a": "editor::ToggleCodeActions",
       // selection
       "g o": "editor::OpenUrl",
       "g a": "editor::SelectAllMatches",
@@ -143,7 +135,13 @@
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
       "shift-v": "vim::Down",
-      "ctrl-v": "vim::Down"
+      "ctrl-v": "vim::Down",
+      "p": [
+        "vim::Paste",
+        {
+          "preserveClipboard": true
+        }
+      ]
     }
   },
   {
@@ -155,10 +153,75 @@
       "ctrl-x ctrl-c": null,
       "ctrl-x ctrl-l": null,
       "ctrl-x ctrl-z": null,
-      // "ctrl-e": "editor::Cancel",
       "ctrl-x": "editor::ShowCompletions",
-      "ctrl-a": "assistant::InlineAssist",
-      "ctrl-i": "editor::ShowInlineCompletion"
+      "ctrl-i": "editor::ShowInlineCompletion",
+      "ctrl-shift-i": "assistant::InlineAssist",
+      "ctrl-a": "editor::ToggleCodeActions",
+      "ctrl-f": "editor::AcceptPartialInlineCompletion"
+      // "ctrl-f": "editor::AcceptPartialCopilotSuggestion",
+    }
+  },
+  // project panel/netrw
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "space": "project_panel::Open",
+      "enter": "project_panel::OpenPermanent",
+      "a": "project_panel::NewFile",
+      "o": "project_panel::NewDirectory",
+      "x": "project_panel::Delete",
+      "shift-X": ["project_panel::Delete", { "skip_prompt": true }],
+      "r": "project_panel::Rename",
+      "shift-r": "project_panel::RevealInFinder",
+      "/": "project_panel::NewSearchInDirectory",
+      "d": "project_panel::Cut",
+      "y": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "alt-c": "project_panel::CopyPath",
+      "alt-shift-c": "project_panel::CopyRelativePath"
+    }
+  },
+  // search bindings
+  {
+    "context": "BufferSearchBar",
+    "bindings": {
+      "enter": "search::SelectNextMatch"
+    }
+  },
+  // completions
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "shift-tab": "editor::ContextMenuPrev",
+      "tab": "editor::ContextMenuNext"
+    }
+  },
+  // tab switcher
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "x": "tab_switcher::CloseSelectedItem"
+    }
+  },
+  // pane
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-1": ["pane::ActivateItem", 0],
+      "cmd-2": ["pane::ActivateItem", 1],
+      "cmd-3": ["pane::ActivateItem", 2],
+      "cmd-4": ["pane::ActivateItem", 3],
+      "cmd-5": ["pane::ActivateItem", 4],
+      "cmd-6": ["pane::ActivateItem", 5],
+      "cmd-7": ["pane::ActivateItem", 6],
+      "cmd-8": ["pane::ActivateItem", 7],
+      "cmd-9": ["pane::ActivateItem", 8]
     }
   }
+  // hidden gems
+  // {
+  //   "context": "ProjectSearchBar && !in_replace",
+  //   "bindings": {
+  //     "cmd-enter": "project_search::SearchInNew"
+  //   }
 ]
