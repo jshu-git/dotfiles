@@ -47,15 +47,16 @@ keybinds clear-defaults=true {
         bind "5" { GoToTab 5;                SwitchToMode "Locked"; }
         bind "S" { ToggleActiveSyncTab;      SwitchToMode "Locked"; }
         // bind "X"     { CloseTab;                 SwitchToMode "Locked"; }
-        // bind "o" { MoveTab "Right"; }
+        bind "H" { MoveTab "Right"; }
+        bind "L" { MoveTab "Left";  }
 
         // resize
         bind "=" { Resize "Increase";       }
         bind "-" { Resize "Decrease";       }
-        bind "H" { Resize "Increase Left";  }
-        bind "J" { Resize "Increase Down";  }
-        bind "K" { Resize "Increase Up";    }
-        bind "L" { Resize "Increase Right"; }
+        // bind "H" { Resize "Increase Left";  }
+        // bind "J" { Resize "Increase Down";  }
+        // bind "K" { Resize "Increase Up";    }
+        // bind "L" { Resize "Increase Right"; }
 
         // move
         bind "Left"  { MovePane "Left";  }

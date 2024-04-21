@@ -70,13 +70,39 @@ require("lazy").setup({
 				-- uppercase = false,
 			},
 		},
-		-- stylua: ignore
-		keys = {
-			{ "<leader>j", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-			{ "<leader>J", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash (Treesitter)" },
-			-- { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-			-- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-			-- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+		-- 	-- stylua: ignore
+		-- 	keys = {
+		-- 		{ "<leader>j", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+		-- 		{ "<leader>J", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash (Treesitter)" },
+		-- 		-- { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+		-- 		-- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+		-- 		-- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+		-- 	},
+	},
+	{
+		"otavioschwanck/arrow.nvim",
+		opts = {
+			always_show_path = true,
+			mappings = {
+				edit = "e",
+				delete_mode = "d",
+				clear_all_items = "X",
+				open_vertical = "\\",
+				open_horizontal = "-",
+				quit = "<esc>",
+				remove = "x",
+				next_item = "]",
+				prev_item = "[",
+			},
+			window = {
+				border = "single",
+			},
+			per_buffer_config = {
+				lines = 2,
+			},
+			separate_save_and_remove = true,
+			leader_key = "m",
+			buffer_leader_key = "`",
 		},
 	},
 
@@ -132,6 +158,7 @@ require("lazy").setup({
 			})
 			vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next Buffer" })
 			vim.keymap.set("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous Buffer" })
+			vim.keymap.set("n", "<leader>bp", "<cmd>BufferLineTogglePin<CR>", { desc = "Pin" })
 		end,
 	},
 	{
