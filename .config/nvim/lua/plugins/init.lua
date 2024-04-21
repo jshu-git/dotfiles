@@ -70,23 +70,25 @@ require("lazy").setup({
 				-- uppercase = false,
 			},
 		},
-		-- 	-- stylua: ignore
-		-- 	keys = {
-		-- 		{ "<leader>j", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-		-- 		{ "<leader>J", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash (Treesitter)" },
-		-- 		-- { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-		-- 		-- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-		-- 		-- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-		-- 	},
+			-- stylua: ignore
+			keys = {
+				{ "<leader>j", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+				{ "<leader>J", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash (Treesitter)" },
+				-- { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+				-- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+				-- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+			},
 	},
 	{
 		"otavioschwanck/arrow.nvim",
 		opts = {
 			always_show_path = true,
+			-- hide_handbook = true,
 			mappings = {
 				edit = "e",
 				delete_mode = "d",
 				clear_all_items = "X",
+				toggle = "a",
 				open_vertical = "\\",
 				open_horizontal = "-",
 				quit = "<esc>",
