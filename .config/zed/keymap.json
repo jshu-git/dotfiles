@@ -8,6 +8,7 @@
       "cmd-shift-,": "zed::OpenDefaultSettings",
       "cmd-shift-j": "journal::NewJournalEntry",
       "cmd-shift-r": "search::ToggleReplace",
+      "cmd-shift-k": "zed::OpenKeymap",
       "alt-t": "workspace::NewTerminal",
       "alt-r": "editor::RevealInFinder",
       "alt-c": "editor::CopyPath",

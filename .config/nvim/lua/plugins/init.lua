@@ -8,8 +8,22 @@ vim.opt.rtp:prepend(lazypath)
 vim.keymap.set("n", "<leader>ml", "<cmd>Lazy<CR>")
 
 require("lazy").setup({
+	-- helpers
 	"github/copilot.vim",
 	"tpope/vim-sleuth",
+	{
+		"numToStr/Comment.nvim",
+		opts = {
+			toggler = {
+				line = "<C-c>",
+				block = "<leader>c",
+			},
+			opleader = {
+				line = "<C-c>",
+				block = "<leader>c",
+			},
+		},
+	},
 	{
 		"kylechui/nvim-surround",
 		version = "*",
@@ -40,6 +54,33 @@ require("lazy").setup({
 			})
 		end,
 	},
+
+	-- movement
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {
+			labels = "abcdefghijklmnopqrstuvwxyz",
+			modes = {
+				char = {
+					jump_labels = true,
+				},
+			},
+			label = {
+				-- uppercase = false,
+			},
+		},
+		-- stylua: ignore
+		keys = {
+			{ "<leader>j", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+			{ "<leader>J", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash (Treesitter)" },
+			-- { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+			-- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+			-- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+		},
+	},
+
+	-- appearance
 	{
 		"rose-pine/neovim",
 		priority = 1000,
@@ -60,26 +101,15 @@ require("lazy").setup({
 		config = function()
 			require("lualine").setup({
 				options = {
-					--- @usage 'rose-pine' | 'rose-pine-alt'
-					theme = "rose-pine",
+					component_separators = { left = "", right = "" },
+					section_separators = { left = "", right = "" },
 				},
-				{ section_separators = "", component_separators = "" },
-				lualine_x = { "encoding", "filetype" },
+				sections = {
+					lualine_c = { { "filename", path = 3 } },
+					lualine_x = { "encoding", "filetype" },
+				},
 			})
 		end,
-	},
-	{
-		"numToStr/Comment.nvim",
-		opts = {
-			toggler = {
-				line = "<C-c>",
-				block = "<leader>c",
-			},
-			opleader = {
-				line = "<C-c>",
-				block = "<leader>c",
-			},
-		},
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -100,99 +130,34 @@ require("lazy").setup({
 					always_show_bufferline = true,
 				},
 			})
-			vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<CR>")
-			vim.keymap.set("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>")
+			vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next Buffer" })
+			vim.keymap.set("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous Buffer" })
 		end,
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		opts = {
-			signs = {
-				add = { text = "+" },
-				change = { text = "~" },
-				delete = { text = "_" },
-				topdelete = { text = "‾" },
-				changedelete = { text = "~" },
-			},
-		},
-	},
-	{
-		"folke/flash.nvim",
-		event = "VeryLazy",
-		opts = {
-			labels = "abcdefghijklmnopqrstuvwxyz",
-			modes = {
-				char = {
-					jump_labels = true,
-				},
-			},
-		},
-		keys = {
-			-- { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-			{
-				"<c-s>",
-				mode = { "n", "x", "o" },
-				function()
-					require("flash").treesitter()
-				end,
-				desc = "Flash Treesitter",
-			},
-			-- { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-			-- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-			-- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-		},
-	},
-	{
-		"folke/which-key.nvim",
-		event = "VimEnter",
 		config = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-			require("which-key").setup()
-			require("which-key").register({
-				["<leader>f"] = { name = "Find...", _ = "which_key_ignore" },
-				["<leader>t"] = { name = "Toggle...", _ = "which_key_ignore" },
-				["<leader>m"] = { name = "Menu...", _ = "which_key_ignore" },
+			local gitsigns = require("gitsigns")
+			gitsigns.setup({
+				signs = {
+					add = { text = "+" },
+					change = { text = "~" },
+					delete = { text = "_" },
+					topdelete = { text = "‾" },
+					changedelete = { text = "~" },
+				},
+				current_line_blame = true,
+				current_line_blame_formatter = "<author> (<author_time:%R>) - <summary>",
 			})
+			vim.keymap.set("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "Toggle Git Blame" })
 		end,
 	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = {
-					"bash",
-					"c",
-					"html",
-					"json",
-					"lua",
-					"luadoc",
-					"markdown",
-					"vim",
-					"vimdoc",
-					"python",
-				},
-				highlight = {
-					enable = true,
-				},
-				indent = {
-					enable = true,
-				},
-				-- incremental_selection = {
-				-- 	enable = true,
-				-- 	keymaps = {
-				-- 		init_selection = "<C-s>",
-				-- 		node_incremental = "<C-s>",
-				-- 		scope_incremental = false,
-				-- 		node_decremental = "<C-S-s>",
-				-- 	},
-				-- },
-			})
-		end,
-	},
+
+	-- big plugins
+	require("plugins.which-key"),
 	require("plugins.nvim-tree"),
 	require("plugins.telescope"),
+	require("plugins.nvim-treesitter"),
 	require("plugins.nvim-cmp"),
 	require("plugins.lspconfig"),
 })

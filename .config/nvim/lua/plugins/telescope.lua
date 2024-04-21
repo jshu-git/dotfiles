@@ -34,6 +34,7 @@ return {
 						["<Tab>"] = actions.move_selection_next,
 						["<S-Tab>"] = actions.move_selection_previous,
 						["<C-s>"] = actions.toggle_selection,
+						[","] = actions.toggle_selection,
 						-- ["<C-t"] = layout.toggle_preview,
 					},
 				},
@@ -48,19 +49,25 @@ return {
 		pcall(require("telescope").load_extension, "ui-select")
 
 		-- files
-		vim.keymap.set("n", "<leader>fb", builtin.builtin, { desc = "Telescope Builtin" })
+		vim.keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Grep Current Buffer" })
 		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent Files" })
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Files" })
 		vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Grep" })
-		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Buffers" })
-		vim.keymap.set("n", "<leader>'", builtin.resume, { desc = "Last Picker" })
-		vim.keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Current Buffer" })
-		vim.keymap.set("n", "<leader>ft", builtin.colorscheme, { desc = "Themes" })
+		vim.keymap.set("n", "<leader>fW", function()
+			builtin.live_grep({ grep_open_files = true })
+		end, { desc = "Grep Open Files" })
+		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
+		vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Quickfix" })
+		vim.keymap.set("n", "<leader>fq", builtin.quickfixhistory, { desc = "Quickfix History" })
 
 		-- helpers
-		vim.keymap.set("n", "<leader>fc", builtin.builtin, { desc = "Commands" })
-		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
-		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
+		vim.keymap.set("n", "<leader>'", builtin.resume, { desc = "Last Picker" })
 		vim.keymap.set("n", "<leader>?", builtin.help_tags, { desc = "Help" })
+		vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "Commands" })
+		vim.keymap.set("n", "<leader>fC", builtin.builtin, { desc = "Telescope Commands" })
+		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
+		vim.keymap.set("n", "<leader>ft", builtin.colorscheme, { desc = "Themes" })
+		vim.keymap.set("n", "<leader>fo", builtin.vim_options, { desc = "Vim Options" })
 	end,
 }

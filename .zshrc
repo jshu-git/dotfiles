@@ -64,15 +64,15 @@ fi
 # zellij
 if command -v zellij >/dev/null 2>&1; then
     # use source
-    alias zellij=$HOME/.cargo/bin/zellij
+    # alias zellij=$HOME/.cargo/bin/zellij
     function zz() {
         # default to 'dev' session
         if [ -z "$1" ]; then
-            # zellij a dev
-            $HOME/.cargo/bin/zellij a dev
+            zellij a dev
+            # $HOME/.cargo/bin/zellij a dev
         else
-            # zellij -s "$1"
-            $HOME/.cargo/bin/zellij -s "$1"
+            zellij -s "$1"
+            # $HOME/.cargo/bin/zellij -s "$1"
         fi
     }
 fi
@@ -90,15 +90,23 @@ if command -v starship >/dev/null 2>&1; then
 fi
 
 # helix
-if command -v hx >/dev/null 2>&1; then
-    # use source
-    alias hx=$HOME/.cargo/bin/hx
-    alias hxc="
-    hx $HOME/README.md $CONFIG/alacritty/alacritty.toml $HOME/.zshrc $CONFIG/zsh/aliases.zsh $CONFIG/fzf/.fzf.zsh $CONFIG/starship.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml $CONFIG/helix/languages.toml
-    "
-    export VISUAL=hx
-    export EDITOR=$VISUAL
-    alias xx=hx
+# if command -v hx >/dev/null 2>&1; then
+#     # use source
+#     alias hx=$HOME/.cargo/bin/hx
+#     alias hxc="
+#     hx $HOME/README.md $CONFIG/alacritty/alacritty.toml $HOME/.zshrc $CONFIG/zsh/aliases.zsh $CONFIG/fzf/.fzf.zsh $CONFIG/starship.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml $CONFIG/helix/languages.toml
+#     "
+#     export VISUAL=hx
+#     export EDITOR=$VISUAL
+#     alias xx=hx
+# fi
+
+# neovim
+if command -v nvim >/dev/null 2>&1; then
+    alias vim="nvim"
+    alias vi="nvim"
+    alias v="nvim"
+    export EDITOR=nvim
 fi
 
 # lazygit
