@@ -8,7 +8,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.keymap.set("n", "<leader>ml", "<cmd>Lazy<CR>")
 
 require("lazy").setup({
-	-- helpers
+	-- editing
 	"github/copilot.vim",
 	"tpope/vim-sleuth",
 	{
@@ -54,6 +54,20 @@ require("lazy").setup({
 			})
 		end,
 	},
+	{
+		"mbbill/undotree",
+		config = function()
+			vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>", { desc = "Undo Tree" })
+			vim.g.undotree_WindowLayout = 3
+			vim.g.undotree_SplitWidth = 50
+			vim.g.undotree_SetFocusWhenToggle = 1
+			vim.g.undotree_TreeNodeShape = "·"
+			vim.g.undotree_TreeVertShape = "│"
+			vim.g.undotree_ShortIndicators = 1
+			vim.g.undotree_HelpLine = 0
+			vim.g.undotree_CursorLine = 0
+		end,
+	},
 
 	-- movement
 	{
@@ -88,13 +102,9 @@ require("lazy").setup({
 				edit = "e",
 				delete_mode = "d",
 				clear_all_items = "X",
-				toggle = "a",
 				open_vertical = "\\",
 				open_horizontal = "-",
 				quit = "<esc>",
-				remove = "x",
-				next_item = "]",
-				prev_item = "[",
 			},
 			window = {
 				border = "single",
@@ -102,7 +112,6 @@ require("lazy").setup({
 			per_buffer_config = {
 				lines = 2,
 			},
-			separate_save_and_remove = true,
 			leader_key = "m",
 			buffer_leader_key = "`",
 		},
@@ -125,16 +134,28 @@ require("lazy").setup({
 	},
 	{
 		"nvim-lualine/lualine.nvim",
+		dependences = "otavioschwanck/arrow.nvim",
 		event = "ColorScheme",
 		config = function()
+			-- arrow status
+			local function arrow()
+				return require("arrow.statusline").text_for_statusline_with_icons()
+			end
+
 			require("lualine").setup({
 				options = {
 					component_separators = { left = "", right = "" },
 					section_separators = { left = "", right = "" },
 				},
 				sections = {
-					lualine_c = { { "filename", path = 3 } },
-					lualine_x = { "encoding", "filetype" },
+					lualine_c = {
+						{ arrow, padding = { left = 1 } },
+						{ "filename", path = 3 },
+					},
+					lualine_x = {
+						"encoding",
+						"filetype",
+					},
 				},
 			})
 		end,

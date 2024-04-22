@@ -23,11 +23,11 @@ return {
 			vim.keymap.set("n", "tg", api.tree.toggle_git_clean_filter, opts("Toggle Filter: Git Clean"))
 			vim.keymap.set("n", "th", api.tree.toggle_hidden_filter, opts("Toggle Filter: Dotfiles"))
 			vim.keymap.set("n", "ti", api.tree.toggle_gitignore_filter, opts("Toggle Filter: Git Ignore"))
-			-- vim.keymap.set('n', 'tm',      api.tree.toggle_no_bookmark_filter,  opts('Toggle Filter: No Bookmark'))
+			-- vim.keymap.set("n", "tm", api.tree.toggle_no_bookmark_filter, opts("Toggle Filter: No Bookmark"))
 			-- vim.keymap.set("n", "S", api.tree.search_node, opts("Search"))
 			vim.keymap.set("n", "/", api.tree.search_node, opts("Search"))
-			-- vim.keymap.set('n', 'U',       api.tree.toggle_custom_filter,       opts('Toggle Filter: Hidden'))
-			-- vim.keymap.set('n', 'q',       api.tree.close,                      opts('Close'))
+			-- vim.keymap.set("n", "U", api.tree.toggle_custom_filter, opts("Toggle Filter: Hidden"))
+			vim.keymap.set("n", "<esc>", api.tree.close, opts("Close"))
 
 			-- navigation
 			vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))

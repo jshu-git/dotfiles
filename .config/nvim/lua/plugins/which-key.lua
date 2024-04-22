@@ -32,6 +32,7 @@ return {
 			["<leader>f"] = { name = "Find…" },
 			["<leader>t"] = { name = "Toggle…" },
 			["<leader>m"] = { name = "Menu…" },
+			["<leader>b"] = { name = "Buffer…" },
 		})
 	end,
 }

@@ -23,6 +23,7 @@ return {
 						height = 0.5,
 						-- preview_cutoff = 10,
 						width = 0.8,
+						-- prompt_position = "top",
 					},
 				},
 				dynamic_preview_title = true,
@@ -59,11 +60,11 @@ return {
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
 		vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Quickfix" })
-		vim.keymap.set("n", "<leader>fq", builtin.quickfixhistory, { desc = "Quickfix History" })
+		vim.keymap.set("n", "<leader>fQ", builtin.quickfixhistory, { desc = "Quickfix History" })
 
 		-- helpers
 		vim.keymap.set("n", "<leader>'", builtin.resume, { desc = "Last Picker" })
-		vim.keymap.set("n", "<leader>?", builtin.help_tags, { desc = "Help" })
+		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
 		vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "Commands" })
 		vim.keymap.set("n", "<leader>fC", builtin.builtin, { desc = "Telescope Commands" })
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
