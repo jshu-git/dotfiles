@@ -4,7 +4,6 @@ if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
-
 vim.keymap.set("n", "<leader>ml", "<cmd>Lazy<CR>")
 
 require("lazy").setup({
@@ -13,16 +12,11 @@ require("lazy").setup({
 	"tpope/vim-sleuth",
 	{
 		"numToStr/Comment.nvim",
-		opts = {
-			toggler = {
-				line = "<C-c>",
-				block = "<leader>c",
-			},
-			opleader = {
-				line = "<C-c>",
-				block = "<leader>c",
-			},
-		},
+		config = function()
+			require("Comment").setup()
+			vim.keymap.set("n", "<C-c>", "<Plug>(comment_toggle_linewise_current)", { desc = "Toggle Comment" })
+			vim.keymap.set("x", "<C-c>", "<Plug>(comment_toggle_linewise_visual)", { desc = "Toggle Comment" })
+		end,
 	},
 	{
 		"kylechui/nvim-surround",
@@ -68,30 +62,65 @@ require("lazy").setup({
 			vim.g.undotree_CursorLine = 0
 		end,
 	},
+	{
+		"fedepujol/move.nvim",
+		config = function()
+			require("move").setup()
+			vim.keymap.set("n", "<A-j>", ":MoveLine(1)<CR>", { desc = "Move Line Down" })
+			vim.keymap.set("n", "<A-k>", ":MoveLine(-1)<CR>", { desc = "Move Line Up" })
+			vim.keymap.set("v", "<A-j>", ":MoveBlock(1)<CR>", { desc = "Move Lines Down" })
+			vim.keymap.set("v", "<A-k>", ":MoveBlock(-1)<CR>", { desc = "Move Lines Up" })
+		end,
+	},
 
 	-- movement
 	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
 		opts = {
-			labels = "abcdefghijklmnopqrstuvwxyz",
+			labels = "12345abcdefghijklmnopqrstuvwxyz",
+			jump = {
+				autojump = true,
+			},
+			highlight = {
+				backdrop = false,
+			},
 			modes = {
+				search = {
+					enabled = false,
+				},
 				char = {
-					jump_labels = true,
+					enabled = false,
+				},
+				treesitter = {
+					labels = "12345abcdefghijklmnopqrstuvwxyz",
 				},
 			},
-			label = {
-				-- uppercase = false,
+			prompt = {
+				zindex = 5000,
+				prefix = { { "⚡Flash ⚡", "FlashPromptIcon" } },
 			},
 		},
-			-- stylua: ignore
-			keys = {
-				{ "<leader>j", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-				{ "<leader>J", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash (Treesitter)" },
-				-- { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-				-- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-				-- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+		keys = {
+			{
+				"f",
+				mode = { "n", "x", "o" },
+				function()
+					require("flash").jump()
+				end,
+				desc = "Flash",
 			},
+			{
+				"F",
+				mode = { "n", "x", "o" },
+				function()
+					require("flash").treesitter({
+						label = { before = true, after = false },
+					})
+				end,
+				desc = "Flash (Treesitter)",
+			},
+		},
 	},
 	{
 		"otavioschwanck/arrow.nvim",
@@ -101,7 +130,8 @@ require("lazy").setup({
 			mappings = {
 				edit = "e",
 				delete_mode = "d",
-				clear_all_items = "X",
+				clear_all_items = "D",
+				toggle = "m",
 				open_vertical = "\\",
 				open_horizontal = "-",
 				quit = "<esc>",
@@ -111,9 +141,10 @@ require("lazy").setup({
 			},
 			per_buffer_config = {
 				lines = 2,
+				sort_automatically = false,
 			},
-			leader_key = "m",
-			buffer_leader_key = "`",
+			leader_key = "M",
+			buffer_leader_key = "m",
 		},
 	},
 
@@ -141,7 +172,6 @@ require("lazy").setup({
 			local function arrow()
 				return require("arrow.statusline").text_for_statusline_with_icons()
 			end
-
 			require("lualine").setup({
 				options = {
 					component_separators = { left = "", right = "" },
@@ -153,7 +183,6 @@ require("lazy").setup({
 						{ "filename", path = 3 },
 					},
 					lualine_x = {
-						"encoding",
 						"filetype",
 					},
 				},
@@ -174,14 +203,17 @@ require("lazy").setup({
 		config = function()
 			require("bufferline").setup({
 				options = {
+					indicator = {
+						style = "none",
+					},
 					tab_size = 10,
-					-- separator_style = "thin",
+					separator_style = { "", "" },
 					always_show_bufferline = true,
+					show_tab_indicators = false,
 				},
 			})
-			vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next Buffer" })
-			vim.keymap.set("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous Buffer" })
-			vim.keymap.set("n", "<leader>bp", "<cmd>BufferLineTogglePin<CR>", { desc = "Pin" })
+			vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next Buffer" })
+			vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous Buffer" })
 		end,
 	},
 	{
@@ -189,23 +221,50 @@ require("lazy").setup({
 		config = function()
 			local gitsigns = require("gitsigns")
 			gitsigns.setup({
-				signs = {
-					add = { text = "+" },
-					change = { text = "~" },
-					delete = { text = "_" },
-					topdelete = { text = "‾" },
-					changedelete = { text = "~" },
-				},
 				current_line_blame = true,
 				current_line_blame_formatter = "<author> (<author_time:%R>) - <summary>",
 			})
 			vim.keymap.set("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "Toggle Git Blame" })
 		end,
 	},
+	{
+		"stevearc/dressing.nvim",
+		config = function()
+			require("dressing").setup()
+		end,
+	},
+	{
+		"szw/vim-maximizer",
+		config = function()
+			vim.keymap.set("n", "<leader>tm", "<cmd>MaximizerToggle<CR>", { desc = "Toggle Maximize" })
+		end,
+	},
+
+	-- sessions
+	{
+		"rmagatti/auto-session",
+		config = function()
+			require("auto-session").setup({
+				auto_save_enabled = true,
+				auto_restore_enabled = false,
+				auto_session_suppress_dirs = { "~/", "~/Downloads", "~/Documents", "~/Desktop/", "/" },
+			})
+			vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+			vim.keymap.set("n", "<leader>sr", "<cmd>SessionRestore<CR>", { desc = "Restore Session" })
+			vim.keymap.set("n", "<leader>sw", "<cmd>SessionSave<CR>", { desc = "Save Session" })
+			vim.keymap.set(
+				"n",
+				"<leader>fs",
+				require("auto-session.session-lens").search_session,
+				{ desc = "Sessions" }
+			)
+		end,
+	},
 
 	-- big plugins
+	require("plugins.alpha"),
 	require("plugins.which-key"),
-	require("plugins.nvim-tree"),
+	require("plugins.oil"),
 	require("plugins.telescope"),
 	require("plugins.nvim-treesitter"),
 	require("plugins.nvim-cmp"),

@@ -3,8 +3,6 @@ return {
 	event = "VimEnter",
 	init = function()
 		local wk = require("which-key")
-		vim.o.timeout = true
-		vim.o.timeoutlen = 300
 		wk.setup({
 			plugins = {
 				marks = false,
@@ -30,9 +28,9 @@ return {
 		})
 		wk.register({
 			["<leader>f"] = { name = "Find…" },
+			["<leader>s"] = { name = "Session…" },
 			["<leader>t"] = { name = "Toggle…" },
 			["<leader>m"] = { name = "Menu…" },
-			["<leader>b"] = { name = "Buffer…" },
 		})
 	end,
 }

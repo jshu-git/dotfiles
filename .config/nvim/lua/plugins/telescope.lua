@@ -7,13 +7,15 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-telescope/telescope-ui-select.nvim",
 		"nvim-tree/nvim-web-devicons",
+		"rmagatti/auto-session",
 	},
 	config = function()
+		local telescope = require("telescope")
 		local builtin = require("telescope.builtin")
 		local actions = require("telescope.actions")
 		local themes = require("telescope.themes")
 
-		require("telescope").setup({
+		telescope.setup({
 			defaults = {
 				sorting_strategy = "ascending",
 				scroll_strategy = "limit",
@@ -46,8 +48,9 @@ return {
 				},
 			},
 		})
-		pcall(require("telescope").load_extension, "fzf")
-		pcall(require("telescope").load_extension, "ui-select")
+		telescope.load_extension("fzf")
+		telescope.load_extension("ui-select")
+		telescope.load_extension("session-lens")
 
 		-- files
 		vim.keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Grep Current Buffer" })
@@ -68,7 +71,9 @@ return {
 		vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "Commands" })
 		vim.keymap.set("n", "<leader>fC", builtin.builtin, { desc = "Telescope Commands" })
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
-		vim.keymap.set("n", "<leader>ft", builtin.colorscheme, { desc = "Themes" })
+		vim.keymap.set("n", "<leader>ft", function()
+			builtin.colorscheme({ enable_preview = true })
+		end, { desc = "Themes" })
 		vim.keymap.set("n", "<leader>fo", builtin.vim_options, { desc = "Vim Options" })
 	end,
 }

@@ -56,7 +56,7 @@ return { -- Autocompletion
 				["<S-Tab>"] = cmp.mapping.select_prev_item(),
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
 				["<C-x>"] = cmp.mapping.complete({}),
-				["<Esc>"] = cmp.mapping.abort(),
+				["<esc>"] = cmp.mapping.abort(),
 
 				-- Scroll the documentation window [b]ack / [f]orward
 				-- ['<C-b>'] = cmp.mapping.scroll_docs(-4),
