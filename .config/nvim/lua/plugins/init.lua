@@ -8,8 +8,37 @@ vim.keymap.set("n", "<leader>ml", "<cmd>Lazy<CR>")
 
 require("lazy").setup({
 	-- editing
-	"github/copilot.vim",
-	"tpope/vim-sleuth",
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				panel = {
+					auto_refresh = true,
+					keymap = {
+						open = "<C-s>",
+					},
+					layout = {
+						position = "right",
+						ratio = 0.4,
+					},
+				},
+				suggestion = {
+					auto_trigger = true,
+					keymap = {
+						accept = "<Tab>",
+					},
+				},
+				filetypes = {
+					yaml = true,
+					markdown = true,
+					gitcommit = true,
+					["."] = true,
+				},
+			})
+		end,
+	},
 	{
 		"numToStr/Comment.nvim",
 		config = function()
@@ -97,7 +126,6 @@ require("lazy").setup({
 				},
 			},
 			prompt = {
-				zindex = 5000,
 				prefix = { { "⚡Flash ⚡", "FlashPromptIcon" } },
 			},
 		},
@@ -163,19 +191,24 @@ require("lazy").setup({
 		end,
 		name = "rose-pine",
 	},
+	{ "AndreM222/copilot-lualine" },
 	{
 		"nvim-lualine/lualine.nvim",
-		dependences = "otavioschwanck/arrow.nvim",
+		dependences = {
+			"otavioschwanck/arrow.nvim",
+		},
 		event = "ColorScheme",
 		config = function()
 			-- arrow status
 			local function arrow()
 				return require("arrow.statusline").text_for_statusline_with_icons()
 			end
+			-- require("copilot-lualine").setup()
 			require("lualine").setup({
 				options = {
 					component_separators = { left = "", right = "" },
 					section_separators = { left = "", right = "" },
+					disabled_filetypes = { "help", "undotree", "diff" },
 				},
 				sections = {
 					lualine_c = {
@@ -183,7 +216,19 @@ require("lazy").setup({
 						{ "filename", path = 3 },
 					},
 					lualine_x = {
-						"filetype",
+						{
+							"copilot",
+							symbols = {
+								status = {
+									icons = {
+										unknown = "",
+									},
+								},
+								show_colors = true,
+								padding = { right = 0 },
+							},
+							"filetype",
+						},
 					},
 				},
 			})

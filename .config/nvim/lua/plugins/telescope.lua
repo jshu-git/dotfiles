@@ -37,8 +37,6 @@ return {
 						["<Tab>"] = actions.move_selection_next,
 						["<S-Tab>"] = actions.move_selection_previous,
 						[","] = actions.toggle_selection,
-						["<C-\\>"] = actions.select_vertical,
-						["<C-->"] = actions.select_horizontal,
 					},
 				},
 			},
