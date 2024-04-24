@@ -19,13 +19,20 @@ return {
 			defaults = {
 				sorting_strategy = "ascending",
 				scroll_strategy = "limit",
-				layout_strategy = "center",
+				-- layout_strategy = "center",
+				-- layout_config = {
+				-- 	center = {
+				-- 		height = 0.5,
+				-- 		-- preview_cutoff = 10,
+				-- 		width = 0.8,
+				-- 		-- prompt_position = "top",
+				-- 	},
+				-- },
+				layout_strategy = "vertical",
 				layout_config = {
-					center = {
+					vertical = {
 						height = 0.5,
-						-- preview_cutoff = 10,
-						width = 0.8,
-						-- prompt_position = "top",
+						prompt_position = "top",
 					},
 				},
 				dynamic_preview_title = true,
@@ -58,7 +65,7 @@ return {
 		vim.keymap.set("n", "<leader>fW", function()
 			builtin.live_grep({ grep_open_files = true })
 		end, { desc = "Grep Open Files" })
-		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+		-- vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
 		vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Quickfix" })
 		vim.keymap.set("n", "<leader>fQ", builtin.quickfixhistory, { desc = "Quickfix History" })

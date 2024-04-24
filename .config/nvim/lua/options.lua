@@ -17,7 +17,7 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.wrapscan = false
 
--- appearance
+-- ui
 opt.cursorline = true
 opt.cursorcolumn = true
 opt.termguicolors = true

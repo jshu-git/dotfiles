@@ -1,4 +1,3 @@
--- vim.opt.hlsearch = true
 local g = vim.g
 g.mapleader = " "
 g.maplocalleader = " "
@@ -10,8 +9,10 @@ keymap.set({ "n", "x" }, "j", "gj")
 keymap.set({ "n", "x" }, "k", "gk")
 keymap.set({ "n", "x" }, "H", '^"0')
 keymap.set({ "n", "x" }, "L", "g$")
-keymap.set({ "n", "x" }, "J", "6gj")
-keymap.set({ "n", "x" }, "K", "6gk")
+keymap.set({ "n", "x" }, "J", "6gjzz")
+keymap.set({ "n", "x" }, "K", "6gkzz")
+keymap.set({ "n", "x" }, "{", "{zz")
+keymap.set({ "n", "x" }, "}", "}zz")
 
 -- yanking/pasting
 keymap.set("n", "Y", "y$")

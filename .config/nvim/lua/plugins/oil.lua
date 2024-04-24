@@ -1,8 +1,7 @@
 return {
 	{
 		"stevearc/oil.nvim",
-		opts = {},
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
 			local oil = require("oil")
 			-- https://github.com/stevearc/oil.nvim/issues/320
@@ -15,7 +14,7 @@ return {
 
 			oil.setup({
 				delete_to_trash = true,
-				constrain_cursor = "name",
+				-- constrain_cursor = "name",
 				keymaps = {
 					["?"] = "actions.show_help",
 
