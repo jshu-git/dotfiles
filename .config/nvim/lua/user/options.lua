@@ -26,6 +26,7 @@ opt.signcolumn = "yes"
 opt.fillchars = { eob = " " }
 opt.showmode = false
 opt.ruler = false
+opt.pumheight = 5
 
 -- windows
 opt.splitright = true

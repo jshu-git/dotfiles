@@ -28,6 +28,7 @@ return {
 			-- end
 			require("lualine").setup({
 				options = {
+					theme = "rose-pine-alt",
 					component_separators = { left = "", right = "" },
 					section_separators = { left = "", right = "" },
 					disabled_filetypes = { "undotree", "alpha" },
@@ -35,7 +36,7 @@ return {
 				sections = {
 					lualine_c = {
 						-- { arrow, padding = { left = 1 } },
-						{ "filename", path = 3 },
+						{ "filename", path = 1 },
 					},
 					lualine_x = {
 						{
@@ -60,7 +61,6 @@ return {
 						{
 							"location",
 							padding = { left = 0, right = 0 },
-							color = "ModeMsg",
 						},
 					},
 				},

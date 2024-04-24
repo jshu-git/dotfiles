@@ -15,8 +15,9 @@ require("lazy").setup({
 	require("plugins.oil"),
 	require("plugins.telescope"),
 	require("plugins.nvim-treesitter"),
+	require("plugins.mason"),
 
 	-- TODO: lsp/completion
-	require("plugins.nvim-cmp"),
-	require("plugins.lspconfig"),
+	-- require("plugins.nvim-cmp"),
+	-- require("plugins.lspconfig"),
 })

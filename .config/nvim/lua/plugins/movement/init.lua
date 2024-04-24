@@ -7,6 +7,9 @@ return {
 			jump = {
 				autojump = true,
 			},
+			label = {
+				rainbow = { enabled = true },
+			},
 			highlight = {
 				backdrop = false,
 			},
@@ -15,7 +18,7 @@ return {
 					enabled = false,
 				},
 				char = {
-					enabled = false,
+					jump_labels = true,
 				},
 				treesitter = {
 					labels = "12345abcdefghijklmnopqrstuvwxyz",
@@ -27,35 +30,14 @@ return {
 		},
 		keys = {
 			{
-				"f",
-				mode = { "n", "x", "o" },
-				function()
-					require("flash").jump()
-				end,
-				desc = "Flash",
-			},
-			{
-				"t",
-				mode = { "n", "x", "o" },
-				function()
-					require("flash").jump({
-						jump = { offset = -1 },
-						label = { before = true, after = false },
-					})
-				end,
-				desc = "Flash",
-			},
-			{
-				"F",
+				"<leader>j",
 				mode = { "n", "x", "o" },
 				function()
 					require("flash").treesitter({
 						label = {
-							before = true,
-							after = false,
-							rainbow = {
-								enabled = true,
-							},
+							-- before = true,
+							-- after = false,
+							rainbow = { enabled = true },
 						},
 					})
 				end,
