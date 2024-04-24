@@ -115,8 +115,15 @@ return {
 			})
 			local ui = require("buffer_manager.ui")
 			vim.keymap.set("n", "<leader><leader>", ui.toggle_quick_menu, { desc = "Buffers" })
-			vim.keymap.set("n", "<Tab>", ui.nav_next)
-			vim.keymap.set("n", "<S-Tab>", ui.nav_prev)
+			vim.keymap.set("n", "<Tab>", ui.nav_next, { desc = "Next Buffer" })
+			vim.keymap.set("n", "<S-Tab>", ui.nav_prev, { desc = "Previous Buffer" })
+			local keys = "12345"
+			for i = 1, #keys do
+				local key = keys:sub(i, i)
+				vim.keymap.set("n", string.format("<leader>%s", key), function()
+					ui.nav_file(i)
+				end, { desc = "Buffer " .. i })
+			end
 		end,
 	},
 

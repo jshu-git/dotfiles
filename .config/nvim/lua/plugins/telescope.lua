@@ -46,6 +46,7 @@ return {
 						[","] = actions.toggle_selection,
 					},
 				},
+				file_ignore_patterns = { "lazy%-lock.json" },
 			},
 			extensions = {
 				["ui-select"] = {

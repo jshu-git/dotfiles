@@ -42,7 +42,7 @@ return {
 		local footer = dashboard.section.footer
 
 		dashboard.config.layout = {
-			{ type = "padding", val = 8 },
+			{ type = "padding", val = 10 },
 			header,
 			{ type = "padding", val = 1 },
 			buttons,

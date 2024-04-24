@@ -1,8 +1,7 @@
+local keymap = vim.keymap
 local g = vim.g
 g.mapleader = " "
 g.maplocalleader = " "
-
-local keymap = vim.keymap
 
 -- movement
 keymap.set({ "n", "x" }, "j", "gj")
@@ -13,6 +12,8 @@ keymap.set({ "n", "x" }, "J", "6gjzz")
 keymap.set({ "n", "x" }, "K", "6gkzz")
 keymap.set({ "n", "x" }, "{", "{zz")
 keymap.set({ "n", "x" }, "}", "}zz")
+keymap.set({ "n", "x" }, "<C-d>", "<C-d>zz")
+keymap.set({ "n", "x" }, "<C-u>", "<C-u>zz")
 
 -- yanking/pasting
 keymap.set("n", "Y", "y$")
@@ -53,7 +54,6 @@ keymap.set("v", ">", ">gv")
 -- changes
 keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 keymap.set("n", "<CR>", "ciw", { desc = "Change Inner Word" })
-keymap.set("n", "<BS>", "ci", { desc = "Change Inner..." })
 keymap.set("n", "x", '"_x') -- delete to black hole register
 keymap.set("n", "X", '"_X')
 keymap.set("x", "x", '"_x')

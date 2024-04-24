@@ -12,7 +12,6 @@ require("lazy").setup({
 	require("plugins.ui.init"),
 
 	-- big plugins
-	require("plugins.which-key"),
 	require("plugins.oil"),
 	require("plugins.telescope"),
 	require("plugins.nvim-treesitter"),

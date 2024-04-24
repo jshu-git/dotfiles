@@ -1,4 +1,2 @@
-require 'options'
-require 'autocommands'
-require 'keymaps'
-require 'plugins.init'
+require("user.init")
+require("plugins.init")
