@@ -38,6 +38,10 @@ keymap.set("n", "<C-Left>", "4<C-w>>", { desc = "Increase window left" })
 keymap.set("n", "<C-Up>", "4<C-w>+", { desc = "Increase window up" })
 keymap.set("n", "<C-Down>", "4<C-w>-", { desc = "Increase window down" })
 
+-- buffers
+keymap.set("n", "<Tab>", "<cmd>bn<CR>", { desc = "Next buffer" })
+keymap.set("n", "<S-Tab>", "<cmd>bp<CR>", { desc = "Previous buffer" })
+
 -- search
 keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
 keymap.set("n", "n", "nzz")
@@ -63,8 +67,6 @@ keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Write" })
 keymap.set("n", "<leader>W", "<cmd>w!<CR>", { desc = "Write (force)" })
 keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 keymap.set("n", "<leader>Q", "<cmd>q!<CR>", { desc = "Quit (force)" })
-keymap.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close buffer" })
-keymap.set("n", "<leader>X", "<cmd>bd!<CR>", { desc = "Close buffer (force)" })
 
 -- unimpaired
 keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Next Diagnostic" })

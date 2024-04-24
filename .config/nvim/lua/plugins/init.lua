@@ -7,9 +7,9 @@ vim.opt.rtp:prepend(lazypath)
 vim.keymap.set("n", "<leader>ml", "<cmd>Lazy<CR>")
 
 require("lazy").setup({
-	require("plugins.editing.init"),
-	require("plugins.movement.init"),
-	require("plugins.ui.init"),
+	{ import = "plugins.editing" },
+	{ import = "plugins.ui" },
+	{ import = "plugins.buffers" },
 
 	-- big plugins
 	require("plugins.oil"),

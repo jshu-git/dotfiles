@@ -18,21 +18,13 @@ return {
 		telescope.setup({
 			defaults = {
 				sorting_strategy = "ascending",
-				scroll_strategy = "limit",
-				-- layout_strategy = "center",
-				-- layout_config = {
-				-- 	center = {
-				-- 		height = 0.5,
-				-- 		-- preview_cutoff = 10,
-				-- 		width = 0.8,
-				-- 		-- prompt_position = "top",
-				-- 	},
-				-- },
+				-- scroll_strategy = "limit",
 				layout_strategy = "vertical",
 				layout_config = {
 					vertical = {
-						height = 0.5,
+						height = 0.8,
 						prompt_position = "top",
+						preview_cutoff = 0,
 					},
 				},
 				dynamic_preview_title = true,
@@ -44,9 +36,13 @@ return {
 						["<Tab>"] = actions.move_selection_next,
 						["<S-Tab>"] = actions.move_selection_previous,
 						[","] = actions.toggle_selection,
+						["<C-d>"] = actions.delete_buffer,
 					},
 				},
 				file_ignore_patterns = { "lazy%-lock.json" },
+			},
+			pickers = {
+				colorscheme = { enable_preview = true },
 			},
 			extensions = {
 				["ui-select"] = {
@@ -66,7 +62,7 @@ return {
 		vim.keymap.set("n", "<leader>fW", function()
 			builtin.live_grep({ grep_open_files = true })
 		end, { desc = "Grep Open Files" })
-		-- vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+		vim.keymap.set("n", "<leader><Tab>", builtin.buffers, { desc = "Buffers" })
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
 		vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Quickfix" })
 		vim.keymap.set("n", "<leader>fQ", builtin.quickfixhistory, { desc = "Quickfix History" })

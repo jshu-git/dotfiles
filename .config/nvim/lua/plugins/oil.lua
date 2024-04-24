@@ -4,34 +4,14 @@ return {
 		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
 			local oil = require("oil")
-			-- https://github.com/stevearc/oil.nvim/issues/320
-			local function cd()
-				local node = oil.get_cursor_entry()
-				if node ~= nil and node.type == "directory" then
-					oil.select()
-				end
-			end
 
 			oil.setup({
 				delete_to_trash = true,
-				-- constrain_cursor = "name",
 				keymaps = {
 					["?"] = "actions.show_help",
 
 					-- navigation
 					["<CR>"] = "actions.select",
-					["h"] = {
-						callback = function()
-							cd()
-						end,
-						desc = "Navigate into directory",
-					},
-					["l"] = {
-						callback = function()
-							cd()
-						end,
-						desc = "Navigate into directory",
-					},
 					["<esc>"] = "actions.close",
 					["<Tab>"] = "actions.preview",
 					["<C-\\>"] = "actions.select_vsplit",
