@@ -46,7 +46,7 @@ return {
 				lualine_a = {},
 				lualine_b = {},
 				lualine_c = {
-					{ "filename", path = 1 },
+					{ "filename", path = 0 },
 				},
 				lualine_x = {},
 				lualine_y = {},

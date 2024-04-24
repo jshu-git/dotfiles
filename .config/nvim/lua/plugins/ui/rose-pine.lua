@@ -3,7 +3,7 @@ return {
 	priority = 1000,
 	config = function()
 		require("rose-pine").setup({
-			dim_inactive_windows = true,
+			-- dim_inactive_windows = true,
 			styles = {
 				bold = false,
 				italic = false,

@@ -22,9 +22,9 @@ return {
 				layout_strategy = "vertical",
 				layout_config = {
 					vertical = {
-						height = 0.8,
+						height = 0.5,
 						prompt_position = "top",
-						preview_cutoff = 0,
+						-- preview_cutoff = 0,
 					},
 				},
 				dynamic_preview_title = true,
