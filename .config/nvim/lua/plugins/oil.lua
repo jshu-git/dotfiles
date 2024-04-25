@@ -4,9 +4,21 @@ return {
 		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
 			local oil = require("oil")
+			local permission_hlgroups = {
+				["-"] = "NonText",
+				["r"] = "DiagnosticSignWarn",
+				["w"] = "DiagnosticSignError",
+				["x"] = "DiagnosticSignOk",
+			}
 
 			oil.setup({
 				delete_to_trash = true,
+				columns = {
+					{
+						"icon",
+						add_padding = false,
+					},
+				},
 				keymaps = {
 					["?"] = "actions.show_help",
 
@@ -14,8 +26,8 @@ return {
 					["<CR>"] = "actions.select",
 					["<esc>"] = "actions.close",
 					["<Tab>"] = "actions.preview",
-					["<C-\\>"] = "actions.select_vsplit",
-					["<C-->"] = "actions.select_split",
+					["<C-v>"] = "actions.select_vsplit",
+					["<C-s>"] = "actions.select_split",
 
 					-- dirs
 					["-"] = "actions.parent",
@@ -35,14 +47,17 @@ return {
 				view_options = {
 					show_hidden = true,
 				},
+				float = {
+					padding = 8,
+				},
 			})
 
 			vim.keymap.set("n", "<leader>e", function()
 				oil.toggle_float()
 			end, { desc = "Explorer (Float)" })
-			vim.keymap.set("n", "<leader>E", function()
-				oil.open()
-			end, { desc = "Explorer" })
+			-- vim.keymap.set("n", "<leader>E", function()
+			-- 	oil.open()
+			-- end, { desc = "Explorer" })
 		end,
 	},
 }

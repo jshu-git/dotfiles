@@ -27,11 +27,7 @@ keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move to window left" })
 keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move to window right" })
 keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move to window down" })
 keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move to window up" })
--- splits
-keymap.set("n", "<C-\\>", "<C-w>v", { desc = "Split vertical" })
-keymap.set("n", "<C-->", "<C-w>s", { desc = "Split horizontal" })
-keymap.set("n", "<A-\\>", "<cmd>vnew<CR>", { desc = "Split vertical (scratch)" })
-keymap.set("n", "<A-->", "<cmd>new<CR>", { desc = "Split horizontal (scratch)" })
+
 -- resizing
 keymap.set("n", "<C-Right>", "4<C-w><", { desc = "Increase window right" })
 keymap.set("n", "<C-Left>", "4<C-w>>", { desc = "Increase window left" })

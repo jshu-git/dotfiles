@@ -5,6 +5,9 @@ return {
 	},
 	event = "ColorScheme",
 	config = function()
+		local function total_lines()
+			return vim.api.nvim_buf_line_count(0)
+		end
 		require("lualine").setup({
 			options = {
 				theme = "rose-pine-alt",
@@ -14,7 +17,7 @@ return {
 			},
 			sections = {
 				lualine_c = {
-					{ "filename", path = 1 },
+					{ "filename", path = 1, padding = { right = 0 } },
 				},
 				lualine_x = {
 					{
@@ -32,12 +35,15 @@ return {
 							show_colors = true,
 						},
 					},
-					"filetype",
 				},
-				lualine_y = {},
+				lualine_y = {
+					{
+						"filetype",
+					},
+				},
 				lualine_z = {
 					{
-						"location",
+						total_lines,
 						padding = { left = 0, right = 0 },
 					},
 				},
@@ -49,10 +55,14 @@ return {
 					{ "filename", path = 0 },
 				},
 				lualine_x = {},
-				lualine_y = {},
-				lualine_z = {},
+				lualine_y = { "filetype" },
+				lualine_z = {
+					{
+						total_lines,
+						padding = { left = 0, right = 0 },
+					},
+				},
 			},
-			extensions = { "quickfix" },
 		})
 	end,
 }

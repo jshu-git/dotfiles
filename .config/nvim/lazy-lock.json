@@ -25,7 +25,6 @@
   "oil.nvim": { "branch": "master", "commit": "f3a31eba24587bc038592103d8f7e64648292115" },
   "plenary.nvim": { "branch": "master", "commit": "5129a3693c482fcbc5ab99a7706ffc4360b995a0" },
   "promise-async": { "branch": "main", "commit": "93540c168c5ed2b030ec3e6c40ab8bbb85e36355" },
-  "reticle.nvim": { "branch": "main", "commit": "a14830ca6b5a49df8f0cdc22fb367a31fef35fca" },
   "rose-pine": { "branch": "main", "commit": "17b466e79479758b332a3cac12544a3ad2be6241" },
   "substitute.nvim": { "branch": "main", "commit": "17ffaeb5a1dc2dbef39cf0865d8a4b6000836714" },
   "sunglasses.nvim": { "branch": "main", "commit": "fe31ab6fdd4eaaec545eed729b0d59e63a0934f9" },

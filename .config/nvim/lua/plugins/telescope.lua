@@ -19,15 +19,16 @@ return {
 			defaults = {
 				sorting_strategy = "ascending",
 				-- scroll_strategy = "limit",
-				layout_strategy = "vertical",
-				layout_config = {
-					vertical = {
-						height = 0.5,
-						prompt_position = "top",
-						-- preview_cutoff = 0,
-					},
-				},
+				layout_strategy = "center",
+				-- layout_config = {
+				-- vertical = {
+				-- height = 0.5,
+				-- prompt_position = "top",
+				-- preview_cutoff = 0,
+				-- },
+				-- },
 				dynamic_preview_title = true,
+				results_title = false,
 				mappings = {
 					i = {
 						["<esc>"] = actions.close,
@@ -37,6 +38,7 @@ return {
 						["<S-Tab>"] = actions.move_selection_previous,
 						[","] = actions.toggle_selection,
 						["<C-d>"] = actions.delete_buffer,
+						["<C-s>"] = actions.select_horizontal,
 					},
 				},
 				file_ignore_patterns = { "lazy%-lock.json" },
@@ -54,7 +56,6 @@ return {
 		telescope.load_extension("ui-select")
 		telescope.load_extension("session-lens")
 
-		-- files
 		vim.keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Grep Current Buffer" })
 		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent Files" })
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Files" })
@@ -63,11 +64,11 @@ return {
 			builtin.live_grep({ grep_open_files = true })
 		end, { desc = "Grep Open Files" })
 		vim.keymap.set("n", "<leader><Tab>", builtin.buffers, { desc = "Buffers" })
+
+		-- misc
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
 		vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Quickfix" })
 		vim.keymap.set("n", "<leader>fQ", builtin.quickfixhistory, { desc = "Quickfix History" })
-
-		-- helpers
 		vim.keymap.set("n", "<leader>'", builtin.resume, { desc = "Last Picker" })
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
 		vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "Commands" })

@@ -19,7 +19,8 @@ opt.wrapscan = false
 
 -- ui
 opt.cursorline = true
-opt.cursorcolumn = true
+-- opt.cursorlineopt = "number"
+-- opt.cursorcolumn = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"

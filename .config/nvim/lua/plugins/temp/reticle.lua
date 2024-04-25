@@ -15,9 +15,13 @@ return {
 		never = {
 			cursorline = {
 				"alpha",
+				"lazy",
+				"mason",
 			},
 			cursorcolumn = {
 				"alpha",
+				"lazy",
+				"mason",
 			},
 		},
 	},

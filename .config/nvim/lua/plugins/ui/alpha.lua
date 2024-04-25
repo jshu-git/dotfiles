@@ -7,30 +7,39 @@ return {
 	},
 	opts = function()
 		local dashboard = require("alpha.themes.dashboard")
-		local headers = {
-			{
-				[[          ▀████▀▄▄              ▄█ ]],
-				[[            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ]],
-				[[    ▄        █          ▀▀▀▀▄  ▄▀  ]],
-				[[   ▄▀ ▀▄      ▀▄              ▀▄▀  ]],
-				[[  ▄▀    █     █▀   ▄█▀▄      ▄█    ]],
-				[[  ▀▄     ▀▄  █     ▀██▀     ██▄█   ]],
-				[[   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ]],
-				[[    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ]],
-				[[   █   █  █      ▄▄           ▄▀   ]],
-			},
+		local logo = {
+			-- [[          ▀████▀▄▄              ▄█ ]],
+			-- [[            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ]],
+			-- [[    ▄        █          ▀▀▀▀▄  ▄▀  ]],
+			-- [[   ▄▀ ▀▄      ▀▄              ▀▄▀  ]],
+			-- [[  ▄▀    █     █▀   ▄█▀▄      ▄█    ]],
+			-- [[  ▀▄     ▀▄  █     ▀██▀     ██▄█   ]],
+			-- [[   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ]],
+			-- [[    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ]],
+			-- [[   █   █  █      ▄▄           ▄▀   ]],
+			[[       ___           ___           ___                                    ___     ]],
+			[[      /__/\         /  /\         /  /\          ___        ___          /__/\    ]],
+			[[      \  \:\       /  /:/_       /  /::\        /__/\      /  /\        |  |::\   ]],
+			[[       \  \:\     /  /:/ /\     /  /:/\:\       \  \:\    /  /:/        |  |:|:\  ]],
+			[[   _____\__\:\   /  /:/ /:/_   /  /:/  \:\       \  \:\  /__/::\      __|__|:|\:\ ]],
+			[[  /__/::::::::\ /__/:/ /:/ /\ /__/:/ \__\:\  ___  \__\:\ \__\/\:\__  /__/::::| \:\]],
+			[[  \  \:\~~\~~\/ \  \:\/:/ /:/ \  \:\ /  /:/ /__/\ |  |:|    \  \:\/\ \  \:\~~\__\/]],
+			[[   \  \:\  ~~~   \  \::/ /:/   \  \:\  /:/  \  \:\|  |:|     \__\::/  \  \:\      ]],
+			[[    \  \:\        \  \:\/:/     \  \:\/:/    \  \:\__|:|     /__/:/    \  \:\     ]],
+			[[     \  \:\        \  \::/       \  \::/      \__\::::/      \__\/      \  \:\    ]],
+			[[      \__\/         \__\/         \__\/           ~~~~                   \__\/    ]],
 		}
 		-- header
 		local header = dashboard.section.header
-		header.val = headers[math.random(#headers)]
+		header.val = logo
 
 		-- buttons
 		local buttons = dashboard.section.buttons
 		buttons.opts.spacing = 0
 		buttons.val = {
 			dashboard.button("r", "󰁯  Restore Session", "<cmd>SessionRestore<CR>"),
+			dashboard.button("f", "󰍉  Find", "<cmd>Telescope find_files<CR>"),
 			dashboard.button("e", "  Explorer", "<cmd>Oil --float<CR>"),
-			-- dashboard.button("L", "󰒲  Lazy", "<cmd>Lazy<CR>"),
 			dashboard.button("q", "󰩈  Quit", "<cmd>qa<CR>"),
 		}
 		for _, button in ipairs(buttons.val) do
@@ -44,9 +53,9 @@ return {
 		dashboard.config.layout = {
 			{ type = "padding", val = 10 },
 			header,
-			{ type = "padding", val = 1 },
+			{ type = "padding", val = 2 },
 			buttons,
-			{ type = "padding", val = 1 },
+			{ type = "padding", val = 2 },
 			footer,
 		}
 		return dashboard
