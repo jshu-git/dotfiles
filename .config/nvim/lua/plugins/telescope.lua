@@ -19,14 +19,14 @@ return {
 			defaults = {
 				sorting_strategy = "ascending",
 				-- scroll_strategy = "limit",
-				layout_strategy = "center",
-				-- layout_config = {
-				-- vertical = {
-				-- height = 0.5,
-				-- prompt_position = "top",
-				-- preview_cutoff = 0,
-				-- },
-				-- },
+				layout_strategy = "vertical",
+				layout_config = {
+					vertical = {
+						height = 0.5,
+						prompt_position = "top",
+						-- preview_cutoff = 0,
+					},
+				},
 				dynamic_preview_title = true,
 				results_title = false,
 				mappings = {

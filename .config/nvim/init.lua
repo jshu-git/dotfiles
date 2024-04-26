@@ -21,7 +21,6 @@ require("lazy").setup({
 }, {
 	ui = {
 		border = "single",
-		backdrop = 100,
 		title = " Lazy.nvim ",
 	},
 	checker = {
@@ -34,4 +33,16 @@ require("lazy").setup({
 })
 
 vim.keymap.set("n", "<leader>ml", "<cmd>Lazy<CR>")
-require("lazy.view.config").keys.close = "<esc>"
+-- https://github.com/folke/lazy.nvim/discussions/1196
+local user_grp = vim.api.nvim_create_augroup("LazyUserGroup", { clear = true })
+-- require("lazy.view.config").keys.close = "<esc>"
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "lazy",
+	desc = "Quit lazy with <esc>",
+	callback = function()
+		vim.keymap.set("n", "<esc>", function()
+			vim.api.nvim_win_close(0, false)
+		end, { buffer = true, nowait = true })
+	end,
+	group = user_grp,
+})

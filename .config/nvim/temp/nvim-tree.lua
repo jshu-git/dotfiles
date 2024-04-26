@@ -17,7 +17,7 @@ return {
 			vim.keymap.set("n", "e", api.tree.expand_all, opts("Expand All"))
 			vim.keymap.set("n", "c", api.tree.collapse_all, opts("Collapse"))
 			vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
-			vim.keymap.set("n", "R", api.tree.reload, opts("Refresh"))
+			vim.keymap.set("n", "gr", api.tree.reload, opts("Refresh"))
 			-- toggles
 			vim.keymap.set("n", "tb", api.tree.toggle_no_buffer_filter, opts("Toggle Filter: No Buffer"))
 			vim.keymap.set("n", "tg", api.tree.toggle_git_clean_filter, opts("Toggle Filter: Git Clean"))
@@ -55,7 +55,7 @@ return {
 			vim.keymap.set("n", "r", api.fs.rename_full, opts("Rename: Full Path"))
 			vim.keymap.set("n", "y", api.fs.copy.node, opts("Copy"))
 			vim.keymap.set("n", "x", api.fs.trash, opts("Trash"))
-			vim.keymap.set("n", "d", api.fs.cut, opts("Cut"))
+			vim.keymap.set("n", "dd", api.fs.cut, opts("Cut"))
 			vim.keymap.set("n", "p", api.fs.paste, opts("Paste"))
 			vim.keymap.set("n", "gy", api.fs.copy.absolute_path, opts("Copy Absolute Path"))
 			vim.keymap.set("n", "gY", api.fs.copy.relative_path, opts("Copy Relative Path"))
@@ -79,33 +79,8 @@ return {
 			view = {
 				centralize_selection = true,
 				cursorline = false,
-				-- side = "right",
-				-- width = 25,
-				-- https://www.reddit.com/r/neovim/comments/wvcz64/nvimtreelua_how_to_center_floating_window/
-				width = function()
-					return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
-				end,
-				float = {
-					enable = true,
-					open_win_config = function()
-						local screen_w = vim.opt.columns:get()
-						local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
-						local window_w = screen_w * WIDTH_RATIO
-						local window_h = screen_h * HEIGHT_RATIO
-						local window_w_int = math.floor(window_w)
-						local window_h_int = math.floor(window_h)
-						local center_x = (screen_w - window_w) / 2
-						local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
-						return {
-							border = "single",
-							relative = "editor",
-							row = center_y,
-							col = center_x,
-							width = window_w_int,
-							height = window_h_int,
-						}
-					end,
-				},
+				side = "right",
+				width = 25,
 			},
 			renderer = {
 				add_trailing = true,
@@ -142,7 +117,7 @@ return {
 				},
 			},
 		})
-		vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Explorer" })
-		vim.keymap.set("n", "<leader>E", "<cmd>NvimTreeFindFileToggle!<CR>", { desc = "Explorer (Update Root)" })
+		-- vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Explorer" })
+		vim.keymap.set("n", "<leader>E", "<cmd>NvimTreeFindFileToggle!<CR>", { desc = "NvimTree" })
 	end,
 }

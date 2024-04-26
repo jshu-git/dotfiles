@@ -16,6 +16,7 @@ opt.breakindent = true
 opt.ignorecase = true
 opt.smartcase = true
 opt.wrapscan = false
+opt.incsearch = true
 
 -- ui
 opt.cursorline = true

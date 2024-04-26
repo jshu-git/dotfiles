@@ -24,7 +24,8 @@ return {
 
 					-- navigation
 					["<CR>"] = "actions.select",
-					["<esc>"] = "actions.close",
+					-- ["<esc>"] = "actions.close",
+					["q"] = "actions.close",
 					["<Tab>"] = "actions.preview",
 					["<C-v>"] = "actions.select_vsplit",
 					["<C-s>"] = "actions.select_split",
@@ -52,9 +53,9 @@ return {
 				},
 			})
 
-			vim.keymap.set("n", "<leader>e", function()
-				oil.toggle_float()
-			end, { desc = "Explorer (Float)" })
+			-- vim.keymap.set("n", "<leader>e", function()
+			-- 	oil.toggle_float()
+			-- end, { desc = "Oil" })
 			-- vim.keymap.set("n", "<leader>E", function()
 			-- 	oil.open()
 			-- end, { desc = "Explorer" })

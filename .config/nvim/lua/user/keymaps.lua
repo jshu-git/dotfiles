@@ -37,6 +37,7 @@ keymap.set("n", "<C-Down>", "4<C-w>-", { desc = "Increase window down" })
 -- buffers
 keymap.set("n", "<Tab>", "<cmd>bn<CR>", { desc = "Next buffer" })
 keymap.set("n", "<S-Tab>", "<cmd>bp<CR>", { desc = "Previous buffer" })
+keymap.set("n", "<leader>n", "<cmd>enew<CR>", { desc = "New buffer" })
 
 -- search
 keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
