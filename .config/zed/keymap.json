@@ -37,15 +37,16 @@
       // leader
       "space f f": "file_finder::Toggle",
       "space f r": "projects::OpenRecent",
+      "space f d": "diagnostics::Deploy",
       // "space f w": "project_search::SearchInNew",
       "space w": "workspace::Save",
-      // "space d": "diagnostics::Deploy",
 
       // movement
       "shift-h": "vim::FirstNonWhitespace",
       "shift-l": "vim::EndOfLine",
       "shift-j": ["workspace::SendKeystrokes", "6 j z z"],
       "shift-k": ["workspace::SendKeystrokes", "6 k z z"],
+      // "{": ["workspace::SendKeystrokes", "{ z z"],
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp",
       // unimpaired
@@ -59,8 +60,8 @@
       "enter": ["workspace::SendKeystrokes", "c i w"],
       "shift-u": "editor::Redo",
       "ctrl-c": "editor::ToggleComments",
-      // "ctrl-]": "editor::SelectLargerSyntaxNode",
-      // "ctrl-[": "editor::SelectSmallerSyntaxNode",
+      "ctrl-s": "editor::SelectLargerSyntaxNode",
+      "ctrl-shift-s": "editor::SelectSmallerSyntaxNode",
 
       // windows
       "ctrl-w v": "pane::SplitRight",

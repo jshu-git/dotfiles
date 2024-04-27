@@ -59,7 +59,8 @@
     "inline_blame": {
       // "git_gutter": "hide",
       "enabled": true,
-      "delay_ms": 500
+      "delay_ms": 500,
+      "min_column": 80
     }
   },
   "journal": {
