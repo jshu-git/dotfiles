@@ -15,7 +15,7 @@
     "quick_actions": false
   },
   "gutter": {
-    "code_actions": false,
+    // "code_actions": false,
     "folds": false
   },
   "vertical_scroll_margin": 10,
@@ -59,8 +59,8 @@
     "metrics": false
   },
   "git": {
+    // "git_gutter": "hide",
     "inline_blame": {
-      // "git_gutter": "hide",
       "enabled": true,
       "delay_ms": 500,
       "min_column": 80
@@ -72,6 +72,7 @@
   },
   "terminal": {
     "default_height": 350,
+    "blinking": "off",
     "option_as_meta": true,
     "copy_on_select": true,
     "button": false,

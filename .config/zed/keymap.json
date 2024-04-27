@@ -40,6 +40,9 @@
       "space f d": "diagnostics::Deploy",
       // "space f w": "project_search::SearchInNew",
       "space w": "workspace::Save",
+      // toggles
+      "space t a": "editor::ToggleCodeActions",
+      "space t w": "editor::ToggleSoftWrap",
 
       // movement
       "shift-h": "vim::FirstNonWhitespace",
@@ -81,7 +84,6 @@
       "g space": "editor::OpenExcerptsSplit",
       "g s": "outline::Toggle",
       "g shift-s": "project_symbols::Toggle",
-      "g shift-a": "editor::ToggleCodeActions",
       // selection
       "g o": "editor::OpenUrl",
       "g a": "editor::SelectAllMatches",
@@ -114,7 +116,9 @@
   {
     // normal mode
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
-    "bindings": {}
+    "bindings": {
+      "alt-v": null
+    }
   },
   {
     // visual modes
@@ -135,9 +139,9 @@
       "ctrl-x ctrl-l": null,
       "ctrl-x ctrl-z": null,
       "ctrl-x": "editor::ShowCompletions",
-      "ctrl-a": "assistant::InlineAssist", // zed specific
-      "ctrl-i": "editor::ShowInlineCompletion", // zed specific
-      "ctrl-c": "editor::ToggleCodeActions", // zed specific
+      "ctrl-a": "assistant::InlineAssist",
+      "ctrl-i": "editor::ShowInlineCompletion",
+      "ctrl-c": "editor::ToggleCodeActions",
       "ctrl-e": "editor::Cancel"
     }
   },
@@ -175,6 +179,7 @@
       "l": "project_panel::ExpandSelectedEntry",
       "o": null,
       "d": "project_panel::Delete",
+      // "d": "project_panel::Trash",
       "r": "project_panel::Rename",
       "t": null,
       "v": null,
