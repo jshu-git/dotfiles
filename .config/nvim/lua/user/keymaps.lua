@@ -12,8 +12,6 @@ keymap.set({ "n", "x" }, "J", "6gjzz")
 keymap.set({ "n", "x" }, "K", "6gkzz")
 keymap.set({ "n", "x" }, "{", "{zz")
 keymap.set({ "n", "x" }, "}", "}zz")
-keymap.set({ "n", "x" }, "<C-d>", "<C-d>zz")
-keymap.set({ "n", "x" }, "<C-u>", "<C-u>zz")
 
 -- yanking/pasting
 keymap.set("n", "Y", "y$")
