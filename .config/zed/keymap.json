@@ -60,8 +60,6 @@
       "enter": ["workspace::SendKeystrokes", "c i w"],
       "shift-u": "editor::Redo",
       "ctrl-c": "editor::ToggleComments",
-      "ctrl-s": "editor::SelectLargerSyntaxNode",
-      "ctrl-shift-s": "editor::SelectSmallerSyntaxNode",
 
       // windows
       "ctrl-w v": "pane::SplitRight",
@@ -83,7 +81,7 @@
       "g space": "editor::OpenExcerptsSplit",
       "g s": "outline::Toggle",
       "g shift-s": "project_symbols::Toggle",
-      // "g shift-a": "editor::ToggleCodeActions",
+      "g shift-a": "editor::ToggleCodeActions",
       // selection
       "g o": "editor::OpenUrl",
       "g a": "editor::SelectAllMatches",
@@ -122,6 +120,8 @@
     // visual modes
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
+      "v": "editor::SelectLargerSyntaxNode",
+      "alt-v": "editor::SelectSmallerSyntaxNode",
       "shift-v": "vim::Down",
       "ctrl-v": "vim::Down"
     }
