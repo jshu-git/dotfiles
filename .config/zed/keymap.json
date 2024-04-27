@@ -1,0 +1,138 @@
+[
+  {
+    "bindings": {
+      "cmd-shift-,": "zed::OpenDefaultSettings",
+      "cmd-shift-k": "zed::OpenDefaultKeymap",
+      "cmd-shift-x": "zed::Extensions",
+      "cmd-d": "workspace::ToggleZoom",
+      "cmd-e": "workspace::ToggleRightDock",
+      "cmd-t": "workspace::ToggleBottomDock",
+      "cmd-r": "pane::RevealInProjectPanel",
+      "alt-r": "editor::RevealInFinder",
+      "alt-c": "editor::CopyPath",
+      "ctrl-tab": "pane::ActivateNextItem",
+      "ctrl-shift-tab": "pane::ActivatePrevItem",
+      "cmd-j": "journal::NewJournalEntry"
+    }
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
+      // "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "BufferSearchBar",
+    "bindings": {
+      // "enter": "search::SelectNextMatch"
+    }
+  },
+  // vim bindings
+  {
+    // normal + visual
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      // leader
+      "space f f": "file_finder::Toggle",
+      "space f r": "projects::OpenRecent",
+      // "space f w": "project_search::SearchInNew",
+      "space w": "workspace::Save",
+      // "space d": "diagnostics::Deploy",
+
+      // movement
+      "shift-h": "vim::FirstNonWhitespace",
+      "shift-l": "vim::EndOfLine",
+      "shift-j": ["workspace::SendKeystrokes", "6 j z z"],
+      "shift-k": ["workspace::SendKeystrokes", "6 k z z"],
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+      // unimpaired
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPrevDiagnostic",
+      "] c": "editor::GoToHunk",
+      "[ c": "editor::GoToPrevHunk",
+
+      // editing
+      "shift-y": ["workspace::SendKeystrokes", "y $"],
+      "enter": ["workspace::SendKeystrokes", "c i w"],
+      "shift-u": "editor::Redo",
+      "ctrl-c": "editor::ToggleComments",
+      // "ctrl-]": "editor::SelectLargerSyntaxNode",
+      // "ctrl-[": "editor::SelectSmallerSyntaxNode",
+
+      // windows
+      "ctrl-w v": "pane::SplitRight",
+      "ctrl-w s": "pane::SplitDown",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      // "ctrl-right": "increase pane size"
+
+      // g actions
+      // lsp
+      "g h": "editor::Hover",
+      "g r": "editor::FindAllReferences",
+      "g shift-r": "editor::Rename",
+      "g d": "editor::GoToDefinitionSplit",
+      "g shift-d": "editor::GoToTypeDefinitionSplit",
+      "g f": "editor::OpenExcerpts",
+      // "g s": "outline::Toggle",
+      // "g shift-s": "project_symbols::Toggle",
+      // "g shift-a": "editor::ToggleCodeActions",
+      // selection
+      "g o": "editor::OpenUrl",
+      "g a": "editor::SelectAllMatches",
+      "g n": [
+        "editor::SelectNext",
+        {
+          "replace_newest": false
+        }
+      ],
+      "g p": [
+        "editor::SelectPrevious",
+        {
+          "replace_newest": false
+        }
+      ],
+      "g N": [
+        "editor::SelectNext",
+        {
+          "replace_newest": true
+        }
+      ],
+      "g P": [
+        "editor::SelectPrevious",
+        {
+          "replace_newest": true
+        }
+      ]
+    }
+  },
+  {
+    // normal mode
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {}
+  },
+  {
+    // visual, visual line & visual block modes
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      "shift-v": "vim::Down",
+      "ctrl-v": "vim::Down"
+    }
+  },
+  {
+    // insert mode
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in insert mode
+      // e.g.
+      // "j j": "vim::NormalBefore" // remap jj in insert mode to escape.
+      // "ctrl-x": "editor::ShowCompletions"
+    }
+  }
+]
