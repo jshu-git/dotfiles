@@ -35,6 +35,9 @@
   "notification_panel": {
     "button": false
   },
+  // "diagnostic_panel": {
+  // "button": false
+  // },
   "assistant": {
     "version": "1",
     "enabled": false
@@ -46,7 +49,7 @@
     "git_status": true
   },
   "preview_tabs": {
-    "enable_preview_from_file_finder": true
+    // "enable_preview_from_file_finder": true
   },
   "extend_comment_on_newline": false,
   // "soft_wrap": "editor_width",
@@ -68,6 +71,7 @@
     "hour_format": "hour24"
   },
   "terminal": {
+    "default_height": 350,
     "option_as_meta": true,
     "copy_on_select": true,
     "button": false,
@@ -78,6 +82,6 @@
     "use_multiline_find": true,
     "use_smartcase_find": true
   },
-  // "wrap_guides": [2, 4, 8, 12, 16, 20, 24],
+  "wrap_guides": [80],
   "line_indicator_format": "short"
 }

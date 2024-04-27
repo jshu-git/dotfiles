@@ -78,10 +78,11 @@
       "g r": "editor::FindAllReferences",
       "g shift-r": "editor::Rename",
       "g d": "editor::GoToDefinitionSplit",
+      "g i": "editor::GoToImplementationSplit",
       "g shift-d": "editor::GoToTypeDefinitionSplit",
-      "g f": "editor::OpenExcerpts",
-      // "g s": "outline::Toggle",
-      // "g shift-s": "project_symbols::Toggle",
+      "g space": "editor::OpenExcerptsSplit",
+      "g s": "outline::Toggle",
+      "g shift-s": "project_symbols::Toggle",
       // "g shift-a": "editor::ToggleCodeActions",
       // selection
       "g o": "editor::OpenUrl",
@@ -183,4 +184,5 @@
   }
   // wishlist
   // undotree, flash/jump to word, rainbow parentheses, indent guides, customize statusline, dim inactive pane, which key
+  // no search wrap, explorer remember location on delete, pin tab
 ]
