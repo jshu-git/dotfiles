@@ -4,11 +4,17 @@ return {
 	config = function()
 		local mini = require("mini.bufremove")
 		mini.setup()
+
 		vim.keymap.set("n", "<leader>x", function()
 			mini.delete(0, false)
 		end, { desc = "Delete Buffer" })
+
+		-- vim.keymap.set("n", "<leader>X", function()
+		-- mini.delete(0, true)
+		-- end, { desc = "Delete Buffer (Force)" })
+
 		vim.keymap.set("n", "<leader>X", function()
-			mini.delete(0, true)
-		end, { desc = "Delete Buffer (Force)" })
+			mini.wipeout(0, false)
+		end, { desc = "Wipeout Buffers" })
 	end,
 }

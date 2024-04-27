@@ -61,9 +61,9 @@ keymap.set("x", "x", '"_x')
 
 -- leader
 keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Write" })
-keymap.set("n", "<leader>W", "<cmd>w!<CR>", { desc = "Write (force)" })
+keymap.set("n", "<leader>W", "<cmd>w!<CR>", { desc = "Write (Force)" })
 keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
-keymap.set("n", "<leader>Q", "<cmd>q!<CR>", { desc = "Quit (force)" })
+keymap.set("n", "<leader>Q", "<cmd>q!<CR>", { desc = "Quit (Force)" })
 
 -- unimpaired
 keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Next Diagnostic" })

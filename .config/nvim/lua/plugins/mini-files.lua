@@ -5,10 +5,11 @@ return {
 		local mini = require("mini.files")
 		mini.setup({
 			mappings = {
-				go_in = "",
-				go_in_plus = "l",
+				go_in = "<CR>",
 				go_out = "",
-				go_out_plus = "h",
+				go_in_plus = "",
+				go_out_plus = "-",
+				synchronize = "<leader>w",
 				show_help = "?",
 			},
 			options = {
@@ -17,6 +18,7 @@ return {
 			windows = {
 				width_focus = 20,
 				width_nofocus = 20,
+				width_preview = 30,
 			},
 		})
 
@@ -26,7 +28,6 @@ return {
 				mini.open(vim.api.nvim_buf_get_name(0))
 			end
 		end, { desc = "Explorer" })
-
 		vim.keymap.set("n", "<leader>E", function()
 			mini.open(nil, false)
 		end, { desc = "Explorer (cwd)" })
@@ -49,6 +50,20 @@ return {
 			callback = function(args)
 				local buf_id = args.data.buf_id
 				vim.keymap.set("n", "g.", toggle_dotfiles, { buffer = buf_id })
+			end,
+		})
+
+		-- toggle preview
+		local show_preview = false
+		local toggle_preview = function()
+			show_preview = not show_preview
+			mini.refresh({ windows = { preview = show_preview } })
+		end
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "MiniFilesBufferCreate",
+			callback = function(args)
+				local buf_id = args.data.buf_id
+				vim.keymap.set("n", "gp", toggle_preview, { buffer = buf_id })
 			end,
 		})
 	end,
