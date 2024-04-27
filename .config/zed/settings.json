@@ -7,11 +7,14 @@
   "ui_font_family": "FiraCode Nerd Font",
   "folder_icons": true,
   "ui_font_size": 16,
+  "active_pane_magnification": 1.2,
   "vim_mode": true,
   "cursor_blink": false,
   "use_on_type_format": false,
+  "toolbar": {
+    "quick_actions": false
+  },
   "gutter": {
-    "line_numbers": true,
     "code_actions": false,
     "folds": false
   },
@@ -19,20 +22,42 @@
   // "relative_line_numbers": true,
   // "seed_search_query_from_cursor": "selection",
   "project_panel": {
+    "button": false,
     "dock": "right",
     "indent_size": 8
   },
+  "collaboration_panel": {
+    "button": false
+  },
+  "chat_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "assistant": {
+    "version": "1",
+    "enabled": false
+  },
   "tab_bar": {
-    // "show_nav_history_buttons": false
+    "show_nav_history_buttons": false
+  },
+  "tabs": {
+    "git_status": true
   },
   "preview_tabs": {
-    "enabled": true,
     "enable_preview_from_file_finder": true
   },
   "extend_comment_on_newline": false,
-  "soft_wrap": "editor_width",
+  // "soft_wrap": "editor_width",
+  "tab_size": 2,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
   "git": {
     "inline_blame": {
+      // "git_gutter": "hide",
       "enabled": true,
       "delay_ms": 500
     }
@@ -52,6 +77,6 @@
     "use_multiline_find": true,
     "use_smartcase_find": true
   },
-  // "wrap_guides": [2, 4, 8, 12, 16, 20, 24]
+  // "wrap_guides": [2, 4, 8, 12, 16, 20, 24],
   "line_indicator_format": "short"
 }

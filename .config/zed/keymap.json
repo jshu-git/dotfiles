@@ -4,32 +4,31 @@
       "cmd-shift-,": "zed::OpenDefaultSettings",
       "cmd-shift-k": "zed::OpenDefaultKeymap",
       "cmd-shift-x": "zed::Extensions",
+      "cmd-shift-r": "search::ToggleReplace",
       "cmd-d": "workspace::ToggleZoom",
       "cmd-e": "workspace::ToggleRightDock",
       "cmd-t": "workspace::ToggleBottomDock",
       "cmd-r": "pane::RevealInProjectPanel",
+      "cmd-j": "journal::NewJournalEntry",
       "alt-r": "editor::RevealInFinder",
       "alt-c": "editor::CopyPath",
+      "alt-shift-c": "editor::CopyRelativePath",
       "ctrl-tab": "pane::ActivateNextItem",
       "ctrl-shift-tab": "pane::ActivatePrevItem",
-      "cmd-j": "journal::NewJournalEntry"
+      "tab": "menu::SelectNext",
+      "shift-tab": "menu::SelectPrev"
     }
   },
   {
     "context": "Dock",
     "bindings": {
-      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
-      // "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      // "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
     }
   },
-  {
-    "context": "BufferSearchBar",
-    "bindings": {
-      // "enter": "search::SelectNextMatch"
-    }
-  },
+
   // vim bindings
   {
     // normal + visual
@@ -118,7 +117,7 @@
     "bindings": {}
   },
   {
-    // visual, visual line & visual block modes
+    // visual modes
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
       "shift-v": "vim::Down",
@@ -129,10 +128,58 @@
     // insert mode
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
-      // put key-bindings here if you want them to work in insert mode
-      // e.g.
-      // "j j": "vim::NormalBefore" // remap jj in insert mode to escape.
-      // "ctrl-x": "editor::ShowCompletions"
+      "ctrl-x ctrl-o": null,
+      "ctrl-x ctrl-a": null,
+      "ctrl-x ctrl-l": null,
+      "ctrl-x ctrl-z": null,
+      "ctrl-x": "editor::ShowCompletions",
+      "ctrl-a": "assistant::InlineAssist", // zed specific
+      "ctrl-i": "editor::ShowInlineCompletion", // zed specific
+      "ctrl-c": "editor::ToggleCodeActions", // zed specific
+      "ctrl-e": "editor::Cancel"
+    }
+  },
+
+  // search
+  {
+    "context": "BufferSearchBar",
+    "bindings": {
+      "enter": "search::SelectNextMatch",
+      "shift-enter": "search::SelectPrevMatch"
+    }
+  },
+
+  // completions
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "shift-tab": "editor::ContextMenuPrev",
+      "tab": "editor::ContextMenuNext"
+    }
+  },
+
+  // explorer
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      ":": "command_palette::Toggle",
+      "a": "project_panel::NewFile",
+      "/": "project_panel::NewSearchInDirectory",
+      "enter": "project_panel::OpenPermanent",
+      "escape": "project_panel::ToggleFocus",
+      "h": "project_panel::CollapseSelectedEntry",
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrev",
+      "l": "project_panel::ExpandSelectedEntry",
+      "o": null,
+      "d": "project_panel::Delete",
+      "r": "project_panel::Rename",
+      "t": null,
+      "v": null,
+      "tab": "project_panel::Open", // aka preview
+      "alt-r": "project_panel::RevealInFinder"
     }
   }
+  // wishlist
+  // undotree, flash/jump to word, rainbow parentheses, indent guides, customize statusline, dim inactive pane, which key
 ]
