@@ -6,7 +6,7 @@ keybinds clear-defaults=true {
         bind "Ctrl a" { SwitchToMode "Normal"; }
         bind "Ctrl f" { ToggleFloatingPanes;   }
         bind "Alt  f" { ToggleFocusFullscreen; }
-        // bind "Ctrl Tab" { GoToNextTab;         }
+        bind "Ctrl Space" { GoToNextTab; }
     }
     normal {
         // lock
@@ -30,6 +30,11 @@ keybinds clear-defaults=true {
         bind "s" { NewPane   "Right"; SwitchToMode "Locked"; }
         bind "X" { CloseFocus;        SwitchToMode "Locked"; }
         // bind "R" { SwitchToMode "RenamePane"; PaneNameInput 0; }
+        // move
+        bind "Left"  { MovePane "Left";  }
+        bind "Down"  { MovePane "Down";  }
+        bind "Up"    { MovePane "Up";    }
+        bind "Right" { MovePane "Right"; }
 
         // toggles
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
@@ -47,8 +52,8 @@ keybinds clear-defaults=true {
         bind "5" { GoToTab 5;                SwitchToMode "Locked"; }
         bind "S" { ToggleActiveSyncTab;      SwitchToMode "Locked"; }
         // bind "X"     { CloseTab;                 SwitchToMode "Locked"; }
-        bind "H" { MoveTab "Right"; }
-        bind "L" { MoveTab "Left";  }
+        bind "L" { MoveTab "Right"; }
+        bind "H" { MoveTab "Left";  }
 
         // resize
         bind "=" { Resize "Increase";       }
@@ -58,11 +63,6 @@ keybinds clear-defaults=true {
         // bind "K" { Resize "Increase Up";    }
         // bind "L" { Resize "Increase Right"; }
 
-        // move
-        bind "Left"  { MovePane "Left";  }
-        bind "Down"  { MovePane "Down";  }
-        bind "Up"    { MovePane "Up";    }
-        bind "Right" { MovePane "Right"; }
 
         // session
         bind "d" { Detach; }
