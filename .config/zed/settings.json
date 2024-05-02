@@ -12,7 +12,7 @@
   "cursor_blink": false,
   "use_on_type_format": false,
   "toolbar": {
-    "quick_actions": false
+    // "quick_actions": false
   },
   "gutter": {
     // "code_actions": false,
@@ -21,6 +21,9 @@
   "vertical_scroll_margin": 10,
   // "relative_line_numbers": true,
   // "seed_search_query_from_cursor": "selection",
+  "inlay_hints": {
+    "enabled": true
+  },
   "project_panel": {
     "button": false,
     "dock": "right",
@@ -71,7 +74,7 @@
     "hour_format": "hour24"
   },
   "terminal": {
-    "default_height": 350,
+    "default_height": 380,
     "blinking": "off",
     "option_as_meta": true,
     "copy_on_select": true,
