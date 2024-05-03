@@ -1,22 +1,27 @@
 [
   {
     "bindings": {
-      "cmd-shift-,": "zed::OpenDefaultSettings",
-      "cmd-shift-k": "zed::OpenDefaultKeymap",
-      "cmd-shift-x": "zed::Extensions",
-      "cmd-shift-r": "search::ToggleReplace",
+      "cmd-.": "zed::OpenKeymap",
+      "cmd->": "zed::OpenDefaultKeymap",
       "cmd-d": "workspace::ToggleZoom",
       "cmd-e": "workspace::ToggleRightDock",
       "cmd-t": "workspace::ToggleBottomDock",
       "cmd-r": "pane::RevealInProjectPanel",
       "cmd-j": "journal::NewJournalEntry",
+      "cmd-shift-,": "zed::OpenDefaultSettings",
+      "cmd-shift-x": "zed::Extensions",
+      "cmd-shift-r": "search::ToggleReplace",
+      "cmd-shift-d": "diagnostics::Deploy",
+      "cmd-shift-o": "projects::OpenRecent",
       "alt-r": "editor::RevealInFinder",
       "alt-c": "editor::CopyPath",
       "alt-shift-c": "editor::CopyRelativePath",
       "ctrl-tab": "pane::ActivateNextItem",
       "ctrl-shift-tab": "pane::ActivatePrevItem",
       "tab": "menu::SelectNext",
-      "shift-tab": "menu::SelectPrev"
+      "shift-tab": "menu::SelectPrev",
+      // toggles
+      "alt-h": "editor::ToggleInlayHints"
     }
   },
   {
@@ -35,15 +40,8 @@
     "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
       // leader
-      "space f f": "file_finder::Toggle",
-      "space f r": "projects::OpenRecent",
-      "space f d": "diagnostics::Deploy",
-      // "space f w": "project_search::SearchInNew",
+      "space f": "file_finder::Toggle",
       "space w": "workspace::Save",
-      // toggles
-      "space t a": "editor::ToggleCodeActions",
-      "space t w": "editor::ToggleSoftWrap",
-      "space t h": "editor::ToggleInlayHints",
 
       // movement
       "shift-h": "vim::FirstNonWhitespace",
@@ -78,18 +76,19 @@
 
       // g actions
       // lsp
+      "g a": "editor::ToggleCodeActions",
       "g h": "editor::Hover",
       "g r": "editor::FindAllReferences",
       "g shift-r": "editor::Rename",
       "g d": "editor::GoToDefinitionSplit",
-      "g i": "editor::GoToImplementationSplit",
       "g shift-d": "editor::GoToTypeDefinitionSplit",
+      "g i": "editor::GoToImplementationSplit",
       "g space": "editor::OpenExcerptsSplit",
-      "g s": "outline::Toggle",
-      "g shift-s": "project_symbols::Toggle",
+      "g o": "outline::Toggle",
+      "g shift-o": "project_symbols::Toggle",
+      "g u": "editor::OpenUrl",
       // selection
-      "g o": "editor::OpenUrl",
-      "g a": "editor::SelectAllMatches",
+      "g s": "editor::SelectAllMatches",
       "g n": [
         "editor::SelectNext",
         {
@@ -137,10 +136,6 @@
     // insert mode
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
-      "ctrl-x ctrl-o": null,
-      "ctrl-x ctrl-a": null,
-      "ctrl-x ctrl-l": null,
-      "ctrl-x ctrl-z": null,
       "ctrl-x": "editor::ShowCompletions",
       "ctrl-a": "assistant::InlineAssist",
       "ctrl-i": "editor::ShowInlineCompletion",
