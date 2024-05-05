@@ -115,3 +115,9 @@ if command -v lazygit >/dev/null 2>&1; then
     # yadm
     alias yy='cd ; yadm enter lazygit ; cd -'
 fi
+
+# zed
+# if command -v zed >/dev/null 2>&1; then
+#     # use source
+#     alias zed=$HOME/.cargo/bin/zed
+# fi

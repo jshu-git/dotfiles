@@ -2,13 +2,13 @@
   {
     "bindings": {
       "cmd-.": "zed::OpenKeymap",
-      "cmd->": "zed::OpenDefaultKeymap",
       "cmd-d": "workspace::ToggleZoom",
       "cmd-e": "workspace::ToggleRightDock",
       "cmd-t": "workspace::ToggleBottomDock",
       "cmd-r": "pane::RevealInProjectPanel",
       "cmd-j": "journal::NewJournalEntry",
       "cmd-shift-,": "zed::OpenDefaultSettings",
+      "cmd->": "zed::OpenDefaultKeymap", // cmd-shift-.
       "cmd-shift-x": "zed::Extensions",
       "cmd-shift-r": "search::ToggleReplace",
       "cmd-shift-d": "diagnostics::Deploy",
@@ -42,6 +42,8 @@
       // leader
       "space f": "file_finder::Toggle",
       "space w": "workspace::Save",
+      "space o": "editor::NewlineBelow",
+      "space shift-o": "editor::NewlineAbove",
 
       // movement
       "shift-h": "vim::FirstNonWhitespace",
@@ -64,6 +66,8 @@
       "enter": ["workspace::SendKeystrokes", "c i w"],
       "shift-u": "editor::Redo",
       "ctrl-c": "editor::ToggleComments",
+      "-": "vim::Decrement",
+      "=": "vim::Increment",
 
       // windows
       "ctrl-w v": "pane::SplitRight",
@@ -127,7 +131,7 @@
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
       "v": "editor::SelectLargerSyntaxNode",
-      "alt-v": "editor::SelectSmallerSyntaxNode",
+      "ctrl-shift-v": "editor::SelectSmallerSyntaxNode",
       "shift-v": "vim::Down",
       "ctrl-v": "vim::Down"
     }
@@ -140,7 +144,8 @@
       "ctrl-a": "assistant::InlineAssist",
       "ctrl-i": "editor::ShowInlineCompletion",
       "ctrl-c": "editor::ToggleCodeActions",
-      "ctrl-e": "editor::Cancel"
+      "ctrl-e": "editor::Cancel",
+      "shift-backspace": "vim::DeleteRight"
     }
   },
 
@@ -177,8 +182,6 @@
       "o": "project_panel::NewFile",
       "d": "project_panel::Trash",
       "r": "project_panel::Rename",
-      "t": null,
-      "v": null,
       "tab": "project_panel::Open",
       "alt-r": "project_panel::RevealInFinder"
     }
