@@ -31,7 +31,8 @@ require("lazy").setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>ml", "<cmd>Lazy<CR>")
+vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Lazy" })
+
 -- https://github.com/folke/lazy.nvim/discussions/1196
 local user_grp = vim.api.nvim_create_augroup("LazyUserGroup", { clear = true })
 -- require("lazy.view.config").keys.close = "<esc>"

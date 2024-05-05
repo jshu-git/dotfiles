@@ -24,16 +24,15 @@ return {
 			indent = {
 				enable = true,
 			},
-			-- incremental_selection = {
-			-- 	enable = true,
-			-- 	keymaps = {
-			-- 		init_selection = "<C-s>",
-			-- 		node_incremental = "<C-s>",
-			-- 		scope_incremental = false,
-			-- 		node_decremental = "<C-S-s>",
-			-- },
-			-- 	},
-
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					-- init_selection = "<C-s>",
+					node_incremental = "v",
+					-- scope_incremental = false,
+					node_decremental = "<A-v>",
+				},
+			},
 			textobjects = {
 				select = {
 					enable = true,

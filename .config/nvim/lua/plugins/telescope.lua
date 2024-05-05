@@ -63,7 +63,7 @@ return {
 		vim.keymap.set("n", "<leader>fW", function()
 			builtin.live_grep({ grep_open_files = true })
 		end, { desc = "Grep Open Files" })
-		vim.keymap.set("n", "<leader><Tab>", builtin.buffers, { desc = "Buffers" })
+		-- vim.keymap.set("n", "<leader><Tab>", builtin.buffers, { desc = "Buffers" })
 
 		-- misc
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })

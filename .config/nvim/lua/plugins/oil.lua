@@ -36,8 +36,8 @@ return {
 
 					-- toggles
 					["th"] = "actions.toggle_hidden",
-					["tt"] = "actions.toggle_trash",
 					["ts"] = "actions.change_sort",
+					-- ["tt"] = "actions.toggle_trash",
 
 					-- g actions
 					["gr"] = "actions.refresh",
@@ -49,16 +49,16 @@ return {
 					show_hidden = true,
 				},
 				float = {
-					padding = 8,
+					padding = 5,
 				},
 			})
 
-			-- vim.keymap.set("n", "<leader>e", function()
-			-- 	oil.toggle_float()
-			-- end, { desc = "Oil" })
-			-- vim.keymap.set("n", "<leader>E", function()
-			-- 	oil.open()
-			-- end, { desc = "Explorer" })
+			vim.keymap.set("n", "<leader>e", function()
+				oil.toggle_float()
+			end, { desc = "Oil" })
+			vim.keymap.set("n", "<leader>E", function()
+				oil.open()
+			end, { desc = "Explorer" })
 		end,
 	},
 }
