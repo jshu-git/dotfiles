@@ -28,6 +28,7 @@ keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 keymap.set("n", "<CR>", "ciw", { desc = "Change Inner Word" })
 keymap.set("n", "=", "<C-a>")
 keymap.set("n", "-", "<C-x>")
+-- TODO: shift delete deletes one character to the right
 -- preserve clipboard
 keymap.set({ "n", "x" }, "x", '"_x')
 keymap.set({ "n", "x" }, "c", '"_c')
@@ -62,7 +63,6 @@ keymap.set("n", "n", "nzz")
 keymap.set("n", "N", "Nzz")
 
 -- visual modes
--- keymap.set("x", "v", "j")
 keymap.set("x", "V", "j")
 keymap.set("x", "<C-v>", "j")
 -- better indenting

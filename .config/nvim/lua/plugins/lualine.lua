@@ -10,7 +10,7 @@ return {
 		end
 		require("lualine").setup({
 			options = {
-				theme = "rose-pine-alt",
+				-- theme = "rose-pine-alt",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = { "undotree", "alpha" },

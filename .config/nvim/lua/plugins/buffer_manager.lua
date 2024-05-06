@@ -10,15 +10,16 @@ return {
 						command = "edit",
 					},
 					v = {
-						key = "<C-\\>",
+						key = "<C-s>",
 						command = "vsplit",
 					},
 					h = {
-						key = "<C-->",
+						key = "<C-v>",
 						command = "split",
 					},
 				},
 				-- focus_alternate_buffer = false,
+				short_file_names = true,
 				loop_nav = false,
 			},
 		})
