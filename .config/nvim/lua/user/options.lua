@@ -27,6 +27,7 @@ opt.fillchars = { eob = " " }
 opt.showmode = false
 opt.ruler = false
 opt.pumheight = 10
+opt.wrap = false
 
 -- windows
 opt.splitright = true
