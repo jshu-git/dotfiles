@@ -14,7 +14,7 @@ return {
 		-- end, { desc = "Delete Buffer (Force)" })
 
 		vim.keymap.set("n", "<leader>X", function()
-			mini.wipeout(0, false)
+			mini.wipeout(0, true)
 		end, { desc = "Wipeout Buffers" })
 	end,
 }

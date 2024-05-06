@@ -1,11 +1,14 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
+		-- mason
 		{ "williamboman/mason.nvim", config = true },
 		"williamboman/mason-lspconfig.nvim",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		-- ui
 		{ "j-hui/fidget.nvim", opts = {} },
 		{ "folke/neodev.nvim", opts = {} },
+		-- cmp
+		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -19,7 +22,7 @@ return {
 				map("gh", vim.lsp.buf.hover, "Hover Documentation")
 				map("gj", vim.lsp.buf.signature_help, "Hover Signature")
 				map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
-				map("gi", require("telescope.builtin").lsp_implementations, "Goto Implementation")
+				-- map("gi", require("telescope.builtin").lsp_implementations, "Goto Implementation")
 				-- map("gt", require("telescope.builtin").lsp_type_definitions, "Goto Type Definition")
 
 				map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
@@ -35,34 +38,63 @@ return {
 				-- clear highlights when moving cursor
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
 				if client and client.server_capabilities.documentHighlightProvider then
+					local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
 					vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 						buffer = event.buf,
+						group = highlight_augroup,
 						callback = vim.lsp.buf.document_highlight,
 					})
 					vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
 						buffer = event.buf,
+						group = highlight_augroup,
 						callback = vim.lsp.buf.clear_references,
+					})
+					vim.api.nvim_create_autocmd("LspDetach", {
+						group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
+						callback = function(event2)
+							vim.lsp.buf.clear_references()
+							vim.api.nvim_clear_autocmds({ group = "lsp-highlight", buffer = event2.buf })
+						end,
 					})
 				end
 			end,
 		})
 
-		-- mason
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+		local servers = {
+			-- gopls = {},
+			-- pyright = {},
+			-- rust_analyzer = {},
+			-- lua_ls = {
+			-- 	settings = {
+			-- 		Lua = {
+			-- 			completion = {
+			-- 				callSnippet = "Replace",
+			-- 			},
+			-- 			diagnostics = {
+			-- 				disable = { "missing-fields" },
+			-- 			},
+			-- 		},
+			-- 	},
+			-- },
+		}
+
+		-- mason
 		require("mason").setup({
 			ui = {
 				border = "single",
 				height = 0.8,
 			},
 		})
-		require("mason-tool-installer").setup({})
 		require("mason-lspconfig").setup_handlers({
 			function(server_name)
-				require("lspconfig")[server_name].setup({
-					capabilities = capabilities,
-				})
+				local server = servers[server_name] or {}
+				server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+				require("lspconfig")[server_name].setup(server)
 			end,
 		})
+		vim.keymap.set("n", "<leader>m", "<cmd>Mason<CR>", { desc = "Mason" })
 
 		-- ui
 		require("lspconfig.ui.windows").default_options.border = "single"
@@ -71,7 +103,5 @@ return {
 				border = "single",
 			},
 		})
-
-		vim.keymap.set("n", "<leader>m", "<cmd>Mason<CR>", { desc = "Mason" })
 	end,
 }

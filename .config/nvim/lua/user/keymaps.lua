@@ -70,3 +70,15 @@ keymap.set("v", ">", ">gv")
 
 -- toggles
 keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle Word Wrap" })
+
+-- https://old.reddit.com/r/neovim/comments/yk1wqw/dismiss_lsp_pop_us_by_pressing_escape/
+-- close any floating window with esc
+-- local function close_floating()
+-- 	for _, win in ipairs(vim.api.nvim_list_wins()) do
+-- 		local config = vim.api.nvim_win_get_config(win)
+-- 		if config.relative ~= "" then
+-- 			vim.api.nvim_win_close(win, false)
+-- 		end
+-- 	end
+-- end
+-- vim.keymap.set("n", "<Esc>", close_floating)
