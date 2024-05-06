@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{ import = "plugins" },
 	{ import = "plugins.base" },
-  { import = "plugins.themes" },
+	{ import = "plugins.themes" },
 }, {
 	ui = {
 		border = "single",
@@ -31,7 +31,6 @@ require("lazy").setup({
 		notify = false,
 	},
 })
-
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Lazy" })
 
 -- https://github.com/folke/lazy.nvim/discussions/1196
@@ -47,3 +46,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 	group = user_grp,
 })
+
+-- vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme no-clown-fiesta")

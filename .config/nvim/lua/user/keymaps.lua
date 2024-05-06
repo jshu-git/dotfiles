@@ -37,7 +37,7 @@ keymap.set({ "n", "x" }, "C", '"_C')
 -- yanking/pasting
 keymap.set("n", "Y", "y$")
 keymap.set("n", "p", "p==")
-keymap.set("x", "p", '"_dP')
+-- keymap.set("x", "p", '"_dP')
 keymap.set("n", "<leader>p", "<cmd>pu<CR>==", { desc = "Paste after line" })
 keymap.set("n", "<leader>P", "<cmd>pu!<CR>==", { desc = "Paste before line" })
 
@@ -65,7 +65,6 @@ keymap.set("n", "N", "Nzz")
 -- visual modes
 keymap.set("x", "V", "j")
 keymap.set("x", "<C-v>", "j")
--- better indenting
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
 

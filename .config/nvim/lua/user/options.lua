@@ -20,15 +20,13 @@ opt.incsearch = true
 
 -- ui
 opt.cursorline = true
--- opt.cursorlineopt = "number"
--- opt.cursorcolumn = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 opt.fillchars = { eob = " " }
 opt.showmode = false
 opt.ruler = false
-opt.pumheight = 5
+opt.pumheight = 10
 
 -- windows
 opt.splitright = true
@@ -49,6 +47,3 @@ opt.undofile = true
 opt.clipboard = "unnamedplus"
 opt.swapfile = false
 opt.confirm = true
-
--- opt.showmode = false
--- opt.guicursor = 'n-v-i-c:block-Cursor'
