@@ -9,6 +9,7 @@
       "cmd-j": "journal::NewJournalEntry",
       "cmd-shift-,": "zed::OpenDefaultSettings",
       "cmd->": "zed::OpenDefaultKeymap", // cmd-shift-.
+      "cmd-shift-k": "vim::OpenDefaultKeymap",
       "cmd-shift-x": "zed::Extensions",
       "cmd-shift-r": "search::ToggleReplace",
       "cmd-shift-d": "diagnostics::Deploy",
@@ -44,6 +45,9 @@
       "space w": "workspace::Save",
       "space o": "editor::NewlineBelow",
       "space shift-o": "editor::NewlineAbove",
+      "space tab": "tab_switcher::Toggle",
+      // "space p":
+      // "space shift-p":
 
       // movement
       "shift-h": "vim::FirstNonWhitespace",
@@ -63,7 +67,6 @@
 
       // editing
       "shift-y": ["workspace::SendKeystrokes", "y $"],
-      "enter": ["workspace::SendKeystrokes", "c i w"],
       "shift-u": "editor::Redo",
       "ctrl-c": "editor::ToggleComments",
       "-": "vim::Decrement",
@@ -79,19 +82,19 @@
       // "ctrl-right": "increase pane size"
 
       // g actions
-      // lsp
       "g a": "editor::ToggleCodeActions",
       "g h": "editor::Hover",
+      "g i": "editor::GoToImplementationSplit",
+      "g space": "editor::OpenExcerptsSplit",
+      "g u": "editor::OpenUrl",
+
       "g r": "editor::FindAllReferences",
       "g shift-r": "editor::Rename",
       "g d": "editor::GoToDefinitionSplit",
       "g shift-d": "editor::GoToTypeDefinitionSplit",
-      "g i": "editor::GoToImplementationSplit",
-      "g space": "editor::OpenExcerptsSplit",
       "g o": "outline::Toggle",
       "g shift-o": "project_symbols::Toggle",
-      "g u": "editor::OpenUrl",
-      // selection
+
       "g s": "editor::SelectAllMatches",
       "g n": [
         "editor::SelectNext",
@@ -123,6 +126,8 @@
     // normal mode
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
+      "enter": ["workspace::SendKeystrokes", "c i w"],
+      "shift-enter": ["workspace::SendKeystrokes", "c i \""],
       "alt-v": null
     }
   },
@@ -130,6 +135,7 @@
     // visual modes
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
+      "enter": ["workspace::SendKeystrokes", "c"],
       "v": "editor::SelectLargerSyntaxNode",
       "ctrl-shift-v": "editor::SelectSmallerSyntaxNode",
       "shift-v": "vim::Down",
@@ -171,22 +177,44 @@
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
-      ":": "command_palette::Toggle",
-      "/": "project_panel::NewSearchInDirectory",
-      "enter": "project_panel::OpenPermanent",
-      "escape": "project_panel::ToggleFocus",
+      "alt-r": "project_panel::RevealInFinder",
+      "alt-c": "project_panel::CopyPath",
+      "alt-shift-c": "project_panel::CopyRelativePath",
+      // oil-like
       "h": "project_panel::CollapseSelectedEntry",
       "j": "menu::SelectNext",
       "k": "menu::SelectPrev",
       "l": "project_panel::ExpandSelectedEntry",
       "o": "project_panel::NewFile",
-      "d": "project_panel::Trash",
-      "r": "project_panel::Rename",
-      "tab": "project_panel::Open",
-      "alt-r": "project_panel::RevealInFinder"
+      "d d": "project_panel::Trash",
+      "y y": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "tab": "project_panel::Open", // preview
+
+      "d": null,
+      "D": ["project_panel::Delete", { "skip_prompt": true }],
+      "r": "project_panel::Rename"
+    }
+  },
+
+  // terminal
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-n": "workspace::NewTerminal"
+      // "shift-backspace": ["terminal::SendText", "\u007f"]
+    }
+  },
+
+  // tab switcher
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "ctrl-d": "tab_switcher::CloseSelectedItem"
     }
   }
-  // wishlist
-  // undotree, flash/jump to word, rainbow parentheses, indent guides, customize statusline, dim inactive pane, which key
-  // no search wrap, explorer remember location on delete, pin tab
 ]
+
+// wishlist
+// undotree, flash/jump to word, rainbow parentheses, indent guides, customize statusline, dim inactive pane, which key
+// no search wrap, explorer remember location on delete, pin tab

@@ -22,7 +22,7 @@
   // "relative_line_numbers": true,
   // "seed_search_query_from_cursor": "selection",
   "inlay_hints": {
-    "enabled": true
+    "enabled": false
   },
   "project_panel": {
     "button": false,
