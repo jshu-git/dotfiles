@@ -10,14 +10,14 @@ return {
 		end
 		require("lualine").setup({
 			options = {
-				-- theme = "rose-pine-alt",
+				theme = "rose-pine-alt",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = { "undotree", "alpha" },
 			},
 			sections = {
 				lualine_c = {
-					{ "filename", path = 1, padding = { right = 0 } },
+					{ "filename", path = 1 },
 				},
 				lualine_x = {
 					{

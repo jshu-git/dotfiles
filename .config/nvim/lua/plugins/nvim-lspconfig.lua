@@ -20,17 +20,20 @@ return {
 
 				map("ga", vim.lsp.buf.code_action, "Code Action")
 				map("gh", vim.lsp.buf.hover, "Hover Documentation")
-				map("gj", vim.lsp.buf.signature_help, "Hover Signature")
+				map("gs", vim.lsp.buf.signature_help, "Hover Signature")
 				map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
 				-- map("gi", require("telescope.builtin").lsp_implementations, "Goto Implementation")
 				-- map("gt", require("telescope.builtin").lsp_type_definitions, "Goto Type Definition")
 
 				map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
 				-- map("gd", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", "Goto Definition in Vertical Split")
+				-- map("gD", vim.lsp.buf.declaration, "Goto Declaration")
 				map("gr", require("telescope.builtin").lsp_references, "Goto References")
 				map("gR", vim.lsp.buf.rename, "Rename Variable")
-				map("gs", require("telescope.builtin").lsp_document_symbols, "Goto Symbols")
-				map("gS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Goto Workspace Symbols")
+
+				-- symbols
+				map("<leader>fs", require("telescope.builtin").lsp_document_symbols, "Goto Symbols")
+				map("<leader>fS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Goto Workspace Symbols")
 
 				map("[d", vim.diagnostic.goto_prev, "Next Diagnostic")
 				map("]d", vim.diagnostic.goto_next, "Previous Diagnostic")
@@ -61,23 +64,27 @@ return {
 		})
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		-- enable cmp capabilities
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 		local servers = {
-			-- gopls = {},
 			-- pyright = {},
 			-- rust_analyzer = {},
-			-- lua_ls = {
-			-- 	settings = {
-			-- 		Lua = {
-			-- 			completion = {
-			-- 				callSnippet = "Replace",
-			-- 			},
-			-- 			diagnostics = {
-			-- 				disable = { "missing-fields" },
-			-- 			},
-			-- 		},
-			-- 	},
-			-- },
+			lua_ls = {
+				settings = {
+					Lua = {
+						hint = {
+							enable = true,
+						},
+						-- completion = {
+						-- 	callSnippet = "Replace",
+						-- },
+						diagnostics = {
+							disable = { "missing-fields" },
+							globals = { "vim" },
+						},
+					},
+				},
+			},
 		}
 
 		-- mason
