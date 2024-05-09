@@ -7,7 +7,6 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-telescope/telescope-ui-select.nvim",
 		"nvim-tree/nvim-web-devicons",
-		"rmagatti/auto-session",
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -53,7 +52,6 @@ return {
 		})
 		telescope.load_extension("fzf")
 		telescope.load_extension("ui-select")
-		telescope.load_extension("session-lens")
 
 		vim.keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Grep Current Buffer" })
 		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent Files" })
