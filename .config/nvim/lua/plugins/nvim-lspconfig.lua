@@ -20,7 +20,7 @@ return {
 
 				map("ga", vim.lsp.buf.code_action, "Code Action")
 				map("gs", vim.lsp.buf.hover, "Hover Documentation")
-				-- map("gs", vim.lsp.buf.signature_help, "Hover Signature")
+				map("gS", vim.lsp.buf.signature_help, "Hover Signature")
 				map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
 				-- map("gi", require("telescope.builtin").lsp_implementations, "Goto Implementation")
 				-- map("gt", require("telescope.builtin").lsp_type_definitions, "Goto Type Definition")

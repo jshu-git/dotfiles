@@ -7,9 +7,9 @@ return {
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
-				"bash",
-				"c",
-				"html",
+				-- "bash",
+				-- "c",
+				-- "html",
 				"json",
 				"lua",
 				"luadoc",
@@ -30,7 +30,8 @@ return {
 					-- init_selection = "<C-s>",
 					node_incremental = "v",
 					-- scope_incremental = false,
-					node_decremental = "<A-v>",
+					-- node_decremental = "<A-v>",
+					node_decremental = "<BS>",
 				},
 			},
 			textobjects = {

@@ -69,6 +69,9 @@ keymap.set("x", "<C-v>", "j")
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
 
+-- misc
+keymap.set("n", "Q", "<nop>")
+
 -- https://old.reddit.com/r/neovim/comments/yk1wqw/dismiss_lsp_pop_us_by_pressing_escape/
 -- close any floating window with esc
 -- local function close_floating()

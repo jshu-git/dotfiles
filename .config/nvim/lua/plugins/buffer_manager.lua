@@ -5,10 +5,6 @@ return {
 		require("buffer_manager").setup({
 			{
 				select_menu_item_commands = {
-					edit = {
-						key = "<CR>",
-						command = "edit",
-					},
 					v = {
 						key = "<C-s>",
 						command = "vsplit",
@@ -19,9 +15,8 @@ return {
 					},
 					true,
 				},
-				-- focus_alternate_buffer = false,
 				short_file_names = true,
-				loop_nav = false,
+				loop_nav = false, -- not working for some reason
 			},
 		})
 		local ui = require("buffer_manager.ui")

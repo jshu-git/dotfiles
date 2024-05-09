@@ -12,6 +12,7 @@ return {
 		local telescope = require("telescope")
 		local builtin = require("telescope.builtin")
 		local actions = require("telescope.actions")
+		local layout = require("telescope.actions.layout")
 		local themes = require("telescope.themes")
 
 		telescope.setup({
@@ -37,7 +38,11 @@ return {
 						[","] = actions.toggle_selection,
 						["<C-d>"] = actions.delete_buffer,
 						["<C-s>"] = actions.select_horizontal,
+						["<C-p>"] = layout.toggle_preview,
 					},
+				},
+				preview = {
+					hide_on_startup = true,
 				},
 				file_ignore_patterns = { "lazy%-lock.json" },
 			},

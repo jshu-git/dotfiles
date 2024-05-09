@@ -17,7 +17,7 @@ return {
 			},
 			sections = {
 				lualine_c = {
-					{ "filename", path = 1, padding = { right = 0 } },
+					{ "filename", path = 1 },
 				},
 				lualine_x = {
 					{
@@ -33,6 +33,7 @@ return {
 								},
 							},
 							show_colors = true,
+							show_loading = true,
 						},
 					},
 				},
@@ -49,8 +50,6 @@ return {
 				},
 			},
 			inactive_sections = {
-				lualine_a = {},
-				lualine_b = {},
 				lualine_c = {
 					{ "filename", path = 0 },
 				},

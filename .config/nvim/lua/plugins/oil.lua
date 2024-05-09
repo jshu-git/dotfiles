@@ -4,12 +4,6 @@ return {
 		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
 			local oil = require("oil")
-			local permission_hlgroups = {
-				["-"] = "NonText",
-				["r"] = "DiagnosticSignWarn",
-				["w"] = "DiagnosticSignError",
-				["x"] = "DiagnosticSignOk",
-			}
 
 			oil.setup({
 				delete_to_trash = true,
@@ -18,6 +12,9 @@ return {
 						"icon",
 						add_padding = false,
 					},
+				},
+				win_options = {
+					number = false,
 				},
 				keymaps = {
 					["?"] = "actions.show_help",
@@ -37,7 +34,7 @@ return {
 					-- toggles
 					["th"] = "actions.toggle_hidden",
 					["ts"] = "actions.change_sort",
-					-- ["tt"] = "actions.toggle_trash",
+					["tt"] = "actions.toggle_trash",
 
 					-- g actions
 					["gr"] = "actions.refresh",
@@ -49,7 +46,8 @@ return {
 					show_hidden = true,
 				},
 				float = {
-					padding = 5,
+					padding = 8,
+					border = "single",
 				},
 			})
 

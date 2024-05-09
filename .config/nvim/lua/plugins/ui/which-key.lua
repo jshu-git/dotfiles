@@ -30,7 +30,6 @@ return {
 			["<leader>f"] = { name = "Find…" },
 			["<leader>s"] = { name = "Session…" },
 			["<leader>t"] = { name = "Toggle…" },
-			["<leader>m"] = { name = "Menu…" },
 		})
 	end,
 }
