@@ -9,15 +9,13 @@ return {
 		label = {
 			rainbow = { enabled = true },
 		},
-		highlight = {
-			backdrop = false,
-		},
 		modes = {
 			search = {
 				enabled = false,
 			},
 			char = {
-				jump_labels = true,
+				enabled = false,
+				-- jump_labels = true,
 			},
 			treesitter = {
 				labels = "12345abcdefghijklmnopqrstuvwxyz",
@@ -32,13 +30,15 @@ return {
 			"<leader>j",
 			mode = { "n", "x", "o" },
 			function()
-				require("flash").treesitter({
-					label = {
-						-- before = true,
-						-- after = false,
-						rainbow = { enabled = true },
-					},
-				})
+				require("flash").jump()
+			end,
+			desc = "Flash",
+		},
+		{
+			"<leader>J",
+			mode = { "n", "x", "o" },
+			function()
+				require("flash").treesitter()
 			end,
 			desc = "Flash (Treesitter)",
 		},

@@ -19,8 +19,8 @@ return {
 				end
 
 				map("ga", vim.lsp.buf.code_action, "Code Action")
-				map("gh", vim.lsp.buf.hover, "Hover Documentation")
-				map("gs", vim.lsp.buf.signature_help, "Hover Signature")
+				map("gs", vim.lsp.buf.hover, "Hover Documentation")
+				-- map("gs", vim.lsp.buf.signature_help, "Hover Signature")
 				map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
 				-- map("gi", require("telescope.builtin").lsp_implementations, "Goto Implementation")
 				-- map("gt", require("telescope.builtin").lsp_type_definitions, "Goto Type Definition")
@@ -64,8 +64,11 @@ return {
 		})
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 		-- enable cmp capabilities
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
+		-- server configurations
 		local servers = {
 			-- pyright = {},
 			-- rust_analyzer = {},
@@ -105,6 +108,12 @@ return {
 
 		-- ui
 		require("lspconfig.ui.windows").default_options.border = "single"
+		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+			border = "single",
+		})
+		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+			border = "single",
+		})
 		vim.diagnostic.config({
 			float = {
 				border = "single",

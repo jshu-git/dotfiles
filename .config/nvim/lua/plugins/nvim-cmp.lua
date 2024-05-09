@@ -27,7 +27,7 @@ return {
 				documentation = cmp.config.window.bordered(),
 			},
 			completion = {
-				-- autocomplete = false,
+				autocomplete = false,
 				-- completeopt = "menu,menuone,noinsert",
 			},
 			mapping = cmp.mapping.preset.insert({

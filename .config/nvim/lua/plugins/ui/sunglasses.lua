@@ -3,7 +3,7 @@ return {
 	event = "UIEnter",
 	config = function()
 		require("sunglasses").setup({
-			filter_percent = 0.5,
+			filter_percent = 0.25,
 		})
 	end,
 }
