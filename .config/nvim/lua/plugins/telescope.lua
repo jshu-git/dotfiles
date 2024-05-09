@@ -18,13 +18,12 @@ return {
 		telescope.setup({
 			defaults = {
 				sorting_strategy = "ascending",
-				-- scroll_strategy = "limit",
-				layout_strategy = "vertical",
+				scroll_strategy = "limit",
+				layout_strategy = "horizontal",
 				layout_config = {
-					vertical = {
+					horizontal = {
 						height = 0.5,
 						prompt_position = "top",
-						-- preview_cutoff = 0,
 					},
 				},
 				dynamic_preview_title = true,
@@ -63,20 +62,19 @@ return {
 		vim.keymap.set("n", "<leader>fW", function()
 			builtin.live_grep({ grep_open_files = true })
 		end, { desc = "Grep Open Files" })
-		-- vim.keymap.set("n", "<leader><Tab>", builtin.buffers, { desc = "Buffers" })
+		-- vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Quickfix" })
+		-- vim.keymap.set("n", "<leader>fQ", builtin.quickfixhistory, { desc = "Quickfix History" })
+		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
 
 		-- misc
-		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
-		vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Quickfix" })
-		vim.keymap.set("n", "<leader>fQ", builtin.quickfixhistory, { desc = "Quickfix History" })
 		vim.keymap.set("n", "<leader>'", builtin.resume, { desc = "Last Picker" })
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
+		vim.keymap.set("n", "<leader>fo", builtin.vim_options, { desc = "Vim Options" })
+		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
 		vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "Commands" })
 		vim.keymap.set("n", "<leader>fC", builtin.builtin, { desc = "Telescope Commands" })
-		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
 		vim.keymap.set("n", "<leader>ft", function()
 			builtin.colorscheme({ enable_preview = true })
 		end, { desc = "Themes" })
-		vim.keymap.set("n", "<leader>fo", builtin.vim_options, { desc = "Vim Options" })
 	end,
 }
