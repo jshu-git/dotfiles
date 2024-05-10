@@ -24,8 +24,6 @@ keymap.set({ "n", "x" }, "J", "6gjzz")
 keymap.set({ "n", "x" }, "K", "6gkzz")
 keymap.set({ "n", "x" }, "{", "{zz")
 keymap.set({ "n", "x" }, "}", "}zz")
-keymap.set("n", "<A-S-j>", "yyp")
-keymap.set("n", "<A-S-k>", "yyP")
 
 -- editing
 keymap.set("n", "U", "<C-r>")
@@ -33,6 +31,8 @@ keymap.set("n", "<CR>", '"_ciw')
 keymap.set("n", "<A-CR>", '"_ci"')
 keymap.set("n", "=", "<C-a>")
 keymap.set("n", "-", "<C-x>")
+keymap.set("n", "<A-S-j>", "yyp")
+keymap.set("n", "<A-S-k>", "yyP")
 -- TODO: shift delete deletes one character to the right
 -- preserve clipboard
 keymap.set({ "n", "x" }, "x", '"_x')
