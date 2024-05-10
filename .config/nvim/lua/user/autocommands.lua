@@ -30,15 +30,6 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 	end,
 })
 
--- show cursor line only in active window
-local cursorGrp = vim.api.nvim_create_augroup("CursorLine", { clear = true })
-vim.api.nvim_create_autocmd({ "WinEnter" }, {
-	pattern = "*",
-	command = "set cursorline",
-	group = cursorGrp,
-})
-vim.api.nvim_create_autocmd({ "WinLeave" }, { pattern = "*", command = "set nocursorline", group = cursorGrp })
-
 -- enable spell checking for certain filetypes
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = { "*.txt", "*.md", "*.tex" },

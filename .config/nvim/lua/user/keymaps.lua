@@ -7,11 +7,11 @@ g.maplocalleader = " "
 keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Write" })
 keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 keymap.set("n", "<leader>Q", "<cmd>qa!<CR>", { desc = "Quit All" })
-keymap.set("n", "<leader>o", "o<Esc>", { desc = "Open line below" })
-keymap.set("n", "<leader>O", "O<Esc>", { desc = "Open line above" })
-keymap.set("n", "<leader>n", "<cmd>enew<CR>", { desc = "New buffer" })
--- keymap.set("n", "<Tab>", "<cmd>bn<CR>", { desc = "Next buffer" })
--- keymap.set("n", "<S-Tab>", "<cmd>bp<CR>", { desc = "Previous buffer" })
+keymap.set("n", "<leader>o", "o<Esc>", { desc = "New Line Below" })
+keymap.set("n", "<leader>O", "O<Esc>", { desc = "New Line Above" })
+keymap.set("n", "<leader>n", "<cmd>enew<CR>", { desc = "New Buffer" })
+keymap.set("n", "<Tab>", "<cmd>bn<CR>", { desc = "Next Buffer" })
+keymap.set("n", "<S-Tab>", "<cmd>bp<CR>", { desc = "Previous Buffer" })
 -- toggles
 keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle Word Wrap" })
 
@@ -43,8 +43,8 @@ keymap.set({ "n", "x" }, "C", '"_C')
 keymap.set("n", "Y", "y$")
 keymap.set("n", "p", "p==")
 keymap.set("x", "p", '"_dP==')
-keymap.set("n", "<leader>p", "<cmd>pu<CR>==", { desc = "Paste after line" })
-keymap.set("n", "<leader>P", "<cmd>pu!<CR>==", { desc = "Paste before line" })
+keymap.set("n", "<leader>p", "<cmd>pu<CR>==", { desc = "Paste After Line" })
+keymap.set("n", "<leader>P", "<cmd>pu!<CR>==", { desc = "Paste Before Line" })
 
 -- windows
 keymap.set("n", "<C-h>", "<C-w><C-h>")

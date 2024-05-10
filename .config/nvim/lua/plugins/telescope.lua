@@ -42,12 +42,9 @@ return {
 					},
 				},
 				preview = {
-					-- hide_on_startup = true,
+					hide_on_startup = true,
 				},
 				file_ignore_patterns = { "lazy%-lock.json" },
-			},
-			pickers = {
-				colorscheme = { enable_preview = true },
 			},
 			extensions = {
 				["ui-select"] = {
@@ -61,24 +58,41 @@ return {
 		-- most used
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Files" })
 		vim.keymap.set("n", "<leader>fF", function()
-			builtin.find_files({ hidden = true })
+			builtin.find_files({
+				hidden = true,
+				prompt_title = "Find Files (Including Hidden)",
+			})
 		end, { desc = "Files (Hidden)" })
+
 		vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Grep" })
 		vim.keymap.set("n", "<leader>fW", function()
-			builtin.live_grep({ grep_open_files = true })
-		end, { desc = "Grep Open Files" })
+			builtin.live_grep({
+				grep_open_files = true,
+				prompt_title = "Live Grep (Open Files)",
+			})
+		end, { desc = "Grep (Open Files)" })
+
 		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent Files" })
-		-- vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Quickfix" })
-		-- vim.keymap.set("n", "<leader>fQ", builtin.quickfixhistory, { desc = "Quickfix History" })
+		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
+
 		vim.keymap.set("n", "<leader>ft", function()
 			builtin.colorscheme({ enable_preview = true })
 		end, { desc = "Themes" })
 
+		vim.keymap.set("n", "<leader>/", function()
+			builtin.current_buffer_fuzzy_find(themes.get_dropdown({
+				previewer = false,
+				prompt_title = "Grep (Current Buffer)",
+				skip_empty_lines = true,
+			}))
+		end, { desc = "Grep (Current Buffer)" })
+
 		-- less used
+		-- vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Quickfix" })
+		-- vim.keymap.set("n", "<leader>fQ", builtin.quickfixhistory, { desc = "Quickfix History" })
 		vim.keymap.set("n", "<leader>'", builtin.resume, { desc = "Last Picker" })
-		vim.keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Grep Current Buffer" })
+		-- vim.keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Grep Current Buffer" })
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
-		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
 		vim.keymap.set("n", "<leader>fo", builtin.vim_options, { desc = "Vim Options" })
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
 		vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "Commands" })

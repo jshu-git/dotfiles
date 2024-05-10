@@ -6,7 +6,7 @@ return {
 			styles = {
 				bold = false,
 				italic = false,
-				-- transparency = true,
+				transparency = true,
 			},
 		})
 	end,

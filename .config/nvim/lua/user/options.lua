@@ -1,6 +1,6 @@
 -- tabs/indents
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -32,9 +32,9 @@ vim.opt.splitbelow = true
 
 -- timeouts
 vim.opt.timeout = true
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 250
 vim.opt.ttimeoutlen = 0
-vim.opt.updatetime = 300
+vim.opt.updatetime = 250
 
 -- misc
 vim.opt.mouse = "a"

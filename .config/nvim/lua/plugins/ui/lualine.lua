@@ -3,17 +3,17 @@ return {
 	dependencies = {
 		"AndreM222/copilot-lualine",
 	},
-	event = "ColorScheme",
 	config = function()
 		local function total_lines()
 			return vim.api.nvim_buf_line_count(0)
 		end
+
 		require("lualine").setup({
 			options = {
-				theme = "rose-pine-alt",
+				theme = require("lualine.themes.rose-pine-alt"),
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
-				disabled_filetypes = { "undotree", "alpha" },
+				disabled_filetypes = { "alpha" },
 			},
 			sections = {
 				lualine_c = {
