@@ -26,14 +26,13 @@ return {
 				-- map("gt", require("telescope.builtin").lsp_type_definitions, "Goto Type Definition")
 
 				map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
-				-- map("gd", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", "Goto Definition in Vertical Split")
 				-- map("gD", vim.lsp.buf.declaration, "Goto Declaration")
 				map("gr", require("telescope.builtin").lsp_references, "Goto References")
 				map("gR", vim.lsp.buf.rename, "Rename Variable")
 
 				-- symbols
-				map("<leader>fs", require("telescope.builtin").lsp_document_symbols, "Goto Symbols")
-				map("<leader>fS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Goto Workspace Symbols")
+				-- map("<leader>fs", require("telescope.builtin").lsp_document_symbols, "Goto Symbols")
+				-- map("<leader>fS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Goto Workspace Symbols")
 
 				map("[d", vim.diagnostic.goto_prev, "Next Diagnostic")
 				map("]d", vim.diagnostic.goto_next, "Previous Diagnostic")

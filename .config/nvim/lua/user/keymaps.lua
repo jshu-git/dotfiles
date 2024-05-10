@@ -64,6 +64,7 @@ keymap.set("n", "n", "nzz")
 keymap.set("n", "N", "Nzz")
 
 -- visual modes
+keymap.set("x", "<CR>", "c")
 keymap.set("x", "V", "j")
 keymap.set("x", "<C-v>", "j")
 keymap.set("v", "<", "<gv")

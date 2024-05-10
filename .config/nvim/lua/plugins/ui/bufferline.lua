@@ -16,5 +16,7 @@ return {
 		})
 		-- vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next Buffer" })
 		-- vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous Buffer" })
+		-- command! Bnext if bufnr() != bufnr('$') | bnext | endif
+		-- command! Bprev if bufnr() != 1 | bprev | endif
 	end,
 }
