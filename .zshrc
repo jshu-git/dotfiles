@@ -103,6 +103,8 @@ fi
 
 # neovim
 if command -v nvim >/dev/null 2>&1; then
+    # use source
+    export PATH=$HOME/.local/nvim/bin:$PATH
     alias vim="nvim"
     alias vi="nvim"
     alias v="nvim"
@@ -115,9 +117,3 @@ if command -v lazygit >/dev/null 2>&1; then
     # yadm
     alias yy='cd ; yadm enter lazygit ; cd -'
 fi
-
-# zed
-# if command -v zed >/dev/null 2>&1; then
-#     # use source
-#     alias zed=$HOME/.cargo/bin/zed
-# fi

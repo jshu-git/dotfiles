@@ -218,3 +218,4 @@
 // wishlist
 // undotree, flash/jump to word, rainbow parentheses, indent guides, customize statusline, dim inactive pane, which key
 // no search wrap, explorer remember location on delete, pin tab
+// "ctrl-cmd-c": "editor::DisplayCursorNames" <- what does this do?

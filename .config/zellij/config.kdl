@@ -26,8 +26,8 @@ keybinds clear-defaults=true {
         bind "l" { MoveFocus "Right"; SwitchToMode "Locked"; }
         bind "j" { MoveFocus "Down";  SwitchToMode "Locked"; }
         bind "k" { MoveFocus "Up";    SwitchToMode "Locked"; }
-        bind "a" { NewPane   "Down";  SwitchToMode "Locked"; }
-        bind "s" { NewPane   "Right"; SwitchToMode "Locked"; }
+        bind "s" { NewPane   "Down";  SwitchToMode "Locked"; }
+        bind "v" { NewPane   "Right"; SwitchToMode "Locked"; }
         bind "X" { CloseFocus;        SwitchToMode "Locked"; }
         // bind "R" { SwitchToMode "RenamePane"; PaneNameInput 0; }
         // move
