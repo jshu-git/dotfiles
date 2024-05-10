@@ -42,7 +42,7 @@ return {
 					},
 				},
 				preview = {
-					hide_on_startup = true,
+					-- hide_on_startup = true,
 				},
 				file_ignore_patterns = { "lazy%-lock.json" },
 			},
@@ -60,6 +60,9 @@ return {
 
 		-- most used
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Files" })
+		vim.keymap.set("n", "<leader>fF", function()
+			builtin.find_files({ hidden = true })
+		end, { desc = "Files (Hidden)" })
 		vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Grep" })
 		vim.keymap.set("n", "<leader>fW", function()
 			builtin.live_grep({ grep_open_files = true })

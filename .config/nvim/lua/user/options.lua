@@ -1,50 +1,45 @@
-local opt = vim.opt
-
--- line numbers
-opt.number = true
--- opt.relativenumber = true
-
 -- tabs/indents
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.autoindent = true
-opt.smartindent = true
-opt.breakindent = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.breakindent = true
 
 -- search
-opt.ignorecase = true
-opt.smartcase = true
-opt.wrapscan = false
-opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.wrapscan = false
+vim.opt.incsearch = true
 
 -- ui
-opt.cursorline = true
-opt.termguicolors = true
-opt.background = "dark"
-opt.signcolumn = "yes"
-opt.fillchars = { eob = " " }
-opt.showmode = false
-opt.ruler = false
-opt.pumheight = 10
-opt.wrap = false
+vim.opt.number = true
+vim.opt.cursorline = true
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
+vim.opt.signcolumn = "yes"
+vim.opt.fillchars = { eob = " " }
+vim.opt.showmode = false
+vim.opt.ruler = false
+vim.opt.pumheight = 10
+vim.opt.wrap = false
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 10
 
 -- windows
-opt.splitright = true
-opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- timeouts
-opt.timeout = true
-opt.timeoutlen = 300
-opt.ttimeoutlen = 0
-opt.updatetime = 300
+vim.opt.timeout = true
+vim.opt.timeoutlen = 300
+vim.opt.ttimeoutlen = 0
+vim.opt.updatetime = 300
 
 -- misc
-opt.mouse = "a"
-opt.scrolloff = 10
-opt.sidescrolloff = 10
-opt.inccommand = "split"
-opt.undofile = true
-opt.clipboard = "unnamedplus"
-opt.swapfile = false
-opt.confirm = true
+vim.opt.mouse = "a"
+vim.opt.inccommand = "split"
+vim.opt.undofile = true
+vim.opt.clipboard = "unnamedplus"
+vim.opt.swapfile = false
+vim.opt.confirm = true

@@ -5,9 +5,8 @@ g.maplocalleader = " "
 
 -- leader
 keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Write" })
-keymap.set("n", "<leader>W", "<cmd>w!<CR>", { desc = "Write (Force)" })
 keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
-keymap.set("n", "<leader>Q", "<cmd>q!<CR>", { desc = "Quit (Force)" })
+keymap.set("n", "<leader>Q", "<cmd>qa!<CR>", { desc = "Quit All" })
 keymap.set("n", "<leader>o", "o<Esc>", { desc = "Open line below" })
 keymap.set("n", "<leader>O", "O<Esc>", { desc = "Open line above" })
 keymap.set("n", "<leader>n", "<cmd>enew<CR>", { desc = "New buffer" })
@@ -19,8 +18,8 @@ keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle Word Wrap" 
 -- movement
 keymap.set({ "n", "x" }, "j", "gj")
 keymap.set({ "n", "x" }, "k", "gk")
-keymap.set({ "n", "x" }, "H", '^"0')
-keymap.set({ "n", "x" }, "L", "g$")
+keymap.set({ "n", "x" }, "H", "^")
+keymap.set({ "n", "x" }, "L", "g_")
 keymap.set({ "n", "x" }, "J", "6gjzz")
 keymap.set({ "n", "x" }, "K", "6gkzz")
 keymap.set({ "n", "x" }, "{", "{zz")
@@ -30,8 +29,8 @@ keymap.set("n", "<A-S-k>", "yyP")
 
 -- editing
 keymap.set("n", "U", "<C-r>")
-keymap.set("n", "<CR>", "ciw")
-keymap.set("n", "<A-CR>", 'ci"')
+keymap.set("n", "<CR>", '"_ciw')
+keymap.set("n", "<A-CR>", '"_ci"')
 keymap.set("n", "=", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 -- TODO: shift delete deletes one character to the right
@@ -43,7 +42,7 @@ keymap.set({ "n", "x" }, "C", '"_C')
 -- yanking/pasting
 keymap.set("n", "Y", "y$")
 keymap.set("n", "p", "p==")
--- keymap.set("x", "p", '"_dP')
+keymap.set("x", "p", '"_dP==')
 keymap.set("n", "<leader>p", "<cmd>pu<CR>==", { desc = "Paste after line" })
 keymap.set("n", "<leader>P", "<cmd>pu!<CR>==", { desc = "Paste before line" })
 
@@ -72,15 +71,4 @@ keymap.set("v", ">", ">gv")
 
 -- misc
 keymap.set("n", "Q", "<nop>")
-
--- https://old.reddit.com/r/neovim/comments/yk1wqw/dismiss_lsp_pop_us_by_pressing_escape/
--- close any floating window with esc
--- local function close_floating()
--- 	for _, win in ipairs(vim.api.nvim_list_wins()) do
--- 		local config = vim.api.nvim_win_get_config(win)
--- 		if config.relative ~= "" then
--- 			vim.api.nvim_win_close(win, false)
--- 		end
--- 	end
--- end
--- vim.keymap.set("n", "<Esc>", close_floating)
+keymap.set("n", "q:", "<nop>")
