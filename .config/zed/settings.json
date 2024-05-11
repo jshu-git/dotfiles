@@ -2,8 +2,8 @@
     "theme": "Rosé Pine",
     "experimental.theme_overrides": {
         // "border": "#1c1c1c",
-        "border": "#303030",
-        "editor.active_line.background": "#221f32",
+        // "border": "#303030",
+        "editor.active_line.background": "#201d2f",
         "editor.invisible": "#303030", // whitespace
         "hint": "#404040", // inlay hints
         "predictive": "#404040" // copilot
@@ -26,7 +26,7 @@
         "show": "never"
     },
     "gutter": {
-        // "code_actions": false,
+        "code_actions": false,
         "folds": false
     },
     "vertical_scroll_margin": 10,

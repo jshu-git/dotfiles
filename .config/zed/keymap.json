@@ -77,9 +77,11 @@
             "g a": "editor::ToggleCodeActions",
             "g s": "editor::Hover",
             "g i": "editor::GoToImplementationSplit",
-            "g space": "editor::OpenExcerptsSplit",
             "g u": "editor::OpenUrl",
+            // "g f": "editor:OpenFile"
 
+            "g e": "editor::OpenExcerptsSplit",
+            "g E": "editor::OpenExcerpts",
             "g r": "editor::FindAllReferences",
             "g R": "editor::Rename",
             "g d": "editor::GoToDefinitionSplit",
