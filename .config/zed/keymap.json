@@ -1,216 +1,217 @@
 [
-  {
-    "bindings": {
-      "cmd-.": "zed::OpenKeymap",
-      "cmd-d": "workspace::ToggleZoom",
-      "cmd-e": "workspace::ToggleRightDock",
-      "cmd-t": "workspace::ToggleBottomDock",
-      "cmd-r": "pane::RevealInProjectPanel",
-      "cmd-j": "journal::NewJournalEntry",
-      "cmd-shift-,": "zed::OpenDefaultSettings",
-      "cmd->": "zed::OpenDefaultKeymap", // cmd-shift-.
-      "cmd-shift-k": "vim::OpenDefaultKeymap",
-      "cmd-shift-x": "zed::Extensions",
-      "cmd-shift-r": "search::ToggleReplace",
-      "cmd-shift-d": "diagnostics::Deploy",
-      "cmd-shift-o": "projects::OpenRecent",
-      "alt-r": "editor::RevealInFinder",
-      "alt-c": "editor::CopyPath",
-      "alt-shift-c": "editor::CopyRelativePath",
-      "ctrl-tab": "pane::ActivateNextItem",
-      "ctrl-shift-tab": "pane::ActivatePrevItem",
-      "tab": "menu::SelectNext",
-      "shift-tab": "menu::SelectPrev",
-      // toggles
-      "alt-h": "editor::ToggleInlayHints"
-    }
-  },
-  {
-    "context": "Dock",
-    "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      // "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
-    }
-  },
-
-  // vim bindings
-  {
-    // normal + visual
-    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
-    "bindings": {
-      // leader
-      "space f": "file_finder::Toggle",
-      "space w": "workspace::Save",
-      "space o": "editor::NewlineBelow",
-      "space O": "editor::NewlineAbove",
-      "space tab": "tab_switcher::Toggle",
-      // "space p":
-      // "space shift-p":
-
-      // movement
-      "H": "vim::FirstNonWhitespace",
-      "L": "vim::EndOfLine",
-      "J": ["workspace::SendKeystrokes", "6 j z z"],
-      "K": ["workspace::SendKeystrokes", "6 k z z"],
-      "alt-j": "editor::MoveLineDown",
-      "alt-k": "editor::MoveLineUp",
-      "alt-shift-j": "editor::DuplicateLineDown",
-      "alt-shift-k": "editor::DuplicateLineUp",
-      // unimpaired
-      "] d": "editor::GoToDiagnostic",
-      "[ d": "editor::GoToPrevDiagnostic",
-      "] c": "editor::GoToHunk",
-      "[ c": "editor::GoToPrevHunk",
-
-      // editing
-      "Y": ["workspace::SendKeystrokes", "y $"],
-      "U": "editor::Redo",
-      "ctrl-c": "editor::ToggleComments",
-      "-": "vim::Decrement",
-      "=": "vim::Increment",
-
-      // g actions
-      "g a": "editor::ToggleCodeActions",
-      "g s": "editor::Hover",
-      "g i": "editor::GoToImplementationSplit",
-      "g space": "editor::OpenExcerptsSplit",
-      "g u": "editor::OpenUrl",
-
-      "g r": "editor::FindAllReferences",
-      "g R": "editor::Rename",
-      "g d": "editor::GoToDefinitionSplit",
-      "g D": "editor::GoToTypeDefinitionSplit",
-      "g o": "outline::Toggle",
-      "g O": "project_symbols::Toggle",
-
-      "g m": "editor::SelectAllMatches",
-      "g n": [
-        "editor::SelectNext",
-        {
-          "replace_newest": false
+    {
+        "bindings": {
+            "cmd-.": "zed::OpenKeymap",
+            "cmd-d": "workspace::ToggleZoom",
+            "cmd-e": "workspace::ToggleRightDock",
+            "cmd-t": "workspace::ToggleBottomDock",
+            "cmd-r": "pane::RevealInProjectPanel",
+            "cmd-j": "journal::NewJournalEntry",
+            "cmd-shift-,": "zed::OpenDefaultSettings",
+            "cmd->": "zed::OpenDefaultKeymap", // cmd-shift-.
+            "cmd-shift-k": "vim::OpenDefaultKeymap",
+            "cmd-shift-x": "zed::Extensions",
+            "cmd-shift-r": "search::ToggleReplace",
+            "cmd-shift-d": "diagnostics::Deploy",
+            "cmd-shift-o": "projects::OpenRecent",
+            "alt-t": "workspace::NewCenterTerminal",
+            "alt-r": "editor::RevealInFinder",
+            "alt-c": "editor::CopyPath",
+            "alt-shift-c": "editor::CopyRelativePath",
+            "ctrl-tab": "pane::ActivateNextItem",
+            "ctrl-shift-tab": "pane::ActivatePrevItem",
+            "tab": "menu::SelectNext",
+            "shift-tab": "menu::SelectPrev",
+            // toggles
+            "alt-h": "editor::ToggleInlayHints"
         }
-      ],
-      "g p": [
-        "editor::SelectPrevious",
-        {
-          "replace_newest": false
+    },
+    {
+        "context": "Dock",
+        "bindings": {
+            "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+            // "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+            "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+            "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
         }
-      ],
-      "g N": [
-        "editor::SelectNext",
-        {
-          "replace_newest": true
+    },
+
+    // vim bindings
+    {
+        // normal + visual
+        "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+        "bindings": {
+            // leader
+            "space f": "file_finder::Toggle",
+            "space w": "workspace::Save",
+            "space o": "editor::NewlineBelow",
+            "space O": "editor::NewlineAbove",
+            "space tab": "tab_switcher::Toggle",
+            // "space p":
+            // "space shift-p":
+
+            // movement
+            "H": "vim::FirstNonWhitespace",
+            "L": "vim::EndOfLine",
+            "J": ["workspace::SendKeystrokes", "6 j z z"],
+            "K": ["workspace::SendKeystrokes", "6 k z z"],
+            "alt-j": "editor::MoveLineDown",
+            "alt-k": "editor::MoveLineUp",
+            "alt-shift-j": "editor::DuplicateLineDown",
+            "alt-shift-k": "editor::DuplicateLineUp",
+            // unimpaired
+            "] d": "editor::GoToDiagnostic",
+            "[ d": "editor::GoToPrevDiagnostic",
+            "] c": "editor::GoToHunk",
+            "[ c": "editor::GoToPrevHunk",
+
+            // editing
+            "Y": ["workspace::SendKeystrokes", "y $"],
+            "U": "editor::Redo",
+            "ctrl-c": "editor::ToggleComments",
+            "-": "vim::Decrement",
+            "=": "vim::Increment",
+
+            // g actions
+            "g a": "editor::ToggleCodeActions",
+            "g s": "editor::Hover",
+            "g i": "editor::GoToImplementationSplit",
+            "g space": "editor::OpenExcerptsSplit",
+            "g u": "editor::OpenUrl",
+
+            "g r": "editor::FindAllReferences",
+            "g R": "editor::Rename",
+            "g d": "editor::GoToDefinitionSplit",
+            "g D": "editor::GoToTypeDefinitionSplit",
+            "g o": "outline::Toggle",
+            "g O": "project_symbols::Toggle",
+
+            "g m": "editor::SelectAllMatches",
+            "g n": [
+                "editor::SelectNext",
+                {
+                    "replace_newest": false
+                }
+            ],
+            "g p": [
+                "editor::SelectPrevious",
+                {
+                    "replace_newest": false
+                }
+            ],
+            "g N": [
+                "editor::SelectNext",
+                {
+                    "replace_newest": true
+                }
+            ],
+            "g P": [
+                "editor::SelectPrevious",
+                {
+                    "replace_newest": true
+                }
+            ],
+
+            // windows
+            "ctrl-w v": "pane::SplitRight",
+            "ctrl-w s": "pane::SplitDown",
+            "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+            "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+            "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+            "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+            // "ctrl-right": "increase pane size"
         }
-      ],
-      "g P": [
-        "editor::SelectPrevious",
-        {
-          "replace_newest": true
+    },
+    {
+        // normal mode
+        "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+        "bindings": {
+            "enter": ["workspace::SendKeystrokes", "c i w"],
+            "shift-enter": ["workspace::SendKeystrokes", "c i \""],
+            "alt-enter": ["workspace::SendKeystrokes", "c i '"]
         }
-      ],
+    },
+    {
+        // visual modes
+        "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+        "bindings": {
+            "V": "vim::Down",
+            "ctrl-v": "vim::Down",
+            "enter": ["workspace::SendKeystrokes", "c"],
+            "v": "editor::SelectLargerSyntaxNode",
+            "backspace": "editor::SelectSmallerSyntaxNode"
+        }
+    },
+    {
+        // insert mode
+        "context": "Editor && vim_mode == insert && !menu",
+        "bindings": {
+            "ctrl-x": "editor::ShowCompletions",
+            "ctrl-a": "assistant::InlineAssist",
+            "ctrl-i": "editor::ShowInlineCompletion",
+            "ctrl-c": "editor::Cancel",
+            "shift-backspace": "vim::DeleteRight"
+        }
+    },
 
-      // windows
-      "ctrl-w v": "pane::SplitRight",
-      "ctrl-w s": "pane::SplitDown",
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
-      // "ctrl-right": "increase pane size"
-    }
-  },
-  {
-    // normal mode
-    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
-    "bindings": {
-      "enter": ["workspace::SendKeystrokes", "c i w"],
-      "shift-enter": ["workspace::SendKeystrokes", "c i \""],
-      "alt-enter": ["workspace::SendKeystrokes", "c i '"]
-    }
-  },
-  {
-    // visual modes
-    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
-    "bindings": {
-      "V": "vim::Down",
-      "ctrl-v": "vim::Down",
-      "enter": ["workspace::SendKeystrokes", "c"],
-      "v": "editor::SelectLargerSyntaxNode",
-      "backspace": "editor::SelectSmallerSyntaxNode"
-    }
-  },
-  {
-    // insert mode
-    "context": "Editor && vim_mode == insert && !menu",
-    "bindings": {
-      "ctrl-x": "editor::ShowCompletions",
-      "ctrl-a": "assistant::InlineAssist",
-      "ctrl-i": "editor::ShowInlineCompletion",
-      "ctrl-c": "editor::Cancel",
-      "shift-backspace": "vim::DeleteRight"
-    }
-  },
+    // search
+    {
+        "context": "BufferSearchBar",
+        "bindings": {
+            "enter": "search::SelectNextMatch",
+            "shift-enter": "search::SelectPrevMatch"
+        }
+    },
 
-  // search
-  {
-    "context": "BufferSearchBar",
-    "bindings": {
-      "enter": "search::SelectNextMatch",
-      "shift-enter": "search::SelectPrevMatch"
-    }
-  },
+    // completions
+    {
+        "context": "Editor && (showing_code_actions || showing_completions)",
+        "bindings": {
+            "shift-tab": "editor::ContextMenuPrev",
+            "tab": "editor::ContextMenuNext"
+        }
+    },
 
-  // completions
-  {
-    "context": "Editor && (showing_code_actions || showing_completions)",
-    "bindings": {
-      "shift-tab": "editor::ContextMenuPrev",
-      "tab": "editor::ContextMenuNext"
-    }
-  },
+    // explorer
+    {
+        "context": "ProjectPanel && not_editing",
+        "bindings": {
+            "alt-r": "project_panel::RevealInFinder",
+            "alt-c": "project_panel::CopyPath",
+            "alt-shift-c": "project_panel::CopyRelativePath",
+            // oil-like
+            "h": "project_panel::CollapseSelectedEntry",
+            "j": "menu::SelectNext",
+            "k": "menu::SelectPrev",
+            "l": "project_panel::ExpandSelectedEntry",
+            "o": "project_panel::NewFile",
+            "d d": "project_panel::Trash",
+            "y y": "project_panel::Copy",
+            "p": "project_panel::Paste",
+            "tab": "project_panel::Open", // preview
 
-  // explorer
-  {
-    "context": "ProjectPanel && not_editing",
-    "bindings": {
-      "alt-r": "project_panel::RevealInFinder",
-      "alt-c": "project_panel::CopyPath",
-      "alt-shift-c": "project_panel::CopyRelativePath",
-      // oil-like
-      "h": "project_panel::CollapseSelectedEntry",
-      "j": "menu::SelectNext",
-      "k": "menu::SelectPrev",
-      "l": "project_panel::ExpandSelectedEntry",
-      "o": "project_panel::NewFile",
-      "d d": "project_panel::Trash",
-      "y y": "project_panel::Copy",
-      "p": "project_panel::Paste",
-      "tab": "project_panel::Open", // preview
+            "d": null,
+            "D": ["project_panel::Delete", { "skip_prompt": true }],
+            "r": "project_panel::Rename"
+        }
+    },
 
-      "d": null,
-      "D": ["project_panel::Delete", { "skip_prompt": true }],
-      "r": "project_panel::Rename"
-    }
-  },
+    // terminal
+    {
+        "context": "Terminal",
+        "bindings": {
+            "cmd-n": "workspace::NewTerminal"
+            // "shift-backspace": ["terminal::SendText", "\u007f"]
+        }
+    },
 
-  // terminal
-  {
-    "context": "Terminal",
-    "bindings": {
-      "cmd-n": "workspace::NewTerminal"
-      // "shift-backspace": ["terminal::SendText", "\u007f"]
+    // tab switcher
+    {
+        "context": "TabSwitcher",
+        "bindings": {
+            "ctrl-d": "tab_switcher::CloseSelectedItem"
+        }
     }
-  },
-
-  // tab switcher
-  {
-    "context": "TabSwitcher",
-    "bindings": {
-      "ctrl-d": "tab_switcher::CloseSelectedItem"
-    }
-  }
 ]
 
 // wishlist

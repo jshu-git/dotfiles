@@ -1,8 +1,8 @@
 {
     "theme": "Rosé Pine",
     "experimental.theme_overrides": {
-        "border": "#303030",
         // "border": "#1c1c1c",
+        "border": "#303030",
         "editor.invisible": "#303030",
         "predictive": "#404040"
     },
@@ -19,6 +19,7 @@
     "use_on_type_format": false,
     "show_whitespaces": "all",
     "toolbar": {
+        // "breadcrumbs": false,
         "quick_actions": false
     },
     "gutter": {
