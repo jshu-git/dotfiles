@@ -44,17 +44,16 @@
       "space f": "file_finder::Toggle",
       "space w": "workspace::Save",
       "space o": "editor::NewlineBelow",
-      "space shift-o": "editor::NewlineAbove",
+      "space O": "editor::NewlineAbove",
       "space tab": "tab_switcher::Toggle",
       // "space p":
       // "space shift-p":
 
       // movement
-      "shift-h": "vim::FirstNonWhitespace",
-      "shift-l": "vim::EndOfLine",
-      "shift-j": ["workspace::SendKeystrokes", "6 j z z"],
-      "shift-k": ["workspace::SendKeystrokes", "6 k z z"],
-      // "{": ["workspace::SendKeystrokes", "{ z z"],
+      "H": "vim::FirstNonWhitespace",
+      "L": "vim::EndOfLine",
+      "J": ["workspace::SendKeystrokes", "6 j z z"],
+      "K": ["workspace::SendKeystrokes", "6 k z z"],
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp",
       "alt-shift-j": "editor::DuplicateLineDown",
@@ -66,36 +65,27 @@
       "[ c": "editor::GoToPrevHunk",
 
       // editing
-      "shift-y": ["workspace::SendKeystrokes", "y $"],
-      "shift-u": "editor::Redo",
+      "Y": ["workspace::SendKeystrokes", "y $"],
+      "U": "editor::Redo",
       "ctrl-c": "editor::ToggleComments",
       "-": "vim::Decrement",
       "=": "vim::Increment",
 
-      // windows
-      "ctrl-w v": "pane::SplitRight",
-      "ctrl-w s": "pane::SplitDown",
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      // "ctrl-right": "increase pane size"
-
       // g actions
       "g a": "editor::ToggleCodeActions",
-      "g h": "editor::Hover",
+      "g s": "editor::Hover",
       "g i": "editor::GoToImplementationSplit",
       "g space": "editor::OpenExcerptsSplit",
       "g u": "editor::OpenUrl",
 
       "g r": "editor::FindAllReferences",
-      "g shift-r": "editor::Rename",
+      "g R": "editor::Rename",
       "g d": "editor::GoToDefinitionSplit",
-      "g shift-d": "editor::GoToTypeDefinitionSplit",
+      "g D": "editor::GoToTypeDefinitionSplit",
       "g o": "outline::Toggle",
-      "g shift-o": "project_symbols::Toggle",
+      "g O": "project_symbols::Toggle",
 
-      "g s": "editor::SelectAllMatches",
+      "g m": "editor::SelectAllMatches",
       "g n": [
         "editor::SelectNext",
         {
@@ -119,7 +109,16 @@
         {
           "replace_newest": true
         }
-      ]
+      ],
+
+      // windows
+      "ctrl-w v": "pane::SplitRight",
+      "ctrl-w s": "pane::SplitDown",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+      // "ctrl-right": "increase pane size"
     }
   },
   {
@@ -128,18 +127,18 @@
     "bindings": {
       "enter": ["workspace::SendKeystrokes", "c i w"],
       "shift-enter": ["workspace::SendKeystrokes", "c i \""],
-      "alt-v": null
+      "alt-enter": ["workspace::SendKeystrokes", "c i '"]
     }
   },
   {
     // visual modes
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
+      "V": "vim::Down",
+      "ctrl-v": "vim::Down",
       "enter": ["workspace::SendKeystrokes", "c"],
       "v": "editor::SelectLargerSyntaxNode",
-      "ctrl-shift-v": "editor::SelectSmallerSyntaxNode",
-      "shift-v": "vim::Down",
-      "ctrl-v": "vim::Down"
+      "backspace": "editor::SelectSmallerSyntaxNode"
     }
   },
   {
@@ -149,8 +148,7 @@
       "ctrl-x": "editor::ShowCompletions",
       "ctrl-a": "assistant::InlineAssist",
       "ctrl-i": "editor::ShowInlineCompletion",
-      "ctrl-c": "editor::ToggleCodeActions",
-      "ctrl-e": "editor::Cancel",
+      "ctrl-c": "editor::Cancel",
       "shift-backspace": "vim::DeleteRight"
     }
   },
@@ -217,5 +215,5 @@
 
 // wishlist
 // undotree, flash/jump to word, rainbow parentheses, indent guides, customize statusline, dim inactive pane, which key
-// no search wrap, explorer remember location on delete, pin tab
+// no search wrap, explorer remember location on delete, pin tab, x/c delete to blackhole register
 // "ctrl-cmd-c": "editor::DisplayCursorNames" <- what does this do?

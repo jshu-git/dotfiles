@@ -1,88 +1,96 @@
 {
-  "theme": "Rosé Pine",
-  // "base_keymap": "None",
-  "buffer_font_family": "FiraCode Nerd Font",
-  "buffer_font_size": 18,
-  "buffer_line_height": "standard",
-  "ui_font_family": "FiraCode Nerd Font",
-  "folder_icons": true,
-  "ui_font_size": 18,
-  // "active_pane_magnification": 1.2,
-  "vim_mode": true,
-  "cursor_blink": false,
-  "use_on_type_format": false,
-  "toolbar": {
-    "quick_actions": false
-  },
-  "gutter": {
-    // "code_actions": false,
-    "folds": false
-  },
-  "vertical_scroll_margin": 10,
-  // "relative_line_numbers": true,
-  // "seed_search_query_from_cursor": "selection",
-  "inlay_hints": {
-    "enabled": false
-  },
-  "project_panel": {
-    "button": false,
-    "dock": "right",
-    "indent_size": 8
-  },
-  "collaboration_panel": {
-    "button": false
-  },
-  "chat_panel": {
-    "button": false
-  },
-  "notification_panel": {
-    "button": false
-  },
-  // "diagnostic_panel": {
-  // "button": false
-  // },
-  "assistant": {
-    "version": "1",
-    "enabled": false
-  },
-  "tab_bar": {
-    "show_nav_history_buttons": false
-  },
-  "tabs": {
-    "git_status": true
-  },
-  "preview_tabs": {
-    // "enable_preview_from_file_finder": true
-    "enable_preview_from_code_navigation": true
-  },
-  "extend_comment_on_newline": false,
-  // "soft_wrap": "editor_width",
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-  "git": {
-    "inline_blame": {
-      "delay_ms": 500,
-      "min_column": 80
-    }
-  },
-  "journal": {
-    "hour_format": "hour24"
-  },
-  "terminal": {
-    // "default_height": 400,
-    "blinking": "off",
-    "option_as_meta": true,
-    "copy_on_select": true,
-    "button": false,
-    "line_height": "standard",
-    "font_size": 16
-  },
-  "vim": {
-    "use_multiline_find": true,
-    "use_smartcase_find": true
-  },
-  "wrap_guides": [80],
-  "line_indicator_format": "short"
+    "theme": "Rosé Pine",
+    "experimental.theme_overrides": {
+        "border": "#303030",
+        // "border": "#1c1c1c",
+        "editor.invisible": "#303030",
+        "predictive": "#404040"
+    },
+    // "base_keymap": "None",
+    "buffer_font_family": "FiraCode Nerd Font",
+    "buffer_font_size": 18,
+    "buffer_line_height": "standard",
+    "ui_font_family": "FiraCode Nerd Font",
+    "folder_icons": true,
+    "ui_font_size": 18,
+    // "active_pane_magnification": 1.2,
+    "vim_mode": true,
+    "cursor_blink": false,
+    "use_on_type_format": false,
+    "show_whitespaces": "all",
+    "toolbar": {
+        "quick_actions": false
+    },
+    "gutter": {
+        // "code_actions": false,
+        "folds": false
+    },
+    "vertical_scroll_margin": 10,
+    // "relative_line_numbers": true,
+    // "seed_search_query_from_cursor": "selection",
+    "inlay_hints": {
+        "enabled": false
+    },
+    "project_panel": {
+        "button": false,
+        "dock": "right",
+        "indent_size": 8
+    },
+    "collaboration_panel": {
+        "button": false
+    },
+    "chat_panel": {
+        "button": false
+    },
+    "notification_panel": {
+        "button": false
+    },
+    // "diagnostic_panel": {
+    // "button": false
+    // },
+    "assistant": {
+        "version": "1",
+        "enabled": false
+    },
+    "tab_bar": {
+        "show_nav_history_buttons": false
+    },
+    "tabs": {
+        "git_status": true
+    },
+    "preview_tabs": {
+        // "enable_preview_from_file_finder": true
+        "enable_preview_from_code_navigation": true
+    },
+    "extend_comment_on_newline": false,
+    "soft_wrap": "none",
+    "tab_size": 4,
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false
+    },
+    "git": {
+        "inline_blame": {
+            "delay_ms": 500,
+            "min_column": 80
+        }
+    },
+    "journal": {
+        "hour_format": "hour24"
+    },
+    "terminal": {
+        // "default_height": 400,
+        "blinking": "off",
+        "option_as_meta": true,
+        "copy_on_select": true,
+        "button": false,
+        "line_height": "standard",
+        "font_size": 16
+    },
+    "vim": {
+        "use_multiline_find": true,
+        "use_smartcase_find": true
+    },
+    "wrap_guides": [80],
+    "line_indicator_format": "short"
 }
