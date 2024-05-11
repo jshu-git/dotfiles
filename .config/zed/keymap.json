@@ -23,7 +23,8 @@
             "tab": "menu::SelectNext",
             "shift-tab": "menu::SelectPrev",
             // toggles
-            "alt-h": "editor::ToggleInlayHints"
+            "alt-h": "editor::ToggleInlayHints",
+            "alt-d": "editor::ToggleHunkDiff"
         }
     },
     {

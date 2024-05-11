@@ -19,7 +19,7 @@
     "use_on_type_format": false,
     "show_whitespaces": "all",
     "toolbar": {
-        // "breadcrumbs": false,
+        "breadcrumbs": false,
         "quick_actions": false
     },
     "gutter": {
