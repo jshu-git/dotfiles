@@ -3,9 +3,9 @@
     "experimental.theme_overrides": {
         // "border": "#1c1c1c",
         // "border": "#303030",
-        "editor.active_line.background": "#201d2f",
         "editor.invisible": "#303030", // whitespace
         "hint": "#404040", // inlay hints
+        // "ignored": "#303030", // .gitignore
         "predictive": "#404040" // copilot
     },
     "buffer_font_family": "FiraCode Nerd Font",
@@ -32,7 +32,7 @@
     "vertical_scroll_margin": 10,
     // "seed_search_query_from_cursor": "selection",
     "inlay_hints": {
-        "enabled": true
+        "enabled": false
     },
     "project_panel": {
         "button": false,
@@ -82,6 +82,15 @@
         "button": false,
         "line_height": "standard",
         "font_size": 16
+    },
+    "lsp": {
+        "rust-analyzer": {
+            "initialization_options": {
+                "checkOnSave": {
+                    "command": "clippy"
+                }
+            }
+        }
     },
     "vim": {
         "use_multiline_find": true,

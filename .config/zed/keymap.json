@@ -14,22 +14,26 @@
             "cmd-shift-r": "search::ToggleReplace",
             "cmd-shift-d": "diagnostics::Deploy",
             "cmd-shift-o": "projects::OpenRecent",
-            "alt-t": "workspace::NewCenterTerminal",
-            "alt-r": "editor::RevealInFinder",
-            "alt-c": "editor::CopyPath",
-            "alt-shift-c": "editor::CopyRelativePath",
             "ctrl-tab": "pane::ActivateNextItem",
             "ctrl-shift-tab": "pane::ActivatePrevItem",
             "tab": "menu::SelectNext",
             "shift-tab": "menu::SelectPrev",
+            "alt-t": "workspace::NewCenterTerminal",
+
             // toggles
+            "alt-w": "editor::ToggleSoftWrap",
             "alt-h": "editor::ToggleInlayHints",
-            "alt-d": "editor::ToggleHunkDiff"
-        }
-    },
-    {
-        "context": "Dock",
-        "bindings": {
+            "alt-d": "editor::ToggleHunkDiff",
+            "alt-b": "editor::ToggleGitBlameInline",
+            "alt-shift-b": "editor::ToggleGitBlame",
+
+            // https://github.com/zed-industries/zed/discussions/10717
+            "cmd-]": [
+                "workspace::SendKeystrokes",
+                "cmd-k right cmd-k cmd-left cmd-w cmd-k cmd-right"
+            ],
+
+            // windows
             "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
             // "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
             "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
@@ -136,7 +140,7 @@
     },
     {
         // visual modes
-        "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+        "context": "Editor && vim_mode == visual",
         "bindings": {
             "V": "vim::Down",
             "ctrl-v": "vim::Down",
@@ -188,13 +192,13 @@
             "k": "menu::SelectPrev",
             "l": "project_panel::ExpandSelectedEntry",
             "o": "project_panel::NewFile",
-            "d d": "project_panel::Trash",
+            "d": "project_panel::Cut",
+            "x": "project_panel::Trash",
             "y y": "project_panel::Copy",
             "p": "project_panel::Paste",
             "tab": "project_panel::Open", // preview
+            "X": ["project_panel::Trash", { "skip_prompt": true }],
 
-            "d": null,
-            "D": ["project_panel::Delete", { "skip_prompt": true }],
             "r": "project_panel::Rename"
         }
     },
