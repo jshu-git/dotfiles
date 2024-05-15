@@ -3,7 +3,7 @@
     "experimental.theme_overrides": {
         // "border": "#1c1c1c",
         // "border": "#303030",
-        "editor.invisible": "#303030", // whitespace
+        // "editor.invisible": "#303030", // whitespace
         "hint": "#404040", // inlay hints
         // "ignored": "#303030", // .gitignore
         "predictive": "#404040" // copilot
