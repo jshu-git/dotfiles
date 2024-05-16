@@ -14,7 +14,7 @@ vim.opt.incsearch = true
 
 -- ui
 vim.opt.number = true
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"
