@@ -14,10 +14,12 @@
             "cmd-shift-r": "search::ToggleReplace",
             "cmd-shift-d": "diagnostics::Deploy",
             "cmd-shift-o": "projects::OpenRecent",
-            "ctrl-tab": "pane::ActivateNextItem",
-            "ctrl-shift-tab": "pane::ActivatePrevItem",
             "tab": "menu::SelectNext",
             "shift-tab": "menu::SelectPrev",
+
+            // panes (aka tabs)
+            "ctrl-tab": "pane::ActivateNextItem",
+            "ctrl-shift-tab": "pane::ActivatePrevItem",
             "alt-t": "workspace::NewCenterTerminal",
 
             // toggles
@@ -26,6 +28,7 @@
             "alt-d": "editor::ToggleHunkDiff",
             // "alt-shift-d": "editor::RevertSelectedHunks",
             "alt-b": "editor::ToggleGitBlame",
+            "alt-z": "workspace::ToggleCenteredLayout",
 
             // windows
             "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
