@@ -101,6 +101,7 @@
             // g actions
             "g a": "editor::ToggleCodeActions",
             "g s": "editor::Hover",
+            "g b": "editor::OpenPermalinkToLine",
             // "g i": "editor::GoToImplementationSplit",
 
             "g e": "editor::OpenExcerptsSplit",
