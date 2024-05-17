@@ -158,7 +158,7 @@
         "bindings": {
             "V": "vim::Down",
             "ctrl-v": "vim::Down",
-            "enter": ["workspace::SendKeystrokes", "c"],
+            "enter": "vim::Substitute",
             "v": "editor::SelectLargerSyntaxNode",
             "backspace": "editor::SelectSmallerSyntaxNode",
             "p": [
@@ -193,8 +193,7 @@
     {
         "context": "BufferSearchBar",
         "bindings": {
-            "enter": "search::SelectNextMatch",
-            "shift-enter": "search::SelectPrevMatch"
+            "enter": "search::SelectNextMatch"
         }
     },
 
