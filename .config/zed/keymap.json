@@ -1,21 +1,23 @@
 [
     {
         "bindings": {
-            "cmd-.": "zed::OpenKeymap",
             "cmd-d": "workspace::ToggleZoom",
             "cmd-e": "workspace::ToggleRightDock",
             "cmd-t": "workspace::ToggleBottomDock",
             "cmd-r": "pane::RevealInProjectPanel",
             "cmd-j": "journal::NewJournalEntry",
-            "cmd-shift-,": "zed::OpenDefaultSettings",
-            "cmd->": "zed::OpenDefaultKeymap", // cmd-shift-.
-            "cmd-shift-k": "vim::OpenDefaultKeymap",
             "cmd-shift-x": "zed::Extensions",
             "cmd-shift-r": "search::ToggleReplace",
             "cmd-shift-d": "diagnostics::Deploy",
             "cmd-shift-o": "projects::OpenRecent",
             "tab": "menu::SelectNext",
             "shift-tab": "menu::SelectPrev",
+
+            // settings
+            "cmd-shift-,": "zed::OpenDefaultSettings",
+            "cmd-.": "zed::OpenKeymap",
+            "cmd->": "zed::OpenDefaultKeymap", // cmd-shift-.
+            "cmd-shift-k": "vim::OpenDefaultKeymap",
 
             // panes (aka tabs)
             "ctrl-tab": "pane::ActivateNextItem",

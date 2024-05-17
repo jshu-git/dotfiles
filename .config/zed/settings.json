@@ -28,6 +28,10 @@
     // "seed_search_query_from_cursor": "selection",
     "line_indicator_format": "short",
 
+    "centered_layout": {
+        "left_padding": 0.15,
+        "right_padding": 0.15
+    },
     "toolbar": {
         // "breadcrumbs": false,
         "quick_actions": false
@@ -75,9 +79,6 @@
             // "delay_ms": 10,
             "min_column": 80
         }
-    },
-    "journal": {
-        "hour_format": "hour24"
     },
     "terminal": {
         // "default_height": 400,
