@@ -61,7 +61,24 @@
 
             // movement
             "H": "vim::FirstNonWhitespace",
-            "L": "vim::EndOfLine",
+            "L": [
+                "vim::EndOfLine",
+                {
+                    "displayLines": true
+                }
+            ],
+            "j": [
+                "vim::Down",
+                {
+                    "displayLines": true
+                }
+            ],
+            "k": [
+                "vim::Up",
+                {
+                    "displayLines": true
+                }
+            ],
             "J": ["workspace::SendKeystrokes", "6 j z z"],
             "K": ["workspace::SendKeystrokes", "6 k z z"],
             // unimpaired
@@ -95,19 +112,10 @@
             "g o": "outline::Toggle",
             "g O": "project_symbols::Toggle",
 
+            // multiple cursors
             "g m": "editor::SelectAllMatches",
-            "g n": [
-                "editor::SelectNext",
-                {
-                    "replace_newest": false
-                }
-            ],
-            "g p": [
-                "editor::SelectPrevious",
-                {
-                    "replace_newest": false
-                }
-            ],
+            "g n": "editor::SelectNext",
+            "g p": "editor::SelectPrevious",
             "g N": [
                 "editor::SelectNext",
                 {
@@ -148,7 +156,14 @@
             "ctrl-v": "vim::Down",
             "enter": ["workspace::SendKeystrokes", "c"],
             "v": "editor::SelectLargerSyntaxNode",
-            "backspace": "editor::SelectSmallerSyntaxNode"
+            "backspace": "editor::SelectSmallerSyntaxNode",
+            "p": [
+                "vim::Paste",
+                {
+                    "before": true,
+                    "preserveClipboard": true
+                }
+            ]
         }
     },
     {
