@@ -57,6 +57,7 @@
             "space o": "editor::NewlineBelow",
             "space O": "editor::NewlineAbove",
             "space tab": "tab_switcher::Toggle",
+            "tab": "tab_switcher::Toggle",
 
             // movement
             "H": [
@@ -191,20 +192,20 @@
         }
     },
 
-    // search
-    {
-        "context": "BufferSearchBar",
-        "bindings": {
-            "enter": "search::SelectNextMatch"
-        }
-    },
-
     // completions
     {
         "context": "Editor && (showing_code_actions || showing_completions)",
         "bindings": {
             "shift-tab": "editor::ContextMenuPrev",
             "tab": "editor::ContextMenuNext"
+        }
+    },
+
+    // search
+    {
+        "context": "BufferSearchBar",
+        "bindings": {
+            "enter": "search::SelectNextMatch"
         }
     },
 
@@ -245,7 +246,9 @@
     {
         "context": "TabSwitcher",
         "bindings": {
-            "ctrl-d": "tab_switcher::CloseSelectedItem"
+            "ctrl-d": "tab_switcher::CloseSelectedItem",
+            "k": "menu::SelectPrev",
+            "j": "menu::SelectNext"
         }
     }
 ]
