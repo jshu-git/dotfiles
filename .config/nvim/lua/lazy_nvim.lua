@@ -5,10 +5,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
+---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
@@ -19,10 +20,6 @@ require("lazy").setup({
 	ui = {
 		border = "single",
 		title = " Lazy.nvim ",
-	},
-	checker = {
-		enabled = true,
-		notify = false,
 	},
 	change_detection = {
 		notify = false,

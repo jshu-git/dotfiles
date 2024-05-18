@@ -13,8 +13,10 @@ vim.opt.wrapscan = false
 vim.opt.incsearch = true
 
 -- ui
-vim.opt.number = true
+-- vim.opt.cmdheight = 0
 -- vim.opt.cursorline = true
+-- vim.opt.colorcolumn = "80"
+vim.opt.number = true
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"
