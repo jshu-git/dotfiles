@@ -50,16 +50,12 @@
         // normal + visual
         "context": "Editor && (vim_mode == normal || vim_mode == visual)", // && !VimWaiting && !menu",
         "bindings": {
-            "ctrl-a": "pane::AlternateFile",
             // leader
             "space f": "file_finder::Toggle",
             "space w": "workspace::Save",
             "space o": "editor::NewlineBelow",
             "space O": "editor::NewlineAbove",
             "space tab": "tab_switcher::Toggle",
-            // "tab": ["tab_switcher::Toggle", { "select_last": true }],
-            "tab": "pane::ActivateNextItem",
-            "shift-tab": "pane::ActivatePrevItem",
 
             // movement
             "H": ["vim::FirstNonWhitespace", { "displayLines": true }],
@@ -68,6 +64,13 @@
             "k": ["vim::Up", { "displayLines": true }],
             "J": ["workspace::SendKeystrokes", "6 j z z"],
             "K": ["workspace::SendKeystrokes", "6 k z z"],
+            // "tab": ["tab_switcher::Toggle", { "select_last": false }],
+            "tab": "tab_switcher::Toggle",
+            "ctrl-a": "pane::AlternateFile",
+            // "tab": "pane::ActivateNextItem",
+            // "shift-tab": "pane::ActivatePrevItem",
+            "cmd-[": "pane::GoBack",
+            "cmd-]": "pane::GoForward",
 
             // unimpaired
             "] d": "editor::GoToDiagnostic",
