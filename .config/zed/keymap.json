@@ -36,12 +36,13 @@
             "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
             // "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
             "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-            "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+            "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+
             // https://github.com/zed-industries/zed/discussions/10717
-            "cmd-]": [
-                "workspace::SendKeystrokes",
-                "cmd-k right cmd-k cmd-left cmd-w cmd-k cmd-right"
-            ]
+            // "cmd-]": [
+            //     "workspace::SendKeystrokes",
+            //     "cmd-k right cmd-k cmd-left cmd-w cmd-k cmd-right"
+            // ]
         }
     },
 
@@ -55,7 +56,7 @@
             "space w": "workspace::Save",
             "space o": "editor::NewlineBelow",
             "space O": "editor::NewlineAbove",
-            "space tab": "tab_switcher::Toggle",
+            // "space tab": "tab_switcher::Toggle",
 
             // movement
             "H": ["vim::FirstNonWhitespace", { "displayLines": true }],
@@ -64,13 +65,9 @@
             "k": ["vim::Up", { "displayLines": true }],
             "J": ["workspace::SendKeystrokes", "6 j z z"],
             "K": ["workspace::SendKeystrokes", "6 k z z"],
-            // "tab": ["tab_switcher::Toggle", { "select_last": false }],
-            "tab": "tab_switcher::Toggle",
-            "ctrl-a": "pane::AlternateFile",
-            // "tab": "pane::ActivateNextItem",
-            // "shift-tab": "pane::ActivatePrevItem",
             "cmd-[": "pane::GoBack",
             "cmd-]": "pane::GoForward",
+            "ctrl-a": "pane::AlternateFile",
 
             // unimpaired
             "] d": "editor::GoToDiagnostic",
@@ -100,7 +97,7 @@
             "g r": "editor::FindAllReferences",
             "g R": "editor::Rename",
             "g d": "editor::GoToDefinitionSplit",
-            "g D": "editor::GoToTypeDefinitionSplit",
+            "g D": "editor::GoToDefinition",
             "g o": "outline::Toggle",
             "g O": "project_symbols::Toggle",
 
@@ -171,8 +168,8 @@
     {
         "context": "Editor && (showing_code_actions || showing_completions)",
         "bindings": {
-            "shift-tab": "editor::ContextMenuPrev",
-            "tab": "editor::ContextMenuNext"
+            "tab": "editor::ContextMenuNext",
+            "shift-tab": "editor::ContextMenuPrev"
         }
     },
 
@@ -221,9 +218,7 @@
     {
         "context": "TabSwitcher",
         "bindings": {
-            "ctrl-d": "tab_switcher::CloseSelectedItem",
-            "k": "menu::SelectPrev",
-            "j": "menu::SelectNext"
+            "ctrl-d": "tab_switcher::CloseSelectedItem"
         }
     }
 ]
