@@ -42,7 +42,7 @@ return {
 					},
 				},
 				preview = {
-					hide_on_startup = true,
+					-- hide_on_startup = true,
 				},
 				file_ignore_patterns = { "lazy%-lock.json" },
 			},

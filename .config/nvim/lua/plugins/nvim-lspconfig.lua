@@ -19,20 +19,19 @@ return {
 				end
 
 				map("ga", vim.lsp.buf.code_action, "Code Action")
-				map("gs", vim.lsp.buf.hover, "Hover Documentation")
-				map("gS", vim.lsp.buf.signature_help, "Hover Signature")
 				map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
 				-- map("gi", require("telescope.builtin").lsp_implementations, "Goto Implementation")
 				-- map("gt", require("telescope.builtin").lsp_type_definitions, "Goto Type Definition")
 
-				map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
+				map("gd", vim.lsp.buf.definition, "Goto Definition")
+				-- map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
 				-- map("gD", vim.lsp.buf.declaration, "Goto Declaration")
+				map("gs", vim.lsp.buf.hover, "Hover Documentation")
+				map("gS", vim.lsp.buf.signature_help, "Hover Signature")
 				map("gr", require("telescope.builtin").lsp_references, "Goto References")
 				map("gR", vim.lsp.buf.rename, "Rename Variable")
-
-				-- symbols
-				-- map("<leader>fs", require("telescope.builtin").lsp_document_symbols, "Goto Symbols")
-				-- map("<leader>fS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Goto Workspace Symbols")
+				map("go", require("telescope.builtin").lsp_document_symbols, "Goto Symbols")
+				map("gO", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Goto Workspace Symbols")
 
 				map("[d", vim.diagnostic.goto_prev, "Next Diagnostic")
 				map("]d", vim.diagnostic.goto_next, "Previous Diagnostic")
