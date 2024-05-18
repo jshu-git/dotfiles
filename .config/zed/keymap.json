@@ -57,7 +57,7 @@
             "space o": "editor::NewlineBelow",
             "space O": "editor::NewlineAbove",
             "space tab": "tab_switcher::Toggle",
-            "tab": "tab_switcher::Toggle",
+            // "tab": "tab_switcher::Toggle",
 
             // movement
             "H": [
