@@ -57,33 +57,15 @@
             "space o": "editor::NewlineBelow",
             "space O": "editor::NewlineAbove",
             "space tab": "tab_switcher::Toggle",
-            // "tab": "tab_switcher::Toggle",
+            // "tab": ["tab_switcher::Toggle", { "select_last": true }],
+            "tab": "pane::ActivateNextItem",
+            "shift-tab": "pane::ActivatePrevItem",
 
             // movement
-            "H": [
-                "vim::FirstNonWhitespace",
-                {
-                    "displayLines": true
-                }
-            ],
-            "L": [
-                "vim::EndOfLine",
-                {
-                    "displayLines": true
-                }
-            ],
-            "j": [
-                "vim::Down",
-                {
-                    "displayLines": true
-                }
-            ],
-            "k": [
-                "vim::Up",
-                {
-                    "displayLines": true
-                }
-            ],
+            "H": ["vim::FirstNonWhitespace", { "displayLines": true }],
+            "L": ["vim::EndOfLine", { "displayLines": true }],
+            "j": ["vim::Down", { "displayLines": true }],
+            "k": ["vim::Up", { "displayLines": true }],
             "J": ["workspace::SendKeystrokes", "6 j z z"],
             "K": ["workspace::SendKeystrokes", "6 k z z"],
 
@@ -123,18 +105,8 @@
             "g m": "editor::SelectAllMatches",
             "g n": "editor::SelectNext",
             "g p": "editor::SelectPrevious",
-            "g N": [
-                "editor::SelectNext",
-                {
-                    "replace_newest": true
-                }
-            ],
-            "g P": [
-                "editor::SelectPrevious",
-                {
-                    "replace_newest": true
-                }
-            ],
+            "g N": ["editor::SelectNext", { "replace_newest": true }],
+            "g P": ["editor::SelectPrevious", { "replace_newest": true }],
 
             // windows
             "ctrl-w v": "pane::SplitRight",
