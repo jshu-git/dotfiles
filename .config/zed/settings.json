@@ -22,7 +22,7 @@
   "use_on_type_format": false,
   "show_whitespaces": "all",
   "extend_comment_on_newline": false,
-  "soft_wrap": "editor_width",
+  "soft_wrap": "none",
   // "tab_size": 4,
   "vertical_scroll_margin": 10,
   "line_indicator_format": "short",
@@ -35,6 +35,11 @@
     "code_actions": false,
     "folds": false
   },
+  // "indent_guides": {
+  // "line_width": 1,
+  // "coloring": "fixed",
+  // "background_coloring": "disabled"
+  // },
   "inlay_hints": {
     "enabled": false
   },
