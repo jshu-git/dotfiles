@@ -1,7 +1,11 @@
 # history
+HISTFILE=~/.zsh_history
 HISTSIZE=10000
-SAVEHIST=10000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+# https://github.com/rothgar/mastering-zsh/blob/master/docs/config/history.md
 setopt EXTENDED_HISTORY       # Write the history file in the ':start:elapsed;command' format.
+setopt INC_APPEND_HISTORY     # Write to the history file immediately, not when the shell exits.
 setopt SHARE_HISTORY          # Share history between all sessions.
 setopt HIST_EXPIRE_DUPS_FIRST # Expire a duplicate event first when trimming history.
 setopt HIST_IGNORE_DUPS       # Do not record an event that was just recorded again.
@@ -10,12 +14,11 @@ setopt HIST_FIND_NO_DUPS      # Do not display a previously found event.
 setopt HIST_IGNORE_SPACE      # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS      # Do not write a duplicate event to the history file.
 setopt HIST_VERIFY            # Do not execute immediately upon history expansion.
-
-# https://www.johnhawthorn.com/2012/09/vi-escape-delays/
-KEYTIMEOUT=1
+setopt APPEND_HISTORY         # append to history file
+setopt HIST_NO_STORE          # Don't store history commands
 
 # https://superuser.com/questions/148207/how-can-i-make-zsh-completion-behave-like-bash-completion
-setopt noautomenu
+# setopt noautomenu
 
 # completions
 setopt globdots
@@ -32,29 +35,31 @@ bindkey "^Z"      undo
 bindkey "^Y"      redo
 
 # brew
-export PATH=/opt/homebrew/bin:$PATH
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
-# cli tools
 CONFIG="$HOME/.config"
-# eza replaces ls https://gist.github.com/eggbean/74db77c4f6404dd1f975bd6f048b86f8#file-eza-wrapper-sh
+
+# plugin manager (antidote)
+ZSH="$CONFIG/zsh"
+source $ZSH/antidote/antidote.zsh
+antidote load $ZSH/plugins.txt
+[ -f $ZSH/aliases.zsh ] && source $ZSH/aliases.zsh
+
+# eza https://github.com/eza-community/eza?tab=readme-ov-file
 if command -v eza > /dev/null 2>&1; then
-    [ -f $CONFIG/eza/eza-wrapper.sh ] && alias ls="$CONFIG/eza/eza-wrapper.sh"
+    EZA_OPTIONS="--classify=auto --color=auto --icons=auto"
+    EZA_LONG_OPTIONS="$EZA_OPTIONS --long --sort=modified --reverse --header --time-style='+%Y %e %b %R' --total-size --octal-permissions"
+    alias l="eza $EZA_OPTIONS"
+    alias ll="eza $EZA_LONG_OPTIONS"
+    alias llt="eza  $EZA_LONG_OPTIONS --tree --level=2"
 fi
 
 # fzf
-if command -v fzf >/dev/null 2>&1; then
-    [ -f $CONFIG/fzf/.fzf.zsh ] && source "$CONFIG/fzf/.fzf.zsh"
-fi
-
-# zsh
-ZSH="$CONFIG/zsh"
-if [ -d $ZSH/plugins/fast-syntax-highlighting ]; then
-    source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-fi
-if [ -d $ZSH/plugins/zsh-autosuggestions ]; then
-    source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-[ -f $ZSH/aliases.zsh ] && source $ZSH/aliases.zsh
+# if command -v fzf >/dev/null 2>&1; then
+#     [ -f $CONFIG/fzf/.fzf.zsh ] && source "$CONFIG/fzf/.fzf.zsh"
+# fi
 
 # zoxide
 if command -v zoxide > /dev/null 2>&1; then
@@ -63,8 +68,6 @@ fi
 
 # zellij
 if command -v zellij >/dev/null 2>&1; then
-    # use source
-    # alias zellij=$HOME/.cargo/bin/zellij
     function zz() {
         # default to 'dev' session
         if [ -z "$1" ]; then
@@ -89,31 +92,20 @@ if command -v starship >/dev/null 2>&1; then
     eval "$(starship init zsh)"
 fi
 
-# helix
-# if command -v hx >/dev/null 2>&1; then
-#     # use source
-#     alias hx=$HOME/.cargo/bin/hx
-#     alias hxc="
-#     hx $HOME/README.md $CONFIG/alacritty/alacritty.toml $HOME/.zshrc $CONFIG/zsh/aliases.zsh $CONFIG/fzf/.fzf.zsh $CONFIG/starship.toml $CONFIG/zellij/config.kdl $CONFIG/helix/config.toml $CONFIG/helix/languages.toml
-#     "
-#     export VISUAL=hx
-#     export EDITOR=$VISUAL
-#     alias xx=hx
-# fi
-
 # neovim
 if command -v nvim >/dev/null 2>&1; then
-    # use source
-    export PATH=$HOME/.local/nvim/bin:$PATH
     alias vim="nvim"
     alias vi="nvim"
     alias v="nvim"
-    export EDITOR=nvim
+    # export EDITOR=nvim
 fi
 
 # lazygit
 if command -v lazygit >/dev/null 2>&1; then
     alias gg=lazygit
+
     # yadm
-    alias yy='cd ; yadm enter lazygit ; cd -'
+    if command -v yadm >/dev/null 2>&1; then
+        alias yy='cd ; yadm enter lazygit ; cd -'
+    fi
 fi
