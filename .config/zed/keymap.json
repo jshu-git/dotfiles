@@ -59,6 +59,7 @@
       "space w": "workspace::Save",
       "space o": "editor::NewlineBelow",
       "space O": "editor::NewlineAbove",
+      "space p": ["workspace::SendKeystrokes", "cmd-enter p"],
       // "space tab": "tab_switcher::Toggle",
 
       // movement
@@ -87,6 +88,7 @@
       "g a": "editor::ToggleCodeActions",
       "g s": "editor::Hover",
       "g b": "editor::OpenPermalinkToLine",
+      "g u": "editor::OpenUrl",
       // "g i": "editor::GoToImplementationSplit",
 
       "g h": "editor::GoToPrevDiagnostic",

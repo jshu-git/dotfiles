@@ -5,7 +5,7 @@
     // "border": "#303030",
     // "editor.invisible": "#303030", // whitespace
     "hint": "#404040", // inlay hints
-    // "ignored": "#303030", // .gitignore
+    // "ignored": "#404040", // .gitignore
     "predictive": "#404040" // copilot
   },
   "buffer_font_family": "FiraCode Nerd Font",
@@ -30,6 +30,9 @@
   "toolbar": {
     // "breadcrumbs": false,
     "quick_actions": false
+  },
+  "scrollbar": {
+    "show": "never"
   },
   "gutter": {
     "code_actions": false,
