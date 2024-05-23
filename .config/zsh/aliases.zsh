@@ -17,18 +17,12 @@ alias env="env | sort | awk -F= '{printf \"%-30s %s\n\", \$1, \$2}'"
 alias clear='printf "\033c"'
 
 # alias ll='ls -lAot'
+
 # cd
 function d() {
     if [ -z "$1" ]; then
         cd .. && ls
     else
         cd "$1" && ls
-    fi
-}
-function dd() {
-    if [ -z "$1" ]; then
-        cd .. && ll
-    else
-        cd "$1" && ll
     fi
 }

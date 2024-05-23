@@ -2,7 +2,6 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
-HISTDUP=erase
 # https://github.com/rothgar/mastering-zsh/blob/master/docs/config/history.md
 setopt EXTENDED_HISTORY       # Write the history file in the ':start:elapsed;command' format.
 setopt INC_APPEND_HISTORY     # Write to the history file immediately, not when the shell exits.
@@ -45,16 +44,19 @@ CONFIG="$HOME/.config"
 ZSH="$CONFIG/zsh"
 source $ZSH/antidote/antidote.zsh
 antidote load $ZSH/plugins.txt
-[ -f $ZSH/aliases.zsh ] && source $ZSH/aliases.zsh
 
 # eza https://github.com/eza-community/eza?tab=readme-ov-file
 if command -v eza > /dev/null 2>&1; then
     EZA_OPTIONS="--classify=auto --color=auto --icons=auto"
-    EZA_LONG_OPTIONS="$EZA_OPTIONS --long --sort=modified --reverse --header --time-style='+%Y %e %b %R' --total-size --octal-permissions"
+    EZA_LONG_OPTIONS="$EZA_OPTIONS --long --sort=modified --reverse --header --time-style='+%Y %e %b %R' --octal-permissions"
     alias l="eza $EZA_OPTIONS"
+    alias ls=l
     alias ll="eza $EZA_LONG_OPTIONS"
     alias llt="eza  $EZA_LONG_OPTIONS --tree --level=2"
+    alias lls="eza  $EZA_LONG_OPTIONS --total-size"
 fi
+
+[ -f $ZSH/aliases.zsh ] && source $ZSH/aliases.zsh
 
 # fzf
 # if command -v fzf >/dev/null 2>&1; then
