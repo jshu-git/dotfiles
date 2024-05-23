@@ -35,7 +35,11 @@
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       // "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+
+      // tasks
+      "alt-r": "task::Rerun",
+      "alt-shift-r": "task::Spawn"
 
       // https://github.com/zed-industries/zed/discussions/10717
       // "cmd-]": [
