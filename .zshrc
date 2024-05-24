@@ -16,22 +16,14 @@ setopt HIST_VERIFY            # Do not execute immediately upon history expansio
 setopt APPEND_HISTORY         # append to history file
 setopt HIST_NO_STORE          # Don't store history commands
 
-# https://superuser.com/questions/148207/how-can-i-make-zsh-completion-behave-like-bash-completion
-# setopt noautomenu
-
 # completions
-setopt globdots
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 
 # macos arrow keys https://linux.die.net/man/1/zshzle
-bindkey "^[[1;3C" forward-word          # Alt-right
-bindkey "^[[1;3D" backward-word         # Alt-left
-bindkey "^[[1;9D" beginning-of-line     # Cmd-left
-bindkey "^[[1;9C" end-of-line           # Cmd-right
-# bindkey "^[[Z"    reverse-menu-complete # Shift-Tab
-bindkey "^Z"      undo
-bindkey "^Y"      redo
+bindkey "^[[1;3C" forward-word      # alt-right
+bindkey "^[[1;3D" backward-word     # alt-left
+bindkey "^[[1;9D" beginning-of-line # cmd-left
+bindkey "^[[1;9C" end-of-line       # cmd-right
 
 # brew
 if [[ -f "/opt/homebrew/bin/brew" ]] then
@@ -40,7 +32,7 @@ fi
 
 CONFIG="$HOME/.config"
 
-# plugin manager (antidote)
+# plugin manager (antidote https://getantidote.github.io)
 ZSH="$CONFIG/zsh"
 source $ZSH/antidote/antidote.zsh
 antidote load $ZSH/plugins.txt
@@ -56,28 +48,23 @@ if command -v eza > /dev/null 2>&1; then
     alias lls="eza  $EZA_LONG_OPTIONS --total-size"
 fi
 
+# aliases go after eza since eza overrides ls alias
 [ -f $ZSH/aliases.zsh ] && source $ZSH/aliases.zsh
 
 # fzf
-# if command -v fzf >/dev/null 2>&1; then
-#     [ -f $CONFIG/fzf/.fzf.zsh ] && source "$CONFIG/fzf/.fzf.zsh"
-# fi
-
-# zoxide
-if command -v zoxide > /dev/null 2>&1; then
-    eval "$(zoxide init zsh)"
+if command -v fzf >/dev/null 2>&1; then
+    [ -f $CONFIG/fzf/.fzf.zsh ] && source "$CONFIG/fzf/.fzf.zsh"
 fi
 
 # zellij
 if command -v zellij >/dev/null 2>&1; then
     function zz() {
-        # default to 'dev' session
+        # default to dev session
         if [ -z "$1" ]; then
             zellij a dev
-            # $HOME/.cargo/bin/zellij a dev
+        # otherwise create/attach to a named session
         else
             zellij -s "$1"
-            # $HOME/.cargo/bin/zellij -s "$1"
         fi
     }
 fi
@@ -89,8 +76,6 @@ fi
 
 # starship
 if command -v starship >/dev/null 2>&1; then
-    # https://github.com/spaceship-prompt/spaceship-prompt/issues/462
-    precmd() { precmd() { echo } }
     eval "$(starship init zsh)"
 fi
 
