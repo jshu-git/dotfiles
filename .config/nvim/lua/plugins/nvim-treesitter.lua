@@ -71,6 +71,5 @@ return {
 				},
 			},
 		})
-		vim.keymap.set("n", "<leader>fi", "<cmd>InspectTree<CR>", { desc = "Inspect Tree" })
 	end,
 }

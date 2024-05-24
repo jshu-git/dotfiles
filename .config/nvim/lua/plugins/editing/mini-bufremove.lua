@@ -13,7 +13,7 @@ return {
 	{
 		"vim-scripts/BufOnly.vim",
 		config = function()
-			vim.keymap.set("n", "<leader>X", ":BufOnly<CR>", { desc = "Delete Buffer (Except Current)" })
+			vim.keymap.set("n", "<leader>X", ":BufOnly<CR>", { desc = "Delete Buffers (Except Current)" })
 		end,
 	},
 }
