@@ -69,8 +69,6 @@
       "k": ["vim::Up", { "displayLines": true }],
       "J": ["workspace::SendKeystrokes", "6 j z z"],
       "K": ["workspace::SendKeystrokes", "6 k z z"],
-      "cmd-[": "pane::GoBack",
-      "cmd-]": "pane::GoForward",
       "ctrl-a": "pane::AlternateFile",
 
       // editing
@@ -83,6 +81,8 @@
       "alt-k": "editor::MoveLineUp",
       "alt-shift-j": "editor::DuplicateLineDown",
       "alt-shift-k": "editor::DuplicateLineUp",
+      "shift-tab": "editor::Outdent",
+      "tab": "editor::Indent",
 
       // g actions
       "g a": "editor::ToggleCodeActions",
