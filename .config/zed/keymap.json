@@ -46,6 +46,8 @@
       //     "workspace::SendKeystrokes",
       //     "cmd-k right cmd-k cmd-left cmd-w cmd-k cmd-right"
       // ]
+
+      // todo: folding with cmd-1/2/3,
     }
   },
 
@@ -101,8 +103,8 @@
       "g R": "editor::Rename",
       "g d": "editor::GoToDefinitionSplit",
       "g D": "editor::GoToDefinition",
-      "g o": "outline::Toggle",
-      "g O": "project_symbols::Toggle",
+      // "g o": "outline::Toggle",
+      // "g O": "project_symbols::Toggle",
 
       // multiple cursors
       "g m": "editor::SelectAllMatches",
@@ -114,11 +116,8 @@
       // windows
       "ctrl-w v": "pane::SplitRight",
       "ctrl-w s": "pane::SplitDown",
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
-      // "ctrl-right": "increase pane size"
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"]
+      // "ctrl-right":
     }
   },
   {
