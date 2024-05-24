@@ -37,3 +37,12 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 		vim.opt.spell = true
 	end,
 })
+
+-- vim.api.nvim_create_autocmd("BufEnter", {
+-- 	callback = function(ctx)
+-- 		local root = vim.fs.root(ctx.buf, { ".git", "Makefile" })
+-- 		if root then
+-- 			vim.uv.chdir(root)
+-- 		end
+-- 	end,
+-- })
