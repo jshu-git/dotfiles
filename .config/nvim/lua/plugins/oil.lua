@@ -21,9 +21,7 @@ return {
 
 					-- navigation
 					["<CR>"] = "actions.select",
-					-- ["<esc>"] = "actions.close",
 					["q"] = "actions.close",
-					["<C-c>"] = "actions.close",
 					["<Tab>"] = "actions.preview",
 					["<C-v>"] = "actions.select_vsplit",
 					["<C-s>"] = "actions.select_split",
@@ -52,10 +50,10 @@ return {
 				},
 			})
 
-			vim.keymap.set("n", "<leader>e", function()
+			vim.keymap.set("n", "<leader>E", function()
 				oil.toggle_float()
 			end, { desc = "Oil (Float)" })
-			vim.keymap.set("n", "<leader>E", function()
+			vim.keymap.set("n", "<leader>e", function()
 				oil.open()
 			end, { desc = "Oil" })
 		end,

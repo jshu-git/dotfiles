@@ -30,13 +30,14 @@ return {
 				map("gS", vim.lsp.buf.signature_help, "Hover Signature")
 				map("gr", require("telescope.builtin").lsp_references, "Goto References")
 				map("gR", vim.lsp.buf.rename, "Rename Variable")
-				map("go", require("telescope.builtin").lsp_document_symbols, "Goto Symbols")
-				map("gO", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Goto Workspace Symbols")
+				-- map("go", require("telescope.builtin").lsp_document_symbols, "Goto Symbols")
+				-- map("gO", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Goto Workspace Symbols")
 
 				map("]d", vim.diagnostic.goto_prev, "Next Diagnostic")
 				map("[d", vim.diagnostic.goto_next, "Previous Diagnostic")
 
 				-- toggle inlay hints
+				-- not showing in which-key for some reason
 				map("th", function()
 					vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 				end, "Toggle Inlay Hints")

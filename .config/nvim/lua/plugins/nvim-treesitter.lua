@@ -13,9 +13,9 @@ return {
 				"json",
 				"lua",
 				"luadoc",
-				"markdown",
-				"vim",
-				"vimdoc",
+				-- "markdown",
+				-- "vim",
+				-- "vimdoc",
 				"python",
 			},
 			highlight = {
