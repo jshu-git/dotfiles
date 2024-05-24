@@ -33,8 +33,13 @@ return {
 				map("go", require("telescope.builtin").lsp_document_symbols, "Goto Symbols")
 				map("gO", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Goto Workspace Symbols")
 
-				map("[d", vim.diagnostic.goto_prev, "Next Diagnostic")
-				map("]d", vim.diagnostic.goto_next, "Previous Diagnostic")
+				map("]d", vim.diagnostic.goto_prev, "Next Diagnostic")
+				map("[d", vim.diagnostic.goto_next, "Previous Diagnostic")
+
+				-- toggle inlay hints
+				map("th", function()
+					vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+				end, "Toggle Inlay Hints")
 
 				-- clear highlights when moving cursor
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
