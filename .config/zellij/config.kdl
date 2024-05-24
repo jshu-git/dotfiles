@@ -6,7 +6,7 @@ keybinds clear-defaults=true {
         bind "Ctrl a" { SwitchToMode "Normal"; }
         bind "Ctrl f" { ToggleFloatingPanes;   }
         bind "Alt  f" { ToggleFocusFullscreen; }
-        bind "Ctrl Space" { GoToNextTab; }
+        // bind "Ctrl Space" { GoToNextTab; }
     }
     normal {
         // lock
@@ -44,25 +44,24 @@ keybinds clear-defaults=true {
         bind "t" { NewTab;                   SwitchToMode "Locked"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0;        }
         bind "Tab" { GoToNextTab;                                     }
-        // bind "Shift Tab" { GoToPreviousTab;                                 }
+        // bind "Shift Tab" { GoToPreviousTab;                        }
         bind "1" { GoToTab 1;                SwitchToMode "Locked"; }
         bind "2" { GoToTab 2;                SwitchToMode "Locked"; }
         bind "3" { GoToTab 3;                SwitchToMode "Locked"; }
         bind "4" { GoToTab 4;                SwitchToMode "Locked"; }
         bind "5" { GoToTab 5;                SwitchToMode "Locked"; }
         bind "S" { ToggleActiveSyncTab;      SwitchToMode "Locked"; }
-        // bind "X"     { CloseTab;                 SwitchToMode "Locked"; }
+        // bind "X" { CloseTab;                 SwitchToMode "Locked"; }
         bind "L" { MoveTab "Right"; }
         bind "H" { MoveTab "Left";  }
 
         // resize
-        bind "=" { Resize "Increase";       }
-        bind "-" { Resize "Decrease";       }
-        // bind "H" { Resize "Increase Left";  }
-        // bind "J" { Resize "Increase Down";  }
-        // bind "K" { Resize "Increase Up";    }
-        // bind "L" { Resize "Increase Right"; }
-
+        bind "=" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
+        bind "Alt h" { Resize "Increase Left";  }
+        bind "Alt j" { Resize "Increase Down";  }
+        bind "Alt k" { Resize "Increase Up";    }
+        bind "Alt l" { Resize "Increase Right"; }
 
         // session
         bind "d" { Detach; }
@@ -77,6 +76,7 @@ keybinds clear-defaults=true {
         // layout
         bind "Space" { NextSwapLayout; }
     }
+
     // renaming modes
     renamepane {
         bind "Esc"   { UndoRenamePane; SwitchToMode "Locked"; }
