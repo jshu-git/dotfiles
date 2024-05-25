@@ -39,7 +39,7 @@ autoload -Uz compinit && compinit
 # eza https://github.com/eza-community/eza?tab=readme-ov-file
 if command -v eza > /dev/null 2>&1; then
     EZA_OPTIONS="--classify=auto --color=auto --icons=auto"
-    EZA_LONG_OPTIONS="$EZA_OPTIONS --long --sort=modified --reverse --header --time-style='+%Y %e %b %R' --octal-permissions"
+    EZA_LONG_OPTIONS="$EZA_OPTIONS --long --sort=modified --reverse --header --time-style='+%Y %b %e %R ' --octal-permissions --no-permissions"
     alias l="eza $EZA_OPTIONS"
     alias ls=l
     alias ll="eza $EZA_LONG_OPTIONS"
