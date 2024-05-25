@@ -16,9 +16,6 @@ setopt HIST_VERIFY            # Do not execute immediately upon history expansio
 setopt APPEND_HISTORY         # append to history file
 setopt HIST_NO_STORE          # Don't store history commands
 
-# completions
-autoload -Uz compinit && compinit
-
 # macos arrow keys https://linux.die.net/man/1/zshzle
 bindkey "^[[1;3C" forward-word      # alt-right
 bindkey "^[[1;3D" backward-word     # alt-left
@@ -30,12 +27,14 @@ if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# plugin manager: antidote (https://getantidote.github.io)
 CONFIG="$HOME/.config"
-
-# plugin manager (antidote https://getantidote.github.io)
 ZSH="$CONFIG/zsh"
 source $ZSH/antidote/antidote.zsh
 antidote load $ZSH/plugins.txt
+
+# completions
+autoload -Uz compinit && compinit
 
 # eza https://github.com/eza-community/eza?tab=readme-ov-file
 if command -v eza > /dev/null 2>&1; then
@@ -90,7 +89,6 @@ fi
 # lazygit
 if command -v lazygit >/dev/null 2>&1; then
     alias gg=lazygit
-
     # yadm
     if command -v yadm >/dev/null 2>&1; then
         alias yy='cd ; yadm enter lazygit ; cd -'

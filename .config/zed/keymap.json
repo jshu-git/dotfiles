@@ -44,7 +44,7 @@
       //     "cmd-k right cmd-k cmd-left cmd-w cmd-k cmd-right"
       // ]
 
-      // wishlist: folding levels, align selections, increase/decrease pane size, move pane to right/left, no search wrap, pin tab, x/c delete to blackhole register,
+      // wishlist: folding levels, align selections, increase/decrease pane size, move pane to right/left, no search wrap, pin tab, x/c delete to blackhole register, recent files
       // plugins: undotree, toggle quotes, flash, rainbow parentheses, indent guides, customize statusline, dim inactive pane, which key
       // "ctrl-cmd-c": "editor::DisplayCursorNames" <- what does this do?
     }
