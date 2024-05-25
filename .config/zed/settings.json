@@ -100,10 +100,10 @@
     "font_size": 16
   },
   "collaboration_panel": {
-    "button": false
+    // "button": false
   },
   "chat_panel": {
-    "button": false
+    // "button": false
   },
   "notification_panel": {
     "button": false

@@ -5,10 +5,7 @@
       "cmd-e": "workspace::ToggleRightDock",
       "cmd-t": "workspace::ToggleBottomDock",
       "cmd-r": "pane::RevealInProjectPanel",
-      "cmd-j": "journal::NewJournalEntry",
       "cmd-shift-x": "zed::Extensions",
-      "cmd-shift-r": "search::ToggleReplace",
-      "cmd-shift-d": "diagnostics::Deploy",
       "cmd-shift-o": "projects::OpenRecent",
       "tab": "menu::SelectNext",
       "shift-tab": "menu::SelectPrev",
@@ -47,22 +44,25 @@
       //     "cmd-k right cmd-k cmd-left cmd-w cmd-k cmd-right"
       // ]
 
-      // todo: folding with cmd-1/2/3,
+      // wishlist: folding levels, align selections, increase/decrease pane size, move pane to right/left, no search wrap, pin tab, x/c delete to blackhole register,
+      // plugins: undotree, toggle quotes, flash, rainbow parentheses, indent guides, customize statusline, dim inactive pane, which key
+      // "ctrl-cmd-c": "editor::DisplayCursorNames" <- what does this do?
     }
   },
 
   // vim bindings
   {
     // normal + visual
-    "context": "Editor && (vim_mode == normal || vim_mode == visual)", // && !VimWaiting && !menu",
+    "context": "Editor && (vim_mode == normal || vim_mode == visual)",
     "bindings": {
+      "ctrl-a": "pane::AlternateFile",
       // leader
       "space f": "file_finder::Toggle",
       "space w": "workspace::Save",
       "space o": "editor::NewlineBelow",
       "space O": "editor::NewlineAbove",
       "space p": ["workspace::SendKeystrokes", "cmd-enter p"],
-      // "space tab": "tab_switcher::Toggle",
+      "space P": ["workspace::SendKeystrokes", "cmd-shift-enter p"],
 
       // movement
       "H": ["vim::FirstNonWhitespace", { "displayLines": true }],
@@ -71,7 +71,10 @@
       "k": ["vim::Up", { "displayLines": true }],
       "J": ["workspace::SendKeystrokes", "6 j z z"],
       "K": ["workspace::SendKeystrokes", "6 k z z"],
-      "ctrl-a": "pane::AlternateFile",
+      "[ d": "editor::GoToPrevDiagnostic",
+      "] d": "editor::GoToDiagnostic",
+      "[ h": "editor::GoToHunk",
+      "] h": "editor::GoToPrevHunk",
 
       // editing
       "Y": ["workspace::SendKeystrokes", "y $"],
@@ -89,22 +92,13 @@
       // g actions
       "g a": "editor::ToggleCodeActions",
       "g s": "editor::Hover",
-      "g b": "editor::OpenPermalinkToLine",
-      "g u": "editor::OpenUrl",
-      // "g i": "editor::GoToImplementationSplit",
 
-      "g h": "editor::GoToPrevDiagnostic",
-      "g l": "editor::GoToDiagnostic",
-      "g L": "editor::GoToHunk",
-      "g H": "editor::GoToPrevHunk",
       "g e": "editor::OpenExcerptsSplit",
       "g E": "editor::OpenExcerpts",
       "g r": "editor::FindAllReferences",
       "g R": "editor::Rename",
       "g d": "editor::GoToDefinitionSplit",
       "g D": "editor::GoToDefinition",
-      // "g o": "outline::Toggle",
-      // "g O": "project_symbols::Toggle",
 
       // multiple cursors
       "g m": "editor::SelectAllMatches",
@@ -117,7 +111,6 @@
       "ctrl-w v": "pane::SplitRight",
       "ctrl-w s": "pane::SplitDown",
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"]
-      // "ctrl-right":
     }
   },
   {
@@ -126,7 +119,7 @@
     "bindings": {
       "enter": ["workspace::SendKeystrokes", "c i w"],
       "shift-enter": ["workspace::SendKeystrokes", "c i \""],
-      "alt-enter": ["workspace::SendKeystrokes", "c i '"]
+      "ctrl-enter": ["workspace::SendKeystrokes", "c i '"]
     }
   },
   {
@@ -137,26 +130,18 @@
       "ctrl-v": "vim::Down",
       "enter": "vim::Substitute",
       "v": "editor::SelectLargerSyntaxNode",
-      "backspace": "editor::SelectSmallerSyntaxNode",
-      "p": [
-        "vim::Paste",
-        {
-          "before": true,
-          "preserveClipboard": true
-        }
-      ]
+      "backspace": "editor::SelectSmallerSyntaxNode"
     }
   },
   {
     // insert mode
     "context": "Editor && vim_mode == insert",
     "bindings": {
+      "shift-backspace": "vim::DeleteRight",
       "ctrl-x": "editor::ShowCompletions",
       // "ctrl-a": "assistant::InlineAssist",
       "ctrl-i": "editor::ShowInlineCompletion",
       "ctrl-c": "editor::Cancel",
-      // "shift-backspace": "vim::DeleteRight",
-      // "shift-backspace": ["workspace::SendKeystrokes", "ctrl-backspace"],
       // disable defaults
       "ctrl-x ctrl-o": null,
       "ctrl-x ctrl-a": null,
@@ -210,8 +195,3 @@
     }
   }
 ]
-
-// wishlist
-// undotree, flash/jump to word, rainbow parentheses, indent guides, customize statusline, dim inactive pane, which key
-// no search wrap, explorer remember location on delete, pin tab, x/c delete to blackhole register
-// "ctrl-cmd-c": "editor::DisplayCursorNames" <- what does this do?
