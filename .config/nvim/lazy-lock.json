@@ -1,5 +1,4 @@
 {
-  "BufOnly.vim": { "branch": "master", "commit": "43dd92303979bdb234a3cb2f5662847f7a3affe7" },
   "alpha-nvim": { "branch": "main", "commit": "41283fb402713fc8b327e60907f74e46166f4cfd" },
   "auto-session": { "branch": "main", "commit": "af2219b9fa99c1d7ac409bd9eac094c459d3f52d" },
   "buffer_manager.nvim": { "branch": "main", "commit": "fd36131b2b3e0f03fd6353ae2ffc88cf920b3bbb" },

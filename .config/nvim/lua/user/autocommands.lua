@@ -5,18 +5,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- toggle relative/absolute line numbers
--- vim.api.nvim_create_autocmd("InsertEnter", {
--- 	callback = function()
--- 		vim.opt.relativenumber = false
--- 	end,
--- })
--- vim.api.nvim_create_autocmd("InsertLeave", {
--- 	callback = function()
--- 		vim.opt.relativenumber = true
--- 	end,
--- })
-
 -- disable auto comments
 vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
 
@@ -37,12 +25,3 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 		vim.opt.spell = true
 	end,
 })
-
--- vim.api.nvim_create_autocmd("BufEnter", {
--- 	callback = function(ctx)
--- 		local root = vim.fs.root(ctx.buf, { ".git", "Makefile" })
--- 		if root then
--- 			vim.uv.chdir(root)
--- 		end
--- 	end,
--- })
