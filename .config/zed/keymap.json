@@ -187,22 +187,9 @@
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
-      "alt-r": "project_panel::RevealInFinder",
-      "alt-c": "project_panel::CopyPath",
-      "alt-shift-c": "project_panel::CopyRelativePath",
-      // oil-like
-      "h": "project_panel::CollapseSelectedEntry",
-      "j": "menu::SelectNext",
-      "k": "menu::SelectPrev",
-      "l": "project_panel::ExpandSelectedEntry",
-      "o": "project_panel::NewFile",
-      "d": "project_panel::Cut",
-      "x": "project_panel::Trash",
-      "y": "project_panel::Copy",
-      "p": "project_panel::Paste",
+      "backspace": "project_panel::Trash",
+      "cmd-backspace": ["project_panel::Trash", { "skip_prompt": true }],
       "tab": "project_panel::Open", // preview
-      "X": ["project_panel::Trash", { "skip_prompt": true }],
-
       "r": "project_panel::Rename"
     }
   },
@@ -212,7 +199,6 @@
     "context": "Terminal",
     "bindings": {
       "cmd-n": "workspace::NewTerminal"
-      // "shift-backspace": ["terminal::SendText", "\u007f"]
     }
   },
 

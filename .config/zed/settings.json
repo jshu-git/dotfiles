@@ -1,11 +1,12 @@
 {
   "theme": "Rosé Pine",
   "experimental.theme_overrides": {
+    "background.appearance": "transparent",
     // "border": "#1c1c1c",
     // "border": "#303030",
-    // "editor.invisible": "#303030", // whitespace
+    "editor.invisible": "#303030", // whitespace
     "hint": "#404040", // inlay hints
-    // "ignored": "#404040", // .gitignore
+    "ignored": "#404040", // .gitignore
     "predictive": "#404040" // copilot
   },
   "buffer_font_family": "FiraCode Nerd Font",
@@ -26,7 +27,6 @@
   // "tab_size": 4,
   "vertical_scroll_margin": 10,
   "line_indicator_format": "short",
-
   "toolbar": {
     // "breadcrumbs": false,
     "quick_actions": false
@@ -66,7 +66,6 @@
     "use_multiline_find": true,
     "use_smartcase_find": true
   },
-
   // languages
   "languages": {
     "JSON": {
@@ -85,7 +84,6 @@
       }
     }
   },
-
   // panels
   "project_panel": {
     "button": false,
