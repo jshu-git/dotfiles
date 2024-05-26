@@ -22,6 +22,11 @@ bindkey "^[[1;3D" backward-word     # alt-left
 bindkey "^[[1;9D" beginning-of-line # cmd-left
 bindkey "^[[1;9C" end-of-line       # cmd-right
 
+# edit command line
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X" edit-command-line
+
 # brew
 if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -83,7 +88,7 @@ if command -v nvim >/dev/null 2>&1; then
     alias vim="nvim"
     alias vi="nvim"
     alias v="nvim"
-    # export EDITOR=nvim
+    export EDITOR=nvim
 fi
 
 # lazygit
