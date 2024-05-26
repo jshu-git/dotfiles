@@ -30,12 +30,6 @@ return {
 				map("]d", vim.diagnostic.goto_prev, "Next Diagnostic")
 				map("[d", vim.diagnostic.goto_next, "Previous Diagnostic")
 
-				-- toggle inlay hints
-				-- not showing in which-key for some reason
-				map("th", function()
-					vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-				end, "Toggle Inlay Hints")
-
 				-- clear highlights when moving cursor
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
 				if client and client.server_capabilities.documentHighlightProvider then
@@ -57,40 +51,55 @@ return {
 							vim.api.nvim_clear_autocmds({ group = "lsp-highlight", buffer = event2.buf })
 						end,
 					})
+
+					-- toggle inlay hints
+					if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+						map("<leader>th", function()
+							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+						end, "Toggle Inlay Hints")
+					end
 				end
 			end,
 		})
 
-		local lspconfig = require("lspconfig")
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 		-- enable cmp capabilities
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 		-- servers https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
-		lspconfig.lua_ls.setup({
-			capabilities = capabilities,
-			settings = {
-				Lua = {
-					hint = {
-						enable = true,
-					},
-					diagnostics = {
-						disable = { "missing-fields" },
-						globals = { "vim" },
-					},
-				},
-			},
-		})
-		lspconfig.rust_analyzer.setup({
-			capabilities = capabilities,
-			settings = {
-				["rust-analyzer"] = {
-					checkOnSave = {
-						command = "clippy",
+		local servers = {
+			lua_ls = {
+				settings = {
+					Lua = {
+						hint = {
+							enable = true,
+						},
+						diagnostics = {
+							disable = { "missing-fields" },
+							globals = { "vim" },
+						},
 					},
 				},
 			},
-		})
+			rust_analyzer = {
+				settings = {
+					["rust-analyzer"] = {
+						checkOnSave = {
+							command = "clippy",
+						},
+					},
+				},
+			},
+		}
+
+		-- lspconfig
+		local lspconfig = require("lspconfig")
+		for server, config in pairs(servers) do
+			-- config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {})
+			config.capabilities = capabilities
+			lspconfig[server].setup(config)
+		end
 
 		-- ui
 		require("lspconfig.ui.windows").default_options.border = "single"

@@ -6,26 +6,10 @@ return {
 	},
 	config = function()
 		require("nvim-treesitter.configs").setup({
-			ensure_installed = {
-				-- "bash",
-				-- "c",
-				-- "html",
-				"json",
-				"lua",
-				"luadoc",
-				-- "markdown",
-				-- "vim",
-				-- "vimdoc",
-				"python",
-			},
-			sync_install = false,
+			ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
 			auto_install = false,
-			highlight = {
-				enable = true,
-			},
-			indent = {
-				enable = true,
-			},
+			highlight = { enable = true },
+			indent = { enable = true },
 			incremental_selection = {
 				enable = true,
 				keymaps = {
@@ -49,7 +33,7 @@ return {
 						["al"] = "@loop.outer",
 						["ii"] = "@conditional.inner",
 						["ai"] = "@conditional.outer",
-						["aa"] = "@parameter.outer", -- a for argument
+						["aa"] = "@parameter.outer",
 						["ia"] = "@parameter.inner",
 					},
 				},
@@ -72,6 +56,9 @@ return {
 					},
 				},
 			},
+			-- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#advanced-setup
+			-- parser_install_dir = "/u/jshu/packages/parsers",
 		})
+		-- vim.opt.runtimepath:append("/u/jshu/packages/parsers")
 	end,
 }
