@@ -4,18 +4,22 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				-- python = { "isort", "black" },
-                json = { "prettier" },
-                markdown = { "prettier" },
+				python = { "black" },
+				json = { "prettier" },
+				markdown = { "prettier" },
+				sh = { "shfmt" },
+				zsh = { "shfmt" },
 				["*"] = { "codespell" },
 				["_"] = { "trim_whitespace" },
 			},
 			format_on_save = function(bufnr)
 				if vim.g.disable_autoformat then
-					return 
+					return
 				end
 				return {
-                    lsp_fallback = true,
+					lsp_fallback = true,
+					async = false,
+					quiet = false,
 					timeout_ms = 500,
 				}
 			end,

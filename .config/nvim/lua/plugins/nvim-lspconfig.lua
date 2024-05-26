@@ -1,6 +1,7 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
+		{ "williamboman/mason.nvim", config = true },
 		-- ui
 		{ "j-hui/fidget.nvim", opts = {} },
 		{ "folke/neodev.nvim", opts = {} },
@@ -100,6 +101,14 @@ return {
 			config.capabilities = capabilities
 			lspconfig[server].setup(config)
 		end
+
+		require("mason").setup({
+			ui = {
+				border = "single",
+				height = 0.8,
+			},
+		})
+		vim.keymap.set("n", "<leader>m", "<cmd>Mason<CR>", { desc = "Mason" })
 
 		-- ui
 		require("lspconfig.ui.windows").default_options.border = "single"
