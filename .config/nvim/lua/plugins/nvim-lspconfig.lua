@@ -1,9 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		-- mason
-		{ "williamboman/mason.nvim", config = true },
-		"williamboman/mason-lspconfig.nvim",
 		-- ui
 		{ "j-hui/fidget.nvim", opts = {} },
 		{ "folke/neodev.nvim", opts = {} },
@@ -25,13 +22,10 @@ return {
 
 				map("gd", vim.lsp.buf.definition, "Goto Definition")
 				-- map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
-				-- map("gD", vim.lsp.buf.declaration, "Goto Declaration")
 				map("gs", vim.lsp.buf.hover, "Hover Documentation")
 				map("gS", vim.lsp.buf.signature_help, "Hover Signature")
 				map("gr", require("telescope.builtin").lsp_references, "Goto References")
 				map("gR", vim.lsp.buf.rename, "Rename Variable")
-				-- map("go", require("telescope.builtin").lsp_document_symbols, "Goto Symbols")
-				-- map("gO", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Goto Workspace Symbols")
 
 				map("]d", vim.diagnostic.goto_prev, "Next Diagnostic")
 				map("[d", vim.diagnostic.goto_next, "Previous Diagnostic")
@@ -67,47 +61,36 @@ return {
 			end,
 		})
 
+		local lspconfig = require("lspconfig")
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		-- enable cmp capabilities
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-		-- server configurations
-		local servers = {
-			-- pyright = {},
-			-- rust_analyzer = {},
-			lua_ls = {
-				settings = {
-					Lua = {
-						hint = {
-							enable = true,
-						},
-						-- completion = {
-						-- 	callSnippet = "Replace",
-						-- },
-						diagnostics = {
-							disable = { "missing-fields" },
-							globals = { "vim" },
-						},
+		-- servers https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
+		lspconfig.lua_ls.setup({
+			capabilities = capabilities,
+			settings = {
+				Lua = {
+					hint = {
+						enable = true,
+					},
+					diagnostics = {
+						disable = { "missing-fields" },
+						globals = { "vim" },
 					},
 				},
 			},
-		}
-
-		-- mason
-		require("mason").setup({
-			ui = {
-				border = "single",
-				height = 0.8,
+		})
+		lspconfig.rust_analyzer.setup({
+			capabilities = capabilities,
+			settings = {
+				["rust-analyzer"] = {
+					checkOnSave = {
+						command = "clippy",
+					},
+				},
 			},
 		})
-		require("mason-lspconfig").setup_handlers({
-			function(server_name)
-				local server = servers[server_name] or {}
-				server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-				require("lspconfig")[server_name].setup(server)
-			end,
-		})
-		vim.keymap.set("n", "<leader>m", "<cmd>Mason<CR>", { desc = "Mason" })
 
 		-- ui
 		require("lspconfig.ui.windows").default_options.border = "single"
@@ -121,6 +104,7 @@ return {
 			float = {
 				border = "single",
 			},
+			virtual_text = false,
 		})
 	end,
 }
