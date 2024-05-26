@@ -63,6 +63,7 @@
       "space O": "editor::NewlineAbove",
       "space p": ["workspace::SendKeystrokes", "cmd-enter p"],
       "space P": ["workspace::SendKeystrokes", "cmd-shift-enter p"],
+      "space t": "workspace::NewCenterTerminal",
 
       // movement
       "H": ["vim::FirstNonWhitespace", { "displayLines": true }],

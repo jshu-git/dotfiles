@@ -4,6 +4,7 @@ source <(fzf --zsh)
 # https://www.mankier.com/1/fzf#Options-Interface
 export FZF_DEFAULT_OPTS="
 --no-multi
+--pointer ▶
 --border=sharp
 --bind 'tab:toggle-down,btab:toggle-up'
 "
@@ -14,7 +15,7 @@ for i in .git .cache .vscode .cargo .rustup .npm; do
 done
 export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden $FD_EXCLUDE"
 
-# up arrow for history
+# history
 export FZF_CTRL_R_OPTS="--info=hidden"
 bindkey "^[[A" fzf-history-widget
 
