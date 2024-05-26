@@ -18,10 +18,11 @@ return {
 				},
 				keymaps = {
 					["?"] = "actions.show_help",
+					["<leader>e"] = "actions.close",
+					["q"] = "actions.close",
 
 					-- navigation
 					["<CR>"] = "actions.select",
-					["q"] = "actions.close",
 					["<Tab>"] = "actions.preview",
 					["<C-v>"] = "actions.select_vsplit",
 					["<C-s>"] = "actions.select_split",
