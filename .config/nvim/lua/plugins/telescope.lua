@@ -35,25 +35,15 @@ return {
 						["<Up>"] = actions.cycle_history_prev,
 						["<Tab>"] = actions.move_selection_next,
 						["<S-Tab>"] = actions.move_selection_previous,
-						[","] = actions.toggle_selection,
-						["<C-d>"] = actions.delete_buffer,
 						["<C-s>"] = actions.select_horizontal,
 						["<C-p>"] = layout.toggle_preview,
 					},
-				},
-				preview = {
-					-- hide_on_startup = true,
 				},
 				file_ignore_patterns = { "lazy%-lock.json" },
 			},
 			extensions = {
 				["ui-select"] = {
 					themes.get_dropdown(),
-				},
-			},
-			pickers = {
-				find_files = {
-					hidden = true,
 				},
 			},
 		})
@@ -65,7 +55,7 @@ return {
 		vim.keymap.set("n", "<leader>fF", function()
 			builtin.find_files({
 				hidden = true,
-				prompt_title = "Find Files (Including Hidden)",
+				prompt_title = "Find Files (Hidden)",
 			})
 		end, { desc = "Files (Hidden)" })
 

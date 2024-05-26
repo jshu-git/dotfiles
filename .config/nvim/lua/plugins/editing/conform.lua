@@ -5,10 +5,12 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "black" },
+
 				json = { "prettier" },
 				markdown = { "prettier" },
 				sh = { "shfmt" },
 				zsh = { "shfmt" },
+
 				["*"] = { "codespell" },
 				["_"] = { "trim_whitespace" },
 			},
