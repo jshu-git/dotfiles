@@ -38,8 +38,7 @@ return {
 					},
 				},
 				move = {
-					-- enable = true,
-					enable = false,
+					enable = true,
 					goto_next_start = {
 						["]f"] = "@function.outer",
 						["]c"] = "@class.outer",

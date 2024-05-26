@@ -6,15 +6,6 @@ return {
 	opts = function()
 		local dashboard = require("alpha.themes.dashboard")
 		local logo = {
-			-- [[          ▀████▀▄▄              ▄█ ]],
-			-- [[            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ]],
-			-- [[    ▄        █          ▀▀▀▀▄  ▄▀  ]],
-			-- [[   ▄▀ ▀▄      ▀▄              ▀▄▀  ]],
-			-- [[  ▄▀    █     █▀   ▄█▀▄      ▄█    ]],
-			-- [[  ▀▄     ▀▄  █     ▀██▀     ██▄█   ]],
-			-- [[   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ]],
-			-- [[    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ]],
-			-- [[   █   █  █      ▄▄           ▄▀   ]],
 			"  Welcome to SnoreTown.",
 		}
 		-- header
@@ -28,7 +19,7 @@ return {
 			dashboard.button("r", "󰁯  Restore Session", "<cmd>SessionRestore<CR>"),
 			dashboard.button("f", "󰍉  Find", "<cmd>Telescope find_files<CR>"),
 			dashboard.button("e", "  Explorer", "<cmd>Oil --float<CR>"),
-			dashboard.button("n", "  New File", "<cmd>enew<CR>"),
+			dashboard.button("n", "  New File", "<cmd>new<CR>"),
 			dashboard.button("q", "󰩈  Quit", "<cmd>qa<CR>"),
 		}
 		-- padding
