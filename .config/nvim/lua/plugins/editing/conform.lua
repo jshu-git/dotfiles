@@ -5,16 +5,18 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				-- python = { "isort", "black" },
+                json = { "prettier" },
+                markdown = { "prettier" },
 				["*"] = { "codespell" },
 				["_"] = { "trim_whitespace" },
 			},
 			format_on_save = function(bufnr)
 				if vim.g.disable_autoformat then
-					return
+					return 
 				end
 				return {
+                    lsp_fallback = true,
 					timeout_ms = 500,
-					lsp_fallback = true,
 				}
 			end,
 		})

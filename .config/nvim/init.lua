@@ -1,4 +1,6 @@
-require("user.init")
+require("user.autocommands")
+require("user.options")
+require("user.keymaps")
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -32,7 +34,6 @@ vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Lazy" })
 
 -- close lazy with q/esc https://github.com/folke/lazy.nvim/discussions/1196
 local user_grp = vim.api.nvim_create_augroup("LazyUserGroup", { clear = true })
--- require("lazy.view.config").keys.close = "<esc>"
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "lazy",
 	desc = "Quit lazy with <esc>",

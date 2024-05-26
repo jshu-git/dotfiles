@@ -23,8 +23,6 @@ vim.opt.pumheight = 10
 vim.opt.wrap = false
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
--- use underline cusor in visual modes
--- vim.opt.guicursor = "v:underline"
 
 -- windows
 vim.opt.splitright = true
@@ -42,3 +40,4 @@ vim.opt.undofile = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.swapfile = false
 vim.opt.confirm = true
+vim.opt.inccommand = "split"
