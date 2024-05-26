@@ -21,9 +21,9 @@ alias clear='printf "\033c"'
 
 # cd
 function d() {
-    if [ -z "$1" ]; then
-        cd .. && ls
-    else
-        cd "$1" && ls
-    fi
+	if [ -z "$1" ]; then
+		cd .. && ls
+	else
+		cd "$1" && ls
+	fi
 }

@@ -28,8 +28,8 @@ zle -N edit-command-line
 bindkey "^X" edit-command-line
 
 # brew
-if [[ -f "/opt/homebrew/bin/brew" ]] then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ -f "/opt/homebrew/bin/brew" ]]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # plugin manager: antidote (https://getantidote.github.io)
@@ -42,14 +42,14 @@ antidote load $ZSH/plugins.txt
 autoload -Uz compinit && compinit
 
 # eza https://github.com/eza-community/eza?tab=readme-ov-file
-if command -v eza > /dev/null 2>&1; then
-    EZA_OPTIONS="--classify=auto --color=auto --icons=auto"
-    EZA_LONG_OPTIONS="$EZA_OPTIONS --long --sort=modified --reverse --header --time-style='+%Y %b %e %R ' --octal-permissions --no-permissions"
-    alias l="eza $EZA_OPTIONS"
-    alias ls=l
-    alias ll="eza $EZA_LONG_OPTIONS"
-    alias llt="eza  $EZA_LONG_OPTIONS --tree --level=2"
-    alias lls="eza  $EZA_LONG_OPTIONS --total-size"
+if command -v eza >/dev/null 2>&1; then
+	EZA_OPTIONS="--classify=auto --color=auto --icons=auto"
+	EZA_LONG_OPTIONS="$EZA_OPTIONS --long --sort=modified --reverse --header --time-style='+%Y %b %e %R ' --octal-permissions --no-permissions"
+	alias l="eza $EZA_OPTIONS"
+	alias ls=l
+	alias ll="eza $EZA_LONG_OPTIONS"
+	alias llt="eza  $EZA_LONG_OPTIONS --tree --level=2"
+	alias lls="eza  $EZA_LONG_OPTIONS --total-size"
 fi
 
 # aliases go after eza since eza overrides ls alias
@@ -57,45 +57,48 @@ fi
 
 # fzf
 if command -v fzf >/dev/null 2>&1; then
-    [ -f $CONFIG/fzf/.fzf.zsh ] && source "$CONFIG/fzf/.fzf.zsh"
+	[ -f $CONFIG/fzf/.fzf.zsh ] && source "$CONFIG/fzf/.fzf.zsh"
 fi
 
 # zellij
 if command -v zellij >/dev/null 2>&1; then
-    function zz() {
-        # default to dev session
-        if [ -z "$1" ]; then
-            zellij a dev
-        # otherwise create/attach to a named session
-        else
-            zellij -s "$1"
-        fi
-    }
+	function zz() {
+		# default to dev session
+		if [ -z "$1" ]; then
+			zellij a dev
+		# otherwise create/attach to a named session
+		else
+			zellij -s "$1"
+		fi
+	}
 fi
 
 # bat
 if command -v bat >/dev/null 2>&1; then
-    alias cat=bat
+	alias cat=bat
 fi
 
 # starship
 if command -v starship >/dev/null 2>&1; then
-    eval "$(starship init zsh)"
+	eval "$(starship init zsh)"
 fi
 
 # neovim
 if command -v nvim >/dev/null 2>&1; then
-    alias vim="nvim"
-    alias vi="nvim"
-    alias v="nvim"
-    export EDITOR=nvim
+	alias vim="nvim"
+	alias vi="nvim"
+	alias v="nvim"
+	export EDITOR=nvim
 fi
 
 # lazygit
 if command -v lazygit >/dev/null 2>&1; then
-    alias gg=lazygit
-    # yadm
-    if command -v yadm >/dev/null 2>&1; then
-        alias yy='cd ; yadm enter lazygit ; cd -'
-    fi
+	alias gg=lazygit
+	# yadm
+	if command -v yadm >/dev/null 2>&1; then
+		alias yy='cd ; yadm enter lazygit ; cd -'
+	fi
 fi
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

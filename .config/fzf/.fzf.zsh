@@ -11,7 +11,7 @@ export FZF_DEFAULT_OPTS="
 
 # fd https://github.com/sharkdp/fd?tab=readme-ov-file#using-fd-with-fzf
 for i in .git .cache .vscode .cargo .rustup .npm; do
-    FD_EXCLUDE="$FD_EXCLUDE --exclude $i";
+	FD_EXCLUDE="$FD_EXCLUDE --exclude $i"
 done
 export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden $FD_EXCLUDE"
 
@@ -21,5 +21,5 @@ bindkey "^[[A" fzf-history-widget
 
 # fzf-tab-completion
 if [ -d $CONFIG/fzf/fzf-tab-completion ]; then
-    source $CONFIG/fzf/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+	source $CONFIG/fzf/fzf-tab-completion/zsh/fzf-zsh-completion.sh
 fi
