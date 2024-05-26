@@ -37,5 +37,6 @@ save_to_clipboard = true
 [hints]
 
 [keyboard]
+bindings = [{ key = "Enter", mods = "Shift", chars = "ci\"" }, { key = "Enter", mods = "Control", chars = "ci'" }]
 
 [debug]

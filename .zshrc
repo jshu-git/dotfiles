@@ -99,6 +99,3 @@ if command -v lazygit >/dev/null 2>&1; then
 		alias yy='cd ; yadm enter lazygit ; cd -'
 	fi
 fi
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

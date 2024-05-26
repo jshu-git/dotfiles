@@ -26,6 +26,7 @@ return {
 			},
 			completion = {
 				keyword_length = 2,
+				completeopt = "menu,menuone,noinsert",
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<C-n>"] = cmp.mapping.select_next_item(),

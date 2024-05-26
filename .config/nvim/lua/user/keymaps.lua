@@ -27,13 +27,12 @@ keymap.set({ "n", "x" }, "}", "}zz")
 -- editing
 keymap.set("n", "U", "<C-r>")
 keymap.set("n", "<CR>", '"_ciw')
--- keymap.set("n", "<S-CR>", '"_ci"')
--- keymap.set("n", "<A-CR>", '"_ci"')
+-- keymap.set("n", "<S-CR>", 'ci"')
+-- keymap.set("n", "<C-CR>", "ci'")
 keymap.set("n", "=", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 keymap.set("n", "<A-S-j>", "yyp")
 keymap.set("n", "<A-S-k>", "yyP")
--- TODO: shift delete deletes one character to the right
 -- preserve clipboard
 keymap.set({ "n", "x" }, "x", '"_x')
 keymap.set({ "n", "x" }, "c", '"_c')
@@ -50,7 +49,6 @@ keymap.set("n", "<C-h>", "<C-w><C-h>")
 keymap.set("n", "<C-l>", "<C-w><C-l>")
 keymap.set("n", "<C-j>", "<C-w><C-j>")
 keymap.set("n", "<C-k>", "<C-w><C-k>")
--- resizing
 keymap.set("n", "<C-Right>", "4<C-w><")
 keymap.set("n", "<C-Left>", "4<C-w>>")
 keymap.set("n", "<C-Up>", "4<C-w>+")
