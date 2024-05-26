@@ -10,8 +10,6 @@ keymap.set("n", "<leader>Q", "<cmd>qa!<CR>", { desc = "Quit All" })
 keymap.set("n", "<leader>o", "o<Esc>", { desc = "New Line Below" })
 keymap.set("n", "<leader>O", "O<Esc>", { desc = "New Line Above" })
 keymap.set("n", "<leader>n", "<cmd>enew<CR>", { desc = "New Buffer" })
--- keymap.set("n", "<Tab>", "<cmd>bn<CR>", { desc = "Next Buffer" })
--- keymap.set("n", "<S-Tab>", "<cmd>bp<CR>", { desc = "Previous Buffer" })
 keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 -- toggles
 keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle Word Wrap" })

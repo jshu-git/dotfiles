@@ -36,7 +36,6 @@ vim.opt.updatetime = 250
 
 -- misc
 vim.opt.mouse = "a"
-vim.opt.inccommand = "split"
 vim.opt.undofile = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.swapfile = false
