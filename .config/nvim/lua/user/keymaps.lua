@@ -9,7 +9,7 @@ keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 keymap.set("n", "<leader>Q", "<cmd>qa!<CR>", { desc = "Quit All" })
 keymap.set("n", "<leader>o", "o<Esc>", { desc = "New Line Below" })
 keymap.set("n", "<leader>O", "O<Esc>", { desc = "New Line Above" })
-keymap.set("n", "<leader>n", "<cmd>new<CR>", { desc = "New Buffer" })
+keymap.set("n", "<leader>n", "<cmd>new<CR>", { desc = "New Scratch Buffer" })
 keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 -- toggles
 keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle Word Wrap" })

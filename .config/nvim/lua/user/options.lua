@@ -19,10 +19,11 @@ vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"
 vim.opt.fillchars = { eob = " " }
 vim.opt.ruler = false
-vim.opt.pumheight = 10
+vim.opt.pumheight = 5
 vim.opt.wrap = false
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
+vim.opt.colorcolumn = "80"
 
 -- windows
 vim.opt.splitright = true
@@ -32,7 +33,7 @@ vim.opt.splitbelow = true
 vim.opt.timeout = true
 vim.opt.timeoutlen = 250
 vim.opt.ttimeoutlen = 0
-vim.opt.updatetime = 250
+vim.opt.updatetime = 1000
 
 -- misc
 vim.opt.mouse = "a"

@@ -3,7 +3,12 @@ return {
 	dependencies = {
 		{ "williamboman/mason.nvim", config = true },
 		-- ui
-		{ "j-hui/fidget.nvim", opts = {} },
+		{
+			"j-hui/fidget.nvim",
+			opts = {
+				notification = { window = { winblend = 0, align = "top" } },
+			},
+		},
 		{ "folke/neodev.nvim", opts = {} },
 		-- cmp
 		"hrsh7th/cmp-nvim-lsp",
@@ -32,6 +37,7 @@ return {
 				map("[d", vim.diagnostic.goto_next, "Previous Diagnostic")
 
 				-- clear highlights when moving cursor
+				-- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L510
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
 				if client and client.server_capabilities.documentHighlightProvider then
 					local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
@@ -119,9 +125,7 @@ return {
 			border = "single",
 		})
 		vim.diagnostic.config({
-			float = {
-				border = "single",
-			},
+			float = { border = "single" },
 			virtual_text = false,
 		})
 	end,

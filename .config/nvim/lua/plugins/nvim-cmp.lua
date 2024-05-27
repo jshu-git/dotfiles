@@ -27,13 +27,13 @@ return {
 			},
 			completion = {
 				keyword_length = 2,
-				completeopt = "menu,menuone,noinsert",
+				completeopt = "menu,menuone,preview,noinsert",
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<C-n>"] = cmp.mapping.select_next_item(),
 				["<C-p>"] = cmp.mapping.select_prev_item(),
-				["<CR>"] = cmp.mapping.confirm({ select = false }),
-				["<C-x>"] = cmp.mapping.complete({}),
+				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<C-x>"] = cmp.mapping.complete(),
 				["<C-c>"] = cmp.mapping.abort(),
 			}),
 		})
