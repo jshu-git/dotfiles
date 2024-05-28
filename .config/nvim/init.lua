@@ -24,7 +24,6 @@ require("lazy").setup({
 }, {
 	ui = {
 		border = "single",
-		title = " Lazy.nvim ",
 	},
 	change_detection = {
 		notify = false,
@@ -48,7 +47,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- vim.cmd("colorscheme rose-pine")
 -- vim.cmd("colorscheme no-clown-fiesta")
 -- vim.cmd("colorscheme monochrome")
--- vim.cmd.colorscheme("lackluster")
+vim.cmd.colorscheme("lackluster")
 -- vim.cmd.colorscheme("lackluster-night")
 -- vim.cmd.colorscheme("lackluster-mint")
 -- vim.cmd.colorscheme("lackluster-dark")

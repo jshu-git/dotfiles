@@ -55,9 +55,6 @@ return {
 
 		vim.keymap.set("n", "<leader>e", function()
 			require("oil").open()
-			require("oil.util").run_after_load(0, function()
-				oil.open_preview()
-			end)
 		end, { desc = "Oil" })
 	end,
 }
