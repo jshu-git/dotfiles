@@ -28,7 +28,7 @@ return {
 		end
 
 		-- footer
-		local footer = dashboard.section.footer
+		-- local footer = dashboard.section.footer
 
 		dashboard.config.layout = {
 			{ type = "padding", val = 16 },
@@ -36,7 +36,7 @@ return {
 			{ type = "padding", val = 1 },
 			buttons,
 			{ type = "padding", val = 1 },
-			footer,
+			-- footer,
 		}
 		return dashboard
 	end,
@@ -55,14 +55,14 @@ return {
 		require("alpha").setup(dashboard.config)
 
 		-- dynamic footer
-		vim.api.nvim_create_autocmd("User", {
-			pattern = "LazyVimStarted",
-			callback = function()
-				local stats = require("lazy").stats()
-				local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-				dashboard.section.footer.val = "(loaded " .. stats.count .. " plugins in " .. ms .. "ms)"
-				pcall(vim.cmd.AlphaRedraw)
-			end,
-		})
+		-- vim.api.nvim_create_autocmd("User", {
+		-- 	pattern = "LazyVimStarted",
+		-- 	callback = function()
+		-- 		local stats = require("lazy").stats()
+		-- 		local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+		-- 		dashboard.section.footer.val = "(loaded " .. stats.count .. " plugins in " .. ms .. "ms)"
+		-- 		pcall(vim.cmd.AlphaRedraw)
+		-- 	end,
+		-- })
 	end,
 }
