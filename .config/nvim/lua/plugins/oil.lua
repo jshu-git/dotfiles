@@ -20,7 +20,7 @@ return {
 					["?"] = "actions.show_help",
 					["<leader>e"] = "actions.close",
 					["<esc>"] = "actions.close",
-					["q"] = "actions.close",
+					-- ["q"] = "actions.close",
 
 					-- navigation
 					["<CR>"] = "actions.select",
@@ -39,7 +39,6 @@ return {
 
 					-- g actions
 					["gr"] = "actions.refresh",
-					["gx"] = "actions.open_external",
 					["gy"] = "actions.copy_entry_path",
 				},
 				use_default_keymaps = false,
@@ -52,9 +51,9 @@ return {
 				},
 			})
 
-			-- vim.keymap.set("n", "<leader>e", function()
-			-- 	oil.toggle_float()
-			-- end, { desc = "Oil (Float)" })
+			vim.keymap.set("n", "<leader>E", function()
+				oil.toggle_float()
+			end, { desc = "Oil (Float)" })
 			vim.keymap.set("n", "<leader>e", function()
 				oil.open()
 			end, { desc = "Oil" })

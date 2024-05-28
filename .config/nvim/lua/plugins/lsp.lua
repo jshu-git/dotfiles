@@ -127,7 +127,7 @@ return {
 				float = { border = "single" },
 				virtual_text = false,
 			})
-			local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+			local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 			for type, icon in pairs(signs) do
 				local hl = "DiagnosticSign" .. type
 				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -139,7 +139,7 @@ return {
 		"RaafatTurki/corn.nvim",
 		config = function()
 			require("corn").setup({
-				icons = { error = "", warn = "", hint = "", info = "" },
+				icons = { error = "", warn = "", hint = "", info = "" },
 			})
 		end,
 	},
