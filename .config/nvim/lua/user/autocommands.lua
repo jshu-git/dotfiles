@@ -9,14 +9,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
 
 -- open help window in a vertical split to the right
-vim.api.nvim_create_autocmd("BufWinEnter", {
-	pattern = { "*.txt" },
-	callback = function()
-		if vim.o.filetype == "help" then
-			vim.cmd.wincmd("L")
-		end
-	end,
-})
+-- vim.api.nvim_create_autocmd("BufWinEnter", {
+-- 	pattern = { "*.txt" },
+-- 	callback = function()
+-- 		if vim.o.filetype == "help" then
+-- 			vim.cmd.wincmd("L")
+-- 		end
+-- 	end,
+-- })
 
 -- enable spell checking for certain filetypes
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {

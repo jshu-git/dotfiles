@@ -13,6 +13,7 @@ return {
 		end,
 		name = "rose-pine",
 	},
+
 	{
 		"aktersnurra/no-clown-fiesta.nvim",
 		priority = 1000,
@@ -22,6 +23,7 @@ return {
 			})
 		end,
 	},
+
 	{
 		"kdheepak/monochrome.nvim",
 		priority = 1000,

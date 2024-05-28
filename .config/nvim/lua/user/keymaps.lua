@@ -21,8 +21,9 @@ keymap.set({ "n", "x" }, "H", "^")
 keymap.set({ "n", "x" }, "L", "g_")
 keymap.set({ "n", "x" }, "J", "6gjzz")
 keymap.set({ "n", "x" }, "K", "6gkzz")
-keymap.set({ "n", "x" }, "{", "{zz")
-keymap.set({ "n", "x" }, "}", "}zz")
+keymap.set({ "n", "x" }, "[[", "{zz")
+keymap.set({ "n", "x" }, "]]", "}zz")
+keymap.set("n", "`", "<C-^>")
 
 -- editing
 keymap.set("n", "U", "<C-r>")

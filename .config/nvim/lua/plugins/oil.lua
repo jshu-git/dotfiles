@@ -54,9 +54,9 @@ return {
 			vim.keymap.set("n", "<leader>e", function()
 				oil.toggle_float()
 			end, { desc = "Oil (Float)" })
-			vim.keymap.set("n", "<leader>E", function()
-				oil.open()
-			end, { desc = "Oil" })
+			-- vim.keymap.set("n", "<leader>E", function()
+			-- 	oil.open()
+			-- end, { desc = "Oil" })
 		end,
 	},
 }
