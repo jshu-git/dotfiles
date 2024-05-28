@@ -109,7 +109,7 @@ plugins {
 //    - true
 //    - false (Default)
 //
-simplified_ui true
+// simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -172,6 +172,20 @@ themes {
         black "#191724"
         white "#e0def4"
     }
+
+    custom {
+        bg "#0A0A0A"
+        fg "#4d4d4d" // inactive tab color
+        red "#FF0000"
+        green "#00FF00"
+        blue "#0000FF"
+        yellow "#FFFF00"
+        magenta "#FF00FF"
+        orange "#FFA500"
+        cyan "#00FFFF"
+        black "#0A0A0A" // status bar background
+        white "#FFFFFF" // 'Zellij' text color (alternating tab color in simplified_ui)
+    }
 }
 
 // Choose the theme that is specified in the themes section.
@@ -179,7 +193,7 @@ themes {
 //
 // https://github.com/zellij-org/zellij/tree/main/zellij-utils/assets/themes
 // theme "gruvbox-dark"
-theme "rose-pine"
+theme "custom"
 
 // The name of the default layout to load on startup
 // Default: "default"
