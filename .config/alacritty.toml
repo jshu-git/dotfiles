@@ -10,8 +10,8 @@ padding = { x = 0, y = 0 }
 decorations = "full"
 startup_mode = "Maximized"
 option_as_alt = "Both"
-# opacity = 0.80
-# blur = true
+opacity = 0.90
+blur = true
 
 [scrolling]
 
