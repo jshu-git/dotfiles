@@ -188,8 +188,8 @@ themes {
 //    }
 
     custom {
-        bg "#0A0A0A"
-        fg "#4d4d4d" // inactive tab color
+        bg "#101010"
+        fg "#4D4D4D" // inactive tab color
         red "#D70000"
         green "#789978"
         blue "#7788AA"
@@ -197,8 +197,8 @@ themes {
         magenta "#D7007D"
         orange "#FFAA88"
         cyan "#5D6D6D"
-        black "#0A0A0A" // status bar background
-        white "#4d4d4d" // 'Zellij' text color (alternating tab color in simplified_ui)
+        black "#101010" // status bar background
+        white "#4D4D4D" // 'Zellij' text color (and alternating tab color in simplified_ui)
     }
 }
 

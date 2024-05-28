@@ -48,6 +48,3 @@ vim.api.nvim_create_autocmd("FileType", {
 -- vim.cmd("colorscheme no-clown-fiesta")
 -- vim.cmd("colorscheme monochrome")
 vim.cmd.colorscheme("lackluster")
--- vim.cmd.colorscheme("lackluster-night")
--- vim.cmd.colorscheme("lackluster-mint")
--- vim.cmd.colorscheme("lackluster-dark")

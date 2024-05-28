@@ -30,7 +30,7 @@ bindings = [
 
 # https://github.com/slugbyte/lackluster.nvim/blob/main/extra/alacritty/alacritty.toml[colors.primary]
 [colors.primary]
-background = '#0A0A0A'
+background = '#101010'
 
 [colors.normal]
 black = '#080808'
