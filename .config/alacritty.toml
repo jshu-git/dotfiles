@@ -5,7 +5,7 @@ TERM = "xterm-256color"
 
 [window]
 padding = { x = 0, y = 0 }
-# dynamic_padding = true
+dynamic_padding = true
 decorations = "full"
 # opacity = 0.90
 # blur = true
@@ -26,6 +26,10 @@ save_to_clipboard = true
 bindings = [
     { key = "Enter", mods = "Shift", chars = "ci\"" },
     { key = "Enter", mods = "Control", chars = "ci'" },
+    { key = "Tab", mods = "Control", action = "SelectNextTab" },
+    { key = "Tab", mods = "Control|Shift", action = "SelectPreviousTab" },
+    # vi mode
+    { key = "v", mods = "Alt", action = "ToggleViMode" },
 ]
 
 # https://github.com/slugbyte/lackluster.nvim/blob/main/extra/alacritty/alacritty.toml[colors.primary]

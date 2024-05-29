@@ -17,8 +17,6 @@ alias path='echo -e ${PATH//:/\\n}'
 alias env="env | sort | awk -F= '{printf \"%-30s %s\n\", \$1, \$2}'"
 alias clear='printf "\033c"'
 
-# alias ll='ls -lAot'
-
 # cd
 function d() {
 	if [ -z "$1" ]; then

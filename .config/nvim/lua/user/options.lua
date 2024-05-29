@@ -23,7 +23,7 @@ vim.opt.pumheight = 5
 vim.opt.wrap = false
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 
 -- windows
 vim.opt.splitright = true

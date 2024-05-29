@@ -67,3 +67,5 @@ keymap.set("x", "<C-v>", "j")
 keymap.set("x", "<C-q>", "j")
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
+
+keymap.set("n", "<C-f>", "<nop>")

@@ -2,7 +2,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			{ "williamboman/mason.nvim", config = true },
+			-- { "williamboman/mason.nvim", config = true },
 			-- ui
 			{
 				"j-hui/fidget.nvim",
@@ -72,6 +72,7 @@ return {
 
 			-- servers https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
 			local servers = {
+				taplo = {},
 				lua_ls = {
 					settings = {
 						Lua = {
@@ -85,6 +86,7 @@ return {
 						},
 					},
 				},
+
 				rust_analyzer = {
 					settings = {
 						["rust-analyzer"] = {
@@ -94,7 +96,9 @@ return {
 						},
 					},
 				},
-				taplo = {},
+				ruff = {
+					settings = {},
+				},
 			}
 
 			-- lspconfig
@@ -108,13 +112,13 @@ return {
 				lspconfig[server].setup(config)
 			end
 
-			require("mason").setup({
-				ui = {
-					border = "single",
-					height = 0.8,
-				},
-			})
-			vim.keymap.set("n", "<leader>m", "<cmd>Mason<CR>", { desc = "Mason" })
+			-- require("mason").setup({
+			-- 	ui = {
+			-- 		border = "single",
+			-- 		height = 0.8,
+			-- 	},
+			-- })
+			-- vim.keymap.set("n", "<leader>m", "<cmd>Mason<CR>", { desc = "Mason" })
 
 			-- ui
 			require("lspconfig.ui.windows").default_options.border = "single"
@@ -145,36 +149,12 @@ return {
 		end,
 	},
 
-	-- {
-	-- 	"mfussenegger/nvim-lint",
-	-- 	event = { "BufReadPre", "BufNewFile" },
-	-- 	config = function()
-	-- 		local lint = require("lint")
-
-	-- 		lint.linters_by_ft = {
-	-- 			zsh = { "zsh" },
-	-- 		}
-
-	-- 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-	-- 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-	-- 			group = lint_augroup,
-	-- 			callback = function()
-	-- 				lint.try_lint()
-	-- 			end,
-	-- 		})
-	-- 		vim.keymap.set("n", "<leader>L", function()
-	-- 			lint.try_lint()
-	-- 		end, { desc = "Lint File" })
-	-- 	end,
-	-- },
-
 	{
 		"stevearc/conform.nvim",
 		config = function()
 			require("conform").setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
-					python = { "black" },
 
 					json = { "prettier" },
 					markdown = { "prettier" },
@@ -184,16 +164,12 @@ return {
 					["*"] = { "codespell", "trim_whitespace" },
 					-- ["_"] = { "trim_whitespace" },
 				},
+				-- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
 				format_on_save = function(bufnr)
-					if vim.g.disable_autoformat then
+					if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
 						return
 					end
-					return {
-						lsp_fallback = true,
-						async = false,
-						quiet = false,
-						timeout_ms = 500,
-					}
+					return { timeout_ms = 500, lsp_fallback = true }
 				end,
 			})
 
@@ -205,6 +181,13 @@ return {
 				desc = "Toggle Autoformatting",
 			})
 			vim.keymap.set("n", "<leader>tf", "<cmd>ToggleAutoformatting<CR>", { desc = "Toggle Autoformatting" })
+
+			-- save without formatting
+			vim.keymap.set("n", "<leader>W", function()
+				vim.g.disable_autoformat = true
+				vim.cmd("w")
+				vim.g.disable_autoformat = false
+			end, { desc = "Save Without Formatting" })
 		end,
 	},
 }

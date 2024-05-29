@@ -4,13 +4,13 @@
 keybinds clear-defaults=true {
     locked {
         bind "Ctrl a" { SwitchToMode "Normal"; }
-        bind "Ctrl f" { ToggleFloatingPanes;   }
-        bind "Alt  f" { ToggleFocusFullscreen; }
-        // bind "Ctrl Space" { GoToNextTab; }
+        bind "Alt f" { ToggleFloatingPanes; }
+        // bind "Ctrl f" { ToggleFloatingPanes;   }
+        // bind "Alt f" { ToggleFocusFullscreen; }
     }
     normal {
         // lock
-        bind "Esc" "Enter" { SwitchToMode "locked"; }
+        bind "Esc" "Enter" { SwitchToMode "Locked"; }
 
         // add floating pane
         // https://github.com/zellij-org/zellij/discussions/2518
@@ -22,6 +22,7 @@ keybinds clear-defaults=true {
         // }
 
         // pane
+        // bind "a" { ToggleFloatingPanes; SwitchToMode "Locked"; }
         bind "h" { MoveFocus "Left";  SwitchToMode "Locked"; }
         bind "l" { MoveFocus "Right"; SwitchToMode "Locked"; }
         bind "j" { MoveFocus "Down";  SwitchToMode "Locked"; }
@@ -29,7 +30,6 @@ keybinds clear-defaults=true {
         bind "s" { NewPane   "Down";  SwitchToMode "Locked"; }
         bind "v" { NewPane   "Right"; SwitchToMode "Locked"; }
         bind "X" { CloseFocus;        SwitchToMode "Locked"; }
-        // bind "R" { SwitchToMode "RenamePane"; PaneNameInput 0; }
         // move
         bind "Left"  { MovePane "Left";  }
         bind "Down"  { MovePane "Down";  }
