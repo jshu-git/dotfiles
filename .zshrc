@@ -21,6 +21,8 @@ bindkey "^[[1;3C" forward-word      # alt-right
 bindkey "^[[1;3D" backward-word     # alt-left
 bindkey "^[[1;9D" beginning-of-line # cmd-left
 bindkey "^[[1;9C" end-of-line       # cmd-right
+# shift delete
+bindkey '^[[3~' delete-char
 
 # edit command line
 autoload -z edit-command-line
@@ -32,11 +34,12 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# plugin manager: antidote (https://getantidote.github.io)
 CONFIG="$HOME/.config"
+
+# zsh plugins
 ZSH="$CONFIG/zsh"
-source $ZSH/antidote/antidote.zsh
-antidote load $ZSH/plugins.txt
+source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # completions
 autoload -Uz compinit && compinit
