@@ -4,8 +4,8 @@
 keybinds clear-defaults=true {
     locked {
         bind "Ctrl a" { SwitchToMode "Normal"; }
-        bind "Alt f" { ToggleFloatingPanes; }
-        // bind "Ctrl f" { ToggleFloatingPanes;   }
+        // bind "Alt f" { ToggleFloatingPanes; }
+        bind "Ctrl f" { ToggleFloatingPanes;   }
         // bind "Alt f" { ToggleFocusFullscreen; }
     }
     normal {
