@@ -23,7 +23,8 @@ vim.opt.pumheight = 3
 vim.opt.wrap = false
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
--- vim.opt.colorcolumn = "80"
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
 
 -- windows
 vim.opt.splitright = true

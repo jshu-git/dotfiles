@@ -3,6 +3,13 @@ return {
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			-- { "williamboman/mason.nvim", config = true },
+			{ "folke/neodev.nvim", opts = {} },
+			{
+				"rmagatti/goto-preview",
+				config = function()
+					require("goto-preview").setup()
+				end,
+			},
 			-- ui
 			{
 				"j-hui/fidget.nvim",
@@ -10,7 +17,6 @@ return {
 					notification = { window = { winblend = 0, align = "top" } },
 				},
 			},
-			{ "folke/neodev.nvim", opts = {} },
 			-- cmp
 			"hrsh7th/cmp-nvim-lsp",
 		},
@@ -22,18 +28,26 @@ return {
 						vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
 
-					map("ga", vim.lsp.buf.code_action, "Code Action")
-					map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
+					-- goto preview
+					local goto_preview = require("goto-preview")
+					map("gd", goto_preview.goto_preview_definition, "Goto Definition")
+					map("gr", goto_preview.goto_preview_references, "Goto References")
+					map("gi", goto_preview.goto_preview_implementation, "Goto Implementation")
+					map("gt", goto_preview.goto_preview_type_definition, "Goto Type Definition")
+
+					-- native/telescope lsp
+					-- map("gd", vim.lsp.buf.definition, "Goto Definition")
+					-- map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
+					-- map("gr", require("telescope.builtin").lsp_references, "Goto References")
 					-- map("gi", require("telescope.builtin").lsp_implementations, "Goto Implementation")
 					-- map("gt", require("telescope.builtin").lsp_type_definitions, "Goto Type Definition")
 
-					map("gd", vim.lsp.buf.definition, "Goto Definition")
-					-- map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
+					-- lsp
 					map("gs", vim.lsp.buf.hover, "Hover Documentation")
 					map("gS", vim.lsp.buf.signature_help, "Hover Signature")
-					map("gr", require("telescope.builtin").lsp_references, "Goto References")
+					map("ga", vim.lsp.buf.code_action, "Code Action")
+					map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
 					map("gR", vim.lsp.buf.rename, "Rename Variable")
-
 					map("]d", vim.diagnostic.goto_prev, "Next Diagnostic")
 					map("[d", vim.diagnostic.goto_next, "Previous Diagnostic")
 
@@ -63,6 +77,7 @@ return {
 						-- toggle inlay hints
 						if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
 							map("<leader>th", function()
+								---@diagnostic disable-next-line: missing-parameter
 								vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 							end, "Toggle Inlay Hints")
 						end

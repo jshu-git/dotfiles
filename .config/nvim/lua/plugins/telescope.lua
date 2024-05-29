@@ -4,9 +4,10 @@ return {
 	branch = "0.1.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"nvim-tree/nvim-web-devicons",
+		-- extensions
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-telescope/telescope-ui-select.nvim",
-		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -39,7 +40,6 @@ return {
 						["<C-p>"] = layout.toggle_preview,
 					},
 				},
-				file_ignore_patterns = { "lazy%-lock.json" },
 			},
 			extensions = {
 				["ui-select"] = {
@@ -50,47 +50,36 @@ return {
 		telescope.load_extension("fzf")
 		telescope.load_extension("ui-select")
 
-		-- most used
+		-- files
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Files" })
 		vim.keymap.set("n", "<leader>fF", function()
-			builtin.find_files({
-				hidden = true,
-				prompt_title = "Find Files (Hidden)",
-			})
+			builtin.find_files({ hidden = true })
 		end, { desc = "Files (Hidden)" })
-
 		vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Grep" })
 		vim.keymap.set("n", "<leader>fW", function()
-			builtin.live_grep({
-				grep_open_files = true,
-				prompt_title = "Live Grep (Open Files)",
-			})
+			builtin.live_grep({ grep_open_files = true })
 		end, { desc = "Grep (Open Files)" })
-
 		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent Files" })
-		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
 
-		vim.keymap.set("n", "<leader>ft", function()
-			builtin.colorscheme({ enable_preview = true })
-		end, { desc = "Themes" })
-
+		-- buffer
 		vim.keymap.set("n", "<leader>/", function()
-			builtin.current_buffer_fuzzy_find(themes.get_dropdown({
-				previewer = false,
-				prompt_title = "Grep (Current Buffer)",
-				skip_empty_lines = true,
-			}))
+			builtin.current_buffer_fuzzy_find(themes.get_dropdown({ previewer = false, skip_empty_lines = true }))
 		end, { desc = "Grep (Current Buffer)" })
 
-		-- less used
-		-- vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Quickfix" })
-		-- vim.keymap.set("n", "<leader>fQ", builtin.quickfixhistory, { desc = "Quickfix History" })
-		vim.keymap.set("n", "<leader>'", builtin.resume, { desc = "Last Picker" })
-		-- vim.keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Grep Current Buffer" })
+		-- lsp
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
+
+		-- vim specific
+		vim.keymap.set("n", "<leader>ft", function()
+			builtin.colorscheme({ enable_preview = true, previewer = false })
+		end, { desc = "Themes" })
+		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
 		vim.keymap.set("n", "<leader>fo", builtin.vim_options, { desc = "Vim Options" })
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
 		vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "Commands" })
 		vim.keymap.set("n", "<leader>fC", builtin.builtin, { desc = "Telescope Commands" })
+
+		-- misc
+		vim.keymap.set("n", "<leader>'", builtin.resume, { desc = "Last Picker" })
 	end,
 }

@@ -30,7 +30,7 @@ return {
 					},
 					documentation = {
 						border = "single",
-						max_width = 25,
+						max_width = 50,
 					},
 				},
 				-- https://github.com/hrsh7th/nvim-cmp/discussions/609#discussioncomment-5727678
@@ -63,15 +63,16 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = false }),
 					["<C-x>"] = cmp.mapping.complete(),
 					["<C-c>"] = cmp.mapping.abort(),
-					["/"] = cmp.mapping.abort(),
+					["<C-d>"] = cmp.mapping.scroll_docs(4),
+					["<C-u>"] = cmp.mapping.scroll_docs(-4),
 					-- https://github.com/hrsh7th/nvim-cmp/discussions/924
-					["<esc>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.abort()
-						else
-							fallback()
-						end
-					end, { "i", "c" }),
+					-- ["<esc>"] = cmp.mapping(function(fallback)
+					-- 	if cmp.visible() then
+					-- 		cmp.abort()
+					-- 	else
+					-- 		fallback()
+					-- 	end
+					-- end, { "i", "c" }),
 				}),
 			})
 
