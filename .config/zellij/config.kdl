@@ -161,7 +161,7 @@ themes {
     // https://github.com/rose-pine/zellij
     rose-pine {
         bg "#403d52"
-        fg "#e0def4"
+        fg "#e0def4" // inactive tab color
         red "#eb6f92"
         green "#31748f"
         blue "#9ccfd8"
@@ -169,12 +169,12 @@ themes {
         magenta "#c4a7e7"
         orange "#fe640b"
         cyan "#ebbcba"
-        black "#191724"
-        white "#e0def4"
+        black "#191724" // status bar background
+        white "#e0def4" // 'Zellij' text color (alternating tab color in simplified_ui)
     }
 
-//    custom {
-//        bg "#0A0A0A"
+//    default {
+//        bg "#000000"
 //        fg "#4d4d4d" // inactive tab color
 //        red "#FF0000"
 //        green "#00FF00"
@@ -183,11 +183,11 @@ themes {
 //        magenta "#FF00FF"
 //        orange "#FFA500"
 //        cyan "#00FFFF"
-//        black "#0A0A0A" // status bar background
+//        black "#000000" // status bar background
 //        white "#FFFFFF" // 'Zellij' text color (alternating tab color in simplified_ui)
 //    }
 
-    custom {
+    lackluster {
         bg "#101010"
         fg "#4D4D4D" // inactive tab color
         red "#D70000"
@@ -207,7 +207,7 @@ themes {
 //
 // https://github.com/zellij-org/zellij/tree/main/zellij-utils/assets/themes
 // theme "gruvbox-dark"
-theme "custom"
+theme "rose-pine"
 
 // The name of the default layout to load on startup
 // Default: "default"

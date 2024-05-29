@@ -26,6 +26,7 @@ return {
 					completion = {
 						border = "single",
 						side_padding = 0,
+						scrollbar = false,
 					},
 					documentation = {
 						border = "single",

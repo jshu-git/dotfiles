@@ -44,7 +44,5 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = user_grp,
 })
 
--- vim.cmd("colorscheme rose-pine")
--- vim.cmd("colorscheme no-clown-fiesta")
--- vim.cmd("colorscheme monochrome")
-vim.cmd.colorscheme("lackluster")
+vim.cmd("colorscheme rose-pine")
+-- vim.cmd.colorscheme("lackluster")
