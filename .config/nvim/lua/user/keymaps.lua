@@ -13,6 +13,7 @@ keymap.set("n", "<leader>n", "<cmd>new<CR>", { desc = "New Scratch Buffer" })
 keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 -- toggles
 keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle Word Wrap" })
+keymap.set("n", "<leader>tn", "<cmd>set number!<CR>", { desc = "Toggle Line Numbers" })
 
 -- movement
 keymap.set({ "n", "x" }, "j", "gj")

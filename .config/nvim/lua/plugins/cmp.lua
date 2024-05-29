@@ -54,24 +54,24 @@ return {
 					end,
 				},
 				completion = {
-					-- keyword_length = 2,
+					keyword_length = 2,
 					completeopt = "menu,menuone,preview,noinsert",
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-n>"] = cmp.mapping.select_next_item(),
 					["<C-p>"] = cmp.mapping.select_prev_item(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					["<CR>"] = cmp.mapping.confirm({ select = false }),
 					["<C-x>"] = cmp.mapping.complete(),
 					["<C-c>"] = cmp.mapping.abort(),
 					["/"] = cmp.mapping.abort(),
 					-- https://github.com/hrsh7th/nvim-cmp/discussions/924
-					-- ["<esc>"] = cmp.mapping(function(fallback)
-					-- 	if cmp.visible() then
-					-- 		cmp.abort()
-					-- 	else
-					-- 		fallback()
-					-- 	end
-					-- end, { "i", "c" }),
+					["<esc>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.abort()
+						else
+							fallback()
+						end
+					end, { "i", "c" }),
 				}),
 			})
 
