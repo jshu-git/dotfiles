@@ -19,7 +19,7 @@ vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"
 vim.opt.fillchars = { eob = " " }
 vim.opt.ruler = false
-vim.opt.pumheight = 5
+vim.opt.pumheight = 3
 vim.opt.wrap = false
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
