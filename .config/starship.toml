@@ -1,12 +1,12 @@
 # https://starship.rs/config/#prompt
 "$schema" = 'https://starship.rs/config-schema.json'
 
-add_newline = true
-palette = "rose_pine"
+# add_newline = false
 format = """
 $directory\
 $git_branch\
-$git_status\
+$rust\
+$python\
 $character\
 """
 right_format = """
@@ -15,47 +15,35 @@ $cmd_duration\
 
 [directory]
 disabled = false
-truncation_length = 4
+truncation_length = 8
 truncation_symbol = "…/"
 truncate_to_repo = false
-style = "fg:iris bg:overlay"
-format = "[ $path ]($style)"
+format = "[$path ](white)"
 
 [git_branch]
 disabled = false
 symbol = ""
 always_show_remote = true
-format = '[[ $symbol $branch ](fg:rose bg:hl_low)]($style)'
-[git_status]
+format = '[$symbol $branch ](green)'
+
+[rust]
 disabled = false
-format = '[[($all_status$ahead_behind )](fg:rose bg:hl_low)]($style)'
+symbol = ""
+format = '[$symbol ($version )](yellow)'
+
+[python]
+disabled = false
+symbol = ""
+format = '[$symbol ($version )(\($virtualenv\) )](yellow)'
 
 [character]
 disabled = false
-success_symbol = '[❯](bold foam)'
-error_symbol = "[✗](bold love)"
-format = ' $symbol '
+success_symbol = '[❯](green)'
+error_symbol = "[✗](red)"
+format = '$symbol '
 
 [cmd_duration]
 disabled = false
 min_time = 2_000
 show_milliseconds = true
-format = '[[$duration](fg:subtle)]($style)'
-
-# https://rosepinetheme.com/palette/ingredients/#rose-pine
-[palettes.rose_pine]
-base = "#191724"
-surface = "#1f1d2e"
-overlay = "#26233a"
-muted = "#6e6a86"
-subtle = "#908caa"
-text = "#e0def4"
-love = "#eb6f92"
-gold = "#f6c177"
-rose = "#ebbcba"
-pine = "#31748f"
-foam = "#9ccfd8"
-iris = "#c4a7e7"
-hl_low = "#21202e"
-hl_mid = "#403d52"
-hl_high = "#524f67"
+format = '[$duration](yellow)'
