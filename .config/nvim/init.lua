@@ -33,7 +33,7 @@ require("lazy").setup({
 		notify = false,
 	},
 })
-vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Lazy" })
+vim.keymap.set("n", "<leader>ll", "<cmd>Lazy<CR>", { desc = "Lazy" })
 
 -- close lazy with q/esc https://github.com/folke/lazy.nvim/discussions/1196
 local user_grp = vim.api.nvim_create_augroup("LazyUserGroup", { clear = true })
@@ -48,5 +48,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = user_grp,
 })
 
-vim.cmd("colorscheme rose-pine")
+vim.cmd.colorscheme("rose-pine")
 -- vim.cmd.colorscheme("lackluster")
+-- vim.cmd.colorscheme("oldworld")

@@ -33,11 +33,13 @@ keymap.set("n", "+", "<C-a>")
 keymap.set("n", "_", "<C-x>")
 keymap.set("n", "<A-S-j>", "yyp")
 keymap.set("n", "<A-S-k>", "yyP")
+
 -- preserve clipboard
 keymap.set({ "n", "x" }, "x", '"_x')
 keymap.set({ "n", "x" }, "c", '"_c')
 keymap.set({ "n", "x" }, "X", '"_X')
 keymap.set({ "n", "x" }, "C", '"_C')
+
 -- yanking/pasting
 keymap.set("n", "p", "p==")
 keymap.set("x", "p", '"_dP==')

@@ -78,6 +78,11 @@ return {
 					map("]d", vim.diagnostic.goto_prev, "Next Diagnostic")
 					map("[d", vim.diagnostic.goto_next, "Previous Diagnostic")
 
+					-- lsp info
+					map("<leader>li", "<cmd>LspInfo<CR>", "Info")
+					-- map("<leader>ll", "<cmd>LspLog<CR>", "LSP Log")
+					map("<leader>lr", "<cmd>LspRestart<CR>", "Restart")
+
 					-- clear highlights when moving cursor
 					-- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L510
 					local client = vim.lsp.get_client_by_id(event.data.client_id)

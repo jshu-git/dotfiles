@@ -28,6 +28,7 @@ return {
 		})
 		wk.register({
 			["<leader>f"] = { name = "Find…" },
+			["<leader>l"] = { name = "LSP…" },
 			["<leader>s"] = { name = "Session…" },
 			["<leader>t"] = { name = "Toggle…" },
 		})

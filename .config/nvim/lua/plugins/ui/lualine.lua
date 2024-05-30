@@ -2,7 +2,6 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
 		{ "AndreM222/copilot-lualine" },
-		{ "dokwork/lualine-ex" },
 	},
 	config = function()
 		local function total_lines()
@@ -49,17 +48,10 @@ return {
 				},
 				lualine_y = {
 					{
-						"ex.lsp.single",
-						icons = {
-							lsp_is_off = "󰚦 nolsp",
-						},
+						"filetype",
+						icon = { "" },
 						padding = { left = 0, right = 1 },
 					},
-					-- {
-					-- 	"filetype",
-					-- 	icon = { "" },
-					-- 	padding = { left = 0, right = 1 },
-					-- },
 				},
 				lualine_z = {
 					{ total_lines, padding = { left = 0, right = 1 } },
@@ -69,7 +61,7 @@ return {
 				lualine_a = {},
 				lualine_b = {},
 				lualine_c = {
-					{ "filename", path = 3 },
+					{ "filename", path = 0 },
 				},
 				lualine_x = {},
 				lualine_y = {},
