@@ -51,7 +51,7 @@ return {
 					{
 						"ex.lsp.single",
 						icons = {
-							lsp_is_off = "nolsp",
+							lsp_is_off = "󰚦 nolsp",
 						},
 						padding = { left = 0, right = 1 },
 					},
