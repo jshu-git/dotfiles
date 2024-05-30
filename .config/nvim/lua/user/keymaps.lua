@@ -23,6 +23,8 @@ keymap.set({ "n", "x" }, "]]", "}zz")
 keymap.set("n", "`", "<C-^>")
 
 -- editing
+keymap.set("n", "<C-c>", "gcc", { remap = true })
+keymap.set("x", "<C-c>", "gc", { remap = true })
 keymap.set("n", "U", "<C-r>")
 keymap.set("n", "<CR>", '"_ciw')
 -- keymap.set("n", "<S-CR>", 'ci"')

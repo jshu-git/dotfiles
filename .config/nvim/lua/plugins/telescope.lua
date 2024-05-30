@@ -40,6 +40,7 @@ return {
 						["<C-p>"] = layout.toggle_preview,
 					},
 				},
+				file_ignore_patterns = { "lazy%-lock.json" },
 			},
 			extensions = {
 				["ui-select"] = {

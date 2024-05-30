@@ -4,21 +4,28 @@ return {
 		dependencies = {
 			-- { "williamboman/mason.nvim", config = true },
 			{ "folke/neodev.nvim", opts = {} },
-			{
-				"rmagatti/goto-preview",
-				config = function()
-					require("goto-preview").setup()
-				end,
-			},
 			-- ui
 			{
 				"j-hui/fidget.nvim",
 				opts = {
-					notification = { window = { winblend = 0, align = "top" } },
+					notification = {
+						window = {
+							winblend = 0,
+							align = "top",
+						},
+					},
+				},
+			},
+			{
+				"Fildo7525/pretty_hover",
+				opts = {
+					border = "single",
+					max_width = 100,
+					max_height = 15,
 				},
 			},
 			-- cmp
-			"hrsh7th/cmp-nvim-lsp",
+			{ "hrsh7th/cmp-nvim-lsp" },
 		},
 		config = function()
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -28,26 +35,46 @@ return {
 						vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
 
-					-- goto preview
-					local goto_preview = require("goto-preview")
-					map("gd", goto_preview.goto_preview_definition, "Goto Definition")
-					map("gr", goto_preview.goto_preview_references, "Goto References")
-					map("gi", goto_preview.goto_preview_implementation, "Goto Implementation")
-					map("gt", goto_preview.goto_preview_type_definition, "Goto Type Definition")
+					-- https://old.reddit.com/r/neovim/comments/140b1p9/does_anyone_have_a_tip_or_keybind_to_open_and/
+					local function open_definition_in_vertical_split()
+						vim.lsp.buf.definition({
+							on_list = function(options)
+								-- if there are multiple items, warn
+								if #options.items > 1 then
+									vim.notify("Multiple definitions found, opening first one", vim.log.levels.WARN)
+								end
+								-- open the first item in a vertical split
+								local item = options.items[1]
+								local cmd = "vsplit +"
+									.. item.lnum
+									.. " "
+									.. item.filename
+									.. "|"
+									.. "normal "
+									.. item.col
+									.. "|"
+								vim.cmd(cmd)
+							end,
+						})
+					end
 
-					-- native/telescope lsp
+					-- map("gd", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", "Goto Definition")
+					map("gd", open_definition_in_vertical_split, "Goto Definition")
+					-- map("gD", require("telescope.builtin").lsp_definitions, "Goto Definition")
+					map("gD", vim.lsp.buf.declaration, "Goto Declaration")
 					-- map("gd", vim.lsp.buf.definition, "Goto Definition")
-					-- map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
-					-- map("gr", require("telescope.builtin").lsp_references, "Goto References")
-					-- map("gi", require("telescope.builtin").lsp_implementations, "Goto Implementation")
-					-- map("gt", require("telescope.builtin").lsp_type_definitions, "Goto Type Definition")
 
 					-- lsp
-					map("gs", vim.lsp.buf.hover, "Hover Documentation")
+					map("gs", require("pretty_hover").hover, "Hover Documentation")
+					-- map("gs", vim.lsp.buf.hover, "Hover Documentation")
 					map("gS", vim.lsp.buf.signature_help, "Hover Signature")
+					map("gr", require("telescope.builtin").lsp_references, "Goto References")
+					map("gi", require("telescope.builtin").lsp_implementations, "Goto Implementation")
+					map("gt", require("telescope.builtin").lsp_type_definitions, "Goto Type Definition")
 					map("ga", vim.lsp.buf.code_action, "Code Action")
 					map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
 					map("gR", vim.lsp.buf.rename, "Rename Variable")
+
 					map("]d", vim.diagnostic.goto_prev, "Next Diagnostic")
 					map("[d", vim.diagnostic.goto_next, "Previous Diagnostic")
 
@@ -147,7 +174,7 @@ return {
 				float = { border = "single" },
 				virtual_text = false,
 			})
-			local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+			local signs = { Error = "󰅚", Warn = "󰀪", Hint = "󰌶", Info = "󰋽" }
 			for type, icon in pairs(signs) do
 				local hl = "DiagnosticSign" .. type
 				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -159,7 +186,7 @@ return {
 		"RaafatTurki/corn.nvim",
 		config = function()
 			require("corn").setup({
-				icons = { error = "", warn = "", hint = "", info = "" },
+				icons = { error = "󰅚", warn = "󰀪", hint = "󰌶", info = "󰋽" },
 			})
 		end,
 	},
@@ -177,7 +204,6 @@ return {
 					zsh = { "shfmt" },
 
 					["*"] = { "codespell", "trim_whitespace" },
-					-- ["_"] = { "trim_whitespace" },
 				},
 				-- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
 				format_on_save = function(bufnr)

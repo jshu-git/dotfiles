@@ -25,6 +25,7 @@ vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
+vim.opt.showmode = false
 
 -- windows
 vim.opt.splitright = true

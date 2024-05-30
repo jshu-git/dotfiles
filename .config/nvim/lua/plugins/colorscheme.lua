@@ -1,6 +1,7 @@
 return {
 	{
 		"rose-pine/neovim",
+		lazy = false,
 		priority = 1000,
 		config = function()
 			require("rose-pine").setup({
@@ -29,8 +30,8 @@ return {
 	-- 	priority = 1000,
 	-- },
 
-	{
-		"slugbyte/lackluster.nvim",
-		priority = 1000,
-	},
+	-- {
+	-- 	"slugbyte/lackluster.nvim",
+	-- 	priority = 1000,
+	-- },
 }
