@@ -73,6 +73,3 @@ keymap.set("v", ">", ">gv")
 
 -- zellij
 keymap.set("n", "<C-f>", "<nop>")
-keymap.set("n", "<leader>gg", function()
-	vim.cmd("silent ! zellij run --floating --close-on-exit -- lazygit")
-end, { desc = "LazyGit" })
