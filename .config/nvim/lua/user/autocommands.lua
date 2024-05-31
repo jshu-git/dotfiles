@@ -11,12 +11,16 @@ vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] }
 -- toggle relative/absolute line numbers in normal/insert mode
 vim.api.nvim_create_autocmd("InsertEnter", {
 	callback = function()
-		vim.opt.relativenumber = false
+		if vim.o.buftype ~= "alpha" then
+			vim.opt.relativenumber = false
+		end
 	end,
 })
 vim.api.nvim_create_autocmd("InsertLeave", {
 	callback = function()
-		vim.opt.relativenumber = true
+		if vim.o.buftype ~= "alpha" then
+			vim.opt.relativenumber = true
+		end
 	end,
 })
 
