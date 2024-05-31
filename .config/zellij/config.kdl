@@ -173,20 +173,6 @@ themes {
         white "#e0def4" // 'Zellij' text color (alternating tab color in simplified_ui)
     }
 
-//    default {
-//        bg "#000000"
-//        fg "#4d4d4d" // inactive tab color
-//        red "#FF0000"
-//        green "#00FF00"
-//        blue "#0000FF"
-//        yellow "#FFFF00"
-//        magenta "#FF00FF"
-//        orange "#FFA500"
-//        cyan "#00FFFF"
-//        black "#000000" // status bar background
-//        white "#FFFFFF" // 'Zellij' text color (alternating tab color in simplified_ui)
-//    }
-
     lackluster {
         bg "#101010"
         fg "#4D4D4D" // inactive tab color
@@ -194,7 +180,8 @@ themes {
         green "#789978"
         blue "#7788AA"
         yellow "#FFAA88"
-        magenta "#D7007D"
+        // magenta "#D7007D"
+        magenta "#789978"
         orange "#FFAA88"
         cyan "#5D6D6D"
         black "#101010" // status bar background
@@ -207,7 +194,7 @@ themes {
 //
 // https://github.com/zellij-org/zellij/tree/main/zellij-utils/assets/themes
 // theme "gruvbox-dark"
-theme "rose-pine"
+theme "lackluster"
 
 // The name of the default layout to load on startup
 // Default: "default"

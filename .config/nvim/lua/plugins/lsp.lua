@@ -193,9 +193,9 @@ return {
 			require("corn").setup({
 				icons = { error = "󰅚", warn = "󰀪", hint = "󰌶", info = "󰋽" },
 				-- disable truncation
-				item_preprocess_func = function(item)
-					return item
-				end,
+				-- item_preprocess_func = function(item)
+				-- 	return item
+				-- end,
 			})
 		end,
 	},

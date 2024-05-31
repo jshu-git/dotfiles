@@ -1,7 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
-		{ "AndreM222/copilot-lualine" },
+		"AndreM222/copilot-lualine",
 	},
 	config = function()
 		local function total_lines()
@@ -11,22 +11,22 @@ return {
 		require("lualine").setup({
 			options = {
 				-- https://github.com/rose-pine/neovim/tree/main/lua/lualine/themes
-				theme = require("lualine.themes.rose-pine-alt"),
+				-- theme = require("lualine.themes.rose-pine-alt"),
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = { "alpha" },
 			},
 			sections = {
 				lualine_a = {
-					{ "mode", padding = { left = 1, right = 0 } },
+					{ "mode" },
 				},
 				lualine_b = {
-					{ "branch", padding = { left = 1, right = 0 } },
-					{ "diff", padding = { left = 1, right = 0 } },
-					{ "diagnostics", padding = { left = 1, right = 0 } },
+					{ "branch" },
+					{ "diff" },
+					{ "diagnostics" },
 				},
 				lualine_c = {
-					{ "filename", path = 1, padding = { left = 1, right = 0 } },
+					{ "filename", path = 1 },
 				},
 				lualine_x = {
 					{
@@ -43,18 +43,12 @@ return {
 							},
 							show_colors = true,
 						},
-						padding = { left = 0, right = 1 },
 					},
+					{ "filetype", padding = { left = 0, right = 1 } },
 				},
-				lualine_y = {
-					{
-						"filetype",
-						icon = { "" },
-						padding = { left = 0, right = 1 },
-					},
-				},
+				lualine_y = {},
 				lualine_z = {
-					{ total_lines, padding = { left = 0, right = 1 } },
+					{ total_lines },
 				},
 			},
 			inactive_sections = {
