@@ -8,15 +8,17 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- disable auto comments
 vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
 
--- open help window in a vertical split to the right
--- vim.api.nvim_create_autocmd("BufWinEnter", {
--- 	pattern = { "*.txt" },
--- 	callback = function()
--- 		if vim.o.filetype == "help" then
--- 			vim.cmd.wincmd("L")
--- 		end
--- 	end,
--- })
+-- toggle relative/absolute line numbers in normal/insert mode
+vim.api.nvim_create_autocmd("InsertEnter", {
+	callback = function()
+		vim.opt.relativenumber = false
+	end,
+})
+vim.api.nvim_create_autocmd("InsertLeave", {
+	callback = function()
+		vim.opt.relativenumber = true
+	end,
+})
 
 -- LazyVim
 -- Check if we need to reload the file when it changed

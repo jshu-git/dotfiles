@@ -8,6 +8,7 @@ keymap.set("n", "<leader>o", "o<Esc>", { desc = "New Line Below" })
 keymap.set("n", "<leader>O", "O<Esc>", { desc = "New Line Above" })
 keymap.set("n", "<leader>n", "<cmd>new<CR>", { desc = "New Scratch Buffer" })
 keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
+keymap.set("n", "<leader>z", "<cmd>e #<CR>", { desc = "Reopen Last Closed Buffer" })
 -- toggles
 keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle Word Wrap" })
 
@@ -27,6 +28,7 @@ keymap.set("n", "<C-c>", "gcc", { remap = true })
 keymap.set("x", "<C-c>", "gc", { remap = true })
 keymap.set("n", "U", "<C-r>")
 keymap.set("n", "<CR>", '"_ciw')
+-- keymap.set("n", "<S-BS>", "X")
 -- keymap.set("n", "<S-CR>", 'ci"')
 -- keymap.set("n", "<C-CR>", "ci'")
 keymap.set("n", "+", "<C-a>")
@@ -45,12 +47,6 @@ keymap.set("n", "p", "p==")
 keymap.set("x", "p", '"_dP==')
 keymap.set("n", "<leader>p", "<cmd>pu<CR>==", { desc = "Paste After Line" })
 keymap.set("n", "<leader>P", "<cmd>pu!<CR>==", { desc = "Paste Before Line" })
-
--- folds
-for i = 1, 9 do
-	keymap.set("n", "z" .. i, "<cmd>set foldlevel=" .. i - 1 .. "<CR>", { desc = "Fold Level " .. i - 1 })
-end
-keymap.set("n", "z0", "<cmd>set foldlevel=99<CR>", { desc = "Fold Level 99" })
 
 -- windows
 keymap.set("n", "<C-h>", "<C-w><C-h>")

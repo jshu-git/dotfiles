@@ -14,6 +14,7 @@ vim.opt.incsearch = true
 
 -- ui
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"
@@ -26,16 +27,6 @@ vim.opt.cursorline = true
 -- vim.opt.cursorlineopt = "number"
 vim.opt.showmode = false
 vim.opt.fillchars = { eob = " " }
-
--- folding https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
--- vim.opt.foldmethod = "indent"
--- vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
--- vim.opt.foldcolumn = "0"
--- vim.opt.foldtext = ""
--- vim.opt.foldlevel = 99
-vim.opt.foldlevel = 5
--- vim.opt.foldenable = false
 
 -- windows
 vim.opt.splitright = true

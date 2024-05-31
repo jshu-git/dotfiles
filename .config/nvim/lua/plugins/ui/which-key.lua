@@ -1,7 +1,7 @@
 return {
 	"folke/which-key.nvim",
 	event = "VimEnter",
-	init = function()
+	config = function()
 		local wk = require("which-key")
 		wk.setup({
 			plugins = {
@@ -24,12 +24,35 @@ return {
 			layout = {
 				spacing = 1,
 			},
+			triggers_blacklist = {
+				z = { "H" },
+			},
 		})
 		wk.register({
 			["<leader>f"] = { name = "Find…" },
 			["<leader>l"] = { name = "LSP…" },
 			["<leader>s"] = { name = "Session…" },
 			["<leader>t"] = { name = "Toggle…" },
+
+			-- disable some z mappings
+			["zC"] = "which_key_ignore",
+			["zc"] = "which_key_ignore",
+			["zR"] = "which_key_ignore",
+			["zr"] = "which_key_ignore",
+			["zM"] = "which_key_ignore",
+			["zm"] = "which_key_ignore",
+			["zO"] = "which_key_ignore",
+			["zo"] = "which_key_ignore",
+			["z<CR>"] = "which_key_ignore",
+			["zH"] = "which_key_ignore",
+			["zL"] = "which_key_ignore",
+			["ze"] = "which_key_ignore",
+			["zb"] = "which_key_ignore",
+			["zs"] = "which_key_ignore",
+			["zt"] = "which_key_ignore",
+			["zv"] = "which_key_ignore",
+			["zw"] = "which_key_ignore",
+			["zg"] = "which_key_ignore",
 		})
 	end,
 }

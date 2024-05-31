@@ -4,10 +4,28 @@ return {
 		"kevinhwang91/promise-async",
 	},
 	config = function()
-		require("ufo").setup({
+		-- fold levels
+		for i = 1, 9 do
+			vim.keymap.set("n", "z" .. i, "<cmd>set foldlevel=" .. i - 1 .. "<CR>", { desc = "Fold Level " .. i - 1 })
+		end
+		vim.keymap.set("n", "z0", "<cmd>set foldlevel=99<CR>", { desc = "Fold Level 99" })
+
+		-- folding https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
+		-- vim.opt.foldmethod = "indent"
+		-- vim.opt.foldmethod = "expr"
+		-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+		-- vim.opt.foldcolumn = "0"
+		-- vim.opt.foldtext = ""
+		-- vim.opt.foldlevel = 99
+		vim.opt.foldlevel = 5
+		-- vim.opt.foldenable = false
+
+		local ufo = require("ufo")
+
+		ufo.setup({
 			open_fold_hl_timeout = 250,
 			provider_selector = function(bufnr, filetype, buftype)
-				return { "treesitter", "indent" }
+				return { "indent" }
 			end,
 			preview = {
 				win_config = {
@@ -16,6 +34,7 @@ return {
 					maxheight = 15,
 				},
 				mappings = {
+					switch = "z",
 					close = "<esc>",
 				},
 			},
@@ -48,10 +67,11 @@ return {
 				table.insert(newVirtText, { suffix, "MoreMsg" })
 				return newVirtText
 			end,
-
-			vim.keymap.set("n", "zp", function()
-				require("ufo").peekFoldedLinesUnderCursor()
-			end, { desc = "Peek Fold" }),
 		})
+
+		-- peek
+		vim.keymap.set("n", "zp", function()
+			ufo.peekFoldedLinesUnderCursor()
+		end, { desc = "Peek Fold" })
 	end,
 }

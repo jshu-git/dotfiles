@@ -50,4 +50,3 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- vim.cmd.colorscheme("rose-pine")
 vim.cmd.colorscheme("lackluster")
--- vim.cmd.colorscheme("oldworld")
