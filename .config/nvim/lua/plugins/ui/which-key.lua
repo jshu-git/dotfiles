@@ -53,6 +53,14 @@ return {
 			["zv"] = "which_key_ignore",
 			["zw"] = "which_key_ignore",
 			["zg"] = "which_key_ignore",
+
+			-- disable some g mappings
+			["g%"] = "which_key_ignore",
+			["gc"] = "which_key_ignore",
+			["gn"] = "which_key_ignore",
+			["gN"] = "which_key_ignore",
+			["gt"] = "which_key_ignore",
+			["gT"] = "which_key_ignore",
 		})
 	end,
 }
