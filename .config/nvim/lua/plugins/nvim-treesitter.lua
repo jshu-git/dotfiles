@@ -65,9 +65,6 @@ return {
 					},
 				},
 			},
-			-- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#advanced-setup
-			-- parser_install_dir = "/u/jshu/packages/parsers",
 		})
-		-- vim.opt.runtimepath:append("/u/jshu/packages/parsers")
 	end,
 }
