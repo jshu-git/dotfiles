@@ -37,6 +37,15 @@ vim.opt.timeoutlen = 250
 vim.opt.ttimeoutlen = 0
 vim.opt.updatetime = 1000
 
+-- folding https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
+-- vim.opt.foldmethod = "indent"
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldcolumn = "0"
+vim.opt.foldtext = ""
+vim.opt.foldlevel = 99
+vim.opt.foldnestmax = 4
+
 -- misc
 vim.opt.mouse = "a"
 vim.opt.undofile = true
@@ -44,3 +53,4 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.swapfile = false
 vim.opt.confirm = true
 vim.opt.inccommand = "split"
+vim.opt.commentstring = "// %s"

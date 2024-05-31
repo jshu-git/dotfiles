@@ -7,6 +7,11 @@ return {
 				style = "sign",
 				signs = { add = "+", change = "~", delete = "-" },
 			},
+			mappings = {
+				apply = "",
+				reset = "",
+				textobject = "",
+			},
 		})
 	end,
 }

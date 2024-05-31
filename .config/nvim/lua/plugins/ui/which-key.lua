@@ -10,7 +10,6 @@ return {
 					operators = false,
 					motions = false,
 					text_objects = false,
-					g = false,
 				},
 			},
 			icons = {

@@ -46,6 +46,11 @@ keymap.set("x", "p", '"_dP==')
 keymap.set("n", "<leader>p", "<cmd>pu<CR>==", { desc = "Paste After Line" })
 keymap.set("n", "<leader>P", "<cmd>pu!<CR>==", { desc = "Paste Before Line" })
 
+-- folds
+for i = 1, 5 do
+	keymap.set("n", "z" .. i, "<cmd>set foldlevel=" .. i - 1 .. "<CR>", { desc = "Fold Level " .. i - 1 })
+end
+
 -- windows
 keymap.set("n", "<C-h>", "<C-w><C-h>")
 keymap.set("n", "<C-l>", "<C-w><C-l>")
