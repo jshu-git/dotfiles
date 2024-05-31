@@ -19,8 +19,8 @@ keymap.set({ "n", "x" }, "H", "^")
 keymap.set({ "n", "x" }, "L", "g_")
 keymap.set({ "n", "x" }, "J", "6gjzz")
 keymap.set({ "n", "x" }, "K", "6gkzz")
-keymap.set({ "n", "x" }, "[[", "{zz")
-keymap.set({ "n", "x" }, "]]", "}zz")
+keymap.set({ "n", "x" }, "{", "{zz")
+keymap.set({ "n", "x" }, "}", "}zz")
 keymap.set("n", "`", "<C-^>")
 
 -- editing
@@ -71,4 +71,11 @@ keymap.set("x", "<C-q>", "j")
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
 
+-- zellij
 keymap.set("n", "<C-f>", "<nop>")
+keymap.set(
+	"n",
+	"<leader>gg",
+	"<cmd>silent ! zellij run --floating --close-on-exit -- lazygit<CR>",
+	{ desc = "LazyGit" }
+)

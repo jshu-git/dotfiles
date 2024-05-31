@@ -64,7 +64,7 @@ return {
 
 		-- buffer
 		vim.keymap.set("n", "<leader>/", function()
-			builtin.current_buffer_fuzzy_find(themes.get_dropdown({ previewer = false, skip_empty_lines = true }))
+			builtin.current_buffer_fuzzy_find(themes.get_dropdown({ skip_empty_lines = true }))
 		end, { desc = "Grep (Current Buffer)" })
 
 		-- lsp

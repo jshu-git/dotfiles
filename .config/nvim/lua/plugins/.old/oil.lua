@@ -15,7 +15,7 @@ return {
 				},
 			},
 			win_options = {
-				number = false,
+				number = true,
 			},
 			keymaps = {
 				["?"] = "actions.show_help",
@@ -51,12 +51,12 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>E", function()
-			oil.toggle_float()
-		end, { desc = "Oil (Float)" })
+		-- vim.keymap.set("n", "<leader>E", function()
+		-- 	oil.toggle_float()
+		-- end, { desc = "Oil (Float)" })
 
-		vim.keymap.set("n", "<leader>e", function()
-			require("oil").open()
-		end, { desc = "Oil" })
+		-- vim.keymap.set("n", "<leader>e", function()
+		-- 	require("oil").open()
+		-- end, { desc = "Oil" })
 	end,
 }

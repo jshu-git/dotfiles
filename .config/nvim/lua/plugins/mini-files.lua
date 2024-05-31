@@ -5,28 +5,25 @@ return {
 		local mini = require("mini.files")
 		mini.setup({
 			mappings = {
-				go_in = "<CR>",
-				go_out = "",
-				go_in_plus = "",
-				go_out_plus = "-",
-				synchronize = "<leader>w",
+				close = "<esc>",
+				go_in = "L",
+				go_in_plus = "l",
+				reset = "_",
 				show_help = "?",
+				synchronize = "<leader>w",
 			},
 			options = {
 				permanent_delete = false,
 			},
 			windows = {
-				width_focus = 20,
-				width_nofocus = 20,
-				width_preview = 30,
+				width_focus = 25,
+				width_nofocus = 25,
+				width_preview = 50,
 			},
 		})
 
-		-- toggle explorer
 		vim.keymap.set("n", "<leader>e", function()
-			if not mini.close() then
-				mini.open(vim.api.nvim_buf_get_name(0))
-			end
+			mini.open(vim.api.nvim_buf_get_name(0), true)
 		end, { desc = "Explorer" })
 		vim.keymap.set("n", "<leader>E", function()
 			mini.open(nil, false)
@@ -43,13 +40,13 @@ return {
 		local toggle_dotfiles = function()
 			show_dotfiles = not show_dotfiles
 			local new_filter = show_dotfiles and filter_show or filter_hide
-			MiniFiles.refresh({ content = { filter = new_filter } })
+			mini.refresh({ content = { filter = new_filter } })
 		end
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "MiniFilesBufferCreate",
 			callback = function(args)
 				local buf_id = args.data.buf_id
-				vim.keymap.set("n", "g.", toggle_dotfiles, { buffer = buf_id })
+				vim.keymap.set("n", "th", toggle_dotfiles, { buffer = buf_id, desc = "Toggle Hidden Files" })
 			end,
 		})
 
@@ -63,7 +60,30 @@ return {
 			pattern = "MiniFilesBufferCreate",
 			callback = function(args)
 				local buf_id = args.data.buf_id
-				vim.keymap.set("n", "gp", toggle_preview, { buffer = buf_id })
+				vim.keymap.set("n", "<Tab>", toggle_preview, { buffer = buf_id, desc = "Toggle Preview" })
+			end,
+		})
+
+		-- open in split
+		local map_split = function(buf_id, lhs, direction)
+			local rhs = function()
+				local new_target_window
+				vim.api.nvim_win_call(mini.get_target_window(), function()
+					vim.cmd(direction .. " split")
+					new_target_window = vim.api.nvim_get_current_win()
+				end)
+				mini.set_target_window(new_target_window)
+				mini.close()
+			end
+			local desc = "Split " .. direction
+			vim.keymap.set("n", lhs, rhs, { buffer = buf_id, desc = desc })
+		end
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "MiniFilesBufferCreate",
+			callback = function(args)
+				local buf_id = args.data.buf_id
+				map_split(buf_id, "<C-s>", "belowright horizontal")
+				map_split(buf_id, "<C-v>", "belowright vertical")
 			end,
 		})
 	end,

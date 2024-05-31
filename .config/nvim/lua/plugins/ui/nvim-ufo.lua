@@ -16,12 +16,11 @@ return {
 		-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 		-- vim.opt.foldcolumn = "0"
 		-- vim.opt.foldtext = ""
-		-- vim.opt.foldlevel = 99
-		vim.opt.foldlevel = 3
+		vim.opt.foldlevel = 99
+		-- vim.opt.foldlevel = 3
 		-- vim.opt.foldenable = false
 
 		local ufo = require("ufo")
-
 		ufo.setup({
 			open_fold_hl_timeout = 250,
 			provider_selector = function(bufnr, filetype, buftype)
@@ -34,7 +33,7 @@ return {
 					maxheight = 15,
 				},
 				mappings = {
-					switch = "z",
+					switch = "p",
 					close = "<esc>",
 				},
 			},

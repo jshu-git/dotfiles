@@ -9,20 +9,22 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
 
 -- toggle relative/absolute line numbers in normal/insert mode
-vim.api.nvim_create_autocmd("InsertEnter", {
-	callback = function()
-		if vim.o.buftype ~= "alpha" then
-			vim.opt.relativenumber = false
-		end
-	end,
-})
-vim.api.nvim_create_autocmd("InsertLeave", {
-	callback = function()
-		if vim.o.buftype ~= "alpha" then
-			vim.opt.relativenumber = true
-		end
-	end,
-})
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+-- 	callback = function()
+-- 		if vim.o.buftype ~= "alpha" then
+-- 			vim.opt.number = true
+-- 			vim.opt.relativenumber = false
+-- 		end
+-- 	end,
+-- })
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+-- 	callback = function()
+-- 		if vim.o.buftype ~= "alpha" then
+-- 			vim.opt.number = false
+-- 			vim.opt.relativenumber = true
+-- 		end
+-- 	end,
+-- })
 
 -- LazyVim
 -- Check if we need to reload the file when it changed
@@ -51,10 +53,22 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
+-- wrap and check for spell in text filetypes
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "gitcommit", "markdown", "text" },
 	callback = function()
 		vim.opt_local.wrap = true
 		vim.opt_local.spell = true
+	end,
+})
+
+-- Auto create dir when saving a file, in case some intermediate directory does not exist
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+	callback = function(event)
+		if event.match:match("^%w%w+:[\\/][\\/]") then
+			return
+		end
+		local file = vim.uv.fs_realpath(event.match) or event.match
+		vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
 	end,
 })
