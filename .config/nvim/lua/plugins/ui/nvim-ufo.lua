@@ -1,12 +1,24 @@
 return {
 	"kevinhwang91/nvim-ufo",
-	dependencies = "kevinhwang91/promise-async",
+	dependencies = {
+		"kevinhwang91/promise-async",
+	},
 	config = function()
 		require("ufo").setup({
 			open_fold_hl_timeout = 250,
 			provider_selector = function(bufnr, filetype, buftype)
 				return { "treesitter", "indent" }
 			end,
+			preview = {
+				win_config = {
+					border = "single",
+					winblend = 0,
+					maxheight = 15,
+				},
+				mappings = {
+					close = "<esc>",
+				},
+			},
 
 			-- https://github.com/kevinhwang91/nvim-ufo?tab=readme-ov-file#customize-fold-text
 			fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)
@@ -36,6 +48,10 @@ return {
 				table.insert(newVirtText, { suffix, "MoreMsg" })
 				return newVirtText
 			end,
+
+			vim.keymap.set("n", "zp", function()
+				require("ufo").peekFoldedLinesUnderCursor()
+			end, { desc = "Peek Fold" }),
 		})
 	end,
 }

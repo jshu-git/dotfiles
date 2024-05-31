@@ -23,7 +23,7 @@ vim.opt.wrap = false
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = "number"
+-- vim.opt.cursorlineopt = "number"
 vim.opt.showmode = false
 vim.opt.fillchars = { eob = " " }
 
@@ -33,8 +33,8 @@ vim.opt.fillchars = { eob = " " }
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- vim.opt.foldcolumn = "0"
 -- vim.opt.foldtext = ""
-vim.opt.foldlevel = 99
--- vim.opt.foldlevel = 5
+-- vim.opt.foldlevel = 99
+vim.opt.foldlevel = 5
 -- vim.opt.foldenable = false
 
 -- windows

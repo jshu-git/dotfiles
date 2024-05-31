@@ -50,6 +50,7 @@ keymap.set("n", "<leader>P", "<cmd>pu!<CR>==", { desc = "Paste Before Line" })
 for i = 1, 9 do
 	keymap.set("n", "z" .. i, "<cmd>set foldlevel=" .. i - 1 .. "<CR>", { desc = "Fold Level " .. i - 1 })
 end
+keymap.set("n", "z0", "<cmd>set foldlevel=99<CR>", { desc = "Fold Level 99" })
 
 -- windows
 keymap.set("n", "<C-h>", "<C-w><C-h>")
