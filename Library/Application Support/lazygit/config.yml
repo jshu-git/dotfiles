@@ -1,2 +1,4 @@
 quitOnTopLevelReturn: true
-lazygit/config.yml
+keybinding:
+  universal:
+    quit: <esc>
