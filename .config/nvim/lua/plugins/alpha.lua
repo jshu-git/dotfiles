@@ -18,8 +18,12 @@ return {
 		buttons.val = {
 			dashboard.button("r", "󰁯  Restore Session", "<cmd>SessionRestore<CR>"),
 			dashboard.button("f", "󰍉  Find", "<cmd>Telescope find_files<CR>"),
-			dashboard.button("e", "  Explorer", "<cmd>Oil --float<CR>"),
-			dashboard.button("n", "  New File", "<cmd>enew<CR>"),
+			-- dashboard.button("e", "  Explorer", "<cmd>Oil --float<CR>"),
+			---@diagnostic disable-next-line: param-type-mismatch
+			dashboard.button("e", "  Explorer", function()
+				MiniFiles.open()
+			end),
+			dashboard.button("n", "  New File", "<cmd>new<CR>"),
 			dashboard.button("l", "󰒲  Lazy", "<cmd>Lazy<CR>"),
 			dashboard.button("<esc>", "󰩈  Exit", "<cmd>qa<CR>"),
 		}
