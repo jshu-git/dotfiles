@@ -12,6 +12,7 @@ return {
 						window = {
 							winblend = 0,
 							align = "top",
+							border = "single",
 						},
 					},
 				},
@@ -190,6 +191,7 @@ return {
 			vim.diagnostic.config({
 				float = { border = "single" },
 				virtual_text = false,
+				-- jump = { float = true },
 			})
 			local signs = { Error = "󰅚", Warn = "󰀪", Hint = "󰌶", Info = "󰋽" }
 			for type, icon in pairs(signs) do
@@ -204,10 +206,6 @@ return {
 		config = function()
 			require("corn").setup({
 				icons = { error = "󰅚", warn = "󰀪", hint = "󰌶", info = "󰋽" },
-				-- disable truncation
-				-- item_preprocess_func = function(item)
-				-- 	return item
-				-- end,
 			})
 		end,
 	},
@@ -218,12 +216,10 @@ return {
 			require("conform").setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
-
 					json = { "prettier" },
 					markdown = { "prettier" },
 					sh = { "shfmt" },
 					zsh = { "shfmt" },
-
 					["*"] = { "codespell", "trim_whitespace" },
 				},
 				-- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
@@ -233,6 +229,9 @@ return {
 					end
 					return { timeout_ms = 500, lsp_fallback = true }
 				end,
+				format_after_save = {
+					lsp_fallback = true,
+				},
 			})
 
 			-- toggle autoformatting
