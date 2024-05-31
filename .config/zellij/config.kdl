@@ -177,7 +177,8 @@ themes {
         bg "#101010"
         fg "#4D4D4D" // inactive tab color
         red "#D70000"
-        green "#789978"
+        // green "#789978"
+        green "#CFECF3"
         blue "#7788AA"
         yellow "#FFAA88"
         // magenta "#D7007D"

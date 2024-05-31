@@ -17,7 +17,7 @@ return {
 		-- vim.opt.foldcolumn = "0"
 		-- vim.opt.foldtext = ""
 		-- vim.opt.foldlevel = 99
-		vim.opt.foldlevel = 5
+		vim.opt.foldlevel = 3
 		-- vim.opt.foldenable = false
 
 		local ufo = require("ufo")

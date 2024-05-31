@@ -146,6 +146,18 @@ return {
 				ruff = {
 					settings = {},
 				},
+				-- basedpyright = {
+				-- 	settings = {
+				-- 		basedpyright = {
+				-- 			analysis = {
+				-- 				typeCheckingMode = "basic",
+				-- 			},
+				-- 		},
+				-- 		python = {
+				-- 			pythonPath = "/u/jshu/p4/cacl3/test/tools/python/nate/rhel7-3.12/bin/python",
+				-- 		},
+				-- 	},
+				-- },
 			}
 
 			-- lspconfig

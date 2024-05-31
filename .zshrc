@@ -22,7 +22,7 @@ bindkey "^[[1;3D" backward-word     # alt-left
 bindkey "^[[1;9D" beginning-of-line # cmd-left
 bindkey "^[[1;9C" end-of-line       # cmd-right
 # shift delete
-bindkey '^[[3~' delete-char
+# bindkey '^[[3~' delete-char
 
 # edit command line
 autoload -z edit-command-line
