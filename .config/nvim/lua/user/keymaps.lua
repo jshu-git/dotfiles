@@ -1,6 +1,7 @@
 local keymap = vim.keymap
 
 -- leader
+keymap.set("n", ";", ":")
 keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Write" })
 keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 keymap.set("n", "<leader>Q", "<cmd>qa!<CR>", { desc = "Quit All" })
@@ -9,6 +10,7 @@ keymap.set("n", "<leader>O", "O<Esc>", { desc = "New Line Above" })
 keymap.set("n", "<leader>n", "<cmd>new<CR>", { desc = "New Scratch Buffer" })
 keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 keymap.set("n", "<leader>z", "<cmd>e #<CR>", { desc = "Reopen Last Closed Buffer" })
+keymap.set("n", "<leader>a", "ggVG")
 -- toggles
 keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle Word Wrap" })
 
@@ -30,8 +32,8 @@ keymap.set("n", "U", "<C-r>")
 keymap.set("n", "<CR>", '"_ciw')
 -- keymap.set("n", "<S-CR>", 'ci"')
 -- keymap.set("n", "<C-CR>", "ci'")
-keymap.set("n", "+", "<C-a>")
-keymap.set("n", "_", "<C-x>")
+keymap.set("n", "=", "<C-a>")
+keymap.set("n", "-", "<C-x>")
 keymap.set("n", "<A-S-j>", "yyp")
 keymap.set("n", "<A-S-k>", "yyP")
 

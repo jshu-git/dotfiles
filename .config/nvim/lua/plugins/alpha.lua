@@ -21,7 +21,7 @@ return {
 			-- dashboard.button("e", "  Explorer", "<cmd>Oil --float<CR>"),
 			---@diagnostic disable-next-line: param-type-mismatch
 			dashboard.button("e", "  Explorer", function()
-				MiniFiles.open()
+				require("mini.files").open()
 			end),
 			dashboard.button("n", "  New File", "<cmd>new<CR>"),
 			dashboard.button("l", "󰒲  Lazy", "<cmd>Lazy<CR>"),

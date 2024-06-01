@@ -61,6 +61,11 @@ return {
 			["gN"] = "which_key_ignore",
 			["gt"] = "which_key_ignore",
 			["gT"] = "which_key_ignore",
+
+			-- disable some <C-w> mappings
+			["<C-w><C-D>"] = "which_key_ignore",
+			["<C-w>d"] = "which_key_ignore",
+			["<C-w>T"] = "which_key_ignore",
 		})
 	end,
 }
