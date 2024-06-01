@@ -16,15 +16,14 @@ return {
 							key = "<C-v>",
 							command = "split",
 						},
-						true,
 					},
 					short_file_names = true,
 					loop_nav = false,
 				},
 			})
 			local ui = require("buffer_manager.ui")
-			vim.keymap.set("n", "<leader><Tab>", ui.toggle_quick_menu, { desc = "Buffers" })
 			vim.keymap.set("n", "<Tab>", ui.toggle_quick_menu, { desc = "Buffers" })
+			-- vim.keymap.set("n", "<leader><Tab>", ui.toggle_quick_menu, { desc = "Buffers" })
 			-- vim.keymap.set("n", "<Tab>", ui.nav_next, { desc = "Next Buffer" })
 			-- vim.keymap.set("n", "<S-Tab>", ui.nav_prev, { desc = "Previous Buffer" })
 

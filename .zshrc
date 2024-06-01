@@ -100,6 +100,7 @@ if command -v lazygit >/dev/null 2>&1; then
 	# yadm
 	if command -v yadm >/dev/null 2>&1; then
 		alias yy='cd ; yadm enter lazygit ; cd -'
+		alias vv='yadm enter nvim'
 	fi
 fi
 

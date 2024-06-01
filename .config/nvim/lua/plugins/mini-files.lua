@@ -88,5 +88,10 @@ return {
 				map_split(buf_id, "<C-v>", "belowright vertical")
 			end,
 		})
+
+		-- highlights
+		vim.api.nvim_set_hl(0, "MiniFilesCursorLine", { fg = "orange" })
+		vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
+		vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
 	end,
 }

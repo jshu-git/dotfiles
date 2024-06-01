@@ -76,6 +76,7 @@ return {
 		vim.keymap.set("n", "<leader>ft", function()
 			builtin.colorscheme({ enable_preview = true, previewer = false })
 		end, { desc = "Themes" })
+		vim.keymap.set("n", "<leader>fH", builtin.highlights, { desc = "Highlights" })
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
 		vim.keymap.set("n", "<leader>fo", builtin.vim_options, { desc = "Vim Options" })
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
