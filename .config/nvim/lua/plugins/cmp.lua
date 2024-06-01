@@ -38,7 +38,7 @@ return {
 					fields = { "abbr", "kind" },
 					format = function(entry, item)
 						item.menu = ""
-						local fixed_width = 25
+						local fixed_width = 30
 						local content = item.abbr
 						if fixed_width then
 							vim.o.pumwidth = fixed_width

@@ -6,8 +6,10 @@ return {
 		mini.setup({
 			mappings = {
 				close = "<esc>",
-				go_in = "L",
-				go_in_plus = "l",
+				go_in = "",
+				go_in_plus = "<CR>",
+				go_out = "-",
+				go_out_plus = "",
 				reset = "_",
 				show_help = "?",
 				synchronize = "<leader>w",

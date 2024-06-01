@@ -58,8 +58,10 @@ return {
 		end, { desc = "Files (Hidden)" })
 		vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Grep" })
 		vim.keymap.set("n", "<leader>fW", function()
-			builtin.live_grep({ grep_open_files = true })
-		end, { desc = "Grep (Open Files)" })
+			builtin.live_grep({
+				additional_args = { "--hidden" },
+			})
+		end, { desc = "Grep (Hidden)" })
 		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent Files" })
 
 		-- buffer
