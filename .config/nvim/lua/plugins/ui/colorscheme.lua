@@ -1,19 +1,18 @@
 return {
-	-- {
-	-- 	"rose-pine/neovim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("rose-pine").setup({
-	-- 			styles = {
-	-- 				bold = false,
-	-- 				italic = false,
-	-- 				transparency = true,
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- 	name = "rose-pine",
-	-- },
+	{
+		"rose-pine/neovim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("rose-pine").setup({
+				styles = {
+					bold = false,
+					italic = false,
+				},
+			})
+		end,
+		name = "rose-pine",
+	},
 
 	-- {
 	-- 	"dgox16/oldworld.nvim",
@@ -42,9 +41,9 @@ return {
 	-- 	priority = 1000,
 	-- },
 
-	{
-		"slugbyte/lackluster.nvim",
-		lazy = false,
-		priority = 1000,
-	},
+	-- {
+	-- 	"slugbyte/lackluster.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- },
 }

@@ -1,7 +1,6 @@
 return {
 	{
 		"echasnovski/mini.tabline",
-		version = "*",
 		config = function()
 			require("mini.tabline").setup()
 			vim.keymap.set("n", "<Tab>", "<cmd>bn<CR>")

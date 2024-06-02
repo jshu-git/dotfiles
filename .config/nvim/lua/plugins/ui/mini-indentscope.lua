@@ -1,21 +1,17 @@
 return {
 	"echasnovski/mini.indentscope",
-	version = "*",
 	config = function()
 		require("mini.indentscope").setup({
 			draw = {
-				animation = function(s, n)
-					return 5
+				animation = function()
+					return 4
 				end,
-			},
-			mappings = {
-				goto_top = "",
-				goto_bottom = "",
 			},
 			options = {
 				try_as_border = true,
 			},
-			symbol = "│",
+			-- symbol = "│",
+			symbol = "▏",
 		})
 
 		vim.api.nvim_create_autocmd("FileType", {
@@ -27,5 +23,7 @@ return {
 				vim.b.miniindentscope_disable = true
 			end,
 		})
+
+		vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { link = "SignColumn" })
 	end,
 }

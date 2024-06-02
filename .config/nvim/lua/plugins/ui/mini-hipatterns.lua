@@ -1,6 +1,5 @@
 return {
 	"echasnovski/mini.hipatterns",
-	version = "*",
 	config = function()
 		local hipatterns = require("mini.hipatterns")
 		hipatterns.setup({

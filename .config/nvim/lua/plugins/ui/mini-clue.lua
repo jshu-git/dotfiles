@@ -1,6 +1,5 @@
 return {
 	"echasnovski/mini.clue",
-	version = "*",
 	config = function()
 		local clue = require("mini.clue")
 		clue.setup({

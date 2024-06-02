@@ -1,6 +1,5 @@
 return {
 	"echasnovski/mini.ai",
-	version = "*",
 	dependencies = {
 		"echasnovski/mini.extra",
 	},
@@ -12,7 +11,7 @@ return {
 				g = extra.gen_ai_spec.buffer(),
 				-- D = extra.gen_ai_spec.diagnostic(),
 				-- I = extra.gen_ai_spec.indent(),
-				L = extra.gen_ai_spec.line(),
+				-- L = extra.gen_ai_spec.line(),
 				-- N = extra.gen_ai_spec.number(),
 			},
 		})

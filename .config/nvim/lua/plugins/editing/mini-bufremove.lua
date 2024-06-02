@@ -1,7 +1,6 @@
 return {
 	{
 		"echasnovski/mini.bufremove",
-		version = "*",
 		config = function()
 			local mini = require("mini.bufremove")
 			mini.setup()

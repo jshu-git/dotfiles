@@ -6,7 +6,6 @@ return {
 			-- ui
 			{
 				"echasnovski/mini.notify",
-				version = "*",
 				opts = {
 					window = { winblend = 100 },
 				},
