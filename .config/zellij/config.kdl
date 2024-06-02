@@ -122,24 +122,8 @@ themes {
         black "#191724" // status bar background
         white "#e0def4" // 'Zellij' text color (alternating tab color in simplified_ui)
     }
-
-    lackluster {
-        bg "#101010"
-        fg "#4D4D4D" // inactive tab color
-        red "#D70000"
-        // green "#789978"
-        green "#CFECF3"
-        blue "#7788AA"
-        yellow "#FFAA88"
-        // magenta "#D7007D"
-        magenta "#789978"
-        orange "#FFAA88"
-        cyan "#5D6D6D"
-        black "#101010" // status bar background
-        white "#4D4D4D" // 'Zellij' text color (and alternating tab color in simplified_ui)
-    }
 }
-theme "lackluster"
+theme "rose-pine"
 default_layout "compact"
 default_mode "locked"
 layout_dir "/Users/jshu/.config/zellij/layouts/"
