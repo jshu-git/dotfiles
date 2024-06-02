@@ -2,6 +2,8 @@ return {
 	"goolord/alpha-nvim",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
+		"echasnovski/mini.pick",
+		"echasnovski/mini.files",
 	},
 	opts = function()
 		local dashboard = require("alpha.themes.dashboard")
@@ -17,13 +19,11 @@ return {
 		buttons.opts.spacing = 0
 		buttons.val = {
 			dashboard.button("r", "󰁯  Restore Session", "<cmd>SessionRestore<CR>"),
-			dashboard.button("f", "󰍉  Find", "<cmd>Telescope find_files<CR>"),
-			-- dashboard.button("e", "  Explorer", "<cmd>Oil --float<CR>"),
 			---@diagnostic disable-next-line: param-type-mismatch
-			dashboard.button("e", "  Explorer", function()
-				require("mini.files").open()
-			end),
-			dashboard.button("n", "  New File", "<cmd>new<CR>"),
+			dashboard.button("f", "󰍉  Find", require("mini.pick").builtin.files),
+			---@diagnostic disable-next-line: param-type-mismatch
+			dashboard.button("e", "  Explorer", require("mini.files").open),
+			dashboard.button("n", "  New File", "<cmd>enew<CR>"),
 			dashboard.button("l", "󰒲  Lazy", "<cmd>Lazy<CR>"),
 			dashboard.button("<esc>", "󰩈  Exit", "<cmd>qa<CR>"),
 		}

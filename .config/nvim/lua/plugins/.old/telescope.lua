@@ -52,38 +52,38 @@ return {
 		telescope.load_extension("ui-select")
 
 		-- files
-		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Files" })
+		-- vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Files" })
 		vim.keymap.set("n", "<leader>fF", function()
 			builtin.find_files({ hidden = true })
 		end, { desc = "Files (Hidden)" })
-		vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Grep" })
+		-- vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Grep" })
 		vim.keymap.set("n", "<leader>fW", function()
 			builtin.live_grep({
 				additional_args = { "--hidden" },
 			})
 		end, { desc = "Grep (Hidden)" })
-		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent Files" })
+		-- vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent Files" })
 
 		-- buffer
-		vim.keymap.set("n", "<leader>/", function()
-			builtin.current_buffer_fuzzy_find(themes.get_dropdown({ skip_empty_lines = true }))
-		end, { desc = "Grep (Current Buffer)" })
+		-- vim.keymap.set("n", "<leader>/", function()
+		-- 	builtin.current_buffer_fuzzy_find(themes.get_dropdown({ skip_empty_lines = true }))
+		-- end, { desc = "Grep (Current Buffer)" })
 
 		-- lsp
-		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
+		-- vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnostics" })
 
 		-- vim specific
-		vim.keymap.set("n", "<leader>ft", function()
-			builtin.colorscheme({ enable_preview = true, previewer = false })
-		end, { desc = "Themes" })
-		vim.keymap.set("n", "<leader>fH", builtin.highlights, { desc = "Highlights" })
-		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
-		vim.keymap.set("n", "<leader>fo", builtin.vim_options, { desc = "Vim Options" })
-		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
-		vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "Commands" })
-		vim.keymap.set("n", "<leader>fC", builtin.builtin, { desc = "Telescope Commands" })
+		-- vim.keymap.set("n", "<leader>ft", function()
+		-- 	builtin.colorscheme({ enable_preview = true, previewer = false })
+		-- end, { desc = "Themes" })
+		-- vim.keymap.set("n", "<leader>fH", builtin.highlights, { desc = "Highlights" })
+		-- vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
+		-- vim.keymap.set("n", "<leader>fo", builtin.vim_options, { desc = "Vim Options" })
+		-- vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Keymaps" })
+		-- vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "Commands" })
+		-- vim.keymap.set("n", "<leader>fC", builtin.builtin, { desc = "Telescope Commands" })
 
 		-- misc
-		vim.keymap.set("n", "<leader>'", builtin.resume, { desc = "Last Picker" })
+		-- vim.keymap.set("n", "<leader>'", builtin.resume, { desc = "Last Picker" })
 	end,
 }

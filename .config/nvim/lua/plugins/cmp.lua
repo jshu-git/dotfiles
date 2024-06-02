@@ -35,9 +35,16 @@ return {
 				},
 				-- https://github.com/hrsh7th/nvim-cmp/discussions/609#discussioncomment-5727678
 				formatting = {
-					fields = { "abbr", "kind" },
+					fields = { "abbr", "menu", "kind" },
 					format = function(entry, item)
-						item.menu = ""
+						local menu_icon = {
+							nvim_lsp = "LSP",
+							nvim_lua = "LUA",
+							luasnip = "SNP",
+							buffer = "BUF",
+							path = "PTH",
+						}
+						item.menu = menu_icon[entry.source.name]
 						local fixed_width = 30
 						local content = item.abbr
 						if fixed_width then
@@ -117,6 +124,7 @@ return {
 					},
 				},
 				filetypes = {
+					["."] = true,
 					["*"] = true,
 				},
 			})

@@ -2,8 +2,8 @@ return {
 	"echasnovski/mini.files",
 	version = "*",
 	config = function()
-		local mini = require("mini.files")
-		mini.setup({
+		local files = require("mini.files")
+		files.setup({
 			mappings = {
 				close = "<esc>",
 				go_in = "",
@@ -24,11 +24,15 @@ return {
 			},
 		})
 
+		-- toggle explorer
 		vim.keymap.set("n", "<leader>e", function()
-			mini.open(vim.api.nvim_buf_get_name(0), true)
+			if not MiniFiles.close() then
+				files.open(vim.api.nvim_buf_get_name(0), true)
+				files.reveal_cwd()
+			end
 		end, { desc = "Explorer" })
 		vim.keymap.set("n", "<leader>E", function()
-			mini.open(nil, false)
+			files.open(nil, false)
 		end, { desc = "Explorer (cwd)" })
 
 		-- toggle dotfiles
@@ -42,7 +46,7 @@ return {
 		local toggle_dotfiles = function()
 			show_dotfiles = not show_dotfiles
 			local new_filter = show_dotfiles and filter_show or filter_hide
-			mini.refresh({ content = { filter = new_filter } })
+			files.refresh({ content = { filter = new_filter } })
 		end
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "MiniFilesBufferCreate",
@@ -56,7 +60,7 @@ return {
 		local show_preview = false
 		local toggle_preview = function()
 			show_preview = not show_preview
-			mini.refresh({ windows = { preview = show_preview } })
+			files.refresh({ windows = { preview = show_preview } })
 		end
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "MiniFilesBufferCreate",
@@ -69,14 +73,18 @@ return {
 		-- open in split
 		local map_split = function(buf_id, lhs, direction)
 			local rhs = function()
+				-- Make new window and set it as target
 				local new_target_window
-				vim.api.nvim_win_call(mini.get_target_window(), function()
+				vim.api.nvim_win_call(MiniFiles.get_target_window(), function()
 					vim.cmd(direction .. " split")
 					new_target_window = vim.api.nvim_get_current_win()
 				end)
-				mini.set_target_window(new_target_window)
-				mini.close()
+
+				MiniFiles.set_target_window(new_target_window)
+				MiniFiles.go_in({ close_on_file = true })
 			end
+
+			-- Adding `desc` will result into `show_help` entries
 			local desc = "Split " .. direction
 			vim.keymap.set("n", lhs, rhs, { buffer = buf_id, desc = desc })
 		end

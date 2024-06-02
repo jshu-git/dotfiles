@@ -6,11 +6,11 @@ return {
 			mappings = {
 				add = "sa",
 				delete = "sd",
-				find = "sf",
-				find_left = "sF",
 				highlight = "sh",
 				replace = "sr",
 
+				find = "",
+				find_left = "",
 				update_n_lines = "",
 				suffix_last = "",
 				suffix_next = "",

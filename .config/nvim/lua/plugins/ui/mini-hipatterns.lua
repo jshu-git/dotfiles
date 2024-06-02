@@ -2,15 +2,15 @@ return {
 	"echasnovski/mini.hipatterns",
 	version = "*",
 	config = function()
-		local mini = require("mini.hipatterns")
-		mini.setup({
+		local hipatterns = require("mini.hipatterns")
+		hipatterns.setup({
 			highlighters = {
-				hex_color = mini.gen_highlighter.hex_color(),
+				hex_color = hipatterns.gen_highlighter.hex_color(),
 			},
 		})
 
 		vim.keymap.set("n", "<leader>th", function()
-			mini.toggle()
+			hipatterns.toggle()
 		end, { desc = "Toggle Highlights" })
 	end,
 }

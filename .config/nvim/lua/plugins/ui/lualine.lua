@@ -7,6 +7,10 @@ return {
 		local function total_lines()
 			return vim.api.nvim_buf_line_count(0) .. "L"
 		end
+		-- file size
+		local function file_size()
+			return string.format("%.2f", vim.fn.getfsize(vim.fn.expand("%:p")) / 1024) .. "KB"
+		end
 
 		require("lualine").setup({
 			options = {
@@ -45,6 +49,7 @@ return {
 						},
 					},
 					{ "filetype", padding = { left = 0, right = 1 } },
+					{ file_size, padding = { left = 0, right = 1 } },
 				},
 				lualine_y = {},
 				lualine_z = {

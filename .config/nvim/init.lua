@@ -1,10 +1,6 @@
-local g = vim.g
-g.mapleader = " "
-g.maplocalleader = " "
-
-require("user.autocommands")
 require("user.options")
 require("user.keymaps")
+require("user.autocommands")
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -49,4 +45,4 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- vim.cmd.colorscheme("rose-pine")
-vim.cmd.colorscheme("lackluster")
+-- vim.cmd.colorscheme("lackluster")

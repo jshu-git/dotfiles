@@ -20,7 +20,7 @@ return {
 	-- 	lazy = false,
 	-- 	priority = 1000,
 	-- },
-	--
+
 	-- {
 	-- 	"mellow-theme/mellow.nvim",
 	-- 	lazy = false,
