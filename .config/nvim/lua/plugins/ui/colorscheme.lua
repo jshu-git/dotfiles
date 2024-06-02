@@ -1,18 +1,56 @@
 return {
+	-- {
+	-- 	"rose-pine/neovim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("rose-pine").setup({
+	-- 			dim_inactive_windows = true,
+	-- 			styles = {
+	-- 				bold = false,
+	-- 				italic = false,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- 	name = "rose-pine",
+	-- },
+
 	{
-		"rose-pine/neovim",
+		"Mofiqul/vscode.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("rose-pine").setup({
-				styles = {
-					bold = false,
-					italic = false,
+			local colors = require("vscode.colors").get_colors()
+			require("vscode").setup({
+				transparent = false,
+				italic_comments = false,
+				-- https://github.com/Mofiqul/vscode.nvim/blob/main/lua/vscode/theme.lua
+				group_overrides = {
+					CopilotSuggestion = { link = "NonText" },
+					CopilotAnnotation = { link = "NonText" },
+					Directory = { fg = colors.vscBlue },
+
+					-- mini
+					MiniClueTitle = { link = "MiniClueBorder" },
+					-- MiniFilesDirectory = { fg = colors.vscBlue },
+					MiniFilesTitleFocused = { link = "MiniFilesBorder" },
+					MiniFilesTitle = { link = "MiniFilesBorder" },
+					MiniIndentscopeSymbol = { link = "NonText" },
+					MiniPickPrompt = { link = "MiniPickBorder" },
+					MiniPickBorderText = { link = "MiniPickBorder" },
 				},
 			})
 		end,
-		name = "rose-pine",
 	},
+
+	-- {
+	-- 	"miversen33/sunglasses.nvim",
+	-- 	config = function()
+	-- 		require("sunglasses").setup({
+	-- 			filter_percent = 0.2,
+	-- 		})
+	-- 	end,
+	-- },
 
 	-- {
 	-- 	"dgox16/oldworld.nvim",

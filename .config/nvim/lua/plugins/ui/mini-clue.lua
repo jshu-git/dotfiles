@@ -55,6 +55,8 @@ return {
 				{ mode = "n", keys = "<leader>l", desc = "LSP…" },
 				{ mode = "n", keys = "<leader>s", desc = "Session…" },
 				{ mode = "n", keys = "<leader>t", desc = "Toggle…" },
+				{ mode = "n", keys = "<leader>h", desc = "Hunk…" },
+				{ mode = "x", keys = "<leader>h", desc = "Hunk…" },
 
 				-- submodes
 				-- unimpaired
@@ -87,6 +89,6 @@ return {
 		vim.keymap.set("n", "<C-w>S", "<C-w>s<C-w>k", { desc = "Split Below (No Focus)" })
 
 		-- highlights
-		vim.api.nvim_set_hl(0, "MiniClueTitle", { link = "MiniClueBorder" })
+		-- vim.api.nvim_set_hl(0, "MiniClueTitle", { link = "MiniClueBorder" })
 	end,
 }

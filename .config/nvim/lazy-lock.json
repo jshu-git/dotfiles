@@ -11,6 +11,7 @@
   "copilot-lualine": { "branch": "main", "commit": "9e226cf8f4653e13ec282f5878d66aa435899c8c" },
   "copilot.lua": { "branch": "master", "commit": "f7612f5af4a7d7615babf43ab1e67a2d790c13a6" },
   "corn.nvim": { "branch": "master", "commit": "e0bba34aea144102115379c1c3f97d2630e83abb" },
+  "dial.nvim": { "branch": "master", "commit": "7af2daaaf933b0617ded0f78b49f4d5fc45f9f64" },
   "dressing.nvim": { "branch": "master", "commit": "e3714c8049b2243e792492c4149e4cc395c68eb9" },
   "gitsigns.nvim": { "branch": "main", "commit": "75dc649106827183547d3bedd4602442340d2f7f" },
   "lazy.nvim": { "branch": "main", "commit": "b0ba3f9399bf48c86abaa4db1a40bd0b681d5018" },
@@ -44,10 +45,9 @@
   "nvim-web-devicons": { "branch": "master", "commit": "b77921fdc44833c994fdb389d658ccbce5490c16" },
   "pretty_hover": { "branch": "master", "commit": "b3840660f379e125cac508d3d2d77cc47b3d5131" },
   "promise-async": { "branch": "main", "commit": "93540c168c5ed2b030ec3e6c40ab8bbb85e36355" },
-  "rose-pine": { "branch": "main", "commit": "87aa437172357ad8f916942bca249ceadc6c68b1" },
-  "sunglasses.nvim": { "branch": "main", "commit": "91757165af055c0709ad6974ae456bba80793032" },
   "undotree": { "branch": "master", "commit": "56c684a805fe948936cda0d1b19505b84ad7e065" },
   "url-open": { "branch": "mini", "commit": "7727e6146afea2254de08d0e65fd2cf904be338d" },
   "vim-maximizer": { "branch": "master", "commit": "2e54952fe91e140a2e69f35f22131219fcd9c5f1" },
-  "vim-numbertoggle": { "branch": "main", "commit": "075b7478777e694fbac330ee34a74590dad0fee1" }
+  "vim-numbertoggle": { "branch": "main", "commit": "075b7478777e694fbac330ee34a74590dad0fee1" },
+  "vscode.nvim": { "branch": "main", "commit": "ff3926901d4160886f707a8a70b5c2e82979a7c4" }
 }

@@ -34,24 +34,20 @@ return {
 					},
 				},
 				-- https://github.com/hrsh7th/nvim-cmp/discussions/609#discussioncomment-5727678
+				-- https://github.com/Roundlay/nvim/blob/main/lua/plugins/lazy-cmp.lua
 				formatting = {
 					fields = { "abbr", "menu", "kind" },
 					format = function(entry, item)
 						local menu_icon = {
 							nvim_lsp = "LSP",
 							nvim_lua = "LUA",
-							luasnip = "SNP",
 							buffer = "BUF",
 							path = "PTH",
 						}
 						item.menu = menu_icon[entry.source.name]
-						local fixed_width = 30
 						local content = item.abbr
-						if fixed_width then
-							vim.o.pumwidth = fixed_width
-						end
 						local win_width = vim.api.nvim_win_get_width(0)
-						local max_content_width = fixed_width and fixed_width - 10 or math.floor(win_width * 0.2)
+						local max_content_width = math.floor(win_width * 0.20)
 						if #content > max_content_width then
 							item.abbr = vim.fn.strcharpart(content, 0, max_content_width - 1) .. "…"
 						else

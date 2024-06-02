@@ -14,10 +14,10 @@ return {
 
 		require("lualine").setup({
 			options = {
-				-- https://github.com/rose-pine/neovim/tree/main/lua/lualine/themes
-				theme = require("lualine.themes.rose-pine-alt"),
+				-- theme = require("lualine.themes.rose-pine-alt"),
+				theme = "vscode",
 				component_separators = { left = "", right = "" },
-				section_separators = { left = "", right = "" },
+				-- section_separators = { left = "", right = "" },
 				disabled_filetypes = { "alpha" },
 			},
 			sections = {
@@ -38,7 +38,7 @@ return {
 						symbols = {
 							status = {
 								icons = {
-									enabled = " ",
+									enabled = "",
 									sleep = " ",
 									disabled = " ",
 									warning = " ",

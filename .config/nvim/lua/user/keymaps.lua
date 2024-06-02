@@ -34,10 +34,6 @@ keymap.set("n", "U", "<C-r>")
 keymap.set("n", "<CR>", '"_ciw')
 -- keymap.set("n", "<S-CR>", 'ci"')
 -- keymap.set("n", "<C-CR>", "ci'")
-keymap.set("n", "=", "<C-a>")
-keymap.set("n", "-", "<C-x>")
-keymap.set("n", "<A-S-j>", "yyp")
-keymap.set("n", "<A-S-k>", "yyP")
 
 -- preserve clipboard
 keymap.set({ "n", "x" }, "x", '"_x')

@@ -24,8 +24,6 @@ return {
 			"echasnovski/mini.extra",
 		},
 		config = function()
-			local extra = require("mini.extra")
-
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 				callback = function(event)
@@ -83,15 +81,25 @@ return {
 					-- lsp
 					map("ga", vim.lsp.buf.code_action, "Code Action")
 					map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
+					map("gi", function()
+						require("mini.extra").pickers.lsp({ scope = "implementation" })
+					end, "Goto Implementation")
+					map("gt", function()
+						require("mini.extra").pickers.lsp({ scope = "type_definition" })
+					end, "Goto Type Definition")
 
-					map("gd", open_in_vertical_split(vim.lsp.buf.definition), "Goto Definition")
-					map("gD", open_in_vertical_split(vim.lsp.buf.declaration), "Goto Declaration")
+					map("gd", function()
+						require("mini.extra").pickers.lsp({ scope = "definition" })
+					end, "Goto Definition")
+					map("gD", function()
+						require("mini.extra").pickers.lsp({ scope = "declaration" })
+					end, "Goto Declaration")
 
 					map("gs", require("pretty_hover").hover, "Hover Documentation")
 					map("gS", vim.lsp.buf.signature_help, "Hover Signature")
 
 					map("gr", function()
-						extra.pickers.lsp({ scope = "references" })
+						require("mini.extra").pickers.lsp({ scope = "references" })
 					end, "Goto References")
 					map("gR", vim.lsp.buf.rename, "Rename Variable")
 
@@ -100,7 +108,7 @@ return {
 
 					-- lsp menu
 					map("<leader>li", "<cmd>LspInfo<CR>", "Info")
-					-- map("<leader>ll", "<cmd>LspLog<CR>", "LSP Log")
+					map("<leader>lL", "<cmd>LspLog<CR>", "LSP Log")
 					map("<leader>lr", "<cmd>LspRestart<CR>", "Restart")
 
 					-- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L510

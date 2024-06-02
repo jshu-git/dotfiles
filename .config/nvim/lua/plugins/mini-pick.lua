@@ -73,7 +73,7 @@ return {
 		vim.keymap.set("n", "<leader>'", pick.builtin.resume, { desc = "Last Picker" })
 
 		-- highlights
-		vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
-		vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
+		-- vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
+		-- vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
 	end,
 }

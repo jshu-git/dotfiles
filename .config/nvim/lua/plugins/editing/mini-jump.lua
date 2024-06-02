@@ -28,6 +28,7 @@ return {
 					allowed_windows = { not_current = false },
 					hl_group = "Search",
 					hl_group_ahead = "Search",
+					hl_group_unique = "Search",
 				})
 				jump2d.start(opts)
 			end)

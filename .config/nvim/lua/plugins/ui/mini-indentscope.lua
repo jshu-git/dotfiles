@@ -24,6 +24,7 @@ return {
 			end,
 		})
 
-		vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { link = "SignColumn" })
+		-- highlights
+		-- vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { link = "NonText" })
 	end,
 }

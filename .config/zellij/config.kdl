@@ -122,8 +122,22 @@ themes {
         black "#191724" // status bar background
         white "#e0def4" // 'Zellij' text color (alternating tab color in simplified_ui)
     }
+
+    vscode {
+        bg "#1F1F1F"
+        fg "#D4D4D4"
+        red "#F44747"
+        green "#6A9955"
+        blue "#007ACC"
+        yellow "#795E26"
+        magenta "#C586C0"
+        orange "#F44747"
+        cyan "#4FC1FF"
+        black "#1F1F1F"
+        white "#D4D4D4"
+    }
 }
-theme "rose-pine"
+theme "vscode"
 default_layout "compact"
 default_mode "locked"
 layout_dir "/Users/jshu/.config/zellij/layouts/"

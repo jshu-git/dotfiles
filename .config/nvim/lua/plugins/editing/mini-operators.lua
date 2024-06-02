@@ -12,6 +12,9 @@ return {
 			multiply = {
 				prefix = "sm",
 			},
+			replace = {
+				prefix = "",
+			},
 			sort = {
 				prefix = "so",
 			},
