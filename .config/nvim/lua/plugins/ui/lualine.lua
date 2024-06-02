@@ -48,7 +48,7 @@ return {
 							show_colors = true,
 						},
 					},
-					{ "filetype", padding = { left = 0, right = 1 } },
+					{ "filetype" },
 					{ file_size, padding = { left = 0, right = 1 } },
 				},
 				lualine_y = {},

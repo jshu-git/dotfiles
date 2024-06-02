@@ -2,7 +2,8 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			{ "folke/lazydev.nvim", ft = "lua", opts = {} },
+			-- { "folke/lazydev.nvim", ft = "lua", opts = {} },
+			{ "folke/neodev.nvim", opts = {} },
 			-- ui
 			{
 				"echasnovski/mini.notify",
