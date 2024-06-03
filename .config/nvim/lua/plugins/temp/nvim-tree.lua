@@ -47,7 +47,6 @@ return {
 			vim.keymap.set("n", "r", api.fs.rename_full, opts("Rename: Full Path"))
 			vim.keymap.set("n", "gy", api.fs.copy.absolute_path, opts("Copy Absolute Path"))
 			vim.keymap.set("n", "gY", api.fs.copy.relative_path, opts("Copy Relative Path"))
-
 			-- marks
 			vim.keymap.set("n", "X", api.marks.bulk.trash, opts("Trash Bookmarked"))
 			vim.keymap.set("n", "M", api.marks.bulk.move, opts("Move Bookmarked"))

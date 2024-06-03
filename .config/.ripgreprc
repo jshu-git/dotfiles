@@ -1,2 +1,8 @@
+# https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#configuration-file
 --hidden
 --smart-case
+--glob
+!lazy-lock.json
+--glob
+!lua/plugins/temp/*
+

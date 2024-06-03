@@ -6,7 +6,7 @@ return {
 			window = {
 				delay = 250,
 				config = {
-					-- width = "auto"
+					width = math.floor(0.23175 * vim.o.columns),
 				},
 			},
 			triggers = {
@@ -44,8 +44,6 @@ return {
 				clue.gen_clues.g(),
 				clue.gen_clues.registers({ show_contents = true }),
 				clue.gen_clues.windows({
-					submode_move = true,
-					submode_navigate = true,
 					submode_resize = true,
 				}),
 				clue.gen_clues.z(),
@@ -55,8 +53,8 @@ return {
 				{ mode = "n", keys = "<leader>l", desc = "LSP…" },
 				{ mode = "n", keys = "<leader>s", desc = "Session…" },
 				{ mode = "n", keys = "<leader>t", desc = "Toggle…" },
-				{ mode = "n", keys = "<leader>h", desc = "Hunk…" },
-				{ mode = "x", keys = "<leader>h", desc = "Hunk…" },
+				{ mode = "n", keys = "<leader>g", desc = "Git…" },
+				{ mode = "x", keys = "<leader>g", desc = "Git…" },
 
 				-- submodes
 				-- unimpaired
@@ -64,10 +62,10 @@ return {
 				{ mode = "n", keys = "[h", postkeys = "[" },
 				{ mode = "n", keys = "]d", postkeys = "]" },
 				{ mode = "n", keys = "[d", postkeys = "[" },
-				{ mode = "n", keys = "]]", postkeys = "]" },
-				{ mode = "n", keys = "[]", postkeys = "]" },
-				{ mode = "n", keys = "[[", postkeys = "[" },
 				{ mode = "n", keys = "][", postkeys = "[" },
+				{ mode = "n", keys = "]]", postkeys = "]" },
+				{ mode = "n", keys = "[[", postkeys = "[" },
+				{ mode = "n", keys = "[]", postkeys = "]" },
 				-- window
 				{ mode = "n", keys = "<C-w>=", postkeys = "<C-w>" },
 				{ mode = "n", keys = "<C-w>-", postkeys = "<C-w>" },

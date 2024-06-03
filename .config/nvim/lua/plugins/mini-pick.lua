@@ -9,7 +9,7 @@ return {
 
 		-- centered window
 		local win_config = function()
-			local height = math.floor(0.309 * vim.o.lines)
+			local height = math.floor(0.618 * vim.o.lines)
 			local width = math.floor(0.618 * vim.o.columns)
 			return {
 				anchor = "NW",
@@ -22,14 +22,41 @@ return {
 
 		pick.setup({
 			mappings = {
-				caret_left = "<A-h>",
-				caret_right = "<A-l>",
+				caret_left = "<Left>",
+				caret_right = "<Right>",
+
+				choose = "<CR>",
+				choose_in_split = "<C-s>",
+				choose_in_tabpage = "",
+				choose_in_vsplit = "<C-v>",
+				choose_marked = "<M-CR>",
+
+				delete_char = "<BS>",
+				delete_char_right = "<Del>",
+				delete_left = "",
+				delete_word = "<C-w>",
+
+				mark = "<C-x>",
+				mark_all = "<C-e>",
+
+				move_down = "<Tab>",
+				move_start = "",
+				move_up = "<S-Tab>",
+
+				paste = "<C-r>",
+
+				refine = "<C-Space>",
+				refine_marked = "<C-n>",
+
 				scroll_down = "<C-d>",
+				scroll_left = "<C-h>",
+				scroll_right = "<C-l>",
 				scroll_up = "<C-u>",
+
+				stop = "<Esc>",
+
 				toggle_info = "<C-k>",
 				toggle_preview = "<C-p>",
-				move_down = "<Tab>",
-				move_up = "<S-Tab>",
 			},
 			window = {
 				config = win_config,
@@ -39,25 +66,35 @@ return {
 		-- files
 		vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files" })
 		vim.keymap.set("n", "<leader>fw", pick.builtin.grep_live, { desc = "Grep (Live)" })
-		vim.keymap.set("n", "<leader>fg", extra.pickers.git_hunks, { desc = "Git Hunks" })
 		vim.keymap.set("n", "<leader>*", "<cmd>Pick grep pattern='<cword>'<cr>", { desc = "Grep (Word)" })
-
 		vim.keymap.set("n", "<leader>/", function()
 			extra.pickers.buf_lines({ scope = "current" })
 		end, { desc = "Grep (Buffer)" })
 		vim.keymap.set("n", "<leader>fr", extra.pickers.oldfiles, { desc = "Recent Files" })
 
-		-- vim specific
-		vim.keymap.set("n", "<leader>fh", pick.builtin.help, { desc = "Help" })
+		-- lsp
+		vim.keymap.set("n", "<leader>fd", extra.pickers.diagnostic, { desc = "Diagnostics" })
+
+		-- git
+		vim.keymap.set("n", "<leader>fg", function()
+			extra.pickers.git_hunks({ scope = "unstaged" })
+		end, { desc = "Git Hunks (Unstaged)" })
+		vim.keymap.set("n", "<leader>fG", function()
+			extra.pickers.git_hunks({ scope = "staged" })
+		end, { desc = "Git Hunks (Staged)" })
+
+		-- vim
 		vim.keymap.set("n", "<leader>fc", extra.pickers.commands, { desc = "Commands" })
-		vim.keymap.set("n", "<leader>fH", extra.pickers.hl_groups, { desc = "Highlights" })
+		vim.keymap.set("n", "<leader>fh", pick.builtin.help, { desc = "Help" })
+		vim.keymap.set("n", "<leader>fl", extra.pickers.hl_groups, { desc = "Highlights" })
 		vim.keymap.set("n", "<leader>fk", extra.pickers.keymaps, { desc = "Keymaps" })
 		vim.keymap.set("n", "<leader>fo", extra.pickers.options, { desc = "Options" })
-		vim.keymap.set("n", "<leader>f'", extra.pickers.registers, { desc = "Registers" })
+		-- vim.keymap.set("n", '"', extra.pickers.registers, { desc = "Registers" })
 		pick.registry.colorschemes = function()
 			local colorschemes = vim.fn.getcompletion("", "color")
 			return pick.start({
 				source = {
+					name = "Colorschemes",
 					items = colorschemes,
 					choose = function(item)
 						vim.cmd("colorscheme " .. item)

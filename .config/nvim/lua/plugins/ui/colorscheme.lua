@@ -11,6 +11,7 @@ return {
 	-- 				italic = false,
 	-- 			},
 	-- 		})
+	--      vim.cmd.colorscheme("rose-pine")
 	-- 	end,
 	-- 	name = "rose-pine",
 	-- },
@@ -39,6 +40,7 @@ return {
 					MiniPickPrompt = { link = "MiniPickBorder" },
 					MiniPickBorderText = { link = "MiniPickBorder" },
 				},
+				vim.cmd.colorscheme("vscode"),
 			})
 		end,
 	},

@@ -42,11 +42,9 @@ bindings = [
     { key = "v", mods = "Control|Shift", chars = "\u001b[86;5u" },
     # <C-S-s>
     { key = "s", mods = "Control|Shift", chars = "\u001b[83;5u" },
-    # shift-enter = ci"
+    # shift-enter = ci"/'
     # { key = "Return", mods = "Shift", chars = "\u000a" },
-    { key = "Enter", mods = "Shift", chars = "ci\"" },
-    # ctrl-enter = ci'
-    { key = "Enter", mods = "Control", chars = "ci'" },
+    { key = "Enter", mods = "Shift", chars = "ciq" },
 ]
 
 # https://github.com/slugbyte/lackluster.nvim/blob/main/extra/alacritty/alacritty.toml[colors.primary]

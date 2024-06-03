@@ -38,7 +38,7 @@ return {
 						symbols = {
 							status = {
 								icons = {
-									enabled = "",
+									enabled = " ",
 									sleep = " ",
 									disabled = " ",
 									warning = " ",
@@ -48,7 +48,7 @@ return {
 							show_colors = true,
 						},
 					},
-					{ "filetype" },
+					{ "filetype", padding = { left = 0, right = 1 } },
 					{ file_size, padding = { left = 0, right = 1 } },
 				},
 				lualine_y = {},

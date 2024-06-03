@@ -14,7 +14,7 @@ return {
 			cmp.setup({
 				sources = {
 					{ name = "nvim_lsp" },
-					-- { name = "lazydev"},
+					{ name = "lazydev" },
 					{ name = "path" },
 					{ name = "buffer" },
 				},
@@ -31,7 +31,7 @@ return {
 					},
 					documentation = {
 						border = "single",
-						max_width = 50,
+						max_width = 40,
 					},
 				},
 				-- https://github.com/hrsh7th/nvim-cmp/discussions/609#discussioncomment-5727678

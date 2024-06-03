@@ -51,6 +51,7 @@ keymap.set("n", "<leader>P", "<cmd>pu!<CR>==", { desc = "Paste Before Line" })
 keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
 keymap.set("n", "n", "nzz")
 keymap.set("n", "N", "Nzz")
+keymap.set("n", "*", "*zz")
 
 -- visual modes
 keymap.set("x", "<CR>", "c")
@@ -59,4 +60,6 @@ keymap.set("x", "<C-q>", "j")
 keymap.set("v", "<Tab>", ">gv")
 keymap.set("v", "<S-Tab>", "<gv")
 
+-- zellij
 keymap.set("n", "<C-f>", "<nop>")
+keymap.set("n", "<C-a>", "<nop>")

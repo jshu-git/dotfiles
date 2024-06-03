@@ -1,6 +1,5 @@
 return {
 	"echasnovski/mini.diff",
-	version = "*",
 	config = function()
 		require("mini.diff").setup({
 			view = {
@@ -8,8 +7,8 @@ return {
 				signs = { add = "+", change = "~", delete = "-" },
 			},
 			mappings = {
-				apply = "gh",
-				reset = "gH",
+				apply = "<leader>gh",
+				reset = "<leader>gH",
 				textobject = "ih",
 				goto_first = "[H",
 				goto_prev = "[h",

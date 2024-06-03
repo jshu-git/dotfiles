@@ -2,27 +2,14 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			-- { "folke/lazydev.nvim", ft = "lua", opts = {} },
-			{ "folke/neodev.nvim", opts = {} },
+			{ "folke/lazydev.nvim", ft = "lua", opts = {} },
 			-- ui
-			{
-				"echasnovski/mini.notify",
-				opts = {
-					window = { winblend = 100 },
-				},
-			},
-			{
-				"Fildo7525/pretty_hover",
-				opts = {
-					border = "single",
-					max_width = 100,
-					max_height = 15,
-				},
-			},
+			{ "echasnovski/mini.notify", opts = {} },
+			{ "Fildo7525/pretty_hover", opts = { border = "single", max_width = 40, max_height = 15 } },
 			-- cmp
 			{ "hrsh7th/cmp-nvim-lsp" },
 			-- lsp
-			"echasnovski/mini.extra",
+			{ "echasnovski/mini.extra" },
 		},
 		config = function()
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -30,53 +17,6 @@ return {
 				callback = function(event)
 					local map = function(keys, func, desc)
 						vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
-					end
-
-					-- https://old.reddit.com/r/neovim/comments/140b1p9/does_anyone_have_a_tip_or_keybind_to_open_and/
-					local function open_definition_in_vertical_split()
-						vim.lsp.buf.definition({
-							on_list = function(options)
-								-- if there are multiple items, warn
-								if #options.items > 1 then
-									vim.notify("Multiple definitions found, opening first one", vim.log.levels.WARN)
-								end
-								-- open the first item in a vertical split
-								local item = options.items[1]
-								local cmd = "vsplit +"
-									.. item.lnum
-									.. " "
-									.. item.filename
-									.. "|"
-									.. "normal "
-									.. item.col
-									.. "|"
-								vim.cmd(cmd)
-							end,
-						})
-					end
-
-					local function open_in_vertical_split(func)
-						return function()
-							func({
-								on_list = function(options)
-									-- if there are multiple items, warn
-									if #options.items > 1 then
-										vim.notify("Multiple definitions found, opening first one", vim.log.levels.WARN)
-									end
-									-- open the first item in a vertical split
-									local item = options.items[1]
-									local cmd = "vsplit +"
-										.. item.lnum
-										.. " "
-										.. item.filename
-										.. "|"
-										.. "normal "
-										.. item.col
-										.. "|"
-									vim.cmd(cmd)
-								end,
-							})
-						end
 					end
 
 					-- lsp
@@ -191,7 +131,6 @@ return {
 			vim.diagnostic.config({
 				float = { border = "single" },
 				virtual_text = false,
-				-- jump = { float = true },
 			})
 			local signs = { Error = "󰅚", Warn = "󰀪", Hint = "󰌶", Info = "󰋽" }
 			for type, icon in pairs(signs) do
@@ -224,7 +163,7 @@ return {
 				},
 				-- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
 				format_on_save = function(bufnr)
-					if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+					if vim.g.disable_autoformat then
 						return
 					end
 					return { timeout_ms = 500, lsp_fallback = true }
