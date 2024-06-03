@@ -1,6 +1,9 @@
 return {
-	"szw/vim-maximizer",
+	"0x00-ketsu/maximizer.nvim",
 	config = function()
-		vim.keymap.set("n", "<C-w>m", "<cmd>MaximizerToggle<CR>", { desc = "Toggle Maximize" })
+		local maximizer = require("maximizer")
+		maximizer.setup()
+		vim.keymap.set("n", "<C-w>m", maximizer.toggle, { desc = "Toggle Maximize" })
+		vim.keymap.set("n", "<C-e>", maximizer.toggle, { desc = "Toggle Maximize" })
 	end,
 }

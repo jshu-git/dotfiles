@@ -44,3 +44,5 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 	group = user_grp,
 })
+
+vim.cmd.colorscheme("vscode")

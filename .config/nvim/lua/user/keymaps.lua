@@ -53,6 +53,19 @@ keymap.set("n", "n", "nzz")
 keymap.set("n", "N", "Nzz")
 keymap.set("n", "*", "*zz")
 
+-- window keymaps
+vim.keymap.set("n", "<C-v>", "<C-w>v", { desc = "Split Right" })
+vim.keymap.set("n", "<C-s>", "<C-w>s", { desc = "Split Below" })
+vim.keymap.set("n", "<C-w>V", "<C-w>v<C-w>h", { desc = "Split Right (No Focus)" })
+vim.keymap.set("n", "<C-w>S", "<C-w>s<C-w>k", { desc = "Split Below (No Focus)" })
+-- resizing
+vim.keymap.set("n", "<C-w>0", "<C-w>=", { desc = "Reset Window Size" })
+vim.keymap.set("n", "<C-w>-", "<C-w><", { desc = "Decrease width" })
+vim.keymap.set("n", "<C-w>=", "<C-w>>", { desc = "Increase width" })
+vim.keymap.set("n", "<C-w>_", "<C-w>-", { desc = "Decrease height" })
+-- vim.keymap.del("n", "<C-w><")
+-- vim.keymap.del("n", "<C-w>>")
+
 -- visual modes
 keymap.set("x", "<CR>", "c")
 keymap.set("x", "V", "j")

@@ -74,18 +74,6 @@ return {
 			},
 		})
 
-		-- window keymaps
-		vim.keymap.set("n", "<C-w><", "<nop>")
-		vim.keymap.set("n", "<C-w>>", "<nop>")
-		vim.keymap.set("n", "<C-w>0", "<C-w>=", { desc = "Reset Window Size" })
-		-- -/= for width, _/+ for height
-		vim.keymap.set("n", "<C-w>-", "<C-w><", { desc = "Decrease width" })
-		vim.keymap.set("n", "<C-w>=", "<C-w>>", { desc = "Increase width" })
-		vim.keymap.set("n", "<C-w>_", "<C-w>-", { desc = "Decrease height" })
-		-- vim.keymap.set("n", "<C-w>+", "<C-w>+", { desc = "Increase Height" })
-		vim.keymap.set("n", "<C-w>V", "<C-w>v<C-w>h", { desc = "Split Right (No Focus)" })
-		vim.keymap.set("n", "<C-w>S", "<C-w>s<C-w>k", { desc = "Split Below (No Focus)" })
-
 		-- highlights
 		-- vim.api.nvim_set_hl(0, "MiniClueTitle", { link = "MiniClueBorder" })
 	end,
