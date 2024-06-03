@@ -19,9 +19,7 @@ return {
 		buttons.opts.spacing = 0
 		buttons.val = {
 			dashboard.button("r", "󰁯  Restore Session", "<cmd>SessionRestore<CR>"),
-			---@diagnostic disable-next-line: param-type-mismatch
 			dashboard.button("f", "󰍉  Find", require("mini.pick").builtin.files),
-			---@diagnostic disable-next-line: param-type-mismatch
 			dashboard.button("e", "  Explorer", require("mini.files").open),
 			dashboard.button("n", "  New File", "<cmd>enew<CR>"),
 			dashboard.button("l", "󰒲  Lazy", "<cmd>Lazy<CR>"),
