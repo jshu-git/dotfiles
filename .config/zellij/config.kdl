@@ -10,14 +10,6 @@ keybinds clear-defaults=true {
         bind "Ctrl f" { ToggleFloatingPanes;   }
         // bind "Alt f" { ToggleFocusFullscreen; }
 
-        // lazygit
-        bind "Ctrl g" {
-            // https://github.com/zellij-org/zellij/discussions/2518
-            Run "zellij" "run" "--close-on-exit" "--floating" "--" "lazygit" {
-                close_on_exit true
-            }
-            SwitchToMode "Locked"
-        }
     }
     normal {
         // lock
@@ -26,6 +18,15 @@ keybinds clear-defaults=true {
         // add floating pane
         bind "f" {
             Run "zellij" "action" "new-pane" "--floating" {
+                close_on_exit true
+            }
+            SwitchToMode "Locked"
+        }
+
+        // lazygit
+        bind "g" {
+            // https://github.com/zellij-org/zellij/discussions/2518
+            Run "zellij" "run" "--close-on-exit" "--floating" "--" "lazygit" {
                 close_on_exit true
             }
             SwitchToMode "Locked"

@@ -1,7 +1,8 @@
 return {
 	"echasnovski/mini.diff",
 	config = function()
-		require("mini.diff").setup({
+		local diff = require("mini.diff")
+		diff.setup({
 			view = {
 				style = "sign",
 				signs = { add = "+", change = "~", delete = "-" },
@@ -16,5 +17,6 @@ return {
 				goto_last = "]H",
 			},
 		})
+		vim.keymap.set("n", "<leader>gt", diff.toggle_overlay, { desc = "Toggle Overlay" })
 	end,
 }

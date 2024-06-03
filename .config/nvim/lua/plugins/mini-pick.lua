@@ -22,41 +22,11 @@ return {
 
 		pick.setup({
 			mappings = {
-				caret_left = "<Left>",
-				caret_right = "<Right>",
-
-				choose = "<CR>",
-				choose_in_split = "<C-s>",
-				choose_in_tabpage = "",
-				choose_in_vsplit = "<C-v>",
-				choose_marked = "<M-CR>",
-
-				delete_char = "<BS>",
-				delete_char_right = "<Del>",
-				delete_left = "",
-				delete_word = "<C-w>",
-
-				mark = "<C-x>",
-				mark_all = "<C-e>",
-
-				move_down = "<Tab>",
-				move_start = "",
-				move_up = "<S-Tab>",
-
-				paste = "<C-r>",
-
-				refine = "<C-Space>",
-				refine_marked = "<C-n>",
-
+				mark_all = "<C-g>", -- defaults to <C-a>
+				move_down = "<C-j>",
+				move_up = "<C-k>",
 				scroll_down = "<C-d>",
-				scroll_left = "<C-h>",
-				scroll_right = "<C-l>",
 				scroll_up = "<C-u>",
-
-				stop = "<Esc>",
-
-				toggle_info = "<C-k>",
-				toggle_preview = "<C-p>",
 			},
 			window = {
 				config = win_config,

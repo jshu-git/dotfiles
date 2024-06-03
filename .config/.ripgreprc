@@ -3,6 +3,6 @@
 --smart-case
 --glob
 !lazy-lock.json
---glob
-!lua/plugins/temp/*
+# --glob
+# !lua/plugins/temp/*
 
