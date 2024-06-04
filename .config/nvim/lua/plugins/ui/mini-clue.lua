@@ -55,7 +55,7 @@ return {
 				{ mode = "n", keys = "<leader>t", desc = "Toggle…" },
 				{ mode = "n", keys = "<leader>g", desc = "Git…" },
 				{ mode = "x", keys = "<leader>g", desc = "Git…" },
-				{ mode = "n", keys = "<leader>b", desc = "Buffers…" },
+				{ mode = "n", keys = "<leader>d", desc = "Quick Edit…" },
 
 				-- submodes
 				{ mode = "n", keys = "][", postkeys = "[" },

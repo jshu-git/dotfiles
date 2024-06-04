@@ -1,4 +1,55 @@
 return {
+	{
+		"romgrk/barbar.nvim",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("barbar").setup({
+				animation = false,
+				auto_hide = 0,
+				exclude_ft = { "alpha" },
+				icons = {
+					button = "",
+					separator = { left = "", right = "" },
+					separator_at_end = false,
+					modified = { button = "●" },
+					pinned = { button = "", filename = false },
+					inactive = { separator = { left = "", right = "" } },
+				},
+				insert_at_end = true,
+				maximum_padding = 1,
+				minimum_padding = 1,
+			})
+
+			-- navigation
+			vim.keymap.set("n", "<S-Tab>", "<cmd>BufferPrevious<CR>")
+			vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>")
+			-- move
+			vim.keymap.set("n", "<A-h>", "<cmd>BufferMovePrevious<CR>")
+			vim.keymap.set("n", "<A-l>", "<cmd>BufferMoveNext<CR")
+
+			vim.keymap.set("n", "<A-P>", "<cmd>BufferPin<CR>")
+			vim.keymap.set("n", "gb", "<cmd>BufferPick<CR>", { desc = "Pick Buffer" })
+		end,
+	},
+
+	{
+		"echasnovski/mini.bufremove",
+		config = function()
+			local mini = require("mini.bufremove")
+			mini.setup()
+
+			vim.keymap.set("n", "<A-c>", function()
+				mini.delete(0, false)
+			end)
+			vim.keymap.set("n", "<A-C>", function()
+				mini.delete(0, false)
+				vim.cmd("silent! close")
+			end, { desc = "Delete Buffer and Window" })
+		end,
+	},
+
 	-- {
 	-- 	"echasnovski/mini.tabline",
 	-- 	config = function()
@@ -27,40 +78,6 @@ return {
 	-- 		})
 	-- 	end,
 	-- },
-
-	{
-		"romgrk/barbar.nvim",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("barbar").setup({
-				animation = false,
-				auto_hide = 0,
-				exclude_ft = { "alpha" },
-				icons = {
-					button = "",
-					separator = { left = "", right = "" },
-					separator_at_end = false,
-					modified = { button = "●" },
-					pinned = { button = "", filename = false },
-					-- alternate = { filetype = { enabled = false } },
-					inactive = { separator = { left = "", right = "" } },
-				},
-				insert_at_end = true,
-				maximum_padding = 1,
-				minimum_padding = 1,
-			})
-			vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>")
-			vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>")
-			vim.keymap.set("n", "<A-H>", "<cmd>BufferMovePrevious<CR>")
-			vim.keymap.set("n", "<A-L>", "<cmd>BufferMoveNext<CR>")
-			vim.keymap.set("n", "<A-P>", "<cmd>BufferPin<CR>")
-			-- vim.keymap.set("n", "<A-c>", "<cmd>BufferClose<CR>")
-			vim.keymap.set("n", "<A-C>", "<cmd>BufferCloseAllButCurrent<CR>")
-			vim.keymap.set("n", "gb", "<cmd>BufferPick<CR>")
-		end,
-	},
 
 	-- {
 	-- 	"akinsho/bufferline.nvim",

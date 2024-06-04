@@ -87,13 +87,9 @@ return {
 			cmp.setup.cmdline(":", {
 				completion = {
 					keyword_length = 0,
-					completeopt = "menu,menuone,preview,noinsert",
+					completeopt = "menu,menuone,preview,noinsert,noselect",
 				},
-				mapping = cmp.mapping.preset.cmdline({
-					["<CR>"] = {
-						c = cmp.mapping.confirm({ select = true }),
-					},
-				}),
+				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
 					{ name = "path" },
 					{ name = "cmdline" },

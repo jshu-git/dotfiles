@@ -12,8 +12,8 @@ vim.keymap.set("n", "<leader>z", "<cmd>e #<CR>", { desc = "Reopen Last Closed Bu
 vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Word Wrap" })
 
 -- buffers
-vim.keymap.set("n", "<Tab>", "<cmd>bn<CR>")
-vim.keymap.set("n", "<S-Tab>", "<cmd>bp<CR>")
+-- vim.keymap.set("n", "<Tab>", "<cmd>bn<CR>")
+-- vim.keymap.set("n", "<S-Tab>", "<cmd>bp<CR>")
 
 -- movement
 vim.keymap.set({ "n", "x" }, "j", "gj")
@@ -35,10 +35,12 @@ vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<CR>", '"_ciw')
 -- keymap.set("n", "<S-CR>", 'ciq')
 vim.keymap.set("n", "<C-r>", ".")
-vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "Add Comma" })
-vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Add Semicolon" })
-vim.keymap.set("n", "<leader>L", 'mz$"_x`z', { desc = "Delete Last Character" })
-vim.keymap.set("n", "<leader>H", 'mz0"_x`z', { desc = "Delete First Character" })
+
+-- quick edits
+vim.keymap.set("n", "<leader>d,", "mzA,<Esc>`z", { desc = "Add Comma" })
+vim.keymap.set("n", "<leader>d;", "mzA;<Esc>`z", { desc = "Add Semicolon" })
+vim.keymap.set("n", "<leader>dl", 'mz$"_x`z', { desc = "Delete Last Character" })
+vim.keymap.set("n", "<leader>dh", 'mz0"_x`z', { desc = "Delete First Character" })
 
 -- preserve clipboard
 vim.keymap.set({ "n", "x" }, "x", '"_x')
@@ -59,10 +61,12 @@ vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "*", "*zz")
 
 -- window keymaps
-vim.keymap.set("n", "<C-v>", "<C-w>v", { desc = "Split Right" })
-vim.keymap.set("n", "<C-s>", "<C-w>s", { desc = "Split Below" })
-vim.keymap.set("n", "<C-w>V", "<C-w>v<C-w>h", { desc = "Split Right (No Focus)" })
-vim.keymap.set("n", "<C-w>S", "<C-w>s<C-w>k", { desc = "Split Below (No Focus)" })
+-- vim.keymap.set("n", "<C-v>", "<C-w>v", { desc = "Split Right" })
+-- vim.keymap.set("n", "<C-s>", "<C-w>s", { desc = "Split Below" })
+-- vim.keymap.set("n", "<C-w>V", "<C-w>v<C-w>h", { desc = "Split Right (No Focus)" })
+-- vim.keymap.set("n", "<C-w>S", "<C-w>s<C-w>k", { desc = "Split Below (No Focus)" })
+vim.keymap.set("n", "<C-v>", "<C-w>v<C-w>h", { desc = "Split Right (No Focus)" })
+vim.keymap.set("n", "<C-s>", "<C-w>s<C-w>k", { desc = "Split Below (No Focus)" })
 
 -- resizing
 vim.keymap.set("n", "<C-w>0", "<C-w>=", { desc = "Reset Window Size" })

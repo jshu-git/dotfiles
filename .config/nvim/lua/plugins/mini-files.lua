@@ -94,6 +94,17 @@ return {
 			end,
 		})
 
+		-- customize window
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "MiniFilesWindowOpen",
+			callback = function(args)
+				local win_id = args.data.win_id
+				local config = vim.api.nvim_win_get_config(win_id)
+				config.title_pos = "center"
+				vim.api.nvim_win_set_config(win_id, config)
+			end,
+		})
+
 		-- highlights
 		-- vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
 		-- vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })

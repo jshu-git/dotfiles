@@ -38,6 +38,9 @@ return {
 					MiniIndentscopeSymbol = { link = "NonText" },
 					MiniPickPrompt = { link = "MiniPickBorder" },
 					MiniPickBorderText = { link = "MiniPickBorder" },
+
+					-- barbar
+					BufferTabpageFill = { link = "Normal" },
 				},
 			})
 			vim.cmd.colorscheme("vscode")

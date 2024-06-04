@@ -9,8 +9,8 @@ keybinds clear-defaults=true {
         // bind "Alt f" { ToggleFloatingPanes; }
         bind "Ctrl f" { ToggleFloatingPanes;   }
         // bind "Alt f" { ToggleFocusFullscreen; }
-        bind "Alt l" { GoToNextTab; }
-        bind "Alt h" { GoToPreviousTab; }
+        bind "Alt L" { GoToNextTab; }
+        bind "Alt H" { GoToPreviousTab; }
     }
     normal {
         // lock

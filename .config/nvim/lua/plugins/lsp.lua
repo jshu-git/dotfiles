@@ -22,7 +22,7 @@ return {
 					-- lsp
 					map("ga", vim.lsp.buf.code_action, "Code Action")
 					map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
-					map("gi", function()
+					map("gI", function()
 						require("mini.extra").pickers.lsp({ scope = "implementation" })
 					end, "Goto Implementation")
 					map("gt", function()
