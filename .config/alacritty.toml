@@ -32,19 +32,25 @@ bindings = [
 
     # zellij
     # control-a tab escape
-    { key = "Tab", mods = "Control", chars = "\u0001\u0009\u001b" },
+    # { key = "Tab", mods = "Control", chars = "\u0001\u0009\u001b" },
     # control-a P escape
-    { key = "Tab", mods = "Control|Shift", chars = "\u0001P\u001b" },
+    # { key = "Tab", mods = "Control|Shift", chars = "\u0001P\u001b" },
 
     # vim
-    # https://old.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and/
-    # <C-S-v>
-    { key = "v", mods = "Control|Shift", chars = "\u001b[86;5u" },
-    # <C-S-s>
-    { key = "s", mods = "Control|Shift", chars = "\u001b[83;5u" },
-    # shift-enter = ci"/'
+    # <S-CR> = ciq
     # { key = "Return", mods = "Shift", chars = "\u000a" },
     { key = "Enter", mods = "Shift", chars = "ciq" },
+    # https://old.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and/
+    # <C-S-v>
+    # { key = "v", mods = "Control|Shift", chars = "\u001b[86;5u" },
+    # <C-S-s>
+    # { key = "s", mods = "Control|Shift", chars = "\u001b[83;5u" },
+    # <C-S-l>
+    # { key = "L", mods = "Control|Shift", chars = "\u001b[76;5u" },
+    # <C-S-h>
+    # { key = "H", mods = "Control|Shift", chars = "\u001b[72;5u" },
+    # <C-S-a>
+    # { key = "A", mods = "Control|Shift", chars = "\u001b[69;5u" },
 ]
 
 # https://github.com/slugbyte/lackluster.nvim/blob/main/extra/alacritty/alacritty.toml[colors.primary]

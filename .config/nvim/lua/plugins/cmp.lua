@@ -62,43 +62,41 @@ return {
 					completeopt = "menu,menuone,preview,noinsert",
 				},
 				mapping = cmp.mapping.preset.insert({
-					["<C-j>"] = cmp.mapping.select_next_item(),
-					["<C-k>"] = cmp.mapping.select_prev_item(),
-					["<CR>"] = cmp.mapping.confirm({ select = false }),
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					["<C-n>"] = cmp.mapping.select_next_item(),
+					["<C-p>"] = cmp.mapping.select_prev_item(),
 					["<C-x>"] = cmp.mapping.complete(),
 					["<C-c>"] = cmp.mapping.abort(),
 					["<C-d>"] = cmp.mapping.scroll_docs(4),
 					["<C-u>"] = cmp.mapping.scroll_docs(-4),
-					-- https://github.com/hrsh7th/nvim-cmp/discussions/924
-					-- ["<esc>"] = cmp.mapping(function(fallback)
-					-- 	if cmp.visible() then
-					-- 		cmp.abort()
-					-- 	else
-					-- 		fallback()
-					-- 	end
-					-- end, { "i", "c" }),
 				}),
 			})
 
-			-- `/` cmdline setup.
+			-- / cmdline setup
 			cmp.setup.cmdline("/", {
+				completion = {
+					keyword_length = 0,
+					completeopt = "menu,menuone,preview,noinsert,noselect",
+				},
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = {
 					{ name = "buffer" },
 				},
 			})
-			-- `:` cmdline setup.
+			-- : cmdline setup
 			cmp.setup.cmdline(":", {
-				mapping = cmp.mapping.preset.cmdline(),
+				completion = {
+					keyword_length = 0,
+					completeopt = "menu,menuone,preview,noinsert",
+				},
+				mapping = cmp.mapping.preset.cmdline({
+					["<CR>"] = {
+						c = cmp.mapping.confirm({ select = true }),
+					},
+				}),
 				sources = cmp.config.sources({
 					{ name = "path" },
-				}, {
-					{
-						name = "cmdline",
-						option = {
-							ignore_cmds = { "Man", "!" },
-						},
-					},
+					{ name = "cmdline" },
 				}),
 			})
 		end,

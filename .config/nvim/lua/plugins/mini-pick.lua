@@ -9,7 +9,7 @@ return {
 
 		-- centered window
 		local win_config = function()
-			local height = math.floor(0.618 * vim.o.lines)
+			local height = math.floor(0.319 * vim.o.lines)
 			local width = math.floor(0.618 * vim.o.columns)
 			return {
 				anchor = "NW",
@@ -22,9 +22,8 @@ return {
 
 		pick.setup({
 			mappings = {
+				delete_left = "", -- defaults to <C-u>
 				mark_all = "<C-g>", -- defaults to <C-a>
-				move_down = "<C-j>",
-				move_up = "<C-k>",
 				scroll_down = "<C-d>",
 				scroll_up = "<C-u>",
 			},
@@ -75,7 +74,7 @@ return {
 		vim.keymap.set("n", "<leader>ft", pick.registry.colorschemes, { desc = "Themes" })
 
 		-- misc
-		vim.keymap.set("n", "<leader>;", function()
+		vim.keymap.set("n", "<leader>:", function()
 			extra.pickers.history({ scope = ":" })
 		end, { desc = "Command History" })
 		vim.keymap.set("n", "<leader>'", pick.builtin.resume, { desc = "Last Picker" })

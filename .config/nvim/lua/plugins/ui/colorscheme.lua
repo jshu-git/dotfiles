@@ -40,6 +40,7 @@ return {
 					MiniPickBorderText = { link = "MiniPickBorder" },
 				},
 			})
+			vim.cmd.colorscheme("vscode")
 		end,
 	},
 

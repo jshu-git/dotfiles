@@ -55,13 +55,9 @@ return {
 				{ mode = "n", keys = "<leader>t", desc = "Toggle…" },
 				{ mode = "n", keys = "<leader>g", desc = "Git…" },
 				{ mode = "x", keys = "<leader>g", desc = "Git…" },
+				{ mode = "n", keys = "<leader>b", desc = "Buffers…" },
 
 				-- submodes
-				-- unimpaired
-				{ mode = "n", keys = "]h", postkeys = "]" },
-				{ mode = "n", keys = "[h", postkeys = "[" },
-				{ mode = "n", keys = "]d", postkeys = "]" },
-				{ mode = "n", keys = "[d", postkeys = "[" },
 				{ mode = "n", keys = "][", postkeys = "[" },
 				{ mode = "n", keys = "]]", postkeys = "]" },
 				{ mode = "n", keys = "[[", postkeys = "[" },

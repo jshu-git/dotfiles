@@ -1,10 +1,64 @@
 return {
+	-- {
+	-- 	"echasnovski/mini.tabline",
+	-- 	config = function()
+	-- 		require("mini.tabline").setup()
+	-- 	end,
+	-- },
+
+	-- {
+	-- 	"ramilito/winbar.nvim",
+	-- 	event = "VimEnter",
+	-- 	dependencies = {
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 	},
+	-- 	config = function()
+	-- 		require("winbar").setup({
+	-- 			icons = true,
+	-- 			diagnostics = false,
+	-- 			buf_modified = true,
+	-- 			buf_modified_symbol = "●",
+	-- 			dim_inactive = {
+	-- 				enabled = true,
+	-- 				highlight = "NonText",
+	-- 				icons = true,
+	-- 				name = true,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
+
 	{
-		"echasnovski/mini.tabline",
+		"romgrk/barbar.nvim",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
 		config = function()
-			require("mini.tabline").setup()
-			vim.keymap.set("n", "<Tab>", "<cmd>bn<CR>")
-			vim.keymap.set("n", "<S-Tab>", "<cmd>bp<CR>")
+			require("barbar").setup({
+				animation = false,
+				auto_hide = 0,
+				exclude_ft = { "alpha" },
+				icons = {
+					button = "",
+					separator = { left = "", right = "" },
+					separator_at_end = false,
+					modified = { button = "●" },
+					pinned = { button = "", filename = false },
+					-- alternate = { filetype = { enabled = false } },
+					inactive = { separator = { left = "", right = "" } },
+				},
+				insert_at_end = true,
+				maximum_padding = 1,
+				minimum_padding = 1,
+			})
+			vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>")
+			vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>")
+			vim.keymap.set("n", "<A-H>", "<cmd>BufferMovePrevious<CR>")
+			vim.keymap.set("n", "<A-L>", "<cmd>BufferMoveNext<CR>")
+			vim.keymap.set("n", "<A-P>", "<cmd>BufferPin<CR>")
+			-- vim.keymap.set("n", "<A-c>", "<cmd>BufferClose<CR>")
+			vim.keymap.set("n", "<A-C>", "<cmd>BufferCloseAllButCurrent<CR>")
+			vim.keymap.set("n", "gb", "<cmd>BufferPick<CR>")
 		end,
 	},
 

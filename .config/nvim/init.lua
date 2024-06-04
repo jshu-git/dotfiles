@@ -23,26 +23,8 @@ require("lazy").setup({
 	{ import = "plugins.editing" },
 	{ import = "plugins.ui" },
 }, {
-	ui = {
-		border = "single",
-	},
-	change_detection = {
-		notify = false,
-	},
+	ui = { border = "single" },
+	change_detection = { notify = false },
 })
+require("lazy.view.config").keys.close = "<esc>"
 vim.keymap.set("n", "<leader>ll", "<cmd>Lazy<CR>", { desc = "Lazy" })
-
--- close lazy with q/esc https://github.com/folke/lazy.nvim/discussions/1196
-local user_grp = vim.api.nvim_create_augroup("LazyUserGroup", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "lazy",
-	desc = "Quit lazy with <esc>",
-	callback = function()
-		vim.keymap.set("n", "<esc>", function()
-			vim.api.nvim_win_close(0, false)
-		end, { buffer = true, nowait = true })
-	end,
-	group = user_grp,
-})
-
-vim.cmd.colorscheme("vscode")

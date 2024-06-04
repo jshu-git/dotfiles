@@ -131,6 +131,7 @@ return {
 			vim.diagnostic.config({
 				float = { border = "single" },
 				virtual_text = false,
+				-- jump = {float = true, wrap = false}
 			})
 			local signs = { Error = "󰅚", Warn = "󰀪", Hint = "󰌶", Info = "󰋽" }
 			for type, icon in pairs(signs) do

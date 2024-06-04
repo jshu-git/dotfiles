@@ -17,8 +17,8 @@ return {
 				permanent_delete = false,
 			},
 			windows = {
-				width_focus = 25,
-				width_nofocus = 25,
+				width_focus = 20,
+				width_nofocus = 20,
 				width_preview = 50,
 			},
 		})
