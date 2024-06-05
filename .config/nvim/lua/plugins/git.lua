@@ -22,43 +22,43 @@ return {
 		end,
 	},
 
-	{
-		"ruifm/gitlinker.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			local gitlinker = require("gitlinker")
-			local actions = require("gitlinker.actions")
-
-			require("gitlinker").setup({
-				-- remote = nil,
-				mappings = nil,
-			})
-
-			-- copy url
-			vim.keymap.set("n", "<leader>gy", function()
-				gitlinker.get_buf_range_url("n", { action_callback = actions.copy_to_clipboard })
-			end, { desc = "Copy Git URL" })
-			vim.keymap.set("v", "<leader>gy", function()
-				gitlinker.get_buf_range_url("v", { action_callback = actions.copy_to_clipboard })
-			end, { desc = "Copy Git URL" })
-			-- copy homepage
-			vim.keymap.set("n", "<leader>gY", gitlinker.get_repo_url, { desc = "Copy Git URL (Homepage)" })
-
-			-- open in browser
-			vim.keymap.set("n", "<leader>gx", function()
-				gitlinker.get_buf_range_url("n", { action_callback = actions.open_in_browser })
-			end, { desc = "Open Git URL", silent = true })
-			vim.keymap.set("v", "<leader>gx", function()
-				gitlinker.get_buf_range_url("v", { action_callback = actions.open_in_browser })
-			end, { desc = "Open Git URL", silent = true })
-			-- open homepage
-			vim.keymap.set("n", "<leader>gX", function()
-				gitlinker.get_repo_url({ action_callback = actions.open_in_browser })
-			end, { desc = "Open Git URL (Homepage)", silent = true })
-		end,
-	},
+	-- {
+	-- 	"ruifm/gitlinker.nvim",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		local gitlinker = require("gitlinker")
+	-- 		local actions = require("gitlinker.actions")
+	--
+	-- 		require("gitlinker").setup({
+	-- 			-- remote = nil,
+	-- 			mappings = nil,
+	-- 		})
+	--
+	-- 		-- copy url
+	-- 		vim.keymap.set("n", "<leader>gy", function()
+	-- 			gitlinker.get_buf_range_url("n", { action_callback = actions.copy_to_clipboard })
+	-- 		end, { desc = "Copy Git URL" })
+	-- 		vim.keymap.set("v", "<leader>gy", function()
+	-- 			gitlinker.get_buf_range_url("v", { action_callback = actions.copy_to_clipboard })
+	-- 		end, { desc = "Copy Git URL" })
+	-- 		-- copy homepage
+	-- 		vim.keymap.set("n", "<leader>gY", gitlinker.get_repo_url, { desc = "Copy Git URL (Homepage)" })
+	--
+	-- 		-- open in browser
+	-- 		vim.keymap.set("n", "<leader>gx", function()
+	-- 			gitlinker.get_buf_range_url("n", { action_callback = actions.open_in_browser })
+	-- 		end, { desc = "Open Git URL", silent = true })
+	-- 		vim.keymap.set("v", "<leader>gx", function()
+	-- 			gitlinker.get_buf_range_url("v", { action_callback = actions.open_in_browser })
+	-- 		end, { desc = "Open Git URL", silent = true })
+	-- 		-- open homepage
+	-- 		vim.keymap.set("n", "<leader>gX", function()
+	-- 			gitlinker.get_repo_url({ action_callback = actions.open_in_browser })
+	-- 		end, { desc = "Open Git URL (Homepage)", silent = true })
+	-- 	end,
+	-- },
 
 	-- {
 	-- 	"lewis6991/gitsigns.nvim",

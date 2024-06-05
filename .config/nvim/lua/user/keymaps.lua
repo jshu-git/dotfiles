@@ -6,7 +6,7 @@ vim.keymap.set("n", "<leader>o", "o<Esc>", { desc = "New Line Below" })
 vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = "New Line Above" })
 vim.keymap.set("n", "<leader>n", "<cmd>new<CR>", { desc = "New Scratch Buffer" })
 vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
-vim.keymap.set("n", "`", "<C-^>", { desc = "Alternate Buffer" })
+vim.keymap.set("n", "<BS>", "<C-^>", { desc = "Alternate Buffer" })
 
 -- toggles
 vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Word Wrap" })
@@ -18,8 +18,8 @@ vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Wo
 -- movement
 vim.keymap.set({ "n", "x" }, "j", "gj")
 vim.keymap.set({ "n", "x" }, "k", "gk")
-vim.keymap.set({ "n", "x", "o" }, "H", "g^")
-vim.keymap.set({ "n", "x", "o" }, "L", "g$")
+vim.keymap.set({ "n", "x", "o" }, "H", "^")
+vim.keymap.set({ "n", "x", "o" }, "L", "$")
 vim.keymap.set({ "n", "x" }, "J", "6gjzz")
 vim.keymap.set({ "n", "x" }, "K", "6gkzz")
 vim.keymap.set("n", "]]", "}zz", { desc = "Next Paragraph" })
@@ -36,11 +36,8 @@ vim.keymap.set("n", "<CR>", '"_ciw')
 -- keymap.set("n", "<S-CR>", 'ciq')
 vim.keymap.set("n", "<C-r>", ".")
 
--- quick edits
-vim.keymap.set("n", "<leader>d,", "mzA,<Esc>`z", { desc = "Add Comma" })
-vim.keymap.set("n", "<leader>d;", "mzA;<Esc>`z", { desc = "Add Semicolon" })
-vim.keymap.set("n", "<leader>dl", 'mz$"_x`z', { desc = "Delete Last Character" })
-vim.keymap.set("n", "<leader>dh", 'mz0"_x`z', { desc = "Delete First Character" })
+vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "Add Comma" })
+vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Add Semicolon" })
 
 -- preserve clipboard
 vim.keymap.set({ "n", "x" }, "x", '"_x')
