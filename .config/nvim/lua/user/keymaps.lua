@@ -28,13 +28,13 @@ vim.keymap.set("n", "[]", "}zz", { desc = "Previous paragraph" })
 vim.keymap.set("n", "[[", "{zz", { desc = "Previous paragraph" })
 
 -- editing
-vim.keymap.set("n", ";", ":")
 vim.keymap.set("n", "<C-c>", "gcc", { remap = true })
 vim.keymap.set("x", "<C-c>", "gc", { remap = true })
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<CR>", '"_ciw')
 -- keymap.set("n", "<S-CR>", 'ciq')
 vim.keymap.set("n", "<C-r>", ".")
+vim.keymap.set("n", ";", ":")
 
 vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "Add Comma" })
 vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Add Semicolon" })
