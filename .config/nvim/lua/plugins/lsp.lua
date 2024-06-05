@@ -5,7 +5,6 @@ return {
 			{ "folke/lazydev.nvim", ft = "lua", opts = {} },
 			-- ui
 			{ "echasnovski/mini.notify", opts = {} },
-			{ "Fildo7525/pretty_hover", opts = { border = "single", max_width = 40, max_height = 15 } },
 			-- cmp
 			{ "hrsh7th/cmp-nvim-lsp" },
 			-- lsp
@@ -36,7 +35,7 @@ return {
 						require("mini.extra").pickers.lsp({ scope = "declaration" })
 					end, "Goto Declaration")
 
-					map("gs", require("pretty_hover").hover, "Hover Documentation")
+					map("gs", vim.lsp.buf.hover, "Hover Documentation")
 					map("gS", vim.lsp.buf.signature_help, "Hover Signature")
 
 					map("gr", function()

@@ -31,7 +31,6 @@ return {
 					},
 					documentation = {
 						border = "single",
-						max_width = 40,
 					},
 				},
 				-- https://github.com/hrsh7th/nvim-cmp/discussions/609#discussioncomment-5727678
@@ -48,7 +47,7 @@ return {
 						item.menu = menu_icon[entry.source.name]
 						local content = item.abbr
 						local win_width = vim.api.nvim_win_get_width(0)
-						local max_content_width = math.floor(win_width * 0.20)
+						local max_content_width = math.floor(win_width * 0.15)
 						if #content > max_content_width then
 							item.abbr = vim.fn.strcharpart(content, 0, max_content_width - 1) .. "…"
 						else
@@ -69,6 +68,13 @@ return {
 					["<C-c>"] = cmp.mapping.abort(),
 					["<C-d>"] = cmp.mapping.scroll_docs(4),
 					["<C-u>"] = cmp.mapping.scroll_docs(-4),
+					-- snippets
+					["<C-l>"] = function()
+						vim.snippet.jump(1)
+					end,
+					["<C-h>"] = function()
+						vim.snippet.jump(-1)
+					end,
 				}),
 			})
 

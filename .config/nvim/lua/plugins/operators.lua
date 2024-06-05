@@ -53,7 +53,7 @@ return {
 		config = function()
 			require("mini.surround").setup({
 				mappings = {
-					add = "sa",
+					add = "S",
 					delete = "sd",
 					highlight = "sh",
 					replace = "sr",

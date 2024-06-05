@@ -2,12 +2,9 @@ return {
 	"sontungexpt/url-open",
 	branch = "mini",
 	event = "VeryLazy",
+	cmd = "URLOpenUnderCursor",
 	config = function()
-		require("url-open").setup({
-			highlight_url = {
-				cursor_move = { enabled = false },
-			},
-		})
+		require("url-open").setup()
 		vim.keymap.set("n", "gx", "<cmd>URLOpenUnderCursor<CR>")
 	end,
 }
