@@ -6,7 +6,7 @@ vim.keymap.set("n", "<leader>o", "o<Esc>", { desc = "New Line Below" })
 vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = "New Line Above" })
 vim.keymap.set("n", "<leader>n", "<cmd>new<CR>", { desc = "New Scratch Buffer" })
 vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
-vim.keymap.set("n", "<leader>z", "<cmd>e #<CR>", { desc = "Reopen Last Closed Buffer" })
+vim.keymap.set("n", "`", "<C-^>", { desc = "Alternate Buffer" })
 
 -- toggles
 vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Word Wrap" })
@@ -61,12 +61,12 @@ vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "*", "*zz")
 
 -- window keymaps
--- vim.keymap.set("n", "<C-v>", "<C-w>v", { desc = "Split Right" })
--- vim.keymap.set("n", "<C-s>", "<C-w>s", { desc = "Split Below" })
--- vim.keymap.set("n", "<C-w>V", "<C-w>v<C-w>h", { desc = "Split Right (No Focus)" })
--- vim.keymap.set("n", "<C-w>S", "<C-w>s<C-w>k", { desc = "Split Below (No Focus)" })
-vim.keymap.set("n", "<C-v>", "<C-w>v<C-w>h", { desc = "Split Right (No Focus)" })
-vim.keymap.set("n", "<C-s>", "<C-w>s<C-w>k", { desc = "Split Below (No Focus)" })
+vim.keymap.set("n", "<C-v>", "<C-w>v", { desc = "Split Right" })
+vim.keymap.set("n", "<C-s>", "<C-w>s", { desc = "Split Below" })
+vim.keymap.set("n", "<C-w>V", "<C-w>v<C-w>h", { desc = "Split Right (No Focus)" })
+vim.keymap.set("n", "<C-w>S", "<C-w>s<C-w>k", { desc = "Split Below (No Focus)" })
+-- vim.keymap.set("n", "<C-v>", "<C-w>v<C-w>h", { desc = "Split Right (No Focus)" })
+-- vim.keymap.set("n", "<C-s>", "<C-w>s<C-w>k", { desc = "Split Below (No Focus)" })
 
 -- resizing
 vim.keymap.set("n", "<C-w>0", "<C-w>=", { desc = "Reset Window Size" })

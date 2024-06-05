@@ -4,7 +4,6 @@ return {
 		config = function()
 			require("mini.basics").setup({
 				options = {
-					extra_ui = true,
 					win_borders = "single",
 				},
 				mappings = {

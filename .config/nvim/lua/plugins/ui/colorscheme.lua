@@ -40,7 +40,11 @@ return {
 					MiniPickBorderText = { link = "MiniPickBorder" },
 
 					-- barbar
-					BufferTabpageFill = { link = "Normal" },
+					-- BufferTabpageFill = { link = "Normal" },
+
+					-- winbar
+					-- WinBarNC = { link = "Statusline" },
+					-- WinBar = { link = "Statusline" },
 				},
 			})
 			vim.cmd.colorscheme("vscode")
@@ -51,7 +55,7 @@ return {
 	-- 	"miversen33/sunglasses.nvim",
 	-- 	config = function()
 	-- 		require("sunglasses").setup({
-	-- 			filter_percent = 0.2,
+	-- 			filter_percent = 0.33,
 	-- 		})
 	-- 	end,
 	-- },

@@ -2,7 +2,7 @@ return {
 	"echasnovski/mini.cursorword",
 	config = function()
 		require("mini.cursorword").setup({
-			delay = 300,
+			delay = 500,
 		})
 
 		vim.api.nvim_create_autocmd("FileType", {

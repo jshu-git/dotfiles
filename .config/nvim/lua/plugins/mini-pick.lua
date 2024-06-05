@@ -22,6 +22,7 @@ return {
 
 		pick.setup({
 			mappings = {
+				choose_marked = "<C-q>",
 				delete_left = "", -- defaults to <C-u>
 				mark_all = "<C-g>", -- defaults to <C-a>
 				move_down = "<Tab>",
