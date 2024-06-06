@@ -7,16 +7,17 @@ return {
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-cmdline",
+			"dmitmel/cmp-cmdline-history",
+			"onsails/lspkind-nvim",
 		},
 		config = function()
 			local cmp = require("cmp")
-
 			cmp.setup({
 				sources = {
 					{ name = "nvim_lsp" },
 					{ name = "lazydev" },
-					{ name = "path" },
 					{ name = "buffer" },
+					{ name = "path" },
 				},
 				snippet = {
 					expand = function(args)
@@ -33,31 +34,18 @@ return {
 						border = "single",
 					},
 				},
-				-- https://github.com/hrsh7th/nvim-cmp/discussions/609#discussioncomment-5727678
-				-- https://github.com/Roundlay/nvim/blob/main/lua/plugins/lazy-cmp.lua
 				formatting = {
-					fields = { "abbr", "menu", "kind" },
-					format = function(entry, item)
-						local menu_icon = {
-							nvim_lsp = "LSP",
-							nvim_lua = "LUA",
-							buffer = "BUF",
-							path = "PTH",
-						}
-						item.menu = menu_icon[entry.source.name]
-						local content = item.abbr
-						local win_width = vim.api.nvim_win_get_width(0)
-						local max_content_width = math.floor(win_width * 0.15)
-						if #content > max_content_width then
-							item.abbr = vim.fn.strcharpart(content, 0, max_content_width - 1) .. "…"
-						else
-							item.abbr = content .. (" "):rep(max_content_width - #content)
-						end
-						return item
-					end,
+					format = require("lspkind").cmp_format({
+						mode = "symbol_text",
+						maxwidth = function()
+							return math.floor(0.33 * vim.o.columns)
+						end,
+						ellipsis_char = "…",
+						show_labelDetails = true,
+					}),
 				},
 				completion = {
-					keyword_length = 2,
+					keyword_length = 1,
 					completeopt = "menu,menuone,preview,noinsert",
 				},
 				mapping = cmp.mapping.preset.insert({
@@ -69,19 +57,27 @@ return {
 					["<C-d>"] = cmp.mapping.scroll_docs(4),
 					["<C-u>"] = cmp.mapping.scroll_docs(-4),
 					-- snippets
-					["<C-l>"] = function()
-						vim.snippet.jump(1)
-					end,
-					["<C-h>"] = function()
-						vim.snippet.jump(-1)
-					end,
+					["<C-l>"] = cmp.mapping(function(fallback)
+						if vim.snippet.active({ direction = 1 }) then
+							vim.snippet.jump(1)
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
+					["<C-h>"] = cmp.mapping(function(fallback)
+						if vim.snippet.active({ direction = -1 }) then
+							vim.snippet.jump(-1)
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
 				}),
 			})
 
 			-- / cmdline setup
 			cmp.setup.cmdline("/", {
 				completion = {
-					keyword_length = 0,
+					keyword_length = 1,
 					completeopt = "menu,menuone,preview,noinsert,noselect",
 				},
 				mapping = cmp.mapping.preset.cmdline(),
@@ -92,11 +88,12 @@ return {
 			-- : cmdline setup
 			cmp.setup.cmdline(":", {
 				completion = {
-					keyword_length = 0,
+					keyword_length = 1,
 					completeopt = "menu,menuone,preview,noinsert,noselect",
 				},
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
+					{ name = "cmdline_history" },
 					{ name = "path" },
 					{ name = "cmdline" },
 				}),
@@ -134,6 +131,14 @@ return {
 					vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false)
 				end
 			end)
+		end,
+	},
+
+	{
+		"echasnovski/mini.pairs",
+		event = "InsertEnter",
+		config = function()
+			require("mini.pairs").setup()
 		end,
 	},
 }

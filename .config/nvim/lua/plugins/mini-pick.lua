@@ -42,7 +42,12 @@ return {
 		-- files
 		vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files" })
 		vim.keymap.set("n", "<leader>fw", pick.builtin.grep_live, { desc = "Grep (Live)" })
-		vim.keymap.set("n", "<leader>*", "<cmd>Pick grep pattern='<cword>'<cr>", { desc = "Grep (Word)" })
+		vim.keymap.set("n", "<leader>*", function()
+			MiniPick.builtin.grep(
+				{ pattern = "<cword>" },
+				{ source = { name = "Grep (Word): " .. vim.fn.expand("<cword>") } }
+			)
+		end, { desc = "Grep (Word)" })
 		vim.keymap.set("n", "<leader>/", function()
 			extra.pickers.buf_lines({ scope = "current" })
 		end, { desc = "Grep (Buffer)" })

@@ -18,7 +18,7 @@ return {
 		buttons.val = {
 			dashboard.button("r", "󰁯  Restore Session", "<cmd>lua require('persistence').load()<CR>]"),
 			dashboard.button("f", "󰍉  Find", "<cmd>Pick files<CR>"),
-			dashboard.button("e", "  Explorer", "<cmd>lua MiniFiles.open()"),
+			dashboard.button("e", "  Explorer", "<cmd>lua MiniFiles.open()<CR>"),
 			dashboard.button("n", "  New File", "<cmd>enew<CR>"),
 			dashboard.button("l", "󰒲  Lazy", "<cmd>Lazy<CR>"),
 			dashboard.button("<esc>", "󰩈  Exit", "<cmd>qa<CR>"),

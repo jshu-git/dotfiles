@@ -7,15 +7,12 @@ return {
 		local function total_lines()
 			return vim.api.nvim_buf_line_count(0) .. "L"
 		end
-		-- file size
 		local function file_size()
 			return string.format("%.2f", vim.fn.getfsize(vim.fn.expand("%:p")) / 1024) .. "KB"
 		end
 
 		require("lualine").setup({
 			options = {
-				-- theme = require("lualine.themes.rose-pine-alt"),
-				theme = "vscode",
 				component_separators = { left = "", right = "" },
 				-- section_separators = { left = "", right = "" },
 				disabled_filetypes = { "alpha" },
@@ -38,20 +35,21 @@ return {
 						symbols = {
 							status = {
 								icons = {
-									enabled = " ",
-									sleep = " ",
-									disabled = " ",
-									warning = " ",
+									enabled = "",
+									sleep = "",
+									disabled = "",
+									warning = "",
 									unknown = "",
 								},
 							},
 							show_colors = true,
 						},
 					},
-					{ "filetype", padding = { left = 0, right = 1 } },
-					{ file_size, padding = { left = 0, right = 1 } },
+					{ file_size },
 				},
-				lualine_y = {},
+				lualine_y = {
+					{ "filetype" },
+				},
 				lualine_z = {
 					{ total_lines },
 				},

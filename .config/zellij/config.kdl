@@ -6,11 +6,11 @@
 keybinds clear-defaults=true {
     locked {
         bind "Ctrl a" { SwitchToMode "Normal"; }
-        // bind "Alt f" { ToggleFloatingPanes; }
         bind "Ctrl f" { ToggleFloatingPanes;   }
         // bind "Alt f" { ToggleFocusFullscreen; }
-        bind "Alt L" { GoToNextTab; }
-        bind "Alt H" { GoToPreviousTab; }
+
+        // bind "Alt L" { GoToNextTab; }
+        // bind "Alt H" { GoToPreviousTab; }
     }
     normal {
         // lock
@@ -34,7 +34,6 @@ keybinds clear-defaults=true {
         }
 
         // pane
-        // bind "a" { ToggleFloatingPanes; SwitchToMode "Locked"; }
         bind "h" { MoveFocus "Left";  SwitchToMode "Locked"; }
         bind "l" { MoveFocus "Right"; SwitchToMode "Locked"; }
         bind "j" { MoveFocus "Down";  SwitchToMode "Locked"; }
@@ -53,7 +52,6 @@ keybinds clear-defaults=true {
         bind "t" { NewTab;                   SwitchToMode "Locked"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0;        }
         bind "Tab" { GoToNextTab;                                   }
-        bind "P" { GoToPreviousTab;                                 }
         // bind "Shift Tab" { GoToPreviousTab;                      }
         bind "1" { GoToTab 1;                SwitchToMode "Locked"; }
         bind "2" { GoToTab 2;                SwitchToMode "Locked"; }

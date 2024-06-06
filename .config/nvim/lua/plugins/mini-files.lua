@@ -17,9 +17,9 @@ return {
 				permanent_delete = false,
 			},
 			windows = {
-				width_focus = 20,
-				width_nofocus = 20,
-				width_preview = 50,
+				width_focus = math.floor(0.15 * vim.o.columns),
+				width_nofocus = math.floor(0.15 * vim.o.columns),
+				width_preview = math.floor(0.33 * vim.o.columns),
 			},
 		})
 

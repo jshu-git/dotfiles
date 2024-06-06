@@ -24,16 +24,16 @@ return {
 			local ui = require("buffer_manager.ui")
 			-- vim.keymap.set("n", "<Tab>", ui.nav_next, { desc = "Next Buffer" })
 			-- vim.keymap.set("n", "<S-Tab>", ui.nav_prev, { desc = "Previous Buffer" })
+			vim.keymap.set("n", "<Tab>", ui.toggle_quick_menu, { desc = "Buffer Manager" })
 			vim.keymap.set("n", "<leader><Tab>", ui.toggle_quick_menu, { desc = "Buffer Manager" })
-			-- vim.keymap.set("n", "<Tab>", ui.toggle_quick_menu, { desc = "Buffer Manager" })
 
-			local keys = "12345"
-			for i = 1, #keys do
-				local key = keys:sub(i, i)
-				vim.keymap.set("n", string.format("<leader>%s", key), function()
-					ui.nav_file(i)
-				end, { desc = "Buffer " .. i })
-			end
+			-- local keys = "12345"
+			-- for i = 1, #keys do
+			-- 	local key = keys:sub(i, i)
+			-- 	vim.keymap.set("n", string.format("<leader>%s", key), function()
+			-- 		ui.nav_file(i)
+			-- 	end, { desc = "Buffer " .. i })
+			-- end
 		end,
 	},
 
@@ -46,7 +46,7 @@ return {
 			vim.keymap.set("n", "<leader>x", function()
 				mini.delete(0, false)
 			end, { desc = "Delete Buffer" })
-			vim.keymap.set("n", "<leader>X", function()
+			vim.keymap.set("n", "<leader>qx", function()
 				mini.delete(0, false)
 				vim.cmd("silent! close")
 			end, { desc = "Delete Buffer and Window" })
@@ -73,10 +73,6 @@ return {
 				},
 			})
 		end,
-	},
-
-	{
-		"lewis6991/whatthejump.nvim",
 	},
 
 	-- {

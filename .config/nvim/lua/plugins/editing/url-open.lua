@@ -5,6 +5,6 @@ return {
 	cmd = "URLOpenUnderCursor",
 	config = function()
 		require("url-open").setup()
-		vim.keymap.set("n", "gx", "<cmd>URLOpenUnderCursor<CR>")
+		vim.keymap.set("n", "gx", "<cmd>URLOpenUnderCursor<CR>", { desc = "Open URL" })
 	end,
 }

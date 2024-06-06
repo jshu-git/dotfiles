@@ -1,27 +1,34 @@
 return {
 	"echasnovski/mini.clue",
+	event = "VeryLazy",
 	config = function()
 		local clue = require("mini.clue")
+
+		-- delete some default mappings
+		for _, lhs in ipairs({ "[%", "]%", "g%", "g]", "g[" }) do
+			vim.keymap.del("n", lhs)
+		end
+
 		clue.setup({
 			window = {
 				delay = 250,
-				config = {
-					width = math.floor(0.23175 * vim.o.columns),
-				},
+				config = function(bufnr)
+					local max_width = 0
+					for _, line in ipairs(vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)) do
+						max_width = math.max(max_width, vim.fn.strchars(line))
+					end
+					max_width = max_width + 1
+					return {
+						width = math.min(40, max_width),
+					}
+				end,
 			},
 			triggers = {
-				-- g
+				{ mode = "n", keys = "<C-w>" },
 				{ mode = "n", keys = "g" },
 				{ mode = "x", keys = "g" },
-
-				-- windows
-				{ mode = "n", keys = "<C-w>" },
-
-				-- z
 				{ mode = "n", keys = "z" },
 				{ mode = "x", keys = "z" },
-
-				-- registers
 				{ mode = "n", keys = '"' },
 				{ mode = "x", keys = '"' },
 				{ mode = "i", keys = "<C-r>" },
@@ -35,13 +42,13 @@ return {
 				{ mode = "n", keys = "]" },
 				{ mode = "n", keys = "[" },
 
-				-- surround/substitute
+				-- surround/substitute operators
 				{ mode = "n", keys = "s" },
 				{ mode = "x", keys = "s" },
 			},
 
 			clues = {
-				clue.gen_clues.g(),
+				-- clue.gen_clues.g(),
 				clue.gen_clues.registers({ show_contents = true }),
 				clue.gen_clues.windows({
 					submode_resize = true,
@@ -56,17 +63,9 @@ return {
 				{ mode = "n", keys = "<leader>g", desc = "Git…" },
 				{ mode = "x", keys = "<leader>g", desc = "Git…" },
 				{ mode = "n", keys = "<leader>d", desc = "Quick Edit…" },
-
-				-- submodes
-				{ mode = "n", keys = "][", postkeys = "[" },
-				{ mode = "n", keys = "]]", postkeys = "]" },
-				{ mode = "n", keys = "[[", postkeys = "[" },
-				{ mode = "n", keys = "[]", postkeys = "]" },
-				-- window
-				{ mode = "n", keys = "<C-w>=", postkeys = "<C-w>" },
-				{ mode = "n", keys = "<C-w>-", postkeys = "<C-w>" },
-				{ mode = "n", keys = "<C-w>_", postkeys = "<C-w>" },
-				{ mode = "n", keys = "<C-w>+", postkeys = "<C-w>" },
+				{ mode = "n", keys = "<leader>q", desc = "Quit…" },
+				{ mode = "n", keys = "<leader>a", desc = "GPT…" },
+				{ mode = "x", keys = "<leader>a", desc = "GPT…" },
 			},
 		})
 

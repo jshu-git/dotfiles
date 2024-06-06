@@ -61,18 +61,6 @@ return {
 	-- },
 
 	-- {
-	-- 	"dgox16/oldworld.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- },
-
-	-- {
-	-- 	"mellow-theme/mellow.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- },
-
-	-- {
 	-- 	"aktersnurra/no-clown-fiesta.nvim",
 	-- 	priority = 1000,
 	-- 	config = function()

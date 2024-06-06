@@ -12,7 +12,7 @@ return {
 		},
 		config = function()
 			vim.api.nvim_create_autocmd("LspAttach", {
-				group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
+				group = vim.api.nvim_create_augroup("LspConfig", { clear = true }),
 				callback = function(event)
 					local map = function(keys, func, desc)
 						vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
@@ -91,9 +91,9 @@ return {
 						},
 					},
 				},
-				ruff = {
-					settings = {},
-				},
+				-- ruff = {
+				-- 	settings = {},
+				-- },
 				-- basedpyright = {
 				-- 	settings = {
 				-- 		basedpyright = {
@@ -112,6 +112,7 @@ return {
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			-- enable cmp capabilities
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
 			local lspconfig = require("lspconfig")
 			for server, config in pairs(servers) do
 				-- config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {})
@@ -128,7 +129,8 @@ return {
 				border = "single",
 			})
 			vim.diagnostic.config({
-				float = { border = "single" },
+				float = { border = "single", severity_sort = true },
+				severity_sort = true,
 				virtual_text = false,
 				-- jump = {float = true, wrap = false}
 			})
@@ -166,7 +168,7 @@ return {
 					if vim.g.disable_autoformat then
 						return
 					end
-					return { timeout_ms = 500, lsp_fallback = true }
+					return { timeout_ms = 500, lsp_fallback = true, quiet = true }
 				end,
 			})
 
