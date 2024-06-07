@@ -63,8 +63,6 @@ return {
 				{ mode = "n", keys = "<leader>t", desc = "Toggle…" },
 				{ mode = "n", keys = "<leader>g", desc = "Git…" },
 				{ mode = "x", keys = "<leader>g", desc = "Git…" },
-				{ mode = "n", keys = "<leader>d", desc = "Quick Edit…" },
-				{ mode = "n", keys = "<leader>q", desc = "Quit…" },
 				{ mode = "n", keys = "<leader>a", desc = "GPT…" },
 				{ mode = "x", keys = "<leader>a", desc = "GPT…" },
 				{ mode = "n", keys = "<leader>r", desc = "Replace…" },

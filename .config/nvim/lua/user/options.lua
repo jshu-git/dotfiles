@@ -13,6 +13,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- misc
+vim.opt.cursorlineopt = "number"
 vim.opt.timeoutlen = 250
 vim.opt.wrapscan = false
 vim.opt.clipboard = "unnamedplus"

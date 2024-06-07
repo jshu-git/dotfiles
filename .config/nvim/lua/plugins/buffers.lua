@@ -24,7 +24,7 @@ return {
 			local ui = require("buffer_manager.ui")
 			-- vim.keymap.set("n", "<Tab>", ui.nav_next, { desc = "Next Buffer" })
 			-- vim.keymap.set("n", "<S-Tab>", ui.nav_prev, { desc = "Previous Buffer" })
-			vim.keymap.set("n", "<Tab>", ui.toggle_quick_menu, { desc = "Buffer Manager" })
+			-- vim.keymap.set("n", "<Tab>", ui.toggle_quick_menu, { desc = "Buffer Manager" })
 			vim.keymap.set("n", "<leader><Tab>", ui.toggle_quick_menu, { desc = "Buffer Manager" })
 
 			-- local keys = "12345"
@@ -46,7 +46,7 @@ return {
 			vim.keymap.set("n", "<leader>x", function()
 				mini.delete(0, false)
 			end, { desc = "Delete Buffer" })
-			vim.keymap.set("n", "<leader>qx", function()
+			vim.keymap.set("n", "<leader>X", function()
 				mini.delete(0, false)
 				vim.cmd("silent! close")
 			end, { desc = "Delete Buffer and Window" })

@@ -1,9 +1,17 @@
 return {
 	{
 		"echasnovski/mini.ai",
+		depdendencies = {
+			"echasnovski/mini.extra",
+		},
 		config = function()
+			local extras = require("mini.extra")
 			require("mini.ai").setup({
 				n_lines = 500,
+				custom_textobjects = {
+					D = extras.gen_ai_spec.diagnostic(),
+					N = extras.gen_ai_spec.number(),
+				},
 			})
 		end,
 	},

@@ -9,7 +9,14 @@ return {
 				augend.integer.alias.hex,
 
 				-- constants
-				augend.constant.alias.bool,
+				augend.constant.new({
+					elements = { "false", "true" },
+					cyclic = false,
+				}),
+				augend.constant.new({
+					elements = { "no", "yes" },
+					cyclic = false,
+				}),
 				augend.constant.new({
 					elements = { "and", "or" },
 				}),
@@ -23,13 +30,19 @@ return {
 					case = "lower",
 				}),
 			},
+			visual = {
+				augend.integer.alias.decimal,
+			},
 		})
 
+		local map = require("dial.map")
 		vim.keymap.set("n", "=", function()
-			require("dial.map").manipulate("increment", "normal")
+			map.manipulate("increment", "normal")
 		end)
 		vim.keymap.set("n", "-", function()
-			require("dial.map").manipulate("decrement", "normal")
+			map.manipulate("decrement", "normal")
 		end)
+		vim.keymap.set("v", "=", map.inc_visual("visual"))
+		vim.keymap.set("v", "-", map.dec_visual("visual"))
 	end,
 }

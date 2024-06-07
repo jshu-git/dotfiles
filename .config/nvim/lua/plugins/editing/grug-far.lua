@@ -5,14 +5,14 @@ return {
 		grug.setup({
 			startInInsertMode = false,
 			keymaps = {
-				replace = { n = "<leader>rR" },
-				qflist = { n = "<leader>rQ" },
-				syncLocations = { n = "<leader>rS" },
-				syncLine = { n = "<leader>rL" },
-				close = { n = "<leader>x" },
-				historyOpen = { n = "<leader>rH" },
-				-- historyAdd = { n = "<localleader>a" },
-				refresh = { n = "<leader>rF" },
+				replace = { n = "<localleader>rgr" },
+				qflist = { n = "<C-q>" },
+				syncLocations = { n = "<localleader>rgs" },
+				syncLine = { n = "<localleader>rgl" },
+				close = { n = "<localleader>x" },
+				historyOpen = { n = "<localleader>rgh" },
+				historyAdd = { n = "<localleader>rgH" },
+				refresh = { n = "<localleader>rgf" },
 			},
 			headerMaxWidth = 0.5 * vim.o.columns,
 			icons = {
@@ -21,26 +21,33 @@ return {
 		})
 
 		vim.keymap.set("n", "<leader>rr", grug.grug_far, { desc = "Find and Replace" })
-		vim.keymap.set("n", "<leader>rw", function()
+		vim.keymap.set("n", "<leader>r*", function()
 			grug.grug_far({
 				prefills = {
 					search = vim.fn.expand("<cword>"),
-					flags = vim.fn.expand("%"),
+					filesFilter = vim.fn.expand("%"),
 				},
 			})
-		end, { desc = "Find and Replace (Word in File)" })
+		end, { desc = "Find and Replace (cword)" })
 		vim.keymap.set("n", "<leader>rf", function()
 			grug.grug_far({
 				prefills = {
-					flags = vim.fn.expand("%"),
+					filesFilter = vim.fn.expand("%"),
 				},
 			})
 		end, { desc = "Find and Replace (File)" })
+
 		vim.keymap.set(
 			"v",
 			"<leader>rr",
-			":<C-u>lua require('grug-far').with_visual_selection({ prefills = { flags = vim.fn.expand('%') } })<CR>",
+			":<C-u>lua require('grug-far').with_visual_selection({ prefills = { filesFilter = vim.fn.expand('%') } })<CR>",
 			{ desc = "Find and Replace (Selection)" }
 		)
+		-- vim.keymap.set(
+		-- 	"v",
+		-- 	"<leader>rr",
+		-- 	":<C-u>lua require('grug-far').with_visual_selection({ prefills = { flags = vim.fn.expand('%') } })<CR>",
+		-- 	{ desc = "Find and Replace (Selection)" }
+		-- )
 	end,
 }

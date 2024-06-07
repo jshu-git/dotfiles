@@ -1,7 +1,7 @@
 -- leader
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save" })
-vim.keymap.set("n", "<leader>qq", "<cmd>q<CR>", { desc = "Quit" })
-vim.keymap.set("n", "<leader>qa", "<cmd>qa!<CR>", { desc = "Quit All" })
+vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
+vim.keymap.set("n", "<leader>Q", "<cmd>qa!<CR>", { desc = "Quit All" })
 vim.keymap.set("n", "<leader>o", "o<Esc>", { desc = "New Line Below" })
 vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = "New Line Above" })
 vim.keymap.set("n", "<leader>n", "<cmd>enew<CR>", { desc = "Scratch Buffer" })
@@ -11,19 +11,19 @@ vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Wo
 
 -- experimenting
 vim.keymap.set("n", "<BS>", "<C-^>", { desc = "Alternate Buffer" })
-vim.keymap.set({ "n", "x", "o" }, "E", "$")
-vim.keymap.set({ "n", "x", "o" }, "B", "^")
-vim.keymap.set("n", "gG", "gg<S-v>G")
+vim.keymap.set("n", "gG", "gg<S-v>G", { desc = "Select All" })
+vim.keymap.set("n", "<C-x>", '"_dd')
+vim.keymap.set("x", "<C-x>", '"_d')
+-- TODO: <C-e> <C-x> H L
 
 -- movement
 vim.keymap.set({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true })
 vim.keymap.set({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'k']], { expr = true })
 vim.keymap.set({ "n", "x" }, "J", "}zz")
 vim.keymap.set({ "n", "x" }, "K", "{zz")
--- vim.keymap.set({ "n", "x", "o" }, "H", "^")
--- vim.keymap.set({ "n", "x", "o" }, "L", "$")
+vim.keymap.set({ "n", "x", "o" }, "E", "$")
+vim.keymap.set({ "n", "x", "o" }, "B", "^")
 vim.keymap.set({ "n", "x" }, "G", "Gzz")
-vim.keymap.set("n", "*", "*zz")
 
 -- editing
 vim.keymap.set("n", "<C-c>", "gcc", { remap = true })
@@ -33,19 +33,10 @@ vim.keymap.set("n", "<CR>", '"_ciw')
 -- keymap.set("n", "<S-CR>", 'ciq')
 vim.keymap.set("n", "<C-r>", ".")
 vim.keymap.set("n", ";", ":")
-vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "Add Comma" })
-vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Add Semicolon" })
-
--- find and replace word under cursor
--- vim.keymap.set("n", "<leader>rb", function()
--- 	local cmd = ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>"
--- 	local keys = vim.api.nvim_replace_termcodes(cmd, true, false, true)
--- 	vim.api.nvim_feedkeys(keys, "n", false)
--- end, { desc = "Replace Word (Buffer)" })
+vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "Append Comma" })
+vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Append Semicolon" })
 
 -- preserve clipboard
-vim.keymap.set("n", "<C-x>", '"_dd')
-vim.keymap.set("x", "<C-x>", '"_d')
 vim.keymap.set({ "n", "x" }, "x", '"_x')
 vim.keymap.set({ "n", "x" }, "c", '"_c')
 vim.keymap.set({ "n", "x" }, "X", '"_X')
@@ -56,6 +47,7 @@ vim.keymap.set("n", "p", "p==")
 vim.keymap.set("v", "p", '"_dP==')
 vim.keymap.set("n", "<leader>p", "<cmd>pu<CR>==", { desc = "Paste After Line" })
 vim.keymap.set("n", "<leader>P", "<cmd>pu!<CR>==", { desc = "Paste Before Line" })
+vim.keymap.set("n", "<leader>d", "mz$hxd`z", { desc = "Delete Last Character" })
 -- files
 vim.keymap.set("n", "gy", function()
 	vim.fn.setreg("+", vim.fn.expand("%"))

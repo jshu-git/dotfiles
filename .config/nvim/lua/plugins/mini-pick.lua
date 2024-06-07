@@ -42,10 +42,11 @@ return {
 		-- files
 		vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files" })
 		vim.keymap.set("n", "<leader>fw", pick.builtin.grep_live, { desc = "Grep (Live)" })
+		-- TODO: fix
 		vim.keymap.set("n", "<leader>*", function()
 			MiniPick.builtin.grep(
 				{ pattern = "<cword>" },
-				{ source = { name = "Grep (Word): " .. vim.fn.expand("<cword>") } }
+				{ source = { name = "Grep (cword): " .. vim.fn.expand("<cword>") } }
 			)
 		end, { desc = "Grep (Word)" })
 		vim.keymap.set("n", "<leader>/", function()
@@ -89,6 +90,7 @@ return {
 		vim.keymap.set("n", "<leader>:", function()
 			extra.pickers.history({ scope = ":" })
 		end, { desc = "Command History" })
+		vim.keymap.set("n", "<leader>=", extra.pickers.spellsuggest, { desc = "Spell Suggest (cword)" })
 		vim.keymap.set("n", "<leader>'", pick.builtin.resume, { desc = "Last Picker" })
 
 		-- highlights
