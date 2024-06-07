@@ -51,6 +51,7 @@ return {
 				-- clue.gen_clues.g(),
 				clue.gen_clues.registers({ show_contents = true }),
 				clue.gen_clues.windows({
+					submode_move = true,
 					submode_resize = true,
 				}),
 				clue.gen_clues.z(),
@@ -66,6 +67,8 @@ return {
 				{ mode = "n", keys = "<leader>q", desc = "Quit…" },
 				{ mode = "n", keys = "<leader>a", desc = "GPT…" },
 				{ mode = "x", keys = "<leader>a", desc = "GPT…" },
+				{ mode = "n", keys = "<leader>r", desc = "Replace…" },
+				{ mode = "x", keys = "<leader>r", desc = "Replace…" },
 			},
 		})
 

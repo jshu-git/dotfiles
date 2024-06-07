@@ -4,10 +4,12 @@ return {
 		event = { "InsertEnter", "CmdlineEnter" },
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lsp-signature-help",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-cmdline",
 			"dmitmel/cmp-cmdline-history",
+			"hrsh7th/cmp-calc",
 			"onsails/lspkind-nvim",
 		},
 		config = function()
@@ -15,7 +17,9 @@ return {
 			cmp.setup({
 				sources = {
 					{ name = "nvim_lsp" },
-					{ name = "lazydev" },
+					{ name = "nvim_lsp_signature_help" },
+					-- { name = "lazydev" },
+					{ name = "calc" },
 					{ name = "buffer" },
 					{ name = "path" },
 				},
@@ -75,7 +79,7 @@ return {
 			})
 
 			-- / cmdline setup
-			cmp.setup.cmdline("/", {
+			cmp.setup.cmdline({ "/", "?" }, {
 				completion = {
 					keyword_length = 1,
 					completeopt = "menu,menuone,preview,noinsert,noselect",

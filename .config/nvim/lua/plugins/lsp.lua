@@ -5,6 +5,14 @@ return {
 			{ "folke/lazydev.nvim", ft = "lua", opts = {} },
 			-- ui
 			{ "echasnovski/mini.notify", opts = {} },
+			{
+				"rmagatti/goto-preview",
+				opts = {
+					width = math.floor(0.75 * vim.o.columns),
+					height = math.floor(0.5 * vim.o.lines),
+					border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+				},
+			},
 			-- cmp
 			{ "hrsh7th/cmp-nvim-lsp" },
 			-- lsp
@@ -21,19 +29,20 @@ return {
 					-- lsp
 					map("ga", vim.lsp.buf.code_action, "Code Action")
 					map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
-					map("gI", function()
-						require("mini.extra").pickers.lsp({ scope = "implementation" })
-					end, "Goto Implementation")
-					map("gt", function()
-						require("mini.extra").pickers.lsp({ scope = "type_definition" })
-					end, "Goto Type Definition")
+					-- map("gI", function()
+					-- 	require("mini.extra").pickers.lsp({ scope = "implementation" })
+					-- end, "Goto Implementation")
+					-- map("gt", function()
+					-- 	require("mini.extra").pickers.lsp({ scope = "type_definition" })
+					-- end, "Goto Type Definition")
 
-					map("gd", function()
-						require("mini.extra").pickers.lsp({ scope = "definition" })
-					end, "Goto Definition")
+					map("gd", require("goto-preview").goto_preview_definition, "Goto Definition (Preview)")
 					map("gD", function()
-						require("mini.extra").pickers.lsp({ scope = "declaration" })
-					end, "Goto Declaration")
+						require("mini.extra").pickers.lsp({ scope = "definition" })
+					end, "Goto Definition (Pick)")
+					-- map("gD", function()
+					-- 	require("mini.extra").pickers.lsp({ scope = "declaration" })
+					-- end, "Goto Declaration")
 
 					map("gs", vim.lsp.buf.hover, "Hover Documentation")
 					map("gS", vim.lsp.buf.signature_help, "Hover Signature")
@@ -48,7 +57,6 @@ return {
 
 					-- lsp menu
 					map("<leader>li", "<cmd>LspInfo<CR>", "Info")
-					map("<leader>lL", "<cmd>LspLog<CR>", "LSP Log")
 					map("<leader>lr", "<cmd>LspRestart<CR>", "Restart")
 
 					-- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L510

@@ -8,6 +8,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- disable auto comments
 vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
 
+-- commenting in .kdl files
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "kdl",
+	callback = function()
+		vim.opt.commentstring = "// %s"
+	end,
+})
+
 -- LazyVim
 -- Check if we need to reload the file when it changed
 vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {

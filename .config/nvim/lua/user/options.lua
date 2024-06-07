@@ -1,7 +1,3 @@
-local g = vim.g
-g.mapleader = " "
-g.maplocalleader = " "
-
 -- ui
 vim.opt.pumheight = 5
 vim.opt.scrolloff = 10
