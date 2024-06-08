@@ -7,8 +7,6 @@ keybinds clear-defaults=true {
     locked {
         bind "Ctrl a" { SwitchToMode "Normal"; }
         bind "Ctrl f" { ToggleFloatingPanes;   }
-        // bind "Ctrl L" { GoToNextTab; }
-        // bind "Ctrl H" { GoToPreviousTab; }
     }
     normal {
         // lock
@@ -32,19 +30,19 @@ keybinds clear-defaults=true {
         }
 
         // pane
-        bind "h"     { MoveFocus "Left";          SwitchToMode "Locked"; }
-        bind "l"     { MoveFocus "Right";         SwitchToMode "Locked"; }
-        bind "j"     { MoveFocus "Down";          SwitchToMode "Locked"; }
-        bind "k"     { MoveFocus "Up";            SwitchToMode "Locked"; }
-        bind "s"     { NewPane   "Down";          SwitchToMode "Locked"; }
-        bind "v"     { NewPane   "Right";         SwitchToMode "Locked"; }
-        bind "X"     { CloseFocus;                SwitchToMode "Locked"; }
-        bind "e"     { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
-        bind "m"     { ToggleFocusFullscreen;     SwitchToMode "Locked"; }
-        bind "Left"  { MovePane "Left";  }
-        bind "Down"  { MovePane "Down";  }
-        bind "Up"    { MovePane "Up";    }
-        bind "Right" { MovePane "Right"; }
+        bind "h" { MoveFocus "Left";          SwitchToMode "Locked"; }
+        bind "l" { MoveFocus "Right";         SwitchToMode "Locked"; }
+        bind "j" { MoveFocus "Down";          SwitchToMode "Locked"; }
+        bind "k" { MoveFocus "Up";            SwitchToMode "Locked"; }
+        bind "s" { NewPane   "Down";          SwitchToMode "Locked"; }
+        bind "v" { NewPane   "Right";         SwitchToMode "Locked"; }
+        bind "X" { CloseFocus;                SwitchToMode "Locked"; }
+        bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
+        bind "m" { ToggleFocusFullscreen;     SwitchToMode "Locked"; }
+        bind "H" { MovePane "Left";  }
+        bind "J" { MovePane "Down";  }
+        bind "K" { MovePane "Up";    }
+        bind "L" { MovePane "Right"; }
 
         // tab
         bind "t"     { NewTab;              SwitchToMode "Locked"; }
@@ -84,10 +82,10 @@ keybinds clear-defaults=true {
     }
 
     // renaming modes
-    renamepane {
-        bind "Esc"   { UndoRenamePane; SwitchToMode "Locked"; }
-        bind "Enter" { SwitchToMode "Locked";                 }
-    }
+    // renamepane {
+    //     bind "Esc"   { UndoRenamePane; SwitchToMode "Locked"; }
+    //     bind "Enter" { SwitchToMode "Locked";                 }
+    // }
     renametab {
         bind "Esc" { UndoRenameTab; SwitchToMode "Locked";  }
         bind "Enter" { SwitchToMode "Locked";               }
@@ -102,7 +100,6 @@ plugins {
     zjstatus        { location "file:.config/zellij/plugins/zjstatus.wasm"; }
 }
 
-// simplified_ui true
 pane_frames false
 themes {
     vscode {
