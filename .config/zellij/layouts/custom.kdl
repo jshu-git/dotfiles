@@ -24,7 +24,6 @@ layout {
             }
         }
     }
-    tab name="nvim" cwd="~/.config/nvim" focus=true
     tab name=".config" cwd="~/.config"
     tab name="rust" cwd="~/git/rustlings/"
 

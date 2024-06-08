@@ -34,27 +34,6 @@ return {
 			files.open(nil, false)
 		end, { desc = "Explorer (cwd)" })
 
-		-- toggle dotfiles
-		local show_dotfiles = true
-		local filter_show = function(fs_entry)
-			return true
-		end
-		local filter_hide = function(fs_entry)
-			return not vim.startswith(fs_entry.name, ".")
-		end
-		local toggle_dotfiles = function()
-			show_dotfiles = not show_dotfiles
-			local new_filter = show_dotfiles and filter_show or filter_hide
-			files.refresh({ content = { filter = new_filter } })
-		end
-		vim.api.nvim_create_autocmd("User", {
-			pattern = "MiniFilesBufferCreate",
-			callback = function(args)
-				local buf_id = args.data.buf_id
-				vim.keymap.set("n", "th", toggle_dotfiles, { buffer = buf_id, desc = "Toggle Hidden Files" })
-			end,
-		})
-
 		-- toggle preview
 		local show_preview = false
 		local toggle_preview = function()
@@ -65,7 +44,10 @@ return {
 			pattern = "MiniFilesBufferCreate",
 			callback = function(args)
 				local buf_id = args.data.buf_id
-				vim.keymap.set("n", "<Tab>", toggle_preview, { buffer = buf_id, desc = "Toggle Preview" })
+				vim.keymap.set("n", "<Tab>", toggle_preview, {
+					buffer = buf_id,
+					desc = "Toggle Preview",
+				})
 			end,
 		})
 
@@ -100,6 +82,8 @@ return {
 			callback = function(args)
 				local win_id = args.data.win_id
 				local config = vim.api.nvim_win_get_config(win_id)
+
+				vim.wo[win_id].cursorlineopt = "line"
 				config.title_pos = "center"
 				vim.api.nvim_win_set_config(win_id, config)
 			end,

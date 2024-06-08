@@ -27,23 +27,16 @@ return {
 				group_overrides = {
 					CopilotSuggestion = { link = "NonText" },
 					CopilotAnnotation = { link = "NonText" },
-					Directory = { fg = colors.vscBlue },
+					Directory = { fg = colors.vscBlue }, -- MiniFilesDirectory = { fg = colors.vscBlue },
 
 					-- mini
 					MiniClueTitle = { link = "MiniClueBorder" },
-					-- MiniFilesDirectory = { fg = colors.vscBlue },
+					MiniFilesCursorLine = { link = "Character" },
 					MiniFilesTitleFocused = { link = "MiniFilesBorder" },
 					MiniFilesTitle = { link = "MiniFilesBorder" },
-					MiniIndentscopeSymbol = { link = "NonText" },
+					-- MiniIndentscopeSymbol = { link = "NonText" },
 					MiniPickPrompt = { link = "MiniPickBorder" },
 					MiniPickBorderText = { link = "MiniPickBorder" },
-
-					-- barbar
-					-- BufferTabpageFill = { link = "Normal" },
-
-					-- winbar
-					-- WinBarNC = { link = "Statusline" },
-					-- WinBar = { link = "Statusline" },
 				},
 			})
 			vim.cmd.colorscheme("vscode")
