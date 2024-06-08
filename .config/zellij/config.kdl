@@ -37,7 +37,7 @@ keybinds clear-defaults=true {
         bind "s" { NewPane   "Down";          SwitchToMode "Locked"; }
         bind "v" { NewPane   "Right";         SwitchToMode "Locked"; }
         bind "X" { CloseFocus;                SwitchToMode "Locked"; }
-        bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
+        bind "F" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
         bind "m" { ToggleFocusFullscreen;     SwitchToMode "Locked"; }
         bind "H" { MovePane "Left";  }
         bind "J" { MovePane "Down";  }
@@ -79,6 +79,9 @@ keybinds clear-defaults=true {
 
         // layout
         bind "Space" { NextSwapLayout; }
+
+        // scroll
+        bind "e" { EditScrollback; SwitchToMode "Locked"; }
     }
 
     // renaming modes
