@@ -3,7 +3,6 @@ gui:
   scrollPastBottom: false
   scrollOffMargin: 10
   sidePanelWidth: 0.2
-  # expandFocusedSidePanel: true
   showListFooter: false
   showBottomLine: false
   nerdFontsVersion: "3"
@@ -12,8 +11,6 @@ gui:
   border: single
 
 git:
-  paging:
-    pager: delta --paging=never
   commit:
     autoWrapCommitMessage: false
 
@@ -21,6 +18,5 @@ quitOnTopLevelReturn: true
 notARepository: quit
 keybinding:
   universal:
-    quit: <esc>
     prevBlock-alt: K
     nextBlock-alt: J
