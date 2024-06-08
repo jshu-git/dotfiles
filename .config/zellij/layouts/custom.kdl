@@ -1,0 +1,25 @@
+layout {
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="file:/Users/jshu/.config/zellij/plugins/zjstatus.wasm" {
+                format_left   "{mode}"
+                format_right  "{session} "
+                format_center "{tabs}"
+
+                // mode
+                mode_default_to_mode "locked"
+                mode_normal          "#[fg=magenta] zellij…"
+                mode_locked          "    "
+
+                // tabs
+                tab_normal "#[fg=#808080] {name}"
+                tab_active " {name}{floating_indicator}{fullscreen_indicator}{sync_indicator} "
+                tab_sync_indicator       " 󰓦"
+                tab_fullscreen_indicator " 󰊓"
+                tab_floating_indicator   " 󰉈"
+                tab_separator            "    "
+            }
+        }
+    }
+}

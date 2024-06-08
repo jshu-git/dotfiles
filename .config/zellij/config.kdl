@@ -7,10 +7,8 @@ keybinds clear-defaults=true {
     locked {
         bind "Ctrl a" { SwitchToMode "Normal"; }
         bind "Ctrl f" { ToggleFloatingPanes;   }
-        // bind "Alt f" { ToggleFocusFullscreen; }
-
-        // bind "Alt L" { GoToNextTab; }
-        // bind "Alt H" { GoToPreviousTab; }
+        // bind "Ctrl L" { GoToNextTab; }
+        // bind "Ctrl H" { GoToPreviousTab; }
     }
     normal {
         // lock
@@ -34,47 +32,46 @@ keybinds clear-defaults=true {
         }
 
         // pane
-        bind "h" { MoveFocus "Left";  SwitchToMode "Locked"; }
-        bind "l" { MoveFocus "Right"; SwitchToMode "Locked"; }
-        bind "j" { MoveFocus "Down";  SwitchToMode "Locked"; }
-        bind "k" { MoveFocus "Up";    SwitchToMode "Locked"; }
-        bind "s" { NewPane   "Down";  SwitchToMode "Locked"; }
-        bind "v" { NewPane   "Right"; SwitchToMode "Locked"; }
-        bind "X" { CloseFocus;        SwitchToMode "Locked"; }
-        bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
-        // move pane
+        bind "h"     { MoveFocus "Left";          SwitchToMode "Locked"; }
+        bind "l"     { MoveFocus "Right";         SwitchToMode "Locked"; }
+        bind "j"     { MoveFocus "Down";          SwitchToMode "Locked"; }
+        bind "k"     { MoveFocus "Up";            SwitchToMode "Locked"; }
+        bind "s"     { NewPane   "Down";          SwitchToMode "Locked"; }
+        bind "v"     { NewPane   "Right";         SwitchToMode "Locked"; }
+        bind "X"     { CloseFocus;                SwitchToMode "Locked"; }
+        bind "e"     { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
+        bind "m"     { ToggleFocusFullscreen;     SwitchToMode "Locked"; }
         bind "Left"  { MovePane "Left";  }
         bind "Down"  { MovePane "Down";  }
         bind "Up"    { MovePane "Up";    }
         bind "Right" { MovePane "Right"; }
 
         // tab
-        bind "t" { NewTab;                   SwitchToMode "Locked"; }
-        bind "r" { SwitchToMode "RenameTab"; TabNameInput 0;        }
-        bind "Tab" { GoToNextTab;                                   }
-        // bind "Shift Tab" { GoToPreviousTab;                      }
-        bind "1" { GoToTab 1;                SwitchToMode "Locked"; }
-        bind "2" { GoToTab 2;                SwitchToMode "Locked"; }
-        bind "3" { GoToTab 3;                SwitchToMode "Locked"; }
-        bind "4" { GoToTab 4;                SwitchToMode "Locked"; }
-        bind "5" { GoToTab 5;                SwitchToMode "Locked"; }
-        bind "S" { ToggleActiveSyncTab;      SwitchToMode "Locked"; }
-        // bind "X" { CloseTab;                 SwitchToMode "Locked"; }
-        // move tab
-        bind "L" { MoveTab "Right"; }
-        bind "H" { MoveTab "Left";  }
+        bind "t"     { NewTab;              SwitchToMode "Locked"; }
+        bind "Tab"   { GoToNextTab;                                }
+        // bind "Shift Tab" { GoToPreviousTab; }
+        bind "r"     { SwitchToMode "RenameTab"; TabNameInput 0; }
+        bind "1"     { GoToTab 1;           SwitchToMode "Locked"; }
+        bind "2"     { GoToTab 2;           SwitchToMode "Locked"; }
+        bind "3"     { GoToTab 3;           SwitchToMode "Locked"; }
+        bind "4"     { GoToTab 4;           SwitchToMode "Locked"; }
+        bind "5"     { GoToTab 5;           SwitchToMode "Locked"; }
+        bind "S"     { ToggleActiveSyncTab; SwitchToMode "Locked"; }
+        bind "Alt l" { MoveTab "Right"; }
+        bind "Alt h" { MoveTab "Left";  }
+        // bind "X" { CloseTab; SwitchToMode "Locked"; }
 
         // resize
         bind "=" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
-        bind "Alt h" { Resize "Increase Left";  }
-        bind "Alt j" { Resize "Increase Down";  }
-        bind "Alt k" { Resize "Increase Up";    }
-        bind "Alt l" { Resize "Increase Right"; }
+        // bind "Ctrl Left"  { Resize "Increase Left";  }
+        // bind "Ctrl Down"  { Resize "Increase Down";  }
+        // bind "Ctrl Up"    { Resize "Increase Up";    }
+        // bind "Ctrl Right" { Resize "Increase Right"; }
 
         // session
         bind "d" { Detach; }
-        bind "m" {
+        bind "a" {
             LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
                 move_to_focused_tab true
@@ -108,21 +105,6 @@ plugins {
 // simplified_ui true
 pane_frames false
 themes {
-    // https://github.com/rose-pine/zellij
-    rose-pine {
-        bg "#403d52"
-        fg "#e0def4" // inactive tab color
-        red "#eb6f92"
-        green "#31748f"
-        blue "#9ccfd8"
-        yellow "#f6c177"
-        magenta "#c4a7e7"
-        orange "#fe640b"
-        cyan "#ebbcba"
-        black "#191724" // status bar background
-        white "#e0def4" // 'Zellij' text color (alternating tab color in simplified_ui)
-    }
-
     vscode {
         bg "#1F1F1F"
         fg "#D4D4D4"
@@ -138,20 +120,6 @@ themes {
     }
 }
 theme "vscode"
-default_layout "compact"
+default_layout "custom"
 default_mode "locked"
 layout_dir "/Users/jshu/.config/zellij/layouts/"
-ui {
-    pane_frames {
-        // hide_session_name true
-        rounded_corners false
-    }
-}
-
-// Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
-// Options:
-//   - true (default)
-//   - false
-//
-// auto_layout false
-

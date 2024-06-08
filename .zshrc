@@ -51,8 +51,8 @@ if command -v eza >/dev/null 2>&1; then
 	alias l="eza $EZA_OPTIONS"
 	alias ls=l
 	alias ll="eza $EZA_LONG_OPTIONS"
-	alias llt="eza  $EZA_LONG_OPTIONS --tree --level=2"
-	alias lls="eza  $EZA_LONG_OPTIONS --total-size"
+	alias llt="eza $EZA_LONG_OPTIONS --tree --level=2"
+	alias lls="eza $EZA_LONG_OPTIONS --total-size"
 fi
 
 # aliases go after eza since eza overrides ls alias
