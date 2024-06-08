@@ -1,0 +1,19 @@
+disableStartupPopups: true
+quitOnTopLevelReturn: true
+notARepository: quit
+keybinding:
+  universal:
+    quit: <esc>
+git:
+  paging:
+    pager: delta --paging=never
+gui:
+  scrollHeight: 5
+  scrollOffMargin: 10
+  sidePanelWidth: 0.2
+  expandFocusedSidePanel: true
+  expandedSidePanelWeight: 12
+  showBottomLine: false
+  nerdFontsVersion: "3"
+  commitHashLength: 0
+  border: single

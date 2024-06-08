@@ -93,10 +93,10 @@ if command -v nvim >/dev/null 2>&1; then
 	function v() {
 		if [[ "$PWD" == $CONFIG* ]]; then
 			if command -v yadm >/dev/null 2>&1; then
-				yadm enter nvim
+				yadm enter nvim $@
 			fi
 		else
-			nvim
+			nvim $@
 		fi
 	}
 	export EDITOR=nvim
@@ -104,15 +104,17 @@ fi
 
 # lazygit
 if command -v lazygit >/dev/null 2>&1; then
+	alias lazygit="lazygit --use-config-file=$CONFIG/lazygit/config.yml"
+
 	function gg() {
 		if [[ "$PWD" == $CONFIG* ]]; then
 			if command -v yadm >/dev/null 2>&1; then
 				cd
-				yadm enter lazygit
+				yadm enter lazygit --use-config-file=$CONFIG/lazygit/config.yml
 				cd -
 			fi
 		else
-			lazygit
+			lazygit --use-config-file=$CONFIG/lazygit/config.yml
 		fi
 	}
 fi
