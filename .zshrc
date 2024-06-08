@@ -90,18 +90,31 @@ fi
 if command -v nvim >/dev/null 2>&1; then
 	alias vim="nvim"
 	alias vi="nvim"
-	alias v="nvim"
+	function v() {
+		if [[ "$PWD" == "$HOME/.config"* ]]; then
+			if command -v yadm >/dev/null 2>&1; then
+				yadm enter nvim
+			fi
+		else
+			nvim
+		fi
+	}
 	export EDITOR=nvim
 fi
 
 # lazygit
 if command -v lazygit >/dev/null 2>&1; then
-	alias gg=lazygit
-	# yadm
-	if command -v yadm >/dev/null 2>&1; then
-		alias yy='cd ; yadm enter lazygit ; cd -'
-		alias vv='yadm enter nvim'
-	fi
+	function gg() {
+		if [[ "$PWD" == "$HOME/.config"* ]]; then
+			if command -v yadm >/dev/null 2>&1; then
+				cd
+				yadm enter lazygit
+				cd -
+			fi
+		else
+			lazygit
+		fi
+	}
 fi
 
 # ripgrep
