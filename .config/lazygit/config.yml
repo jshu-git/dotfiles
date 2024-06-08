@@ -1,19 +1,26 @@
-disableStartupPopups: true
+gui:
+  scrollHeight: 8
+  scrollPastBottom: false
+  scrollOffMargin: 10
+  sidePanelWidth: 0.2
+  # expandFocusedSidePanel: true
+  showListFooter: false
+  showBottomLine: false
+  nerdFontsVersion: "3"
+  commitHashLength: 0
+  showDivergenceFromBaseBranch: arrowAndNumber
+  border: single
+
+git:
+  paging:
+    pager: delta --paging=never
+  commit:
+    autoWrapCommitMessage: false
+
 quitOnTopLevelReturn: true
 notARepository: quit
 keybinding:
   universal:
     quit: <esc>
-git:
-  paging:
-    pager: delta --paging=never
-gui:
-  scrollHeight: 5
-  scrollOffMargin: 10
-  sidePanelWidth: 0.2
-  expandFocusedSidePanel: true
-  expandedSidePanelWeight: 12
-  showBottomLine: false
-  nerdFontsVersion: "3"
-  commitHashLength: 0
-  border: single
+    prevBlock-alt: K
+    nextBlock-alt: J
