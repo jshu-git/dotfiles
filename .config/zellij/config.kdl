@@ -97,9 +97,9 @@ keybinds clear-defaults=true {
 plugins {
     tab-bar         { path "tab-bar";         }
     status-bar      { path "status-bar";      }
-    // strider         { path "strider"; }
     compact-bar     { path "compact-bar";     }
     session-manager { path "session-manager"; }
+    zjstatus        { location "file:.config/zellij/plugins/zjstatus.wasm"; }
 }
 
 // simplified_ui true
@@ -122,4 +122,4 @@ themes {
 theme "vscode"
 default_layout "custom"
 default_mode "locked"
-layout_dir "/Users/jshu/.config/zellij/layouts/"
+layout_dir ".config/zellij/layouts/"

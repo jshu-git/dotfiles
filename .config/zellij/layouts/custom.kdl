@@ -3,7 +3,7 @@ layout {
         children
         pane size=1 borderless=true {
             // https://github.com/dj95/zjstatus?tab=readme-ov-file
-            plugin location="file:/Users/jshu/.config/zellij/plugins/zjstatus.wasm" {
+            plugin location="zjstatus" {
                 format_left   "{mode}"
                 format_right  "{session} "
                 format_center "{tabs}"
@@ -11,7 +11,8 @@ layout {
                 // mode
                 mode_default_to_mode "locked"
                 mode_normal          "#[fg=magenta] zellij…"
-                mode_locked          "    "
+                mode_rename_tab      "#[fg=magenta] rename tab…"
+                mode_locked          ""
 
                 // tabs
                 tab_normal "#[fg=#808080] {name}"
@@ -23,6 +24,9 @@ layout {
             }
         }
     }
+    tab name="nvim" cwd="~/.config/nvim" focus=true
+    tab name=".config" cwd="~/.config"
+    tab name="rust" cwd="~/git/rustlings/"
 
     // normal
     swap_tiled_layout name="horizontal" {
@@ -45,7 +49,6 @@ layout {
     // floating
     swap_floating_layout name="enlarged" {
         floating_panes max_panes=10 {
-            pane { x "5%"; y 1; width "90%"; height "90%"; }
             pane { x "5%"; y 2; width "90%"; height "90%"; }
             pane { x "5%"; y 3; width "90%"; height "90%"; }
             pane { x "5%"; y 4; width "90%"; height "90%"; }
