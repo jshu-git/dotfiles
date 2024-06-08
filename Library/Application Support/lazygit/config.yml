@@ -1,5 +1,0 @@
-quitOnTopLevelReturn: true
-notARepository: quit
-keybinding:
-  universal:
-    quit: <esc>
