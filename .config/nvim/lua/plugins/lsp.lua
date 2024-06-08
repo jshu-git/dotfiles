@@ -4,7 +4,14 @@ return {
 		dependencies = {
 			{ "folke/lazydev.nvim", ft = "lua", opts = {} },
 			-- ui
-			{ "echasnovski/mini.notify", opts = {} },
+			{
+				"echasnovski/mini.notify",
+				opts = {
+					window = {
+						max_width_share = 0.2,
+					},
+				},
+			},
 			{
 				"rmagatti/goto-preview",
 				opts = {
@@ -61,14 +68,12 @@ return {
 
 					-- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L510
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
-					if client and client.server_capabilities.documentHighlightProvider then
-						-- toggle inlay hints
-						if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-							map("<leader>th", function()
-								---@diagnostic disable-next-line: missing-parameter
-								vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-							end, "Toggle Inlay Hints")
-						end
+					-- toggle inlay hints
+					if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+						map("<leader>th", function()
+							---@diagnostic disable-next-line: missing-parameter
+							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+						end, "Toggle Inlay Hints")
 					end
 				end,
 			})
@@ -169,11 +174,13 @@ return {
 					markdown = { "prettier" },
 					sh = { "shfmt" },
 					zsh = { "shfmt" },
-					-- ["*"] = { "codespell", "trim_whitespace" },
+					["*"] = { "codespell" },
+					["_"] = { "trim_whitespace" },
 				},
 				-- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
-				format_on_save = function(bufnr)
+				format_on_save = function()
 					if vim.g.disable_autoformat then
+						---@diagnostic disable-next-line: missing-return-value
 						return
 					end
 					return { timeout_ms = 500, lsp_fallback = true, quiet = true }

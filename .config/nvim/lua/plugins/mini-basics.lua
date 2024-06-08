@@ -9,8 +9,6 @@ return {
 				},
 				mappings = {
 					basic = false,
-					windows = true,
-					-- move_with_alt = true,
 				},
 				autocommands = {
 					basic = false,

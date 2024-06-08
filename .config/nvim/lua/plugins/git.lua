@@ -1,27 +1,4 @@
 return {
-	-- {
-	-- 	"echasnovski/mini.diff",
-	-- 	config = function()
-	-- 		local diff = require("mini.diff")
-	-- 		diff.setup({
-	-- 			view = {
-	-- 				style = "sign",
-	-- 				signs = { add = "+", change = "~", delete = "-" },
-	-- 			},
-	-- 			mappings = {
-	-- 				apply = "<leader>gh",
-	-- 				reset = "<leader>gH",
-	-- 				textobject = "ih",
-	-- 				goto_first = "[H",
-	-- 				goto_prev = "[h",
-	-- 				goto_next = "]h",
-	-- 				goto_last = "]H",
-	-- 			},
-	-- 		})
-	-- 		vim.keymap.set("n", "<leader>gt", diff.toggle_overlay, { desc = "Toggle Overlay" })
-	-- 	end,
-	-- },
-
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
@@ -35,13 +12,13 @@ return {
 					-- changedelete = { text = "~" },
 					-- untracked = { text = "┆" },
 				},
-				current_line_blame = true,
+				-- current_line_blame = true,
 				current_line_blame_opts = {
 					virt_text_pos = "right_align",
 					delay = 50,
 					ignore_whitespace = true,
 				},
-				current_line_blame_formatter = "<author> (<author_time:%R>) - <summary>",
+				current_line_blame_formatter = "<author> (<author_time:%R>): <summary>",
 				diff_opts = {
 					vertical = false,
 					ignore_blank_lines = true,
@@ -52,12 +29,16 @@ return {
 			vim.keymap.set("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "Git: Toggle Blame" })
 			vim.keymap.set("n", "<leader>td", gitsigns.toggle_deleted, { desc = "Git: Toggle Diff" })
 
+			-- blame
+			vim.keymap.set("n", "<leader>gb", gitsigns.blame_line, { desc = "Blame" })
+
 			-- hunks
 			vim.keymap.set("n", "<leader>gs", gitsigns.preview_hunk, { desc = "Hover Hunk" })
-			vim.keymap.set("n", "<leader>gh", gitsigns.stage_hunk, { desc = "Stage Hunk" })
-			vim.keymap.set("n", "<leader>gH", gitsigns.reset_hunk, { desc = "Reset Hunk" })
+			vim.keymap.set("n", "<leader>ga", gitsigns.stage_hunk, { desc = "Stage Hunk" })
+			vim.keymap.set("n", "<leader>gr", gitsigns.reset_hunk, { desc = "Reset Hunk" })
+			vim.keymap.set("n", "<leader>gR", gitsigns.reset_buffer, { desc = "Reset Buffer" })
 			vim.keymap.set("n", "<leader>gu", gitsigns.undo_stage_hunk, { desc = "Undo Stage Hunk" })
-			-- vim.keymap.set("n", "<leader>gd", gitsigns.diffthis, { desc = "Diff" })
+			vim.keymap.set("n", "<leader>gd", gitsigns.diffthis, { desc = "Diff" })
 
 			-- visual
 			vim.keymap.set("v", "<leader>gh", function()
@@ -141,4 +122,27 @@ return {
 			end, { desc = "Open Git URL (Homepage)", silent = true })
 		end,
 	},
+
+	-- {
+	-- 	"echasnovski/mini.diff",
+	-- 	config = function()
+	-- 		local diff = require("mini.diff")
+	-- 		diff.setup({
+	-- 			view = {
+	-- 				style = "sign",
+	-- 				signs = { add = "+", change = "~", delete = "-" },
+	-- 			},
+	-- 			mappings = {
+	-- 				apply = "<leader>gh",
+	-- 				reset = "<leader>gH",
+	-- 				textobject = "ih",
+	-- 				goto_first = "[H",
+	-- 				goto_prev = "[h",
+	-- 				goto_next = "]h",
+	-- 				goto_last = "]H",
+	-- 			},
+	-- 		})
+	-- 		vim.keymap.set("n", "<leader>gt", diff.toggle_overlay, { desc = "Toggle Overlay" })
+	-- 	end,
+	-- },
 }

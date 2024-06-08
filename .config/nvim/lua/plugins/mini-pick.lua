@@ -9,8 +9,8 @@ return {
 
 		-- centered window
 		local win_config = function()
-			local height = math.floor(0.319 * vim.o.lines)
-			local width = math.floor(0.618 * vim.o.columns)
+			local height = math.floor(0.4 * vim.o.lines)
+			local width = math.floor(0.75 * vim.o.columns)
 			return {
 				anchor = "NW",
 				height = height,
@@ -42,10 +42,9 @@ return {
 		-- files
 		vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files" })
 		vim.keymap.set("n", "<leader>fw", pick.builtin.grep_live, { desc = "Grep (Live)" })
-		-- TODO: fix
 		vim.keymap.set("n", "<leader>*", function()
-			MiniPick.builtin.grep(
-				{ pattern = "<cword>" },
+			pick.builtin.grep(
+				{ pattern = vim.fn.expand("<cword>") },
 				{ source = { name = "Grep (cword): " .. vim.fn.expand("<cword>") } }
 			)
 		end, { desc = "Grep (Word)" })

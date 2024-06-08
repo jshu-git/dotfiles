@@ -5,18 +5,22 @@ return {
 		grug.setup({
 			startInInsertMode = false,
 			keymaps = {
-				replace = { n = "<localleader>rgr" },
+				replace = { n = "<localleader>rr" },
 				qflist = { n = "<C-q>" },
-				syncLocations = { n = "<localleader>rgs" },
-				syncLine = { n = "<localleader>rgl" },
+				syncLocations = { n = "<localleader>rS" },
+				syncLine = { n = "<localleader>rl" },
 				close = { n = "<localleader>x" },
-				historyOpen = { n = "<localleader>rgh" },
-				historyAdd = { n = "<localleader>rgH" },
-				refresh = { n = "<localleader>rgf" },
+				historyOpen = { n = "<localleader>rh" },
+				historyAdd = { n = "<localleader>rH" },
+				refresh = { n = "<localleader>rR" },
+				abort = { n = "<C-c>" },
 			},
-			headerMaxWidth = 0.5 * vim.o.columns,
+			headerMaxWidth = 0.4 * vim.o.columns,
 			icons = {
 				enabled = false,
+			},
+			placeholders = {
+				flags = "--ignore-case(-i) --fixed-strings(-F) --multiline(-U)",
 			},
 		})
 

@@ -22,8 +22,7 @@ return {
 		config = function()
 			local colors = require("vscode.colors").get_colors()
 			require("vscode").setup({
-				transparent = false,
-				italic_comments = false,
+				transparent = true,
 				-- https://github.com/Mofiqul/vscode.nvim/blob/main/lua/vscode/theme.lua
 				group_overrides = {
 					CopilotSuggestion = { link = "NonText" },

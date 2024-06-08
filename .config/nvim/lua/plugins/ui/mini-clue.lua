@@ -49,11 +49,8 @@ return {
 
 			clues = {
 				-- clue.gen_clues.g(),
+				clue.gen_clues.windows(),
 				clue.gen_clues.registers({ show_contents = true }),
-				clue.gen_clues.windows({
-					submode_move = true,
-					submode_resize = true,
-				}),
 				clue.gen_clues.z(),
 
 				-- leader
