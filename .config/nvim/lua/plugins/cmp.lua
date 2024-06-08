@@ -125,6 +125,8 @@ return {
 					auto_trigger = true,
 					keymap = {
 						accept = false,
+						accept_word = "<A-l>",
+						accept_line = "<A-S-L>",
 						next = "<C-space>",
 					},
 				},

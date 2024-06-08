@@ -15,7 +15,7 @@ return {
 
 					-- mini
 					MiniClueTitle = { link = "MiniClueBorder" },
-					MiniFilesCursorLine = { link = "Character" },
+					MiniFilesCursorLine = { link = "Comment" },
 					MiniFilesTitleFocused = { link = "MiniFilesBorder" },
 					MiniFilesTitle = { link = "MiniFilesBorder" },
 					-- MiniIndentscopeSymbol = { link = "NonText" },

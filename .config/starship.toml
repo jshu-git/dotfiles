@@ -29,12 +29,12 @@ format = '[$symbol $branch ](green)'
 [rust]
 disabled = false
 symbol = ""
-format = '[$symbol ($version )](yellow)'
+format = '[$symbol ($version )](blue)'
 
 [python]
 disabled = false
 symbol = ""
-format = '[$symbol ($version )(\($virtualenv\) )](yellow)'
+format = '[$symbol ($version )(\($virtualenv\) )](blue)'
 
 [character]
 disabled = false
