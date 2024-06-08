@@ -3,7 +3,7 @@ return {
 	event = "BufReadPre",
 	opts = {},
 	init = function()
-		-- restore the session for the current directory
+		-- restore session for the current directory
 		vim.api.nvim_set_keymap(
 			"n",
 			"<leader>sr",
@@ -11,6 +11,7 @@ return {
 			{ desc = "Restore Session (Current Directory)" }
 		)
 
+		-- restore last session
 		vim.api.nvim_set_keymap(
 			"n",
 			"<leader>sR",
@@ -18,7 +19,7 @@ return {
 			{ desc = "Restore Session (Last)" }
 		)
 
-		-- stop Persistence => session won't be saved on exit
+		-- session won't be saved on exit
 		vim.api.nvim_set_keymap(
 			"n",
 			"<leader>sq",

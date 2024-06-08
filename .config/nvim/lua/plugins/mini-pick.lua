@@ -1,7 +1,7 @@
 return {
 	"echasnovski/mini.pick",
 	dependencies = {
-		"echasnovski/mini.extra",
+		{ "echasnovski/mini.extra", opts = {} },
 	},
 	config = function()
 		local pick = require("mini.pick")
@@ -53,24 +53,12 @@ return {
 		end, { desc = "Grep (Buffer)" })
 		vim.keymap.set("n", "<leader>fr", extra.pickers.oldfiles, { desc = "Recent Files" })
 
-		-- lsp
-		vim.keymap.set("n", "<leader>fd", extra.pickers.diagnostic, { desc = "Diagnostics" })
-
-		-- git
-		vim.keymap.set("n", "<leader>fg", function()
-			extra.pickers.git_hunks({ scope = "unstaged" })
-		end, { desc = "Git Hunks (Unstaged)" })
-		vim.keymap.set("n", "<leader>fG", function()
-			extra.pickers.git_hunks({ scope = "staged" })
-		end, { desc = "Git Hunks (Staged)" })
-
 		-- vim
 		vim.keymap.set("n", "<leader>fc", extra.pickers.commands, { desc = "Commands" })
 		vim.keymap.set("n", "<leader>fh", pick.builtin.help, { desc = "Help" })
 		vim.keymap.set("n", "<leader>fl", extra.pickers.hl_groups, { desc = "Highlights" })
 		vim.keymap.set("n", "<leader>fk", extra.pickers.keymaps, { desc = "Keymaps" })
 		vim.keymap.set("n", "<leader>fo", extra.pickers.options, { desc = "Options" })
-		-- vim.keymap.set("n", '"', extra.pickers.registers, { desc = "Registers" })
 		pick.registry.colorschemes = function()
 			local colorschemes = vim.fn.getcompletion("", "color")
 			return pick.start({
@@ -85,12 +73,32 @@ return {
 		end
 		vim.keymap.set("n", "<leader>ft", pick.registry.colorschemes, { desc = "Themes" })
 
+		pick.registry.builtin = function()
+			-- local items = vim.tbl_keys(pick.registry)
+			local items = vim.tbl_keys(vim.tbl_extend("force", pick.registry, extra.pickers))
+			for i, item in ipairs(items) do
+				if item == "registry" then
+					table.remove(items, i)
+					break
+				end
+			end
+			table.sort(items)
+			local source = { items = items, name = "Registry", choose = function() end }
+			local chosen_picker_name = pick.start({ source = source })
+			if chosen_picker_name == nil then
+				return
+			end
+			return pick.registry[chosen_picker_name]()
+		end
+		vim.keymap.set("n", "<leader>fC", pick.registry.builtin, { desc = "Commands (MiniPick)" })
+
 		-- misc
+		vim.keymap.set("n", "<leader>'", pick.builtin.resume, { desc = "Last Picker" })
+		vim.keymap.set("n", '<leader>"', extra.pickers.registers, { desc = "Registers" })
 		vim.keymap.set("n", "<leader>:", function()
 			extra.pickers.history({ scope = ":" })
 		end, { desc = "Command History" })
 		vim.keymap.set("n", "<leader>=", extra.pickers.spellsuggest, { desc = "Spell Suggest (cword)" })
-		vim.keymap.set("n", "<leader>'", pick.builtin.resume, { desc = "Last Picker" })
 
 		-- highlights
 		-- vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })

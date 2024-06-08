@@ -1,14 +1,7 @@
 return {
 	"echasnovski/mini.clue",
-	event = "VeryLazy",
 	config = function()
 		local clue = require("mini.clue")
-
-		-- delete some default mappings
-		for _, lhs in ipairs({ "[%", "]%", "g%", "g]", "g[" }) do
-			vim.keymap.del("n", lhs)
-		end
-
 		clue.setup({
 			window = {
 				delay = 250,

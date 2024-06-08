@@ -23,7 +23,7 @@ return {
 			-- cmp
 			{ "hrsh7th/cmp-nvim-lsp" },
 			-- lsp
-			{ "echasnovski/mini.extra" },
+			{ "echasnovski/mini.extra", opts = {} },
 		},
 		config = function()
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -59,6 +59,8 @@ return {
 					end, "Goto References")
 					map("gR", vim.lsp.buf.rename, "Rename Variable")
 
+					-- diagnostics
+					map("<leader>fd", require("mini.extra").pickers.diagnostic, "Diagnostics")
 					map("[d", vim.diagnostic.goto_prev, "Previous Diagnostic")
 					map("]d", vim.diagnostic.goto_next, "Next Diagnostic")
 

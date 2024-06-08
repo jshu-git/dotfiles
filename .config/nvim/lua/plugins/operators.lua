@@ -1,8 +1,8 @@
 return {
 	{
 		"echasnovski/mini.ai",
-		depdendencies = {
-			"echasnovski/mini.extra",
+		dependencies = {
+			{ "echasnovski/mini.extra", opts = {} },
 		},
 		config = function()
 			local extras = require("mini.extra")
