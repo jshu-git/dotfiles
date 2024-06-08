@@ -9,6 +9,9 @@ gui:
   commitHashLength: 0
   showDivergenceFromBaseBranch: arrowAndNumber
   border: single
+  theme:
+    selectedLineBgColor:
+      - green
 
 git:
   commit:

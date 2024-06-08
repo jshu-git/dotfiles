@@ -1,20 +1,4 @@
 return {
-	-- {
-	-- 	"rose-pine/neovim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("rose-pine").setup({
-	-- 			dim_inactive_windows = true,
-	-- 			styles = {
-	-- 				bold = false,
-	-- 				italic = false,
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- 	name = "rose-pine",
-	-- },
-
 	{
 		"Mofiqul/vscode.nvim",
 		lazy = false,
@@ -42,6 +26,22 @@ return {
 			vim.cmd.colorscheme("vscode")
 		end,
 	},
+
+	-- {
+	-- 	"rose-pine/neovim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("rose-pine").setup({
+	-- 			dim_inactive_windows = true,
+	-- 			styles = {
+	-- 				bold = false,
+	-- 				italic = false,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- 	name = "rose-pine",
+	-- },
 
 	-- {
 	-- 	"miversen33/sunglasses.nvim",
