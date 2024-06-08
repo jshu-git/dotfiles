@@ -3,14 +3,13 @@ vim.opt.pumheight = 5
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
 vim.opt.list = false
+vim.opt.cursorlineopt = "number"
 -- tabs/indents
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- misc
-vim.opt.cursorlineopt = "number"
-vim.opt.timeoutlen = 250
 vim.opt.wrapscan = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.swapfile = false

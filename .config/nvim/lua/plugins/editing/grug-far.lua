@@ -15,7 +15,7 @@ return {
 				refresh = { n = "<localleader>rR" },
 				abort = { n = "<C-c>" },
 			},
-			headerMaxWidth = 0.4 * vim.o.columns,
+			headerMaxWidth = math.floor(0.4 * vim.o.columns),
 			icons = {
 				enabled = false,
 			},

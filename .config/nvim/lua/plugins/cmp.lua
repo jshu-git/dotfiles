@@ -8,19 +8,19 @@ return {
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-cmdline",
-			"dmitmel/cmp-cmdline-history",
 			"hrsh7th/cmp-calc",
+			"dmitmel/cmp-cmdline-history",
 			"onsails/lspkind-nvim",
 		},
 		config = function()
 			local cmp = require("cmp")
 			cmp.setup({
 				sources = {
+					{ name = "lazydev", group_index = 0 },
 					{ name = "nvim_lsp" },
 					{ name = "nvim_lsp_signature_help" },
-					-- { name = "lazydev" },
+					{ name = "buffer", max_item_count = 3 },
 					{ name = "calc" },
-					{ name = "buffer" },
 					{ name = "path" },
 				},
 				snippet = {
@@ -36,6 +36,8 @@ return {
 					},
 					documentation = {
 						border = "single",
+						max_width = math.floor(0.33 * vim.o.columns),
+						max_height = math.floor(0.33 * vim.o.lines),
 					},
 				},
 				formatting = {
@@ -57,7 +59,6 @@ return {
 					["<C-n>"] = cmp.mapping.select_next_item(),
 					["<C-p>"] = cmp.mapping.select_prev_item(),
 					["<C-x>"] = cmp.mapping.complete(),
-					["<C-c>"] = cmp.mapping.abort(),
 					["<C-d>"] = cmp.mapping.scroll_docs(4),
 					["<C-u>"] = cmp.mapping.scroll_docs(-4),
 					-- snippets
@@ -98,8 +99,8 @@ return {
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
 					{ name = "cmdline_history" },
-					{ name = "path" },
 					{ name = "cmdline" },
+					{ name = "path" },
 				}),
 			})
 		end,
@@ -112,7 +113,13 @@ return {
 		config = function()
 			require("copilot").setup({
 				panel = {
-					enabled = false,
+					auto_refresh = true,
+					keymap = {
+						open = "<A-CR>",
+					},
+					layout = {
+						ratio = 0.33,
+					},
 				},
 				suggestion = {
 					auto_trigger = true,
@@ -122,6 +129,7 @@ return {
 					},
 				},
 				filetypes = {
+					["nofile"] = true,
 					["."] = true,
 					["*"] = true,
 				},

@@ -8,7 +8,7 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>th", function()
+		vim.keymap.set("n", "<leader>tl", function()
 			hipatterns.toggle()
 		end, { desc = "Toggle Highlights" })
 	end,

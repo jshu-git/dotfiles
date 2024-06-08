@@ -4,7 +4,7 @@ return {
 		config = function()
 			require("mini.jump").setup({
 				mappings = {
-					repeat_jump = "",
+					repeat_jump = "", -- defaults to ;
 				},
 			})
 		end,
@@ -34,7 +34,7 @@ return {
 					hl_group_unique = "CurSearch",
 				})
 				jump2d.start(opts)
-			end, { desc = "Jump to any word" })
+			end, { desc = "Jump (Word)" })
 		end,
 	},
 

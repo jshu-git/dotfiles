@@ -91,7 +91,7 @@ if command -v nvim >/dev/null 2>&1; then
 	alias vim="nvim"
 	alias vi="nvim"
 	function v() {
-		if [[ "$PWD" == "$HOME/.config"* ]]; then
+		if [[ "$PWD" == $CONFIG* ]]; then
 			if command -v yadm >/dev/null 2>&1; then
 				yadm enter nvim
 			fi
@@ -105,7 +105,7 @@ fi
 # lazygit
 if command -v lazygit >/dev/null 2>&1; then
 	function gg() {
-		if [[ "$PWD" == "$HOME/.config"* ]]; then
+		if [[ "$PWD" == $CONFIG* ]]; then
 			if command -v yadm >/dev/null 2>&1; then
 				cd
 				yadm enter lazygit

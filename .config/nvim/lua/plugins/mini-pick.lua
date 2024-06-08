@@ -9,7 +9,7 @@ return {
 
 		-- centered window
 		local win_config = function()
-			local height = math.floor(0.4 * vim.o.lines)
+			local height = math.floor(0.5 * vim.o.lines)
 			local width = math.floor(0.75 * vim.o.columns)
 			return {
 				anchor = "NW",

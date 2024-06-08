@@ -15,7 +15,6 @@
   "corn.nvim": { "branch": "master", "commit": "e0bba34aea144102115379c1c3f97d2630e83abb" },
   "dial.nvim": { "branch": "master", "commit": "7af2daaaf933b0617ded0f78b49f4d5fc45f9f64" },
   "dressing.nvim": { "branch": "master", "commit": "e3714c8049b2243e792492c4149e4cc395c68eb9" },
-  "fzf-lua": { "branch": "main", "commit": "2e88254c2045e14c712ee09f1e461c6056a2b18c" },
   "gitlinker.nvim": { "branch": "master", "commit": "cc59f732f3d043b626c8702cb725c82e54d35c25" },
   "gitsigns.nvim": { "branch": "main", "commit": "4a143f13e122ab91abdc88f89eefbe70a4858a56" },
   "goto-preview": { "branch": "main", "commit": "3552fad4a0244ffd9ac86508e29ccc5166f19eb8" },
@@ -57,7 +56,6 @@
   "screenkey.nvim": { "branch": "main", "commit": "8c56222272bbe2e9bc46be560b217945d140572e" },
   "undotree": { "branch": "master", "commit": "56c684a805fe948936cda0d1b19505b84ad7e065" },
   "url-open": { "branch": "mini", "commit": "7727e6146afea2254de08d0e65fd2cf904be338d" },
-  "vim-sleuth": { "branch": "master", "commit": "1cc4557420f215d02c4d2645a748a816c220e99b" },
   "vscode.nvim": { "branch": "main", "commit": "ff3926901d4160886f707a8a70b5c2e82979a7c4" },
   "winbar.nvim": { "branch": "main", "commit": "76123e1d2e685a7411975a96bea3d4f459cda444" }
 }

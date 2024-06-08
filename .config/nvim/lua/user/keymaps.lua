@@ -10,7 +10,6 @@ vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Word Wrap" })
 
 -- experimenting
-vim.keymap.set("n", "gG", "gg<S-v>G", { desc = "Select All" })
 vim.keymap.set("n", "<C-x>", '"_dd')
 vim.keymap.set("x", "<C-x>", '"_d')
 -- TODO: <C-e> <C-x> H L
@@ -23,14 +22,14 @@ vim.keymap.set({ "n", "x" }, "K", "{zz")
 vim.keymap.set({ "n", "x", "o" }, "E", "$")
 vim.keymap.set({ "n", "x", "o" }, "B", "^")
 vim.keymap.set({ "n", "x" }, "G", "Gzz")
-vim.keymap.set("n", "<BS>", "<C-^>", { desc = "Alternate Buffer" })
+vim.keymap.set("n", "<BS>", "<C-^>")
+vim.keymap.set("n", "gG", "gg<S-v>G", { desc = "Select All" })
 
 -- editing
 vim.keymap.set("n", "<C-c>", "gcc", { remap = true })
 vim.keymap.set("x", "<C-c>", "gc", { remap = true })
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<CR>", '"_ciw')
-vim.keymap.set("n", "<S-CR>", "ciq")
 vim.keymap.set("n", "<C-r>", ".")
 vim.keymap.set("n", ";", ":")
 vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "Append Comma" })
@@ -60,26 +59,26 @@ end, { desc = "Copy Path (Full)" })
 
 -- windows
 -- focus
-vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Focus Window Left" })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Focus Window Down" })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Focus Window Up" })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Focus Window Right" })
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
 -- size
-vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Decrease Window Width" })
-vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase Window Width" })
-vim.keymap.set("n", "<C-Up>", "<cmd>resize -2<CR>", { desc = "Decrease Window Height" })
-vim.keymap.set("n", "<C-Down>", "<cmd>resize +2<CR>", { desc = "Increase Window Height" })
+vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<CR>")
+vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>")
+vim.keymap.set("n", "<C-Up>", "<cmd>resize -2<CR>")
+vim.keymap.set("n", "<C-Down>", "<cmd>resize +2<CR>")
 vim.keymap.set("n", "<C-w>0", "<C-w>=", { desc = "Reset Window Size" })
 -- split
-vim.keymap.set("n", "<C-v>", "<C-w>v", { desc = "Split Right" })
-vim.keymap.set("n", "<C-s>", "<C-w>s", { desc = "Split Below" })
-vim.keymap.set("n", "<C-S-V>", "<C-w>v<C-w>h", { desc = "Split Right (No Focus)" })
-vim.keymap.set("n", "<C-S-S>", "<C-w>s<C-w>k", { desc = "Split Below (No Focus)" })
+vim.keymap.set("n", "<C-v>", "<C-w>v")
+vim.keymap.set("n", "<C-s>", "<C-w>s")
+vim.keymap.set("n", "<C-S-V>", "<C-w>v<C-w>h")
+vim.keymap.set("n", "<C-S-S>", "<C-w>s<C-w>k")
 -- move
-vim.keymap.set("n", "<C-S-J>", "<C-w>J", { desc = "Move Window Down" })
-vim.keymap.set("n", "<C-S-K>", "<C-w>K", { desc = "Move Window Up" })
-vim.keymap.set("n", "<C-S-H>", "<C-w>H", { desc = "Move Window Left" })
-vim.keymap.set("n", "<C-S-L>", "<C-w>L", { desc = "Move Window Right" })
+vim.keymap.set("n", "<C-S-J>", "<C-w>J")
+vim.keymap.set("n", "<C-S-K>", "<C-w>K")
+vim.keymap.set("n", "<C-S-H>", "<C-w>H")
+vim.keymap.set("n", "<C-S-L>", "<C-w>L")
 
 -- visual
 vim.keymap.set("x", "<CR>", '"_c')
