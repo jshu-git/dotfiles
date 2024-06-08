@@ -48,9 +48,6 @@ return {
 				{ source = { name = "Grep (cword): " .. vim.fn.expand("<cword>") } }
 			)
 		end, { desc = "Grep (Word)" })
-		vim.keymap.set("n", "<leader>/", function()
-			extra.pickers.buf_lines({ scope = "current" })
-		end, { desc = "Grep (Buffer)" })
 		vim.keymap.set("n", "<leader>fr", extra.pickers.oldfiles, { desc = "Recent Files" })
 
 		-- vim
@@ -93,6 +90,9 @@ return {
 		vim.keymap.set("n", "<leader>fC", pick.registry.builtin, { desc = "Commands (MiniPick)" })
 
 		-- misc
+		vim.keymap.set("n", "<leader>/", function()
+			extra.pickers.buf_lines({ scope = "current" })
+		end, { desc = "Grep (Buffer)" })
 		vim.keymap.set("n", "<leader>'", pick.builtin.resume, { desc = "Last Picker" })
 		vim.keymap.set("n", '<leader>"', extra.pickers.registers, { desc = "Registers" })
 		vim.keymap.set("n", "<leader>:", function()
