@@ -104,17 +104,15 @@ fi
 
 # lazygit
 if command -v lazygit >/dev/null 2>&1; then
-	alias lazygit="lazygit --use-config-file=$CONFIG/lazygit/config.yml"
-
 	function gg() {
 		if [[ "$PWD" == $CONFIG* ]]; then
 			if command -v yadm >/dev/null 2>&1; then
 				cd
-				yadm enter lazygit --use-config-file=$CONFIG/lazygit/config.yml
+				yadm enter lazygit
 				cd -
 			fi
 		else
-			lazygit --use-config-file=$CONFIG/lazygit/config.yml
+			lazygit
 		fi
 	}
 fi
