@@ -3,13 +3,8 @@ return {
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			{ "folke/lazydev.nvim", ft = "lua", opts = {} },
+			{ "echasnovski/mini.extra", opts = {} },
 			-- ui
-			{
-				"echasnovski/mini.notify",
-				opts = {
-					window = { max_width_share = 0.2, winblend = 0 },
-				},
-			},
 			{
 				"rmagatti/goto-preview",
 				opts = {
@@ -21,8 +16,6 @@ return {
 			},
 			-- cmp
 			{ "hrsh7th/cmp-nvim-lsp" },
-			-- lsp
-			{ "echasnovski/mini.extra", opts = {} },
 		},
 		config = function()
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -31,6 +24,7 @@ return {
 					local map = function(keys, func, desc)
 						vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
+					local extra = require("mini.extra")
 
 					-- lsp
 					vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, { desc = "LSP: Hover Signature" })
@@ -38,27 +32,30 @@ return {
 					map("ga", vim.lsp.buf.code_action, "Code Action")
 					map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
 					-- map("gI", function()
-					-- 	require("mini.extra").pickers.lsp({ scope = "implementation" })
+					-- 	extra.pickers.lsp({ scope = "implementation" })
 					-- end, "Goto Implementation")
 					-- map("gt", function()
-					-- 	require("mini.extra").pickers.lsp({ scope = "type_definition" })
+					-- 	extra.pickers.lsp({ scope = "type_definition" })
 					-- end, "Goto Type Definition")
 
 					map("gd", require("goto-preview").goto_preview_definition, "Goto Definition (Preview)")
 					map("gD", function()
-						require("mini.extra").pickers.lsp({ scope = "definition" })
+						extra.pickers.lsp({ scope = "definition" })
 					end, "Goto Definition (Pick)")
 					-- map("gD", function()
-					-- 	require("mini.extra").pickers.lsp({ scope = "declaration" })
+					-- 	extra.pickers.lsp({ scope = "declaration" })
 					-- end, "Goto Declaration")
 
 					map("gr", function()
-						require("mini.extra").pickers.lsp({ scope = "references" })
+						extra.pickers.lsp({ scope = "references" })
 					end, "Goto References")
 					map("gR", vim.lsp.buf.rename, "Rename Variable")
 
 					-- diagnostics
-					map("<leader>fd", require("mini.extra").pickers.diagnostic, "Diagnostics")
+					map("<leader>fd", function()
+						extra.pickers.diagnostic({ scope = "current" })
+					end, "Diagnostics")
+					map("<leader>fD", extra.pickers.diagnostic, "Diagnostics")
 					map("[d", vim.diagnostic.goto_prev, "Previous Diagnostic")
 					map("]d", vim.diagnostic.goto_next, "Next Diagnostic")
 
@@ -169,8 +166,10 @@ return {
 
 	{
 		"stevearc/conform.nvim",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
-			require("conform").setup({
+			local conform = require("conform")
+			conform.setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
 					json = { "prettier" },
@@ -186,7 +185,11 @@ return {
 						---@diagnostic disable-next-line: missing-return-value
 						return
 					end
-					return { timeout_ms = 500, lsp_fallback = true, quiet = true }
+					return {
+						timeout_ms = 500,
+						lsp_fallback = true,
+						quiet = true,
+					}
 				end,
 			})
 

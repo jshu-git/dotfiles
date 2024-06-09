@@ -49,7 +49,6 @@ return {
 				-- leader
 				{ mode = "n", keys = "<leader>f", desc = "Find…" },
 				{ mode = "n", keys = "<leader>l", desc = "LSP…" },
-				{ mode = "n", keys = "<leader>s", desc = "Session…" },
 				{ mode = "n", keys = "<leader>t", desc = "Toggle…" },
 				{ mode = "n", keys = "<leader>g", desc = "Git…" },
 				{ mode = "x", keys = "<leader>g", desc = "Git…" },
@@ -57,6 +56,7 @@ return {
 				{ mode = "x", keys = "<leader>a", desc = "GPT…" },
 				{ mode = "n", keys = "<leader>r", desc = "Replace…" },
 				{ mode = "x", keys = "<leader>r", desc = "Replace…" },
+				-- { mode = "n", keys = "<leader>s", desc = "Session…" },
 			},
 		})
 

@@ -26,13 +26,13 @@ return {
 		-- toggle explorer
 		vim.keymap.set("n", "<leader>e", function()
 			if not files.close() then
-				files.open(vim.api.nvim_buf_get_name(0), true)
+				files.open(vim.api.nvim_buf_get_name(0))
 				files.reveal_cwd()
 			end
 		end, { desc = "Explorer" })
-		vim.keymap.set("n", "<leader>E", function()
-			files.open(nil, false)
-		end, { desc = "Explorer (cwd)" })
+		-- vim.keymap.set("n", "<leader>E", function()
+		-- 	files.open(nil, false)
+		-- end, { desc = "Explorer (cwd)" })
 
 		-- toggle preview
 		local show_preview = false
@@ -83,7 +83,7 @@ return {
 				local win_id = args.data.win_id
 				local config = vim.api.nvim_win_get_config(win_id)
 
-				-- vim.wo[win_id].cursorlineopt = "line"
+				vim.wo[win_id].cursorlineopt = "line"
 				config.title_pos = "center"
 				vim.api.nvim_win_set_config(win_id, config)
 			end,

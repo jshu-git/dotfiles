@@ -6,21 +6,26 @@ return {
 		config = function()
 			local colors = require("vscode.colors").get_colors()
 			require("vscode").setup({
-				transparent = true,
+				-- transparent = true,
 				-- https://github.com/Mofiqul/vscode.nvim/blob/main/lua/vscode/theme.lua
 				group_overrides = {
+					-- copilot
 					CopilotSuggestion = { link = "NonText" },
 					CopilotAnnotation = { link = "NonText" },
 					NeoCodeiumSuggestion = { link = "NonText" },
 					NeoCodeiumLabel = { link = "Search" },
+
 					-- mini
 					MiniClueTitle = { link = "MiniClueBorder" },
-					-- MiniFilesCursorLine = { link = "Search" },
+					MiniFilesCursorLine = { link = "Comment" },
 					MiniFilesTitleFocused = { link = "MiniFilesBorder" },
 					MiniFilesTitle = { link = "MiniFilesBorder" },
 					-- MiniIndentscopeSymbol = { link = "NonText" },
 					MiniPickPrompt = { link = "MiniPickBorder" },
 					MiniPickBorderText = { link = "MiniPickBorder" },
+
+					-- aerial
+					AerialLine = { link = "Search" },
 				},
 			})
 			vim.cmd.colorscheme("vscode")

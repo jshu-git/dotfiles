@@ -40,7 +40,21 @@ return {
 		})
 
 		-- files
-		vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files" })
+		-- vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files" })
+		vim.keymap.set("n", "<leader>ff", function()
+			local in_worktree = function()
+				vim.fn.system("git rev-parse --is-inside-work-tree")
+				return vim.v.shell_error == 0
+			end
+			if in_worktree then
+				extra.pickers.git_files()
+			else
+				pick.builtin.files()
+			end
+		end, { desc = "Files" })
+		vim.keymap.set("n", "<leader>fr", extra.pickers.oldfiles, { desc = "Recent Files" })
+
+		-- grep
 		vim.keymap.set("n", "<leader>fw", pick.builtin.grep_live, { desc = "Grep (Live)" })
 		vim.keymap.set("n", "<leader>*", function()
 			pick.builtin.grep(
@@ -48,7 +62,6 @@ return {
 				{ source = { name = "Grep (cword): " .. vim.fn.expand("<cword>") } }
 			)
 		end, { desc = "Grep (Word)" })
-		vim.keymap.set("n", "<leader>fr", extra.pickers.oldfiles, { desc = "Recent Files" })
 
 		-- vim
 		vim.keymap.set("n", "<leader>fc", extra.pickers.commands, { desc = "Commands" })
@@ -99,6 +112,8 @@ return {
 			extra.pickers.history({ scope = ":" })
 		end, { desc = "Command History" })
 		vim.keymap.set("n", "<leader>=", extra.pickers.spellsuggest, { desc = "Spell Suggest (cword)" })
+
+		vim.ui.select = pick.ui_select
 
 		-- highlights
 		-- vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
