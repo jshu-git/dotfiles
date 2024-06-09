@@ -29,5 +29,4 @@ require("lazy").setup({
 	ui = { border = "single" },
 	change_detection = { notify = false },
 })
-require("lazy.view.config").keys.close = "<esc>"
 vim.keymap.set("n", "<leader>ll", "<cmd>Lazy<CR>", { desc = "Lazy" })

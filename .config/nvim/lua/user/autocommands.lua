@@ -16,6 +16,17 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+-- close some filetypes with <esc>
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = {
+		"lazy",
+	},
+	callback = function(event)
+		vim.bo[event.buf].buflisted = false
+		vim.keymap.set("n", "<esc>", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+	end,
+})
+
 -- LazyVim
 -- Check if we need to reload the file when it changed
 vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
@@ -27,7 +38,7 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
 })
 -- wrap and check for spell in text filetypes
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "gitcommit", "markdown", "text" },
+	pattern = { "*.txt", "gitcommit", "markdown" },
 	callback = function()
 		vim.opt_local.wrap = true
 		vim.opt_local.spell = true

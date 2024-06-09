@@ -12,15 +12,21 @@ vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Wo
 -- experimenting
 vim.keymap.set("n", "<C-x>", '"_dd')
 vim.keymap.set("x", "<C-x>", '"_d')
+-- vim.keymap.set("n", ",", "<C-u>zz")
+-- vim.keymap.set("n", "m", "<C-d>zz")
+-- vim.keymap.set("n", ",", "{zz")
+-- vim.keymap.set("n", "m", "}zz")
 -- TODO: <C-e> <C-x> H L
+-- vim.keymap.set({ "n", "x", "o" }, "9", "$")
+-- vim.keymap.set({ "n", "x", "o" }, "0", "^")
 
 -- movement
 vim.keymap.set({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true })
 vim.keymap.set({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'k']], { expr = true })
 vim.keymap.set({ "n", "x" }, "J", "}zz")
 vim.keymap.set({ "n", "x" }, "K", "{zz")
-vim.keymap.set({ "n", "x", "o" }, "E", "$")
-vim.keymap.set({ "n", "x", "o" }, "B", "^")
+vim.keymap.set({ "n", "x" }, "E", "$")
+vim.keymap.set({ "n", "x" }, "B", "^")
 vim.keymap.set({ "n", "x" }, "G", "Gzz")
 vim.keymap.set("n", "<BS>", "<C-^>")
 vim.keymap.set("n", "gG", "gg<S-v>G", { desc = "Select All" })
@@ -43,10 +49,9 @@ vim.keymap.set({ "n", "x" }, "C", '"_C')
 
 -- yanking/pasting
 vim.keymap.set("n", "p", "p==")
-vim.keymap.set("v", "p", '"_dP==')
+vim.keymap.set("x", "p", '"_dP==')
 vim.keymap.set("n", "<leader>p", "<cmd>pu<CR>==", { desc = "Paste After Line" })
 vim.keymap.set("n", "<leader>P", "<cmd>pu!<CR>==", { desc = "Paste Before Line" })
-vim.keymap.set("n", "<leader>d", "mz$hxd`z", { desc = "Delete Last Character" })
 -- files
 vim.keymap.set("n", "gy", function()
 	vim.fn.setreg("+", vim.fn.expand("%"))
