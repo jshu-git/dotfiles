@@ -7,9 +7,7 @@ return {
 			{
 				"echasnovski/mini.notify",
 				opts = {
-					window = {
-						max_width_share = 0.2,
-					},
+					window = { max_width_share = 0.2, winblend = 0 },
 				},
 			},
 			{
@@ -18,6 +16,7 @@ return {
 					width = math.floor(0.75 * vim.o.columns),
 					height = math.floor(0.5 * vim.o.lines),
 					border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+					preview_window_title = { position = "center" },
 				},
 			},
 			-- cmp
@@ -34,6 +33,8 @@ return {
 					end
 
 					-- lsp
+					vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, { desc = "LSP: Hover Signature" })
+					map("gs", vim.lsp.buf.hover, "Hover Documentation")
 					map("ga", vim.lsp.buf.code_action, "Code Action")
 					map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
 					-- map("gI", function()
@@ -50,9 +51,6 @@ return {
 					-- map("gD", function()
 					-- 	require("mini.extra").pickers.lsp({ scope = "declaration" })
 					-- end, "Goto Declaration")
-
-					map("gs", vim.lsp.buf.hover, "Hover Documentation")
-					map("gS", vim.lsp.buf.signature_help, "Hover Signature")
 
 					map("gr", function()
 						require("mini.extra").pickers.lsp({ scope = "references" })
@@ -83,6 +81,9 @@ return {
 			-- servers https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
 			local servers = {
 				taplo = {},
+				-- typos_lsp = {
+				-- 	diagnosticSeverity = "Warning",
+				-- },
 				lua_ls = {
 					settings = {
 						Lua = {

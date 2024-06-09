@@ -11,5 +11,15 @@ return {
 		vim.g.undotree_TreeSplitShape = "╱"
 		vim.g.undotree_HelpLine = 0
 		vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Undo Tree" })
+
+		-- close undotree with <esc>
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = {
+				"undotree",
+			},
+			callback = function(event)
+				vim.keymap.set("n", "<esc>", vim.cmd.UndotreeToggle, { buffer = event.buf, silent = true })
+			end,
+		})
 	end,
 }

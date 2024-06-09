@@ -11,11 +11,11 @@ return {
 				group_overrides = {
 					CopilotSuggestion = { link = "NonText" },
 					CopilotAnnotation = { link = "NonText" },
-					Directory = { fg = colors.vscBlue }, -- MiniFilesDirectory = { fg = colors.vscBlue },
-
+					NeoCodeiumSuggestion = { link = "NonText" },
+					NeoCodeiumLabel = { link = "Search" },
 					-- mini
 					MiniClueTitle = { link = "MiniClueBorder" },
-					MiniFilesCursorLine = { link = "Comment" },
+					-- MiniFilesCursorLine = { link = "Search" },
 					MiniFilesTitleFocused = { link = "MiniFilesBorder" },
 					MiniFilesTitle = { link = "MiniFilesBorder" },
 					-- MiniIndentscopeSymbol = { link = "NonText" },
@@ -24,6 +24,22 @@ return {
 				},
 			})
 			vim.cmd.colorscheme("vscode")
+		end,
+	},
+
+	{
+		"echasnovski/mini.hipatterns",
+		config = function()
+			local hipatterns = require("mini.hipatterns")
+			hipatterns.setup({
+				highlighters = {
+					hex_color = hipatterns.gen_highlighter.hex_color(),
+				},
+			})
+
+			vim.keymap.set("n", "<leader>tl", function()
+				hipatterns.toggle()
+			end, { desc = "Toggle Highlights" })
 		end,
 	},
 

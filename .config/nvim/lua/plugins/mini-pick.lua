@@ -24,14 +24,14 @@ return {
 			mappings = {
 				choose_marked = "<C-q>",
 				delete_left = "", -- defaults to <C-u>
-				mark_all = "<C-g>", -- defaults to <C-a>
-				move_down = "<Tab>",
-				move_start = "", -- defaults to <C-g>
-				move_up = "<S-Tab>",
+				mark_all = "<C-S-X>", -- defaults to <C-a>
 				scroll_down = "<C-d>",
 				scroll_up = "<C-u>",
-				toggle_info = "<C-n>",
-				toggle_preview = "<C-p>",
+
+				-- move_down = "<Tab>",
+				-- move_up = "<S-Tab>",
+				-- toggle_info = "<C-n>",
+				-- toggle_preview = "<C-p>",
 			},
 			window = {
 				config = win_config,
