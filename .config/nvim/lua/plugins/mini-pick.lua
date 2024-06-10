@@ -40,19 +40,9 @@ return {
 		})
 
 		-- files
-		-- vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files" })
-		vim.keymap.set("n", "<leader>ff", function()
-			local in_worktree = function()
-				vim.fn.system("git rev-parse --is-inside-work-tree")
-				return vim.v.shell_error == 0
-			end
-			if in_worktree then
-				extra.pickers.git_files()
-			else
-				pick.builtin.files()
-			end
-		end, { desc = "Files" })
-		vim.keymap.set("n", "<leader>fr", extra.pickers.oldfiles, { desc = "Recent Files" })
+		vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files" })
+		vim.keymap.set("n", "<leader>fF", extra.pickers.git_files, { desc = "Files (Git)" })
+		vim.keymap.set("n", "<leader>fr", extra.pickers.oldfiles, { desc = "Files (Recent)" })
 
 		-- grep
 		vim.keymap.set("n", "<leader>fw", pick.builtin.grep_live, { desc = "Grep (Live)" })

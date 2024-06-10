@@ -30,7 +30,6 @@ return {
 					vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, { desc = "LSP: Hover Signature" })
 					map("gs", vim.lsp.buf.hover, "Hover Documentation")
 					map("ga", vim.lsp.buf.code_action, "Code Action")
-					map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
 					-- map("gI", function()
 					-- 	extra.pickers.lsp({ scope = "implementation" })
 					-- end, "Goto Implementation")
@@ -52,10 +51,11 @@ return {
 					map("gR", vim.lsp.buf.rename, "Rename Variable")
 
 					-- diagnostics
+					map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
 					map("<leader>fd", function()
 						extra.pickers.diagnostic({ scope = "current" })
-					end, "Diagnostics")
-					map("<leader>fD", extra.pickers.diagnostic, "Diagnostics")
+					end, "Diagnostics (Buffer)")
+					map("<leader>fD", extra.pickers.diagnostic, "Diagnostics (All)")
 					map("[d", vim.diagnostic.goto_prev, "Previous Diagnostic")
 					map("]d", vim.diagnostic.goto_next, "Next Diagnostic")
 
@@ -205,7 +205,7 @@ return {
 			-- save without formatting
 			vim.keymap.set("n", "<leader>W", function()
 				vim.g.disable_autoformat = true
-				vim.cmd("w")
+				vim.cmd.write()
 				vim.g.disable_autoformat = false
 			end, { desc = "Save Without Formatting" })
 		end,
