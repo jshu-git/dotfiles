@@ -42,7 +42,5 @@ return {
 		vim.keymap.set("n", "-", function()
 			map.manipulate("decrement", "normal")
 		end)
-		vim.keymap.set("v", "=", map.inc_visual("visual"))
-		vim.keymap.set("v", "-", map.dec_visual("visual"))
 	end,
 }

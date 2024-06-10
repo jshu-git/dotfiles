@@ -120,13 +120,6 @@ return {
 			vim.keymap.set("n", "<leader>gX", function()
 				gitlinker.get_repo_url({ action_callback = actions.open_in_browser })
 			end, { desc = "Open Git URL (Homepage)", silent = true })
-
-			-- pickers
-			local extra = require("mini.extra")
-			vim.keymap.set("n", "<leader>gf", extra.pickers.git_files, { desc = "Files (Tracked)" })
-			vim.keymap.set("n", "<leader>gm", function()
-				extra.pickers.git_files({ scope = "modified" })
-			end, { desc = "Files (Modified)" })
 		end,
 	},
 

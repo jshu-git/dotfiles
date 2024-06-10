@@ -22,7 +22,7 @@ return {
 	},
 	{
 		"nvim-zh/colorful-winsep.nvim",
-		event = { "WinNew" },
+		event = "WinNew",
 		config = function()
 			require("colorful-winsep").setup({
 				symbols = { "─", "│", "┌", "┐", "└", "┘" },

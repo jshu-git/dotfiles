@@ -42,6 +42,11 @@ return {
 		-- files
 		vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files" })
 		vim.keymap.set("n", "<leader>fr", extra.pickers.oldfiles, { desc = "Files (Recent)" })
+		-- git
+		vim.keymap.set("n", "<leader>fg", extra.pickers.git_files, { desc = "Git Files (Tracked)" })
+		vim.keymap.set("n", "<leader>fm", function()
+			extra.pickers.git_files({ scope = "modified" })
+		end, { desc = "Git Files (Modified)" })
 
 		-- grep
 		vim.keymap.set("n", "<leader>fw", pick.builtin.grep_live, { desc = "Grep (Live)" })

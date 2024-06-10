@@ -23,11 +23,11 @@ return {
 			guides = { whitespace = "" },
 			float = {
 				border = "single",
-				relative = "win",
+				relative = "editor",
 			},
 		})
 
-		vim.keymap.set("n", "<leader>s", function()
+		vim.keymap.set("n", "go", function()
 			aerial.toggle({ direction = "float" })
 		end, { desc = "Symbols Outline" })
 	end,
