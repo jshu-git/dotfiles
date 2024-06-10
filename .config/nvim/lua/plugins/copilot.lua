@@ -1,5 +1,76 @@
 return {
 	{
+		"zbirenbaum/copilot.lua",
+		enabled = false,
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				panel = {
+					auto_refresh = true,
+					keymap = {
+						open = "<A-CR>",
+					},
+					layout = {
+						ratio = 0.33,
+					},
+				},
+				suggestion = {
+					auto_trigger = true,
+					keymap = {
+						accept = false,
+						accept_word = "<A-l>",
+						accept_line = false,
+						next = "<A-n>",
+						prev = "<A-p>",
+					},
+				},
+				filetypes = {
+					["*"] = true,
+				},
+			})
+
+			-- https://github.com/zbirenbaum/copilot.lua/issues/91
+			vim.keymap.set("i", "<Tab>", function()
+				if require("copilot.suggestion").is_visible() then
+					require("copilot.suggestion").accept()
+				else
+					vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false)
+				end
+			end)
+		end,
+	},
+
+	{
+		"monkoose/neocodeium",
+		event = "InsertEnter",
+		config = function()
+			local neocodeium = require("neocodeium")
+			neocodeium.setup({
+				silent = true,
+				filetypes = {
+					["*"] = true,
+				},
+			})
+
+			vim.keymap.set("i", "<Tab>", function()
+				if neocodeium.visible() then
+					neocodeium.accept()
+				else
+					vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false)
+				end
+			end)
+			vim.keymap.set("i", "<A-l>", neocodeium.accept_word)
+			vim.keymap.set("i", "<A-n>", function()
+				neocodeium.cycle_or_complete(1)
+			end)
+			vim.keymap.set("i", "<A-p>", function()
+				neocodeium.cycle_or_complete(-1)
+			end)
+		end,
+	},
+
+	{
 		"CopilotC-Nvim/CopilotChat.nvim",
 		branch = "canary",
 		dependencies = {
@@ -8,14 +79,19 @@ return {
 		},
 		config = function()
 			local chat = require("CopilotChat")
+			local select = require("CopilotChat.select")
+			-- enables '/' cmp in chat window
+			require("CopilotChat.integrations.cmp").setup()
+
 			chat.setup({
-				model = "gpt-4",
-				temperature = 0.7,
+				-- model = "gpt-4",
+				-- temperature = 0.7,
 				question_header = "User: ",
 				answer_header = "AI: ",
+				separator = " ",
+				show_folds = false,
 				show_help = false,
-				-- auto_follow_cursor = false,
-				clear_chat_on_new_prompt = false,
+				selection = select.buffer,
 				window = {
 					layout = "float",
 					width = 0.8,
@@ -40,17 +116,28 @@ return {
 					},
 				},
 			})
+			-- custom mappings
+			vim.api.nvim_create_autocmd("BufEnter", {
+				pattern = "copilot-*",
+				callback = function()
+					vim.keymap.set("n", "<C-c>", chat.stop, { buffer = true })
+				end,
+			})
 
-			local select = require("CopilotChat.select")
 			vim.keymap.set("n", "<leader>aa", chat.toggle, { desc = "Toggle CopilotChat" })
-			vim.keymap.set("n", "<leader>ab", function()
-				local input = vim.fn.input("Ask Buffer (CopilotChat):")
+			-- buffers
+			vim.keymap.set("n", "<leader>aB", function()
+				local input = vim.fn.input("Ask All Buffers (CopilotChat): ")
 				if input ~= "" then
-					chat.ask(input, { selection = select.buffer })
-				else
-					vim.notify("CopilotChat: No input", vim.log.levels.WARN)
+					-- reload all buffers and don't switch view of current buffer
+					local curr_buf = vim.api.nvim_get_current_buf()
+					vim.cmd("bufdo e")
+					vim.api.nvim_set_current_buf(curr_buf)
+					chat.ask(input, { context = "buffers" })
 				end
-			end, { desc = "Ask Buffer" })
+			end, { desc = "Ask All Buffers" })
+
+			-- selection
 			vim.keymap.set("v", "<leader>aa", function()
 				local input = vim.fn.input("Ask Selection (CopilotChat): ")
 				if input ~= "" then
@@ -64,8 +151,6 @@ return {
 							row = 1,
 						},
 					})
-				else
-					vim.notify("CopilotChat: No input", vim.log.levels.WARN)
 				end
 			end, { desc = "Ask Selection" })
 
@@ -80,6 +165,31 @@ return {
 					vim.notify("CopilotChat: No input. Saving to 'default'", vim.log.levels.WARN)
 				end
 			end, { desc = "Save Chat" })
+			local history_path = chat.config.history_path
+			vim.keymap.set("n", "<leader>fa", function()
+				require("mini.pick").start({
+					source = {
+						cwd = history_path,
+						items = vim.fn.readdir(history_path),
+						name = "CopilotChat History",
+						choose = function(item)
+							-- remove file extension
+							local name = vim.fn.fnamemodify(item, ":r")
+							chat.load(vim.fs.basename(name))
+							vim.notify("Loaded CopilotChat: " .. name)
+							-- HACK: for some reason load() doesn't focus the chat window, so toggle twice with sleep
+							chat.toggle()
+							vim.defer_fn(function()
+								chat.toggle()
+							end, 100)
+						end,
+					},
+				})
+			end, { desc = "CopilotChat History" })
+			vim.keymap.set("n", "<leader>ae", function()
+				require("mini.files").open(history_path)
+			end, { desc = "History (Explorer)" })
+
 			-- vim.keymap.set("n", "<leader>ar", function()
 			-- 	local input = vim.fn.input("Load CopilotChat ('default' if empty): ")
 			-- 	if input ~= "" then
@@ -90,30 +200,6 @@ return {
 			-- 		vim.notify("Loaded CopilotChat: default")
 			-- 	end
 			-- end, { desc = "CopilotChat (Load)" })
-			vim.keymap.set("n", "<leader>fa", function()
-				require("mini.pick").start({
-					source = {
-						cwd = chat.config.history_path,
-						items = vim.fn.readdir(chat.config.history_path),
-						name = "CopilotChat History",
-						choose = function(item)
-							-- remove file extension
-							local name = vim.fn.fnamemodify(item, ":r")
-							chat.load(vim.fs.basename(name))
-							vim.notify("Loaded CopilotChat: " .. name)
-							-- TODO: this doesn't focus the chat window
-							-- MEGA HACK: toggle twice
-							chat.toggle()
-							vim.defer_fn(function()
-								chat.toggle()
-							end, 100)
-						end,
-					},
-				})
-			end, { desc = "CopilotChat History" })
-			vim.keymap.set("n", "<leader>ae", function()
-				require("mini.files").open(chat.config.history_path)
-			end, { desc = "History (Explorer)" })
 		end,
 	},
 

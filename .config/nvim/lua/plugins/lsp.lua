@@ -104,14 +104,11 @@ return {
 						},
 					},
 				},
-				-- ruff = {
-				-- 	settings = {},
-				-- },
 				-- basedpyright = {
 				-- 	settings = {
 				-- 		basedpyright = {
 				-- 			analysis = {
-				-- 				typeCheckingMode = "basic",
+				-- 				typeCheckingMode = "off",
 				-- 			},
 				-- 		},
 				-- 		python = {

@@ -17,7 +17,7 @@ return {
 		buttons.opts.spacing = 0
 		buttons.val = {
 			dashboard.button("r", "󰁯  Restore Session", "<cmd>lua require('persistence').load()<CR>]"),
-			-- dashboard.button("f", "󰍉  Find", "<cmd>Pick files<CR>"),
+			dashboard.button("f", "󰍉  Find", "<cmd>Pick files<CR>"),
 			dashboard.button("e", "  Explorer", "<cmd>lua MiniFiles.open()<CR>"),
 			-- dashboard.button("n", "  New File", "<cmd>new<CR>"),
 			dashboard.button("l", "󰒲  Lazy", "<cmd>Lazy<CR>"),
