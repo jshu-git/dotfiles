@@ -25,9 +25,8 @@ return {
 		event = { "WinNew" },
 		config = function()
 			require("colorful-winsep").setup({
-				hi = {
-					link = "DiagnosticWarn",
-				},
+				symbols = { "─", "│", "┌", "┐", "└", "┘" },
+				hi = { link = "DiagnosticWarn" },
 				smooth = false,
 				exponential_smoothing = false,
 			})

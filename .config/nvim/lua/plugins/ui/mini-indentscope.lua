@@ -10,21 +10,18 @@ return {
 			options = {
 				try_as_border = true,
 			},
-			-- symbol = "│",
 			symbol = "▏",
 		})
 
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = {
 				"alpha",
+				"help",
 				"lazy",
 			},
 			callback = function()
 				vim.b.miniindentscope_disable = true
 			end,
 		})
-
-		-- highlights
-		-- vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { link = "orange" })
 	end,
 }

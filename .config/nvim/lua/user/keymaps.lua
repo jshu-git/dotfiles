@@ -12,8 +12,6 @@ vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Wo
 -- experimenting
 vim.keymap.set("n", "<C-x>", '"_dd')
 vim.keymap.set("x", "<C-x>", '"_d')
--- vim.keymap.set({ "n", "x", "o" }, "f", "/")
--- vim.keymap.set({ "n", "x", "o" }, "F", "?")
 -- TODO: <C-e> <C-x> H L
 
 -- movement

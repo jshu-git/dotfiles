@@ -41,7 +41,6 @@ return {
 
 		-- files
 		vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files" })
-		vim.keymap.set("n", "<leader>fF", extra.pickers.git_files, { desc = "Files (Git)" })
 		vim.keymap.set("n", "<leader>fr", extra.pickers.oldfiles, { desc = "Files (Recent)" })
 
 		-- grep
@@ -74,7 +73,6 @@ return {
 		vim.keymap.set("n", "<leader>ft", pick.registry.colorschemes, { desc = "Themes" })
 
 		pick.registry.builtin = function()
-			-- local items = vim.tbl_keys(pick.registry)
 			local items = vim.tbl_keys(vim.tbl_extend("force", pick.registry, extra.pickers))
 			for i, item in ipairs(items) do
 				if item == "registry" then
