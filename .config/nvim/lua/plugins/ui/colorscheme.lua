@@ -17,10 +17,11 @@ return {
 
 					-- mini
 					MiniClueTitle = { link = "MiniClueBorder" },
-					MiniFilesCursorLine = { link = "Comment" },
+					MiniFilesCursorLine = { link = "DiagnosticWarn" },
 					MiniFilesTitleFocused = { link = "MiniFilesBorder" },
 					MiniFilesTitle = { link = "MiniFilesBorder" },
 					-- MiniIndentscopeSymbol = { link = "NonText" },
+					MiniJump = { link = "MiniJump2dSpotAhead" },
 					MiniPickPrompt = { link = "MiniPickBorder" },
 					MiniPickBorderText = { link = "MiniPickBorder" },
 

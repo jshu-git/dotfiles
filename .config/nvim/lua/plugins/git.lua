@@ -12,10 +12,10 @@ return {
 					-- changedelete = { text = "~" },
 					-- untracked = { text = "┆" },
 				},
-				-- current_line_blame = true,
+				current_line_blame = true,
 				current_line_blame_opts = {
 					virt_text_pos = "right_align",
-					delay = 50,
+					delay = 10,
 					ignore_whitespace = true,
 				},
 				current_line_blame_formatter = "<author> (<author_time:%R>): <summary>",

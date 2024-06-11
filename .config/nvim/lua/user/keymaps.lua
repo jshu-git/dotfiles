@@ -12,6 +12,7 @@ vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Wo
 -- experimenting
 vim.keymap.set("n", "<C-x>", '"_dd')
 vim.keymap.set("x", "<C-x>", '"_d')
+vim.keymap.set("n", "X", '"_daW')
 -- TODO: <C-e> <C-x> H L
 
 -- movement
@@ -40,7 +41,6 @@ vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Append Semicolon" })
 -- preserve clipboard
 vim.keymap.set({ "n", "x" }, "x", '"_x')
 vim.keymap.set({ "n", "x" }, "c", '"_c')
-vim.keymap.set({ "n", "x" }, "X", '"_X')
 vim.keymap.set({ "n", "x" }, "C", '"_C')
 
 -- yanking/pasting
