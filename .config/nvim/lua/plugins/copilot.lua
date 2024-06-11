@@ -165,7 +165,7 @@ return {
 				end
 			end, { desc = "Save Chat" })
 			local history_path = chat.config.history_path
-			vim.keymap.set("n", "<leader>fa", function()
+			vim.keymap.set("n", "<leader>ah", function()
 				require("mini.pick").start({
 					source = {
 						cwd = history_path,

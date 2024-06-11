@@ -6,7 +6,7 @@ return {
 			split_orientation = "horizontal",
 		})
 
-		vim.keymap.set("n", "<leader>lp", luapad.init, { desc = "New Luapad" })
+		vim.keymap.set("n", "<leader>mp", luapad.init, { desc = "New Luapad" })
 		vim.keymap.set("n", "<leader>tp", function()
 			if luapad.current() == nil then
 				vim.notify("Luapad on (Buffer)")

@@ -106,8 +106,6 @@ return {
 			vim.keymap.set("v", "<leader>gy", function()
 				gitlinker.get_buf_range_url("v", { action_callback = actions.copy_to_clipboard })
 			end, { desc = "Copy Git URL" })
-			-- copy homepage
-			vim.keymap.set("n", "<leader>gY", gitlinker.get_repo_url, { desc = "Copy Git URL (Homepage)" })
 
 			-- open in browser
 			vim.keymap.set("n", "<leader>gx", function()
@@ -116,10 +114,6 @@ return {
 			vim.keymap.set("v", "<leader>gx", function()
 				gitlinker.get_buf_range_url("v", { action_callback = actions.open_in_browser })
 			end, { desc = "Open Git URL", silent = true })
-			-- open homepage
-			vim.keymap.set("n", "<leader>gX", function()
-				gitlinker.get_repo_url({ action_callback = actions.open_in_browser })
-			end, { desc = "Open Git URL (Homepage)", silent = true })
 		end,
 	},
 

@@ -56,7 +56,7 @@ return {
 				{ mode = "x", keys = "<leader>a", desc = "GPT…" },
 				{ mode = "n", keys = "<leader>r", desc = "Replace…" },
 				{ mode = "x", keys = "<leader>r", desc = "Replace…" },
-				-- { mode = "n", keys = "<leader>s", desc = "Session…" },
+				{ mode = "n", keys = "<leader>m", desc = "Misc…" },
 			},
 		})
 

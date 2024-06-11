@@ -15,6 +15,7 @@ return {
 
 					-- mini
 					MiniClueTitle = { link = "MiniClueBorder" },
+					MiniCursorword = { link = "StatusLine" },
 					MiniFilesCursorLine = { link = "DiagnosticWarn" },
 					MiniFilesTitleFocused = { link = "MiniFilesBorder" },
 					MiniFilesTitle = { link = "MiniFilesBorder" },
