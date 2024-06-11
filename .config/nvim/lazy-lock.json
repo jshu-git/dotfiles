@@ -57,8 +57,8 @@
   "nvim-web-devicons": { "branch": "master", "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856" },
   "persistence.nvim": { "branch": "main", "commit": "5fe077056c821aab41f87650bd6e1c48cd7dd047" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
-  "screenkey.nvim": { "branch": "main", "commit": "1beecbf3e245f9e6667677a0d33dfed00da703a9" },
+  "screenkey.nvim": { "branch": "main", "commit": "7a22fb0b275d53b50ffe9170eebbef9db2144374" },
   "undotree": { "branch": "master", "commit": "56c684a805fe948936cda0d1b19505b84ad7e065" },
   "vscode.nvim": { "branch": "main", "commit": "ff3926901d4160886f707a8a70b5c2e82979a7c4" },
-  "winbar.nvim": { "branch": "main", "commit": "76123e1d2e685a7411975a96bea3d4f459cda444" }
+  "winbar.nvim": { "branch": "main", "commit": "f6f6afedca051226f4cdb788f232865088b99c5e" }
 }
