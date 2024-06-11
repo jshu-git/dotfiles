@@ -171,6 +171,7 @@ return {
 					lua = { "stylua" },
 					json = { "prettier" },
 					markdown = { "prettier" },
+					yaml = { "prettier" },
 					sh = { "shfmt" },
 					zsh = { "shfmt" },
 					["*"] = { "codespell" },

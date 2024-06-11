@@ -28,7 +28,7 @@ layout {
     tab name="rust" cwd="~/git/rustlings/"
     // tab name="ontap.api" cwd="~/git/ontap/api"
     // tab name="ontap.common" cwd="~/git/ontap/common"
-    // tab name="ontap.x" cwd = "~/git/ontap/ontap-x"
+    // tab name="ontap.x" cwd="~/git/ontap/ontap-x"
     // tab name="asa.next" cwd="~/git/ontap/asa-next"
 
     // normal

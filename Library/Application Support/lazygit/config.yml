@@ -11,8 +11,9 @@ gui:
   border: single
 
 git:
-  commit:
-    autoWrapCommitMessage: false
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never --line-numbers
 
 quitOnTopLevelReturn: true
 notARepository: quit
