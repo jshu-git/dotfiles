@@ -4,9 +4,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			local colors = require("vscode.colors").get_colors()
 			require("vscode").setup({
-				-- transparent = true,
 				-- https://github.com/Mofiqul/vscode.nvim/blob/main/lua/vscode/theme.lua
 				group_overrides = {
 					-- copilot
@@ -21,7 +19,8 @@ return {
 					MiniFilesTitleFocused = { link = "MiniFilesBorder" },
 					MiniFilesTitle = { link = "MiniFilesBorder" },
 					-- MiniIndentscopeSymbol = { link = "NonText" },
-					MiniJump = { link = "MiniJump2dSpotAhead" },
+					-- MiniJump = { link = "MiniJump2dSpotAhead" },
+					MiniJump = { link = "Search" },
 					MiniPickPrompt = { link = "MiniPickBorder" },
 					MiniPickBorderText = { link = "MiniPickBorder" },
 

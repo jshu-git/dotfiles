@@ -20,6 +20,7 @@ return {
 			})
 		end,
 	},
+
 	{
 		"nvim-zh/colorful-winsep.nvim",
 		event = "WinNew",

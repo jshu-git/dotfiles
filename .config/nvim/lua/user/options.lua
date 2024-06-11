@@ -8,6 +8,9 @@ vim.opt.cursorlineopt = "number"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+-- folds
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 99
 
 -- misc
 vim.opt.wrapscan = false
