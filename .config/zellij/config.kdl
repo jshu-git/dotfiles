@@ -21,7 +21,7 @@ keybinds clear-defaults=true {
         }
 
         // lazygit
-        bind "g" {
+        bind "a" {
             // https://github.com/zellij-org/zellij/discussions/2518
             Run "zellij" "run" "--close-on-exit" "--floating" "--" "lazygit" {
                 close_on_exit true
@@ -69,7 +69,7 @@ keybinds clear-defaults=true {
 
         // session
         bind "d" { Detach; }
-        bind "a" {
+        bind "M" {
             LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
                 move_to_focused_tab true
