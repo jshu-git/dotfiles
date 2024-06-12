@@ -27,7 +27,13 @@ return {
 
 				-- lsp
 				vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, { desc = "LSP: Hover Signature" })
-				map("gs", vim.lsp.buf.hover, "Hover Documentation")
+				-- map("gs", vim.lsp.buf.hover, "Hover")
+				local ufo = require("ufo")
+				map("gs", function()
+					if not ufo.peekFoldedLinesUnderCursor() then
+						vim.lsp.buf.hover()
+					end
+				end, "Hover")
 				map("ga", vim.lsp.buf.code_action, "Code Action")
 				-- map("gI", function()
 				-- 	extra.pickers.lsp({ scope = "implementation" })

@@ -88,9 +88,5 @@ return {
 				vim.api.nvim_win_set_config(win_id, config)
 			end,
 		})
-
-		-- highlights
-		-- vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
-		-- vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
 	end,
 }

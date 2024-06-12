@@ -106,12 +106,7 @@ return {
 		vim.keymap.set("n", "<leader>:", function()
 			extra.pickers.history({ scope = ":" })
 		end, { desc = "Command History" })
-		vim.keymap.set("n", "<leader>=", extra.pickers.spellsuggest, { desc = "Spell Suggest (cword)" })
 
 		vim.ui.select = pick.ui_select
-
-		-- highlights
-		-- vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
-		-- vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
 	end,
 }

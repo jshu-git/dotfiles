@@ -11,7 +11,6 @@ return {
 				yaml = { "prettier" },
 				sh = { "shfmt" },
 				zsh = { "shfmt" },
-				["*"] = { "codespell" },
 				["_"] = { "trim_whitespace" },
 			},
 			-- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save

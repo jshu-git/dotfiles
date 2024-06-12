@@ -5,7 +5,6 @@ return {
 	},
 	config = function()
 		-- folding https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
-		-- vim.opt.foldcolumn = "1"
 		vim.o.foldlevel = 99
 		vim.o.foldlevelstart = 99
 		vim.o.foldenable = true
@@ -16,12 +15,11 @@ return {
 			preview = {
 				win_config = {
 					border = "single",
-					-- winhighlight = "Normal:Folded",
+					winhighlight = "Normal:StatusLine",
 					winblend = 0,
-					maxheight = 15,
 				},
 				mappings = {
-					switch = "zp",
+					switch = "gs",
 					close = "<esc>",
 				},
 			},
@@ -55,10 +53,5 @@ return {
 				return newVirtText
 			end,
 		})
-
-		-- peek
-		vim.keymap.set("n", "zp", function()
-			ufo.peekFoldedLinesUnderCursor()
-		end, { desc = "Peek Fold" })
 	end,
 }
