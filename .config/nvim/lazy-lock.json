@@ -60,7 +60,6 @@
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "screenkey.nvim": { "branch": "main", "commit": "7a22fb0b275d53b50ffe9170eebbef9db2144374" },
   "undotree": { "branch": "master", "commit": "56c684a805fe948936cda0d1b19505b84ad7e065" },
-  "vim-polyglot": { "branch": "master", "commit": "bc8a81d3592dab86334f27d1d43c080ebf680d42" },
   "vscode.nvim": { "branch": "main", "commit": "ff3926901d4160886f707a8a70b5c2e82979a7c4" },
   "winbar.nvim": { "branch": "main", "commit": "f6f6afedca051226f4cdb788f232865088b99c5e" }
 }
