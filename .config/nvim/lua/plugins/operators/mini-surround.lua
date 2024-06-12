@@ -7,10 +7,10 @@ return {
 				delete = "sd",
 				highlight = "sh",
 				replace = "sr",
+				update_n_lines = "sn",
 
 				find = "",
 				find_left = "",
-				update_n_lines = "",
 				suffix_last = "",
 				suffix_next = "",
 			},

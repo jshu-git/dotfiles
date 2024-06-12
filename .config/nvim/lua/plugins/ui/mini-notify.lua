@@ -5,6 +5,7 @@ return {
 		notify.setup({
 			window = { winblend = 0 },
 		})
+
 		vim.notify = notify.make_notify()
 		vim.keymap.set("n", "<leader>mm", notify.clear, { desc = "Clear Notifications" })
 		vim.keymap.set("n", "<leader>mh", function()

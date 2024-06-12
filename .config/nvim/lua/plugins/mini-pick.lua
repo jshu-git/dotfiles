@@ -38,6 +38,7 @@ return {
 				prompt_prefix = " ",
 			},
 		})
+		vim.ui.select = pick.ui_select
 
 		-- files
 		vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files" })
@@ -106,7 +107,5 @@ return {
 		vim.keymap.set("n", "<leader>:", function()
 			extra.pickers.history({ scope = ":" })
 		end, { desc = "Command History" })
-
-		vim.ui.select = pick.ui_select
 	end,
 }

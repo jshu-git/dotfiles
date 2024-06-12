@@ -6,7 +6,6 @@ return {
 				options = {
 					basic = true,
 					win_borders = "single",
-					extra_ui = true,
 				},
 				mappings = {
 					basic = false,
@@ -24,5 +23,10 @@ return {
 			local misc = require("mini.misc")
 			misc.setup_restore_cursor()
 		end,
+	},
+
+	{
+		"echasnovski/mini.extra",
+		config = true,
 	},
 }

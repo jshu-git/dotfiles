@@ -7,7 +7,7 @@ return {
 
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = {
-				-- "help",
+				"buffer_manager",
 				"alpha",
 				"lazy",
 			},

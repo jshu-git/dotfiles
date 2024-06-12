@@ -5,31 +5,20 @@ return {
 		clue.setup({
 			window = {
 				delay = 250,
-				config = function(bufnr)
-					local max_width = 0
-					for _, line in ipairs(vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)) do
-						max_width = math.max(max_width, vim.fn.strchars(line))
-					end
-					max_width = max_width + 1
-					return {
-						width = math.min(40, max_width),
-					}
-				end,
+				width = math.floor(0.3 * vim.o.columns),
 			},
 			triggers = {
-				{ mode = "n", keys = "<C-w>" },
+				{ mode = "n", keys = "<leader>" },
+				{ mode = "x", keys = "<leader>" },
 				{ mode = "n", keys = "g" },
 				{ mode = "x", keys = "g" },
-				{ mode = "n", keys = "z" },
-				{ mode = "x", keys = "z" },
 				{ mode = "n", keys = '"' },
 				{ mode = "x", keys = '"' },
 				{ mode = "i", keys = "<C-r>" },
 				{ mode = "c", keys = "<C-r>" },
-
-				-- leader
-				{ mode = "n", keys = "<leader>" },
-				{ mode = "x", keys = "<leader>" },
+				{ mode = "n", keys = "<C-w>" },
+				{ mode = "n", keys = "z" },
+				{ mode = "x", keys = "z" },
 
 				-- unimpaired
 				{ mode = "n", keys = "]" },
@@ -39,11 +28,10 @@ return {
 				{ mode = "n", keys = "s" },
 				{ mode = "x", keys = "s" },
 			},
-
 			clues = {
 				-- clue.gen_clues.g(),
 				clue.gen_clues.windows(),
-				clue.gen_clues.registers({ show_contents = true }),
+				clue.gen_clues.registers(),
 				clue.gen_clues.z(),
 
 				-- leader
@@ -57,10 +45,15 @@ return {
 				{ mode = "n", keys = "<leader>r", desc = "Replace…" },
 				{ mode = "x", keys = "<leader>r", desc = "Replace…" },
 				{ mode = "n", keys = "<leader>m", desc = "Misc…" },
+
+				-- submodes
+				-- { mode = "n", keys = "zj", postkeys = "z" },
+				-- { mode = "n", keys = "zk", postkeys = "z" },
+				-- { mode = "n", keys = "zm", postkeys = "z" },
+				-- { mode = "n", keys = "zr", postkeys = "z" },
+				{ mode = "n", keys = "zo", postkeys = "z" },
+				{ mode = "n", keys = "zc", postkeys = "z" },
 			},
 		})
-
-		-- highlights
-		-- vim.api.nvim_set_hl(0, "MiniClueTitle", { link = "MiniClueBorder" })
 	end,
 }
