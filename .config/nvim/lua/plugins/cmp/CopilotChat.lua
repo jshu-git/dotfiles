@@ -2,8 +2,8 @@ return {
 	"CopilotC-Nvim/CopilotChat.nvim",
 	branch = "canary",
 	dependencies = {
-		{ "zbirenbaum/copilot.lua" },
-		{ "nvim-lua/plenary.nvim" },
+		"zbirenbaum/copilot.lua",
+		"nvim-lua/plenary.nvim",
 	},
 	config = function()
 		local chat = require("CopilotChat")

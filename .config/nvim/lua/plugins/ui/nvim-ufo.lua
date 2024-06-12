@@ -4,36 +4,24 @@ return {
 		"kevinhwang91/promise-async",
 	},
 	config = function()
-		-- fold levels
-		for i = 1, 9 do
-			vim.keymap.set("n", "z" .. i, "<cmd>set foldlevel=" .. i - 1 .. "<CR>", { desc = "Fold Level " .. i - 1 })
-		end
-		vim.keymap.set("n", "z0", "<cmd>set foldlevel=99<CR>", { desc = "Fold Level 99" })
-
 		-- folding https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
-		-- vim.opt.foldmethod = "indent"
-		-- vim.opt.foldmethod = "expr"
-		-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-		-- vim.opt.foldcolumn = "0"
-		-- vim.opt.foldtext = ""
-		vim.opt.foldlevel = 99
-		-- vim.opt.foldlevel = 3
-		-- vim.opt.foldenable = false
+		-- vim.opt.foldcolumn = "1"
+		vim.o.foldlevel = 99
+		vim.o.foldlevelstart = 99
+		vim.o.foldenable = true
 
 		local ufo = require("ufo")
 		ufo.setup({
 			open_fold_hl_timeout = 250,
-			provider_selector = function(bufnr, filetype, buftype)
-				return { "indent" }
-			end,
 			preview = {
 				win_config = {
 					border = "single",
+					-- winhighlight = "Normal:Folded",
 					winblend = 0,
 					maxheight = 15,
 				},
 				mappings = {
-					switch = "p",
+					switch = "zp",
 					close = "<esc>",
 				},
 			},
