@@ -51,6 +51,8 @@ return {
 							nvim_lua = "LUA",
 							buffer = "BUF",
 							path = "PTH",
+							cmdline = "CMD",
+							cmdline_history = "HST",
 						}
 						item.menu = menu_icon[entry.source.name]
 						local content = item.abbr
@@ -150,7 +152,7 @@ return {
 				},
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
-					{ name = "cmdline_history" },
+					{ name = "cmdline_history", max_item_count = 3 },
 					{ name = "cmdline" },
 					{ name = "path" },
 				}),

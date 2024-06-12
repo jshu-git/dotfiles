@@ -142,13 +142,13 @@ return {
 				if input ~= "" then
 					chat.ask(input, {
 						selection = select.visual,
-						window = {
-							layout = "float",
-							relative = "cursor",
-							width = 1,
-							height = 0.5,
-							row = 1,
-						},
+						-- window = {
+						-- 	layout = "float",
+						-- 	relative = "cursor",
+						-- 	width = 1,
+						-- 	height = 0.5,
+						-- 	row = 1,
+						-- },
 					})
 				end
 			end, { desc = "Ask Selection" })

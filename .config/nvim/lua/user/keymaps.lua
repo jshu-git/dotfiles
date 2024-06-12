@@ -9,11 +9,8 @@ vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 -- toggles
 vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Word Wrap" })
 
--- experimenting
-vim.keymap.set("n", "<C-x>", '"_dd')
-vim.keymap.set("x", "<C-x>", '"_d')
-vim.keymap.set("n", "X", '"_daW')
--- TODO: <C-e> <C-x> H L
+-- experimenting TODO: <C-e> <C-x> H L
+vim.keymap.set("n", "X", '"_daw')
 
 -- movement
 vim.keymap.set({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true })
@@ -25,7 +22,7 @@ vim.keymap.set({ "n", "x" }, "B", "^")
 vim.keymap.set({ "n", "x" }, "G", "Gzz")
 vim.keymap.set({ "n", "x" }, "<C-u>", "<C-u>zz")
 vim.keymap.set({ "n", "x" }, "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<BS>", "<C-^>")
+vim.keymap.set("n", "<BS>", "<C-^>zz")
 vim.keymap.set("n", "gG", "gg<S-v>G", { desc = "Select All" })
 
 -- editing
@@ -42,6 +39,14 @@ vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Append Semicolon" })
 vim.keymap.set({ "n", "x" }, "x", '"_x')
 vim.keymap.set({ "n", "x" }, "c", '"_c')
 vim.keymap.set({ "n", "x" }, "C", '"_C')
+vim.keymap.set("n", "dd", function()
+	-- smart dd https://old.reddit.com/r/neovim/comments/w0jzzv/smart_dd/
+	if vim.api.nvim_get_current_line():match("^%s*$") then
+		return '"_dd'
+	else
+		return "dd"
+	end
+end, { expr = true })
 
 -- yanking/pasting
 vim.keymap.set("n", "p", "p==")

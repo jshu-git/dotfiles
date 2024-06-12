@@ -22,7 +22,7 @@
   "gitlinker.nvim": { "branch": "master", "commit": "cc59f732f3d043b626c8702cb725c82e54d35c25" },
   "gitsigns.nvim": { "branch": "main", "commit": "4a143f13e122ab91abdc88f89eefbe70a4858a56" },
   "goto-preview": { "branch": "main", "commit": "3552fad4a0244ffd9ac86508e29ccc5166f19eb8" },
-  "grug-far.nvim": { "branch": "main", "commit": "cd4b7ddb6b920582fd4dcbe50b77af4bb652d096" },
+  "grug-far.nvim": { "branch": "main", "commit": "23a645089bd3fa75412babe9b9b3dc2b795f2e89" },
   "highlight-undo.nvim": { "branch": "main", "commit": "1ea1c79372d7d93c88fd97543880927b7635e3d2" },
   "lazy.nvim": { "branch": "main", "commit": "eb4957442e3182f051b0ae11da32e06d22c190e3" },
   "lazydev.nvim": { "branch": "main", "commit": "7cbb524c85f87017df9c1ea2377a1d840ad8ed51" },
@@ -60,6 +60,7 @@
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "screenkey.nvim": { "branch": "main", "commit": "7a22fb0b275d53b50ffe9170eebbef9db2144374" },
   "undotree": { "branch": "master", "commit": "56c684a805fe948936cda0d1b19505b84ad7e065" },
+  "vim-polyglot": { "branch": "master", "commit": "bc8a81d3592dab86334f27d1d43c080ebf680d42" },
   "vscode.nvim": { "branch": "main", "commit": "ff3926901d4160886f707a8a70b5c2e82979a7c4" },
   "winbar.nvim": { "branch": "main", "commit": "f6f6afedca051226f4cdb788f232865088b99c5e" }
 }
