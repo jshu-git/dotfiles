@@ -1,11 +1,10 @@
 return {
 	"echasnovski/mini.indentscope",
 	config = function()
-		require("mini.indentscope").setup({
+		local indentscope = require("mini.indentscope")
+		indentscope.setup({
 			draw = {
-				animation = function()
-					return 4
-				end,
+				animation = indentscope.gen_animation.none(),
 			},
 			options = {
 				try_as_border = true,

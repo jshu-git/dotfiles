@@ -10,7 +10,6 @@ vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Word Wrap" })
 
 -- experimenting TODO: <C-e> <C-x> H L
-vim.keymap.set("n", "X", '"_daw')
 
 -- movement
 vim.keymap.set({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true })
@@ -23,9 +22,10 @@ vim.keymap.set({ "n", "x" }, "G", "Gzz")
 vim.keymap.set({ "n", "x" }, "<C-u>", "<C-u>zz")
 vim.keymap.set({ "n", "x" }, "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<BS>", "<C-^>zz")
-vim.keymap.set("n", "gG", "gg<S-v>G", { desc = "Select All" })
+vim.keymap.set("n", "gG", "ggVG", { desc = "Select All" })
 
 -- editing
+vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<C-c>", "gcc", { remap = true })
 vim.keymap.set("x", "<C-c>", "gc", { remap = true })
 vim.keymap.set("n", "U", "<C-r>")
@@ -97,13 +97,11 @@ vim.keymap.set({ "i", "c" }, "<C-h>", "<Left>")
 vim.keymap.set({ "i", "c" }, "<C-l>", "<Right>")
 vim.keymap.set({ "i", "c" }, "<C-k>", "<Up>")
 vim.keymap.set({ "i", "c" }, "<C-j>", "<Down>")
+vim.keymap.set({ "i", "c" }, "<C-a>", "<Home>")
+vim.keymap.set({ "i", "c" }, "<C-e>", "<End>")
+vim.keymap.set({ "i", "c" }, "<C-d>", "<Del>")
 -- add undo points after , . ! ?
 vim.keymap.set("i", ",", ",<C-g>u")
 vim.keymap.set("i", ".", ".<C-g>u")
 vim.keymap.set("i", "!", "!<C-g>u")
 vim.keymap.set("i", "?", "?<C-g>u")
-
--- misc
-vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
-vim.keymap.set("n", "<C-f>", "<Nop>")
-vim.keymap.set("n", "<C-a>", "<Nop>")
