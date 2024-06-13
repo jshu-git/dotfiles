@@ -92,6 +92,10 @@ vim.keymap.set("x", "<CR>", '"_c')
 vim.keymap.set("x", "V", "j")
 vim.keymap.set("x", "<C-q>", "j")
 
+-- search and replace
+vim.keymap.set("n", "<leader>rs", ":%s///gI<left><left><left><left>", { desc = "Subsitute (File)" })
+vim.keymap.set("x", "<leader>rs", ":s///gI<left><left><left><left>", { desc = "Subsitute (Selection)" })
+
 -- non-normal modes
 vim.keymap.set({ "i", "c" }, "<C-h>", "<Left>")
 vim.keymap.set({ "i", "c" }, "<C-l>", "<Right>")

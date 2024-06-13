@@ -49,8 +49,8 @@ return {
 				-- submodes
 				-- { mode = "n", keys = "zj", postkeys = "z" },
 				-- { mode = "n", keys = "zk", postkeys = "z" },
-				-- { mode = "n", keys = "zm", postkeys = "z" },
-				-- { mode = "n", keys = "zr", postkeys = "z" },
+				{ mode = "n", keys = "zm", postkeys = "z" },
+				{ mode = "n", keys = "zr", postkeys = "z" },
 				{ mode = "n", keys = "zo", postkeys = "z" },
 				{ mode = "n", keys = "zc", postkeys = "z" },
 			},

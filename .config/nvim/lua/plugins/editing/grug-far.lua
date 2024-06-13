@@ -41,6 +41,7 @@ return {
 			})
 		end, { desc = "Find and Replace (File)" })
 
+		-- visual
 		vim.keymap.set(
 			"v",
 			"<leader>rr",

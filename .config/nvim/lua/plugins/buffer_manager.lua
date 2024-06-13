@@ -22,7 +22,8 @@ return {
 			})
 
 			local ui = require("buffer_manager.ui")
-			vim.keymap.set("n", "<Tab>", ui.toggle_quick_menu)
+			vim.keymap.set("n", "<Tab>", ui.nav_next)
+			vim.keymap.set("n", "<S-Tab>", ui.nav_prev)
 			vim.keymap.set("n", "<leader><Tab>", ui.toggle_quick_menu, { desc = "Buffer Manager" })
 		end,
 	},
@@ -42,48 +43,6 @@ return {
 			end, { desc = "Delete Buffer and Window" })
 		end,
 	},
-
-	-- {
-	-- 	"romgrk/barbar.nvim",
-	-- 	dependencies = {
-	-- 		"nvim-tree/nvim-web-devicons",
-	-- 	},
-	-- 	config = function()
-	-- 		require("barbar").setup({
-	-- 			animation = false,
-	-- 			auto_hide = 0,
-	-- 			exclude_ft = { "alpha" },
-	-- 			icons = {
-	-- 				button = "",
-	-- 				separator = { left = "", right = "" },
-	-- 				separator_at_end = false,
-	-- 				modified = { button = "●" },
-	-- 				pinned = { button = "", filename = false },
-	-- 				inactive = { separator = { left = "", right = "" } },
-	-- 			},
-	-- 			insert_at_end = true,
-	-- 			maximum_padding = 1,
-	-- 			minimum_padding = 1,
-	-- 		})
-	--
-	-- 		-- navigation
-	-- 		vim.keymap.set("n", "<S-Tab>", "<cmd>BufferPrevious<CR>")
-	-- 		vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>")
-	-- 		-- move
-	-- 		vim.keymap.set("n", "<A-h>", "<cmd>BufferMovePrevious<CR>")
-	-- 		vim.keymap.set("n", "<A-l>", "<cmd>BufferMoveNext<CR")
-	--
-	-- 		vim.keymap.set("n", "<A-P>", "<cmd>BufferPin<CR>")
-	-- 		vim.keymap.set("n", "gb", "<cmd>BufferPick<CR>", { desc = "Pick Buffer" })
-	-- 	end,
-	-- },
-
-	-- {
-	-- 	"echasnovski/mini.tabline",
-	-- 	config = function()
-	-- 		require("mini.tabline").setup()
-	-- 	end,
-	-- },
 
 	-- {
 	-- 	"akinsho/bufferline.nvim",

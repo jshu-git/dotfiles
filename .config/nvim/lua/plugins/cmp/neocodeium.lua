@@ -1,5 +1,6 @@
 return {
 	"monkoose/neocodeium",
+	cond = vim.env.SSH_CLIENT == nil,
 	event = "InsertEnter",
 	config = function()
 		local neocodeium = require("neocodeium")

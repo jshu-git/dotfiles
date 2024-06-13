@@ -33,11 +33,11 @@ return {
 
 		-- hunks
 		vim.keymap.set("n", "<leader>gs", gitsigns.preview_hunk, { desc = "Hover Hunk" })
-		vim.keymap.set("n", "<leader>ga", gitsigns.stage_hunk, { desc = "Stage Hunk" })
-		vim.keymap.set("n", "<leader>gr", gitsigns.reset_hunk, { desc = "Reset Hunk" })
+		vim.keymap.set("n", "<leader>gh", gitsigns.stage_hunk, { desc = "Stage Hunk" })
+		vim.keymap.set("n", "<leader>gH", gitsigns.reset_hunk, { desc = "Reset Hunk" })
 		vim.keymap.set("n", "<leader>gR", gitsigns.reset_buffer, { desc = "Reset Buffer" })
 		vim.keymap.set("n", "<leader>gu", gitsigns.undo_stage_hunk, { desc = "Undo Stage Hunk" })
-		vim.keymap.set("n", "<leader>gd", gitsigns.diffthis, { desc = "Diff" })
+		-- vim.keymap.set("n", "<leader>gd", gitsigns.diffthis, { desc = "Diff" })
 
 		-- visual
 		vim.keymap.set("v", "<leader>gh", function()
