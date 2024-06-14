@@ -23,7 +23,7 @@ return {
 			guides = { whitespace = "" },
 			float = {
 				border = "single",
-				relative = "editor",
+				relative = "win",
 			},
 		})
 

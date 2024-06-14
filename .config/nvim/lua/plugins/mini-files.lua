@@ -82,8 +82,6 @@ return {
 			callback = function(args)
 				local win_id = args.data.win_id
 				local config = vim.api.nvim_win_get_config(win_id)
-
-				vim.wo[win_id].cursorlineopt = "line"
 				config.title_pos = "center"
 				vim.api.nvim_win_set_config(win_id, config)
 			end,

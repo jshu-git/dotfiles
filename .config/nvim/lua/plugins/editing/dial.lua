@@ -11,11 +11,9 @@ return {
 				-- constants
 				augend.constant.new({
 					elements = { "false", "true" },
-					cyclic = false,
 				}),
 				augend.constant.new({
 					elements = { "no", "yes" },
-					cyclic = false,
 				}),
 				augend.constant.new({
 					elements = { "and", "or" },

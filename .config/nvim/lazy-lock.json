@@ -50,6 +50,7 @@
   "neocodeium": { "branch": "main", "commit": "4a46f6438bcdb21c562f83036bce75c719834072" },
   "nvim-cmp": { "branch": "main", "commit": "a110e12d0b58eefcf5b771f533fc2cf3050680ac" },
   "nvim-cmp-rust": { "branch": "main", "commit": "1c431ba192a90da36194d8f2fcf14c4ec5afb4a5" },
+  "nvim-early-retirement": { "branch": "main", "commit": "4c41425a2eca38f5b2ebc9dbac1b217fb1f86b9d" },
   "nvim-lspconfig": { "branch": "master", "commit": "4d38bece98300e3e5cd24a9aa0d0ebfea4951c16" },
   "nvim-luapad": { "branch": "master", "commit": "176686eb616a5ada5dfc748f2b5109194bbe8a71" },
   "nvim-numbertoggle": { "branch": "main", "commit": "c5827153f8a955886f1b38eaea6998c067d2992f" },
