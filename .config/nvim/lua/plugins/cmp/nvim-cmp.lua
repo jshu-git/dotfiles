@@ -3,7 +3,7 @@ return {
 	event = { "InsertEnter", "CmdlineEnter" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-nvim-lsp-signature-help",
+		-- "hrsh7th/cmp-nvim-lsp-signature-help",
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-cmdline",
@@ -18,7 +18,7 @@ return {
 			sources = {
 				{ name = "lazydev", group_index = 0 },
 				{ name = "nvim_lsp", max_item_count = 5 },
-				{ name = "nvim_lsp_signature_help" },
+				-- { name = "nvim_lsp_signature_help" },
 				{ name = "buffer", max_item_count = 3 },
 				{ name = "calc" },
 				{ name = "path" },

@@ -15,7 +15,7 @@ return {
 			preview = {
 				win_config = {
 					border = "single",
-					winhighlight = "Normal:StatusLine",
+					-- winhighlight = "Normal:StatusLine",
 					winblend = 0,
 				},
 				mappings = {

@@ -15,32 +15,6 @@ return {
 		-- 		preview_window_title = { position = "center" },
 		-- 	},
 		-- },
-		{
-			"dnlhc/glance.nvim",
-			cmd = "Glance",
-			config = function()
-				local glance = require("glance")
-				local actions = glance.actions
-				glance.setup({
-					height = math.floor(0.5 * vim.o.lines),
-					border = { enable = true, top_char = "─", bottom_char = "─" },
-					list = { width = 0.2 },
-					mappings = {
-						list = {
-							["<C-v>"] = actions.jump_vsplit,
-							["<C-s>"] = actions.jump_split,
-							["<CR>"] = actions.enter_win("preview"),
-							["<esc>"] = actions.close,
-						},
-						preview = {
-							-- ["<esc>"] = actions.close,
-							["<esc>"] = actions.enter_win("list"),
-						},
-					},
-					folds = { folded = false },
-				})
-			end,
-		},
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -52,19 +26,20 @@ return {
 				local extra = require("mini.extra")
 
 				-- lsp
+				require("lsp_signature").on_attach({}, event.buf)
+				-- map("gS", vim.lsp.buf.signature_help, "Hover Signature")
 				map("gs", function()
 					if not require("ufo").peekFoldedLinesUnderCursor() then
-						vim.lsp.buf.hover()
+						-- vim.lsp.buf.hover()
+						require("pretty_hover").hover()
 					end
 				end, "Hover")
-				map("gS", vim.lsp.buf.signature_help, "Hover Signature")
 				map("ga", vim.lsp.buf.code_action, "Code Action")
 				map("gd", "<cmd>Glance definitions<CR>", "Goto Definition")
 				-- map("gd", require("goto-preview").goto_preview_definition, "Goto Definition (Preview)")
 				-- map("gD", function()
 				-- 	extra.pickers.lsp({ scope = "definition" })
 				-- end, "Goto Definition (Pick)")
-
 				map("gr", "<cmd>Glance references<CR>", "Goto References")
 				map("gR", vim.lsp.buf.rename, "Rename Variable")
 
@@ -83,6 +58,7 @@ return {
 
 				-- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L510
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
+
 				-- toggle inlay hints
 				if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
 					map("<leader>th", function()
@@ -155,9 +131,8 @@ return {
 		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 			border = "single",
 		})
-		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-			border = "single",
-		})
+		vim.lsp.handlers["textDocument/signatureHelp"] =
+			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
 		vim.diagnostic.config({
 			float = { border = "single", severity_sort = true },
 			severity_sort = true,
