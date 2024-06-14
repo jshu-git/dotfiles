@@ -52,6 +52,7 @@ return {
 						path = "PTH",
 						cmdline = "CMD",
 						cmdline_history = "HST",
+						calc = "CLC",
 					}
 					item.menu = menu_icon[entry.source.name]
 					local content = item.abbr
@@ -82,10 +83,15 @@ return {
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
-				["<C-c>"] = cmp.mapping.abort(),
 				["<C-n>"] = cmp.mapping.select_next_item(),
 				["<C-p>"] = cmp.mapping.select_prev_item(),
-				["<C-x>"] = cmp.mapping.complete(),
+				["<C-x>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.abort()
+					else
+						cmp.complete()
+					end
+				end, { "i", "s" }),
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
 				["<C-u>"] = cmp.mapping.scroll_docs(-4),
 				-- snippets
@@ -103,6 +109,32 @@ return {
 						fallback()
 					end
 				end, { "i", "s" }),
+			}),
+		})
+
+		-- / cmdline setup
+		cmp.setup.cmdline({ "/", "?" }, {
+			completion = {
+				keyword_length = 1,
+				completeopt = "menu,menuone,preview,noinsert,noselect",
+			},
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = {
+				{ name = "buffer" },
+			},
+		})
+
+		-- : cmdline setup
+		cmp.setup.cmdline(":", {
+			completion = {
+				keyword_length = 1,
+				completeopt = "menu,menuone,preview,noinsert,noselect",
+			},
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = "cmdline_history", max_item_count = 3 },
+				{ name = "cmdline" },
+				{ name = "path" },
 			}),
 		})
 
@@ -130,31 +162,6 @@ return {
 					compare.order,
 				},
 			},
-		})
-
-		-- / cmdline setup
-		cmp.setup.cmdline({ "/", "?" }, {
-			completion = {
-				keyword_length = 1,
-				completeopt = "menu,menuone,preview,noinsert,noselect",
-			},
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = {
-				{ name = "buffer" },
-			},
-		})
-		-- : cmdline setup
-		cmp.setup.cmdline(":", {
-			completion = {
-				keyword_length = 1,
-				completeopt = "menu,menuone,preview,noinsert,noselect",
-			},
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = cmp.config.sources({
-				{ name = "cmdline_history", max_item_count = 3 },
-				{ name = "cmdline" },
-				{ name = "path" },
-			}),
 		})
 	end,
 }

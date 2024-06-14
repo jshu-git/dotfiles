@@ -47,12 +47,22 @@ return {
 				{ mode = "n", keys = "<leader>m", desc = "Misc…" },
 
 				-- submodes
-				-- { mode = "n", keys = "zj", postkeys = "z" },
-				-- { mode = "n", keys = "zk", postkeys = "z" },
+				-- folds
+				{ mode = "n", keys = "zj", postkeys = "z" },
+				{ mode = "n", keys = "zk", postkeys = "z" },
 				{ mode = "n", keys = "zm", postkeys = "z" },
 				{ mode = "n", keys = "zr", postkeys = "z" },
 				{ mode = "n", keys = "zo", postkeys = "z" },
 				{ mode = "n", keys = "zc", postkeys = "z" },
+				{ mode = "n", keys = "z1", postkeys = "z" },
+				{ mode = "n", keys = "z2", postkeys = "z" },
+				{ mode = "n", keys = "z3", postkeys = "z" },
+				{ mode = "n", keys = "z4", postkeys = "z" },
+				{ mode = "n", keys = "z5", postkeys = "z" },
+				{ mode = "n", keys = "z6", postkeys = "z" },
+				{ mode = "n", keys = "z7", postkeys = "z" },
+				{ mode = "n", keys = "z8", postkeys = "z" },
+				{ mode = "n", keys = "z9", postkeys = "z" },
 			},
 		})
 	end,

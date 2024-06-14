@@ -23,7 +23,7 @@ return {
 				local map = function(keys, func, desc)
 					vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 				end
-				local extra = require("mini.extra")
+				-- local extra = require("mini.extra")
 
 				-- lsp
 				require("lsp_signature").on_attach({}, event.buf)
@@ -45,10 +45,10 @@ return {
 
 				-- diagnostics
 				map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
-				map("<leader>fd", function()
-					extra.pickers.diagnostic({ scope = "current" })
-				end, "Diagnostics (Buffer)")
-				map("<leader>fD", extra.pickers.diagnostic, "Diagnostics (All)")
+				-- map("<leader>fd", function()
+				-- 	extra.pickers.diagnostic({ scope = "current" })
+				-- end, "Diagnostics (Buffer)")
+				-- map("<leader>fD", extra.pickers.diagnostic, "Diagnostics (All)")
 				map("[d", vim.diagnostic.goto_prev, "Previous Diagnostic")
 				map("]d", vim.diagnostic.goto_next, "Next Diagnostic")
 
@@ -58,7 +58,6 @@ return {
 
 				-- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L510
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
-
 				-- toggle inlay hints
 				if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
 					map("<leader>th", function()

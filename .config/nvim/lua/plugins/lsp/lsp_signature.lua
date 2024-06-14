@@ -1,6 +1,5 @@
 return {
 	"ray-x/lsp_signature.nvim",
-	event = "VeryLazy",
 	config = function()
 		require("lsp_signature").setup({
 			max_width = math.floor(0.5 * vim.o.columns),
@@ -10,6 +9,7 @@ return {
 				border = "single",
 			},
 			toggle_key = "<C-s>",
+			select_signature_key = "<C-S-s>",
 		})
 	end,
 }

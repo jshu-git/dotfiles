@@ -4,10 +4,14 @@ return {
 		"kevinhwang91/promise-async",
 	},
 	config = function()
-		-- folding https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
+		-- https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
 		vim.o.foldlevel = 99
 		vim.o.foldlevelstart = 99
 		vim.o.foldenable = true
+		for i = 1, 9 do
+			vim.keymap.set("n", "z" .. i, "<cmd>set foldlevel=" .. i - 1 .. "<CR>", { desc = "Fold Level " .. i - 1 })
+		end
+		vim.keymap.set("n", "z0", "<cmd>set foldlevel=99<CR>", { desc = "Reset Fold Levels" })
 
 		local ufo = require("ufo")
 		ufo.setup({
@@ -15,7 +19,6 @@ return {
 			preview = {
 				win_config = {
 					border = "single",
-					-- winhighlight = "Normal:StatusLine",
 					winblend = 0,
 				},
 				mappings = {
