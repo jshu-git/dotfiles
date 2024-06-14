@@ -3,18 +3,44 @@ return {
 	dependencies = {
 		{ "folke/lazydev.nvim", ft = "lua", opts = {} },
 		{ "echasnovski/mini.extra", opts = {} },
-		-- ui
-		{
-			"rmagatti/goto-preview",
-			opts = {
-				width = math.floor(0.75 * vim.o.columns),
-				height = math.floor(0.5 * vim.o.lines),
-				border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-				preview_window_title = { position = "center" },
-			},
-		},
 		-- cmp
-		{ "hrsh7th/cmp-nvim-lsp" },
+		"hrsh7th/cmp-nvim-lsp",
+		-- ui
+		-- {
+		-- 	"rmagatti/goto-preview",
+		-- 	opts = {
+		-- 		width = math.floor(0.75 * vim.o.columns),
+		-- 		height = math.floor(0.5 * vim.o.lines),
+		-- 		border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+		-- 		preview_window_title = { position = "center" },
+		-- 	},
+		-- },
+		{
+			"dnlhc/glance.nvim",
+			cmd = "Glance",
+			config = function()
+				local glance = require("glance")
+				local actions = glance.actions
+				glance.setup({
+					height = math.floor(0.5 * vim.o.lines),
+					border = { enable = true, top_char = "─", bottom_char = "─" },
+					list = { width = 0.2 },
+					mappings = {
+						list = {
+							["<C-v>"] = actions.jump_vsplit,
+							["<C-s>"] = actions.jump_split,
+							["<CR>"] = actions.enter_win("preview"),
+							["<esc>"] = actions.close,
+						},
+						preview = {
+							-- ["<esc>"] = actions.close,
+							["<esc>"] = actions.enter_win("list"),
+						},
+					},
+					folds = { folded = false },
+				})
+			end,
+		},
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -26,32 +52,20 @@ return {
 				local extra = require("mini.extra")
 
 				-- lsp
-				vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, { desc = "LSP: Hover Signature" })
-				-- map("gs", vim.lsp.buf.hover, "Hover")
 				map("gs", function()
 					if not require("ufo").peekFoldedLinesUnderCursor() then
 						vim.lsp.buf.hover()
 					end
 				end, "Hover")
+				map("gS", vim.lsp.buf.signature_help, "Hover Signature")
 				map("ga", vim.lsp.buf.code_action, "Code Action")
-				-- map("gI", function()
-				-- 	extra.pickers.lsp({ scope = "implementation" })
-				-- end, "Goto Implementation")
-				-- map("gt", function()
-				-- 	extra.pickers.lsp({ scope = "type_definition" })
-				-- end, "Goto Type Definition")
-
-				map("gd", require("goto-preview").goto_preview_definition, "Goto Definition (Preview)")
-				map("gD", function()
-					extra.pickers.lsp({ scope = "definition" })
-				end, "Goto Definition (Pick)")
+				map("gd", "<cmd>Glance definitions<CR>", "Goto Definition")
+				-- map("gd", require("goto-preview").goto_preview_definition, "Goto Definition (Preview)")
 				-- map("gD", function()
-				-- 	extra.pickers.lsp({ scope = "declaration" })
-				-- end, "Goto Declaration")
+				-- 	extra.pickers.lsp({ scope = "definition" })
+				-- end, "Goto Definition (Pick)")
 
-				map("gr", function()
-					extra.pickers.lsp({ scope = "references" })
-				end, "Goto References")
+				map("gr", "<cmd>Glance references<CR>", "Goto References")
 				map("gR", vim.lsp.buf.rename, "Rename Variable")
 
 				-- diagnostics
@@ -82,9 +96,6 @@ return {
 		-- servers https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
 		local servers = {
 			taplo = {},
-			-- typos_lsp = {
-			-- 	diagnosticSeverity = "Warning",
-			-- },
 			lua_ls = {
 				settings = {
 					Lua = {
@@ -126,7 +137,7 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		-- enable cmp capabilities
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-		-- enable folding capabilities
+		-- enable lsp folding capabilities for nvim-ufo
 		capabilities.textDocument.foldingRange = {
 			dynamicRegistration = false,
 			lineFoldingOnly = true,
