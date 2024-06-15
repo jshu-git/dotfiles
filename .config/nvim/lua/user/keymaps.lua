@@ -9,8 +9,6 @@ vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 -- toggles
 vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Word Wrap" })
 
--- experimenting TODO: <C-e> <C-x> H L
-
 -- movement
 vim.keymap.set({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true })
 vim.keymap.set({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'k']], { expr = true })
@@ -21,6 +19,8 @@ vim.keymap.set({ "n", "x" }, "B", "^")
 vim.keymap.set({ "n", "x" }, "G", "Gzz")
 vim.keymap.set({ "n", "x" }, "<C-u>", "<C-u>zz")
 vim.keymap.set({ "n", "x" }, "<C-d>", "<C-d>zz")
+vim.keymap.set({ "n", "x" }, "}", "}zz")
+vim.keymap.set({ "n", "x" }, "{", "{zz")
 vim.keymap.set("n", "<BS>", "<C-^>zz")
 vim.keymap.set("n", "gG", "ggVG", { desc = "Select All" })
 
@@ -79,8 +79,8 @@ vim.keymap.set("n", "<C-w>0", "<C-w>=")
 -- split
 vim.keymap.set("n", "<C-v>", "<C-w>v")
 vim.keymap.set("n", "<C-s>", "<C-w>s")
-vim.keymap.set("n", "<C-S-V>", "<C-w>v<C-w>h")
-vim.keymap.set("n", "<C-S-S>", "<C-w>s<C-w>k")
+-- vim.keymap.set("n", "<C-S-V>", "<C-w>v<C-w>h")
+-- vim.keymap.set("n", "<C-S-S>", "<C-w>s<C-w>k")
 -- move
 vim.keymap.set("n", "<C-S-J>", "<C-w>J")
 vim.keymap.set("n", "<C-S-K>", "<C-w>K")
@@ -97,15 +97,20 @@ vim.keymap.set("n", "<leader>rs", ":%s///gI<left><left><left><left>", { desc = "
 vim.keymap.set("x", "<leader>rs", ":s///gI<left><left><left><left>", { desc = "Subsitute (Selection)" })
 
 -- non-normal modes
+-- vim.keymap.set({ "i", "c" }, "<C-k>", "<Up>")
+-- vim.keymap.set({ "i", "c" }, "<C-j>", "<Down>")
 vim.keymap.set({ "i", "c" }, "<C-h>", "<Left>")
 vim.keymap.set({ "i", "c" }, "<C-l>", "<Right>")
-vim.keymap.set({ "i", "c" }, "<C-k>", "<Up>")
-vim.keymap.set({ "i", "c" }, "<C-j>", "<Down>")
-vim.keymap.set({ "i", "c" }, "<C-a>", "<Home>")
-vim.keymap.set({ "i", "c" }, "<C-e>", "<End>")
 vim.keymap.set({ "i", "c" }, "<C-d>", "<Del>")
+vim.keymap.set({ "i", "c" }, "<C-k>", "<C-o>D")
 -- add undo points after , . ! ?
 vim.keymap.set("i", ",", ",<C-g>u")
 vim.keymap.set("i", ".", ".<C-g>u")
 vim.keymap.set("i", "!", "!<C-g>u")
 vim.keymap.set("i", "?", "?<C-g>u")
+vim.keymap.set("i", ":", ":<C-g>u")
+vim.keymap.set("i", ";", ";<C-g>u")
+-- hardmode
+for _, key in ipairs({ "<Up>", "<Down>", "<Left>", "<Right>", "<BS>", "<Del>" }) do
+	vim.keymap.set("i", key, "<nop>")
+end

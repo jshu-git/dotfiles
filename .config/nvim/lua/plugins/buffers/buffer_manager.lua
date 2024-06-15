@@ -20,8 +20,8 @@ return {
 		})
 
 		local ui = require("buffer_manager.ui")
-		vim.keymap.set("n", "<Tab>", ui.nav_next)
-		vim.keymap.set("n", "<S-Tab>", ui.nav_prev)
+		-- vim.keymap.set("n", "<Tab>", ui.nav_next)
+		-- vim.keymap.set("n", "<S-Tab>", ui.nav_prev)
 		vim.keymap.set("n", "<leader><Tab>", ui.toggle_quick_menu, { desc = "Buffer Manager" })
 	end,
 

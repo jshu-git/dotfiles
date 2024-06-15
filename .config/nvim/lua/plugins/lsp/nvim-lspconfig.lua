@@ -27,7 +27,6 @@ return {
 
 				-- lsp
 				require("lsp_signature").on_attach({}, event.buf)
-				-- map("gS", vim.lsp.buf.signature_help, "Hover Signature")
 				map("gs", function()
 					if not require("ufo").peekFoldedLinesUnderCursor() then
 						-- vim.lsp.buf.hover()
@@ -37,9 +36,9 @@ return {
 				map("ga", vim.lsp.buf.code_action, "Code Action")
 				map("gd", "<cmd>Glance definitions<CR>", "Goto Definition")
 				-- map("gd", require("goto-preview").goto_preview_definition, "Goto Definition (Preview)")
-				-- map("gD", function()
-				-- 	extra.pickers.lsp({ scope = "definition" })
-				-- end, "Goto Definition (Pick)")
+				map("gD", function()
+					require("mini.extra").pickers.lsp({ scope = "definition" })
+				end, "Goto Definition (Pick)")
 				map("gr", "<cmd>Glance references<CR>", "Goto References")
 				map("gR", vim.lsp.buf.rename, "Rename Variable")
 

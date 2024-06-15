@@ -27,9 +27,6 @@ return {
 
 					-- aerial
 					AerialLine = { link = "Search" },
-
-					StatusLine = { bg = "white" },
-					StatusLineNC = { bg = "white" },
 				},
 			})
 			vim.cmd.colorscheme("vscode")
