@@ -5,6 +5,6 @@ return {
 		"nvim-lua/plenary.nvim",
 	},
 	opts = {
-		disabled_filetypes = { "buffer_manager", "minifiles", "aerial" },
+		disabled_filetypes = { "buffer_manager", "minifiles", "aerial", "lazy" },
 	},
 }

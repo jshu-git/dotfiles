@@ -12,8 +12,8 @@ vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Wo
 -- movement
 vim.keymap.set({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true })
 vim.keymap.set({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'k']], { expr = true })
-vim.keymap.set({ "n", "x" }, "J", "}zz")
-vim.keymap.set({ "n", "x" }, "K", "{zz")
+-- vim.keymap.set({ "n", "x" }, "J", "}zz")
+-- vim.keymap.set({ "n", "x" }, "K", "{zz")
 vim.keymap.set({ "n", "x" }, "E", "$")
 vim.keymap.set({ "n", "x" }, "B", "^")
 vim.keymap.set({ "n", "x" }, "G", "Gzz")
