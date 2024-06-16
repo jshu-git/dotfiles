@@ -3,7 +3,12 @@ return {
 	event = "BufReadPre",
 	-- opts = {},
 	config = function()
-		require("persistence").setup()
+		require("persistence").setup({
+			options = { "globals" },
+			pre_save = function()
+				vim.api.nvim_exec_autocmds("User", { pattern = "SessionSavePre" })
+			end,
+		})
 		-- vim.keymap.set(
 		-- 	"n",
 		-- 	"<leader>R",
