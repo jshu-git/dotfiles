@@ -38,7 +38,7 @@ return {
 				{ mode = "x", keys = "s" },
 			},
 			clues = {
-				clue.gen_clues.g(),
+				-- clue.gen_clues.g(),
 				clue.gen_clues.windows(),
 				clue.gen_clues.registers(),
 				clue.gen_clues.z(),
@@ -56,6 +56,9 @@ return {
 				{ mode = "n", keys = "<leader>m", desc = "Misc…" },
 
 				-- submodes
+				-- buffers
+				{ mode = "n", keys = "<leader><Tab>", postkeys = "<leader>" },
+				{ mode = "n", keys = "<leader><S-Tab>", postkeys = "<leader>" },
 				-- folds
 				{ mode = "n", keys = "zj", postkeys = "z" },
 				{ mode = "n", keys = "zk", postkeys = "z" },

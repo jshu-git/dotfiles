@@ -30,6 +30,8 @@ return {
 			vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
 			-- aerial
 			vim.api.nvim_set_hl(0, "AerialLine", { link = "Search" })
+			-- barbar
+			vim.api.nvim_set_hl(0, "BufferTabPageFill", { link = "Normal" })
 		end,
 	},
 

@@ -24,7 +24,7 @@ layout {
             }
         }
     }
-    tab name=".config" cwd="~/.config"
+    tab name=".config" cwd="~/.config" focus=true
     tab name="rust" cwd="~/git/rustlings/"
     // tab name="ontap.api" cwd="~/git/ontap/api"
     // tab name="ontap.common" cwd="~/git/ontap/common"

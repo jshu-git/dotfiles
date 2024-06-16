@@ -1,7 +1,3 @@
-vim.keymap.set("", "<space>", "<Nop>")
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 require("user.options")
 require("user.keymaps")
 require("user.autocommands")

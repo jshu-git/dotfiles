@@ -1,3 +1,7 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+vim.keymap.set({ "n", "v" }, "<space>", "<nop>")
+
 -- leader
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
@@ -9,6 +13,10 @@ vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 -- toggles
 vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Word Wrap" })
 vim.keymap.set("n", "<leader>ti", "<cmd>Inspect<CR>", { desc = "Inspect" })
+
+-- buffers
+-- vim.keymap.set("n", "<Tab>", "<cmd>bn<CR>")
+-- vim.keymap.set("n", "<S-Tab>", "<cmd>bp<CR>")
 
 -- movement
 vim.keymap.set({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true })
@@ -59,8 +67,10 @@ vim.keymap.set("n", "dd", function()
 end, { expr = true })
 
 -- yanking/pasting
-vim.keymap.set("n", "p", "p==")
-vim.keymap.set("x", "p", '"_dP==')
+-- vim.keymap.set("n", "p", "p==")
+-- vim.keymap.set("x", "p", '"_dP==')
+-- vim.keymap.set("n", "p", "p==")
+vim.keymap.set("x", "p", '"_dP')
 vim.keymap.set("n", "<leader>p", "<cmd>pu<CR>==", { desc = "Paste After Line" })
 vim.keymap.set("n", "<leader>P", "<cmd>pu!<CR>==", { desc = "Paste Before Line" })
 

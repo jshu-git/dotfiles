@@ -16,6 +16,8 @@ return {
 			},
 			suggestion = {
 				auto_trigger = true,
+				hide_during_completion = false,
+				debounce = 15,
 				keymap = {
 					accept = false,
 					accept_word = "<A-l>",
