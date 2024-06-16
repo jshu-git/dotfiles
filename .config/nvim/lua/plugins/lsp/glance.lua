@@ -16,8 +16,9 @@ return {
 			},
 			mappings = {
 				list = {
-					-- ["J"] = actions.next_location,
-					-- ["K"] = actions.previous_location,
+					["<C-CR>"] = actions.jump,
+					["J"] = actions.next_location,
+					["K"] = actions.previous_location,
 					["<C-v>"] = actions.jump_vsplit,
 					["<C-s>"] = actions.jump_split,
 					["<CR>"] = actions.enter_win("preview"),

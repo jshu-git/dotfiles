@@ -3,12 +3,12 @@ return {
 	config = function()
 		require("mini.surround").setup({
 			mappings = {
-				add = "S",
+				add = "sS",
 				delete = "sd",
-				highlight = "sh",
 				replace = "sr",
 				update_n_lines = "sn",
 
+				highlight = "",
 				find = "",
 				find_left = "",
 				suffix_last = "",

@@ -24,35 +24,21 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>rr", grug.grug_far, { desc = "Find and Replace" })
-		vim.keymap.set("n", "<leader>r*", function()
-			grug.grug_far({
-				prefills = {
-					search = vim.fn.expand("<cword>"),
-					filesFilter = vim.fn.expand("%"),
-				},
-			})
-		end, { desc = "Find and Replace (cword)" })
+		vim.keymap.set("n", "<leader>rr", grug.grug_far, { desc = "Replace (Global)" })
+		-- vim.keymap.set("n", "<leader>r*", function()
+		-- 	grug.grug_far({
+		-- 		prefills = {
+		-- 			search = vim.fn.expand("<cword>"),
+		-- 			filesFilter = vim.fn.expand("%"),
+		-- 		},
+		-- 	})
+		-- end, { desc = "Find and Replace (cword)" })
 		vim.keymap.set("n", "<leader>rf", function()
 			grug.grug_far({
 				prefills = {
 					filesFilter = vim.fn.expand("%"),
 				},
 			})
-		end, { desc = "Find and Replace (File)" })
-
-		-- visual
-		vim.keymap.set(
-			"v",
-			"<leader>rr",
-			":<C-u>lua require('grug-far').with_visual_selection({ prefills = { filesFilter = vim.fn.expand('%') } })<CR>",
-			{ desc = "Find and Replace (Selection)" }
-		)
-		-- vim.keymap.set(
-		-- 	"v",
-		-- 	"<leader>rr",
-		-- 	":<C-u>lua require('grug-far').with_visual_selection({ prefills = { flags = vim.fn.expand('%') } })<CR>",
-		-- 	{ desc = "Find and Replace (Selection)" }
-		-- )
+		end, { desc = "Replace (File)" })
 	end,
 }

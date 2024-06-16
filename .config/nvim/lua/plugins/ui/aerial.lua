@@ -9,8 +9,8 @@ return {
 			keymaps = {
 				["<C-j>"] = false,
 				["<C-k>"] = false,
-				-- ["J"] = "actions.down_and_scroll",
-				-- ["K"] = "actions.up_and_scroll",
+				["J"] = "actions.down_and_scroll",
+				["K"] = "actions.up_and_scroll",
 				["<esc>"] = "actions.close",
 				["<Tab>"] = function()
 					aerial.select()

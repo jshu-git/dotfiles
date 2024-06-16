@@ -47,6 +47,8 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.opt_local.wrap = true
 		vim.opt_local.spell = true
+		vim.opt_local.linebreak = true
+		vim.opt_local.breakindent = true
 	end,
 })
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
@@ -55,6 +57,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		if event.match:match("^%w%w+:[\\/][\\/]") then
 			return
 		end
+		---@diagnostic disable-next-line: undefined-field
 		local file = vim.uv.fs_realpath(event.match) or event.match
 		vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
 	end,

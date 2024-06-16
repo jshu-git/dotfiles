@@ -118,7 +118,15 @@ return {
 				keyword_length = 1,
 				completeopt = "menu,menuone,preview,noinsert,noselect",
 			},
-			mapping = cmp.mapping.preset.cmdline(),
+			mapping = cmp.mapping.preset.cmdline({
+				["<C-x>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.abort()
+					else
+						cmp.complete()
+					end
+				end, { "c" }),
+			}),
 			sources = {
 				{ name = "buffer" },
 			},
@@ -130,7 +138,15 @@ return {
 				keyword_length = 1,
 				completeopt = "menu,menuone,preview,noinsert,noselect",
 			},
-			mapping = cmp.mapping.preset.cmdline(),
+			mapping = cmp.mapping.preset.cmdline({
+				["<C-x>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.abort()
+					else
+						cmp.complete()
+					end
+				end, { "c" }),
+			}),
 			sources = cmp.config.sources({
 				{ name = "cmdline_history", max_item_count = 3 },
 				{ name = "cmdline" },

@@ -24,5 +24,6 @@ return {
 			line = "ss",
 			selection = "ss",
 		})
+		vim.keymap.set("n", "S", "s$", { remap = true })
 	end,
 }
