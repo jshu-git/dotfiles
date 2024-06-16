@@ -66,6 +66,7 @@ return {
 				{ mode = "n", keys = "zr", postkeys = "z" },
 				{ mode = "n", keys = "zo", postkeys = "z" },
 				{ mode = "n", keys = "zc", postkeys = "z" },
+				{ mode = "n", keys = "z0", postkeys = "z" },
 				{ mode = "n", keys = "z1", postkeys = "z" },
 				{ mode = "n", keys = "z2", postkeys = "z" },
 				{ mode = "n", keys = "z3", postkeys = "z" },

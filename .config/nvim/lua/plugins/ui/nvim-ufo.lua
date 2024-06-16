@@ -8,10 +8,10 @@ return {
 		vim.o.foldlevel = 99
 		vim.o.foldlevelstart = 99
 		vim.o.foldenable = true
-		for i = 1, 9 do
-			vim.keymap.set("n", "z" .. i, "<cmd>set foldlevel=" .. i - 1 .. "<CR>", { desc = "Fold Level " .. i - 1 })
+		for i = 0, 9 do
+			vim.keymap.set("n", "z" .. i, "<cmd>set foldlevel=" .. i .. "<CR>", { desc = "Fold Level " .. i })
 		end
-		vim.keymap.set("n", "z0", "<cmd>set foldlevel=99<CR>", { desc = "Reset Fold Levels" })
+		vim.keymap.set("n", "Z", "<cmd>set foldlevel=99<CR>", { desc = "Reset Fold Levels" })
 
 		local ufo = require("ufo")
 		ufo.setup({
