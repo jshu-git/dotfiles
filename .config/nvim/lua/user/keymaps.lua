@@ -103,8 +103,8 @@ vim.keymap.set("n", "<C-S-L>", "<C-w>L")
 
 -- search
 vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
--- vim.keymap.set("n", "c%", ":%s///gI<left><left><left><left>", { desc = "Substitute (File)" })
--- vim.keymap.set("x", "<leader>s", ":s///gI<left><left><left><left>", { desc = "Substitute (Selection)" })
+vim.keymap.set("n", "sf", ":%s///gI<left><left><left><left>", { desc = "Substitute (File)" })
+vim.keymap.set("x", "s/", ":s///gI<left><left><left><left>", { desc = "Substitute (Selection)" })
 -- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
 vim.keymap.set("n", "*", "*N")
 vim.keymap.set("n", "c*", "g*Ncgn")
