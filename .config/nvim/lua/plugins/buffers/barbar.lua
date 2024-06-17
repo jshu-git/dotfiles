@@ -8,20 +8,15 @@ return {
 			animation = false,
 			icons = {
 				button = "",
-				-- filetype = {
-				-- enabled = false,
-				-- },
 				separator = { left = "▏", right = "" },
 				separator_at_end = false,
-				modified = { button = " ●" },
-				pinned = { button = " ", filename = false },
+				pinned = { button = "", filename = false },
 				inactive = {
 					separator = { left = "▏", right = "" },
 				},
 			},
 			insert_at_end = true,
 			maximum_padding = 0,
-			minimum_padding = 0,
 		})
 
 		vim.keymap.set("n", "<S-Tab>", "<cmd>BufferPrevious<CR>")
@@ -33,6 +28,7 @@ return {
 		end
 		vim.keymap.set("n", "<leader>0", "<cmd>BufferLast<CR>", { desc = "Buffer: Last" })
 		vim.keymap.set("n", "gp", "<cmd>BufferPin<CR>", { desc = "Buffer: Pin" })
-		vim.keymap.set("n", "gb", "<Cmd>BufferPick<CR>", { desc = "Buffer: Pick" })
+		vim.keymap.set("n", "gb", "<cmd>BufferPick<CR>", { desc = "Buffer: Pick" })
+		vim.keymap.set("n", "<leader>X", "<cmd>BufferCloseAllButCurrentOrPinned<CR>", { desc = "Delete Other Buffers" })
 	end,
 }

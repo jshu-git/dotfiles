@@ -14,10 +14,6 @@ vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Word Wrap" })
 vim.keymap.set("n", "<leader>ti", "<cmd>Inspect<CR>", { desc = "Inspect" })
 
--- buffers
--- vim.keymap.set("n", "<Tab>", "<cmd>bn<CR>")
--- vim.keymap.set("n", "<S-Tab>", "<cmd>bp<CR>")
-
 -- movement
 vim.keymap.set({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true })
 vim.keymap.set({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'k']], { expr = true })
