@@ -11,15 +11,17 @@ return {
 				-- filetype = {
 				-- enabled = false,
 				-- },
-				separator = { left = "", right = "" },
+				separator = { left = "▏", right = "" },
 				separator_at_end = false,
-				pinned = { button = "", filename = true },
+				modified = { button = " ●" },
+				pinned = { button = " ", filename = false },
 				inactive = {
-					separator = { left = "", right = "" },
+					separator = { left = "▏", right = "" },
 				},
 			},
 			insert_at_end = true,
 			maximum_padding = 0,
+			minimum_padding = 0,
 		})
 
 		vim.keymap.set("n", "<S-Tab>", "<cmd>BufferPrevious<CR>")
