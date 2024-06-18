@@ -2,7 +2,6 @@ return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		{ "folke/lazydev.nvim", ft = "lua", opts = {} },
-		{ "echasnovski/mini.extra", opts = {} },
 		-- cmp
 		"hrsh7th/cmp-nvim-lsp",
 		-- ui
@@ -36,9 +35,9 @@ return {
 				map("ga", vim.lsp.buf.code_action, "Code Action")
 				map("gd", "<cmd>Glance definitions<CR>", "Goto Definition")
 				-- map("gd", require("goto-preview").goto_preview_definition, "Goto Definition (Preview)")
-				map("gD", function()
-					require("mini.extra").pickers.lsp({ scope = "definition" })
-				end, "Goto Definition (Pick)")
+				-- map("gD", function()
+				-- 	require("mini.extra").pickers.lsp({ scope = "definition" })
+				-- end, "Goto Definition (Pick)")
 				map("gr", "<cmd>Glance references<CR>", "Goto References")
 				map("gR", vim.lsp.buf.rename, "Rename Variable")
 

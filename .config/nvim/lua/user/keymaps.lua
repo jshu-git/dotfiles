@@ -8,7 +8,7 @@ vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>Q", "<cmd>qa!<CR>", { desc = "Quit All" })
 vim.keymap.set("n", "<leader>o", "o<Esc>", { desc = "New Line Below" })
 vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = "New Line Above" })
-vim.keymap.set("n", "<leader>n", "<cmd>new<CR>", { desc = "Scratch Buffer" })
+vim.keymap.set("n", "<leader>n", "<cmd>enew<CR>", { desc = "Scratch Buffer" })
 vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 -- toggles
 vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Word Wrap" })

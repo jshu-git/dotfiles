@@ -1,6 +1,6 @@
 {
   "CopilotChat.nvim": { "branch": "canary", "commit": "82923efe22b604cf9c0cad0bb2a74aa9247755ab" },
-  "aerial.nvim": { "branch": "master", "commit": "75de06f8edbd0006997a19b760045753d4f6693c" },
+  "aerial.nvim": { "branch": "master", "commit": "eb25396dae306cef5b8fffbe9ae98283d2f1c199" },
   "barbar.nvim": { "branch": "master", "commit": "d181f2cfd4b828f9c6f1e10e69c68241de59f54f" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-calc": { "branch": "main", "commit": "5947b412da67306c5b68698a02a846760059be2e" },
@@ -10,7 +10,7 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "colorful-winsep.nvim": { "branch": "alpha", "commit": "72cf292b9b49c371b3d9333d2ff2146b0bceab04" },
   "command-and-cursor.nvim": { "branch": "master", "commit": "43485e6d4f0ffd42414b35e156075e46047563dd" },
-  "conform.nvim": { "branch": "master", "commit": "6e5d476e97dbd251cc2233d42fd238c810404701" },
+  "conform.nvim": { "branch": "master", "commit": "9228b2ff4efd58b6e081defec643bf887ebadff6" },
   "copilot-lualine": { "branch": "main", "commit": "4cca52f4d4d6c7439c51227d8054e346ef5ff0e0" },
   "corn.nvim": { "branch": "master", "commit": "e0bba34aea144102115379c1c3f97d2630e83abb" },
   "dial.nvim": { "branch": "master", "commit": "7af2daaaf933b0617ded0f78b49f4d5fc45f9f64" },

@@ -1,11 +1,12 @@
 return {
 	"echasnovski/mini.pick",
 	dependencies = {
-		{ "echasnovski/mini.extra", opts = {} },
+		"echasnovski/mini.extra",
 	},
 	config = function()
 		local pick = require("mini.pick")
 		local extra = require("mini.extra")
+		vim.ui.select = pick.ui_select
 
 		-- centered window
 		local win_config = function()
@@ -27,29 +28,28 @@ return {
 				mark_all = "<C-S-X>", -- defaults to <C-a>
 				scroll_down = "<C-d>",
 				scroll_up = "<C-u>",
-
-				-- move_down = "<Tab>",
-				-- move_up = "<S-Tab>",
-				-- toggle_info = "<C-n>",
-				-- toggle_preview = "<C-p>",
 			},
 			window = {
 				config = win_config,
 				prompt_prefix = " ",
 			},
 		})
-		vim.ui.select = pick.ui_select
 
 		-- files
-		vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files" })
+		vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files (cwd)" })
+		pick.registry.files_relative = function(local_opts)
+			local relative_path = vim.fn.expand("%:p:h")
+			local opts = {
+				source = {
+					name = "Files (Relative): " .. relative_path,
+					cwd = relative_path,
+					items = vim.fn.readdir(relative_path),
+				},
+			}
+			return pick.builtin.files(local_opts, opts)
+		end
+		vim.keymap.set("n", "<leader>fF", pick.registry.files_relative, { desc = "Files (Relative)" })
 		vim.keymap.set("n", "<leader>fr", extra.pickers.oldfiles, { desc = "Files (Recent)" })
-
-		-- git
-		vim.keymap.set("n", "<leader>gf", extra.pickers.git_files, { desc = "Git Files (Tracked)" })
-		vim.keymap.set("n", "<leader>gm", function()
-			extra.pickers.git_files({ scope = "modified" })
-		end, { desc = "Git Files (Modified)" })
-		vim.keymap.set("n", "<leader>gc", extra.pickers.git_commits, { desc = "Git Commits" })
 
 		-- grep
 		vim.keymap.set("n", "<leader>fw", pick.builtin.grep_live, { desc = "Grep (Live)" })
@@ -58,7 +58,40 @@ return {
 				{ pattern = vim.fn.expand("<cword>") },
 				{ source = { name = "Grep (cword): " .. vim.fn.expand("<cword>") } }
 			)
-		end, { desc = "Grep (Word)" })
+		end, { desc = "Grep (cword)" })
+		vim.keymap.set("n", "<leader>/", function()
+			extra.pickers.buf_lines({ scope = "current" })
+		end, { desc = "Grep (Buffer)" })
+
+		-- special paths
+		pick.registry.special_paths = function()
+			local special_paths = {
+				vim.fn.stdpath("data"),
+				vim.env.HOME .. "/Library/CloudStorage/Dropbox/",
+				vim.env.HOME .. "/Desktop/",
+			}
+			table.sort(special_paths)
+			return pick.start({
+				source = {
+					name = "Special Paths (mini.files)",
+					items = special_paths,
+					choose = function(item)
+						vim.cmd("e " .. item)
+					end,
+					show = function(buf_id, items, query)
+						pick.default_show(buf_id, items, query, { show_icons = true })
+					end,
+				},
+			})
+		end
+		vim.keymap.set("n", "<leader>fp", pick.registry.special_paths, { desc = "Special Paths (mini.files)" })
+
+		-- git
+		vim.keymap.set("n", "<leader>gf", extra.pickers.git_files, { desc = "Git Files (Tracked)" })
+		vim.keymap.set("n", "<leader>gm", function()
+			extra.pickers.git_files({ scope = "modified" })
+		end, { desc = "Git Files (Modified)" })
+		vim.keymap.set("n", "<leader>gc", extra.pickers.git_commits, { desc = "Git Commits" })
 
 		-- vim
 		vim.keymap.set("n", "<leader>fc", extra.pickers.commands, { desc = "Commands" })
@@ -67,12 +100,14 @@ return {
 		vim.keymap.set("n", "<leader>fk", extra.pickers.keymaps, { desc = "Keymaps" })
 		vim.keymap.set("n", "<leader>fo", extra.pickers.options, { desc = "Options" })
 		pick.registry.colorschemes = function()
-			local colorschemes = vim.fn.getcompletion("", "color")
 			return pick.start({
 				source = {
 					name = "Colorschemes",
-					items = colorschemes,
+					items = vim.fn.getcompletion("", "color"),
 					choose = function(item)
+						vim.cmd("colorscheme " .. item)
+					end,
+					preview = function(buf_id, item)
 						vim.cmd("colorscheme " .. item)
 					end,
 				},
@@ -96,12 +131,9 @@ return {
 			end
 			return pick.registry[chosen_picker_name]()
 		end
-		vim.keymap.set("n", "<leader>fC", pick.registry.builtin, { desc = "Commands (MiniPick)" })
+		vim.keymap.set("n", "<leader>fC", pick.registry.builtin, { desc = "Commands (mini.pick)" })
 
 		-- misc
-		vim.keymap.set("n", "<leader>/", function()
-			extra.pickers.buf_lines({ scope = "current" })
-		end, { desc = "Grep (Buffer)" })
 		vim.keymap.set("n", "<leader>'", pick.builtin.resume, { desc = "Last Picker" })
 		vim.keymap.set("n", '<leader>"', extra.pickers.registers, { desc = "Registers" })
 		vim.keymap.set("n", "<leader>:", function()
