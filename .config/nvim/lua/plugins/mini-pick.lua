@@ -36,8 +36,10 @@ return {
 		})
 
 		-- files
-		vim.keymap.set("n", "<leader>ff", pick.builtin.files, { desc = "Files (cwd)" })
-		pick.registry.files_relative = function(local_opts)
+		vim.keymap.set("n", "<leader>ff", function()
+			pick.builtin.files({}, { source = { name = "Files (cwd): " .. vim.fn.getcwd() } })
+		end, { desc = "Files (cwd)" })
+		pick.registry.files_relative = function()
 			local relative_path = vim.fn.expand("%:p:h")
 			local opts = {
 				source = {
@@ -46,7 +48,7 @@ return {
 					items = vim.fn.readdir(relative_path),
 				},
 			}
-			return pick.builtin.files(local_opts, opts)
+			return pick.builtin.files({}, opts)
 		end
 		vim.keymap.set("n", "<leader>fF", pick.registry.files_relative, { desc = "Files (Relative)" })
 		vim.keymap.set("n", "<leader>fr", extra.pickers.oldfiles, { desc = "Files (Recent)" })
