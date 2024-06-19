@@ -16,7 +16,7 @@ keybinds clear-defaults=true {
         bind "Esc" "Enter" { SwitchToMode "Locked"; }
 
         // floating pane
-        bind "f" { ToggleFloatingPanes; SwitchToMode "Locked";  }
+        bind "a" { ToggleFloatingPanes; SwitchToMode "Locked";  }
 
         // add floating pane
         // bind "f" {
@@ -27,7 +27,7 @@ keybinds clear-defaults=true {
         // }
 
         // lazygit
-        bind "a" {
+        bind "g" {
             // https://github.com/zellij-org/zellij/discussions/2518
             Run "zellij" "run" "--close-on-exit" "--floating" "--" "lazygit" {
                 close_on_exit true
