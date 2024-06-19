@@ -78,7 +78,6 @@ return {
 			-- 	}),
 			-- },
 			completion = {
-				keyword_length = 1,
 				completeopt = "menu,menuone,preview,noinsert",
 			},
 			mapping = cmp.mapping.preset.insert({
@@ -92,8 +91,8 @@ return {
 						cmp.complete()
 					end
 				end, { "i", "s" }),
-				-- ["<C-d>"] = cmp.mapping.scroll_docs(4),
-				-- ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+				["<C-k>"] = cmp.mapping.scroll_docs(-4),
+				["<C-j>"] = cmp.mapping.scroll_docs(4),
 				-- snippets
 				["<C-l>"] = cmp.mapping(function(fallback)
 					if vim.snippet.active({ direction = 1 }) then
@@ -115,7 +114,6 @@ return {
 		-- / cmdline setup
 		cmp.setup.cmdline({ "/", "?" }, {
 			completion = {
-				keyword_length = 1,
 				completeopt = "menu,menuone,preview,noinsert,noselect",
 			},
 			mapping = cmp.mapping.preset.cmdline({
@@ -135,7 +133,6 @@ return {
 		-- : cmdline setup
 		cmp.setup.cmdline(":", {
 			completion = {
-				keyword_length = 1,
 				completeopt = "menu,menuone,preview,noinsert,noselect",
 			},
 			mapping = cmp.mapping.preset.cmdline({

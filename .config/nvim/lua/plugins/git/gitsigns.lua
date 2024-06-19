@@ -17,7 +17,7 @@ return {
 				delay = 10,
 				ignore_whitespace = true,
 			},
-			current_line_blame_formatter = "<author> (<author_time:%R>): <summary>",
+			current_line_blame_formatter = "<author> (<author_time:%R>): <summary> ",
 			diff_opts = {
 				vertical = false,
 				ignore_blank_lines = true,

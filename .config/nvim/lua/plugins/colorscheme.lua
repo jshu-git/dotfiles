@@ -24,10 +24,10 @@ return {
 			-- mini
 			vim.api.nvim_set_hl(0, "MiniIndentScopeSymbol", { link = "NonText" })
 			vim.api.nvim_set_hl(0, "MiniJump", { link = "Search" })
+			vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
 			-- vim.api.nvim_set_hl(0, "MiniClueTitle", { link = "MiniClueBorder" })
 			-- vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
 			-- vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
-			-- vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
 			-- vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
 			-- aerial
 			-- vim.api.nvim_set_hl(0, "AerialLine", { link = "Search" })

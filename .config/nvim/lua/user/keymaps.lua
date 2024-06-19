@@ -14,11 +14,6 @@ vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Word Wrap" })
 vim.keymap.set("n", "<leader>ti", "<cmd>Inspect<CR>", { desc = "Inspect" })
 
--- testing
--- vim.keymap.set({ "n", "x", "o" }, "E", "$")
--- vim.keymap.set({ "n", "x", "o" }, "B", "^")
-vim.keymap.set({ "n", "x", "o" }, "9", "$")
-
 -- movement
 vim.keymap.set({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true })
 vim.keymap.set({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'k']], { expr = true })
@@ -32,6 +27,7 @@ vim.keymap.set({ "n", "x" }, "{", "{zz")
 vim.keymap.set("n", "<BS>", "<C-^>")
 -- smart 0/^ https://github.com/wscnd/LunarVim/blob/master/lua/keymappings.lua#L98
 vim.keymap.set({ "n", "x", "o" }, "0", "getline('.')[0 : col('.') - 2] =~# '^\\s\\+$' ? '0' : '^'", { expr = true })
+vim.keymap.set({ "n", "x", "o" }, "9", "$")
 
 -- editing
 vim.keymap.set("n", "U", "<C-r>")
@@ -41,10 +37,6 @@ vim.keymap.set("n", "<C-r>", ".")
 vim.keymap.set("n", ";", ":")
 vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "Append Comma" })
 vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Append Semicolon" })
-vim.keymap.set("n", "<C-c>", "gcc", { remap = true })
-vim.keymap.set("x", "<C-c>", "gc", { remap = true })
-vim.keymap.set({ "x", "o" }, "ic", require("vim._comment").textobject)
-vim.keymap.set({ "x", "o" }, "ac", require("vim._comment").textobject)
 -- smart insert
 vim.keymap.set("n", "i", function()
 	if vim.api.nvim_get_current_line():match("^%s*$") then
@@ -103,7 +95,7 @@ vim.keymap.set("n", "<C-S-K>", "<C-w>K")
 vim.keymap.set("n", "<C-S-H>", "<C-w>H")
 vim.keymap.set("n", "<C-S-L>", "<C-w>L")
 
--- search
+-- search and replace
 vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "sf", ":%s///gI<left><left><left><left>", { desc = "Substitute (File)" })
 vim.keymap.set("x", "s/", ":s///gI<left><left><left><left>", { desc = "Substitute (Selection)" })
@@ -117,8 +109,6 @@ vim.keymap.set("x", "*", [[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', '
 vim.keymap.set("x", "<CR>", '"_c')
 vim.keymap.set("x", "V", "j")
 vim.keymap.set("x", "<C-q>", "j")
-vim.keymap.set("x", "<Tab>", ">gv")
-vim.keymap.set("x", "<S-Tab>", "<gv")
 
 -- insert/command mode (emacs) https://github.com/tscolari/nvim/blob/main/lua/keyboard.lua#L26
 vim.keymap.set({ "i", "c" }, "<C-a>", "<Home>")
