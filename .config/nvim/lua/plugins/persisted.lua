@@ -13,7 +13,6 @@ return {
 		})
 
 		local persisted = require("persisted")
-
 		persisted.setup({
 			autoload = true,
 			on_autoload_no_session = function()

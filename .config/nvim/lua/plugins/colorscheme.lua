@@ -35,30 +35,4 @@ return {
 			vim.api.nvim_set_hl(0, "BufferTabPageFill", { link = "Normal" })
 		end,
 	},
-
-	-- {
-	-- 	"rose-pine/neovim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("rose-pine").setup({
-	-- 			dim_inactive_windows = true,
-	-- 			styles = {
-	-- 				bold = false,
-	-- 				italic = false,
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- 	name = "rose-pine",
-	-- },
-
-	-- {
-	-- 	"aktersnurra/no-clown-fiesta.nvim",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("no-clown-fiesta").setup({
-	-- 			transparent = false,
-	-- 		})
-	-- 	end,
-	-- },
 }

@@ -8,7 +8,6 @@ return {
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = {
 				"buffer_manager",
-				"alpha",
 				"lazy",
 			},
 			callback = function()

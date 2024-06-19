@@ -35,35 +35,58 @@ return {
 			},
 		})
 
-		-- files
-		vim.keymap.set("n", "<leader>ff", function()
-			pick.builtin.files({}, { source = { name = "Files (cwd): " .. vim.fn.getcwd() } })
-		end, { desc = "Files (cwd)" })
-		pick.registry.files_relative = function()
+		-- relative helper
+		local function get_relative_opts(name)
 			local relative_path = vim.fn.expand("%:p:h")
-			local opts = {
+			local relative_opts = {
 				source = {
-					name = "Files (Relative): " .. relative_path,
+					name = name .. " (" .. relative_path .. ")",
 					cwd = relative_path,
-					items = vim.fn.readdir(relative_path),
 				},
 			}
-			return pick.builtin.files({}, opts)
+			return relative_opts
 		end
-		vim.keymap.set("n", "<leader>fF", pick.registry.files_relative, { desc = "Files (Relative)" })
+
+		-- files
+		vim.keymap.set("n", "<leader>ff", function(local_opts)
+			pick.builtin.files(local_opts, {
+				source = {
+					name = "Files (" .. vim.fn.getcwd() .. ")",
+				},
+			})
+		end, { desc = "Files (cwd)" })
+		vim.keymap.set("n", "<leader>fF", function(local_opts)
+			pick.builtin.files(local_opts, get_relative_opts("Files"))
+		end, { desc = "Files (Relative)" })
 		vim.keymap.set("n", "<leader>fr", extra.pickers.oldfiles, { desc = "Files (Recent)" })
 
 		-- grep
-		vim.keymap.set("n", "<leader>fw", pick.builtin.grep_live, { desc = "Grep (Live)" })
+		vim.keymap.set("n", "<leader>fw", function(local_opts)
+			pick.builtin.grep_live(local_opts, {
+				source = {
+					name = "Grep Live (" .. vim.fn.getcwd() .. ")",
+				},
+			})
+		end, { desc = "Grep Live" })
+		vim.keymap.set("n", "<leader>fW", function(local_opts)
+			pick.builtin.grep_live(local_opts, get_relative_opts("Grep Live"))
+		end, { desc = "Grep Live (Relative)" })
+		vim.keymap.set("n", "<leader>fg", pick.builtin.grep, { desc = "Grep" })
+		vim.keymap.set("n", "<leader>fG", function(local_opts)
+			pick.builtin.grep(local_opts, get_relative_opts("Grep"))
+		end, { desc = "Grep (Relative)" })
 		vim.keymap.set("n", "<leader>*", function()
 			pick.builtin.grep(
 				{ pattern = vim.fn.expand("<cword>") },
 				{ source = { name = "Grep (cword): " .. vim.fn.expand("<cword>") } }
 			)
 		end, { desc = "Grep (cword)" })
-		vim.keymap.set("n", "<leader>/", function()
+		-- vim.keymap.set("n", "<leader>/", function()
+		-- 	extra.pickers.buf_lines({ scope = "current" })
+		-- end, { desc = "Grep (Buffer)" })
+		vim.keymap.set("n", ",", function()
 			extra.pickers.buf_lines({ scope = "current" })
-		end, { desc = "Grep (Buffer)" })
+		end)
 
 		-- special paths
 		pick.registry.special_paths = function()
@@ -75,7 +98,7 @@ return {
 			table.sort(special_paths)
 			return pick.start({
 				source = {
-					name = "Special Paths (mini.files)",
+					name = "Special Paths",
 					items = special_paths,
 					choose = function(item)
 						vim.cmd("e " .. item)
@@ -86,7 +109,7 @@ return {
 				},
 			})
 		end
-		vim.keymap.set("n", "<leader>fp", pick.registry.special_paths, { desc = "Special Paths (mini.files)" })
+		vim.keymap.set("n", "<leader>fp", pick.registry.special_paths, { desc = "Special Paths" })
 
 		-- git
 		vim.keymap.set("n", "<leader>gf", extra.pickers.git_files, { desc = "Git Files (Tracked)" })
@@ -134,6 +157,20 @@ return {
 			return pick.registry[chosen_picker_name]()
 		end
 		vim.keymap.set("n", "<leader>fC", pick.registry.builtin, { desc = "Commands (mini.pick)" })
+
+		-- sessions
+		pick.registry.sessions = function(local_opts)
+			local persisted = require("persisted")
+			local opts = {
+				source = {
+					name = "Sessions (persisted.nvim)",
+					cwd = require("persisted.config").options.save_dir,
+					items = persisted.list(),
+				},
+			}
+			return pick.builtin.files(local_opts, opts)
+		end
+		vim.keymap.set("n", "<leader>fs", pick.registry.sessions, { desc = "Sessions" })
 
 		-- misc
 		vim.keymap.set("n", "<leader>'", pick.builtin.resume, { desc = "Last Picker" })

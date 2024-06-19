@@ -130,8 +130,10 @@ end
 
 -- unmaps
 for _, key in ipairs({ "<C-z>", "<C-f>", "<C-b>" }) do
-	vim.keymap.set("n", key, "<nop>")
+	vim.keymap.set("n", key, "<Nop>")
 end
 for _, key in ipairs({ "<Up>", "<Down>", "<Left>", "<Right>", "<Del>" }) do
-	vim.keymap.set("i", key, "<nop>")
+	vim.keymap.set("i", key, "<Nop>")
 end
+vim.keymap.set({ "n", "x" }, "s", "<Nop>")
+vim.keymap.set({ "n", "x" }, "S", "<Nop>")
