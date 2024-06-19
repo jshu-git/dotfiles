@@ -54,6 +54,7 @@ return {
 				{ mode = "n", keys = "<leader>r", desc = "Replace…" },
 				{ mode = "x", keys = "<leader>r", desc = "Replace…" },
 				{ mode = "n", keys = "<leader>m", desc = "Misc…" },
+				{ mode = "n", keys = "<leader>s", desc = "Session…" },
 
 				-- submodes
 				-- buffers

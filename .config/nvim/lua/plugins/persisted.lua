@@ -12,17 +12,26 @@ return {
 			end,
 		})
 
-		require("persisted").setup({
-			should_autosave = function()
-				if vim.bo.filetype == "alpha" then
-					return false
-				end
-				return true
-			end,
+		local persisted = require("persisted")
+
+		persisted.setup({
 			autoload = true,
 			on_autoload_no_session = function()
 				vim.notify("persisted.nvim: No existing session to autoload")
 			end,
 		})
+
+		vim.keymap.set("n", "<leader>sx", function()
+			persisted.delete()
+			vim.notify("Deleted Current Session")
+		end, { desc = "Delete Current Session" })
+		vim.keymap.set("n", "<leader>ss", function()
+			persisted.start()
+			vim.notify("Started Recording Session")
+		end, { desc = "Start Recording Session" })
+		vim.keymap.set("n", "<leader>sS", function()
+			persisted.stop()
+			vim.notify("Stopped Recording Session")
+		end, { desc = "Stop Recording Session" })
 	end,
 }
