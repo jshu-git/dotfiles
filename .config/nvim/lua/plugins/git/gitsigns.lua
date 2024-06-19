@@ -40,15 +40,16 @@ return {
 		-- vim.keymap.set("n", "<leader>gd", gitsigns.diffthis, { desc = "Diff" })
 
 		-- visual
-		vim.keymap.set("v", "<leader>gh", function()
+		vim.keymap.set("v", "<leader>ga", function()
 			gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
 		end, { desc = "Stage Hunk" })
-		vim.keymap.set("v", "<leader>gH", function()
+		vim.keymap.set("v", "<leader>gr", function()
 			gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
 		end, { desc = "Reset Hunk" })
 
 		-- text object
-		vim.keymap.set({ "o", "x" }, "ih", "<cmd><C-U>Gitsigns select_hunk<CR>")
+		vim.keymap.set({ "o", "x" }, "ih", gitsigns.select_hunk)
+		vim.keymap.set({ "o", "x" }, "ah", gitsigns.select_hunk)
 
 		-- navigate
 		vim.keymap.set("n", "[h", function()

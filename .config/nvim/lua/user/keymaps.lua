@@ -14,19 +14,24 @@ vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Word Wrap" })
 vim.keymap.set("n", "<leader>ti", "<cmd>Inspect<CR>", { desc = "Inspect" })
 
+-- testing
+-- vim.keymap.set({ "n", "x", "o" }, "E", "$")
+-- vim.keymap.set({ "n", "x", "o" }, "B", "^")
+vim.keymap.set({ "n", "x", "o" }, "9", "$")
+
 -- movement
 vim.keymap.set({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true })
 vim.keymap.set({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'k']], { expr = true })
 vim.keymap.set({ "n", "x", "o" }, "J", "5gjzz")
 vim.keymap.set({ "n", "x", "o" }, "K", "5gkzz")
-vim.keymap.set({ "n", "x", "o" }, "E", "$")
-vim.keymap.set({ "n", "x", "o" }, "B", "^")
 vim.keymap.set({ "n", "x" }, "G", "Gzz")
 vim.keymap.set({ "n", "x" }, "<C-u>", "<C-u>zz")
 vim.keymap.set({ "n", "x" }, "<C-d>", "<C-d>zz")
 vim.keymap.set({ "n", "x" }, "}", "}zz")
 vim.keymap.set({ "n", "x" }, "{", "{zz")
 vim.keymap.set("n", "<BS>", "<C-^>")
+-- smart 0/^ https://github.com/wscnd/LunarVim/blob/master/lua/keymappings.lua#L98
+vim.keymap.set({ "n", "x", "o" }, "0", "getline('.')[0 : col('.') - 2] =~# '^\\s\\+$' ? '0' : '^'", { expr = true })
 
 -- editing
 vim.keymap.set("n", "U", "<C-r>")
@@ -63,9 +68,6 @@ vim.keymap.set("n", "dd", function()
 end, { expr = true })
 
 -- yanking/pasting
--- vim.keymap.set("n", "p", "p==")
--- vim.keymap.set("x", "p", '"_dP==')
--- vim.keymap.set("n", "p", "p==")
 vim.keymap.set("x", "p", '"_dP')
 vim.keymap.set("n", "<leader>p", "<cmd>pu<CR>==", { desc = "Paste After Line" })
 vim.keymap.set("n", "<leader>P", "<cmd>pu!<CR>==", { desc = "Paste Before Line" })
@@ -115,15 +117,21 @@ vim.keymap.set("x", "*", [[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', '
 vim.keymap.set("x", "<CR>", '"_c')
 vim.keymap.set("x", "V", "j")
 vim.keymap.set("x", "<C-q>", "j")
+vim.keymap.set("x", "<Tab>", ">gv")
+vim.keymap.set("x", "<S-Tab>", "<gv")
 
--- insert/command mode
-vim.keymap.set({ "i", "c" }, "<C-h>", "<Left>")
-vim.keymap.set({ "i", "c" }, "<C-j>", "<Down>")
-vim.keymap.set({ "i", "c" }, "<C-k>", "<Up>")
-vim.keymap.set({ "i", "c" }, "<C-l>", "<Right>")
-vim.keymap.set({ "i", "c" }, "<C-a>", "<C-o>_")
+-- insert/command mode (emacs) https://github.com/tscolari/nvim/blob/main/lua/keyboard.lua#L26
+vim.keymap.set({ "i", "c" }, "<C-a>", "<Home>")
 vim.keymap.set({ "i", "c" }, "<C-e>", "<End>")
-vim.keymap.set({ "i", "c" }, "<C-d>", "<Delete>")
+vim.keymap.set({ "i", "c" }, "<C-b>", "<Left>")
+vim.keymap.set({ "i", "c" }, "<A-b>", "<C-Left>")
+vim.keymap.set({ "i", "c" }, "<C-f>", "<Right>")
+vim.keymap.set({ "i", "c" }, "<A-f>", "<C-Right>")
+vim.keymap.set({ "i", "c" }, "<C-d>", "<Del>")
+vim.keymap.set({ "i", "c" }, "<A-d>", "<C-Right><C-w>")
+vim.keymap.set({ "i", "c" }, "<C-h>", "<BS>")
+vim.keymap.set("i", "<C-k>", '<C-o>"_D')
+vim.keymap.set("c", "<C-k>", '<C-f>"_D<C-c><C-c>:<Up>')
 
 -- undo points
 for _, key in ipairs({ ",", ".", "!", "?", ":", ";" }) do
@@ -131,7 +139,7 @@ for _, key in ipairs({ ",", ".", "!", "?", ":", ";" }) do
 end
 
 -- unmaps
-for _, key in ipairs({ "<C-z>" }) do
+for _, key in ipairs({ "<C-z>", "<C-f>", "<C-b>" }) do
 	vim.keymap.set("n", key, "<nop>")
 end
 for _, key in ipairs({ "<Up>", "<Down>", "<Left>", "<Right>", "<Del>" }) do

@@ -2,8 +2,6 @@ return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		{ "folke/lazydev.nvim", ft = "lua", opts = {} },
-		-- cmp
-		"hrsh7th/cmp-nvim-lsp",
 		-- ui
 		-- {
 		-- 	"rmagatti/goto-preview",
@@ -22,24 +20,36 @@ return {
 				local map = function(keys, func, desc)
 					vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 				end
-				-- local extra = require("mini.extra")
 
-				-- lsp
+				-- signature
 				require("lsp_signature").on_attach({}, event.buf)
+
+				-- hover
 				map("gs", function()
 					if not require("ufo").peekFoldedLinesUnderCursor() then
 						-- vim.lsp.buf.hover()
 						require("pretty_hover").hover()
 					end
 				end, "Hover")
+
+				-- code action
 				map("ga", vim.lsp.buf.code_action, "Code Action")
+
+				-- definition
 				map("gd", "<cmd>Glance definitions<CR>", "Goto Definition")
 				-- map("gd", require("goto-preview").goto_preview_definition, "Goto Definition (Preview)")
 				-- map("gD", function()
 				-- 	require("mini.extra").pickers.lsp({ scope = "definition" })
 				-- end, "Goto Definition (Pick)")
+
+				-- references
 				map("gr", "<cmd>Glance references<CR>", "Goto References")
-				map("gR", vim.lsp.buf.rename, "Rename Variable")
+				-- rename
+				-- map("gR", vim.lsp.buf.rename, "Rename Variable")
+				-- map("gR", ":IncRename ", "Rename Variable")
+				vim.keymap.set("n", "gR", function()
+					return ":IncRename " .. vim.fn.expand("<cword>")
+				end, { desc = "LSP: Rename Variable", expr = true })
 
 				-- diagnostics
 				map("gl", vim.diagnostic.open_float, "Hover Diagnostic")

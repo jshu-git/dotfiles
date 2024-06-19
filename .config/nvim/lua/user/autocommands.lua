@@ -25,10 +25,20 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
 		"lazy",
 		"alpha",
+		"minifiles-help",
+	},
+	callback = function(event)
+		vim.keymap.set("n", "<esc>", "<cmd>quit<CR>", { buffer = event.buf })
+	end,
+})
+
+-- hide certain filetypes from buffer list (:ls)
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = {
+		"qf",
 	},
 	callback = function(event)
 		vim.bo[event.buf].buflisted = false
-		vim.keymap.set("n", "<esc>", "<cmd>quit<CR>", { buffer = event.buf, silent = true })
 	end,
 })
 
@@ -41,6 +51,7 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
 		end
 	end,
 })
+
 -- wrap and check for spell in text filetypes
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "*.txt", "gitcommit", "markdown" },
@@ -51,6 +62,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.breakindent = true
 	end,
 })
+
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	callback = function(event)
