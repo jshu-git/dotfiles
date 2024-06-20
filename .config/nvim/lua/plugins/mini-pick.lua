@@ -48,32 +48,32 @@ return {
 		end
 
 		-- files
-		vim.keymap.set("n", "<leader>ff", function(local_opts)
-			pick.builtin.files(local_opts, {
+		vim.keymap.set("n", "<leader>ff", function()
+			pick.builtin.files({}, {
 				source = {
 					name = "Files (" .. vim.fn.getcwd() .. ")",
 				},
 			})
 		end, { desc = "Files (cwd)" })
-		vim.keymap.set("n", "<leader>fF", function(local_opts)
-			pick.builtin.files(local_opts, get_relative_opts("Files"))
+		vim.keymap.set("n", "<leader>fF", function()
+			pick.builtin.files({}, get_relative_opts("Files"))
 		end, { desc = "Files (Relative)" })
 		vim.keymap.set("n", "<leader>fr", extra.pickers.oldfiles, { desc = "Files (Recent)" })
 
 		-- grep
-		vim.keymap.set("n", "<leader>fw", function(local_opts)
-			pick.builtin.grep_live(local_opts, {
+		vim.keymap.set("n", "<leader>fw", function()
+			pick.builtin.grep_live({}, {
 				source = {
 					name = "Grep Live (" .. vim.fn.getcwd() .. ")",
 				},
 			})
 		end, { desc = "Grep Live" })
-		vim.keymap.set("n", "<leader>fW", function(local_opts)
-			pick.builtin.grep_live(local_opts, get_relative_opts("Grep Live"))
+		vim.keymap.set("n", "<leader>fW", function()
+			pick.builtin.grep_live({}, get_relative_opts("Grep Live"))
 		end, { desc = "Grep Live (Relative)" })
 		vim.keymap.set("n", "<leader>fg", pick.builtin.grep, { desc = "Grep" })
-		vim.keymap.set("n", "<leader>fG", function(local_opts)
-			pick.builtin.grep(local_opts, get_relative_opts("Grep"))
+		vim.keymap.set("n", "<leader>fG", function()
+			pick.builtin.grep({}, get_relative_opts("Grep"))
 		end, { desc = "Grep (Relative)" })
 		vim.keymap.set("n", "<leader>*", function()
 			pick.builtin.grep(
@@ -89,7 +89,7 @@ return {
 		end)
 
 		-- special paths
-		pick.registry.special_paths = function()
+		vim.keymap.set("n", "<leader>fp", function()
 			local special_paths = {
 				vim.fn.stdpath("data"),
 				vim.env.HOME .. "/Library/CloudStorage/Dropbox/",
@@ -108,8 +108,7 @@ return {
 					end,
 				},
 			})
-		end
-		vim.keymap.set("n", "<leader>fp", pick.registry.special_paths, { desc = "Special Paths" })
+		end, { desc = "Special Paths" })
 
 		-- git
 		vim.keymap.set("n", "<leader>gf", extra.pickers.git_files, { desc = "Git Files (Tracked)" })
@@ -118,14 +117,37 @@ return {
 		end, { desc = "Git Files (Modified)" })
 		vim.keymap.set("n", "<leader>gc", extra.pickers.git_commits, { desc = "Git Commits" })
 
+		-- sessions
+		vim.keymap.set("n", "<leader>fs", function()
+			pick.builtin.files({}, {
+				source = {
+					name = "Sessions (persisted.nvim)",
+					cwd = require("persisted.config").options.save_dir,
+					items = require("persisted").list(),
+				},
+			})
+		end, { desc = "Sessions" })
+
+		-- mini builtin registry
+		vim.keymap.set("n", "<leader>fC", function()
+			local items = vim.tbl_keys(vim.tbl_extend("force", pick.registry, extra.pickers))
+			table.sort(items)
+			local source = { items = items, name = "Registry", choose = function() end }
+			local chosen_picker_name = pick.start({ source = source })
+			if chosen_picker_name == nil then
+				return
+			end
+			return pick.registry[chosen_picker_name]()
+		end, { desc = "Commands (mini.pick)" })
+
 		-- vim
 		vim.keymap.set("n", "<leader>fc", extra.pickers.commands, { desc = "Commands" })
 		vim.keymap.set("n", "<leader>fh", pick.builtin.help, { desc = "Help" })
 		vim.keymap.set("n", "<leader>fl", extra.pickers.hl_groups, { desc = "Highlights" })
 		vim.keymap.set("n", "<leader>fk", extra.pickers.keymaps, { desc = "Keymaps" })
 		vim.keymap.set("n", "<leader>fo", extra.pickers.options, { desc = "Options" })
-		pick.registry.colorschemes = function()
-			return pick.start({
+		vim.keymap.set("n", "<leader>ft", function()
+			pick.start({
 				source = {
 					name = "Colorschemes",
 					items = vim.fn.getcompletion("", "color"),
@@ -137,40 +159,7 @@ return {
 					end,
 				},
 			})
-		end
-		vim.keymap.set("n", "<leader>ft", pick.registry.colorschemes, { desc = "Themes" })
-
-		pick.registry.builtin = function()
-			local items = vim.tbl_keys(vim.tbl_extend("force", pick.registry, extra.pickers))
-			for i, item in ipairs(items) do
-				if item == "registry" then
-					table.remove(items, i)
-					break
-				end
-			end
-			table.sort(items)
-			local source = { items = items, name = "Registry", choose = function() end }
-			local chosen_picker_name = pick.start({ source = source })
-			if chosen_picker_name == nil then
-				return
-			end
-			return pick.registry[chosen_picker_name]()
-		end
-		vim.keymap.set("n", "<leader>fC", pick.registry.builtin, { desc = "Commands (mini.pick)" })
-
-		-- sessions
-		pick.registry.sessions = function(local_opts)
-			local persisted = require("persisted")
-			local opts = {
-				source = {
-					name = "Sessions (persisted.nvim)",
-					cwd = require("persisted.config").options.save_dir,
-					items = persisted.list(),
-				},
-			}
-			return pick.builtin.files(local_opts, opts)
-		end
-		vim.keymap.set("n", "<leader>fs", pick.registry.sessions, { desc = "Sessions" })
+		end, { desc = "Themes" })
 
 		-- misc
 		vim.keymap.set("n", "<leader>'", pick.builtin.resume, { desc = "Last Picker" })
