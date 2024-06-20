@@ -6,17 +6,14 @@
 keybinds clear-defaults=true {
     locked {
         bind "Ctrl a" { SwitchToMode "Normal"; }
-        // bind "Ctrl f" { ToggleFloatingPanes;   }
+        bind "Ctrl f" { ToggleFloatingPanes;   }
     }
     normal {
         bind "Ctrl a" { Write 1; SwitchToMode "Locked"; }
-        // bind "Ctrl f" { Write 6; SwitchToMode "Locked"; }
+        bind "Ctrl f" { Write 6; SwitchToMode "Locked"; }
 
         // lock
         bind "Esc" "Enter" { SwitchToMode "Locked"; }
-
-        // floating pane
-        bind "a" { ToggleFloatingPanes; SwitchToMode "Locked";  }
 
         // add floating pane
         // bind "f" {
@@ -27,7 +24,7 @@ keybinds clear-defaults=true {
         // }
 
         // lazygit
-        bind "g" {
+        bind "a" {
             // https://github.com/zellij-org/zellij/discussions/2518
             Run "zellij" "run" "--close-on-exit" "--floating" "--" "lazygit" {
                 close_on_exit true
