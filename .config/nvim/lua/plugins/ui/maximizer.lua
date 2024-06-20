@@ -4,5 +4,6 @@ return {
 		local maximizer = require("maximizer")
 		maximizer.setup()
 		vim.keymap.set("n", "<C-w>m", maximizer.toggle, { desc = "Toggle Maximize" })
+		vim.keymap.set("n", "<leader>tm", maximizer.toggle, { desc = "Toggle Maximize" })
 	end,
 }

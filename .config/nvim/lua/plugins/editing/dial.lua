@@ -34,11 +34,17 @@ return {
 		})
 
 		local map = require("dial.map")
-		vim.keymap.set("n", "=", function()
-			map.manipulate("increment", "normal")
-		end)
-		vim.keymap.set("n", "-", function()
-			map.manipulate("decrement", "normal")
-		end)
+		-- vim.keymap.set("n", "=", function()
+		-- 	map.manipulate("increment", "normal")
+		-- end)
+		-- vim.keymap.set("n", "-", function()
+		-- 	map.manipulate("decrement", "normal")
+		-- end)
+		vim.keymap.set("n", "=", map.inc_normal())
+		vim.keymap.set("n", "-", map.dec_normal())
+		vim.keymap.set("v", "=", map.inc_visual())
+		vim.keymap.set("v", "-", map.dec_visual())
+		vim.keymap.set("v", "g=", map.inc_gvisual())
+		vim.keymap.set("v", "g-", map.dec_gvisual())
 	end,
 }
