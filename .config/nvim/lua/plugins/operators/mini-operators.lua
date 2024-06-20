@@ -24,6 +24,6 @@ return {
 			line = "ss",
 			selection = "ss",
 		})
-		vim.keymap.set("n", "S", "s$", { remap = true })
+		vim.keymap.set("n", "S", "s$", { desc = "Substitute to EOL", remap = true })
 	end,
 }

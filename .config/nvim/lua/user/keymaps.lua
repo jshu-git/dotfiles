@@ -96,14 +96,19 @@ vim.keymap.set("n", "<C-S-K>", "<C-w>K")
 vim.keymap.set("n", "<C-S-H>", "<C-w>H")
 vim.keymap.set("n", "<C-S-L>", "<C-w>L")
 
--- substitute
+-- substitute (operators)
 vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
-vim.keymap.set("n", "sf", ":%s/<C-r><C-w>//gI<left><left><left>", { desc = "Substitute Word (File)" })
-vim.keymap.set("x", "s/", ":s///gI<left><left><left><left>", { desc = "Substitute (Selection)" })
+vim.keymap.set("n", "sf", ":%s/<C-r><C-w>//gI<left><left><left>", { desc = "Substitute cword (File)" })
+vim.keymap.set("x", "s/", ":s///gI<left><left><left><left>", { desc = "Substitute in selection" })
 -- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
 vim.keymap.set("n", "*", "*N")
-vim.keymap.set("n", "c*", "g*Ncgn")
-vim.keymap.set("x", "#", [[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<NL><CR>Ncgn]])
+vim.keymap.set("n", "sw", "g*Ncgn", { desc = "Substitute cword" })
+vim.keymap.set(
+	"x",
+	"sw",
+	[[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<NL><CR>Ncgn]],
+	{ desc = "Substitute cword selection" }
+)
 vim.keymap.set("x", "*", [[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<NL><CR>N]])
 
 -- visual
