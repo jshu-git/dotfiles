@@ -18,6 +18,7 @@ return {
 				allowed_windows = { not_current = false },
 			})
 			jump2d.start(opts)
+			vim.api.nvim_command("normal! zz")
 		end, { desc = "Jump (Word)" })
 	end,
 }

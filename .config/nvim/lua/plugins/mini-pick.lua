@@ -8,19 +8,6 @@ return {
 		local extra = require("mini.extra")
 		vim.ui.select = pick.ui_select
 
-		-- centered window
-		local win_config = function()
-			local height = math.floor(0.5 * vim.o.lines)
-			local width = math.floor(0.75 * vim.o.columns)
-			return {
-				anchor = "NW",
-				height = height,
-				width = width,
-				row = math.floor(0.5 * (vim.o.lines - height)),
-				col = math.floor(0.5 * (vim.o.columns - width)),
-			}
-		end
-
 		pick.setup({
 			mappings = {
 				choose_marked = "<C-q>",
@@ -30,7 +17,18 @@ return {
 				scroll_up = "<C-u>",
 			},
 			window = {
-				config = win_config,
+				config = function()
+					-- centered
+					local height = math.floor(0.5 * vim.o.lines)
+					local width = math.floor(0.75 * vim.o.columns)
+					return {
+						anchor = "NW",
+						height = height,
+						width = width,
+						row = math.floor(0.5 * (vim.o.lines - height)),
+						col = math.floor(0.5 * (vim.o.columns - width)),
+					}
+				end,
 				prompt_prefix = " ",
 			},
 		})

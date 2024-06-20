@@ -5,17 +5,15 @@ return {
 	},
 	config = function()
 		-- https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
-		vim.o.foldlevel = 99
-		vim.o.foldlevelstart = 99
+		vim.o.foldlevel = 10
+		vim.o.foldlevelstart = 10
 		vim.o.foldenable = true
-		for i = 0, 9 do
-			vim.keymap.set("n", "z" .. i, "<cmd>set foldlevel=" .. i .. "<CR>", { desc = "Fold Level " .. i })
-		end
-		vim.keymap.set("n", "Z", "<cmd>set foldlevel=99<CR>", { desc = "Reset Fold Levels" })
+		vim.keymap.set("n", "z0", "<cmd>set foldlevel=10<CR>", { desc = "Reset Fold Level" })
+		vim.keymap.set("n", "z=", "zr", { desc = "Fold Less" })
+		vim.keymap.set("n", "z-", "zm", { desc = "Fold More" })
 
-		local ufo = require("ufo")
-		ufo.setup({
-			open_fold_hl_timeout = 250,
+		require("ufo").setup({
+			open_fold_hl_timeout = 200,
 			preview = {
 				win_config = {
 					border = "single",
