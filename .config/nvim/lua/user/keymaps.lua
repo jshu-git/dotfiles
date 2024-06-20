@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.keymap.set({ "n", "v" }, "<space>", "<nop>")
 
+vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
 -- leader
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
@@ -97,7 +98,6 @@ vim.keymap.set("n", "<C-S-H>", "<C-w>H")
 vim.keymap.set("n", "<C-S-L>", "<C-w>L")
 
 -- substitute (operators)
-vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "sf", ":%s/<C-r><C-w>//gI<left><left><left>", { desc = "Substitute cword (File)" })
 vim.keymap.set("x", "s/", ":s///gI<left><left><left><left>", { desc = "Substitute in selection" })
 -- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
