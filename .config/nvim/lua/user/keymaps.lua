@@ -86,7 +86,7 @@ vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<CR>")
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>")
 vim.keymap.set("n", "<C-Up>", "<cmd>resize -2<CR>")
 vim.keymap.set("n", "<C-Down>", "<cmd>resize +2<CR>")
-vim.keymap.set("n", "<C-w>0", "<C-w>=")
+vim.keymap.set("n", "<C-w>0", "<C-w>=", { desc = "Reset Window Size" })
 -- split
 vim.keymap.set("n", "<C-v>", "<C-w>v")
 vim.keymap.set("n", "<C-s>", "<C-w>s")
@@ -130,7 +130,7 @@ for _, key in ipairs({ ",", ".", "!", "?", ":", ";" }) do
 end
 
 -- unmaps
-for _, key in ipairs({ "<C-z>", "<C-f>", "<C-b>" }) do
+for _, key in ipairs({ "<C-z>", "<C-f>", "<C-b>", "q:" }) do
 	vim.keymap.set("n", key, "<Nop>")
 end
 for _, key in ipairs({ "<Up>", "<Down>", "<Left>", "<Right>", "<Del>" }) do
