@@ -4,6 +4,8 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
+			-- vim.opt.background = "light"
+
 			local c = require("vscode.colors").get_colors()
 			require("vscode").setup({
 				-- transparent = true,
@@ -38,6 +40,10 @@ return {
 
 			-- barbar
 			vim.api.nvim_set_hl(0, "BufferTabPageFill", { link = "Normal" })
+
+			-- highlight undo
+			vim.api.nvim_set_hl(0, "HighlightUndo", { link = "Search" })
+			vim.api.nvim_set_hl(0, "HighlightRedo", { link = "Search" })
 		end,
 	},
 }
