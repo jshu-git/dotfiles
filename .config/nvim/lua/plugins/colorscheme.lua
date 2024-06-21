@@ -8,7 +8,7 @@ return {
 			require("vscode").setup({
 				-- transparent = true,
 				color_overrides = {
-					vscPopupBack = "#1f1f1f",
+					vscPopupBack = c.vscBack,
 				},
 			})
 			vim.cmd.colorscheme("vscode")
@@ -16,11 +16,13 @@ return {
 			-- defaults
 			vim.api.nvim_set_hl(0, "CursorLine", { bg = c.vscLeftMid })
 			vim.api.nvim_set_hl(0, "Directory", { fg = c.vscBlue })
+
 			-- copilot
 			vim.api.nvim_set_hl(0, "CopilotSuggestion", { link = "NonText" })
 			vim.api.nvim_set_hl(0, "CopilotAnnotation", { link = "NonText" })
 			vim.api.nvim_set_hl(0, "NeoCodeiumSuggestion", { link = "NonText" })
 			vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "Search" })
+
 			-- mini
 			vim.api.nvim_set_hl(0, "MiniIndentScopeSymbol", { link = "NonText" })
 			vim.api.nvim_set_hl(0, "MiniJump", { link = "Search" })
@@ -29,8 +31,10 @@ return {
 			-- vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
 			-- vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
 			-- vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
+
 			-- aerial
 			-- vim.api.nvim_set_hl(0, "AerialLine", { link = "Search" })
+
 			-- barbar
 			vim.api.nvim_set_hl(0, "BufferTabPageFill", { link = "Normal" })
 		end,

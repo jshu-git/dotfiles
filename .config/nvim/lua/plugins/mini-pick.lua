@@ -79,9 +79,6 @@ return {
 				{ source = { name = "Grep (cword): " .. vim.fn.expand("<cword>") } }
 			)
 		end, { desc = "Grep (cword)" })
-		-- vim.keymap.set("n", "<leader>/", function()
-		-- 	extra.pickers.buf_lines({ scope = "current" })
-		-- end, { desc = "Grep (Buffer)" })
 		vim.keymap.set("n", ",", function()
 			extra.pickers.buf_lines({ scope = "current" })
 		end)
@@ -92,6 +89,7 @@ return {
 				vim.fn.stdpath("data"),
 				vim.env.HOME .. "/Library/CloudStorage/Dropbox/",
 				vim.env.HOME .. "/Desktop/",
+				vim.env.HOME .. "/Library/Application Support/lazygit/",
 			}
 			table.sort(special_paths)
 			return pick.start({
