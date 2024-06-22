@@ -23,7 +23,7 @@ return {
 		vim.keymap.set("n", "<Tab>", "<cmd>BufferNext<CR>")
 		vim.keymap.set("n", "<leader><S-Tab>", "<cmd>BufferMovePrevious<CR>", { desc = "Buffer: Move Previous" })
 		vim.keymap.set("n", "<leader><Tab>", "<cmd>BufferMoveNext<CR>", { desc = "Buffer: Move Next" })
-		for i = 1, 9 do
+		for i = 1, 5 do
 			vim.keymap.set("n", "<leader>" .. i, "<cmd>BufferGoto " .. i .. "<CR>", { desc = "Buffer " .. i })
 		end
 		vim.keymap.set("n", "<leader>0", "<cmd>BufferLast<CR>", { desc = "Buffer: Last" })
