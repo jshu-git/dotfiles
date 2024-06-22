@@ -16,12 +16,12 @@ keybinds clear-defaults=true {
         bind "Esc" "Enter" { SwitchToMode "Locked"; }
 
         // add floating pane
-        // bind "f" {
-        //     Run "zellij" "action" "new-pane" "--floating" {
-        //         close_on_exit true
-        //     }
-        //     SwitchToMode "Locked"
-        // }
+        bind "f" {
+            Run "zellij" "action" "new-pane" "--floating" {
+                close_on_exit true
+            }
+            SwitchToMode "Locked"
+        }
 
         // lazygit
         bind "a" {

@@ -44,6 +44,9 @@ return {
 			-- highlight undo
 			vim.api.nvim_set_hl(0, "HighlightUndo", { link = "Search" })
 			vim.api.nvim_set_hl(0, "HighlightRedo", { link = "Search" })
+
+			-- sentiment
+			vim.api.nvim_set_hl(0, "MatchParen", { link = "Search" })
 		end,
 	},
 }

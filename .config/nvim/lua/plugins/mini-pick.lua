@@ -81,7 +81,10 @@ return {
 		end, { desc = "Grep (cword)" })
 		vim.keymap.set("n", ",", function()
 			extra.pickers.buf_lines({ scope = "current" })
-		end)
+		end, { desc = "Grep Buffer (Current)" })
+		vim.keymap.set("n", "<leader>/", function()
+			extra.pickers.buf_lines({ scope = "all" })
+		end, { desc = "Grep Buffer (All)" })
 
 		-- special paths
 		vim.keymap.set("n", "<leader>fp", function()
