@@ -1,6 +1,41 @@
 return {
 	{
+		"rockyzhang24/arctic.nvim",
+		name = "arctic",
+		lazy = false,
+		priority = 1000,
+		dependencies = {
+			"rktjmp/lush.nvim",
+		},
+		config = function()
+			vim.cmd("colorscheme arctic")
+			vim.api.nvim_set_hl(0, "Pmenu", { link = "Normal" })
+
+			-- copilot
+			vim.api.nvim_set_hl(0, "CopilotSuggestion", { link = "NonText" })
+			vim.api.nvim_set_hl(0, "CopilotAnnotation", { link = "NonText" })
+			vim.api.nvim_set_hl(0, "NeoCodeiumSuggestion", { link = "NonText" })
+			vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "Search" })
+
+			-- mini
+			vim.api.nvim_set_hl(0, "MiniJump", { link = "Search" })
+			vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickNormal" })
+
+			-- barbar
+			vim.api.nvim_set_hl(0, "BufferTabPageFill", { link = "Normal" })
+
+			-- highlight undo
+			vim.api.nvim_set_hl(0, "HighlightUndo", { link = "Search" })
+			vim.api.nvim_set_hl(0, "HighlightRedo", { link = "Search" })
+
+			-- sentiment
+			vim.api.nvim_set_hl(0, "MatchParen", { link = "Search" })
+		end,
+	},
+
+	{
 		"Mofiqul/vscode.nvim",
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		config = function()
@@ -35,40 +70,6 @@ return {
 
 			-- aerial
 			-- vim.api.nvim_set_hl(0, "AerialLine", { link = "Search" })
-
-			-- barbar
-			vim.api.nvim_set_hl(0, "BufferTabPageFill", { link = "Normal" })
-
-			-- highlight undo
-			vim.api.nvim_set_hl(0, "HighlightUndo", { link = "Search" })
-			vim.api.nvim_set_hl(0, "HighlightRedo", { link = "Search" })
-
-			-- sentiment
-			vim.api.nvim_set_hl(0, "MatchParen", { link = "Search" })
-		end,
-	},
-
-	{
-		"rockyzhang24/arctic.nvim",
-		name = "arctic",
-		lazy = false,
-		priority = 1000,
-		dependencies = {
-			"rktjmp/lush.nvim",
-		},
-		config = function()
-			vim.cmd("colorscheme arctic")
-			vim.api.nvim_set_hl(0, "Pmenu", { link = "Normal" })
-
-			-- copilot
-			vim.api.nvim_set_hl(0, "CopilotSuggestion", { link = "NonText" })
-			vim.api.nvim_set_hl(0, "CopilotAnnotation", { link = "NonText" })
-			vim.api.nvim_set_hl(0, "NeoCodeiumSuggestion", { link = "NonText" })
-			vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "Search" })
-
-			-- mini
-			vim.api.nvim_set_hl(0, "MiniJump", { link = "Search" })
-			vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MoreMsg" })
 
 			-- barbar
 			vim.api.nvim_set_hl(0, "BufferTabPageFill", { link = "Normal" })
