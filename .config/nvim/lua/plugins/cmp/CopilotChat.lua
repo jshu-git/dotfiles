@@ -15,7 +15,9 @@ return {
 			separator = " ",
 			show_folds = false,
 			show_help = false,
-			selection = select.buffer,
+			selection = function(source)
+				return select.visual(source) or select.buffer(source)
+			end,
 			window = {
 				layout = "float",
 				width = 0.8,
@@ -47,12 +49,7 @@ return {
 			end,
 		})
 
-		vim.keymap.set("n", "<leader>aa", chat.toggle, { desc = "Toggle CopilotChat" })
-
-		-- selection
-		vim.keymap.set("v", "<leader>aa", function()
-			chat.ask("", { selection = select.visual })
-		end, { desc = "Ask Selection" })
+		vim.keymap.set({ "n", "x" }, "<leader>aa", chat.toggle, { desc = "Toggle CopilotChat" })
 
 		-- save and load chats
 		-- vim.keymap.set("n", "<leader>aw", function()

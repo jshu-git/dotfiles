@@ -9,6 +9,7 @@ return {
 		},
 		config = function()
 			vim.cmd("colorscheme arctic")
+			-- defaults
 			vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 
 			-- copilot
