@@ -1,6 +1,6 @@
 return {
 	"dnlhc/glance.nvim",
-	cmd = "Glance",
+	-- cmd = "Glance",
 	config = function()
 		local glance = require("glance")
 		local actions = glance.actions
@@ -8,11 +8,14 @@ return {
 			height = math.floor(0.5 * vim.o.lines),
 			border = {
 				enable = true,
-				top_char = "─",
-				bottom_char = "─",
+				top_char = "━",
+				bottom_char = "━",
 			},
 			list = {
 				width = 0.2,
+			},
+			theme = {
+				enable = false,
 			},
 			mappings = {
 				list = {

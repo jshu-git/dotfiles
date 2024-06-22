@@ -31,6 +31,10 @@ return {
 
 			-- sentiment
 			vim.api.nvim_set_hl(0, "MatchParen", { link = "Search" })
+
+			-- glance
+			vim.api.nvim_set_hl(0, "GlanceListNormal", { link = "StatusLine" })
+			vim.api.nvim_set_hl(0, "GlanceWinBarTitle", { link = "StatusLine" })
 		end,
 	},
 
