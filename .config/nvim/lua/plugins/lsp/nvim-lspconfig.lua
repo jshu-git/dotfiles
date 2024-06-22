@@ -78,6 +78,7 @@ return {
 
 		-- servers https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
 		local servers = {
+			marksman = {},
 			taplo = {},
 			lua_ls = {
 				settings = {
