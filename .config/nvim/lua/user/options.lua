@@ -9,6 +9,12 @@ vim.opt.sidescrolloff = 10
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
+-- folds https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 10
+vim.opt.foldtext = ""
+
 -- misc
 vim.opt.wrapscan = false
 vim.opt.clipboard = "unnamedplus"

@@ -76,6 +76,11 @@ vim.keymap.set("n", "gY", function()
 	vim.notify("Copied: " .. vim.fn.expand("%:p"))
 end, { desc = "Copy Path (Full)" })
 
+-- folds
+vim.keymap.set("n", "z0", "<cmd>set foldlevel=10<CR>", { desc = "Reset Fold Level" })
+vim.keymap.set("n", "z=", "zr", { desc = "Fold Less" })
+vim.keymap.set("n", "z-", "zm", { desc = "Fold More" })
+
 -- windows
 -- focus
 vim.keymap.set("n", "<C-h>", "<C-w>h")

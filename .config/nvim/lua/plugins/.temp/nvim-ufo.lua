@@ -1,5 +1,6 @@
 return {
 	"kevinhwang91/nvim-ufo",
+	priority = 1000,
 	dependencies = {
 		"kevinhwang91/promise-async",
 	},

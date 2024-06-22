@@ -26,10 +26,10 @@ return {
 
 				-- hover
 				map("gs", function()
-					if not require("ufo").peekFoldedLinesUnderCursor() then
-						-- vim.lsp.buf.hover()
-						require("pretty_hover").hover()
-					end
+					-- if not require("ufo").peekFoldedLinesUnderCursor() then
+					-- 	-- vim.lsp.buf.hover()
+					require("pretty_hover").hover()
+					-- end
 				end, "Hover")
 
 				-- code action
@@ -121,10 +121,10 @@ return {
 		-- enable cmp capabilities
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 		-- enable lsp folding capabilities for nvim-ufo
-		capabilities.textDocument.foldingRange = {
-			dynamicRegistration = false,
-			lineFoldingOnly = true,
-		}
+		-- capabilities.textDocument.foldingRange = {
+		-- 	dynamicRegistration = false,
+		-- 	lineFoldingOnly = true,
+		-- }
 
 		local lspconfig = require("lspconfig")
 		for server, config in pairs(servers) do
