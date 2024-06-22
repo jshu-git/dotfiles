@@ -12,10 +12,6 @@ return {
 		require("CopilotChat.integrations.cmp").setup()
 
 		chat.setup({
-			-- model = "gpt-4",
-			-- temperature = 0.7,
-			question_header = "User: ",
-			answer_header = "AI: ",
 			separator = " ",
 			show_folds = false,
 			show_help = false,
@@ -24,7 +20,6 @@ return {
 				layout = "float",
 				width = 0.8,
 				height = 0.8,
-				title = " CopilotChat ",
 			},
 			mappings = {
 				complete = {
@@ -53,69 +48,46 @@ return {
 		})
 
 		vim.keymap.set("n", "<leader>aa", chat.toggle, { desc = "Toggle CopilotChat" })
-		-- buffers
-		vim.keymap.set("n", "<leader>aB", function()
-			local input = vim.fn.input("Ask All Buffers (CopilotChat): ")
-			if input ~= "" then
-				-- reload all buffers and don't switch view of current buffer
-				local curr_buf = vim.api.nvim_get_current_buf()
-				vim.cmd("bufdo e")
-				vim.api.nvim_set_current_buf(curr_buf)
-				chat.ask(input, { context = "buffers" })
-			end
-		end, { desc = "Ask All Buffers" })
 
 		-- selection
 		vim.keymap.set("v", "<leader>aa", function()
-			local input = vim.fn.input("Ask Selection (CopilotChat): ")
-			if input ~= "" then
-				chat.ask(input, {
-					selection = select.visual,
-					-- window = {
-					-- 	layout = "float",
-					-- 	relative = "cursor",
-					-- 	width = 1,
-					-- 	height = 0.5,
-					-- 	row = 1,
-					-- },
-				})
-			end
+			chat.ask("", { selection = select.visual })
 		end, { desc = "Ask Selection" })
 
 		-- save and load chats
-		vim.keymap.set("n", "<leader>aw", function()
-			local input = vim.fn.input("Save CopilotChat ('default' if empty): ")
-			if input ~= "" then
-				chat.save(input)
-				vim.notify("Saved CopilotChat: " .. input)
-			else
-				chat.save()
-				vim.notify("CopilotChat: No input. Saving to 'default'", vim.log.levels.WARN)
-			end
-		end, { desc = "Save Chat" })
-		local history_path = chat.config.history_path
-		vim.keymap.set("n", "<leader>ah", function()
-			require("mini.pick").start({
-				source = {
-					cwd = history_path,
-					items = vim.fn.readdir(history_path),
-					name = "CopilotChat History",
-					choose = function(item)
-						-- remove file extension
-						local name = vim.fn.fnamemodify(item, ":r")
-						chat.load(vim.fs.basename(name))
-						-- HACK: for some reason load() doesn't focus the chat window, so toggle twice with sleep
-						chat.toggle()
-						vim.defer_fn(function()
-							chat.toggle()
-						end, 100)
-					end,
-				},
-			})
-		end, { desc = "CopilotChat History" })
-		vim.keymap.set("n", "<leader>ae", function()
-			require("mini.files").open(history_path)
-		end, { desc = "History (Explorer)" })
+		-- vim.keymap.set("n", "<leader>aw", function()
+		-- 	local input = vim.fn.input("Save CopilotChat ('default' if empty): ")
+		-- 	if input ~= "" then
+		-- 		chat.save(input)
+		-- 		vim.notify("Saved CopilotChat: " .. input)
+		-- 	else
+		-- 		chat.save()
+		-- 		vim.notify("CopilotChat: No input. Saving to 'default'", vim.log.levels.WARN)
+		-- 	end
+		-- end, { desc = "Save Chat" })
+		-- local history_path = chat.config.history_path
+		-- vim.keymap.set("n", "<leader>ah", function()
+		-- 	require("mini.pick").start({
+		-- 		source = {
+		-- 			cwd = history_path,
+		-- 			items = vim.fn.readdir(history_path),
+		-- 			name = "CopilotChat History",
+		-- 			choose = function(item)
+		-- 				-- remove file extension
+		-- 				local name = vim.fn.fnamemodify(item, ":r")
+		-- 				chat.load(vim.fs.basename(name))
+		-- 				-- HACK: for some reason load() doesn't focus the chat window, so toggle twice with sleep
+		-- 				chat.toggle()
+		-- 				vim.defer_fn(function()
+		-- 					chat.toggle()
+		-- 				end, 100)
+		-- 			end,
+		-- 		},
+		-- 	})
+		-- end, { desc = "CopilotChat History" })
+		-- vim.keymap.set("n", "<leader>ae", function()
+		-- 	require("mini.files").open(history_path)
+		-- end, { desc = "History (Explorer)" })
 
 		-- vim.keymap.set("n", "<leader>ar", function()
 		-- 	local input = vim.fn.input("Load CopilotChat ('default' if empty): ")

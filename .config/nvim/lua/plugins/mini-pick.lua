@@ -12,9 +12,11 @@ return {
 			mappings = {
 				choose_marked = "<C-q>",
 				delete_left = "", -- defaults to <C-u>
-				mark_all = "<C-S-X>", -- defaults to <C-a>
 				scroll_down = "<C-d>",
 				scroll_up = "<C-u>",
+			},
+			options = {
+				use_cache = true,
 			},
 			window = {
 				config = function()
