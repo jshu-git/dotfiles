@@ -26,7 +26,7 @@ require("lazy").setup({
 	{ import = "plugins.operators" },
 	{ import = "plugins.ui" },
 }, {
-	ui = { border = "single" },
+	ui = { border = "single", backdrop = 100 },
 	change_detection = { notify = false },
 })
 vim.keymap.set("n", "<leader>ll", "<cmd>Lazy<CR>", { desc = "Lazy" })
