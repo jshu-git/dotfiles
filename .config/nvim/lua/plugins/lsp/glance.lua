@@ -1,6 +1,6 @@
 return {
 	"dnlhc/glance.nvim",
-	-- cmd = "Glance",
+	cmd = "Glance",
 	config = function()
 		local glance = require("glance")
 		local actions = glance.actions
@@ -20,8 +20,6 @@ return {
 			mappings = {
 				list = {
 					["<C-CR>"] = actions.jump,
-					["J"] = actions.next_location,
-					["K"] = actions.previous_location,
 					["<C-v>"] = actions.jump_vsplit,
 					["<C-s>"] = actions.jump_split,
 					["<CR>"] = actions.enter_win("preview"),
@@ -32,7 +30,9 @@ return {
 					["<esc>"] = actions.enter_win("list"),
 				},
 			},
-			folds = { folded = false },
+			folds = {
+				folded = false,
+			},
 		})
 	end,
 }

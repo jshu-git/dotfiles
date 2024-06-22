@@ -2,61 +2,49 @@ return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		{ "folke/lazydev.nvim", ft = "lua", opts = {} },
-		-- ui
-		-- {
-		-- 	"rmagatti/goto-preview",
-		-- 	opts = {
-		-- 		width = math.floor(0.75 * vim.o.columns),
-		-- 		height = math.floor(0.5 * vim.o.lines),
-		-- 		border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-		-- 		preview_window_title = { position = "center" },
-		-- 	},
-		-- },
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("LspConfig", { clear = true }),
-			callback = function(event)
+			callback = function(args)
+				local bufnr = args.buf
 				local map = function(keys, func, desc)
-					vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+					vim.keymap.set("n", keys, func, { buffer = bufnr, desc = "LSP: " .. desc })
 				end
 
 				-- signature
-				require("lsp_signature").on_attach({}, event.buf)
+				require("lsp_signature").on_attach({}, bufnr)
 
 				-- hover
-				map("gs", function()
-					-- if not require("ufo").peekFoldedLinesUnderCursor() then
-					-- 	-- vim.lsp.buf.hover()
-					require("pretty_hover").hover()
-					-- end
-				end, "Hover")
+				map("gs", require("pretty_hover").hover, "Hover")
 
 				-- code action
 				map("ga", vim.lsp.buf.code_action, "Code Action")
 
 				-- definition
 				map("gd", "<cmd>Glance definitions<CR>", "Goto Definition")
-				-- map("gd", require("goto-preview").goto_preview_definition, "Goto Definition (Preview)")
 				-- map("gD", function()
 				-- 	require("mini.extra").pickers.lsp({ scope = "definition" })
 				-- end, "Goto Definition (Pick)")
 
 				-- references
 				map("gr", "<cmd>Glance references<CR>", "Goto References")
+
 				-- rename
 				-- map("gR", vim.lsp.buf.rename, "Rename Variable")
 				-- map("gR", ":IncRename ", "Rename Variable")
 				vim.keymap.set("n", "gR", function()
 					return ":IncRename " .. vim.fn.expand("<cword>")
-				end, { desc = "LSP: Rename Variable", expr = true })
+				end, { buffer = bufnr, desc = "LSP: Rename Variable", expr = true })
 
 				-- diagnostics
 				map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
-				-- map("<leader>fd", function()
-				-- 	extra.pickers.diagnostic({ scope = "current" })
-				-- end, "Diagnostics (Buffer)")
-				-- map("<leader>fD", extra.pickers.diagnostic, "Diagnostics (All)")
+				map("<leader>fd", function()
+					require("mini.extra").pickers.diagnostic({ scope = "current" })
+				end, "Diagnostics (Buffer)")
+				map("<leader>fD", function()
+					require("mini.extra").pickers.diagnostic({ scope = "all" })
+				end, "Diagnostics (All)")
 				map("[d", vim.diagnostic.goto_prev, "Previous Diagnostic")
 				map("]d", vim.diagnostic.goto_next, "Next Diagnostic")
 
@@ -65,7 +53,7 @@ return {
 				map("<leader>lr", "<cmd>LspRestart<CR>", "Restart")
 
 				-- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L510
-				local client = vim.lsp.get_client_by_id(event.data.client_id)
+				local client = vim.lsp.get_client_by_id(args.data.client_id)
 				-- toggle inlay hints
 				if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
 					map("<leader>th", function()

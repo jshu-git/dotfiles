@@ -1,4 +1,5 @@
 -- ui
+vim.opt.pumblend = 10
 vim.opt.pumheight = 5
 vim.opt.winblend = 0
 vim.opt.scrolloff = 10

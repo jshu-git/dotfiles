@@ -91,8 +91,8 @@ return {
 						cmp.complete()
 					end
 				end, { "i", "s" }),
-				["<C-k>"] = cmp.mapping.scroll_docs(-4),
-				["<C-j>"] = cmp.mapping.scroll_docs(4),
+				["<C-u>"] = cmp.mapping.scroll_docs(-4),
+				["<C-d>"] = cmp.mapping.scroll_docs(4),
 				-- snippets
 				["<C-l>"] = cmp.mapping(function(fallback)
 					if vim.snippet.active({ direction = 1 }) then

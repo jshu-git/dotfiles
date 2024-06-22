@@ -35,6 +35,11 @@ return {
 			-- glance
 			vim.api.nvim_set_hl(0, "GlanceListNormal", { link = "StatusLine" })
 			vim.api.nvim_set_hl(0, "GlanceWinBarTitle", { link = "StatusLine" })
+			vim.api.nvim_set_hl(0, "GlanceWinBarFilename", { link = "StatusLine" })
+			vim.api.nvim_set_hl(0, "GlanceWinBarFilepath", { link = "StatusLine" })
+
+			-- lsp signature
+			vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { link = "Search" })
 		end,
 	},
 
