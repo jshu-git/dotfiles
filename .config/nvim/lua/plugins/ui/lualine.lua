@@ -10,13 +10,6 @@ return {
 		local function file_size()
 			return string.format("%.2f", vim.fn.getfsize(vim.fn.expand("%:p")) / 1024) .. "KB"
 		end
-		local function luapad()
-			if require("luapad.statusline").status() == "ok" then
-				return "󰆒 Luapad"
-			else
-				return ""
-			end
-		end
 
 		require("lualine").setup({
 			options = {
@@ -37,7 +30,6 @@ return {
 					{ "filename", path = 1 },
 				},
 				lualine_x = {
-					{ luapad },
 					{
 						"copilot",
 						symbols = {

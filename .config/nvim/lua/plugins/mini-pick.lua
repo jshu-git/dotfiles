@@ -21,7 +21,7 @@ return {
 			window = {
 				config = function()
 					-- centered
-					local height = math.floor(0.5 * vim.o.lines)
+					local height = math.floor(0.6 * vim.o.lines)
 					local width = math.floor(0.75 * vim.o.columns)
 					return {
 						anchor = "NW",

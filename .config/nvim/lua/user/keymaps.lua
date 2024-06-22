@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.keymap.set({ "n", "v" }, "<space>", "<nop>")
+vim.keymap.set({ "n", "x" }, "<space>", "<nop>")
 
 vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
 -- leader
