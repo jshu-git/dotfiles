@@ -40,6 +40,9 @@ return {
 
 			-- lsp signature
 			vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { link = "Search" })
+
+			-- lazygit
+			vim.api.nvim_set_hl(0, "LazyGitBorder", { link = "FloatBorder" })
 		end,
 	},
 
