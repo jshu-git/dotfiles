@@ -10,8 +10,12 @@ return {
 
 		pick.setup({
 			mappings = {
-				choose_marked = "<C-q>",
 				delete_left = "", -- defaults to <C-u>
+				move_start = "", -- defaults to <C-g>
+
+				choose_marked = "<C-q>",
+				refine = "<C-g>",
+				refine_marked = "<C-S-g>",
 				scroll_down = "<C-d>",
 				scroll_up = "<C-u>",
 			},
