@@ -124,15 +124,12 @@ vim.keymap.set("x", "<C-q>", "j")
 -- insert/command mode (emacs) https://github.com/tscolari/nvim/blob/main/lua/keyboard.lua#L26
 vim.keymap.set({ "i", "c" }, "<C-a>", "<Home>")
 vim.keymap.set({ "i", "c" }, "<C-e>", "<End>")
-vim.keymap.set({ "i", "c" }, "<C-b>", "<Left>")
-vim.keymap.set({ "i", "c" }, "<A-b>", "<C-Left>")
-vim.keymap.set({ "i", "c" }, "<C-f>", "<Right>")
-vim.keymap.set({ "i", "c" }, "<A-f>", "<C-Right>")
+vim.keymap.set({ "i", "c" }, "<C-h>", "<Left>")
+vim.keymap.set({ "i", "c" }, "<C-l>", "<Right>")
+vim.keymap.set({ "i", "c" }, "<C-k>", "<Up>")
+vim.keymap.set({ "i", "c" }, "<C-j>", "<Down>")
 vim.keymap.set({ "i", "c" }, "<C-d>", "<Del>")
 vim.keymap.set({ "i", "c" }, "<A-d>", "<C-Right><C-w>")
-vim.keymap.set({ "i", "c" }, "<C-h>", "<BS>")
-vim.keymap.set("i", "<C-k>", '<C-o>"_D')
-vim.keymap.set("c", "<C-k>", '<C-f>"_D<C-c><C-c>:<Up>')
 
 -- undo points
 for _, key in ipairs({ ",", ".", "!", "?", ":", ";" }) do
@@ -140,11 +137,6 @@ for _, key in ipairs({ ",", ".", "!", "?", ":", ";" }) do
 end
 
 -- unmaps
-for _, key in ipairs({ "<C-z>", "<C-f>", "<C-b>", "q:" }) do
-	vim.keymap.set("n", key, "<Nop>")
-end
 for _, key in ipairs({ "<Up>", "<Down>", "<Left>", "<Right>", "<Del>" }) do
 	vim.keymap.set("i", key, "<Nop>")
 end
-vim.keymap.set({ "n", "x" }, "s", "<Nop>")
-vim.keymap.set({ "n", "x" }, "S", "<Nop>")
