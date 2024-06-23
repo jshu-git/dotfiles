@@ -6,6 +6,7 @@
 keybinds clear-defaults=true {
     locked {
         bind "Ctrl a" { SwitchToMode "Normal"; }
+        bind "Ctrl e" { EditScrollback;        }
         bind "Ctrl f" { ToggleFloatingPanes;   }
     }
     normal {
@@ -82,9 +83,6 @@ keybinds clear-defaults=true {
 
         // layout
         bind "Space" { NextSwapLayout; }
-
-        // scroll
-        bind "e" { EditScrollback; SwitchToMode "Locked"; }
     }
 
     // renaming modes
