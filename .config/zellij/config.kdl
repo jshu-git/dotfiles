@@ -121,8 +121,21 @@ themes {
         black "#1F1F1F"
         white "#D4D4D4"
     }
+    arctic {
+        bg      "#1E1E1E"
+        fg      "#D4D4D4"
+        red     "#F44747"
+        green   "#6A9955"
+        blue    "#569CD6"
+        yellow  "#D7BA7D"
+        magenta "#C586C0"
+        orange  "#F44747"
+        cyan    "#4DC9B0"
+        black   "#1E1E1E"
+        white   "#DDDDDD"
+    }
 }
-theme "vscode"
+theme "arctic"
 default_layout "custom"
 default_mode "locked"
 layout_dir ".config/zellij/layouts/"

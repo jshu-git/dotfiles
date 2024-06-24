@@ -14,6 +14,7 @@ vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 10
 vim.opt.foldtext = ""
+vim.opt.fillchars = { fold = " " }
 
 -- misc
 vim.opt.wrapscan = false
