@@ -21,3 +21,4 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.swapfile = false
 vim.opt.confirm = true
 vim.opt.commentstring = "// %s"
+vim.opt.termguicolors = true
