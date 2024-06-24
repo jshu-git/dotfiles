@@ -1,11 +1,11 @@
+-- defaults
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
-vim.api.nvim_set_hl(0, "StatusLine", { link = "StatuslineNC" })
 
 -- copilot
--- vim.api.nvim_set_hl(0, "CopilotSuggestion", { link = "NonText" })
--- vim.api.nvim_set_hl(0, "CopilotAnnotation", { link = "NonText" })
--- vim.api.nvim_set_hl(0, "NeoCodeiumSuggestion", { link = "NonText" })
--- vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "Search" })
+vim.api.nvim_set_hl(0, "CopilotSuggestion", { link = "NonText" })
+vim.api.nvim_set_hl(0, "CopilotAnnotation", { link = "NonText" })
+vim.api.nvim_set_hl(0, "NeoCodeiumSuggestion", { link = "NonText" })
+vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "Search" })
 
 -- mini
 vim.api.nvim_set_hl(0, "MiniJump", { link = "Search" })
@@ -22,13 +22,13 @@ vim.api.nvim_set_hl(0, "HighlightRedo", { link = "Search" })
 vim.api.nvim_set_hl(0, "MatchParen", { link = "Search" })
 
 -- glance
--- vim.api.nvim_set_hl(0, "GlanceListNormal", { link = "StatusLine" })
--- vim.api.nvim_set_hl(0, "GlanceWinBarTitle", { link = "StatusLine" })
--- vim.api.nvim_set_hl(0, "GlanceWinBarFilename", { link = "StatusLine" })
--- vim.api.nvim_set_hl(0, "GlanceWinBarFilepath", { link = "StatusLine" })
+vim.api.nvim_set_hl(0, "GlanceListNormal", { link = "StatusLine" })
+vim.api.nvim_set_hl(0, "GlanceWinBarTitle", { link = "StatusLine" })
+vim.api.nvim_set_hl(0, "GlanceWinBarFilename", { link = "StatusLine" })
+vim.api.nvim_set_hl(0, "GlanceWinBarFilepath", { link = "StatusLine" })
 
 -- lsp signature
--- vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { link = "Search" })
+vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { link = "Search" })
 
 -- lazygit
--- vim.api.nvim_set_hl(0, "LazyGitBorder", { link = "FloatBorder" })
+vim.api.nvim_set_hl(0, "LazyGitBorder", { link = "FloatBorder" })
