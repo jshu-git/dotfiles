@@ -1,6 +1,6 @@
 require("user.options")
-require("user.keymaps")
 require("user.autocommands")
+require("user.keymaps")
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -30,5 +30,3 @@ require("lazy").setup({
 	change_detection = { notify = false },
 })
 vim.keymap.set("n", "<leader>ll", "<cmd>Lazy<CR>", { desc = "Lazy" })
-
-require("user.highlights")

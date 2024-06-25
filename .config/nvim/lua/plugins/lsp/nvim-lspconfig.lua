@@ -12,27 +12,14 @@ return {
 					vim.keymap.set("n", keys, func, { buffer = bufnr, desc = "LSP: " .. desc })
 				end
 
-				-- signature
 				require("lsp_signature").on_attach({}, bufnr)
-
-				-- hover
 				map("gs", require("pretty_hover").hover, "Hover")
-
-				-- code action
 				map("ga", vim.lsp.buf.code_action, "Code Action")
-
-				-- definition
 				map("gd", "<cmd>Glance definitions<CR>", "Goto Definition")
 				-- map("gD", function()
 				-- 	require("mini.extra").pickers.lsp({ scope = "definition" })
 				-- end, "Goto Definition (Pick)")
-
-				-- references
 				map("gr", "<cmd>Glance references<CR>", "Goto References")
-
-				-- rename
-				-- map("gR", vim.lsp.buf.rename, "Rename Variable")
-				-- map("gR", ":IncRename ", "Rename Variable")
 				vim.keymap.set("n", "gR", function()
 					return ":IncRename " .. vim.fn.expand("<cword>")
 				end, { buffer = bufnr, desc = "LSP: Rename Variable", expr = true })
