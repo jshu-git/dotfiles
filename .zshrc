@@ -21,13 +21,11 @@ bindkey "^[[1;3C" forward-word      # alt-right
 bindkey "^[[1;3D" backward-word     # alt-left
 bindkey "^[[1;9D" beginning-of-line # cmd-left
 bindkey "^[[1;9C" end-of-line       # cmd-right
-# shift delete
-# bindkey '^[[3~' delete-char
 
 # edit command line
 autoload -z edit-command-line
 zle -N edit-command-line
-bindkey "^X" edit-command-line
+bindkey "^E" edit-command-line
 
 # brew
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
