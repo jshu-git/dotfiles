@@ -30,9 +30,9 @@ return {
 				files.reveal_cwd()
 			end
 		end, { desc = "Explorer" })
-		-- vim.keymap.set("n", "<leader>E", function()
-		-- 	files.open(nil, false)
-		-- end, { desc = "Explorer (cwd)" })
+		vim.keymap.set("n", "<leader>E", function()
+			files.open(nil, false)
+		end, { desc = "Explorer (cwd)" })
 
 		-- toggle preview
 		local show_preview = false
@@ -47,21 +47,10 @@ return {
 				end, 1)
 			end
 		end
-		vim.api.nvim_create_autocmd("User", {
-			pattern = "MiniFilesBufferCreate",
-			callback = function(args)
-				local buf_id = args.data.buf_id
-				vim.keymap.set("n", "<Tab>", toggle_preview, {
-					buffer = buf_id,
-					desc = "Toggle Preview",
-				})
-			end,
-		})
 
 		-- open in split
 		local map_split = function(buf_id, lhs, direction)
 			local rhs = function()
-				-- Make new window and set it as target
 				local new_target_window
 				---@diagnostic disable-next-line: param-type-mismatch
 				vim.api.nvim_win_call(files.get_target_window(), function()
@@ -71,16 +60,24 @@ return {
 				files.set_target_window(new_target_window)
 				files.go_in({ close_on_file = true })
 			end
-			-- Adding `desc` will result into `show_help` entries
 			local desc = "Split " .. direction
 			vim.keymap.set("n", lhs, rhs, { buffer = buf_id, desc = desc })
 		end
+
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "MiniFilesBufferCreate",
 			callback = function(args)
 				local buf_id = args.data.buf_id
-				map_split(buf_id, "<C-s>", "belowright horizontal")
-				map_split(buf_id, "<C-v>", "belowright vertical")
+
+				-- splits
+				map_split(buf_id, "<C-s>", "horizontal")
+				map_split(buf_id, "<C-v>", "vertical")
+
+				-- preview
+				vim.keymap.set("n", "<Tab>", toggle_preview, {
+					buffer = buf_id,
+					desc = "Toggle Preview",
+				})
 			end,
 		})
 
