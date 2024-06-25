@@ -7,8 +7,8 @@ return {
 		})
 
 		vim.notify = notify.make_notify()
-		vim.keymap.set("n", "<leader>mm", notify.clear, { desc = "Clear Notifications" })
-		vim.keymap.set("n", "<leader>mh", function()
+		vim.keymap.set("n", "<leader>tt", notify.clear, { desc = "Clear Notifications" })
+		vim.keymap.set("n", "<leader>tn", function()
 			vim.cmd("split")
 			notify.show_history()
 		end, { desc = "Show Notifications History" })

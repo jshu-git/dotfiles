@@ -51,7 +51,6 @@ return {
 				{ mode = "x", keys = "<leader>g", desc = "Git…" },
 				{ mode = "n", keys = "<leader>a", desc = "GPT…" },
 				{ mode = "x", keys = "<leader>a", desc = "GPT…" },
-				{ mode = "n", keys = "<leader>m", desc = "Misc…" },
 				{ mode = "n", keys = "<leader>s", desc = "Session…" },
 
 				-- submodes
