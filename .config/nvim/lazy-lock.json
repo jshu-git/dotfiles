@@ -52,7 +52,6 @@
   "mini.splitjoin": { "branch": "main", "commit": "6e0c320c2c3a9cc4beb0db9284f3ee5888371f3a" },
   "mini.surround": { "branch": "main", "commit": "af280fc18792b4d142aab4c1638a8949a38ff33a" },
   "mini.trailspace": { "branch": "main", "commit": "7bc2876acb1a8e7258664cd050f5c0d7e61254c2" },
-  "moonfly": { "branch": "master", "commit": "a311c3b7693a577aea038d8e1061b9f2d3ea752e" },
   "neocodeium": { "branch": "main", "commit": "4a46f6438bcdb21c562f83036bce75c719834072" },
   "nvim-bqf": { "branch": "main", "commit": "1b24dc6050c34e8cd377b6b4cd6abe40509e0187" },
   "nvim-cmp": { "branch": "main", "commit": "a110e12d0b58eefcf5b771f533fc2cf3050680ac" },

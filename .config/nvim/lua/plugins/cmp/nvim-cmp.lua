@@ -76,7 +76,7 @@ return {
 					mode = "symbol_text",
 					-- mode = "symbol",
 					maxwidth = function()
-						return math.floor(vim.api.nvim_win_get_width(0) * 0.15)
+						return math.floor(vim.o.columns * 0.15)
 					end,
 					ellipsis_char = "…",
 					-- show_labelDetails = true,
