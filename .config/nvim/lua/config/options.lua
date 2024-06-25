@@ -12,7 +12,7 @@ vim.opt.shiftwidth = 4
 -- folds https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 10
+vim.opt.foldlevelstart = 99
 vim.opt.foldtext = ""
 vim.opt.fillchars = { fold = " " }
 

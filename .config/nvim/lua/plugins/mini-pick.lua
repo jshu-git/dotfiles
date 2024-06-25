@@ -118,11 +118,15 @@ return {
 		vim.keymap.set("n", "<leader>fp", function()
 			local special_paths = {
 				vim.fn.stdpath("data"),
-				vim.env.HOME .. "/Library/CloudStorage/Dropbox/",
-				vim.env.HOME .. "/Desktop/",
-				vim.env.HOME .. "/Library/Application Support/lazygit/",
 			}
+			if vim.env.SSH_CLIENT == nil then
+				table.insert(special_paths, vim.env.HOME .. "/Library/CloudStorage/Dropbox/")
+				table.insert(special_paths, vim.env.HOME .. "/Desktop/")
+			else
+				table.insert(special_paths, vim.env.HOME .. "/p4/cacl3/test/lib/netapp_ontap/resources/")
+			end
 			table.sort(special_paths)
+
 			return pick.start({
 				source = {
 					name = "Special Paths",

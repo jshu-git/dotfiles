@@ -2,9 +2,8 @@ return {
 	"hrsh7th/nvim-cmp",
 	event = { "InsertEnter", "CmdlineEnter" },
 	dependencies = {
+		{ "folke/lazydev.nvim", ft = "lua", opts = {} },
 		"hrsh7th/cmp-nvim-lsp",
-		-- "hrsh7th/cmp-nvim-lsp-signature-help",
-		-- "hrsh7th/cmp-path",
 		"FelipeLema/cmp-async-path",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-cmdline",
@@ -17,6 +16,7 @@ return {
 		local cmp = require("cmp")
 		cmp.setup({
 			sources = {
+				{ name = "nvim_lsp_signature_help" },
 				{ name = "lazydev", group_index = 0 },
 				{ name = "nvim_lsp", max_item_count = 5 },
 				-- { name = "nvim_lsp_signature_help" },
