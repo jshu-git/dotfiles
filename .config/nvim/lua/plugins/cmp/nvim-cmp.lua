@@ -79,7 +79,7 @@ return {
 						return math.floor(vim.o.columns * 0.15)
 					end,
 					ellipsis_char = "…",
-					-- show_labelDetails = true,
+					show_labelDetails = true,
 					menu = {
 						lazydev = "LZY",
 						nvim_lsp = "LSP",
