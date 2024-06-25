@@ -1,6 +1,7 @@
-require("user.options")
-require("user.autocommands")
-require("user.keymaps")
+require("config.options")
+require("config.autocommands")
+require("config.highlights")
+require("config.keymaps")
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

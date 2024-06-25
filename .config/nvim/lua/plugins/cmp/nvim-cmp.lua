@@ -81,6 +81,7 @@ return {
 					ellipsis_char = "…",
 					-- show_labelDetails = true,
 					menu = {
+						lazydev = "LZY",
 						nvim_lsp = "LSP",
 						buffer = "BUF",
 						async_path = "PTH",
