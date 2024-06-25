@@ -39,6 +39,13 @@ return {
 		local toggle_preview = function()
 			show_preview = not show_preview
 			files.refresh({ windows = { preview = show_preview } })
+			-- hack
+			if not show_preview then
+				vim.api.nvim_command("normal! k")
+				vim.defer_fn(function()
+					vim.api.nvim_command("normal! j")
+				end, 1)
+			end
 		end
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "MiniFilesBufferCreate",

@@ -2,8 +2,6 @@
 vim.opt.pumblend = 10
 vim.opt.pumheight = 5
 vim.opt.winblend = 0
-vim.opt.scrolloff = 10
-vim.opt.sidescrolloff = 10
 
 -- tabs/indents
 vim.opt.tabstop = 4

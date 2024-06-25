@@ -1,5 +1,4 @@
 return {
-
 	"echasnovski/mini.jump2d",
 	config = function()
 		local jump2d = require("mini.jump2d")
@@ -18,7 +17,7 @@ return {
 				allowed_windows = { not_current = false },
 			})
 			jump2d.start(opts)
-			vim.api.nvim_command("normal! zz")
+			-- vim.api.nvim_command("normal! zz")
 		end, { desc = "Jump (Word)" })
 	end,
 }

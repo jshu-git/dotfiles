@@ -8,7 +8,7 @@ return {
 			"rktjmp/lush.nvim",
 		},
 		config = function()
-			vim.cmd("colorscheme arctic")
+			vim.cmd.colorscheme("arctic")
 		end,
 	},
 

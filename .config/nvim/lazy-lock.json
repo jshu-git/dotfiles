@@ -64,5 +64,6 @@
   "pretty_hover": { "branch": "master", "commit": "b3840660f379e125cac508d3d2d77cc47b3d5131" },
   "sentiment.nvim": { "branch": "main", "commit": "ecde8d877881bb78fdb90060c0991e76770dbdbc" },
   "tardis.nvim": { "branch": "main", "commit": "1e9a8ca59ddd2b09525e0577776364b35814ff52" },
-  "undotree": { "branch": "master", "commit": "56c684a805fe948936cda0d1b19505b84ad7e065" }
+  "undotree": { "branch": "master", "commit": "56c684a805fe948936cda0d1b19505b84ad7e065" },
+  "vim-scrolloff-fraction": { "branch": "master", "commit": "c4e543a9d9da6382f00c9f3c170d5c5def1f77f0" }
 }
