@@ -124,6 +124,7 @@ return {
 				table.insert(special_paths, vim.env.HOME .. "/Desktop/")
 			else
 				table.insert(special_paths, vim.env.HOME .. "/p4/cacl3/test/lib/netapp_ontap/resources/")
+				table.insert(special_paths, vim.env.HOME .. "/.packages/")
 			end
 			table.sort(special_paths)
 
