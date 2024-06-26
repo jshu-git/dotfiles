@@ -36,7 +36,6 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = {
     "lazy",
     "minifiles-help",
-    "help",
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
