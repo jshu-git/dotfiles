@@ -1,5 +1,5 @@
 gui:
-  scrollHeight: 8
+  scrollHeight: 16
   scrollPastBottom: false
   scrollOffMargin: 10
   sidePanelWidth: 0.2
@@ -14,9 +14,9 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
-
 quitOnTopLevelReturn: true
 notARepository: quit
+promptToReturnFromSubprocess: false
 keybinding:
   universal:
     prevBlock-alt: K
