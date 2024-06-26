@@ -5,7 +5,7 @@ return {
 			mappings = {
 				add = "sS",
 				delete = "sd",
-				replace = "sr",
+				replace = "sR",
 
 				update_n_lines = "",
 				highlight = "",

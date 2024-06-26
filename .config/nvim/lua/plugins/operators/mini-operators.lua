@@ -31,12 +31,12 @@ return {
 		-- vim.keymap.set("x", "s/", ":s///gI<left><left><left><left>", { desc = "Substitute in selection" })
 		-- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
 		vim.keymap.set("n", "*", "*N")
-		vim.keymap.set("n", "sw", "g*Ncgn", { desc = "Substitute cword" })
+		vim.keymap.set("n", "sw", "g*Ncgn", { desc = "Substitute cword (instance)" })
 		vim.keymap.set(
 			"x",
 			"sw",
 			[[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<NL><CR>Ncgn]],
-			{ desc = "Substitute selection" }
+			{ desc = "Substitute (instance)" }
 		)
 		vim.keymap.set("x", "*", [[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<NL><CR>N]])
 	end,
