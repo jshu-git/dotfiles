@@ -66,5 +66,6 @@
   "replacer.nvim": { "branch": "master", "commit": "32e1713230844fa52f7f0598c59295de3c90dc95" },
   "sentiment.nvim": { "branch": "main", "commit": "ecde8d877881bb78fdb90060c0991e76770dbdbc" },
   "undotree": { "branch": "master", "commit": "56c684a805fe948936cda0d1b19505b84ad7e065" },
-  "vim-scrolloff-fraction": { "branch": "master", "commit": "c4e543a9d9da6382f00c9f3c170d5c5def1f77f0" }
+  "vim-scrolloff-fraction": { "branch": "master", "commit": "c4e543a9d9da6382f00c9f3c170d5c5def1f77f0" },
+  "virt-column.nvim": { "branch": "master", "commit": "b62b4ef0774d19452d4ed18e473e824c7a756f2f" }
 }
