@@ -75,19 +75,23 @@ return {
 					},
 				},
 			},
-			-- basedpyright = {
-			-- 	settings = {
-			-- 		basedpyright = {
-			-- 			analysis = {
-			-- 				typeCheckingMode = "off",
-			-- 			},
-			-- 		},
-			-- 		python = {
-			-- 			pythonPath = "/u/jshu/p4/cacl3/test/tools/python/nate/rhel7-3.12/bin/python",
-			-- 		},
-			-- 	},
-			-- },
+			basedpyright = {
+				settings = {
+					basedpyright = {
+						analysis = {
+							typeCheckingMode = "off",
+						},
+					},
+					-- python = {
+					-- 	pythonPath = "/u/jshu/p4/cacl3/test/tools/python/nate/rhel7-3.12/bin/python",
+					-- },
+				},
+			},
 		}
+		if vim.env.SSH_CLIENT ~= nil then
+			servers.basedpyright.settings.python.pythonPath =
+				"/u/jshu/p4/cacl3/test/tools/python/nate/rhel7-3.12/bin/python"
+		end
 
 		-- lspconfig
 		local capabilities = vim.lsp.protocol.make_client_capabilities()

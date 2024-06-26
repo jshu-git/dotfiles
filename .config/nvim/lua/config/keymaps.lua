@@ -35,7 +35,7 @@ vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<CR>", '"_ciw')
 vim.keymap.set("n", "gG", "ggVG", { desc = "Select All" })
 vim.keymap.set("n", "<C-r>", ".")
-vim.keymap.set("n", ";", ":")
+vim.keymap.set({ "n", "x" }, ";", ":")
 vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "Append Comma" })
 vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Append Semicolon" })
 -- smart insert
