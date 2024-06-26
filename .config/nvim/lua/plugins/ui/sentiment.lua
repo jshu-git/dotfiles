@@ -1,5 +1,5 @@
 return {
-	"utilyre/sentiment.nvim",
-	event = "VeryLazy",
-	opts = {},
+  "utilyre/sentiment.nvim",
+  event = "VeryLazy",
+  opts = {},
 }

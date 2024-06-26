@@ -1,5 +1,5 @@
 return {
-	"moyiz/command-and-cursor.nvim",
-	event = "VeryLazy",
-	opts = {},
+  "moyiz/command-and-cursor.nvim",
+  event = "VeryLazy",
+  opts = {},
 }

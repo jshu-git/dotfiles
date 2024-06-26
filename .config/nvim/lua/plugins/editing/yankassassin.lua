@@ -1,3 +1,3 @@
 return {
-	"svban/YankAssassin.vim",
+  "svban/YankAssassin.vim",
 }

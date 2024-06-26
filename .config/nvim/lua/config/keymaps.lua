@@ -13,21 +13,31 @@ vim.keymap.set("n", "<leader>n", "<cmd>enew<CR>", { desc = "Scratch Buffer" })
 vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 vim.keymap.set("n", "<leader>d", "<cmd>bd<CR>", { desc = "Delete Buffer" })
 -- toggles
-vim.keymap.set("n", "<leader>tw", "<cmd>setlocal wrap!<CR>", { desc = "Toggle Word Wrap" })
+vim.keymap.set(
+  "n",
+  "<leader>tw",
+  "<cmd>setlocal wrap!<CR>",
+  { desc = "Toggle Word Wrap" }
+)
 vim.keymap.set("n", "<leader>ti", "<cmd>Inspect<CR>", { desc = "Inspect" })
 
 -- movement
 vim.keymap.set({ "n", "x" }, "j", function()
-	return vim.v.count > 0 and "j" or "gj"
+  return vim.v.count > 0 and "j" or "gj"
 end, { expr = true })
 vim.keymap.set({ "n", "x" }, "k", function()
-	return vim.v.count > 0 and "k" or "gk"
+  return vim.v.count > 0 and "k" or "gk"
 end, { expr = true })
 vim.keymap.set({ "n", "x", "o" }, "J", "5gj")
 vim.keymap.set({ "n", "x", "o" }, "K", "5gk")
 vim.keymap.set("n", "<BS>", "<C-^>")
 -- smart 0/^ https://github.com/wscnd/LunarVim/blob/master/lua/keymappings.lua#L98
-vim.keymap.set({ "n", "x", "o" }, "0", "getline('.')[0 : col('.') - 2] =~# '^\\s\\+$' ? '0' : '^'", { expr = true })
+vim.keymap.set(
+  { "n", "x", "o" },
+  "0",
+  "getline('.')[0 : col('.') - 2] =~# '^\\s\\+$' ? '0' : '^'",
+  { expr = true }
+)
 vim.keymap.set({ "n", "x", "o" }, "9", "$")
 
 -- editing
@@ -40,11 +50,11 @@ vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "Append Comma" })
 vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Append Semicolon" })
 -- smart insert
 vim.keymap.set("n", "i", function()
-	if vim.api.nvim_get_current_line():match("^%s*$") then
-		return '"_cc'
-	else
-		return "i"
-	end
+  if vim.api.nvim_get_current_line():match("^%s*$") then
+    return '"_cc'
+  else
+    return "i"
+  end
 end, { expr = true })
 
 -- preserve clipboard
@@ -53,26 +63,31 @@ vim.keymap.set({ "n", "x" }, "c", '"_c')
 vim.keymap.set({ "n", "x" }, "C", '"_C')
 -- smart dd https://old.reddit.com/r/neovim/comments/w0jzzv/smart_dd/
 vim.keymap.set("n", "dd", function()
-	if vim.api.nvim_get_current_line():match("^%s*$") then
-		return '"_dd'
-	else
-		return "dd"
-	end
+  if vim.api.nvim_get_current_line():match("^%s*$") then
+    return '"_dd'
+  else
+    return "dd"
+  end
 end, { expr = true })
 
 -- yanking/pasting
 vim.keymap.set("x", "p", '"_dP')
 vim.keymap.set("n", "<leader>p", "<cmd>pu<CR>==", { desc = "Paste After Line" })
-vim.keymap.set("n", "<leader>P", "<cmd>pu!<CR>==", { desc = "Paste Before Line" })
+vim.keymap.set(
+  "n",
+  "<leader>P",
+  "<cmd>pu!<CR>==",
+  { desc = "Paste Before Line" }
+)
 
 -- files
 vim.keymap.set("n", "gy", function()
-	vim.fn.setreg("+", vim.fn.expand("%"))
-	vim.notify("Copied: " .. vim.fn.expand("%"))
+  vim.fn.setreg("+", vim.fn.expand("%"))
+  vim.notify("Copied: " .. vim.fn.expand("%"))
 end, { desc = "Copy Path (Relative)" })
 vim.keymap.set("n", "gY", function()
-	vim.fn.setreg("+", vim.fn.expand("%:p"))
-	vim.notify("Copied: " .. vim.fn.expand("%:p"))
+  vim.fn.setreg("+", vim.fn.expand("%:p"))
+  vim.notify("Copied: " .. vim.fn.expand("%:p"))
 end, { desc = "Copy Path (Full)" })
 
 -- windows
@@ -113,5 +128,5 @@ vim.keymap.set({ "i", "c" }, "<A-d>", "<C-Right><C-w>")
 
 -- undo points
 for _, key in ipairs({ ",", ".", "!", "?", ":", ";" }) do
-	vim.keymap.set("i", key, key .. "<C-g>u")
+  vim.keymap.set("i", key, key .. "<C-g>u")
 end

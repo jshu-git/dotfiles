@@ -1,6 +1,6 @@
 return {
-	"echasnovski/mini.trailspace",
-	config = function()
-		require("mini.trailspace").setup()
-	end,
+  "echasnovski/mini.trailspace",
+  config = function()
+    require("mini.trailspace").setup()
+  end,
 }

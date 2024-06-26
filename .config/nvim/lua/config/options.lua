@@ -2,6 +2,7 @@
 vim.opt.pumblend = 10
 vim.opt.pumheight = 5
 vim.opt.winblend = 0
+vim.opt.colorcolumn = "80"
 
 -- tabs/indents
 vim.opt.tabstop = 4
