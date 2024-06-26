@@ -3,7 +3,7 @@ return {
   event = "WinNew",
   config = function()
     require("colorful-winsep").setup({
-      hi = { link = "DiagnosticWarn" },
+      hi = { fg = "white" },
       smooth = false,
       exponential_smoothing = false,
     })
