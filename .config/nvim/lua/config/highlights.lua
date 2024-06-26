@@ -20,6 +20,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
         "MiniPickMatchRanges",
         { link = "MiniPickBorderText" }
       )
+      vim.api.nvim_set_hl(0, "MiniCursorWord", { link = "IncSearch" })
 
       -- barbar
       vim.api.nvim_set_hl(0, "BufferTabPageFill", { link = "Normal" })
