@@ -1,6 +1,7 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
   "CopilotChat.nvim": { "branch": "canary", "commit": "82923efe22b604cf9c0cad0bb2a74aa9247755ab" },
+  "YankAssassin.vim": { "branch": "main", "commit": "55ce478a08333c086bcccdf087453085f85854d4" },
   "arctic": { "branch": "main", "commit": "1ed00a7a78c3dfdd39b2d5b223822a160bb4b843" },
   "barbar.nvim": { "branch": "master", "commit": "d181f2cfd4b828f9c6f1e10e69c68241de59f54f" },
   "cmp-async-path": { "branch": "main", "commit": "9d581eec5acf812316913565c135b0d1ee2c9a71" },
@@ -57,6 +58,7 @@
   "nvim-cmp": { "branch": "main", "commit": "a110e12d0b58eefcf5b771f533fc2cf3050680ac" },
   "nvim-lspconfig": { "branch": "master", "commit": "9c9eb07fecc578e25e28db8dc9002b43fff2ed79" },
   "nvim-numbertoggle": { "branch": "main", "commit": "c5827153f8a955886f1b38eaea6998c067d2992f" },
+  "nvim-rip-substitute": { "branch": "main", "commit": "9527be237ae2d1c662666ac65a2239fd680bf95c" },
   "nvim-web-devicons": { "branch": "master", "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856" },
   "persisted.nvim": { "branch": "main", "commit": "0a9eebf5cc92b1113a382a660ee73f21ffd62ae7" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },

@@ -8,6 +8,7 @@ return {
 			silent = true,
 			filetypes = {
 				["*"] = true,
+				["rip-substitute"] = false,
 			},
 		})
 
