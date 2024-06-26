@@ -18,7 +18,6 @@
   "dial.nvim": { "branch": "master", "commit": "750f802879c90ea51f92b68c35fa562ee575804a" },
   "dressing.nvim": { "branch": "master", "commit": "6741f1062d3dc6e4755367a7e9b347b553623f04" },
   "fix-auto-scroll.nvim": { "branch": "main", "commit": "c211a42f4030c9ed03a1456919917cdf1a193bd9" },
-  "floating-help": { "branch": "main", "commit": "39caa47417a1b59fbc5240c5d5b856ae9c62e916" },
   "fold-cycle.nvim": { "branch": "main", "commit": "20e9b468b771ebf33b6806a0e872eee53c5a20c9" },
   "full_visual_line.nvim": { "branch": "master", "commit": "c6375ff50338ac6069aec99fb9adfaadc9174618" },
   "gitlinker.nvim": { "branch": "master", "commit": "cc59f732f3d043b626c8702cb725c82e54d35c25" },
