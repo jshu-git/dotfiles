@@ -1,6 +1,6 @@
 return {
 	"dnlhc/glance.nvim",
-	cmd = "Glance",
+	event = "LspAttach",
 	config = function()
 		local glance = require("glance")
 		local actions = glance.actions
