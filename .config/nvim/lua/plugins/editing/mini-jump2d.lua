@@ -10,7 +10,7 @@ return {
     })
 
     -- jump to any word
-    vim.keymap.set("n", "gw", function()
+    vim.keymap.set({ "n", "x", "o" }, "gw", function()
       local opts =
         vim.tbl_deep_extend("force", jump2d.builtin_opts.word_start, {
           view = { n_steps_ahead = 1 },
@@ -18,7 +18,6 @@ return {
           allowed_windows = { not_current = false },
         })
       jump2d.start(opts)
-      -- vim.api.nvim_command("normal! zz")
     end, { desc = "Jump (Word)" })
   end,
 }
