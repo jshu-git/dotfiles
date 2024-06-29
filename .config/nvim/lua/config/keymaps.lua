@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.keymap.set({ "n", "x" }, "<space>", "<nop>")
-
 vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<CR>")
+
 -- leader
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
@@ -23,7 +23,6 @@ vim.keymap.set("n", "<leader>ti", "<cmd>Inspect<CR>", { desc = "Inspect" })
 
 -- movement
 vim.keymap.set("n", "<BS>", "<C-^>")
-vim.keymap.set("n", "`", "%", { remap = true })
 vim.keymap.set({ "n", "x" }, "j", function()
   return vim.v.count > 0 and "j" or "gj"
 end, { expr = true })
@@ -45,7 +44,6 @@ vim.keymap.set({ "n", "x", "o" }, "9", "$")
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<CR>", '"_ciw')
 vim.keymap.set("n", "gG", "ggVG", { desc = "Select All" })
-vim.keymap.set("n", "<C-r>", ".")
 vim.keymap.set({ "n", "x" }, ";", ":")
 vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "Append Comma" })
 vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Append Semicolon" })
@@ -117,13 +115,14 @@ vim.keymap.set("x", "<CR>", '"_c')
 vim.keymap.set("x", "V", "j")
 vim.keymap.set("x", "<C-q>", "j")
 
--- insert/command mode (emacs) https://github.com/tscolari/nvim/blob/main/lua/keyboard.lua#L26
-vim.keymap.set({ "i", "c" }, "<C-a>", "<Home>")
-vim.keymap.set({ "i", "c" }, "<C-e>", "<End>")
+-- insert/command mode
 vim.keymap.set({ "i", "c" }, "<C-h>", "<Left>")
 vim.keymap.set({ "i", "c" }, "<C-l>", "<Right>")
 vim.keymap.set({ "i", "c" }, "<C-k>", "<Up>")
 vim.keymap.set({ "i", "c" }, "<C-j>", "<Down>")
+-- emacs https://github.com/tscolari/nvim/blob/main/lua/keyboard.lua#L26
+vim.keymap.set({ "i", "c" }, "<C-a>", "<Home>")
+vim.keymap.set({ "i", "c" }, "<C-e>", "<End>")
 vim.keymap.set({ "i", "c" }, "<C-d>", "<Del>")
 vim.keymap.set({ "i", "c" }, "<A-d>", "<C-Right><C-w>")
 

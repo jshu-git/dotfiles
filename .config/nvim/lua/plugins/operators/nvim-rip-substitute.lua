@@ -1,6 +1,7 @@
 return {
   "chrisgrieser/nvim-rip-substitute",
   config = function()
+    -- note: full-visual-line makes range matches not work
     local rip = require("rip-substitute")
     rip.setup({
       popupWin = {
