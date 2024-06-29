@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
-    if vim.colorscheme ~= "arctic" then
+    if vim.g.colors_name == "arctic" then
       -- defaults
       -- vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
       vim.api.nvim_set_hl(0, "Pmenu", { link = "Normal" })
@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
         "MiniPickMatchRanges",
         { link = "MiniPickBorderText" }
       )
-      vim.api.nvim_set_hl(0, "MiniCursorWord", { link = "IncSearch" })
+      vim.api.nvim_set_hl(0, "MiniCursorWord", { link = "Search" })
 
       -- barbar
       vim.api.nvim_set_hl(0, "BufferTabPageFill", { link = "Normal" })
@@ -43,6 +43,22 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
       -- lazygit
       vim.api.nvim_set_hl(0, "LazyGitBorder", { link = "FloatBorder" })
+
+      -- elseif vim.g.colors_name == "rose-pine-moon" then
+      -- -- defaults
+      -- vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+      -- vim.api.nvim_set_hl(0, "Pmenu", { link = "Normal" })
+      -- -- copilot
+      --
+      -- vim.api.nvim_set_hl(0, "CopilotSuggestion", { link = "NonText" })
+      -- vim.api.nvim_set_hl(0, "CopilotAnnotation", { link = "NonText" })
+      -- vim.api.nvim_set_hl(0, "NeoCodeiumSuggestion", { link = "NonText" })
+      -- vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "Search" })
+      -- -- mini
+      -- vim.api.nvim_set_hl(0, "MiniJump", { link = "Search" })
+      -- vim.api.nvim_set_hl(0, "MiniCursorWord", { link = "Search" })
+      -- -- barbar
+      -- vim.api.nvim_set_hl(0, "BufferTabPageFill", { link = "Normal" })
     end
   end,
 })
