@@ -3,6 +3,9 @@ return {
   config = function()
     local rip = require("rip-substitute")
     rip.setup({
+      popupWin = {
+        hideSearchReplaceLabels = true,
+      },
       prefill = {
         startInReplaceLineIfPrefill = true,
       },
