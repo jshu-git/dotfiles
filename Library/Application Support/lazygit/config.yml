@@ -6,7 +6,7 @@ gui:
   showListFooter: false
   showBottomLine: false
   nerdFontsVersion: "3"
-  commitHashLength: 0
+  commitHashLength: 4
   showDivergenceFromBaseBranch: arrowAndNumber
   border: single
 
