@@ -2,6 +2,8 @@ return {
   "mei28/luminate.nvim",
   event = "VeryLazy",
   config = function()
-    require("luminate").setup()
+    require("luminate").setup({
+      duration = 200,
+    })
   end,
 }
