@@ -25,13 +25,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
       -- barbar
       vim.api.nvim_set_hl(0, "BufferTabPageFill", { link = "Normal" })
 
-      -- highlight undo
-      vim.api.nvim_set_hl(0, "HighlightUndo", { link = "Search" })
-      vim.api.nvim_set_hl(0, "HighlightRedo", { link = "Search" })
-
-      -- sentiment
-      vim.api.nvim_set_hl(0, "MatchParen", { link = "Search" })
-
       -- glance
       vim.api.nvim_set_hl(0, "GlanceListNormal", { link = "StatusLine" })
       vim.api.nvim_set_hl(0, "GlanceWinBarTitle", { link = "StatusLine" })
@@ -43,6 +36,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
       -- lazygit
       vim.api.nvim_set_hl(0, "LazyGitBorder", { link = "FloatBorder" })
+
+      -- sentiment
+      -- vim.api.nvim_set_hl(0, "MatchParen", { link = "Search" })
 
       -- elseif vim.g.colors_name == "rose-pine-moon" then
       -- -- defaults
