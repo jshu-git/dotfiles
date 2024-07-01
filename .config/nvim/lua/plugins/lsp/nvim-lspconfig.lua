@@ -93,6 +93,7 @@ return {
           basedpyright = {
             analysis = {
               typeCheckingMode = "off",
+              diagnosticMode = "openFilesOnly",
             },
           },
           python = {},
