@@ -4,6 +4,9 @@ return {
   config = function()
     require("luminate").setup({
       duration = 200,
+      paste = {
+        enabled = false,
+      },
     })
   end,
 }
