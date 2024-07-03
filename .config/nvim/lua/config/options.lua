@@ -3,6 +3,7 @@ vim.opt.pumblend = 10
 vim.opt.pumheight = 5
 vim.opt.winblend = 0
 vim.opt.laststatus = 3
+vim.opt.splitkeep = "screen"
 
 -- tabs/indents
 vim.opt.tabstop = 4
