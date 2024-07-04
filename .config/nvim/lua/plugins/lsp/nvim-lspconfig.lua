@@ -15,6 +15,7 @@ return {
         end
 
         require("lsp_signature").on_attach({}, bufnr)
+
         map("gs", require("pretty_hover").hover, "Hover")
         map("ga", vim.lsp.buf.code_action, "Code Action")
         map("gd", "<cmd>Glance definitions<CR>", "Goto Definition")
