@@ -2,11 +2,12 @@ return {
   "echasnovski/mini.notify",
   config = function()
     local notify = require("mini.notify")
+    vim.notify = notify.make_notify()
+
     notify.setup({
       window = { winblend = 0 },
     })
 
-    vim.notify = notify.make_notify()
     vim.keymap.set(
       "n",
       "<leader>tt",
