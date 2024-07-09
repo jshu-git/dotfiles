@@ -4,20 +4,15 @@ return {
     local gitsigns = require("gitsigns")
     gitsigns.setup({
       signs = {
-        -- add = { text = "▌" },
-        -- change = { text = "▌" },
+        add = { text = "▌" },
+        change = { text = "▌" },
       },
-      -- current_line_blame = true,
       current_line_blame_opts = {
         virt_text_pos = "right_align",
         delay = 10,
         ignore_whitespace = true,
       },
       current_line_blame_formatter = "<author> (<author_time:%R>): <summary> ",
-      diff_opts = {
-        vertical = false,
-        ignore_blank_lines = true,
-      },
     })
 
     -- toggles
@@ -38,18 +33,18 @@ return {
     vim.keymap.set("n", "<leader>gb", gitsigns.blame_line, { desc = "Blame" })
 
     -- hunks
-    vim.keymap.set(
-      "n",
-      "<leader>gs",
-      gitsigns.preview_hunk,
-      { desc = "Hover Hunk" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>ga",
-      gitsigns.stage_hunk,
-      { desc = "Stage Hunk" }
-    )
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>gs",
+    --   gitsigns.preview_hunk,
+    --   { desc = "Hover Hunk" }
+    -- )
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>ga",
+    --   gitsigns.stage_hunk,
+    --   { desc = "Stage Hunk" }
+    -- )
     vim.keymap.set(
       "n",
       "<leader>gr",
@@ -71,9 +66,9 @@ return {
     -- vim.keymap.set("n", "<leader>gd", gitsigns.diffthis, { desc = "Diff" })
 
     -- visual
-    vim.keymap.set("v", "<leader>ga", function()
-      gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-    end, { desc = "Stage Hunk" })
+    -- vim.keymap.set("v", "<leader>ga", function()
+    --   gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+    -- end, { desc = "Stage Hunk" })
     vim.keymap.set("v", "<leader>gr", function()
       gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
     end, { desc = "Reset Hunk" })
