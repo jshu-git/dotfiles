@@ -154,21 +154,21 @@ return {
     end, { desc = "Special Paths" })
 
     -- git
-    vim.keymap.set(
-      "n",
-      "<leader>gf",
-      extra.pickers.git_files,
-      { desc = "Git Files (Tracked)" }
-    )
-    vim.keymap.set("n", "<leader>gm", function()
-      extra.pickers.git_files({ scope = "modified" })
-    end, { desc = "Git Files (Modified)" })
-    vim.keymap.set(
-      "n",
-      "<leader>gc",
-      extra.pickers.git_commits,
-      { desc = "Git Commits" }
-    )
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>gf",
+    --   extra.pickers.git_files,
+    --   { desc = "Git Files (Tracked)" }
+    -- )
+    -- vim.keymap.set("n", "<leader>gm", function()
+    --   extra.pickers.git_files({ scope = "modified" })
+    -- end, { desc = "Git Files (Modified)" })
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>gc",
+    --   extra.pickers.git_commits,
+    --   { desc = "Git Commits" }
+    -- )
 
     -- sessions
     vim.keymap.set("n", "<leader>fs", function()

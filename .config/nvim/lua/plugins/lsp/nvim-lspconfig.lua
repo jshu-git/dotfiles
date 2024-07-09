@@ -3,8 +3,8 @@ return {
   config = function()
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("LspConfig", { clear = true }),
-      callback = function(args)
-        local bufnr = args.buf
+      callback = function(event)
+        local bufnr = event.buf
         local map = function(keys, func, desc)
           vim.keymap.set(
             "n",
@@ -15,6 +15,13 @@ return {
         end
 
         require("lsp_signature").on_attach({}, bufnr)
+        vim.keymap.set("n", "cr", function()
+          return ":IncRename " .. vim.fn.expand("<cword>")
+        end, {
+          buffer = bufnr,
+          desc = "LSP: Rename Variable",
+          expr = true,
+        })
 
         map("gs", require("pretty_hover").hover, "Hover")
         map("ga", vim.lsp.buf.code_action, "Code Action")
@@ -23,13 +30,6 @@ return {
         -- 	require("mini.extra").pickers.lsp({ scope = "definition" })
         -- end, "Goto Definition (Pick)")
         map("gr", "<cmd>Glance references<CR>", "Goto References")
-        vim.keymap.set("n", "gR", function()
-          return ":IncRename " .. vim.fn.expand("<cword>")
-        end, {
-          buffer = bufnr,
-          desc = "LSP: Rename Variable",
-          expr = true,
-        })
 
         -- diagnostics
         map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
@@ -47,7 +47,7 @@ return {
         map("<leader>lr", "<cmd>LspRestart<CR>", "Restart")
 
         -- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L510
-        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
         -- toggle inlay hints
         if
           client

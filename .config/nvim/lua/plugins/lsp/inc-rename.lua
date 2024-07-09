@@ -3,6 +3,7 @@ return {
   event = "LspAttach",
   config = function()
     require("inc_rename").setup({
+      save_in_cmdline_history = false,
       input_buffer_type = "dressing",
     })
   end,

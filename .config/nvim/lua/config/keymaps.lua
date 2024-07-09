@@ -78,13 +78,12 @@ vim.keymap.set(
   "<cmd>pu!<CR>==",
   { desc = "Paste Before Line" }
 )
-
 -- files
-vim.keymap.set("n", "gy", function()
+vim.keymap.set("n", "yp", function()
   vim.fn.setreg("+", vim.fn.expand("%"))
   vim.notify("Copied: " .. vim.fn.expand("%"))
 end, { desc = "Copy Path (Relative)" })
-vim.keymap.set("n", "gY", function()
+vim.keymap.set("n", "yP", function()
   vim.fn.setreg("+", vim.fn.expand("%:p"))
   vim.notify("Copied: " .. vim.fn.expand("%:p"))
 end, { desc = "Copy Path (Full)" })
