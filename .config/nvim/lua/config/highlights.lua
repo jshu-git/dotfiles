@@ -1,5 +1,4 @@
 vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
   callback = function()
     if vim.g.colors_name == "arctic" then
       -- defaults
