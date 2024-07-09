@@ -38,7 +38,6 @@ vim.keymap.set(
   "getline('.')[0 : col('.') - 2] =~# '^\\s\\+$' ? '0' : '^'",
   { expr = true }
 )
-vim.keymap.set({ "n", "x", "o" }, "9", "$")
 
 -- editing
 vim.keymap.set("n", "U", "<C-r>")

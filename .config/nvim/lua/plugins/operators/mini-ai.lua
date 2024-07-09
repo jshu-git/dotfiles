@@ -1,7 +1,17 @@
 return {
   "echasnovski/mini.ai",
+  dependencies = {
+    "echasnovski/mini.extra",
+  },
   config = function()
-    require("mini.ai").setup()
+    local gen_ai_spec = require("mini.extra").gen_ai_spec
+    require("mini.ai").setup({
+      custom_textobjects = {
+        B = gen_ai_spec.buffer(),
+        L = gen_ai_spec.line(),
+        N = gen_ai_spec.number(),
+      },
+    })
     vim.keymap.set("n", "<S-CR>", "ciq", { remap = true })
     vim.keymap.set("n", "<C-CR>", "cib", { remap = true })
   end,
