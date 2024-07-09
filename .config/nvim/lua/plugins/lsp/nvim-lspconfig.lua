@@ -13,8 +13,12 @@ return {
             { buffer = bufnr, desc = "LSP: " .. desc }
           )
         end
+        local extra = require("mini.extra")
 
+        -- lsp_signature
         require("lsp_signature").on_attach({}, bufnr)
+
+        -- inc-rename
         vim.keymap.set("n", "cr", function()
           return ":IncRename " .. vim.fn.expand("<cword>")
         end, {
@@ -22,6 +26,7 @@ return {
           desc = "LSP: Rename Variable",
           expr = true,
         })
+        map("cR", ":IncRename ", "Rename Variable")
 
         map("gs", require("pretty_hover").hover, "Hover")
         map("ga", vim.lsp.buf.code_action, "Code Action")
@@ -34,10 +39,10 @@ return {
         -- diagnostics
         map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
         map("<leader>fd", function()
-          require("mini.extra").pickers.diagnostic({ scope = "current" })
+          extra.pickers.diagnostic({ scope = "current" })
         end, "Diagnostics (Buffer)")
         map("<leader>fD", function()
-          require("mini.extra").pickers.diagnostic({ scope = "all" })
+          extra.pickers.diagnostic({ scope = "all" })
         end, "Diagnostics (All)")
         map("[d", vim.diagnostic.goto_prev, "Previous Diagnostic")
         map("]d", vim.diagnostic.goto_next, "Next Diagnostic")

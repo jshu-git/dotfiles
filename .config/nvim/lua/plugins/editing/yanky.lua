@@ -1,5 +1,6 @@
 return {
   "gbprod/yanky.nvim",
+  event = "VeryLazy",
   config = function()
     local actions = require("yanky.picker").actions
     require("yanky").setup({
@@ -19,8 +20,8 @@ return {
     vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
     -- vim.keymap.set({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
     -- vim.keymap.set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
-    -- vim.keymap.set("n", "<c-n>", "<Plug>(YankyPreviousEntry)")
-    -- vim.keymap.set("n", "<c-p>", "<Plug>(YankyNextEntry)")
+    vim.keymap.set("n", "<c-n>", "<Plug>(YankyPreviousEntry)")
+    vim.keymap.set("n", "<c-p>", "<Plug>(YankyNextEntry)")
 
     -- yank picker
     vim.keymap.set(
