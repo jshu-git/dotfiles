@@ -1,7 +1,11 @@
 return {
   "lewis6991/gitsigns.nvim",
+  dependencies = {
+    "echasnovski/mini.extra",
+  },
   config = function()
     local gitsigns = require("gitsigns")
+    local extra = require("mini.extra")
     gitsigns.setup({
       signs = {
         add = { text = "▌" },
@@ -57,24 +61,20 @@ return {
       gitsigns.reset_buffer,
       { desc = "Reset Buffer" }
     )
-    vim.keymap.set(
-      "n",
-      "<leader>gu",
-      gitsigns.undo_stage_hunk,
-      { desc = "Undo Stage Hunk" }
-    )
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>gu",
+    --   gitsigns.undo_stage_hunk,
+    --   { desc = "Undo Stage Hunk" }
+    -- )
     -- vim.keymap.set("n", "<leader>gd", gitsigns.diffthis, { desc = "Diff" })
 
     -- visual
-    -- vim.keymap.set("v", "<leader>ga", function()
-    --   gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-    -- end, { desc = "Stage Hunk" })
-    vim.keymap.set("v", "<leader>gr", function()
+    vim.keymap.set("", "<leader>gr", function()
       gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
     end, { desc = "Reset Hunk" })
 
     -- text object
-    vim.keymap.set({ "o", "x" }, "ih", gitsigns.select_hunk)
     vim.keymap.set({ "o", "x" }, "ah", gitsigns.select_hunk)
 
     -- navigate
@@ -84,5 +84,22 @@ return {
     vim.keymap.set("n", "]h", function()
       gitsigns.nav_hunk("next")
     end, { desc = "Next Hunk" })
+
+    -- pickers
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>gf",
+    --   extra.pickers.git_files,
+    --   { desc = "Git Files (Tracked)" }
+    -- )
+    -- vim.keymap.set("n", "<leader>gm", function()
+    --   extra.pickers.git_files({ scope = "modified" })
+    -- end, { desc = "Git Files (Modified)" })
+    vim.keymap.set(
+      "n",
+      "<leader>gc",
+      extra.pickers.git_commits,
+      { desc = "Commits" }
+    )
   end,
 }
