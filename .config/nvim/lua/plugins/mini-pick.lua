@@ -136,6 +136,11 @@ return {
           vim.env.HOME .. "/p4/cacl3/test/lib/netapp_ontap/resources/"
         )
         table.insert(special_paths, vim.env.HOME .. "/.packages/")
+        table.insert(
+          special_paths,
+          "/x/eng/rlse/DOT/devN/test/tools/smoke/itc/conf/class_hierarchy.cnf"
+        )
+        table.insert(special_paths, vim.env.HOME .. "/notes/")
       end
       table.sort(special_paths)
 
