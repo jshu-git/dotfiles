@@ -1,5 +1,6 @@
 return {
-  "FabijanZulj/blame.nvim",
+  -- "FabijanZulj/blame.nvim",
+  "jshu-git/blame.nvim",
   config = function()
     -- custom blame format
     local date_author_message = function(line_porcelain, config, idx)
