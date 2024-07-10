@@ -11,6 +11,8 @@ return {
         add = { text = "▌" },
         change = { text = "▌" },
       },
+      signs_staged_enable = false,
+      attach_to_untracked = true,
       current_line_blame_opts = {
         virt_text_pos = "right_align",
         delay = 10,
@@ -34,7 +36,12 @@ return {
     )
 
     -- blame
-    vim.keymap.set("n", "<leader>gb", gitsigns.blame_line, { desc = "Blame" })
+    vim.keymap.set("n", "<leader>gb", function()
+      gitsigns.blame_line({
+        full = true,
+        ignore_whitespace = true,
+      })
+    end, { desc = "Blame" })
 
     -- hunks
     -- vim.keymap.set(
