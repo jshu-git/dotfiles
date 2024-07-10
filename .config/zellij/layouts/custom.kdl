@@ -24,8 +24,12 @@ layout {
             }
         }
     }
+
     tab name=".config" cwd="~/.config" focus=true
     tab name="rust" cwd="~/git/rustlings/"
+    tab name="shokz" cwd="~/git/shokz_downloader/"
+    tab name="leet" cwd="~/git/leetcode/"
+
     // tab name="ontap.api" cwd="~/git/ontap/api"
     // tab name="ontap.common" cwd="~/git/ontap/common"
     // tab name="ontap.x" cwd="~/git/ontap/ontap-x"
@@ -63,24 +67,4 @@ layout {
             pane focus=true { x 10; y 10; width "90%"; height "90%"; }
         }
     }
-    // swap_floating_layout name="spread" {
-    //     floating_panes max_panes=1 {
-    //         pane {y "50%"; x "50%"; }
-    //     }
-    //     floating_panes max_panes=2 {
-    //         pane { x "1%"; y "25%"; width "45%"; }
-    //         pane { x "50%"; y "25%"; width "45%"; }
-    //     }
-    //     floating_panes max_panes=3 {
-    //         pane focus=true { y "55%"; width "45%"; height "45%"; }
-    //         pane { x "1%"; y "1%"; width "45%"; }
-    //         pane { x "50%"; y "1%"; width "45%"; }
-    //     }
-    //     floating_panes max_panes=4 {
-    //        pane { x "1%"; y "55%"; width "45%"; height "45%"; }
-    //        pane focus=true { x "50%"; y "55%"; width "45%"; height "45%"; }
-    //        pane { x "1%"; y "1%"; width "45%"; height "45%"; }
-    //        pane { x "50%"; y "1%"; width "45%"; height "45%"; }
-    //    }
-    // }
 }
