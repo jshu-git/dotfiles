@@ -74,7 +74,14 @@ return {
     --   gitsigns.undo_stage_hunk,
     --   { desc = "Undo Stage Hunk" }
     -- )
-    -- vim.keymap.set("n", "<leader>gd", gitsigns.diffthis, { desc = "Diff" })
+
+    -- diff
+    vim.keymap.set("n", "<leader>gd", function()
+      gitsigns.diffthis("~1")
+    end, { desc = "Diff (~1)" })
+    vim.keymap.set("n", "<leader>gD", function()
+      gitsigns.diffthis("~" .. vim.fn.input("Commit: "))
+    end, { desc = "Diff (Custom)" })
 
     -- visual
     vim.keymap.set("", "<leader>gr", function()
