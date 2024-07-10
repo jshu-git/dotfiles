@@ -10,23 +10,15 @@ return {
           if num > 1 then
             time_word = time_word .. "s"
           end
-
           return num .. " " .. time_word .. " ago"
         end
-
         local current_timestamp = os.time()
         local elapsed = current_timestamp - timestamp
-
-        if elapsed == 0 then
-          return "a moment ago"
-        end
-
         local minute_seconds = 60
         local hour_seconds = minute_seconds * 60
         local day_seconds = hour_seconds * 24
         local month_seconds = day_seconds * 30
         local year_seconds = month_seconds * 12
-
         if elapsed < minute_seconds then
           return to_relative_string(elapsed, 1, "second")
         elseif elapsed < hour_seconds then
@@ -92,7 +84,6 @@ return {
     end
 
     require("blame").setup({
-      date_format = "%m/%d/%y",
       merge_consecutive = true,
       format_fn = date_author_message,
     })
