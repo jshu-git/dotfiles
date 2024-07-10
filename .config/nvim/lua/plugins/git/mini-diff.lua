@@ -13,7 +13,7 @@ return {
       },
       mappings = {
         apply = "",
-        reset = "<leader>gr",
+        reset = "gH",
         textobject = "ah",
       },
     })
@@ -26,8 +26,14 @@ return {
     )
     vim.keymap.set(
       "n",
+      "<leader>gr",
+      "gH" .. "ah",
+      { desc = "Reset Hunk", remap = true }
+    )
+    vim.keymap.set(
+      "n",
       "<leader>gR",
-      "<leader>gr" .. "iB",
+      "gH" .. "iB",
       { desc = "Reset Buffer", remap = true }
     )
   end,
