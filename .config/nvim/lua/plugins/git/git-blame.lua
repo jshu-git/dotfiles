@@ -35,7 +35,7 @@ return {
             },
             {
               textValue = summary,
-              hl = "Normal",
+              hl = "NormalNC",
             },
           },
           format = "%s %s %s",
