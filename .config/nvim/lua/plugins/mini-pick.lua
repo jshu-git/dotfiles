@@ -42,9 +42,7 @@ return {
     -- helpers
     local function get_cwd_opts(name)
       return {
-        source = {
-          name = name .. " (" .. vim.fn.getcwd() .. ")",
-        },
+        source = { name = name .. " (" .. vim.fn.getcwd() .. ")" },
       }
     end
     local function get_relative_opts(name)
@@ -124,23 +122,22 @@ return {
       local special_paths = {
         vim.fn.stdpath("data"),
       }
+      local paths = {}
       if vim.env.SSH_CLIENT == nil then
-        table.insert(
-          special_paths,
-          vim.env.HOME .. "/Library/CloudStorage/Dropbox/"
-        )
-        table.insert(special_paths, vim.env.HOME .. "/Desktop/")
+        paths = {
+          vim.env.HOME .. "/Library/CloudStorage/Dropbox/",
+          vim.env.HOME .. "/Desktop/",
+        }
       else
-        table.insert(
-          special_paths,
-          vim.env.HOME .. "/p4/cacl3/test/lib/netapp_ontap/resources/"
-        )
-        table.insert(special_paths, vim.env.HOME .. "/.packages/")
-        table.insert(
-          special_paths,
-          "/x/eng/rlse/DOT/devN/test/tools/smoke/itc/conf/class_hierarchy.cnf"
-        )
-        table.insert(special_paths, vim.env.HOME .. "/notes/")
+        paths = {
+          vim.env.HOME .. "/p4/cacl3/test/lib/netapp_ontap/resources/",
+          vim.env.HOME .. "/.packages/",
+          vim.env.HOME .. "/notes/",
+          "/x/eng/rlse/DOT/devN/test/tools/smoke/itc/conf/class_hierarchy.cnf",
+        }
+      end
+      for _, path in ipairs(paths) do
+        table.insert(special_paths, path)
       end
       table.sort(special_paths)
 
@@ -162,13 +159,29 @@ return {
     vim.keymap.set("n", "<leader>fs", function()
       pick.builtin.files({}, {
         source = {
-          name = "Sessions (persisted.nvim)",
+          name = "Sessions",
           cwd = require("persisted.config").options.save_dir,
           items = require("persisted").list(),
         },
       })
     end, { desc = "Sessions" })
 
+    -- vim
+    vim.keymap.set("n", "<leader>fh", pick.builtin.help, { desc = "Help" })
+    vim.keymap.set(
+      "n",
+      "<leader>fl",
+      extra.pickers.hl_groups,
+      { desc = "Highlights" }
+    )
+
+    -- commands
+    vim.keymap.set(
+      "n",
+      "<leader>fc",
+      extra.pickers.commands,
+      { desc = "Commands" }
+    )
     -- mini builtin registry
     vim.keymap.set("n", "<leader>fC", function()
       local items =
@@ -183,32 +196,26 @@ return {
       return pick.registry[chosen_picker_name]()
     end, { desc = "Commands (mini.pick)" })
 
-    -- vim
-    vim.keymap.set(
-      "n",
-      "<leader>fc",
-      extra.pickers.commands,
-      { desc = "Commands" }
-    )
-    vim.keymap.set("n", "<leader>fh", pick.builtin.help, { desc = "Help" })
-    vim.keymap.set(
-      "n",
-      "<leader>fl",
-      extra.pickers.hl_groups,
-      { desc = "Highlights" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>fk",
-      extra.pickers.keymaps,
-      { desc = "Keymaps" }
-    )
+    -- keymaps
+    vim.keymap.set("n", "<leader>fk", function()
+      extra.pickers.keymaps({ scope = "global" })
+    end, { desc = "Keymaps (global)" })
+    vim.keymap.set("n", "<leader>fK", function()
+      extra.pickers.keymaps({ scope = "buf" })
+    end, { desc = "Keymaps (buffer)" })
+
+    -- options
     vim.keymap.set(
       "n",
       "<leader>fo",
       extra.pickers.options,
-      { desc = "Options" }
+      { desc = "Options (all)" }
     )
+    vim.keymap.set("n", "<leader>fO", function()
+      extra.pickers.options({ scope = "buf" })
+    end, { desc = "Options (buffer)" })
+
+    -- colorschemes
     vim.keymap.set("n", "<leader>ft", function()
       pick.start({
         source = {
@@ -217,7 +224,7 @@ return {
           choose = function(item)
             vim.cmd("colorscheme " .. item)
           end,
-          preview = function(buf_id, item)
+          preview = function(item)
             vim.cmd("colorscheme " .. item)
           end,
         },

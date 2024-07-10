@@ -15,6 +15,14 @@ return {
         end
         local extra = require("mini.extra")
 
+        -- pickers
+        map("go", function()
+          extra.pickers.lsp({ scope = "document_symbol" })
+        end, "Symbols (Document)")
+        map("gO", function()
+          extra.pickers.lsp({ scope = "workspace_symbol" })
+        end, "Symbols (Workspace)")
+
         -- lsp_signature
         require("lsp_signature").on_attach({}, bufnr)
 
