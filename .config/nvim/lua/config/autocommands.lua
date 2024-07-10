@@ -30,6 +30,17 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- hide certain options for some filetypes
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {
+    "git",
+  },
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+  end,
+})
+
 -- LazyVim
 -- close some filetypes with <esc>
 vim.api.nvim_create_autocmd("FileType", {

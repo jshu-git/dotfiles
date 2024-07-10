@@ -16,16 +16,6 @@ return {
       git.show_at_cursor({ split = "vertical" })
     end, { desc = "Show (Cursor)" })
 
-    vim.api.nvim_create_autocmd("FileType", {
-      pattern = {
-        "git",
-      },
-      callback = function()
-        vim.opt_local.number = false
-        vim.opt_local.relativenumber = false
-      end,
-    })
-
     -- pickers
     -- vim.keymap.set(
     --   "n",

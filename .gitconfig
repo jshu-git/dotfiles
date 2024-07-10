@@ -1,0 +1,12 @@
+[user]
+	name = jshu
+	email = jasonshu@terpmail.umd.edu
+[core]
+	editor = nvim
+	pager = delta
+[pull]
+	rebase = true
+	autoStash = true
+[delta]
+	line-numbers = true
+	zero-style = dim syntax
