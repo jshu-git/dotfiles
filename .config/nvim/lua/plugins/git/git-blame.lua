@@ -46,7 +46,7 @@ return {
           values = {
             {
               textValue = "Not Committed",
-              hl = "NonText",
+              hl = "Whitespace",
             },
           },
           format = "%s",
@@ -56,7 +56,7 @@ return {
     end
 
     require("blame").setup({
-      date_format = "%m-%d-%y",
+      date_format = "%m/%d/%y",
       merge_consecutive = true,
       format_fn = date_author_message,
     })
