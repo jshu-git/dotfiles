@@ -16,12 +16,12 @@ return {
       git.show_at_cursor({ split = "vertical" })
     end, { desc = "Show (Cursor)" })
 
-    vim.keymap.set(
-      { "n", "x" },
-      "<leader>gb",
-      "<cmd>Git blame -- %<CR>",
-      { desc = "Blame" }
-    )
+    -- vim.keymap.set(
+    --   { "n", "x" },
+    --   "<leader>gb",
+    --   "<cmd>Git blame -- %<CR>",
+    --   { desc = "Blame" }
+    -- )
 
     vim.api.nvim_create_autocmd("FileType", {
       pattern = {
@@ -32,5 +32,22 @@ return {
         vim.opt_local.relativenumber = false
       end,
     })
+
+    -- pickers
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>gf",
+    --   extra.pickers.git_files,
+    --   { desc = "Git Files (Tracked)" }
+    -- )
+    -- vim.keymap.set("n", "<leader>gm", function()
+    --   extra.pickers.git_files({ scope = "modified" })
+    -- end, { desc = "Git Files (Modified)" })
+    vim.keymap.set(
+      "n",
+      "<leader>gc",
+      extra.pickers.git_commits,
+      { desc = "Commits" }
+    )
   end,
 }
