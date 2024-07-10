@@ -12,6 +12,12 @@ vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = "New Line Above" })
 vim.keymap.set("n", "<leader>n", "<cmd>enew<CR>", { desc = "Scratch Buffer" })
 vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 vim.keymap.set("n", "<leader>d", "<cmd>bd<CR>", { desc = "Delete Buffer" })
+vim.keymap.set(
+  "n",
+  "<leader>D",
+  "<cmd>bd!<CR>",
+  { desc = "Delete Buffer (Force)" }
+)
 -- toggles
 vim.keymap.set(
   "n",

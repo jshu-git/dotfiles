@@ -98,7 +98,7 @@ return {
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<C-x>"] = cmp.mapping(function(fallback)
+        ["<C-x>"] = cmp.mapping(function()
           if cmp.visible() then
             cmp.abort()
           else
@@ -138,7 +138,7 @@ return {
         completeopt = "menu,menuone,noinsert,noselect",
       },
       mapping = cmp.mapping.preset.cmdline({
-        ["<C-x>"] = cmp.mapping(function(fallback)
+        ["<C-x>"] = cmp.mapping(function()
           if cmp.visible() then
             cmp.abort()
           else
@@ -157,7 +157,7 @@ return {
         completeopt = "menu,menuone,noinsert,noselect",
       },
       mapping = cmp.mapping.preset.cmdline({
-        ["<C-x>"] = cmp.mapping(function(fallback)
+        ["<C-x>"] = cmp.mapping(function()
           if cmp.visible() then
             cmp.abort()
           else
@@ -166,7 +166,7 @@ return {
         end, { "c" }),
       }),
       sources = cmp.config.sources({
-        { name = "cmdline_history", max_item_count = 3 },
+        { name = "cmdline_history", max_item_count = 2 },
         { name = "cmdline", max_item_count = 5 },
         { name = "async_path" },
       }),

@@ -117,6 +117,14 @@ return {
       extra.pickers.buf_lines({ scope = "all" })
     end, { desc = "Grep Buffer (All)" })
 
+    -- git
+    vim.keymap.set(
+      "n",
+      "<leader>gc",
+      extra.pickers.git_commits,
+      { desc = "Commits" }
+    )
+
     -- special paths
     vim.keymap.set("n", "<leader>fp", function()
       local special_paths = {
@@ -224,7 +232,7 @@ return {
           choose = function(item)
             vim.cmd("colorscheme " .. item)
           end,
-          preview = function(item)
+          preview = function(buf_id, item)
             vim.cmd("colorscheme " .. item)
           end,
         },
