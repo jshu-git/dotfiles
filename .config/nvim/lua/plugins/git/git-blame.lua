@@ -20,9 +20,9 @@ return {
         local month_seconds = day_seconds * 30
         local year_seconds = month_seconds * 12
         if elapsed < minute_seconds then
-          return to_relative_string(elapsed, 1, "second")
+          return to_relative_string(elapsed, 1, "sec")
         elseif elapsed < hour_seconds then
-          return to_relative_string(elapsed, minute_seconds, "minute")
+          return to_relative_string(elapsed, minute_seconds, "min")
         elseif elapsed < day_seconds then
           return to_relative_string(elapsed, hour_seconds, "hour")
         elseif elapsed < month_seconds then
