@@ -1,0 +1,56 @@
+return {
+  "sindrets/diffview.nvim",
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    local actions = require("diffview.actions")
+    require("diffview").setup({
+      enhanced_diff_hl = true,
+      show_help_hints = false,
+      view = {
+        merge_tool = {
+          layout = "diff3_mixed",
+        },
+        file_history = {
+          winbar_info = true,
+        },
+      },
+      file_history_panel = {
+        win_config = { height = math.floor(0.2 * vim.o.lines) },
+      },
+      keymaps = {
+        view = {
+          ["<esc>"] = actions.close,
+        },
+      },
+    })
+
+    vim.keymap.set(
+      "n",
+      "<leader>gd",
+      "<cmd>DiffviewFileHistory %<cr>",
+      { desc = "Diff (File)" }
+    )
+    vim.keymap.set(
+      "x",
+      "<leader>gd",
+      ":<C-U>'<,'>DiffviewFileHistory<cr>",
+      { desc = "Diff (File)" }
+    )
+
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = {
+        "DiffviewFileHistory",
+      },
+      callback = function(event)
+        vim.keymap.set(
+          "n",
+          "<esc>",
+          "<cmd>tabclose<cr>",
+          { buffer = event.buf, silent = true }
+        )
+      end,
+    })
+  end,
+}
