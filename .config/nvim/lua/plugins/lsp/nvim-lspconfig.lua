@@ -79,7 +79,20 @@ return {
     local servers = {
       marksman = {},
       taplo = {},
-      lua_ls = {},
+      lua_ls = {
+        settings = {
+          Lua = {
+            hint = {
+              enable = true,
+            },
+            diagnostics = {
+              disable = { "missing-fields" },
+              globals = { "vim" },
+            },
+          },
+        },
+      },
+
       rust_analyzer = {
         settings = {
           ["rust-analyzer"] = {

@@ -8,8 +8,8 @@ return {
       height = math.floor(0.5 * vim.o.lines),
       border = {
         enable = true,
-        top_char = "━",
-        bottom_char = "━",
+        top_char = "▁",
+        bottom_char = "▔",
       },
       list = {
         width = 0.2,
@@ -19,10 +19,9 @@ return {
       },
       mappings = {
         list = {
-          ["<C-CR>"] = actions.jump,
           ["<C-v>"] = actions.jump_vsplit,
           ["<C-s>"] = actions.jump_split,
-          ["<CR>"] = actions.enter_win("preview"),
+          ["<C-CR>"] = actions.enter_win("preview"),
           ["<esc>"] = actions.close,
         },
         preview = {

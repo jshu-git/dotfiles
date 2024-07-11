@@ -3,10 +3,10 @@ return {
   config = function()
     -- default ui
     local signs = {
-      error = "󰅚",
-      warn = "󰀪",
-      hint = "󰌶",
-      info = "󰋽",
+      error = "󰅚 ",
+      warn = "󰀪 ",
+      hint = "󰌶 ",
+      info = "󰋽 ",
     }
     vim.diagnostic.config({
       virtual_text = false,

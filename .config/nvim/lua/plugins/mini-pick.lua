@@ -195,8 +195,11 @@ return {
       local items =
         vim.tbl_keys(vim.tbl_extend("force", pick.registry, extra.pickers))
       table.sort(items)
-      local source =
-        { items = items, name = "Registry", choose = function() end }
+      local source = {
+        items = items,
+        name = "Registry",
+        choose = function() end,
+      }
       local chosen_picker_name = pick.start({ source = source })
       if chosen_picker_name == nil then
         return
