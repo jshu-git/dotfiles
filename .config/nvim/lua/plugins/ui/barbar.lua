@@ -1,7 +1,7 @@
 return {
   "romgrk/barbar.nvim",
   dependencies = {
-    "nvim-tree/nvim-web-devicons",
+    "echasnovski/mini.icons",
   },
   config = function()
     require("barbar").setup({

@@ -11,6 +11,17 @@ vim.api.nvim_create_autocmd("ColorScheme", {
       vim.api.nvim_set_hl(0, "NeoCodeiumSuggestion", { link = "NonText" })
       vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "Search" })
 
+      -- mini icons
+      vim.api.nvim_set_hl(0, "MiniIconsAzure", { link = "MiniIconsBlue" })
+      vim.api.nvim_set_hl(0, "MiniIconsBlue", { link = "Directory" })
+      vim.api.nvim_set_hl(0, "MiniIconsCyan", { fg = "#70D3BF" })
+      vim.api.nvim_set_hl(0, "MiniIconsGreen", { link = "Comment" })
+      vim.api.nvim_set_hl(0, "MiniIconsGrey", { link = "NonText" })
+      vim.api.nvim_set_hl(0, "MiniIconsOrange", { fg = "#f9AE28" })
+      vim.api.nvim_set_hl(0, "MiniIconsPurple", { fg = "#AE81FF" })
+      -- vim.api.nvim_set_hl(0, "MiniIconsRed", { link = "ErrorMsg" })
+      -- vim.api.nvim_set_hl(0, "MiniIconsYellow", { link = "DiagnosticWarn" })
+
       -- mini
       vim.api.nvim_set_hl(0, "MiniJump", { link = "Search" })
       vim.api.nvim_set_hl(0, "MiniIndentScopeSymbol", { link = "Whitespace" })
