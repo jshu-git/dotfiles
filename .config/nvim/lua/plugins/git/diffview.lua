@@ -12,9 +12,6 @@ return {
         merge_tool = {
           layout = "diff3_mixed",
         },
-        file_history = {
-          winbar_info = true,
-        },
       },
       file_history_panel = {
         win_config = { height = math.floor(0.2 * vim.o.lines) },
@@ -23,14 +20,26 @@ return {
         view = {
           ["<esc>"] = actions.close,
         },
+        file_history_panel = {
+          ["g!"] = false,
+        },
       },
     })
 
+    vim.opt.fillchars:append({ diff = "╱" })
+
+    -- file history
     vim.keymap.set(
       "n",
       "<leader>gd",
       "<cmd>DiffviewFileHistory %<cr>",
       { desc = "Diff (File)" }
+    )
+    vim.keymap.set(
+      "n",
+      "<leader>gD",
+      "<cmd>DiffviewFileHistory<cr>",
+      { desc = "Diff (Branch)" }
     )
     vim.keymap.set(
       "x",
