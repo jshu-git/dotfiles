@@ -65,6 +65,7 @@ end, { expr = true })
 vim.keymap.set({ "n", "x" }, "x", '"_x')
 vim.keymap.set({ "n", "x" }, "c", '"_c')
 vim.keymap.set({ "n", "x" }, "C", '"_C')
+vim.keymap.set("n", "dD", '"_dd')
 -- smart dd https://old.reddit.com/r/neovim/comments/w0jzzv/smart_dd/
 vim.keymap.set("n", "dd", function()
   if vim.api.nvim_get_current_line():match("^%s*$") then
@@ -75,7 +76,6 @@ vim.keymap.set("n", "dd", function()
 end, { expr = true })
 
 -- yanking/pasting
-vim.keymap.set("x", "p", '"_dP')
 vim.keymap.set("n", "<leader>p", "<cmd>put<CR>", { desc = "Paste After Line" })
 vim.keymap.set(
   "n",
