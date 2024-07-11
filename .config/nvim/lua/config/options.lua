@@ -16,4 +16,3 @@ vim.opt.wrapscan = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.swapfile = false
 vim.opt.confirm = true
-vim.opt.commentstring = "// %s"
