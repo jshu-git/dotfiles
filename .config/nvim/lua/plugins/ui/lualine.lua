@@ -1,8 +1,5 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = {
-    "AndreM222/copilot-lualine",
-  },
   config = function()
     local function total_lines()
       return vim.api.nvim_buf_line_count(0) .. "L"
@@ -31,21 +28,6 @@ return {
           { "filename", path = 1 },
         },
         lualine_x = {
-          {
-            "copilot",
-            symbols = {
-              status = {
-                icons = {
-                  enabled = "",
-                  sleep = "",
-                  disabled = "",
-                  warning = "",
-                  unknown = "",
-                },
-              },
-              show_colors = true,
-            },
-          },
           { file_size },
         },
         lualine_y = {
@@ -58,7 +40,7 @@ return {
       inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { { "filename", path = 0 } },
+        lualine_c = {},
         lualine_x = {},
         lualine_y = {},
         lualine_z = {},
