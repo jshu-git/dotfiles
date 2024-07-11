@@ -21,7 +21,6 @@ return {
         { name = "nvim_lsp_signature_help" },
         { name = "lazydev", group_index = 0 },
         { name = "nvim_lsp", max_item_count = 5 },
-        -- { name = "nvim_lsp_signature_help" },
         { name = "buffer", max_item_count = 3 },
         { name = "calc" },
         { name = "async_path" },
