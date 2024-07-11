@@ -76,11 +76,11 @@ end, { expr = true })
 
 -- yanking/pasting
 vim.keymap.set("x", "p", '"_dP')
-vim.keymap.set("n", "<leader>p", "<cmd>pu<CR>==", { desc = "Paste After Line" })
+vim.keymap.set("n", "<leader>p", "<cmd>put<CR>", { desc = "Paste After Line" })
 vim.keymap.set(
   "n",
   "<leader>P",
-  "<cmd>pu!<CR>==",
+  "<cmd>put!<CR>",
   { desc = "Paste Before Line" }
 )
 -- files
@@ -104,7 +104,6 @@ vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<CR>")
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>")
 vim.keymap.set("n", "<C-Up>", "<cmd>resize -2<CR>")
 vim.keymap.set("n", "<C-Down>", "<cmd>resize +2<CR>")
-vim.keymap.set("n", "<C-w>0", "<C-w>=", { desc = "Reset Window Size" })
 -- split
 vim.keymap.set("n", "<C-v>", "<C-w>v")
 vim.keymap.set("n", "<C-s>", "<C-w>s")
