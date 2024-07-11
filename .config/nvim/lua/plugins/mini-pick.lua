@@ -142,6 +142,7 @@ return {
           vim.env.HOME .. "/.packages/",
           vim.env.HOME .. "/notes/",
           "/x/eng/rlse/DOT/devN/test/tools/smoke/itc/conf/class_hierarchy.cnf",
+          vim.env.HOME .. "/git/ontap/",
         }
       end
       for _, path in ipairs(paths) do

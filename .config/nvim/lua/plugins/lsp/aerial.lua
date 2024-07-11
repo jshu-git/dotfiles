@@ -1,14 +1,13 @@
 return {
   "stevearc/aerial.nvim",
   dependencies = {
-    "nvim-tree/nvim-web-devicons",
+    "echasnovski/mini.icons",
   },
   config = function()
     local aerial = require("aerial")
     aerial.setup({
+      backends = { "lsp" },
       keymaps = {
-        ["<C-j>"] = false,
-        ["<C-k>"] = false,
         ["J"] = "actions.down_and_scroll",
         ["K"] = "actions.up_and_scroll",
         ["<esc>"] = "actions.close",
@@ -20,7 +19,6 @@ return {
       highlight_closest = false,
       highlight_on_hover = true,
       show_guides = true,
-      guides = { whitespace = "" },
       float = {
         border = "single",
         relative = "win",
@@ -29,6 +27,6 @@ return {
 
     vim.keymap.set("n", "go", function()
       aerial.toggle({ direction = "float" })
-    end, { desc = "Symbols Outline" })
+    end, { desc = "LSP: Symbols" })
   end,
 }
