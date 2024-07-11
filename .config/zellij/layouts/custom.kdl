@@ -1,12 +1,12 @@
 layout {
     default_tab_template {
-        children
         pane size=1 borderless=true {
             // https://github.com/dj95/zjstatus?tab=readme-ov-file
             plugin location="zjstatus" {
                 format_left   "{mode}"
-                format_right  "{session} "
-                format_center "{tabs}"
+                // format_center "{tabs}"
+                // format_right  "{session} "
+                format_right  "{tabs} "
 
                 // mode
                 mode_default_to_mode "locked"
@@ -23,6 +23,7 @@ layout {
                 tab_separator            "    "
             }
         }
+        children
     }
 
     tab name=".config" cwd="~/.config" focus=true
