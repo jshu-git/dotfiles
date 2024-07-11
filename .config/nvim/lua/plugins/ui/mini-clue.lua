@@ -10,22 +10,37 @@ return {
           for _, line in ipairs(vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)) do
             max_width = math.max(max_width, vim.fn.strchars(line))
           end
-          max_width = max_width + 1
           return {
             width = math.min(40, max_width),
           }
         end,
       },
       triggers = {
+        -- leader
         { mode = "n", keys = "<leader>" },
         { mode = "x", keys = "<leader>" },
+
+        -- g
         { mode = "n", keys = "g" },
         { mode = "x", keys = "g" },
+
+        -- marks
+        { mode = "n", keys = "'" },
+        { mode = "x", keys = "'" },
+        { mode = "n", keys = "`" },
+        { mode = "x", keys = "`" },
+        { mode = "n", keys = "m" },
+
+        -- registers
         { mode = "n", keys = '"' },
         { mode = "x", keys = '"' },
         { mode = "i", keys = "<C-r>" },
         { mode = "c", keys = "<C-r>" },
+
+        -- window
         { mode = "n", keys = "<C-w>" },
+
+        -- folds
         { mode = "n", keys = "z" },
         { mode = "x", keys = "z" },
 
@@ -39,8 +54,9 @@ return {
       },
       clues = {
         -- clue.gen_clues.g(),
-        clue.gen_clues.windows(),
+        clue.gen_clues.marks(),
         clue.gen_clues.registers(),
+        clue.gen_clues.windows(),
         clue.gen_clues.z(),
 
         -- leader
@@ -64,6 +80,9 @@ return {
         { mode = "n", keys = "z-", postkeys = "z" },
         { mode = "n", keys = "zo", postkeys = "z" },
         { mode = "n", keys = "zc", postkeys = "z" },
+        -- marks
+        { mode = "n", keys = "mn", postkeys = "m" },
+        { mode = "n", keys = "mp", postkeys = "m" },
       },
     })
   end,

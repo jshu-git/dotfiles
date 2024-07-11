@@ -183,6 +183,12 @@ return {
       extra.pickers.hl_groups,
       { desc = "Highlights" }
     )
+    vim.keymap.set("n", "<leader>fm", function()
+      extra.pickers.marks({ scope = "buf" })
+    end, { desc = "Marks (Buffer)" })
+    vim.keymap.set("n", "<leader>fM", function()
+      extra.pickers.marks({ scope = "global" })
+    end, { desc = "Marks (Global)" })
 
     -- commands
     vim.keymap.set(
