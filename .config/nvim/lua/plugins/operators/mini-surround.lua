@@ -3,7 +3,7 @@ return {
   config = function()
     require("mini.surround").setup({
       mappings = {
-        add = "sS",
+        add = "sS", -- also uses visual-surround.nvim for quick surrounds
         delete = "sd",
         replace = "sR",
 
