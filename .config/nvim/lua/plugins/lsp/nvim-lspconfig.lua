@@ -79,20 +79,7 @@ return {
     local servers = {
       marksman = {},
       taplo = {},
-      lua_ls = {
-        settings = {
-          Lua = {
-            hint = {
-              enable = true,
-            },
-            diagnostics = {
-              disable = { "missing-fields" },
-              globals = { "vim" },
-            },
-          },
-        },
-      },
-
+      lua_ls = {},
       rust_analyzer = {
         settings = {
           ["rust-analyzer"] = {
@@ -127,41 +114,12 @@ return {
       capabilities,
       require("cmp_nvim_lsp").default_capabilities()
     )
-    -- enable lsp folding capabilities for nvim-ufo
-    capabilities.textDocument.foldingRange = {
-      dynamicRegistration = false,
-      lineFoldingOnly = true,
-    }
 
     local lspconfig = require("lspconfig")
     for server, config in pairs(servers) do
-      -- config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {})
-      config.capabilities = capabilities
+      config.capabilities =
+        vim.tbl_deep_extend("force", capabilities, config.capabilities or {})
       lspconfig[server].setup(config)
-    end
-
-    -- ui
-    require("lspconfig.ui.windows").default_options.border = "single"
-    vim.lsp.handlers["textDocument/hover"] =
-      vim.lsp.with(vim.lsp.handlers.hover, {
-        border = "single",
-      })
-    vim.lsp.handlers["textDocument/signatureHelp"] =
-      vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
-    vim.diagnostic.config({
-      float = {
-        border = "single",
-        severity_sort = true,
-      },
-      severity_sort = true,
-      virtual_text = false,
-      -- jump = {float = true, wrap = false}
-    })
-    local signs =
-      { Error = "󰅚", Warn = "󰀪", Hint = "󰌶", Info = "󰋽" }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
   end,
 }
