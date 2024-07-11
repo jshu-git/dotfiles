@@ -12,6 +12,9 @@ return {
         merge_tool = {
           layout = "diff3_mixed",
         },
+        file_history = {
+          winbar_info = true,
+        },
       },
       file_history_panel = {
         win_config = { height = math.floor(0.2 * vim.o.lines) },
