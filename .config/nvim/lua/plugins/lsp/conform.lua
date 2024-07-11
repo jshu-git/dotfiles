@@ -15,32 +15,12 @@ return {
         ["_"] = { "trim_whitespace" },
       },
       -- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
-      format_on_save = function()
-        if vim.g.disable_autoformat then
-          ---@diagnostic disable-next-line: missing-return-value
-          return
-        end
-        return {
-          timeout_ms = 500,
-          lsp_format = "fallback",
-          quiet = true,
-        }
-      end,
+      format_on_save = {
+        timeout_ms = 500,
+        lsp_format = "fallback",
+        quiet = true,
+      },
     })
-
-    -- toggle autoformatting
-    vim.g.disable_autoformat = false
-    vim.api.nvim_create_user_command("ToggleAutoformatting", function()
-      vim.g.disable_autoformat = not vim.g.disable_autoformat
-    end, {
-      desc = "Toggle Autoformatting",
-    })
-    vim.keymap.set(
-      "n",
-      "<leader>tf",
-      "<cmd>ToggleAutoformatting<CR>",
-      { desc = "Toggle Autoformatting" }
-    )
 
     -- save without formatting
     vim.keymap.set("n", "<leader>W", function()
