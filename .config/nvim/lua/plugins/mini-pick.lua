@@ -66,8 +66,11 @@ return {
       "n",
       "<leader>fr",
       extra.pickers.oldfiles,
-      { desc = "Files (Recent)" }
+      { desc = "Recent Files" }
     )
+    vim.keymap.set("n", "<leader>fR", function()
+      extra.pickers.oldfiles({ current_dir = true })
+    end, { desc = "Recent Files (cwd)" })
 
     -- grep live
     vim.keymap.set("n", "<leader>fw", function()

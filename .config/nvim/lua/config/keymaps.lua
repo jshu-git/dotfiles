@@ -48,7 +48,6 @@ vim.keymap.set(
 -- editing
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<CR>", '"_ciw')
-vim.keymap.set("n", "gG", "ggVG", { desc = "Select All" })
 vim.keymap.set({ "n", "x" }, ";", ":")
 vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "Append Comma" })
 vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Append Semicolon" })
@@ -115,7 +114,6 @@ vim.keymap.set("n", "<C-S-L>", "<C-w>L")
 
 -- visual
 vim.keymap.set("x", "<CR>", '"_c')
-vim.keymap.set("x", "V", "j")
 vim.keymap.set("x", "<C-q>", "j")
 
 -- insert/command mode

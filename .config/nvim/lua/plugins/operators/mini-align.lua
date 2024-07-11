@@ -4,7 +4,7 @@ return {
     require("mini.align").setup({
       mappings = {
         start = "&",
-        start_with_preview = "gA",
+        start_with_preview = "sA",
       },
       -- j cycles
       modifiers = {
