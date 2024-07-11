@@ -46,19 +46,11 @@ return {
         map("<leader>li", "<cmd>LspInfo<CR>", "Info")
         map("<leader>lr", "<cmd>LspRestart<CR>", "Restart")
 
-        -- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L510
-        local client = vim.lsp.get_client_by_id(event.data.client_id)
-        -- toggle inlay hints
-        if
-          client
-          and client.server_capabilities.inlayHintProvider
-          and vim.lsp.inlay_hint
-        then
-          map("<leader>th", function()
-            ---@diagnostic disable-next-line: missing-parameter
-            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-          end, "Toggle Inlay Hints")
-        end
+        -- inlay hints
+        map("<leader>th", function()
+          ---@diagnostic disable-next-line: missing-parameter
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+        end, "Toggle Inlay Hints")
       end,
     })
 
@@ -68,9 +60,7 @@ return {
       lua_ls = {
         settings = {
           Lua = {
-            hint = {
-              enable = true,
-            },
+            hint = { enable = true },
             diagnostics = {
               disable = { "missing-fields" },
               globals = { "vim" },
@@ -106,14 +96,11 @@ return {
     end
 
     -- lspconfig
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    -- enable cmp capabilities
-    capabilities = vim.tbl_deep_extend(
+    local capabilities = vim.tbl_deep_extend(
       "force",
-      capabilities,
+      vim.lsp.protocol.make_client_capabilities(),
       require("cmp_nvim_lsp").default_capabilities()
     )
-
     local lspconfig = require("lspconfig")
     for server, config in pairs(servers) do
       config.capabilities =
