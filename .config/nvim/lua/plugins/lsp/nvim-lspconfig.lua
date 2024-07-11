@@ -48,8 +48,7 @@ return {
 
         -- inlay hints
         map("<leader>th", function()
-          ---@diagnostic disable-next-line: missing-parameter
-          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
         end, "Toggle Inlay Hints")
       end,
     })
@@ -68,7 +67,6 @@ return {
           },
         },
       },
-
       rust_analyzer = {
         settings = {
           ["rust-analyzer"] = {

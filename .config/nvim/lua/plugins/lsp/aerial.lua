@@ -18,6 +18,7 @@ return {
       },
       highlight_closest = false,
       highlight_on_hover = true,
+      highlight_on_jump = 0,
       show_guides = true,
       float = {
         border = "single",

@@ -5,6 +5,7 @@ return {
     local rip = require("rip-substitute")
     rip.setup({
       popupWin = {
+        title = "Rip/Substitute",
         hideSearchReplaceLabels = true,
       },
       prefill = {
@@ -19,9 +20,6 @@ return {
         rangeBackdrop = {
           enabled = false,
         },
-      },
-      regexOptions = {
-        casing = "smart-case",
       },
     })
 
