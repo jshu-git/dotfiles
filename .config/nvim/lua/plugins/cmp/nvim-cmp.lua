@@ -9,6 +9,8 @@ return {
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-calc",
     "dmitmel/cmp-cmdline-history",
+    -- signature
+    "hrsh7th/cmp-nvim-lsp-signature-help",
     -- ui
     "onsails/lspkind-nvim",
   },

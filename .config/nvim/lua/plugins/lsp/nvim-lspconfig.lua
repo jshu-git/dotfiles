@@ -15,16 +15,11 @@ return {
         end
         local extra = require("mini.extra")
 
-        -- pickers
-        map("go", function()
-          extra.pickers.lsp({ scope = "document_symbol" })
-        end, "Symbols (Document)")
-        map("gO", function()
-          extra.pickers.lsp({ scope = "workspace_symbol" })
-        end, "Symbols (Workspace)")
-
-        -- lsp_signature
-        require("lsp_signature").on_attach({}, bufnr)
+        map("gs", require("pretty_hover").hover, "Hover")
+        map("gS", vim.lsp.buf.signature_help, "Signature Help")
+        map("ga", vim.lsp.buf.code_action, "Code Action")
+        map("gd", "<cmd>Glance definitions<CR>", "Goto Definition")
+        map("gr", "<cmd>Glance references<CR>", "Goto References")
 
         -- inc-rename
         vim.keymap.set("n", "cr", function()
@@ -35,14 +30,6 @@ return {
           expr = true,
         })
         map("cR", ":IncRename ", "Rename Variable")
-
-        map("gs", require("pretty_hover").hover, "Hover")
-        map("ga", vim.lsp.buf.code_action, "Code Action")
-        map("gd", "<cmd>Glance definitions<CR>", "Goto Definition")
-        -- map("gD", function()
-        -- 	require("mini.extra").pickers.lsp({ scope = "definition" })
-        -- end, "Goto Definition (Pick)")
-        map("gr", "<cmd>Glance references<CR>", "Goto References")
 
         -- diagnostics
         map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
@@ -75,7 +62,6 @@ return {
       end,
     })
 
-    -- servers https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
     local servers = {
       marksman = {},
       taplo = {},
@@ -134,5 +120,12 @@ return {
         vim.tbl_deep_extend("force", capabilities, config.capabilities or {})
       lspconfig[server].setup(config)
     end
+
+    -- ui
+    require("lspconfig.ui.windows").default_options.border = "single"
+    vim.lsp.handlers["textDocument/hover"] =
+      vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
+    vim.lsp.handlers["textDocument/signatureHelp"] =
+      vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
   end,
 }
