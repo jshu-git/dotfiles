@@ -1,36 +1,34 @@
 return {
-  {
-    "dgagn/diagflow.nvim",
-    event = "LspAttach",
-    config = function()
-      -- default ui
-      local signs = {
-        error = "󰅚 ",
-        warn = "󰀪 ",
-        hint = "󰌶 ",
-        info = "󰋽 ",
-      }
-      vim.diagnostic.config({
-        virtual_text = false,
-        signs = {
-          text = {
-            [vim.diagnostic.severity.ERROR] = signs.error,
-            [vim.diagnostic.severity.WARN] = signs.warn,
-            [vim.diagnostic.severity.INFO] = signs.info,
-            [vim.diagnostic.severity.HINT] = signs.hint,
-          },
+  "dgagn/diagflow.nvim",
+  event = "LspAttach",
+  config = function()
+    -- default ui
+    local signs = {
+      error = "󰅚 ",
+      warn = "󰀪 ",
+      hint = "󰌶 ",
+      info = "󰋽 ",
+    }
+    vim.diagnostic.config({
+      virtual_text = false,
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = signs.error,
+          [vim.diagnostic.severity.WARN] = signs.warn,
+          [vim.diagnostic.severity.INFO] = signs.info,
+          [vim.diagnostic.severity.HINT] = signs.hint,
         },
-        float = {
-          border = "single",
-        },
-        severity_sort = true,
-      })
+      },
+      float = {
+        border = "single",
+      },
+      severity_sort = true,
+    })
 
-      require("diagflow").setup({
-        padding_right = 1,
-      })
-    end,
-  },
+    require("diagflow").setup({
+      padding_right = 1,
+    })
+  end,
   -- {
   --   "RaafatTurki/corn.nvim",
   --   config = function()
