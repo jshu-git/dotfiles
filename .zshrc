@@ -34,10 +34,11 @@ fi
 
 CONFIG="$HOME/.config"
 
-# zsh plugins
+# zsh
 ZSH="$CONFIG/zsh"
 source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $ZSH/aliases.zsh
 
 # completions
 autoload -Uz compinit && compinit
@@ -46,15 +47,12 @@ autoload -Uz compinit && compinit
 if command -v eza >/dev/null 2>&1; then
 	EZA_OPTIONS="--color=auto --icons=auto --all"
 	EZA_LONG_OPTIONS="$EZA_OPTIONS --long --sort=modified --reverse --header --time-style='+%Y %b %e %R ' --octal-permissions --no-permissions"
-	alias l="eza $EZA_OPTIONS"
-	alias ls=l
+	alias l=/bin/ls
+	alias ls="eza $EZA_OPTIONS"
 	alias ll="eza $EZA_LONG_OPTIONS"
 	alias llt="eza $EZA_LONG_OPTIONS --tree --level=2"
 	alias lls="eza $EZA_LONG_OPTIONS --total-size"
 fi
-
-# aliases go after eza since eza overrides ls alias
-[ -f $ZSH/aliases.zsh ] && source $ZSH/aliases.zsh
 
 # fzf
 if command -v fzf >/dev/null 2>&1; then
