@@ -8,11 +8,11 @@ return {
       animation = false,
       icons = {
         button = "",
-        separator = { left = "▏", right = "" },
+        separator = { left = "", right = "" },
         separator_at_end = false,
         pinned = { button = "", filename = false },
         inactive = {
-          separator = { left = "▏", right = "" },
+          separator = { left = "", right = "" },
         },
       },
       insert_at_end = true,

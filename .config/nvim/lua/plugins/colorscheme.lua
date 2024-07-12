@@ -1,22 +1,16 @@
 return {
   {
-    "rockyzhang24/arctic.nvim",
-    name = "arctic",
+    "gbprod/nord.nvim",
     lazy = false,
     priority = 1000,
-    dependencies = {
-      "rktjmp/lush.nvim",
-    },
     config = function()
-      vim.cmd.colorscheme("arctic")
+      require("nord").setup({
+        search = { theme = "vscode" },
+        styles = {
+          comments = { italic = false },
+        },
+      })
+      vim.cmd.colorscheme("nord")
     end,
   },
-  -- {
-  --   "bluz71/vim-moonfly-colors",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     -- vim.cmd.colorscheme("arctic")
-  --   end,
-  -- },
 }
