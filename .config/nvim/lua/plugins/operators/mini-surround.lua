@@ -3,7 +3,7 @@ return {
   config = function()
     require("mini.surround").setup({
       mappings = {
-        add = "sS", -- also uses visual-surround.nvim for quick surrounds
+        add = "sS",
         delete = "sd",
         replace = "sR",
 
@@ -17,5 +17,10 @@ return {
       n_lines = 200,
       respect_selection_type = true,
     })
+
+    -- quick surround in visual mode
+    for _, key in pairs({ "{", "}", "[", "]", "(", ")", "'", '"', "`", "<" }) do
+      vim.keymap.set("x", key, "sS" .. key, { remap = true })
+    end
   end,
 }
