@@ -32,9 +32,12 @@ vim.api.nvim_create_autocmd("ColorScheme", {
         { link = "MiniPickBorderText" }
       )
       vim.api.nvim_set_hl(0, "MiniCursorWord", { link = "Search" })
+      vim.api.nvim_set_hl(0, "MiniDiffSignAdd", { link = "GitSignsAdd" })
+      vim.api.nvim_set_hl(0, "MiniDiffSignChange", { link = "GitSignsChange" })
+      vim.api.nvim_set_hl(0, "MiniDiffSignDelete", { link = "GitSignsDelete" })
 
       -- barbar
-      vim.api.nvim_set_hl(0, "BufferTabPageFill", { link = "Normal" })
+      -- vim.api.nvim_set_hl(0, "BufferTabPageFill", { link = "Normal" })
 
       -- glance
       vim.api.nvim_set_hl(0, "GlanceListNormal", { link = "StatusLine" })

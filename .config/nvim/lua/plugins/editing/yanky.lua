@@ -30,8 +30,8 @@ return {
       { desc = "Yank History" }
     )
     -- text object
-    vim.keymap.set({ "o", "x" }, "lp", function()
-      require("yanky.textobj").last_put()
-    end)
+    -- vim.keymap.set({ "o", "x" }, "lp", function()
+    --   require("yanky.textobj").last_put()
+    -- end)
   end,
 }

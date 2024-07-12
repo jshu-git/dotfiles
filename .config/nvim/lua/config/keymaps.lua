@@ -37,6 +37,7 @@ vim.keymap.set({ "n", "x" }, "k", function()
 end, { expr = true })
 vim.keymap.set({ "n", "x", "o" }, "J", "5gj")
 vim.keymap.set({ "n", "x", "o" }, "K", "5gk")
+vim.keymap.set({ "n", "x" }, "M", "%")
 -- smart 0/^ https://github.com/wscnd/LunarVim/blob/master/lua/keymappings.lua#L98
 vim.keymap.set(
   { "n", "x", "o" },
