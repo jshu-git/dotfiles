@@ -131,7 +131,8 @@ return {
     -- special paths
     vim.keymap.set("n", "<leader>fp", function()
       local special_paths = {
-        vim.fn.stdpath("data"),
+        vim.fn.stdpath("data") .. "/lazy",
+        vim.fn.stdpath("data") .. "/mini.files/trash",
       }
       local paths = {}
       if vim.env.SSH_CLIENT == nil then
