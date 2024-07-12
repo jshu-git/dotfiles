@@ -49,7 +49,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
       vim.api.nvim_set_hl(0, "LazyGitBorder", { link = "Whitespace" })
 
       -- sentiment
-      vim.api.nvim_set_hl(0, "MatchParen", { link = "Search" })
+      -- vim.api.nvim_set_hl(0, "MatchParen", { link = "Search" })
     end
   end,
 })
