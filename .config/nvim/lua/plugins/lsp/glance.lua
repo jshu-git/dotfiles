@@ -5,7 +5,7 @@ return {
     local glance = require("glance")
     local actions = glance.actions
     glance.setup({
-      height = math.floor(0.5 * vim.o.lines),
+      height = math.floor(0.7 * vim.o.lines),
       border = {
         enable = true,
         top_char = "▁",
