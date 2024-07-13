@@ -18,6 +18,17 @@ vim.api.nvim_create_autocmd("ColorScheme", {
       vim.api.nvim_set_hl(0, "MiniDiffSignAdd", { link = "GitSignsAdd" })
       vim.api.nvim_set_hl(0, "MiniDiffSignChange", { link = "GitSignsChange" })
       vim.api.nvim_set_hl(0, "MiniDiffSignDelete", { link = "GitSignsDelete" })
+
+      vim.api.nvim_set_hl(
+        0,
+        "CopilotSuggestion",
+        { link = "CodeiumSuggestion" }
+      )
+      vim.api.nvim_set_hl(
+        0,
+        "NeoCodeiumSuggestion",
+        { link = "CodeiumSuggestion" }
+      )
     end
 
     -- if vim.g.colors_name == "arctic" then
