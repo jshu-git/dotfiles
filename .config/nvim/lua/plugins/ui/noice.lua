@@ -98,6 +98,12 @@ return {
           },
         },
       },
+      routes = {
+        {
+          view = "virtualtext",
+          filter = { event = "msg_showmode" },
+        },
+      },
     })
 
     vim.keymap.set("n", "<leader>nn", function()
