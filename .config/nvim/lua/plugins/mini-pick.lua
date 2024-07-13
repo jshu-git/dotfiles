@@ -6,7 +6,7 @@ return {
   config = function()
     local pick = require("mini.pick")
     local extra = require("mini.extra")
-    -- vim.ui.select = pick.ui_select
+    vim.ui.select = pick.ui_select
 
     pick.setup({
       mappings = {
@@ -112,13 +112,10 @@ return {
       pick.builtin.grep({ pattern = cword }, opts)
     end, { desc = "Grep cword (Relative)" })
 
-    -- grep buffer(s)
+    -- grep buffer
     vim.keymap.set("n", ",", function()
       extra.pickers.buf_lines({ scope = "current" })
-    end, { desc = "Grep Buffer (Current)" })
-    vim.keymap.set("n", "<leader>/", function()
-      extra.pickers.buf_lines({ scope = "all" })
-    end, { desc = "Grep Buffer (All)" })
+    end, { desc = "Grep Buffer" })
 
     -- git
     -- vim.keymap.set(
@@ -167,17 +164,6 @@ return {
         },
       })
     end, { desc = "Special Paths" })
-
-    -- sessions
-    vim.keymap.set("n", "<leader>fs", function()
-      pick.builtin.files({}, {
-        source = {
-          name = "Sessions",
-          cwd = require("persisted.config").options.save_dir,
-          items = require("persisted").list(),
-        },
-      })
-    end, { desc = "Sessions" })
 
     -- vim
     vim.keymap.set("n", "<leader>fh", pick.builtin.help, { desc = "Help" })
@@ -247,21 +233,15 @@ return {
       })
     end, { desc = "Themes" })
 
-    -- misc
-    vim.keymap.set(
-      "n",
-      "<leader>'",
-      pick.builtin.resume,
-      { desc = "Last Picker" }
-    )
+    -- resume
+    vim.keymap.set("n", "'", pick.builtin.resume)
+
+    -- registers
     vim.keymap.set(
       "n",
       '<leader>"',
       extra.pickers.registers,
       { desc = "Registers" }
     )
-    vim.keymap.set("n", "<leader>:", function()
-      extra.pickers.history({ scope = ":" })
-    end, { desc = "Command History" })
   end,
 }
