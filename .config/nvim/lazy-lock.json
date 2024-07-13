@@ -4,6 +4,7 @@
   "actions-preview.nvim": { "branch": "master", "commit": "9f52a01c374318e91337697ebed51c6fae57f8a4" },
   "aerial.nvim": { "branch": "master", "commit": "db0af491ff13c18a966ce2f9ac7f5211aec000a7" },
   "barbar.nvim": { "branch": "master", "commit": "d181f2cfd4b828f9c6f1e10e69c68241de59f54f" },
+  "blame.nvim": { "branch": "main", "commit": "588c80557457c747e8f299441ca14b4d3f2af386" },
   "cmp-async-path": { "branch": "main", "commit": "9d581eec5acf812316913565c135b0d1ee2c9a71" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-calc": { "branch": "main", "commit": "5947b412da67306c5b68698a02a846760059be2e" },

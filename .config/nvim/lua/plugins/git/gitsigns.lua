@@ -34,7 +34,7 @@ return {
       "n",
       "<leader>tb",
       gitsigns.toggle_current_line_blame,
-      { desc = "Git: Toggle Line Blame" }
+      { desc = "Git: Toggle Blame" }
     )
     -- vim.keymap.set("n", "<leader>gb", function()
     --   gitsigns.blame_line({
@@ -42,9 +42,9 @@ return {
     --     ignore_whitespace = true,
     --   })
     -- end, { desc = "Blame" })
-    vim.keymap.set("n", "<leader>gb", function()
-      gitsigns.blame()
-    end, { desc = "Blame" })
+    -- vim.keymap.set("n", "<leader>gb", function()
+    --   gitsigns.blame()
+    -- end, { desc = "Blame" })
 
     -- hunks
     vim.keymap.set(
