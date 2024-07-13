@@ -48,7 +48,7 @@ return {
       "x",
       "<leader>gd",
       ":<C-U>'<,'>DiffviewFileHistory<cr>",
-      { desc = "Diff (File)" }
+      { desc = "Diff (Visual)" }
     )
 
     vim.api.nvim_create_autocmd("FileType", {
