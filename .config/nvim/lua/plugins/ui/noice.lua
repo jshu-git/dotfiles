@@ -71,14 +71,6 @@ return {
         },
         mini = {
           timeout = 1000,
-          -- reverse = false,
-          -- position = {
-          --   row = 0,
-          --   col = "99%",
-          -- },
-          -- border = {
-          -- style = "single",
-          -- },
         },
         cmdline_popup = {
           border = {
