@@ -23,8 +23,7 @@ return {
       },
       popupmenu = { enabled = false },
       commands = {
-        history = { view = "popup" },
-        all = { view = "popup" },
+        history = { view = "popup", filter_opts = { reverse = true } },
       },
       lsp = {
         override = {
@@ -111,11 +110,11 @@ return {
     })
 
     vim.keymap.set("n", "<leader>nn", function()
-      vim.cmd("messages")
-    end, { desc = "Messages" })
-    vim.keymap.set("n", "<leader>nN", function()
       noice.cmd("Noice")
     end, { desc = "Messages (Noice)" })
+    vim.keymap.set("n", "<leader>nN", function()
+      vim.cmd("messages")
+    end, { desc = "Messages" })
     vim.keymap.set("n", "<leader>nl", function()
       noice.cmd("last")
     end, { desc = "Last" })
