@@ -4,10 +4,10 @@ return {
   dependencies = {
     { "folke/lazydev.nvim", ft = "lua", opts = {} },
     "hrsh7th/cmp-nvim-lsp",
-    "FelipeLema/cmp-async-path",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-calc",
+    "FelipeLema/cmp-async-path",
     "dmitmel/cmp-cmdline-history",
     -- signature
     "hrsh7th/cmp-nvim-lsp-signature-help",
@@ -37,14 +37,17 @@ return {
       },
       window = {
         completion = {
-          border = "single",
-          side_padding = 0,
-          scrollbar = false,
-          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+          -- border = "single",
+          -- side_padding = 0,
+          -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+          col_offset = 2,
+          -- scrollbar = false,
         },
         documentation = {
-          border = "single",
-          winhighlight = "FloatBorder:FloatBorder",
+          -- border = "single",
+          -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
+          -- max_width = math.floor(vim.o.columns * 0.3),
+          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu",
         },
       },
       -- https://github.com/hrsh7th/nvim-cmp/discussions/609#discussioncomment-5727678
@@ -82,7 +85,6 @@ return {
           ellipsis_char = "…",
           show_labelDetails = true,
           menu = {
-            lazydev = "LZY",
             nvim_lsp = "LSP",
             buffer = "BUF",
             async_path = "PTH",
