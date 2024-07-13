@@ -35,7 +35,6 @@ return {
     -- end)
 
     -- custom
-    -- files
     vim.keymap.set("n", "yp", function()
       vim.fn.setreg("+", vim.fn.expand("%"))
       vim.notify("Copied: " .. vim.fn.expand("%"))
