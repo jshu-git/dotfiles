@@ -10,6 +10,7 @@ return {
           change = "▌",
           delete = "-",
         },
+        priority = 1,
       },
       mappings = {
         apply = "",
