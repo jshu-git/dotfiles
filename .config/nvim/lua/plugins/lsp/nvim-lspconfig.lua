@@ -13,11 +13,10 @@ return {
             { buffer = bufnr, desc = "LSP: " .. desc }
           )
         end
-        local extra = require("mini.extra")
 
         map("gs", vim.lsp.buf.hover, "Hover")
         map("gS", vim.lsp.buf.signature_help, "Signature Help")
-        map("ga", vim.lsp.buf.code_action, "Code Action")
+        map("ga", require("actions-preview").code_actions, "Code Action")
         map("gd", "<cmd>Glance definitions<CR>", "Goto Definition")
         map("gr", "<cmd>Glance references<CR>", "Goto References")
 
@@ -34,10 +33,10 @@ return {
         -- diagnostics
         map("gl", vim.diagnostic.open_float, "Hover Diagnostic")
         map("<leader>fd", function()
-          extra.pickers.diagnostic({ scope = "current" })
+          require("mini.extra").pickers.diagnostic({ scope = "current" })
         end, "Diagnostics (Buffer)")
         map("<leader>fD", function()
-          extra.pickers.diagnostic({ scope = "all" })
+          require("mini.extra").pickers.diagnostic({ scope = "all" })
         end, "Diagnostics (All)")
         map("[d", vim.diagnostic.goto_prev, "Previous Diagnostic")
         map("]d", vim.diagnostic.goto_next, "Next Diagnostic")
