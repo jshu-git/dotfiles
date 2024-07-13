@@ -5,32 +5,21 @@ return {
   init = function()
     vim.api.nvim_create_autocmd("ColorScheme", {
       callback = function()
-        -- mini.icons ~/.local/share/nvim/lazy/nord.nvim/lua/nord/colors.lua
-        vim.api.nvim_set_hl(0, "MiniIconsAzure", { fg = "#81A1C1" })
-        vim.api.nvim_set_hl(0, "MiniIconsBlue", { fg = "#5E81AC" })
-        vim.api.nvim_set_hl(0, "MiniIconsCyan", { fg = "#88C0D0" })
-        vim.api.nvim_set_hl(0, "MiniIconsGreen", { fg = "#A3BE8C" })
-        vim.api.nvim_set_hl(0, "MiniIconsGrey", { fg = "#616E88" })
-        vim.api.nvim_set_hl(0, "MiniIconsOrange", { fg = "#D08770" })
-        vim.api.nvim_set_hl(0, "MiniIconsPurple", { fg = "#B48EAD" })
-        vim.api.nvim_set_hl(0, "MiniIconsRed", { fg = "#BF616A" })
-        vim.api.nvim_set_hl(0, "MiniIconsYellow", { fg = "#EBCB8B" })
+        local c = require("nord.colors").palette
+        -- mini.icons
+        vim.api.nvim_set_hl(0, "MiniIconsAzure", { fg = c.frost.artic_water })
+        vim.api.nvim_set_hl(0, "MiniIconsBlue", { fg = c.frost.artic_ocean })
+        vim.api.nvim_set_hl(0, "MiniIconsCyan", { fg = c.frost.ice })
+        vim.api.nvim_set_hl(0, "MiniIconsGreen", { fg = c.aurora.green })
+        vim.api.nvim_set_hl(0, "MiniIconsGrey", { fg = c.polar_night.light })
+        vim.api.nvim_set_hl(0, "MiniIconsOrange", { fg = c.aurora.orange })
+        vim.api.nvim_set_hl(0, "MiniIconsPurple", { fg = c.aurora.purple })
+        vim.api.nvim_set_hl(0, "MiniIconsRed", { fg = c.aurora.red })
+        vim.api.nvim_set_hl(0, "MiniIconsYellow", { fg = c.aurora.yellow })
 
         vim.api.nvim_set_hl(0, "MiniIndentScopeSymbol", { link = "Whitespace" })
         vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickNormal" })
         vim.api.nvim_set_hl(0, "MiniCursorWord", { link = "Search" })
-        vim.api.nvim_set_hl(0, "MiniDiffSignAdd", { link = "GitSignsAdd" })
-        vim.api.nvim_set_hl(
-          0,
-          "MiniDiffSignChange",
-          { link = "GitSignsChange" }
-        )
-        vim.api.nvim_set_hl(
-          0,
-          "MiniDiffSignDelete",
-          { link = "GitSignsDelete" }
-        )
-
         vim.api.nvim_set_hl(
           0,
           "CopilotSuggestion",
