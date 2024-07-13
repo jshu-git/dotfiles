@@ -5,29 +5,23 @@ return {
   },
   config = function()
     local gitsigns = require("gitsigns")
-    local extra = require("mini.extra")
     gitsigns.setup({
       signs = {
         add = { text = "▌" },
         change = { text = "▌" },
+        delete = { text = "-" },
+        topdelete = { text = "-" },
       },
       signs_staged_enable = false,
       attach_to_untracked = true,
       current_line_blame_opts = {
         virt_text_pos = "right_align",
-        delay = 10,
+        delay = 1,
         ignore_whitespace = true,
       },
       current_line_blame_formatter = "<author> (<author_time:%R>): <summary> ",
     })
 
-    -- toggles
-    vim.keymap.set(
-      "n",
-      "<leader>tb",
-      gitsigns.toggle_current_line_blame,
-      { desc = "Git: Toggle Blame" }
-    )
     vim.keymap.set(
       "n",
       "<leader>td",
@@ -36,26 +30,23 @@ return {
     )
 
     -- blame
+    vim.keymap.set(
+      "n",
+      "<leader>tb",
+      gitsigns.toggle_current_line_blame,
+      { desc = "Git: Toggle Line Blame" }
+    )
+    -- vim.keymap.set("n", "<leader>gb", function()
+    --   gitsigns.blame_line({
+    --     full = true,
+    --     ignore_whitespace = true,
+    --   })
+    -- end, { desc = "Blame" })
     vim.keymap.set("n", "<leader>gb", function()
-      gitsigns.blame_line({
-        full = true,
-        ignore_whitespace = true,
-      })
+      gitsigns.blame()
     end, { desc = "Blame" })
 
     -- hunks
-    -- vim.keymap.set(
-    --   "n",
-    --   "<leader>gs",
-    --   gitsigns.preview_hunk,
-    --   { desc = "Hover Hunk" }
-    -- )
-    -- vim.keymap.set(
-    --   "n",
-    --   "<leader>ga",
-    --   gitsigns.stage_hunk,
-    --   { desc = "Stage Hunk" }
-    -- )
     vim.keymap.set(
       "n",
       "<leader>gr",
@@ -68,28 +59,9 @@ return {
       gitsigns.reset_buffer,
       { desc = "Reset Buffer" }
     )
-    -- vim.keymap.set(
-    --   "n",
-    --   "<leader>gu",
-    --   gitsigns.undo_stage_hunk,
-    --   { desc = "Undo Stage Hunk" }
-    -- )
-
-    -- diff
-    vim.keymap.set("n", "<leader>gd", function()
-      gitsigns.diffthis("~1")
-    end, { desc = "Diff (~1)" })
-    vim.keymap.set("n", "<leader>gD", function()
-      gitsigns.diffthis("~" .. vim.fn.input("Commit: "))
-    end, { desc = "Diff (Custom)" })
-
-    -- visual
     vim.keymap.set("", "<leader>gr", function()
       gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
     end, { desc = "Reset Hunk" })
-
-    -- text object
-    vim.keymap.set({ "o", "x" }, "ah", gitsigns.select_hunk)
 
     -- navigate
     vim.keymap.set("n", "[h", function()
@@ -100,6 +72,7 @@ return {
     end, { desc = "Next Hunk" })
 
     -- pickers
+    local extra = require("mini.extra")
     -- vim.keymap.set(
     --   "n",
     --   "<leader>gf",

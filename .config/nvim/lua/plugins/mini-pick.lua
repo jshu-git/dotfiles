@@ -117,14 +117,6 @@ return {
       extra.pickers.buf_lines({ scope = "current" })
     end, { desc = "Grep Buffer" })
 
-    -- git
-    -- vim.keymap.set(
-    --   "n",
-    --   "<leader>gc",
-    --   extra.pickers.git_commits,
-    --   { desc = "Commits" }
-    -- )
-
     -- special paths
     vim.keymap.set("n", "<leader>fp", function()
       local special_paths = {

@@ -37,5 +37,23 @@ return {
       "gH" .. "iB",
       { desc = "Reset Buffer", remap = true }
     )
+
+    -- pickers
+    local extra = require("mini.extra")
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>gf",
+    --   extra.pickers.git_files,
+    --   { desc = "Git Files (Tracked)" }
+    -- )
+    -- vim.keymap.set("n", "<leader>gm", function()
+    --   extra.pickers.git_files({ scope = "modified" })
+    -- end, { desc = "Git Files (Modified)" })
+    vim.keymap.set(
+      "n",
+      "<leader>gc",
+      extra.pickers.git_commits,
+      { desc = "Commits" }
+    )
   end,
 }
