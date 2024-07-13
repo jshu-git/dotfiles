@@ -23,7 +23,10 @@ return {
       },
       popupmenu = { enabled = false },
       commands = {
-        history = { view = "popup", filter_opts = { reverse = true } },
+        history = {
+          view = "popup",
+          filter_opts = { reverse = true },
+        },
       },
       lsp = {
         override = {
@@ -31,7 +34,9 @@ return {
           ["vim.lsp.util.stylize_markdown"] = true,
           ["cmp.entry.get_documentation"] = true,
         },
-        signature = { enabled = false },
+        signature = {
+          auto_open = { enabled = false },
+        },
       },
       presets = {
         lsp_doc_border = true,
@@ -39,12 +44,6 @@ return {
       views = {
         virtualtext = {
           hl_group = "Search",
-        },
-        split = {
-          size = "50%",
-          close = {
-            keys = { "<esc>" },
-          },
         },
         popup = {
           close = {
