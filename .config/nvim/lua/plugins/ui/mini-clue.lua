@@ -24,13 +24,6 @@ return {
         { mode = "n", keys = "g" },
         { mode = "x", keys = "g" },
 
-        -- marks
-        { mode = "n", keys = "'" },
-        { mode = "x", keys = "'" },
-        { mode = "n", keys = "`" },
-        { mode = "x", keys = "`" },
-        { mode = "n", keys = "m" },
-
         -- registers
         { mode = "n", keys = '"' },
         { mode = "x", keys = '"' },

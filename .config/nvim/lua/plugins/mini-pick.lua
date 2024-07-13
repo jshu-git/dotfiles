@@ -6,7 +6,7 @@ return {
   config = function()
     local pick = require("mini.pick")
     local extra = require("mini.extra")
-    vim.ui.select = pick.ui_select
+    -- vim.ui.select = pick.ui_select
 
     pick.setup({
       mappings = {
@@ -81,22 +81,22 @@ return {
     end, { desc = "Grep Live (Relative)" })
 
     -- grep
-    vim.keymap.set("n", "<leader>fg", function()
-      local input = vim.fn.input("Grep (cwd): ")
-      if input ~= "" then
-        local opts = get_cwd_opts("Grep")
-        opts.source.name = opts.source.name .. ": " .. input
-        pick.builtin.grep({ pattern = input }, opts)
-      end
-    end, { desc = "Grep" })
-    vim.keymap.set("n", "<leader>fG", function()
-      local input = vim.fn.input("Grep (Relative): ")
-      if input ~= "" then
-        local opts = get_relative_opts("Grep")
-        opts.source.name = opts.source.name .. ": " .. input
-        pick.builtin.grep({ pattern = input }, opts)
-      end
-    end, { desc = "Grep (Relative)" })
+    -- vim.keymap.set("n", "<leader>fg", function()
+    --   local input = vim.fn.input("Grep (cwd): ")
+    --   if input ~= "" then
+    --     local opts = get_cwd_opts("Grep")
+    --     opts.source.name = opts.source.name .. ": " .. input
+    --     pick.builtin.grep({ pattern = input }, opts)
+    --   end
+    -- end, { desc = "Grep" })
+    -- vim.keymap.set("n", "<leader>fG", function()
+    --   local input = vim.fn.input("Grep (Relative): ")
+    --   if input ~= "" then
+    --     local opts = get_relative_opts("Grep")
+    --     opts.source.name = opts.source.name .. ": " .. input
+    --     pick.builtin.grep({ pattern = input }, opts)
+    --   end
+    -- end, { desc = "Grep (Relative)" })
 
     -- grep cword
     vim.keymap.set("n", "<leader>*", function()
@@ -121,12 +121,12 @@ return {
     end, { desc = "Grep Buffer (All)" })
 
     -- git
-    vim.keymap.set(
-      "n",
-      "<leader>gc",
-      extra.pickers.git_commits,
-      { desc = "Commits" }
-    )
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>gc",
+    --   extra.pickers.git_commits,
+    --   { desc = "Commits" }
+    -- )
 
     -- special paths
     vim.keymap.set("n", "<leader>fp", function()
