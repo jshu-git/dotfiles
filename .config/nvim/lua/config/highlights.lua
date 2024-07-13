@@ -29,6 +29,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
         "NeoCodeiumSuggestion",
         { link = "CodeiumSuggestion" }
       )
+      vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "Search" })
     end
 
     -- if vim.g.colors_name == "arctic" then

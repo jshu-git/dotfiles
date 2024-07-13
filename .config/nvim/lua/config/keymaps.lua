@@ -10,12 +10,25 @@ vim.keymap.set("n", "<leader>Q", "<cmd>qa!<CR>", { desc = "Quit All" })
 vim.keymap.set("n", "<leader>o", "o<Esc>", { desc = "New Line Below" })
 vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = "New Line Above" })
 vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
+vim.keymap.set("n", "<leader>i", "<cmd>Inspect<CR>", { desc = "Inspect" })
 vim.keymap.set("n", "<leader>d", "<cmd>bd<CR>", { desc = "Delete Buffer" })
 vim.keymap.set(
   "n",
   "<leader>D",
   "<cmd>bd!<CR>",
   { desc = "Delete Buffer (Force)" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>,",
+  "mzA,<Esc>`z:delmarks z<cr>",
+  { desc = "Append Comma" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>;",
+  "mzA;<Esc>`z:delmarks z<cr>",
+  { desc = "Append Semicolon" }
 )
 -- toggles
 vim.keymap.set(
@@ -24,7 +37,6 @@ vim.keymap.set(
   "<cmd>setlocal wrap!<CR>",
   { desc = "Toggle Word Wrap" }
 )
-vim.keymap.set("n", "<leader>i", "<cmd>Inspect<CR>", { desc = "Inspect" })
 
 -- movement
 vim.keymap.set("n", "<BS>", "<C-^>")
@@ -49,9 +61,6 @@ vim.keymap.set(
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<CR>", '"_ciw')
 vim.keymap.set({ "n", "x" }, ";", ":")
-vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "Append Comma" })
-vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Append Semicolon" })
--- smart insert
 vim.keymap.set("n", "i", function()
   if vim.api.nvim_get_current_line():match("^%s*$") then
     return '"_cc'
@@ -65,7 +74,6 @@ vim.keymap.set({ "n", "x" }, "x", '"_x')
 vim.keymap.set({ "n", "x" }, "c", '"_c')
 vim.keymap.set({ "n", "x" }, "C", '"_C')
 vim.keymap.set("n", "dD", '"_dd')
--- smart dd https://old.reddit.com/r/neovim/comments/w0jzzv/smart_dd/
 vim.keymap.set("n", "dd", function()
   if vim.api.nvim_get_current_line():match("^%s*$") then
     return '"_dd'

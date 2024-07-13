@@ -81,9 +81,6 @@ return {
         { mode = "n", keys = "z-", postkeys = "z" },
         { mode = "n", keys = "zo", postkeys = "z" },
         { mode = "n", keys = "zc", postkeys = "z" },
-        -- marks
-        { mode = "n", keys = "mn", postkeys = "m" },
-        { mode = "n", keys = "mp", postkeys = "m" },
       },
     })
   end,
