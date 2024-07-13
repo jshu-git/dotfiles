@@ -15,7 +15,7 @@ return {
         end
         local extra = require("mini.extra")
 
-        map("gs", require("pretty_hover").hover, "Hover")
+        map("gs", vim.lsp.buf.hover, "Hover")
         map("gS", vim.lsp.buf.signature_help, "Signature Help")
         map("ga", vim.lsp.buf.code_action, "Code Action")
         map("gd", "<cmd>Glance definitions<CR>", "Goto Definition")
@@ -105,12 +105,5 @@ return {
         vim.tbl_deep_extend("force", capabilities, config.capabilities or {})
       lspconfig[server].setup(config)
     end
-
-    -- ui
-    require("lspconfig.ui.windows").default_options.border = "single"
-    vim.lsp.handlers["textDocument/hover"] =
-      vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
-    vim.lsp.handlers["textDocument/signatureHelp"] =
-      vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
   end,
 }

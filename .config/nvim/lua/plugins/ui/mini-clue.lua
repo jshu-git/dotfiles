@@ -68,6 +68,7 @@ return {
         { mode = "n", keys = "<leader>a", desc = "GPT…" },
         { mode = "x", keys = "<leader>a", desc = "GPT…" },
         { mode = "n", keys = "<leader>s", desc = "Session…" },
+        { mode = "n", keys = "<leader>n", desc = "Noice…" },
 
         -- submodes
         -- buffers

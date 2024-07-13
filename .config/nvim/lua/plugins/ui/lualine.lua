@@ -28,6 +28,10 @@ return {
           { "filename", path = 1 },
         },
         lualine_x = {
+          {
+            require("noice").api.statusline.mode.get,
+            cond = require("noice").api.statusline.mode.has,
+          },
           { file_size },
         },
         lualine_y = {
