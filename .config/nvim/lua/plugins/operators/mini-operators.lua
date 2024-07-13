@@ -24,13 +24,12 @@ return {
       line = "ss",
       selection = "ss",
     })
-    vim.keymap.set("n", "S", "s$", { desc = "Substitute to EOL", remap = true })
+    vim.keymap.set("n", "S", "s$", { remap = true })
 
     -- custom operators
     -- vim.keymap.set("n", "sf", ":%s/<C-r><C-w>//gI<left><left><left>", { desc = "Substitute cword (File)" })
     -- vim.keymap.set("x", "s/", ":s///gI<left><left><left><left>", { desc = "Substitute in selection" })
     -- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
-    vim.keymap.set("n", "*", "*N")
     vim.keymap.set(
       "n",
       "sw",

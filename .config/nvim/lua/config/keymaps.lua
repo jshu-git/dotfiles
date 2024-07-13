@@ -8,7 +8,7 @@ vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>Q", "<cmd>qa!<CR>", { desc = "Quit All" })
 vim.keymap.set("n", "<leader>o", "o<Esc>", { desc = "New Line Below" })
-vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = "New Line Above" })
+vim.keymap.set("n", "<leader>p", "<cmd>put<CR>", { desc = "Paste After Line" })
 vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 vim.keymap.set("n", "<leader>i", "<cmd>Inspect<CR>", { desc = "Inspect" })
 vim.keymap.set("n", "<leader>d", "<cmd>bd<CR>", { desc = "Delete Buffer" })
@@ -40,6 +40,7 @@ vim.keymap.set(
 
 -- movement
 vim.keymap.set("n", "<BS>", "<C-^>")
+vim.keymap.set({ "n", "x" }, "M", "%")
 vim.keymap.set({ "n", "x" }, "j", function()
   return vim.v.count > 0 and "j" or "gj"
 end, { expr = true })
@@ -48,7 +49,6 @@ vim.keymap.set({ "n", "x" }, "k", function()
 end, { expr = true })
 vim.keymap.set({ "n", "x", "o" }, "J", "5gj")
 vim.keymap.set({ "n", "x", "o" }, "K", "5gk")
-vim.keymap.set({ "n", "x" }, "M", "%")
 -- smart 0/^ https://github.com/wscnd/LunarVim/blob/master/lua/keymappings.lua#L98
 vim.keymap.set(
   { "n", "x", "o" },
@@ -58,9 +58,9 @@ vim.keymap.set(
 )
 
 -- editing
+vim.keymap.set({ "n", "x" }, ";", ":")
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<CR>", '"_ciw')
-vim.keymap.set({ "n", "x" }, ";", ":")
 vim.keymap.set("n", "i", function()
   if vim.api.nvim_get_current_line():match("^%s*$") then
     return '"_cc'
@@ -68,6 +68,12 @@ vim.keymap.set("n", "i", function()
     return "i"
   end
 end, { expr = true })
+
+-- search
+vim.keymap.set("n", "*", "g*N")
+vim.keymap.set("n", "g*", "*N")
+vim.keymap.set("n", "n", "nzv")
+vim.keymap.set("n", "N", "Nzv")
 
 -- preserve clipboard
 vim.keymap.set({ "n", "x" }, "x", '"_x')
@@ -83,13 +89,7 @@ vim.keymap.set("n", "dd", function()
 end, { expr = true })
 
 -- yanking/pasting
-vim.keymap.set("n", "<leader>p", "<cmd>put<CR>", { desc = "Paste After Line" })
-vim.keymap.set(
-  "n",
-  "<leader>P",
-  "<cmd>put!<CR>",
-  { desc = "Paste Before Line" }
-)
+
 -- files
 vim.keymap.set("n", "yp", function()
   vim.fn.setreg("+", vim.fn.expand("%"))
