@@ -38,7 +38,7 @@ return {
       },
       views = {
         virtualtext = {
-          hl_group = "CodeiumSuggestion",
+          hl_group = "Search",
         },
         split = {
           size = "50%",
@@ -97,6 +97,15 @@ return {
               FloatBorder = "NoicePopupBorder",
             },
           },
+        },
+      },
+      routes = {
+        {
+          filter = {
+            event = "msg_show",
+            find = "Search hit",
+          },
+          opts = { skip = true },
         },
       },
     })
