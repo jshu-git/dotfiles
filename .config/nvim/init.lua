@@ -4,7 +4,6 @@ end
 
 require("config.options")
 require("config.autocommands")
-require("config.highlights")
 require("config.keymaps")
 
 -- lazy
