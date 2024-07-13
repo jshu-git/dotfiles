@@ -99,15 +99,6 @@ return {
           },
         },
       },
-      routes = {
-        {
-          filter = {
-            event = "msg_show",
-            find = "Search hit",
-          },
-          opts = { skip = true },
-        },
-      },
     })
 
     vim.keymap.set("n", "<leader>nn", function()
