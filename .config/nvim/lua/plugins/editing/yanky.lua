@@ -33,5 +33,16 @@ return {
     -- vim.keymap.set({ "o", "x" }, "lp", function()
     --   require("yanky.textobj").last_put()
     -- end)
+
+    -- custom
+    -- files
+    vim.keymap.set("n", "yp", function()
+      vim.fn.setreg("+", vim.fn.expand("%"))
+      vim.notify("Copied: " .. vim.fn.expand("%"))
+    end)
+    vim.keymap.set("n", "yP", function()
+      vim.fn.setreg("+", vim.fn.expand("%:p"))
+      vim.notify("Copied: " .. vim.fn.expand("%:p"))
+    end)
   end,
 }

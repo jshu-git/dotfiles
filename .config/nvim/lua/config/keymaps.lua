@@ -88,20 +88,7 @@ vim.keymap.set("n", "dd", function()
   end
 end, { expr = true })
 
--- yanking/pasting
-
--- files
-vim.keymap.set("n", "yp", function()
-  vim.fn.setreg("+", vim.fn.expand("%"))
-  vim.notify("Copied: " .. vim.fn.expand("%"))
-end, { desc = "Copy Path (Relative)" })
-vim.keymap.set("n", "yP", function()
-  vim.fn.setreg("+", vim.fn.expand("%:p"))
-  vim.notify("Copied: " .. vim.fn.expand("%:p"))
-end, { desc = "Copy Path (Full)" })
-
 -- windows
--- focus
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")

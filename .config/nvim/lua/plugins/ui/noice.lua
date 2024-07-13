@@ -69,7 +69,7 @@ return {
           },
         },
         mini = {
-          timeout = 1000,
+          timeout = 2000,
         },
         cmdline_popup = {
           border = {
