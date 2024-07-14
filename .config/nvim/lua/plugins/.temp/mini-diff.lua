@@ -8,7 +8,7 @@ return {
         signs = {
           add = "▌",
           change = "▌",
-          delete = "-",
+          delete = "▌",
         },
         priority = 1,
       },

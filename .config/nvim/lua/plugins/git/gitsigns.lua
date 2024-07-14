@@ -9,8 +9,9 @@ return {
       signs = {
         add = { text = "▌" },
         change = { text = "▌" },
-        delete = { text = "-" },
-        topdelete = { text = "-" },
+        delete = { text = "▌" },
+        topdelete = { text = "▌" },
+        untracked = { text = "┋" },
       },
       signs_staged_enable = false,
       attach_to_untracked = true,
@@ -47,11 +48,18 @@ return {
     -- end, { desc = "Blame" })
 
     -- hunks
+    vim.keymap.set({ "o", "x" }, "ah", ":<C-U>Gitsigns select_hunk<CR>")
     vim.keymap.set(
       "n",
       "<leader>gr",
-      gitsigns.reset_hunk,
-      { desc = "Reset Hunk" }
+      "vah" .. "<leader>gr",
+      { desc = "Reset Hunk", remap = true }
+    )
+    vim.keymap.set(
+      "x",
+      "<leader>gr",
+      ":<C-U>Gitsigns reset_hunk<CR>",
+      { desc = "Reset Hunk (Selection)" }
     )
     vim.keymap.set(
       "n",
@@ -59,10 +67,6 @@ return {
       gitsigns.reset_buffer,
       { desc = "Reset Buffer" }
     )
-    vim.keymap.set("", "<leader>gr", function()
-      gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-    end, { desc = "Reset Hunk" })
-    vim.keymap.set({ "o", "x" }, "ah", ":<C-U>Gitsigns select_hunk<CR>")
 
     -- navigate
     vim.keymap.set("n", "[h", function()
