@@ -3,27 +3,17 @@ return {
   event = "LspAttach",
   config = function()
     -- default ui
-    local signs = {
-      error = "󰅚 ",
-      warn = "󰀪 ",
-      hint = "󰌶 ",
-      info = "󰋽 ",
-    }
     vim.diagnostic.config({
       virtual_text = false,
-      signs = {
-        text = {
-          [vim.diagnostic.severity.ERROR] = signs.error,
-          [vim.diagnostic.severity.WARN] = signs.warn,
-          [vim.diagnostic.severity.INFO] = signs.info,
-          [vim.diagnostic.severity.HINT] = signs.hint,
-        },
-      },
-      float = {
-        border = "single",
-      },
+      float = { border = "single" },
       severity_sort = true,
     })
+    local signs =
+      { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = "󰋽 " }
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl })
+    end
 
     require("diagflow").setup({
       padding_right = 1,
