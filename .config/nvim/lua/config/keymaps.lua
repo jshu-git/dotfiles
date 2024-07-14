@@ -11,13 +11,6 @@ vim.keymap.set("n", "<leader>o", "o<Esc>", { desc = "New Line Below" })
 vim.keymap.set("n", "<leader>p", "<cmd>put<CR>", { desc = "Paste After Line" })
 vim.keymap.set("n", "<leader>S", "<cmd>so %<CR>", { desc = "Source File" })
 vim.keymap.set("n", "<leader>i", "<cmd>Inspect<CR>", { desc = "Inspect" })
-vim.keymap.set("n", "<leader>d", "<cmd>bd<CR>", { desc = "Delete Buffer" })
-vim.keymap.set(
-  "n",
-  "<leader>D",
-  "<cmd>bd!<CR>",
-  { desc = "Delete Buffer (Force)" }
-)
 vim.keymap.set(
   "n",
   "<leader>,",

@@ -48,6 +48,8 @@ return {
       { desc = "Buffer: Last" }
     )
     vim.keymap.set("n", "gp", "<cmd>BufferPin<CR>", { desc = "Buffer: Pin" })
+
+    -- closing
     -- vim.keymap.set("n", "gb", "<cmd>BufferPick<CR>", { desc = "Buffer: Pick" })
     -- vim.keymap.set(
     --   "n",
@@ -59,7 +61,14 @@ return {
       "n",
       "<leader>X",
       "<cmd>BufferCloseAllButCurrentOrPinned<CR>",
-      { desc = "Close Other Buffers" }
+      { desc = "Buffer: Close Others" }
+    )
+    vim.keymap.set("n", "<leader>d", "<cmd>bd<CR>", { desc = "Buffer: Delete" })
+    vim.keymap.set(
+      "n",
+      "<leader>D",
+      "<cmd>bd!<CR>",
+      { desc = "Buffer: Delete (Force)" }
     )
   end,
 }

@@ -6,7 +6,7 @@ return {
     vim.opt.foldlevel = 99
     vim.opt.foldlevelstart = 99
     vim.opt.foldtext = ""
-    vim.opt.fillchars = { fold = " " }
+    vim.opt.fillchars:append({ fold = " " })
 
     local fold_cycle = require("fold-cycle")
     fold_cycle.setup({

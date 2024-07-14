@@ -6,6 +6,7 @@ vim.opt.laststatus = 3
 vim.opt.splitkeep = "screen"
 vim.opt.showcmd = false
 vim.opt.termguicolors = true
+vim.opt.fillchars:append({ eob = " " })
 
 -- tabs/indents
 vim.opt.tabstop = 4
