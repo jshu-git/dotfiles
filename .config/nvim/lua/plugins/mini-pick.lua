@@ -122,6 +122,7 @@ return {
       local special_paths = {
         vim.fn.stdpath("data") .. "/lazy",
         vim.fn.stdpath("data") .. "/mini.files/trash",
+        require("persisted.config").options.save_dir,
       }
       local paths = {}
       if vim.env.SSH_CLIENT == nil then
