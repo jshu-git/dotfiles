@@ -12,6 +12,7 @@ return {
     require("CopilotChat.integrations.cmp").setup()
 
     chat.setup({
+      -- model = "gpt-4o",
       separator = " ",
       show_folds = false,
       show_help = false,
