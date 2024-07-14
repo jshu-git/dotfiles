@@ -1,3 +1,9 @@
+--[[ gitsigns over mini.diff because
+- reset_buffer retains cursor position
+- blame ghost text
+- untracked signs
+mini.diff has better text objects though ]]
+
 return {
   "lewis6991/gitsigns.nvim",
   dependencies = {
@@ -52,7 +58,7 @@ return {
     vim.keymap.set(
       "n",
       "<leader>gr",
-      "vah" .. "<leader>gr",
+      "v" .. "ah" .. "<leader>gr",
       { desc = "Reset Hunk", remap = true }
     )
     vim.keymap.set(
