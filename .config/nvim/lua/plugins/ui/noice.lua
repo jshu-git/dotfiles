@@ -48,6 +48,7 @@ return {
         },
         split = {
           enter = true,
+          size = "10%",
           close = {
             keys = { "<esc>" },
           },
