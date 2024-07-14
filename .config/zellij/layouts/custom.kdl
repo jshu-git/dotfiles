@@ -26,10 +26,10 @@ layout {
         children
     }
 
-    tab name=".config" cwd="~/.config" focus=true
-    tab name="rust"    cwd="~/git/rustlings/"
-    tab name="shokz"   cwd="~/git/shokz_downloader/"
-    tab name="leet"    cwd="~/git/leetcode/"
+    tab name="󰒓 config" cwd="~/.config" focus=true
+    tab name="󱘗 rust"    cwd="~/git/rustlings/"
+    tab name="󰌠 shokz"   cwd="~/git/shokz_downloader/"
+    tab name="󰅴 leet"    cwd="~/git/leetcode/"
     // tab name="ontap.api"    cwd="~/git/ontap/api/ontap/api"
     // tab name="ontap.common" cwd="~/git/ontap/common/ontap/common"
     // tab name="ontap.x"      cwd="~/git/ontap/ontap-x/ontap/x"
