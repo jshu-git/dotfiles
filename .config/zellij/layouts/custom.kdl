@@ -27,9 +27,9 @@ layout {
     }
 
     tab name="󰒓 config" cwd="~/.config" focus=true
-    tab name="󱘗 rust"    cwd="~/git/rustlings/"
-    tab name="󰌠 shokz"   cwd="~/git/shokz_downloader/"
-    tab name="󰅴 leet"    cwd="~/git/leetcode/"
+    tab name="󱘗 rust"   cwd="~/git/rustlings/"
+    tab name="󰌠 shokz"  cwd="~/git/shokz_downloader/"
+    tab name="󰅴 leet"   cwd="~/git/leetcode/"
     // tab name="ontap.api"    cwd="~/git/ontap/api/ontap/api"
     // tab name="ontap.common" cwd="~/git/ontap/common/ontap/common"
     // tab name="ontap.x"      cwd="~/git/ontap/ontap-x/ontap/x"
@@ -56,7 +56,6 @@ layout {
     // floating
     swap_floating_layout name="enlarged" {
         floating_panes max_panes=10 {
-            pane { x "5%"; y 2; width "90%"; height "90%"; }
             pane { x "5%"; y 3; width "90%"; height "90%"; }
             pane { x "5%"; y 4; width "90%"; height "90%"; }
             pane { x "5%"; y 5; width "90%"; height "90%"; }
