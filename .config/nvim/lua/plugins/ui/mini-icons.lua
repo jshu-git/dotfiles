@@ -4,7 +4,7 @@ return {
     local icons = require("mini.icons")
     icons.setup({
       filetype = {
-        minifiles = { glyph = "󰉋" },
+        minifiles = { glyph = "󰉋", hl = "Directory" },
         minipick = { glyph = "󰍉" },
       },
     })
