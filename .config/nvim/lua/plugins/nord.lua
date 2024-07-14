@@ -52,6 +52,9 @@ return {
       search = { theme = "vscode" },
       styles = {
         comments = { italic = false },
+        bufferline = {
+          modified = { italic = false },
+        },
       },
     })
     vim.cmd.colorscheme("nord")
