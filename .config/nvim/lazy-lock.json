@@ -20,7 +20,6 @@
   "fold-cycle.nvim": { "branch": "main", "commit": "20e9b468b771ebf33b6806a0e872eee53c5a20c9" },
   "full_visual_line.nvim": { "branch": "master", "commit": "c6375ff50338ac6069aec99fb9adfaadc9174618" },
   "gitlinker.nvim": { "branch": "master", "commit": "cc59f732f3d043b626c8702cb725c82e54d35c25" },
-  "gitsigns-yadm.nvim": { "branch": "main", "commit": "7400593e0155ed919ddb25fa21daac9fb6552019" },
   "gitsigns.nvim": { "branch": "main", "commit": "e9c4187c3774a46df2d086a66cf3a7e6bea4c432" },
   "glance.nvim": { "branch": "master", "commit": "51059bcf21016387b6233c89eed220cf47fca752" },
   "guess-indent.nvim": { "branch": "main", "commit": "6cd61f7a600bb756e558627cd2e740302c58e32d" },
