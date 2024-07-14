@@ -38,17 +38,13 @@ vim.keymap.set(
   { desc = "Toggle Word Wrap" }
 )
 
--- movement
-vim.keymap.set("n", "<BS>", "<C-^>")
-vim.keymap.set({ "n", "x" }, "M", "%")
+-- better movement
 vim.keymap.set({ "n", "x" }, "j", function()
   return vim.v.count > 0 and "j" or "gj"
 end, { expr = true })
 vim.keymap.set({ "n", "x" }, "k", function()
   return vim.v.count > 0 and "k" or "gk"
 end, { expr = true })
-vim.keymap.set({ "n", "x", "o" }, "J", "5gj")
-vim.keymap.set({ "n", "x", "o" }, "K", "5gk")
 -- smart 0/^ https://github.com/wscnd/LunarVim/blob/master/lua/keymappings.lua#L98
 vim.keymap.set(
   { "n", "x", "o" },
@@ -58,6 +54,8 @@ vim.keymap.set(
 )
 
 -- editing
+vim.keymap.set("n", "<BS>", "<C-^>")
+vim.keymap.set({ "n", "x" }, "M", "%")
 vim.keymap.set({ "n", "x" }, ";", ":")
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<CR>", '"_ciw')
