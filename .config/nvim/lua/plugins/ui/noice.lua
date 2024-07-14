@@ -40,10 +40,17 @@ return {
       },
       presets = {
         lsp_doc_border = true,
+        cmdline_output_to_split = true,
       },
       views = {
         virtualtext = {
           hl_group = "Search",
+        },
+        split = {
+          enter = true,
+          close = {
+            keys = { "<esc>" },
+          },
         },
         popup = {
           close = {
@@ -99,6 +106,7 @@ return {
         },
       },
       routes = {
+        -- macros
         {
           view = "virtualtext",
           filter = { event = "msg_showmode" },
