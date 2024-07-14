@@ -40,27 +40,29 @@ return {
     })
 
     -- helpers
-    local function get_cwd_opts(name)
-      return {
-        source = { name = name .. " (" .. vim.fn.getcwd() .. ")" },
-      }
-    end
-    local function get_relative_opts(name)
-      local relative_path = vim.fn.expand("%:p:h")
-      return {
+    local function cwd_opts(name, opts)
+      return vim.tbl_deep_extend("force", {
         source = {
-          name = name .. " (" .. relative_path .. ")",
-          cwd = relative_path,
+          name = name .. " (" .. vim.fn.getcwd() .. ")",
         },
-      }
+      }, opts or {})
+    end
+    local function relative_opts(name, opts)
+      local relative_path = vim.fn.expand("%:p:h")
+      return vim.tbl_deep_extend("force", {
+        source = {
+          cwd = relative_path,
+          name = name .. " (" .. relative_path .. ")",
+        },
+      }, opts or {})
     end
 
     -- files
     vim.keymap.set("n", "<leader>ff", function()
-      pick.builtin.files({}, get_cwd_opts("Files"))
+      pick.builtin.files({}, cwd_opts("Files"))
     end, { desc = "Files" })
     vim.keymap.set("n", "<leader>fF", function()
-      pick.builtin.files({}, get_relative_opts("Files"))
+      pick.builtin.files({}, relative_opts("Files"))
     end, { desc = "Files (Relative)" })
     vim.keymap.set(
       "n",
@@ -74,17 +76,17 @@ return {
 
     -- grep live
     vim.keymap.set("n", "<leader>fw", function()
-      pick.builtin.grep_live({}, get_cwd_opts("Grep Live"))
+      pick.builtin.grep_live({}, cwd_opts("Grep Live"))
     end, { desc = "Grep Live" })
     vim.keymap.set("n", "<leader>fW", function()
-      pick.builtin.grep_live({}, get_relative_opts("Grep Live"))
+      pick.builtin.grep_live({}, relative_opts("Grep Live"))
     end, { desc = "Grep Live (Relative)" })
 
     -- grep
     vim.keymap.set("n", "<leader>fg", function()
       local input = vim.fn.input("Grep (cwd): ")
       if input ~= "" then
-        local opts = get_cwd_opts("Grep")
+        local opts = cwd_opts("Grep")
         opts.source.name = opts.source.name .. ": " .. input
         pick.builtin.grep({ pattern = input }, opts)
       end
@@ -92,7 +94,7 @@ return {
     vim.keymap.set("n", "<leader>fG", function()
       local input = vim.fn.input("Grep (Relative): ")
       if input ~= "" then
-        local opts = get_relative_opts("Grep")
+        local opts = relative_opts("Grep")
         opts.source.name = opts.source.name .. ": " .. input
         pick.builtin.grep({ pattern = input }, opts)
       end
@@ -101,13 +103,13 @@ return {
     -- grep cword
     vim.keymap.set("n", "<leader>*", function()
       local cword = vim.fn.expand("<cword>")
-      local opts = get_cwd_opts("Grep cword")
+      local opts = cwd_opts("Grep cword")
       opts.source.name = opts.source.name .. ": " .. cword
       pick.builtin.grep({ pattern = cword }, opts)
     end, { desc = "Grep cword" })
     vim.keymap.set("n", "<leader>#", function()
       local cword = vim.fn.expand("<cword>")
-      local opts = get_relative_opts("Grep cword")
+      local opts = relative_opts("Grep cword")
       opts.source.name = opts.source.name .. ": " .. cword
       pick.builtin.grep({ pattern = cword }, opts)
     end, { desc = "Grep cword (Relative)" })
@@ -115,7 +117,7 @@ return {
     -- grep buffer
     vim.keymap.set("n", ",", function()
       extra.pickers.buf_lines({ scope = "current" })
-    end, { desc = "Grep Buffer" })
+    end)
 
     -- special paths
     vim.keymap.set("n", "<leader>fp", function()
