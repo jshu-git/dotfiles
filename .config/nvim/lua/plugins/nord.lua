@@ -17,9 +17,7 @@ return {
         vim.api.nvim_set_hl(0, "MiniIconsRed", { fg = c.aurora.red })
         vim.api.nvim_set_hl(0, "MiniIconsYellow", { fg = c.aurora.yellow })
 
-        vim.api.nvim_set_hl(0, "MiniIndentScopeSymbol", { link = "Whitespace" })
-        vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickNormal" })
-        vim.api.nvim_set_hl(0, "MiniCursorWord", { link = "Search" })
+        -- mini.diff
         vim.api.nvim_set_hl(0, "MiniDiffSignAdd", { link = "GitSignsAdd" })
         vim.api.nvim_set_hl(
           0,
@@ -32,6 +30,20 @@ return {
           { link = "GitSignsDelete" }
         )
 
+        -- mini
+        vim.api.nvim_set_hl(0, "MiniIndentScopeSymbol", { link = "Whitespace" })
+        vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickNormal" })
+        vim.api.nvim_set_hl(0, "MiniCursorWord", { link = "Search" })
+
+        -- noice
+        vim.api.nvim_set_hl(0, "NoicePopupBorder", { link = "FloatBorder" })
+        vim.api.nvim_set_hl(
+          0,
+          "NoiceCmdlinePopupBorder",
+          { link = "FloatBorder" }
+        )
+
+        -- copilot
         vim.api.nvim_set_hl(
           0,
           "CopilotSuggestion",

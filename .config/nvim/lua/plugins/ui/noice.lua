@@ -15,7 +15,7 @@ return {
           filter = false,
           lua = false,
           help = false,
-          input = false,
+          input = { view = "cmdline_popup", title = "" },
         },
       },
       messages = {
@@ -71,39 +71,23 @@ return {
             max_height = math.floor(0.25 * vim.o.lines),
             max_width = math.floor(0.5 * vim.o.columns),
           },
-          border = {
-            style = "single",
-            padding = { 0, 0 },
-          },
+          border = { style = "single", padding = { 0, 0 } },
         },
         mini = {
           timeout = 2000,
         },
         cmdline_popup = {
-          border = {
-            style = "single",
-            padding = { 0, 0 },
-          },
-          win_options = {
-            winhighlight = {
-              FloatBorder = "NoicePopupBorder",
-            },
-          },
+          border = { style = "single", padding = { 0, 0 } },
+        },
+        cmdline_input = {
+          border = { style = "single", padding = { 0, 0 } },
         },
         confirm = {
           position = {
             row = "50%",
             col = "50%",
           },
-          border = {
-            style = "single",
-            padding = { 0, 0 },
-          },
-          win_options = {
-            winhighlight = {
-              FloatBorder = "NoicePopupBorder",
-            },
-          },
+          border = { style = "single", padding = { 0, 0 } },
         },
       },
       routes = {
