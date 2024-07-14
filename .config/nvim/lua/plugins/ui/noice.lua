@@ -44,7 +44,7 @@ return {
       },
       views = {
         virtualtext = {
-          hl_group = "Search",
+          hl_group = "DiagnosticVirtualTextError",
         },
         split = {
           enter = true,
