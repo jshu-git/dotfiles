@@ -20,6 +20,18 @@ return {
         vim.api.nvim_set_hl(0, "MiniIndentScopeSymbol", { link = "Whitespace" })
         vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickNormal" })
         vim.api.nvim_set_hl(0, "MiniCursorWord", { link = "Search" })
+        vim.api.nvim_set_hl(0, "MiniDiffSignAdd", { link = "GitSignsAdd" })
+        vim.api.nvim_set_hl(
+          0,
+          "MiniDiffSignChange",
+          { link = "GitSignsChange" }
+        )
+        vim.api.nvim_set_hl(
+          0,
+          "MiniDiffSignDelete",
+          { link = "GitSignsDelete" }
+        )
+
         vim.api.nvim_set_hl(
           0,
           "CopilotSuggestion",

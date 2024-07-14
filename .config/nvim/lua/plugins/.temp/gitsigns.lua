@@ -62,6 +62,7 @@ return {
     vim.keymap.set("", "<leader>gr", function()
       gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
     end, { desc = "Reset Hunk" })
+    vim.keymap.set({ "o", "x" }, "ah", ":<C-U>Gitsigns select_hunk<CR>")
 
     -- navigate
     vim.keymap.set("n", "[h", function()
