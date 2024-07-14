@@ -96,6 +96,14 @@ return {
           view = "virtualtext",
           filter = { event = "msg_showmode" },
         },
+        -- search text
+        {
+          filter = {
+            event = "msg_show",
+            find = "Search hit ",
+          },
+          opts = { skip = true },
+        },
       },
     })
 
