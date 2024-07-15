@@ -30,6 +30,12 @@ vim.keymap.set(
   "<cmd>setlocal wrap!<CR>",
   { desc = "Toggle Word Wrap" }
 )
+vim.keymap.set(
+  "n",
+  "<leader>tn",
+  "<cmd>setlocal number!<CR>",
+  { desc = "Toggle Line Numbers" }
+)
 
 -- better movement
 vim.keymap.set({ "n", "x" }, "j", function()

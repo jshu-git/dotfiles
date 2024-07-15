@@ -124,11 +124,11 @@ return {
     vim.keymap.set("n", "<leader>tt", function()
       noice.cmd("dismiss")
     end, { desc = "Noice (Clear)" })
-    vim.keymap.set("n", "<leader>tn", function()
-      noice.cmd("disable")
-    end, { desc = "Noice (Disable)" })
-    vim.keymap.set("n", "<leader>tN", function()
-      noice.cmd("enable")
-    end, { desc = "Noice (Enable)" })
+    -- vim.keymap.set("n", "<leader>tn", function()
+    --   noice.cmd("disable")
+    -- end, { desc = "Noice (Disable)" })
+    -- vim.keymap.set("n", "<leader>tN", function()
+    --   noice.cmd("enable")
+    -- end, { desc = "Noice (Enable)" })
   end,
 }
