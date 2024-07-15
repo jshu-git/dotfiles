@@ -16,6 +16,8 @@ setopt HIST_VERIFY            # Do not execute immediately upon history expansio
 setopt APPEND_HISTORY         # append to history file
 setopt HIST_NO_STORE          # Don't store history commands
 
+# emacs
+bindkey -e
 # macos arrow keys https://linux.die.net/man/1/zshzle
 bindkey "^[[1;3C" forward-word      # alt-right
 bindkey "^[[1;3D" backward-word     # alt-left
@@ -25,7 +27,7 @@ bindkey "^[[1;9C" end-of-line       # cmd-right
 # edit command line
 autoload -z edit-command-line
 zle -N edit-command-line
-bindkey "^E" edit-command-line
+bindkey '^X^E' edit-command-line
 
 # brew
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
@@ -37,6 +39,7 @@ CONFIG="$HOME/.config"
 # zsh
 ZSH="$CONFIG/zsh"
 source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^[l' autosuggest-accept
 source $ZSH/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZSH/aliases.zsh
 
