@@ -3,6 +3,11 @@ return {
   ft = "markdown",
   config = function()
     require("markview").setup()
-    vim.keymap.set("n", "<leader>tv", "<cmd>Markview<CR>")
+    vim.keymap.set(
+      "n",
+      "<leader>tv",
+      "<cmd>Markview<CR>",
+      { desc = "Toggle Markview" }
+    )
   end,
 }
