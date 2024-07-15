@@ -121,6 +121,7 @@ return {
     end, { desc = "Errors" })
 
     -- toggle
+    vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<CR><cmd>Noice dismiss<cr>")
     vim.keymap.set("n", "<leader>tt", function()
       noice.cmd("dismiss")
     end, { desc = "Noice (Clear)" })
