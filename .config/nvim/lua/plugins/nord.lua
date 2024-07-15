@@ -42,6 +42,7 @@ return {
           "NoiceCmdlinePopupBorder",
           { link = "FloatBorder" }
         )
+        vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { link = "FloatBorder" })
 
         -- copilot
         vim.api.nvim_set_hl(
@@ -55,6 +56,9 @@ return {
           { link = "CodeiumSuggestion" }
         )
         vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "Search" })
+
+        -- matchup
+        vim.api.nvim_set_hl(0, "MatchParen", { link = "Underlined" })
       end,
     })
   end,
