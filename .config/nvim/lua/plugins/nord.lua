@@ -58,7 +58,7 @@ return {
         vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "Search" })
 
         -- matchup
-        vim.api.nvim_set_hl(0, "MatchParen", { link = "Underlined" })
+        -- vim.api.nvim_set_hl(0, "MatchParen", { link = "Underlined" })
       end,
     })
   end,

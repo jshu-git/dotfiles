@@ -52,7 +52,7 @@ vim.keymap.set({ "n", "x" }, ";", ":")
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<CR>", '"_ciw')
 vim.keymap.set("n", "i", function()
-  if vim.api.nvim_get_current_line():match("^%s*$") then
+  if vim.fn.getline(".") == "" then
     return '"_cc'
   else
     return "i"
@@ -71,11 +71,10 @@ vim.keymap.set({ "n", "x" }, "c", '"_c')
 vim.keymap.set({ "n", "x" }, "C", '"_C')
 vim.keymap.set("n", "dD", '"_dd')
 vim.keymap.set("n", "dd", function()
-  if vim.api.nvim_get_current_line():match("^%s*$") then
+  if vim.fn.getline(".") == "" then
     return '"_dd'
-  else
-    return "dd"
   end
+  return "dd"
 end, { expr = true })
 
 -- windows
