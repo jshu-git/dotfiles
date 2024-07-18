@@ -12,19 +12,17 @@ return {
       multiply = {
         prefix = "sm",
       },
-      replace = {
-        prefix = "",
-      },
+      replace = { prefix = "" }, -- using substitute.nvim for highlight
       sort = {
         prefix = "so",
       },
     })
-    operators.make_mappings("replace", {
-      textobject = "s",
-      line = "ss",
-      selection = "ss",
-    })
-    vim.keymap.set("n", "S", "s$", { remap = true })
+    -- operators.make_mappings("replace", {
+    --   textobject = "s",
+    --   line = "ss",
+    --   selection = "ss",
+    -- })
+    -- vim.keymap.set("n", "S", "s$", { remap = true })
 
     -- custom operators
     -- vim.keymap.set("n", "sf", ":%s/<C-r><C-w>//gI<left><left><left>", { desc = "Substitute cword (File)" })
