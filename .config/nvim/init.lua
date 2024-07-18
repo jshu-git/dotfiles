@@ -15,4 +15,4 @@ end
 safe_require("config.options")
 safe_require("config.autocommands")
 safe_require("config.keymaps")
-safe_require("lazy-nvim")
+safe_require("config.lazy")
