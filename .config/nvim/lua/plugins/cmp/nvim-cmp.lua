@@ -5,9 +5,10 @@ return {
     { "folke/lazydev.nvim", ft = "lua", opts = {} },
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-calc",
     "FelipeLema/cmp-async-path",
+    -- cmdline
+    "hrsh7th/cmp-cmdline",
     "dmitmel/cmp-cmdline-history",
     -- signature
     "hrsh7th/cmp-nvim-lsp-signature-help",
@@ -18,12 +19,12 @@ return {
     local cmp = require("cmp")
     cmp.setup({
       sources = {
-        { name = "nvim_lsp_signature_help" },
         { name = "lazydev", group_index = 0 },
+        { name = "nvim_lsp_signature_help" },
         { name = "nvim_lsp", max_item_count = 5 },
         { name = "buffer", max_item_count = 3 },
-        { name = "calc" },
-        { name = "async_path" },
+        { name = "calc", max_item_count = 2 },
+        { name = "async_path", max_item_count = 2 },
       },
       snippet = {
         expand = function(args)
@@ -101,7 +102,7 @@ return {
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<C-x>"] = cmp.mapping(function()
+        ["<C-e>"] = cmp.mapping(function()
           if cmp.visible() then
             cmp.abort()
           else
@@ -125,6 +126,7 @@ return {
             fallback()
           end
         end),
+        -- docs
         ["<C-g>"] = function()
           if cmp.visible_docs() then
             cmp.close_docs()
@@ -141,7 +143,7 @@ return {
         completeopt = "menu,menuone,noinsert,noselect",
       },
       mapping = cmp.mapping.preset.cmdline({
-        ["<C-x>"] = cmp.mapping(function()
+        ["<C-e>"] = cmp.mapping(function()
           if cmp.visible() then
             cmp.abort()
           else
@@ -160,7 +162,7 @@ return {
         completeopt = "menu,menuone,noinsert,noselect",
       },
       mapping = cmp.mapping.preset.cmdline({
-        ["<C-x>"] = cmp.mapping(function()
+        ["<C-e>"] = cmp.mapping(function()
           if cmp.visible() then
             cmp.abort()
           else
@@ -171,7 +173,7 @@ return {
       sources = cmp.config.sources({
         { name = "cmdline_history", max_item_count = 2 },
         { name = "cmdline", max_item_count = 5 },
-        { name = "async_path" },
+        { name = "async_path", max_item_count = 2 },
       }),
     })
   end,
