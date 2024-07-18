@@ -2,8 +2,8 @@
   - terminal multiplexer: [zellij](https://zellij.dev/)
   - editor: [neovim](https://github.com/neovim/neovim)
   - shell: [zsh](https://www.zsh.org/)
-- theme: [Arctic](https://github.com/rockyzhang24/arctic.nvim)
-- font: [FiraCode Nerd Font](https://www.nerdfonts.com/)
+- theme: [Nord](https://github.com/gbprod/nord.nvim)
+- font: [Hack Nerd Font](https://www.nerdfonts.com/)
 - dotfile manager: [yadm](https://yadm.io/docs/overview)
 - macapps:
   - [Alfred](https://www.alfredapp.com/)
