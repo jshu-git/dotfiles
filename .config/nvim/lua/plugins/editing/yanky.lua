@@ -9,7 +9,7 @@ return {
         },
       },
       highlight = {
-        timer = 200,
+        timer = 250,
       },
     })
 
