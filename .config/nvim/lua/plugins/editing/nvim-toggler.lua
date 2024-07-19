@@ -7,6 +7,7 @@ return {
         ["&&"] = "||",
         ["and"] = "or",
         ["if"] = "else",
+        ["=="] = "!=",
       },
       remove_default_keybinds = true,
       autoselect_longest_match = true,
