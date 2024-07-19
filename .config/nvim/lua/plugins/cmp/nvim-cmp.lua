@@ -100,6 +100,7 @@ return {
       },
       mapping = cmp.mapping.preset.insert({
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<S-CR>"] = cmp.config.disable,
         ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         -- ["<C-e>"] = cmp.mapping(function()
