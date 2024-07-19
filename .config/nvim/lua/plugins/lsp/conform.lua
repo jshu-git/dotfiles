@@ -27,23 +27,19 @@ return {
 
     -- toggle autoformatting
     vim.g.disable_autoformat = false
-    vim.api.nvim_create_user_command("ToggleAutoformatting", function()
+    vim.keymap.set("n", "<leader>tf", function()
       vim.g.disable_autoformat = not vim.g.disable_autoformat
-    end, {
-      desc = "Toggle Autoformatting",
-    })
-    vim.keymap.set(
-      "n",
-      "<leader>tf",
-      "<cmd>ToggleAutoformatting<CR>",
-      { desc = "Toggle Autoformatting" }
-    )
+      vim.notify(
+        "Toggled Autoformatting "
+          .. (vim.g.disable_autoformat and "Off" or "On")
+      )
+    end, { desc = "Toggle Autoformatting" })
 
     -- save without formatting
     vim.keymap.set("n", "<leader>W", function()
       vim.g.disable_autoformat = true
       vim.cmd.write()
       vim.g.disable_autoformat = false
-    end, { desc = "Save Without Formatting" })
+    end, { desc = "Save (No Autoformat)" })
   end,
 }
