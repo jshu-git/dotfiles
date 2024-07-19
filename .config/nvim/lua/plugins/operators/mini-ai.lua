@@ -7,7 +7,7 @@ return {
     local gen_ai_spec = require("mini.extra").gen_ai_spec
     require("mini.ai").setup({
       custom_textobjects = {
-        b = gen_ai_spec.buffer(),
+        g = gen_ai_spec.buffer(),
         L = gen_ai_spec.line(),
         N = gen_ai_spec.number(),
         -- LazyVim

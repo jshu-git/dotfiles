@@ -49,6 +49,7 @@ return {
           -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
           -- max_width = math.floor(vim.o.columns * 0.3),
           winhighlight = "Normal:Pmenu,FloatBorder:Pmenu",
+          scrollbar = false,
         },
       },
       -- https://github.com/hrsh7th/nvim-cmp/discussions/609#discussioncomment-5727678
@@ -84,7 +85,6 @@ return {
             return math.floor(vim.o.columns * 0.15)
           end,
           ellipsis_char = "…",
-          show_labelDetails = true,
           menu = {
             nvim_lsp = "LSP",
             buffer = "BUF",

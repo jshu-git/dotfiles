@@ -107,5 +107,10 @@ return {
         vim.tbl_deep_extend("force", capabilities, config.capabilities or {})
       lspconfig[server].setup(config)
     end
+
+    -- lspinfo
+    require("lspconfig.ui.windows").default_options = {
+      border = "single",
+    }
   end,
 }

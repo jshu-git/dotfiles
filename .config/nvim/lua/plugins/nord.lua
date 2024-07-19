@@ -57,8 +57,8 @@ return {
         )
         vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "Search" })
 
-        -- matchup
-        -- vim.api.nvim_set_hl(0, "MatchParen", { link = "Underlined" })
+        -- lspinfo
+        vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "FloatBorder" })
       end,
     })
   end,
