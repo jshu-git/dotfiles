@@ -5,12 +5,6 @@ return {
     maximizer.setup()
     vim.keymap.set(
       "n",
-      "<C-w>m",
-      maximizer.toggle,
-      { desc = "Toggle Maximize" }
-    )
-    vim.keymap.set(
-      "n",
       "<leader>tm",
       maximizer.toggle,
       { desc = "Toggle Maximize" }
