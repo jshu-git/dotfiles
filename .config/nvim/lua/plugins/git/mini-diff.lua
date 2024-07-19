@@ -34,7 +34,7 @@ return {
     vim.keymap.set(
       "n",
       "<leader>gR",
-      "gH" .. "iB",
+      "gH" .. "ig",
       { desc = "Reset Buffer", remap = true }
     )
 
