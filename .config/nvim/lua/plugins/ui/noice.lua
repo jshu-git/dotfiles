@@ -96,11 +96,18 @@ return {
           view = "virtualtext",
           filter = { event = "msg_showmode" },
         },
-        -- search text
         {
           filter = {
             event = "msg_show",
-            find = "Search hit ",
+            any = {
+              -- search
+              { find = "Search hit " },
+              -- write
+              { find = "%d+L, %d+B" },
+              -- undo/redo
+              { find = "; after #%d+" },
+              { find = "; before #%d+" },
+            },
           },
           opts = { skip = true },
         },
