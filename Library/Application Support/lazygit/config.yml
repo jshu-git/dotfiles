@@ -9,7 +9,6 @@ gui:
   commitHashLength: 4
   showDivergenceFromBaseBranch: arrowAndNumber
   border: single
-
 git:
   paging:
     colorArg: always
@@ -17,7 +16,3 @@ git:
 quitOnTopLevelReturn: true
 notARepository: quit
 promptToReturnFromSubprocess: false
-keybinding:
-  universal:
-    prevBlock-alt: K
-    nextBlock-alt: J
