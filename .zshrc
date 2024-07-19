@@ -41,7 +41,9 @@ ZSH="$CONFIG/zsh"
 source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^[l' autosuggest-accept
 source $ZSH/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $ZSH/aliases.zsh
+source $ZSH/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+ZVM_VI_HIGHLIGHT_BACKGROUND=#4C566A
+ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 
 # completions
 autoload -Uz compinit && compinit
@@ -56,6 +58,9 @@ if command -v eza >/dev/null 2>&1; then
 	alias llt="eza $EZA_LONG_OPTIONS --tree --level=2"
 	alias lls="eza $EZA_LONG_OPTIONS --total-size"
 fi
+
+# aliases after eza since eza overrides ls
+source $ZSH/aliases.zsh
 
 # fzf
 if command -v fzf >/dev/null 2>&1; then
