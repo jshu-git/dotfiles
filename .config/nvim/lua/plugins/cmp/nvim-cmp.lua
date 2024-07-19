@@ -102,13 +102,13 @@ return {
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<C-e>"] = cmp.mapping(function()
-          if cmp.visible() then
-            cmp.abort()
-          else
-            cmp.complete()
-          end
-        end),
+        -- ["<C-e>"] = cmp.mapping(function()
+        --   if cmp.visible() then
+        --     cmp.abort()
+        --   else
+        --     cmp.complete()
+        --   end
+        -- end),
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<C-d>"] = cmp.mapping.scroll_docs(4),
         -- snippets
@@ -143,13 +143,13 @@ return {
         completeopt = "menu,menuone,noinsert,noselect",
       },
       mapping = cmp.mapping.preset.cmdline({
-        ["<C-e>"] = cmp.mapping(function()
-          if cmp.visible() then
-            cmp.abort()
-          else
-            cmp.complete()
-          end
-        end, { "c" }),
+        -- ["<C-e>"] = cmp.mapping(function()
+        --   if cmp.visible() then
+        --     cmp.abort()
+        --   else
+        --     cmp.complete()
+        --   end
+        -- end, { "c" }),
       }),
       sources = {
         { name = "buffer" },
@@ -162,13 +162,13 @@ return {
         completeopt = "menu,menuone,noinsert,noselect",
       },
       mapping = cmp.mapping.preset.cmdline({
-        ["<C-e>"] = cmp.mapping(function()
-          if cmp.visible() then
-            cmp.abort()
-          else
-            cmp.complete()
-          end
-        end, { "c" }),
+        -- ["<C-e>"] = cmp.mapping(function()
+        --   if cmp.visible() then
+        --     cmp.abort()
+        --   else
+        --     cmp.complete()
+        --   end
+        -- end, { "c" }),
       }),
       sources = cmp.config.sources({
         { name = "cmdline_history", max_item_count = 2 },
