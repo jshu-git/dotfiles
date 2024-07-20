@@ -23,6 +23,7 @@ return {
         d = { "%f[%d]%d+" },
       },
     })
+
     vim.keymap.set("n", "<S-CR>", "ciq", { remap = true })
     vim.keymap.set("x", "v", "ilo", { remap = true })
     -- vim.keymap.set("n", "vil", "vilo", { remap = true })
