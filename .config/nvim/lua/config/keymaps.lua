@@ -55,6 +55,7 @@ vim.keymap.set(
 -- editing
 vim.keymap.set("n", "<BS>", "<C-^>")
 vim.keymap.set({ "n", "x" }, ";", ":")
+vim.keymap.set({ "n", "x" }, "m", "%")
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<CR>", '"_ciw')
 vim.keymap.set("n", "i", function()
