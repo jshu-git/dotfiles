@@ -4,7 +4,9 @@ return {
     local substitute = require("substitute")
     substitute.setup({
       preserve_cursor_position = true,
-      highlight_substituted_text = { timer = 250 },
+      highlight_substituted_text = {
+        timer = require("config.utils").highlight_timeout,
+      },
     })
     vim.keymap.set("n", "s", substitute.operator)
     vim.keymap.set("n", "ss", substitute.line, { desc = "Substitute (Line)" })

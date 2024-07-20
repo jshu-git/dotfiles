@@ -9,7 +9,7 @@ return {
         },
       },
       highlight = {
-        timer = 250,
+        timer = require("config.utils").highlight_timeout,
       },
     })
 

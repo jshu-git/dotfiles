@@ -3,7 +3,7 @@ return {
   keys = "u",
   config = function()
     require("highlight-undo").setup({
-      duration = 250,
+      duration = require("config.utils").highlight_timeout,
       undo = {
         hlgroup = "HighlightUndo",
         mode = "n",
