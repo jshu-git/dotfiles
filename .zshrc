@@ -17,7 +17,7 @@ setopt APPEND_HISTORY         # append to history file
 setopt HIST_NO_STORE          # Don't store history commands
 
 # emacs
-# bindkey -e
+bindkey -e
 # macos arrow keys https://linux.die.net/man/1/zshzle
 bindkey "^[[1;3C" forward-word      # alt-right
 bindkey "^[[1;3D" backward-word     # alt-left
@@ -38,9 +38,9 @@ CONFIG="$HOME/.config"
 
 # zsh
 ZSH="$CONFIG/zsh"
-source $ZSH/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-ZVM_VI_HIGHLIGHT_BACKGROUND=#4C566A
-ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+# source $ZSH/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# ZVM_VI_HIGHLIGHT_BACKGROUND=#4C566A
+# ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^[l' autosuggest-accept
 source $ZSH/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
