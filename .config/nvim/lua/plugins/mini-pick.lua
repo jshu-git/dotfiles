@@ -121,35 +121,10 @@ return {
 
     -- special paths
     vim.keymap.set("n", "<leader>fp", function()
-      local special_paths = {
-        vim.fn.stdpath("data") .. "/lazy",
-        vim.fn.stdpath("data") .. "/mini.files/trash",
-        require("persisted.config").options.save_dir,
-      }
-      local paths = {}
-      if vim.env.SSH_CLIENT == nil then
-        paths = {
-          vim.env.HOME .. "/Library/CloudStorage/Dropbox/",
-          vim.env.HOME .. "/Desktop/",
-        }
-      else
-        paths = {
-          vim.env.HOME .. "/p4/cacl3/test/lib/netapp_ontap/resources/",
-          vim.env.HOME .. "/.packages/",
-          vim.env.HOME .. "/notes/",
-          "/x/eng/rlse/DOT/devN/test/tools/smoke/itc/conf/class_hierarchy.cnf",
-          vim.env.HOME .. "/git/ontap/",
-        }
-      end
-      for _, path in ipairs(paths) do
-        table.insert(special_paths, path)
-      end
-      table.sort(special_paths)
-
       return pick.start({
         source = {
           name = "Special Paths",
-          items = special_paths,
+          items = require("config.utils").paths,
           choose = function(item)
             vim.cmd("e " .. item)
           end,
