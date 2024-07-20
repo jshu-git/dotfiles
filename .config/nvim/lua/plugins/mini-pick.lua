@@ -68,7 +68,7 @@ return {
       "n",
       "<leader>fr",
       extra.pickers.oldfiles,
-      { desc = "Recent Files" }
+      { desc = "Recent Files (All)" }
     )
     vim.keymap.set("n", "<leader>fR", function()
       extra.pickers.oldfiles({ current_dir = true })
@@ -191,26 +191,26 @@ return {
         return
       end
       return pick.registry[chosen_picker_name]()
-    end, { desc = "Commands (mini.pick)" })
+    end, { desc = "Commands (Builtin)" })
 
     -- keymaps
     vim.keymap.set("n", "<leader>fk", function()
       extra.pickers.keymaps({ scope = "global" })
-    end, { desc = "Keymaps (global)" })
+    end, { desc = "Keymaps (Global)" })
     vim.keymap.set("n", "<leader>fK", function()
       extra.pickers.keymaps({ scope = "buf" })
-    end, { desc = "Keymaps (buffer)" })
+    end, { desc = "Keymaps (Buffer)" })
 
     -- options
     vim.keymap.set(
       "n",
       "<leader>fo",
       extra.pickers.options,
-      { desc = "Options (all)" }
+      { desc = "Options (All)" }
     )
     vim.keymap.set("n", "<leader>fO", function()
       extra.pickers.options({ scope = "buf" })
-    end, { desc = "Options (buffer)" })
+    end, { desc = "Options (Buffer)" })
 
     -- colorschemes
     vim.keymap.set("n", "<leader>ft", function()
