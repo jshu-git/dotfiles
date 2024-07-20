@@ -33,4 +33,8 @@ return {
     "echasnovski/mini.extra",
     config = true,
   },
+
+  {
+    "anuvyklack/keymap-amend.nvim",
+  },
 }
