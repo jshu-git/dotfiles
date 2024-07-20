@@ -33,20 +33,20 @@ return {
       "<cmd>BufferMoveNext<CR>",
       { desc = "Buffer: Move Next" }
     )
-    for i = 1, 5 do
-      vim.keymap.set(
-        "n",
-        "<leader>" .. i,
-        "<cmd>BufferGoto " .. i .. "<CR>",
-        { desc = "Buffer " .. i }
-      )
-    end
-    vim.keymap.set(
-      "n",
-      "<leader>0",
-      "<cmd>BufferLast<CR>",
-      { desc = "Buffer: Last" }
-    )
+    -- for i = 1, 5 do
+    --   vim.keymap.set(
+    --     "n",
+    --     "<leader>" .. i,
+    --     "<cmd>BufferGoto " .. i .. "<CR>",
+    --     { desc = "Buffer " .. i }
+    --   )
+    -- end
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>0",
+    --   "<cmd>BufferLast<CR>",
+    --   { desc = "Buffer: Last" }
+    -- )
     vim.keymap.set("n", "gp", "<cmd>BufferPin<CR>", { desc = "Buffer: Pin" })
     -- vim.keymap.set("n", "gb", "<cmd>BufferPick<CR>", { desc = "Buffer: Pick" })
 
