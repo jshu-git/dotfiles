@@ -48,7 +48,7 @@ return {
     --   { desc = "Buffer: Last" }
     -- )
     vim.keymap.set("n", "gp", "<cmd>BufferPin<CR>", { desc = "Buffer: Pin" })
-    -- vim.keymap.set("n", "gb", "<cmd>BufferPick<CR>", { desc = "Buffer: Pick" })
+    vim.keymap.set("n", "gb", "<cmd>BufferPick<CR>", { desc = "Buffer: Pick" })
 
     -- closing
     vim.keymap.set(
