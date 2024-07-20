@@ -37,7 +37,7 @@ return {
       vim.g.enable_autoformat = false
       vim.cmd.write()
       vim.g.enable_autoformat = true
-    end, { desc = "Save (No Autoformat)" })
+    end, { desc = "Write (No Autoformat)" })
 
     vim.keymap.set(
       "n",
