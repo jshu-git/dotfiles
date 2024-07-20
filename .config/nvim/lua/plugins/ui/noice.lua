@@ -127,13 +127,10 @@ return {
       noice.cmd("errors")
     end, { desc = "Errors" })
 
-    -- toggle
-    vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<CR><cmd>Noice dismiss<cr>")
-    -- vim.keymap.set("n", "<leader>tn", function()
-    --   noice.cmd("disable")
-    -- end, { desc = "Noice (Disable)" })
-    -- vim.keymap.set("n", "<leader>tN", function()
-    --   noice.cmd("enable")
-    -- end, { desc = "Noice (Enable)" })
+    -- amend esc
+    require("keymap-amend")("n", "<esc>", function(original)
+      vim.cmd("Noice dismiss")
+      original()
+    end)
   end,
 }
