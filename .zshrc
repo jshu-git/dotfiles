@@ -23,6 +23,9 @@ bindkey "^[[1;3C" forward-word      # alt-right
 bindkey "^[[1;3D" backward-word     # alt-left
 bindkey "^[[1;9D" beginning-of-line # cmd-left
 bindkey "^[[1;9C" end-of-line       # cmd-right
+# history
+bindkey '^k' up-line-or-search
+bindkey '^j' down-line-or-search
 
 # edit command line
 autoload -z edit-command-line
