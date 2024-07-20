@@ -1,8 +1,5 @@
 local H = {}
 
--- append to esc
--- H.esc_command =
-
 H.signs = {
   Error = "󰅚 ",
   Warn = "󰀪 ",
@@ -11,4 +8,5 @@ H.signs = {
 }
 
 H.highlight_timeout = 250
+
 return H
