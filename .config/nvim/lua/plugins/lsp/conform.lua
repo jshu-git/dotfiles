@@ -1,6 +1,6 @@
 return {
   "stevearc/conform.nvim",
-  event = { "BufReadPre", "BufNewFile" },
+  event = { "BufReadPre", "BufNewFile", "BufWritePre" },
   config = function()
     local conform = require("conform")
     conform.setup({
@@ -13,33 +13,37 @@ return {
       },
       -- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
       format_on_save = function()
-        if vim.g.disable_autoformat then
-          ---@diagnostic disable-next-line: missing-return-value
-          return
+        if vim.g.enable_autoformat then
+          return {
+            timeout_ms = 500,
+            lsp_format = "fallback",
+            quiet = true,
+          }
         end
-        return {
-          timeout_ms = 500,
-          lsp_format = "fallback",
-          quiet = true,
-        }
       end,
     })
 
     -- toggle autoformatting
-    vim.g.disable_autoformat = false
+    vim.g.enable_autoformat = true
     vim.keymap.set("n", "<leader>tf", function()
-      vim.g.disable_autoformat = not vim.g.disable_autoformat
+      vim.g.enable_autoformat = not vim.g.enable_autoformat
       vim.notify(
-        "Toggled Autoformatting "
-          .. (vim.g.disable_autoformat and "Off" or "On")
+        "Toggled Autoformatting " .. (vim.g.enable_autoformat and "Off" or "On")
       )
     end, { desc = "Toggle Autoformatting" })
 
     -- save without formatting
     vim.keymap.set("n", "<leader>W", function()
-      vim.g.disable_autoformat = true
+      vim.g.enable_autoformat = false
       vim.cmd.write()
-      vim.g.disable_autoformat = false
+      vim.g.enable_autoformat = true
     end, { desc = "Save (No Autoformat)" })
+
+    vim.keymap.set(
+      "n",
+      "<leader>lc",
+      "<cmd>ConformInfo<CR>",
+      { desc = "Conform: Info" }
+    )
   end,
 }
