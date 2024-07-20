@@ -69,12 +69,12 @@ return {
         { mode = "n", keys = "<leader><Tab>", postkeys = "<leader>" },
         { mode = "n", keys = "<leader><S-Tab>", postkeys = "<leader>" },
         -- folds
-        { mode = "n", keys = "zj", postkeys = "z" },
-        { mode = "n", keys = "zk", postkeys = "z" },
-        { mode = "n", keys = "z=", postkeys = "z" },
-        { mode = "n", keys = "z-", postkeys = "z" },
-        { mode = "n", keys = "zo", postkeys = "z" },
-        { mode = "n", keys = "zc", postkeys = "z" },
+        -- { mode = "n", keys = "zj", postkeys = "z" },
+        -- { mode = "n", keys = "zk", postkeys = "z" },
+        -- { mode = "n", keys = "z=", postkeys = "z" },
+        -- { mode = "n", keys = "z-", postkeys = "z" },
+        -- { mode = "n", keys = "zo", postkeys = "z" },
+        -- { mode = "n", keys = "zc", postkeys = "z" },
       },
     })
   end,
