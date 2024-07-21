@@ -32,6 +32,12 @@ return {
       { desc = "Reset Hunk", remap = true }
     )
     vim.keymap.set(
+      "x",
+      "<leader>gr",
+      "gH",
+      { desc = "Reset Hunk (Visual)", remap = true }
+    )
+    vim.keymap.set(
       "n",
       "<leader>gR",
       "gH" .. "ig",
