@@ -23,17 +23,7 @@ return {
         )
       end
     end)
-    vim.keymap.set("i", "<C-c>", function()
-      if neocodeium.visible() then
-        neocodeium.clear()
-      else
-        vim.api.nvim_feedkeys(
-          vim.api.nvim_replace_termcodes("<C-c>", true, false, true),
-          "n",
-          false
-        )
-      end
-    end)
+    vim.keymap.set("i", "<C-\\>", neocodeium.clear)
     vim.keymap.set("i", "<A-l>", neocodeium.accept_word)
     vim.keymap.set("i", "<A-n>", function()
       neocodeium.cycle_or_complete(1)

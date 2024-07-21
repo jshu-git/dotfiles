@@ -31,10 +31,11 @@ return {
       },
     })
 
+    local suggestion = require("copilot.suggestion")
     -- https://github.com/zbirenbaum/copilot.lua/issues/91
     vim.keymap.set("i", "<Tab>", function()
-      if require("copilot.suggestion").is_visible() then
-        require("copilot.suggestion").accept()
+      if suggestion.is_visible() then
+        suggestion.accept()
       else
         vim.api.nvim_feedkeys(
           vim.api.nvim_replace_termcodes("<Tab>", true, false, true),
@@ -43,5 +44,9 @@ return {
         )
       end
     end)
+    vim.keymap.set("i", "<C-\\>", suggestion.dismiss)
+    vim.keymap.set("i", "<A-l>", suggestion.accept_word)
+    vim.keymap.set("i", "<A-n>", suggestion.next)
+    vim.keymap.set("i", "<A-p>", suggestion.prev)
   end,
 }
