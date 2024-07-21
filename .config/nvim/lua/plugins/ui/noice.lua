@@ -48,35 +48,27 @@ return {
         },
         split = {
           enter = true,
-          size = "10%",
-          close = {
-            keys = { "<esc>" },
-          },
+          close = { keys = { "<esc>" } },
         },
         popup = {
-          close = {
-            keys = { "<esc>" },
-          },
-          border = {
-            style = "single",
-          },
+          close = { keys = { "<esc>" } },
+          border = { style = "single" },
           size = {
-            width = math.floor(0.75 * vim.o.columns),
-            height = math.floor(0.6 * vim.o.lines),
+            width = require("config.utils").popup.width,
+            height = require("config.utils").popup.height,
           },
         },
         hover = {
-          scrollbar = false,
           size = {
-            max_height = math.floor(0.25 * vim.o.lines),
+            max_height = math.floor(0.3 * vim.o.lines),
             max_width = math.floor(0.5 * vim.o.columns),
           },
           border = { style = "single", padding = { 0, 0 } },
         },
-        mini = {
-          timeout = 2000,
-        },
         cmdline_popup = {
+          size = {
+            min_width = math.floor(0.3 * vim.o.columns),
+          },
           border = { style = "single", padding = { 0, 0 } },
         },
         cmdline_input = {
