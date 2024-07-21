@@ -20,8 +20,7 @@ export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden $FD_EXCLUDE"
 bindkey "^[[A" fzf-history-widget
 
 # cd widget
-# bindkey '^[[Z' fzf-cd-widget
-bindkey '^X' fzf-cd-widget
+bindkey '^[[Z' fzf-cd-widget
 
 # fzf-tab-completion
 if [ -d $CONFIG/fzf/fzf-tab-completion ]; then
