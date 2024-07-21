@@ -22,17 +22,16 @@ return {
       options = {
         use_cache = true,
       },
+      -- centered
       window = {
         config = function()
-          -- centered
-          local height = math.floor(0.6 * vim.o.lines)
-          local width = math.floor(0.75 * vim.o.columns)
+          local popup = require("config.utils").popup
           return {
             anchor = "NW",
-            height = height,
-            width = width,
-            row = math.floor(0.5 * (vim.o.lines - height)),
-            col = math.floor(0.5 * (vim.o.columns - width)),
+            height = popup.height,
+            width = popup.width,
+            row = math.floor(0.5 * (vim.o.lines - popup.height)),
+            col = math.floor(0.5 * (vim.o.columns - popup.width)),
           }
         end,
         prompt_prefix = " ",

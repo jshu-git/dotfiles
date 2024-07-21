@@ -38,4 +38,9 @@ H.paths = function()
   return existing_paths
 end
 
+H.popup = {
+  height = math.floor(0.6 * vim.o.lines),
+  width = math.floor(0.75 * vim.o.columns),
+}
+
 return H
