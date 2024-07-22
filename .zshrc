@@ -41,9 +41,6 @@ CONFIG="$HOME/.config"
 
 # zsh
 ZSH="$CONFIG/zsh"
-# source $ZSH/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-# ZVM_VI_HIGHLIGHT_BACKGROUND=#4C566A
-# ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^[l' autosuggest-accept
 source $ZSH/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
