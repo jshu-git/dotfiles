@@ -1,12 +1,23 @@
 return {
-  "OXY2DEV/markview.nvim",
+  "MeanderingProgrammer/markdown.nvim",
   ft = "markdown",
+  dependencies = {
+    "echasnovski/mini.icons",
+  },
   config = function()
-    require("markview").setup()
+    local markdown = require("render-markdown")
+    markdown.setup({
+      -- not working in visual for some reason
+      -- render_modes = { "n", "c", "x" },
+      anti_conceal = {
+        enabled = false,
+      },
+    })
+
     vim.keymap.set(
       "n",
       "<leader>tv",
-      "<cmd>Markview<CR>",
+      markdown.toggle,
       { desc = "Toggle Markview" }
     )
   end,
