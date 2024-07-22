@@ -61,10 +61,10 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {
     "lazy",
-    "minifiles-help",
     "git",
     "help",
     "gitsigns.blame",
+    "checkhealth",
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
