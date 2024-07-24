@@ -45,16 +45,8 @@ return {
         vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { link = "FloatBorder" })
 
         -- copilot
-        vim.api.nvim_set_hl(
-          0,
-          "CopilotSuggestion",
-          { link = "CodeiumSuggestion" }
-        )
-        vim.api.nvim_set_hl(
-          0,
-          "NeoCodeiumSuggestion",
-          { link = "CodeiumSuggestion" }
-        )
+        vim.api.nvim_set_hl(0, "CopilotSuggestion", { link = "Comment" })
+        vim.api.nvim_set_hl(0, "NeoCodeiumSuggestion", { link = "Comment" })
         vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "Search" })
 
         -- lspinfo
