@@ -88,7 +88,7 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
 
 -- wrap and check for spell in text filetypes
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "*.txt", "gitcommit", "markdown" },
+  pattern = { "*.txt", "gitcommit", "markdown", "noice" },
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true

@@ -118,6 +118,7 @@ return {
       virtual_text = false,
       float = {
         border = "single",
+        severity_sort = true,
       },
       severity_sort = true,
     })
