@@ -101,9 +101,15 @@ return {
       mapping = cmp.mapping.preset.insert({
         ["<S-CR>"] = cmp.config.disable,
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<C-d>"] = cmp.mapping.scroll_docs(4),
+        ["<C-e>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.abort()
+          else
+            fallback()
+          end
+        end),
         -- snippets
         ["<C-l>"] = cmp.mapping(function(fallback)
           if vim.snippet.active({ direction = 1 }) then
