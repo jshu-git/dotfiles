@@ -43,4 +43,6 @@ H.popup = {
   width = math.floor(0.75 * vim.o.columns),
 }
 
+H.border = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
+
 return H
