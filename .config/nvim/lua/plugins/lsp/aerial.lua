@@ -1,5 +1,6 @@
 return {
   "stevearc/aerial.nvim",
+  keys = { "go" },
   dependencies = {
     "echasnovski/mini.icons",
   },

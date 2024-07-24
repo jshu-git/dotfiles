@@ -1,5 +1,7 @@
 return {
   "AndrewRadev/linediff.vim",
+  keys = { "<leader>L" },
+  cmd = "Linediff",
   init = function()
     vim.g.linediff_sign_highlight_group = "DiffChange"
     vim.keymap.set("n", "<leader>L", "<cmd>Linediff<cr>", { desc = "Linediff" })

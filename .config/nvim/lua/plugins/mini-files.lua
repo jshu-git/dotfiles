@@ -1,5 +1,6 @@
 return {
   "echasnovski/mini.files",
+  keys = { "<leader>e", "<leader>E" },
   config = function()
     local files = require("mini.files")
     files.setup({

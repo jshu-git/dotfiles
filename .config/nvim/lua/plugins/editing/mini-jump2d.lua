@@ -1,5 +1,8 @@
 return {
   "echasnovski/mini.jump2d",
+  keys = {
+    { "gw", mode = { "n", "x" } },
+  },
   config = function()
     local jump2d = require("mini.jump2d")
     jump2d.setup({

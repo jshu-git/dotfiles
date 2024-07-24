@@ -1,5 +1,6 @@
 return {
   "echasnovski/mini.cursorword",
+  keys = { "<leader>c" },
   config = function()
     require("mini.cursorword").setup({
       delay = 0,

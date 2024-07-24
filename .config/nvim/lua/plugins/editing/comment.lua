@@ -1,5 +1,10 @@
 return {
   "numToStr/Comment.nvim",
+  keys = {
+    { "<C-c>", mode = { "n", "x" } },
+    { "<C-S-c>", mode = { "n", "x" } },
+    { "ac", mode = { "x", "o" } },
+  },
   config = function()
     require("Comment").setup({
       mappings = {

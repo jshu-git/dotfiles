@@ -1,5 +1,8 @@
 return {
   "sindrets/diffview.nvim",
+  keys = {
+    { "<leader>gd", mode = { "n", "x" } },
+  },
   dependencies = {
     "echasnovski/mini.icons",
   },

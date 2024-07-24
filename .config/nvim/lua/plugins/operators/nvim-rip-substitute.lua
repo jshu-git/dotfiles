@@ -1,5 +1,8 @@
 return {
   "chrisgrieser/nvim-rip-substitute",
+  keys = {
+    { "sr", mode = { "n", "x" } },
+  },
   config = function()
     -- note: full-visual-line makes range matches not work
     local rip = require("rip-substitute")

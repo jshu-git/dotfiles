@@ -1,5 +1,7 @@
 return {
   "2kabhishek/nerdy.nvim",
+  keys = { "<leader>fi" },
+  cmd = "Nerdy",
   config = function()
     vim.keymap.set(
       "n",
