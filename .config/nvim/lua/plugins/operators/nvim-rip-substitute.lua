@@ -16,10 +16,7 @@ return {
         abort = "<esc>",
       },
       incrementalPreview = {
-        matchHlGroup = "Search",
-        rangeBackdrop = {
-          enabled = false,
-        },
+        rangeBackdrop = { enabled = false },
       },
     })
 
