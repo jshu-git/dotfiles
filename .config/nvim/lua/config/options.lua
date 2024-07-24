@@ -7,7 +7,7 @@ vim.opt.splitkeep = "screen"
 vim.opt.showcmd = false
 vim.opt.termguicolors = true
 vim.opt.fillchars:append({ eob = " " })
--- vim.opt.cursorlineopt = "number"
+vim.opt.cursorlineopt = "number"
 
 -- tabs/indents
 vim.opt.tabstop = 4
