@@ -64,6 +64,7 @@
   "nvim-osc52": { "branch": "main", "commit": "04cfaba1865ae5c53b6f887c3ca7304973824fb2" },
   "nvim-rip-substitute": { "branch": "main", "commit": "8201461823752d9694958e8468ec6a427536df6c" },
   "nvim-scrollview": { "branch": "main", "commit": "401c0498689dcaa54b2e7483d823e33cdc051e72" },
+  "paren-hint.nvim": { "branch": "main", "commit": "98be4743381b312cf001bbda688857bc10916024" },
   "persisted.nvim": { "branch": "main", "commit": "4df3f8a03690add1bc2f9a79b31e1c43f5e0dd05" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "scrollofffraction.nvim": { "branch": "master", "commit": "0618a3e3e1a4e13a04edf6fd35bfcee4bd5afe38" },
