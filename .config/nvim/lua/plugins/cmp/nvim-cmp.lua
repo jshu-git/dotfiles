@@ -41,6 +41,7 @@ return {
           -- border = "single",
           -- side_padding = 0,
           -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+          winhighlight = "Normal:Pmenu,Cursorline:Visual",
           col_offset = 2,
           scrollbar = false,
         },
