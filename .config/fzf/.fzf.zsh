@@ -23,6 +23,6 @@ bindkey "^[[A" fzf-history-widget
 bindkey '^[[Z' fzf-cd-widget
 
 # fzf-tab-completion
-if [ -d $CONFIG/fzf/fzf-tab-completion ]; then
-	source $CONFIG/fzf/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+if [ -d $CONFIG/fzf/plugins/fzf-tab-completion ]; then
+	source $CONFIG/fzf/plugins/fzf-tab-completion/zsh/fzf-zsh-completion.sh
 fi

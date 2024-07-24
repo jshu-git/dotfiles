@@ -41,9 +41,9 @@ CONFIG="$HOME/.config"
 
 # zsh
 ZSH="$CONFIG/zsh"
-source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^[l' autosuggest-accept
-source $ZSH/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # completions
 autoload -Uz compinit && compinit
