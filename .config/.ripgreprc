@@ -3,4 +3,6 @@
 --smart-case
 --glob
 !lazy-lock.json
+--glob
+!.git
 
