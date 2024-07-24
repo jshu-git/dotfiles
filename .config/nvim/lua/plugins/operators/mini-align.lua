@@ -1,5 +1,9 @@
 return {
   "echasnovski/mini.align",
+  keys = {
+    { "&", mode = { "n", "x" } },
+    { "sA", mode = { "n", "x" } },
+  },
   config = function()
     require("mini.align").setup({
       mappings = {
