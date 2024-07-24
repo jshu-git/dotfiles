@@ -112,5 +112,19 @@ return {
     require("lspconfig.ui.windows").default_options = {
       border = "single",
     }
+
+    -- diagnostics
+    vim.diagnostic.config({
+      virtual_text = false,
+      float = {
+        border = "single",
+      },
+      severity_sort = true,
+    })
+    local signs = require("config.utils").signs
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl })
+    end
   end,
 }
