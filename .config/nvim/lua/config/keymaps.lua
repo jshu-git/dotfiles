@@ -31,12 +31,6 @@ vim.keymap.set(
   "<cmd>setlocal wrap!<CR>",
   { desc = "Toggle Word Wrap" }
 )
-vim.keymap.set(
-  "n",
-  "<leader>tn",
-  "<cmd>setlocal number!<CR>",
-  { desc = "Toggle Line Numbers" }
-)
 
 -- better movement
 vim.keymap.set({ "n", "x" }, "j", function()
@@ -59,11 +53,7 @@ vim.keymap.set({ "n", "x" }, "m", "%")
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<CR>", '"_ciw')
 vim.keymap.set("n", "i", function()
-  if vim.fn.getline(".") == "" then
-    return '"_cc'
-  else
-    return "i"
-  end
+  return vim.fn.getline(".") == "" and '"_cc' or "i"
 end, { expr = true })
 
 -- search
@@ -78,10 +68,7 @@ vim.keymap.set({ "n", "x" }, "c", '"_c')
 vim.keymap.set({ "n", "x" }, "C", '"_C')
 vim.keymap.set("n", "dD", '"_dd')
 vim.keymap.set("n", "dd", function()
-  if vim.fn.getline(".") == "" then
-    return '"_dd'
-  end
-  return "dd"
+  return vim.fn.getline(".") == "" and '"_dd' or "dd"
 end, { expr = true })
 
 -- windows
