@@ -148,6 +148,9 @@ return {
       extra.pickers.git_files({ scope = "ignored" })
     end, { desc = "Files (Ignored)" })
     vim.keymap.set("n", "<leader>gh", function()
+      extra.pickers.git_hunks({ path = vim.fn.expand("%"), n_context = 5 })
+    end, { desc = "Hunks (Buffer)" })
+    vim.keymap.set("n", "<leader>gH", function()
       extra.pickers.git_hunks({ n_context = 5 })
     end, { desc = "Hunks" })
     -- commits
@@ -195,12 +198,12 @@ return {
     end, { desc = "Commands (Builtin)" })
 
     -- keymaps
-    vim.keymap.set("n", "<leader>fk", function()
-      extra.pickers.keymaps({ scope = "global" })
-    end, { desc = "Keymaps (Global)" })
-    vim.keymap.set("n", "<leader>fK", function()
-      extra.pickers.keymaps({ scope = "buf" })
-    end, { desc = "Keymaps (Buffer)" })
+    vim.keymap.set(
+      "n",
+      "<leader>fk",
+      extra.pickers.keymaps,
+      { desc = "Keymaps" }
+    )
 
     -- options
     vim.keymap.set(
