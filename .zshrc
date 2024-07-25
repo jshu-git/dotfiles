@@ -37,6 +37,9 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
 CONFIG="$HOME/.config"
 
 # zsh
@@ -46,6 +49,7 @@ bindkey '^[l' autosuggest-accept
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # completions
+fpath+=$HOME/.zfunc
 autoload -Uz compinit && compinit
 
 # eza https://github.com/eza-community/eza?tab=readme-ov-file
@@ -91,6 +95,7 @@ if command -v starship >/dev/null 2>&1; then
 fi
 
 # neovim
+export PATH=$PATH:$HOME/.local/share/bob/nvim-bin
 if command -v nvim >/dev/null 2>&1; then
 	function v() {
 		if [[ "$PWD" == $CONFIG* ]]; then
