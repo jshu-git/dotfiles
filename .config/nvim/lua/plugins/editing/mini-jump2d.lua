@@ -1,12 +1,11 @@
 return {
   "echasnovski/mini.jump2d",
   keys = {
-    { "gw", mode = { "n", "x" } },
+    { "gw", mode = { "n", "x", "o" } },
   },
   config = function()
     local jump2d = require("mini.jump2d")
     jump2d.setup({
-      labels = "asdfghjklqwertyuiopzxcvbnm",
       mappings = {
         start_jumping = "",
       },
