@@ -1,12 +1,12 @@
 -- yank highlight
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank({
-      timeout = require("config.utils").highlight_timeout,
-      higroup = "Search",
-    })
-  end,
-})
+-- vim.api.nvim_create_autocmd("TextYankPost", {
+--   callback = function()
+--     vim.highlight.on_yank({
+--       timeout = require("config.utils").highlight_timeout,
+--       higroup = "Search",
+--     })
+--   end,
+-- })
 
 -- disable auto comments
 vim.api.nvim_create_autocmd("BufEnter", {
@@ -15,21 +15,11 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
--- commenting in .kdl files
+-- commentstring
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "kdl",
   callback = function()
     vim.opt.commentstring = "// %s"
-  end,
-})
-
--- hide some filetypes from buffer list
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = {
-    "qf",
-  },
-  callback = function(event)
-    vim.bo[event.buf].buflisted = false
   end,
 })
 
@@ -44,18 +34,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- only show cursorline in active window
--- vim.api.nvim_create_autocmd("WinEnter", {
---   callback = function()
---     vim.wo.cursorline = true
---   end,
--- })
--- vim.api.nvim_create_autocmd("WinLeave", {
---   callback = function()
---     vim.wo.cursorline = false
---   end,
--- })
-
 -- LazyVim
 -- close some filetypes with <esc>
 vim.api.nvim_create_autocmd("FileType", {
@@ -65,6 +43,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "help",
     "gitsigns.blame",
     "checkhealth",
+    "qf",
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
