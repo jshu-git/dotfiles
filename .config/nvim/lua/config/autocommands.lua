@@ -37,14 +37,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- LazyVim
 -- close some filetypes with <esc>
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = {
-    "lazy",
-    "git",
-    "help",
-    "gitsigns.blame",
-    "checkhealth",
-    "qf",
-  },
+  pattern = { "lazy", "git", "help", "gitsigns.blame", "checkhealth", "qf" },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set(
