@@ -49,7 +49,7 @@ bindkey '^[l' autosuggest-accept
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # completions
-fpath+=$HOME/.zfunc
+fpath+=$ZSH/completions
 autoload -Uz compinit && compinit
 
 # eza https://github.com/eza-community/eza?tab=readme-ov-file
@@ -87,6 +87,7 @@ fi
 # bat
 if command -v bat >/dev/null 2>&1; then
 	alias cat=bat
+    export BAT_THEME="Nord"
 fi
 
 # starship
