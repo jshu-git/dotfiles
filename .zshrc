@@ -87,7 +87,7 @@ fi
 # bat
 if command -v bat >/dev/null 2>&1; then
 	alias cat=bat
-    export BAT_THEME="Nord"
+	export BAT_THEME="Nord"
 fi
 
 # starship
