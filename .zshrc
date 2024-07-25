@@ -38,7 +38,7 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
 fi
 
 # cargo
-export PATH="$HOME/.cargo/bin:$PATH"
+path+="$HOME/.cargo/bin"
 
 CONFIG="$HOME/.config"
 
@@ -96,7 +96,7 @@ if command -v starship >/dev/null 2>&1; then
 fi
 
 # neovim
-export PATH=$PATH:$HOME/.local/share/bob/nvim-bin
+path+=$HOME/.local/share/bob/nvim-bin
 if command -v nvim >/dev/null 2>&1; then
 	function v() {
 		if [[ "$PWD" == $CONFIG* ]]; then
