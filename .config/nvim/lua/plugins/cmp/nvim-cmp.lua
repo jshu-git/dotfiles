@@ -42,15 +42,15 @@ return {
           -- side_padding = 0,
           -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
           winhighlight = "Normal:Pmenu,Cursorline:Visual",
-          col_offset = 2,
-          scrollbar = false,
+          -- col_offset = 2,
+          -- scrollbar = false,
         },
         documentation = {
           -- border = "single",
           -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
           -- max_width = math.floor(vim.o.columns * 0.3),
           winhighlight = "Normal:Pmenu,FloatBorder:Pmenu",
-          scrollbar = false,
+          -- scrollbar = false,
         },
       },
       -- https://github.com/hrsh7th/nvim-cmp/discussions/609#discussioncomment-5727678
