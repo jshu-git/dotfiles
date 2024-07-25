@@ -29,7 +29,7 @@
   "linediff.vim": { "branch": "main", "commit": "ddae71ef5f94775d101c1c70032ebe8799f32745" },
   "lspkind-nvim": { "branch": "master", "commit": "cff4ae321a91ee3473a92ea1a8c637e3a9510aec" },
   "lualine.nvim": { "branch": "master", "commit": "544dd1583f9bb27b393f598475c89809c4d5e86b" },
-  "markdown.nvim": { "branch": "main", "commit": "426b13574c8264636e5660e5f5a3b4f5e3d5a937" },
+  "markdown.nvim": { "branch": "main", "commit": "9d13bfcfc98f3f9a7dc30ccac14c2ca843ab5466" },
   "maximizer.nvim": { "branch": "main", "commit": "a517c762168bc1f9881f67d257fe9565712776f0" },
   "mini-git": { "branch": "main", "commit": "a57cf1ecd9d503951457e2484987cafca164e283" },
   "mini.ai": { "branch": "main", "commit": "45587078f323eaf41b9f701bbc04f8d1ab008979" },
