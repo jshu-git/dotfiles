@@ -5,8 +5,11 @@ return {
       return vim.api.nvim_buf_line_count(0) .. "L"
     end
     local function file_size()
-      return string.format("%.2f", vim.fn.getfsize(vim.fn.expand("%:p")) / 1024)
-        .. "KB"
+      local size = vim.fn.getfsize(vim.fn.expand("%:p")) / 1024
+      if size < 0 then
+        return ""
+      end
+      return string.format("%.2f", size) .. "KB"
     end
 
     require("lualine").setup({
