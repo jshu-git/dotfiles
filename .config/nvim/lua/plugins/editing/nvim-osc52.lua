@@ -26,7 +26,9 @@ return {
   "ojroques/nvim-osc52",
   cond = vim.env.SSH_CLIENT ~= nil,
   config = function()
-    require("osc52").setup()
+    require("osc52").setup({
+      silent = true,
+    })
     local function copy(lines, _)
       require("osc52").copy(table.concat(lines, "\n"))
     end
