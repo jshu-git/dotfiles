@@ -8,7 +8,7 @@ return {
       height = math.floor(0.7 * vim.o.lines),
       border = {
         enable = true,
-        top_char = "▁",
+        top_char = "",
         bottom_char = "▔",
       },
       list = {
