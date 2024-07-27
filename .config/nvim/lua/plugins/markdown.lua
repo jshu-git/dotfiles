@@ -16,9 +16,9 @@ return {
 
     vim.keymap.set(
       "n",
-      "<leader>tv",
+      "<leader>tM",
       markdown.toggle,
-      { desc = "Toggle Markview" }
+      { desc = "Toggle Markdown" }
     )
   end,
 }
