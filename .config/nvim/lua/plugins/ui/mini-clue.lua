@@ -75,6 +75,8 @@ return {
         -- { mode = "n", keys = "z-", postkeys = "z" },
         -- { mode = "n", keys = "zo", postkeys = "z" },
         -- { mode = "n", keys = "zc", postkeys = "z" },
+        -- treesitter
+        { mode = "x", keys = "<leader><leader>", postkeys = "<leader>" },
       },
     })
   end,
