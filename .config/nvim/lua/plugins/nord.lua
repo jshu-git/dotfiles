@@ -31,7 +31,7 @@ return {
         )
 
         -- mini
-        vim.api.nvim_set_hl(0, "MiniIndentScopeSymbol", { link = "Whitespace" })
+        vim.api.nvim_set_hl(0, "MiniIndentScopeSymbol", { link = "NonText" })
         vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickNormal" })
         vim.api.nvim_set_hl(0, "MiniCursorWord", { link = "Search" })
 
@@ -45,8 +45,8 @@ return {
         vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { link = "FloatBorder" })
 
         -- copilot
-        vim.api.nvim_set_hl(0, "CopilotSuggestion", { link = "Comment" })
-        vim.api.nvim_set_hl(0, "NeoCodeiumSuggestion", { link = "Comment" })
+        vim.api.nvim_set_hl(0, "CopilotSuggestion", { link = "NonText" })
+        vim.api.nvim_set_hl(0, "NeoCodeiumSuggestion", { link = "NonText" })
         vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "Search" })
 
         -- lspinfo
