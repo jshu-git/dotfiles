@@ -7,6 +7,7 @@ return {
     local ai = require("mini.ai")
     local extra_ai = require("mini.extra").gen_ai_spec
     ai.setup({
+      n_lines = 500,
       mappings = {
         around_next = "",
         inside_next = "",
@@ -16,12 +17,26 @@ return {
         goto_right = "",
       },
       custom_textobjects = {
+        -- override
         c = ai.gen_spec.function_call(),
+        -- extra
         g = extra_ai.buffer(),
+        D = extra_ai.diagnostic(),
         L = extra_ai.line(),
         n = extra_ai.number(),
         -- treesitter
-        f = false,
+        f = ai.gen_spec.treesitter({
+          a = "@function.outer",
+          i = "@function.inner",
+        }),
+        o = ai.gen_spec.treesitter({
+          a = { "@conditional.outer", "@loop.outer" },
+          i = { "@conditional.inner", "@loop.inner" },
+        }),
+        C = ai.gen_spec.treesitter({
+          a = "@class.outer",
+          i = "@class.inner",
+        }),
       },
     })
 
