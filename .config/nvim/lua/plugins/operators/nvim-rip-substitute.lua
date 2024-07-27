@@ -1,7 +1,7 @@
 return {
   "chrisgrieser/nvim-rip-substitute",
   keys = {
-    { "sr", mode = { "n", "x" } },
+    { "sR", mode = { "n", "x" } },
   },
   config = function()
     -- note: full-visual-line makes range matches not work
@@ -23,7 +23,7 @@ return {
       },
     })
 
-    vim.keymap.set({ "n", "x" }, "sr", function()
+    vim.keymap.set({ "n", "x" }, "sR", function()
       rip.sub()
     end, { desc = "Rip/Substitute" })
   end,

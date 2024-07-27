@@ -13,8 +13,8 @@ return {
       },
       mappings = {
         add = "sS",
-        delete = "ds",
-        replace = "cs",
+        delete = "sd",
+        replace = "sr",
 
         update_n_lines = "",
         highlight = "",
