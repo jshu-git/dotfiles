@@ -15,6 +15,8 @@ return {
           keymaps = {
             ["af"] = "@function.outer",
             ["if"] = "@function.inner",
+            ["ao"] = "@loop.outer",
+            ["io"] = "@loop.inner",
           },
         },
       },
