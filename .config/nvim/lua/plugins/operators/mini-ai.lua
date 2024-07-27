@@ -18,9 +18,6 @@ return {
         g = gen_ai_spec.buffer(),
         l = gen_ai_spec.line(),
         n = gen_ai_spec.number(),
-        -- LazyVim
-        t = { "<([%p%w]-)%f[^<%w][^<>]->.-</%1>", "^<.->().*()</[^/]->$" },
-        d = { "%f[%d]%d+" },
       },
     })
 
