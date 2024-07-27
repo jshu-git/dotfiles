@@ -7,7 +7,7 @@ return {
   config = function()
     local aerial = require("aerial")
     aerial.setup({
-      backends = { "lsp" },
+      backends = { "treesitter", "lsp" },
       keymaps = {
         ["J"] = "actions.down_and_scroll",
         ["K"] = "actions.up_and_scroll",
