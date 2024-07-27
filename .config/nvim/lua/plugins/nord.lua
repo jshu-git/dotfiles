@@ -58,12 +58,12 @@ return {
     require("nord").setup({
       diff = { mode = "fg" },
       search = { theme = "vscode" },
-      styles = {
-        comments = { italic = false },
-        bufferline = {
-          modified = { italic = false },
-        },
-      },
+      -- styles = {
+      --   comments = { italic = true },
+      --   bufferline = {
+      --     modified = { italic = false },
+      --   },
+      -- },
     })
     vim.cmd.colorscheme("nord")
   end,
