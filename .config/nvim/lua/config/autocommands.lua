@@ -37,7 +37,14 @@ vim.api.nvim_create_autocmd("FileType", {
 -- LazyVim
 -- close some filetypes with <esc>
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "lazy", "git", "help", "gitsigns.blame", "checkhealth", "qf" },
+  pattern = {
+    "lazy",
+    "git",
+    "help",
+    "gitsigns.blame",
+    "checkhealth",
+    "qf",
+  },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set(
@@ -60,7 +67,12 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
 
 -- wrap and check for spell in text filetypes
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "*.txt", "gitcommit", "markdown", "noice" },
+  pattern = {
+    "*.txt",
+    "gitcommit",
+    "markdown",
+    "noice",
+  },
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true
