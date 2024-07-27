@@ -15,7 +15,7 @@ return {
       mappings = {
         apply = "",
         reset = "gH",
-        textobject = "ah",
+        textobject = "gh",
       },
     })
 
@@ -25,11 +25,13 @@ return {
       diff.toggle_overlay,
       { desc = "Git: Toggle Diff" }
     )
+
+    -- reset hunks
     vim.keymap.set(
       "n",
       "<leader>gr",
-      "gH" .. "ah",
-      { desc = "Reset Hunk", remap = true }
+      "gHgh",
+      { desc = "Reset (Hunk)", remap = true }
     )
     vim.keymap.set(
       "x",
@@ -37,11 +39,14 @@ return {
       "gH",
       { desc = "Reset Hunk (Visual)", remap = true }
     )
-    vim.keymap.set(
-      "n",
-      "<leader>gR",
-      "gH" .. "ig",
-      { desc = "Reset Buffer", remap = true }
-    )
+    vim.keymap.set("n", "<leader>gR", function()
+      diff.do_hunks(0, "reset")
+    end, { desc = "Reset (Buffer)" })
+
+    -- hunks to quickfix
+    vim.keymap.set("n", "<leader>gq", function()
+      vim.fn.setqflist(diff.export("qf"))
+      vim.cmd("copen")
+    end, { desc = "Hunks (Quickfix)" })
   end,
 }
