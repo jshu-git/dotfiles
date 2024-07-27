@@ -8,18 +8,18 @@ return {
   config = function()
     require("nvim-treesitter.configs").setup({
       auto_install = true,
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<leader><leader>",
-          node_incremental = "<leader><leader>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
-        },
-      },
       highlight = {
         enable = true,
       },
+      -- incremental_selection = {
+      --   enable = true,
+      --   keymaps = {
+      --     init_selection = "<leader><leader>",
+      --     node_incremental = "<leader><leader>",
+      --     scope_incremental = false,
+      --     node_decremental = "<bs>",
+      --   },
+      -- },
       -- textobjects = {
       --   select = {
       --     enable = true,
