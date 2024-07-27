@@ -13,8 +13,8 @@ return {
           enable = true,
           lookahead = true,
           keymaps = {
-            ["aF"] = "@function.outer",
-            ["iF"] = "@function.inner",
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
           },
         },
       },

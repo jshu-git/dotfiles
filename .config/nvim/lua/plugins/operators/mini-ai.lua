@@ -4,8 +4,9 @@ return {
     "echasnovski/mini.extra",
   },
   config = function()
-    local gen_ai_spec = require("mini.extra").gen_ai_spec
-    require("mini.ai").setup({
+    local ai = require("mini.ai")
+    local extra_ai = require("mini.extra").gen_ai_spec
+    ai.setup({
       mappings = {
         around_next = "",
         inside_next = "",
@@ -15,9 +16,11 @@ return {
         goto_right = "",
       },
       custom_textobjects = {
-        g = gen_ai_spec.buffer(),
-        l = gen_ai_spec.line(),
-        n = gen_ai_spec.number(),
+        c = ai.gen_spec.function_call(),
+        f = false, -- used by treesitter
+        g = extra_ai.buffer(),
+        l = extra_ai.line(),
+        n = extra_ai.number(),
       },
     })
 
