@@ -47,11 +47,12 @@ vim.keymap.set({ "n", "x", "o" }, "0", function()
 end, { expr = true })
 
 -- editing
-vim.keymap.set("n", "<BS>", "<C-^>")
-vim.keymap.set({ "n", "x" }, ";", ":")
-vim.keymap.set({ "n", "x" }, "m", "%")
-vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<CR>", '"_ciw')
+vim.keymap.set("n", "<S-CR>", "<CR>")
+vim.keymap.set("n", "U", "<C-r>")
+vim.keymap.set({ "n", "x" }, ";", ":")
+vim.keymap.set("n", "<BS>", "<C-^>")
+vim.keymap.set({ "n", "x" }, "m", "%")
 vim.keymap.set("n", "i", function()
   return vim.fn.getline(".") == "" and '"_cc' or "i"
 end, { expr = true })
@@ -93,6 +94,28 @@ vim.keymap.set("n", "<C-S-L>", "<C-w>L")
 -- visual
 vim.keymap.set("x", "<CR>", '"_c')
 vim.keymap.set("x", "<C-q>", "j")
+
+-- quickfix
+vim.keymap.set("n", "]q", "<cmd>cnext<CR>", { desc = "Next Quickfix" })
+vim.keymap.set("n", "[q", "<cmd>cprev<CR>", { desc = "Previous Quickfix" })
+vim.keymap.set("n", "[Q", "<cmd>cfirst<CR>", { desc = "First Quickfix" })
+vim.keymap.set("n", "]Q", "<cmd>clast<CR>", { desc = "Last Quickfix" })
+vim.keymap.set("n", "<leader>C", function()
+  for _, win in pairs(vim.fn.getwininfo()) do
+    if win.quickfix == 1 then
+      vim.cmd("cclose")
+      return
+    end
+  end
+  if not vim.tbl_isempty(vim.fn.getqflist()) then
+    vim.cmd("copen")
+    return
+  end
+  vim.notify("No Quickfix", vim.log.levels.WARN)
+end, { desc = "Quickfix" })
+-- tabs
+vim.keymap.set("n", "]t", "<cmd>tabnext<CR>", { desc = "Next Tab" })
+vim.keymap.set("n", "[t", "<cmd>tabprev<CR>", { desc = "Previous Tab" })
 
 -- insert/command mode
 vim.keymap.set({ "i", "c" }, "<C-h>", "<Left>")
