@@ -83,7 +83,7 @@ return {
           mode = "symbol_text",
           -- mode = "symbol",
           maxwidth = function()
-            return math.floor(vim.o.columns * 0.15)
+            return math.floor(vim.o.columns * 0.2)
           end,
           ellipsis_char = "…",
           menu = {
