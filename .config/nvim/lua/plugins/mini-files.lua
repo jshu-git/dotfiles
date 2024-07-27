@@ -31,8 +31,11 @@ return {
       end
     end, { desc = "Explorer" })
     vim.keymap.set("n", "<leader>E", function()
-      files.open(nil, false)
+      files.open(nil)
     end, { desc = "Explorer (cwd)" })
+    vim.keymap.set("n", "<leader>'", function()
+      files.open(files.get_latest_path())
+    end, { desc = "Explorer (Latest)" })
 
     -- toggle preview
     local show_preview = false
@@ -50,7 +53,7 @@ return {
 
     -- open in split
     local map_split = function(buf_id, lhs, direction)
-      local rhs = function()
+      vim.keymap.set("n", lhs, function()
         local new_target_window
         ---@diagnostic disable-next-line: param-type-mismatch
         vim.api.nvim_win_call(files.get_target_window(), function()
@@ -59,9 +62,7 @@ return {
         end)
         files.set_target_window(new_target_window)
         files.go_in({ close_on_file = true })
-      end
-      local desc = "Split " .. direction
-      vim.keymap.set("n", lhs, rhs, { buffer = buf_id, desc = desc })
+      end, { buffer = buf_id, desc = "Split " .. direction })
     end
 
     vim.api.nvim_create_autocmd("User", {
