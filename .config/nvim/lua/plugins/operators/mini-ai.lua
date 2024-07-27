@@ -17,15 +17,16 @@ return {
       },
       custom_textobjects = {
         c = ai.gen_spec.function_call(),
-        f = false, -- used by treesitter
         g = extra_ai.buffer(),
-        l = extra_ai.line(),
+        L = extra_ai.line(),
         n = extra_ai.number(),
+        -- treesitter
+        f = false,
       },
     })
 
     vim.keymap.set("n", "<S-CR>", "ciq", { remap = true })
-    vim.keymap.set("x", "v", "ilo", { remap = true })
+    vim.keymap.set("x", "v", "iLo", { remap = true })
     -- vim.keymap.set("n", "vil", "vilo", { remap = true })
     -- vim.keymap.set("n", "val", "valo", { remap = true })
   end,

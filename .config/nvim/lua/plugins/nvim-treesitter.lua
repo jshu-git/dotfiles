@@ -15,8 +15,13 @@ return {
           keymaps = {
             ["af"] = "@function.outer",
             ["if"] = "@function.inner",
-            ["ao"] = "@loop.outer",
-            ["io"] = "@loop.inner",
+            ["ac"] = "@conditional.outer",
+            ["ic"] = "@conditional.inner",
+            ["al"] = "@loop.outer",
+            ["il"] = "@loop.inner",
+
+            ["aC"] = "@class.outer",
+            ["iC"] = "@class.inner",
           },
         },
       },
