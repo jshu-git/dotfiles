@@ -45,7 +45,7 @@ return {
       },
       views = {
         virtualtext = {
-          hl_group = 'IncSearch',
+          hl_group = 'Search',
         },
         split = {
           enter = true,
