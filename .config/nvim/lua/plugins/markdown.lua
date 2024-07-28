@@ -7,8 +7,9 @@ return {
   config = function()
     local markdown = require('render-markdown')
     markdown.setup({
+      enabled = false,
       -- not working in visual for some reason
-      -- render_modes = { "n", "c", "x" },
+      -- render_modes = { 'n', 'c', 'x' },
       anti_conceal = {
         enabled = false,
       },
