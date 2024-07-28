@@ -44,6 +44,7 @@ return {
           winhighlight = 'Normal:Pmenu,Cursorline:Visual',
           -- col_offset = 2,
           -- scrollbar = false,
+          scrolloff = 3,
         },
         documentation = {
           -- border = "single",
