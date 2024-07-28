@@ -32,8 +32,6 @@ return {
       },
     })
 
-    vim.opt.fillchars:append({ diff = '╱' })
-
     -- file history
     vim.keymap.set(
       'n',
