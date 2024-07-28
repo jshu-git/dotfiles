@@ -53,31 +53,6 @@ return {
           -- scrollbar = false,
         },
       },
-      -- https://github.com/hrsh7th/nvim-cmp/discussions/609#discussioncomment-5727678
-      -- https://github.com/Roundlay/nvim/blob/main/lua/plugins/lazy-cmp.lua
-      -- formatting = {
-      -- 	fields = { "abbr", "menu", "kind" },
-      -- 	format = function(entry, item)
-      -- 		local menu_icon = {
-      -- 			nvim_lsp = "LSP",
-      -- 			buffer = "BUF",
-      -- 			async_path = "PTH",
-      -- 			cmdline = "CMD",
-      -- 			cmdline_history = "HST",
-      -- 			calc = "CLC",
-      -- 		}
-      -- 		item.menu = menu_icon[entry.source.name]
-      -- 		local content = item.abbr
-      -- 		local win_width = vim.api.nvim_win_get_width(0)
-      -- 		local max_content_width = math.floor(win_width * 0.15)
-      -- 		if #content > max_content_width then
-      -- 			item.abbr = vim.fn.strcharpart(content, 0, max_content_width - 1) .. "…"
-      -- 		else
-      -- 			item.abbr = content .. (" "):rep(max_content_width - #content)
-      -- 		end
-      -- 		return item
-      -- 	end,
-      -- },
       formatting = {
         format = require('lspkind').cmp_format({
           mode = 'symbol_text',
