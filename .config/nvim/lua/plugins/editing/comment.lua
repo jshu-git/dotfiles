@@ -2,6 +2,7 @@ return {
   'numToStr/Comment.nvim',
   keys = {
     { '<C-c>', mode = { 'n', 'x' } },
+    { '<C-S-c>', mode = { 'n', 'x' } },
     { '<leader><C-c>', mode = { 'n' } },
   },
   config = function()
