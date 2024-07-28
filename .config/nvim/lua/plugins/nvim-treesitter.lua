@@ -3,6 +3,7 @@ return {
   cond = vim.env.SSH_CLIENT == nil,
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
+    { 'nvim-treesitter/nvim-treesitter-context', opts = { max_lines = 1 } },
   },
   config = function()
     require('nvim-treesitter.configs').setup({

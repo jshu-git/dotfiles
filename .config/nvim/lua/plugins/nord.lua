@@ -52,6 +52,9 @@ return {
 
         -- lspinfo
         vim.api.nvim_set_hl(0, 'LspInfoBorder', { link = 'FloatBorder' })
+
+        -- treesitter
+        vim.api.nvim_set_hl(0, 'TreesitterContext', { link = 'Search' })
       end,
     })
   end,
