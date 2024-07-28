@@ -37,6 +37,10 @@ return {
           a = '@class.outer',
           i = '@class.inner',
         }),
+        r = ai.gen_spec.treesitter({
+          a = '@return.outer',
+          i = '@return.inner',
+        }),
       },
     })
 
