@@ -47,12 +47,9 @@ return {
       "<cmd>DiffviewFileHistory<cr>",
       { desc = "Diff (Branch)" }
     )
-    vim.keymap.set(
-      "x",
-      "<leader>gd",
-      ":<C-U>'<,'>DiffviewFileHistory<cr>",
-      { desc = "Diff (Visual)" }
-    )
+    vim.keymap.set("x", "<leader>gd", function()
+      vim.cmd("DiffviewFileHistory")
+    end, { desc = "Diff (Visual)" })
 
     vim.api.nvim_create_autocmd("FileType", {
       pattern = {
