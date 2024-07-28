@@ -54,7 +54,8 @@ return {
         vim.api.nvim_set_hl(0, 'LspInfoBorder', { link = 'FloatBorder' })
 
         -- treesitter
-        vim.api.nvim_set_hl(0, 'TreesitterContext', { link = 'Search' })
+        -- vim.api.nvim_set_hl(0, 'TreesitterContext', { link = 'Underlined' })
+        vim.api.nvim_set_hl(0, 'TreesitterContext', { link = 'CursorLine' })
       end,
     })
   end,
