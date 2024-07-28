@@ -14,10 +14,10 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "<leader><leader>",
-          node_incremental = "<leader><leader>",
+          init_selection = "m",
+          node_incremental = "m",
           scope_incremental = false,
-          node_decremental = "<bs>",
+          node_decremental = "M",
         },
       },
       -- textobjects = {
