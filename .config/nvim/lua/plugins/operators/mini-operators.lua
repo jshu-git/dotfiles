@@ -37,7 +37,7 @@ return {
     vim.keymap.set(
       'x',
       'sw',
-      [[ y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<NL><CR>Ncgn ]],
+      [[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<NL><CR>Ncgn]],
       { desc = 'Substitute (instance)' }
     )
   end,
