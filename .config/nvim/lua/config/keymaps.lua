@@ -52,7 +52,6 @@ vim.keymap.set("n", "<S-CR>", "<CR>")
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set({ "n", "x" }, ";", ":")
 vim.keymap.set("n", "<BS>", "<C-^>")
-vim.keymap.set({ "n", "x" }, "m", "%")
 vim.keymap.set("n", "i", function()
   return vim.fn.getline(".") == "" and '"_cc' or "i"
 end, { expr = true })
@@ -60,8 +59,6 @@ end, { expr = true })
 -- search
 vim.keymap.set("n", "*", "g*N")
 vim.keymap.set("n", "g*", "*N")
-vim.keymap.set("n", "n", "nzv")
-vim.keymap.set("n", "N", "Nzv")
 
 -- preserve clipboard
 vim.keymap.set({ "n", "x" }, "x", '"_x')
