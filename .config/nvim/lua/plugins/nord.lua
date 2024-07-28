@@ -46,6 +46,7 @@ return {
 
         -- copilot
         vim.api.nvim_set_hl(0, 'CopilotSuggestion', { link = 'NonText' })
+        vim.api.nvim_set_hl(0, 'CopilotAnnotation', { link = 'Search' })
         vim.api.nvim_set_hl(0, 'NeoCodeiumSuggestion', { link = 'NonText' })
         vim.api.nvim_set_hl(0, 'NeoCodeiumLabel', { link = 'Search' })
 
