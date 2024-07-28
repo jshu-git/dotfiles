@@ -10,6 +10,7 @@ o.termguicolors = true
 -- editing
 o.clipboard = 'unnamedplus'
 o.virtualedit = 'block'
+o.startofline = true
 
 -- tabs/indents
 o.breakindent = true
