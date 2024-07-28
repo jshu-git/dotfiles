@@ -183,21 +183,6 @@ return {
       { desc = 'Highlights' }
     )
 
-    -- neovim config files
-    pick.registry.config_files = function()
-      return pick.builtin.files(nil, {
-        source = {
-          cwd = vim.fn.stdpath('config'),
-        },
-      })
-    end
-    vim.keymap.set(
-      'n',
-      '<leader>fn',
-      pick.registry.config_files,
-      { desc = 'Neovim Config Files' }
-    )
-
     -- keymaps
     vim.keymap.set(
       'n',
@@ -216,6 +201,27 @@ return {
     vim.keymap.set('n', '<leader>fO', function()
       extra.pickers.options({ scope = 'buf' })
     end, { desc = 'Options (Buffer)' })
+
+    -- resume
+    vim.keymap.set('n', "'", pick.builtin.resume)
+
+    -- registers
+    vim.keymap.set(
+      'n',
+      '<leader>"',
+      extra.pickers.registers,
+      { desc = 'Registers' }
+    )
+
+    -- custom
+    -- neovim config files
+    pick.registry.config_files = function()
+      return pick.builtin.files(nil, {
+        source = {
+          cwd = vim.fn.stdpath('config'),
+        },
+      })
+    end
 
     -- colorschemes
     pick.registry.colorschemes = function()
@@ -237,17 +243,6 @@ return {
       '<leader>ft',
       pick.registry.colorschemes,
       { desc = 'Themes' }
-    )
-
-    -- resume
-    vim.keymap.set('n', "'", pick.builtin.resume)
-
-    -- registers
-    vim.keymap.set(
-      'n',
-      '<leader>"',
-      extra.pickers.registers,
-      { desc = 'Registers' }
     )
 
     -- commands
