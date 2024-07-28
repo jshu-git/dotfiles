@@ -58,10 +58,10 @@ return {
 
     -- files
     vim.keymap.set('n', '<leader>ff', function()
-      pick.builtin.files({}, cwd_opts('Files'))
+      pick.builtin.files(nil, cwd_opts('Files'))
     end, { desc = 'Files' })
     vim.keymap.set('n', '<leader>fF', function()
-      pick.builtin.files({}, relative_opts('Files'))
+      pick.builtin.files(nil, relative_opts('Files'))
     end, { desc = 'Files (Relative)' })
     vim.keymap.set(
       'n',
@@ -75,10 +75,10 @@ return {
 
     -- grep live
     vim.keymap.set('n', '<leader>fw', function()
-      pick.builtin.grep_live({}, cwd_opts('Grep Live'))
+      pick.builtin.grep_live(nil, cwd_opts('Grep Live'))
     end, { desc = 'Grep Live' })
     vim.keymap.set('n', '<leader>fW', function()
-      pick.builtin.grep_live({}, relative_opts('Grep Live'))
+      pick.builtin.grep_live(nil, relative_opts('Grep Live'))
     end, { desc = 'Grep Live (Relative)' })
 
     -- grep
@@ -119,7 +119,7 @@ return {
     end)
 
     -- special paths
-    vim.keymap.set('n', '<leader>fp', function()
+    pick.registry.special_paths = function()
       return pick.start({
         source = {
           name = 'Special Paths',
@@ -132,7 +132,13 @@ return {
           end,
         },
       })
-    end, { desc = 'Special Paths' })
+    end
+    vim.keymap.set(
+      'n',
+      '<leader>fp',
+      pick.registry.special_paths,
+      { desc = 'Special Paths' }
+    )
 
     -- git
     -- files
@@ -177,29 +183,20 @@ return {
       { desc = 'Highlights' }
     )
 
-    -- commands
+    -- neovim config files
+    pick.registry.config_files = function()
+      return pick.builtin.files(nil, {
+        source = {
+          cwd = vim.fn.stdpath('config'),
+        },
+      })
+    end
     vim.keymap.set(
       'n',
-      '<leader>fc',
-      extra.pickers.commands,
-      { desc = 'Commands' }
+      '<leader>fn',
+      pick.registry.config_files,
+      { desc = 'Neovim Config Files' }
     )
-    -- mini builtin registry
-    vim.keymap.set('n', '<leader>fC', function()
-      local items =
-        vim.tbl_keys(vim.tbl_extend('force', pick.registry, extra.pickers))
-      table.sort(items)
-      local source = {
-        items = items,
-        name = 'Registry',
-        choose = function() end,
-      }
-      local chosen_picker_name = pick.start({ source = source })
-      if chosen_picker_name == nil then
-        return
-      end
-      return pick.registry[chosen_picker_name]()
-    end, { desc = 'Commands (Builtin)' })
 
     -- keymaps
     vim.keymap.set(
@@ -221,8 +218,8 @@ return {
     end, { desc = 'Options (Buffer)' })
 
     -- colorschemes
-    vim.keymap.set('n', '<leader>ft', function()
-      pick.start({
+    pick.registry.colorschemes = function()
+      return pick.start({
         source = {
           name = 'Colorschemes',
           items = vim.fn.getcompletion('', 'color'),
@@ -234,7 +231,13 @@ return {
           end,
         },
       })
-    end, { desc = 'Themes' })
+    end
+    vim.keymap.set(
+      'n',
+      '<leader>ft',
+      pick.registry.colorschemes,
+      { desc = 'Themes' }
+    )
 
     -- resume
     vim.keymap.set('n', "'", pick.builtin.resume)
@@ -245,6 +248,30 @@ return {
       '<leader>"',
       extra.pickers.registers,
       { desc = 'Registers' }
+    )
+
+    -- commands
+    -- mini builtin registry
+    vim.keymap.set('n', '<leader>fc', function()
+      local items =
+        vim.tbl_keys(vim.tbl_extend('force', pick.registry, extra.pickers))
+      table.sort(items)
+      local source = {
+        items = items,
+        name = 'Registry',
+        choose = function() end,
+      }
+      local chosen_picker_name = pick.start({ source = source })
+      if chosen_picker_name == nil then
+        return
+      end
+      return pick.registry[chosen_picker_name]()
+    end, { desc = 'Commands (Builtin)' })
+    vim.keymap.set(
+      'n',
+      '<leader>fC',
+      extra.pickers.commands,
+      { desc = 'Commands' }
     )
   end,
 }
