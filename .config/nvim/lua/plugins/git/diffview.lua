@@ -1,19 +1,19 @@
 return {
-  "sindrets/diffview.nvim",
+  'sindrets/diffview.nvim',
   keys = {
-    { "<leader>gd", mode = { "n", "x" } },
+    { '<leader>gd', mode = { 'n', 'x' } },
   },
   dependencies = {
-    "echasnovski/mini.icons",
+    'echasnovski/mini.icons',
   },
   config = function()
-    local actions = require("diffview.actions")
-    require("diffview").setup({
+    local actions = require('diffview.actions')
+    require('diffview').setup({
       enhanced_diff_hl = true,
       show_help_hints = false,
       view = {
         merge_tool = {
-          layout = "diff3_mixed",
+          layout = 'diff3_mixed',
         },
         file_history = {
           winbar_info = true,
@@ -24,42 +24,42 @@ return {
       },
       keymaps = {
         view = {
-          ["<esc>"] = actions.close,
+          ['<esc>'] = actions.close,
         },
         file_history_panel = {
-          ["g!"] = false,
+          ['g!'] = false,
         },
       },
     })
 
-    vim.opt.fillchars:append({ diff = "╱" })
+    vim.opt.fillchars:append({ diff = '╱' })
 
     -- file history
     vim.keymap.set(
-      "n",
-      "<leader>gd",
-      "<cmd>DiffviewFileHistory %<cr>",
-      { desc = "Diff (File)" }
+      'n',
+      '<leader>gd',
+      '<cmd>DiffviewFileHistory %<cr>',
+      { desc = 'Diff (File)' }
     )
     vim.keymap.set(
-      "n",
-      "<leader>gD",
-      "<cmd>DiffviewFileHistory<cr>",
-      { desc = "Diff (Branch)" }
+      'n',
+      '<leader>gD',
+      '<cmd>DiffviewFileHistory<cr>',
+      { desc = 'Diff (Branch)' }
     )
-    vim.keymap.set("x", "<leader>gd", function()
-      vim.cmd("DiffviewFileHistory")
-    end, { desc = "Diff (Visual)" })
+    vim.keymap.set('x', '<leader>gd', function()
+      vim.cmd('DiffviewFileHistory')
+    end, { desc = 'Diff (Visual)' })
 
-    vim.api.nvim_create_autocmd("FileType", {
+    vim.api.nvim_create_autocmd('FileType', {
       pattern = {
-        "DiffviewFileHistory",
+        'DiffviewFileHistory',
       },
       callback = function(event)
         vim.keymap.set(
-          "n",
-          "<esc>",
-          "<cmd>tabclose<cr>",
+          'n',
+          '<esc>',
+          '<cmd>tabclose<cr>',
           { buffer = event.buf, silent = true }
         )
       end,

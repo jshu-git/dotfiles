@@ -1,30 +1,30 @@
 return {
-  "hrsh7th/nvim-cmp",
-  event = { "InsertEnter", "CmdlineEnter" },
+  'hrsh7th/nvim-cmp',
+  event = { 'InsertEnter', 'CmdlineEnter' },
   dependencies = {
-    { "folke/lazydev.nvim", ft = "lua", opts = {} },
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-calc",
-    "FelipeLema/cmp-async-path",
+    { 'folke/lazydev.nvim', ft = 'lua', opts = {} },
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-calc',
+    'FelipeLema/cmp-async-path',
     -- cmdline
-    "hrsh7th/cmp-cmdline",
-    "dmitmel/cmp-cmdline-history",
+    'hrsh7th/cmp-cmdline',
+    'dmitmel/cmp-cmdline-history',
     -- signature
-    "hrsh7th/cmp-nvim-lsp-signature-help",
+    'hrsh7th/cmp-nvim-lsp-signature-help',
     -- ui
-    "onsails/lspkind-nvim",
+    'onsails/lspkind-nvim',
   },
   config = function()
-    local cmp = require("cmp")
+    local cmp = require('cmp')
     cmp.setup({
       sources = {
-        { name = "lazydev", group_index = 0 },
-        { name = "nvim_lsp_signature_help" },
-        { name = "nvim_lsp", max_item_count = 5 },
-        { name = "buffer", max_item_count = 3 },
-        { name = "calc", max_item_count = 2 },
-        { name = "async_path", max_item_count = 2 },
+        { name = 'lazydev', group_index = 0 },
+        { name = 'nvim_lsp_signature_help' },
+        { name = 'nvim_lsp', max_item_count = 5 },
+        { name = 'buffer', max_item_count = 3 },
+        { name = 'calc', max_item_count = 2 },
+        { name = 'async_path', max_item_count = 2 },
       },
       snippet = {
         expand = function(args)
@@ -41,7 +41,7 @@ return {
           -- border = "single",
           -- side_padding = 0,
           -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-          winhighlight = "Normal:Pmenu,Cursorline:Visual",
+          winhighlight = 'Normal:Pmenu,Cursorline:Visual',
           -- col_offset = 2,
           -- scrollbar = false,
         },
@@ -49,7 +49,7 @@ return {
           -- border = "single",
           -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
           -- max_width = math.floor(vim.o.columns * 0.3),
-          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu",
+          winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu',
           -- scrollbar = false,
         },
       },
@@ -79,32 +79,32 @@ return {
       -- 	end,
       -- },
       formatting = {
-        format = require("lspkind").cmp_format({
-          mode = "symbol_text",
+        format = require('lspkind').cmp_format({
+          mode = 'symbol_text',
           -- mode = "symbol",
           maxwidth = function()
             return math.floor(vim.o.columns * 0.2)
           end,
-          ellipsis_char = "…",
+          ellipsis_char = '…',
           menu = {
-            nvim_lsp = "LSP",
-            buffer = "BUF",
-            async_path = "PTH",
-            cmdline = "CMD",
-            cmdline_history = "HST",
-            calc = "CLC",
+            nvim_lsp = 'LSP',
+            buffer = 'BUF',
+            async_path = 'PTH',
+            cmdline = 'CMD',
+            cmdline_history = 'HST',
+            calc = 'CLC',
           },
         }),
       },
       completion = {
-        completeopt = "menu,menuone,noinsert",
+        completeopt = 'menu,menuone,noinsert',
       },
       mapping = cmp.mapping.preset.insert({
-        ["<S-CR>"] = cmp.config.disable,
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-d>"] = cmp.mapping.scroll_docs(4),
-        ["<C-e>"] = cmp.mapping(function(fallback)
+        ['<S-CR>'] = cmp.config.disable,
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),
+        ['<C-e>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.abort()
           else
@@ -112,14 +112,14 @@ return {
           end
         end),
         -- snippets
-        ["<C-l>"] = cmp.mapping(function(fallback)
+        ['<C-l>'] = cmp.mapping(function(fallback)
           if vim.snippet.active({ direction = 1 }) then
             vim.snippet.jump(1)
           else
             fallback()
           end
         end),
-        ["<C-h>"] = cmp.mapping(function(fallback)
+        ['<C-h>'] = cmp.mapping(function(fallback)
           if vim.snippet.active({ direction = -1 }) then
             vim.snippet.jump(-1)
           else
@@ -127,7 +127,7 @@ return {
           end
         end),
         -- docs
-        ["<C-g>"] = function()
+        ['<C-g>'] = function()
           if cmp.visible_docs() then
             cmp.close_docs()
           else
@@ -138,26 +138,26 @@ return {
     })
 
     -- / cmdline setup
-    cmp.setup.cmdline({ "/", "?" }, {
+    cmp.setup.cmdline({ '/', '?' }, {
       completion = {
-        completeopt = "menu,menuone,noinsert,noselect",
+        completeopt = 'menu,menuone,noinsert,noselect',
       },
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
-        { name = "buffer" },
+        { name = 'buffer' },
       },
     })
 
     -- : cmdline setup
-    cmp.setup.cmdline(":", {
+    cmp.setup.cmdline(':', {
       completion = {
-        completeopt = "menu,menuone,noinsert,noselect",
+        completeopt = 'menu,menuone,noinsert,noselect',
       },
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
-        { name = "cmdline_history", max_item_count = 2 },
-        { name = "cmdline", max_item_count = 5 },
-        { name = "async_path", max_item_count = 2 },
+        { name = 'cmdline_history', max_item_count = 2 },
+        { name = 'cmdline', max_item_count = 5 },
+        { name = 'async_path', max_item_count = 2 },
       }),
     })
   end,

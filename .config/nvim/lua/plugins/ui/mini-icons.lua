@@ -1,11 +1,11 @@
 return {
-  "echasnovski/mini.icons",
+  'echasnovski/mini.icons',
   config = function()
-    local icons = require("mini.icons")
+    local icons = require('mini.icons')
     icons.setup({
       filetype = {
-        minifiles = { glyph = "󰉋", hl = "Directory" },
-        minipick = { glyph = "󰍉" },
+        minifiles = { glyph = '󰉋', hl = 'Directory' },
+        minipick = { glyph = '󰍉' },
       },
     })
     icons.mock_nvim_web_devicons()

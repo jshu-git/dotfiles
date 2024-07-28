@@ -1,14 +1,14 @@
 return {
-  "0x00-ketsu/maximizer.nvim",
-  keys = { "<leader>tm" },
+  '0x00-ketsu/maximizer.nvim',
+  keys = { '<leader>tm' },
   config = function()
-    local maximizer = require("maximizer")
+    local maximizer = require('maximizer')
     maximizer.setup()
     vim.keymap.set(
-      "n",
-      "<leader>tm",
+      'n',
+      '<leader>tm',
       maximizer.toggle,
-      { desc = "Toggle Maximize" }
+      { desc = 'Toggle Maximize' }
     )
   end,
 }

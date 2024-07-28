@@ -1,14 +1,14 @@
 return {
-  "zbirenbaum/copilot.lua",
+  'zbirenbaum/copilot.lua',
   cond = vim.env.SSH_CLIENT ~= nil,
-  cmd = "Copilot",
-  event = "InsertEnter",
+  cmd = 'Copilot',
+  event = 'InsertEnter',
   config = function()
-    require("copilot").setup({
+    require('copilot').setup({
       panel = {
         auto_refresh = true,
         keymap = {
-          open = "<A-CR>",
+          open = '<A-CR>',
         },
         layout = {
           ratio = 0.33,
@@ -20,33 +20,33 @@ return {
         debounce = 15,
         keymap = {
           accept = false,
-          accept_word = "<A-l>",
+          accept_word = '<A-l>',
           accept_line = false,
-          next = "<A-n>",
-          prev = "<A-p>",
+          next = '<A-n>',
+          prev = '<A-p>',
         },
       },
       filetypes = {
-        ["*"] = true,
+        ['*'] = true,
       },
     })
 
-    local suggestion = require("copilot.suggestion")
+    local suggestion = require('copilot.suggestion')
     -- https://github.com/zbirenbaum/copilot.lua/issues/91
-    vim.keymap.set("i", "<Tab>", function()
+    vim.keymap.set('i', '<Tab>', function()
       if suggestion.is_visible() then
         suggestion.accept()
       else
         vim.api.nvim_feedkeys(
-          vim.api.nvim_replace_termcodes("<Tab>", true, false, true),
-          "n",
+          vim.api.nvim_replace_termcodes('<Tab>', true, false, true),
+          'n',
           false
         )
       end
     end)
-    vim.keymap.set("i", "<C-\\>", suggestion.dismiss)
-    vim.keymap.set("i", "<A-l>", suggestion.accept_word)
-    vim.keymap.set("i", "<A-n>", suggestion.next)
-    vim.keymap.set("i", "<A-p>", suggestion.prev)
+    vim.keymap.set('i', '<C-\\>', suggestion.dismiss)
+    vim.keymap.set('i', '<A-l>', suggestion.accept_word)
+    vim.keymap.set('i', '<A-n>', suggestion.next)
+    vim.keymap.set('i', '<A-p>', suggestion.prev)
   end,
 }

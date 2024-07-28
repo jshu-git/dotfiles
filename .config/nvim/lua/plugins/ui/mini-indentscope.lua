@@ -1,7 +1,7 @@
 return {
-  "echasnovski/mini.indentscope",
+  'echasnovski/mini.indentscope',
   config = function()
-    local indentscope = require("mini.indentscope")
+    local indentscope = require('mini.indentscope')
     indentscope.setup({
       draw = {
         animation = indentscope.gen_animation.none(),
@@ -9,13 +9,13 @@ return {
       options = {
         try_as_border = true,
       },
-      symbol = "▏",
+      symbol = '▏',
     })
 
-    vim.api.nvim_create_autocmd("FileType", {
+    vim.api.nvim_create_autocmd('FileType', {
       pattern = {
-        "help",
-        "lazy",
+        'help',
+        'lazy',
       },
       callback = function()
         vim.b.miniindentscope_disable = true

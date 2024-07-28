@@ -1,12 +1,12 @@
 return {
-  "folke/noice.nvim",
-  version = "v4.4.7",
-  event = "VeryLazy",
+  'folke/noice.nvim',
+  version = 'v4.4.7',
+  event = 'VeryLazy',
   dependencies = {
-    "MunifTanjim/nui.nvim",
+    'MunifTanjim/nui.nvim',
   },
   config = function()
-    local noice = require("noice")
+    local noice = require('noice')
     noice.setup({
       cmdline = {
         format = {
@@ -16,24 +16,24 @@ return {
           filter = false,
           lua = false,
           help = false,
-          input = { view = "cmdline_popup", title = "" },
+          input = { view = 'cmdline_popup', title = '' },
         },
       },
       messages = {
-        view_history = "popup",
+        view_history = 'popup',
       },
       popupmenu = { enabled = false },
       commands = {
         history = {
-          view = "popup",
+          view = 'popup',
           filter_opts = { reverse = true },
         },
       },
       lsp = {
         override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
+          ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+          ['vim.lsp.util.stylize_markdown'] = true,
+          ['cmp.entry.get_documentation'] = true,
         },
         signature = {
           auto_open = { enabled = false },
@@ -45,18 +45,18 @@ return {
       },
       views = {
         virtualtext = {
-          hl_group = "IncSearch",
+          hl_group = 'IncSearch',
         },
         split = {
           enter = true,
-          close = { keys = { "<esc>" } },
+          close = { keys = { '<esc>' } },
         },
         popup = {
-          close = { keys = { "<esc>" } },
-          border = { style = "single" },
+          close = { keys = { '<esc>' } },
+          border = { style = 'single' },
           size = {
-            width = require("config.utils").popup.width,
-            height = require("config.utils").popup.height,
+            width = require('config.utils').popup.width,
+            height = require('config.utils').popup.height,
           },
         },
         hover = {
@@ -64,42 +64,42 @@ return {
             max_height = math.floor(0.3 * vim.o.lines),
             max_width = math.floor(0.5 * vim.o.columns),
           },
-          border = { style = "single", padding = { 0, 0 } },
+          border = { style = 'single', padding = { 0, 0 } },
         },
         cmdline_popup = {
           size = {
             min_width = math.floor(0.3 * vim.o.columns),
           },
-          border = { style = "single", padding = { 0, 0 } },
+          border = { style = 'single', padding = { 0, 0 } },
         },
         cmdline_input = {
-          border = { style = "single", padding = { 0, 0 } },
+          border = { style = 'single', padding = { 0, 0 } },
         },
         confirm = {
           position = {
-            row = "50%",
-            col = "50%",
+            row = '50%',
+            col = '50%',
           },
-          border = { style = "single", padding = { 0, 0 } },
+          border = { style = 'single', padding = { 0, 0 } },
         },
       },
       routes = {
         -- macros
         {
-          view = "virtualtext",
-          filter = { event = "msg_showmode" },
+          view = 'virtualtext',
+          filter = { event = 'msg_showmode' },
         },
         {
           filter = {
-            event = "msg_show",
+            event = 'msg_show',
             any = {
               -- search
-              { find = "Search hit " },
+              { find = 'Search hit ' },
               -- write
-              { find = "%d+L, %d+B" },
+              { find = '%d+L, %d+B' },
               -- undo/redo
-              { find = "; after #%d+" },
-              { find = "; before #%d+" },
+              { find = '; after #%d+' },
+              { find = '; before #%d+' },
             },
           },
           opts = { skip = true },
@@ -107,22 +107,22 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>nn", function()
-      noice.cmd("Noice")
-    end, { desc = "Messages (Noice)" })
-    vim.keymap.set("n", "<leader>nN", function()
-      vim.cmd("messages")
-    end, { desc = "Messages" })
+    vim.keymap.set('n', '<leader>nn', function()
+      noice.cmd('Noice')
+    end, { desc = 'Messages (Noice)' })
+    vim.keymap.set('n', '<leader>nN', function()
+      vim.cmd('messages')
+    end, { desc = 'Messages' })
     -- vim.keymap.set("n", "<leader>nl", function()
     --   noice.cmd("last")
     -- end, { desc = "Last" })
-    vim.keymap.set("n", "<leader>nd", function()
-      noice.cmd("errors")
-    end, { desc = "Errors" })
+    vim.keymap.set('n', '<leader>nd', function()
+      noice.cmd('errors')
+    end, { desc = 'Errors' })
 
     -- amend esc
-    require("keymap-amend")("n", "<esc>", function(original)
-      vim.cmd("Noice dismiss")
+    require('keymap-amend')('n', '<esc>', function(original)
+      vim.cmd('Noice dismiss')
       original()
     end)
   end,

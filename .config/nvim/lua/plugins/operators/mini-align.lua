@@ -1,25 +1,25 @@
 return {
-  "echasnovski/mini.align",
+  'echasnovski/mini.align',
   keys = {
-    { "&", mode = { "n", "x" } },
-    { "sA", mode = { "n", "x" } },
+    { '&', mode = { 'n', 'x' } },
+    { 'sA', mode = { 'n', 'x' } },
   },
   config = function()
-    require("mini.align").setup({
+    require('mini.align').setup({
       mappings = {
-        start = "&",
-        start_with_preview = "sA",
+        start = '&',
+        start_with_preview = 'sA',
       },
       -- j cycles
       modifiers = {
         j = function(_, opts)
           local next_option = ({
-            left = "center",
-            center = "right",
-            right = "none",
-            none = "left",
+            left = 'center',
+            center = 'right',
+            right = 'none',
+            none = 'left',
           })[opts.justify_side]
-          opts.justify_side = next_option or "left"
+          opts.justify_side = next_option or 'left'
         end,
       },
     })

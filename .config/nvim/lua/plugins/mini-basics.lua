@@ -1,11 +1,11 @@
 return {
   {
-    "echasnovski/mini.basics",
+    'echasnovski/mini.basics',
     config = function()
-      require("mini.basics").setup({
+      require('mini.basics').setup({
         options = {
           basic = true,
-          win_borders = "single",
+          win_borders = 'single',
           extra_ui = true,
         },
         mappings = {
@@ -19,9 +19,9 @@ return {
   },
 
   {
-    "echasnovski/mini.misc",
+    'echasnovski/mini.misc',
     config = function()
-      local misc = require("mini.misc")
+      local misc = require('mini.misc')
       misc.setup_restore_cursor()
       -- vim.keymap.set("n", "<leader>tm", function()
       --   misc.zoom()
@@ -30,11 +30,11 @@ return {
   },
 
   {
-    "echasnovski/mini.extra",
+    'echasnovski/mini.extra',
     config = true,
   },
 
   {
-    "anuvyklack/keymap-amend.nvim",
+    'anuvyklack/keymap-amend.nvim',
   },
 }

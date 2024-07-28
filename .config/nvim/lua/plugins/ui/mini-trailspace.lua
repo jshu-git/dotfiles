@@ -1,14 +1,14 @@
 return {
-  "echasnovski/mini.trailspace",
+  'echasnovski/mini.trailspace',
   config = function()
-    local trailspace = require("mini.trailspace")
+    local trailspace = require('mini.trailspace')
     trailspace.setup()
 
     vim.keymap.set(
-      "n",
-      "<leader>T",
+      'n',
+      '<leader>T',
       trailspace.trim,
-      { desc = "Trim Trailspace" }
+      { desc = 'Trim Trailspace' }
     )
   end,
 }

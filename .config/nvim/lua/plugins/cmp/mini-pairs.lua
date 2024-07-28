@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.pairs",
-  event = "InsertEnter",
+  'echasnovski/mini.pairs',
+  event = 'InsertEnter',
   opts = {},
 }

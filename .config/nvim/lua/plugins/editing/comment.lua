@@ -1,29 +1,29 @@
 return {
-  "numToStr/Comment.nvim",
+  'numToStr/Comment.nvim',
   keys = {
-    { "<C-c>", mode = { "n", "x" } },
-    { "<leader><C-c>", mode = { "n" } },
+    { '<C-c>', mode = { 'n', 'x' } },
+    { '<leader><C-c>', mode = { 'n' } },
   },
   config = function()
-    require("Comment").setup({
+    require('Comment').setup({
       mappings = {
         basic = false,
         extra = false,
       },
     })
 
-    vim.keymap.set("n", "<C-c>", "<Plug>(comment_toggle_linewise_current)")
-    vim.keymap.set("x", "<C-c>", "<Plug>(comment_toggle_linewise_visual)")
+    vim.keymap.set('n', '<C-c>', '<Plug>(comment_toggle_linewise_current)')
+    vim.keymap.set('x', '<C-c>', '<Plug>(comment_toggle_linewise_visual)')
 
     -- block
-    vim.keymap.set("n", "<C-S-c>", "<Plug>(comment_toggle_blockwise_current)")
-    vim.keymap.set("x", "<C-S-c>", "<Plug>(comment_toggle_blockwise_visual)")
+    vim.keymap.set('n', '<C-S-c>', '<Plug>(comment_toggle_blockwise_current)')
+    vim.keymap.set('x', '<C-S-c>', '<Plug>(comment_toggle_blockwise_visual)')
 
     vim.keymap.set(
-      "n",
-      "<leader><C-c>",
-      "gcgc",
-      { remap = true, desc = "Uncomment" }
+      'n',
+      '<leader><C-c>',
+      'gcgc',
+      { remap = true, desc = 'Uncomment' }
     )
 
     -- textobject

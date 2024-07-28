@@ -1,21 +1,21 @@
 return {
-  "gbprod/substitute.nvim",
+  'gbprod/substitute.nvim',
   config = function()
-    local substitute = require("substitute")
+    local substitute = require('substitute')
     substitute.setup({
       preserve_cursor_position = true,
       highlight_substituted_text = {
-        timer = require("config.utils").highlight_timeout,
+        timer = require('config.utils').highlight_timeout,
       },
     })
-    vim.keymap.set("n", "s", substitute.operator)
-    vim.keymap.set("n", "ss", substitute.line, { desc = "Substitute (Line)" })
-    vim.keymap.set("n", "S", substitute.eol)
+    vim.keymap.set('n', 's', substitute.operator)
+    vim.keymap.set('n', 'ss', substitute.line, { desc = 'Substitute (Line)' })
+    vim.keymap.set('n', 'S', substitute.eol)
     vim.keymap.set(
-      "x",
-      "ss",
+      'x',
+      'ss',
       substitute.visual,
-      { desc = "Substitute (Visual)" }
+      { desc = 'Substitute (Visual)' }
     )
   end,
 }

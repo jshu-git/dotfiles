@@ -1,23 +1,23 @@
 return {
-  "echasnovski/mini.pick",
+  'echasnovski/mini.pick',
   dependencies = {
-    "echasnovski/mini.extra",
+    'echasnovski/mini.extra',
   },
   config = function()
-    local pick = require("mini.pick")
-    local extra = require("mini.extra")
+    local pick = require('mini.pick')
+    local extra = require('mini.extra')
     vim.ui.select = pick.ui_select
 
     pick.setup({
       mappings = {
-        delete_left = "", -- defaults to <C-u>
-        move_start = "", -- defaults to <C-g>
+        delete_left = '', -- defaults to <C-u>
+        move_start = '', -- defaults to <C-g>
 
-        choose_marked = "<C-q>",
-        refine = "<C-g>",
-        refine_marked = "<C-S-g>",
-        scroll_down = "<C-d>",
-        scroll_up = "<C-u>",
+        choose_marked = '<C-q>',
+        refine = '<C-g>',
+        refine_marked = '<C-S-g>',
+        scroll_down = '<C-d>',
+        scroll_up = '<C-u>',
       },
       options = {
         use_cache = true,
@@ -25,173 +25,173 @@ return {
       -- centered
       window = {
         config = function()
-          local popup = require("config.utils").popup
+          local popup = require('config.utils').popup
           return {
-            anchor = "NW",
+            anchor = 'NW',
             height = popup.height,
             width = popup.width,
             row = math.floor(0.5 * (vim.o.lines - popup.height)),
             col = math.floor(0.5 * (vim.o.columns - popup.width)),
           }
         end,
-        prompt_prefix = " ",
+        prompt_prefix = ' ',
       },
     })
 
     -- helpers
     local function cwd_opts(name, opts)
-      return vim.tbl_deep_extend("force", {
+      return vim.tbl_deep_extend('force', {
         source = {
-          name = name .. " (" .. vim.fn.getcwd() .. ")",
+          name = name .. ' (' .. vim.fn.getcwd() .. ')',
         },
       }, opts or {})
     end
     local function relative_opts(name, opts)
-      local relative_path = vim.fn.expand("%:p:h")
-      return vim.tbl_deep_extend("force", {
+      local relative_path = vim.fn.expand('%:p:h')
+      return vim.tbl_deep_extend('force', {
         source = {
           cwd = relative_path,
-          name = name .. " (" .. relative_path .. ")",
+          name = name .. ' (' .. relative_path .. ')',
         },
       }, opts or {})
     end
 
     -- files
-    vim.keymap.set("n", "<leader>ff", function()
-      pick.builtin.files({}, cwd_opts("Files"))
-    end, { desc = "Files" })
-    vim.keymap.set("n", "<leader>fF", function()
-      pick.builtin.files({}, relative_opts("Files"))
-    end, { desc = "Files (Relative)" })
+    vim.keymap.set('n', '<leader>ff', function()
+      pick.builtin.files({}, cwd_opts('Files'))
+    end, { desc = 'Files' })
+    vim.keymap.set('n', '<leader>fF', function()
+      pick.builtin.files({}, relative_opts('Files'))
+    end, { desc = 'Files (Relative)' })
     vim.keymap.set(
-      "n",
-      "<leader>fr",
+      'n',
+      '<leader>fr',
       extra.pickers.oldfiles,
-      { desc = "Recent Files (All)" }
+      { desc = 'Recent Files (All)' }
     )
-    vim.keymap.set("n", "<leader>fR", function()
+    vim.keymap.set('n', '<leader>fR', function()
       extra.pickers.oldfiles({ current_dir = true })
-    end, { desc = "Recent Files (cwd)" })
+    end, { desc = 'Recent Files (cwd)' })
 
     -- grep live
-    vim.keymap.set("n", "<leader>fw", function()
-      pick.builtin.grep_live({}, cwd_opts("Grep Live"))
-    end, { desc = "Grep Live" })
-    vim.keymap.set("n", "<leader>fW", function()
-      pick.builtin.grep_live({}, relative_opts("Grep Live"))
-    end, { desc = "Grep Live (Relative)" })
+    vim.keymap.set('n', '<leader>fw', function()
+      pick.builtin.grep_live({}, cwd_opts('Grep Live'))
+    end, { desc = 'Grep Live' })
+    vim.keymap.set('n', '<leader>fW', function()
+      pick.builtin.grep_live({}, relative_opts('Grep Live'))
+    end, { desc = 'Grep Live (Relative)' })
 
     -- grep
-    vim.keymap.set("n", "<leader>fg", function()
-      local input = vim.fn.input("Grep (cwd): ")
-      if input ~= "" then
-        local opts = cwd_opts("Grep")
-        opts.source.name = opts.source.name .. ": " .. input
+    vim.keymap.set('n', '<leader>fg', function()
+      local input = vim.fn.input('Grep (cwd): ')
+      if input ~= '' then
+        local opts = cwd_opts('Grep')
+        opts.source.name = opts.source.name .. ': ' .. input
         pick.builtin.grep({ pattern = input }, opts)
       end
-    end, { desc = "Grep" })
-    vim.keymap.set("n", "<leader>fG", function()
-      local input = vim.fn.input("Grep (Relative): ")
-      if input ~= "" then
-        local opts = relative_opts("Grep")
-        opts.source.name = opts.source.name .. ": " .. input
+    end, { desc = 'Grep' })
+    vim.keymap.set('n', '<leader>fG', function()
+      local input = vim.fn.input('Grep (Relative): ')
+      if input ~= '' then
+        local opts = relative_opts('Grep')
+        opts.source.name = opts.source.name .. ': ' .. input
         pick.builtin.grep({ pattern = input }, opts)
       end
-    end, { desc = "Grep (Relative)" })
+    end, { desc = 'Grep (Relative)' })
 
     -- grep cword
-    vim.keymap.set("n", "<leader>*", function()
-      local cword = vim.fn.expand("<cword>")
-      local opts = cwd_opts("Grep cword")
-      opts.source.name = opts.source.name .. ": " .. cword
+    vim.keymap.set('n', '<leader>*', function()
+      local cword = vim.fn.expand('<cword>')
+      local opts = cwd_opts('Grep cword')
+      opts.source.name = opts.source.name .. ': ' .. cword
       pick.builtin.grep({ pattern = cword }, opts)
-    end, { desc = "Grep cword" })
-    vim.keymap.set("n", "<leader>#", function()
-      local cword = vim.fn.expand("<cword>")
-      local opts = relative_opts("Grep cword")
-      opts.source.name = opts.source.name .. ": " .. cword
+    end, { desc = 'Grep cword' })
+    vim.keymap.set('n', '<leader>#', function()
+      local cword = vim.fn.expand('<cword>')
+      local opts = relative_opts('Grep cword')
+      opts.source.name = opts.source.name .. ': ' .. cword
       pick.builtin.grep({ pattern = cword }, opts)
-    end, { desc = "Grep cword (Relative)" })
+    end, { desc = 'Grep cword (Relative)' })
 
     -- grep buffer
-    vim.keymap.set("n", ",", function()
-      extra.pickers.buf_lines({ scope = "current" })
+    vim.keymap.set('n', ',', function()
+      extra.pickers.buf_lines({ scope = 'current' })
     end)
 
     -- special paths
-    vim.keymap.set("n", "<leader>fp", function()
+    vim.keymap.set('n', '<leader>fp', function()
       return pick.start({
         source = {
-          name = "Special Paths",
-          items = require("config.utils").paths,
+          name = 'Special Paths',
+          items = require('config.utils').paths,
           choose = function(item)
-            vim.cmd("e " .. item)
+            vim.cmd('e ' .. item)
           end,
           show = function(buf_id, items, query)
             pick.default_show(buf_id, items, query, { show_icons = true })
           end,
         },
       })
-    end, { desc = "Special Paths" })
+    end, { desc = 'Special Paths' })
 
     -- git
     -- files
-    vim.keymap.set("n", "<leader>gf", function()
-      extra.pickers.git_files({ scope = "tracked" })
-    end, { desc = "Files (Tracked)" })
-    vim.keymap.set("n", "<leader>gF", function()
-      extra.pickers.git_files({ scope = "untracked" })
-    end, { desc = "Files (Untracked)" })
-    vim.keymap.set("n", "<leader>gm", function()
-      extra.pickers.git_files({ scope = "modified" })
-    end, { desc = "Files (Modified)" })
-    vim.keymap.set("n", "<leader>gi", function()
-      extra.pickers.git_files({ scope = "ignored" })
-    end, { desc = "Files (Ignored)" })
+    vim.keymap.set('n', '<leader>gf', function()
+      extra.pickers.git_files({ scope = 'tracked' })
+    end, { desc = 'Files (Tracked)' })
+    vim.keymap.set('n', '<leader>gF', function()
+      extra.pickers.git_files({ scope = 'untracked' })
+    end, { desc = 'Files (Untracked)' })
+    vim.keymap.set('n', '<leader>gm', function()
+      extra.pickers.git_files({ scope = 'modified' })
+    end, { desc = 'Files (Modified)' })
+    vim.keymap.set('n', '<leader>gi', function()
+      extra.pickers.git_files({ scope = 'ignored' })
+    end, { desc = 'Files (Ignored)' })
 
     -- hunks
-    vim.keymap.set("n", "<leader>gh", function()
-      extra.pickers.git_hunks({ path = vim.fn.expand("%"), n_context = 5 })
-    end, { desc = "Hunks (Buffer)" })
-    vim.keymap.set("n", "<leader>gH", function()
+    vim.keymap.set('n', '<leader>gh', function()
+      extra.pickers.git_hunks({ path = vim.fn.expand('%'), n_context = 5 })
+    end, { desc = 'Hunks (Buffer)' })
+    vim.keymap.set('n', '<leader>gH', function()
       extra.pickers.git_hunks({ n_context = 5 })
-    end, { desc = "Hunks" })
+    end, { desc = 'Hunks' })
 
     -- commits
     vim.keymap.set(
-      "n",
-      "<leader>gc",
+      'n',
+      '<leader>gc',
       extra.pickers.git_commits,
-      { desc = "Commits" }
+      { desc = 'Commits' }
     )
-    vim.keymap.set("n", "<leader>gC", function()
-      extra.pickers.git_commits({ path = vim.fn.expand("%") })
-    end, { desc = "Commits (Buffer)" })
+    vim.keymap.set('n', '<leader>gC', function()
+      extra.pickers.git_commits({ path = vim.fn.expand('%') })
+    end, { desc = 'Commits (Buffer)' })
 
     -- vim
-    vim.keymap.set("n", "<leader>fh", pick.builtin.help, { desc = "Help" })
+    vim.keymap.set('n', '<leader>fh', pick.builtin.help, { desc = 'Help' })
     vim.keymap.set(
-      "n",
-      "<leader>fl",
+      'n',
+      '<leader>fl',
       extra.pickers.hl_groups,
-      { desc = "Highlights" }
+      { desc = 'Highlights' }
     )
 
     -- commands
     vim.keymap.set(
-      "n",
-      "<leader>fc",
+      'n',
+      '<leader>fc',
       extra.pickers.commands,
-      { desc = "Commands" }
+      { desc = 'Commands' }
     )
     -- mini builtin registry
-    vim.keymap.set("n", "<leader>fC", function()
+    vim.keymap.set('n', '<leader>fC', function()
       local items =
-        vim.tbl_keys(vim.tbl_extend("force", pick.registry, extra.pickers))
+        vim.tbl_keys(vim.tbl_extend('force', pick.registry, extra.pickers))
       table.sort(items)
       local source = {
         items = items,
-        name = "Registry",
+        name = 'Registry',
         choose = function() end,
       }
       local chosen_picker_name = pick.start({ source = source })
@@ -199,52 +199,52 @@ return {
         return
       end
       return pick.registry[chosen_picker_name]()
-    end, { desc = "Commands (Builtin)" })
+    end, { desc = 'Commands (Builtin)' })
 
     -- keymaps
     vim.keymap.set(
-      "n",
-      "<leader>fk",
+      'n',
+      '<leader>fk',
       extra.pickers.keymaps,
-      { desc = "Keymaps" }
+      { desc = 'Keymaps' }
     )
 
     -- options
     vim.keymap.set(
-      "n",
-      "<leader>fo",
+      'n',
+      '<leader>fo',
       extra.pickers.options,
-      { desc = "Options (All)" }
+      { desc = 'Options (All)' }
     )
-    vim.keymap.set("n", "<leader>fO", function()
-      extra.pickers.options({ scope = "buf" })
-    end, { desc = "Options (Buffer)" })
+    vim.keymap.set('n', '<leader>fO', function()
+      extra.pickers.options({ scope = 'buf' })
+    end, { desc = 'Options (Buffer)' })
 
     -- colorschemes
-    vim.keymap.set("n", "<leader>ft", function()
+    vim.keymap.set('n', '<leader>ft', function()
       pick.start({
         source = {
-          name = "Colorschemes",
-          items = vim.fn.getcompletion("", "color"),
+          name = 'Colorschemes',
+          items = vim.fn.getcompletion('', 'color'),
           choose = function(item)
-            vim.cmd("colorscheme " .. item)
+            vim.cmd('colorscheme ' .. item)
           end,
           preview = function(buf_id, item)
-            vim.cmd("colorscheme " .. item)
+            vim.cmd('colorscheme ' .. item)
           end,
         },
       })
-    end, { desc = "Themes" })
+    end, { desc = 'Themes' })
 
     -- resume
-    vim.keymap.set("n", "'", pick.builtin.resume)
+    vim.keymap.set('n', "'", pick.builtin.resume)
 
     -- registers
     vim.keymap.set(
-      "n",
+      'n',
       '<leader>"',
       extra.pickers.registers,
-      { desc = "Registers" }
+      { desc = 'Registers' }
     )
   end,
 }

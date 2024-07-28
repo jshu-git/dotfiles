@@ -23,27 +23,27 @@
 -- the workaround is to use this plugin, and use command-v for pasting from outside
 
 return {
-  "ojroques/nvim-osc52",
+  'ojroques/nvim-osc52',
   cond = vim.env.SSH_CLIENT ~= nil,
   config = function()
-    require("osc52").setup({
+    require('osc52').setup({
       silent = true,
     })
     local function copy(lines, _)
-      require("osc52").copy(table.concat(lines, "\n"))
+      require('osc52').copy(table.concat(lines, '\n'))
     end
     local function paste()
-      return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
+      return { vim.fn.split(vim.fn.getreg(''), '\n'), vim.fn.getregtype('') }
     end
     vim.g.clipboard = {
-      name = "osc52",
+      name = 'osc52',
       copy = {
-        ["+"] = copy,
-        ["*"] = copy,
+        ['+'] = copy,
+        ['*'] = copy,
       },
       paste = {
-        ["+"] = paste,
-        ["*"] = paste,
+        ['+'] = paste,
+        ['*'] = paste,
       },
     }
   end,

@@ -1,12 +1,12 @@
 return {
-  "echasnovski/mini.splitjoin",
+  'echasnovski/mini.splitjoin',
   keys = {
-    { "sj", mode = { "n", "x" } },
+    { 'sj', mode = { 'n', 'x' } },
   },
   config = function()
-    require("mini.splitjoin").setup({
+    require('mini.splitjoin').setup({
       mappings = {
-        toggle = "sj",
+        toggle = 'sj',
       },
     })
   end,

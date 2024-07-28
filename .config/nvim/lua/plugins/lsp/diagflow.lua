@@ -1,8 +1,8 @@
 return {
-  "dgagn/diagflow.nvim",
-  event = "LspAttach",
+  'dgagn/diagflow.nvim',
+  event = 'LspAttach',
   config = function()
-    require("diagflow").setup({
+    require('diagflow').setup({
       padding_right = 1,
     })
   end,

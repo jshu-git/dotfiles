@@ -1,12 +1,12 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
+  'nvim-treesitter/nvim-treesitter',
   cond = vim.env.SSH_CLIENT == nil,
-  build = ":TSUpdate",
+  build = ':TSUpdate',
   dependencies = {
-    "nvim-treesitter/nvim-treesitter-textobjects",
+    'nvim-treesitter/nvim-treesitter-textobjects',
   },
   config = function()
-    require("nvim-treesitter.configs").setup({
+    require('nvim-treesitter.configs').setup({
       auto_install = true,
       highlight = {
         enable = true,
@@ -14,10 +14,10 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "m",
-          node_incremental = "m",
+          init_selection = 'm',
+          node_incremental = 'm',
           scope_incremental = false,
-          node_decremental = "M",
+          node_decremental = 'M',
         },
       },
       -- textobjects = {

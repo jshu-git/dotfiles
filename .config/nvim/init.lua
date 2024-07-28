@@ -2,13 +2,13 @@
 local function safe_require(module)
   local success, errMsg = pcall(require, module)
   if not success then
-    local msg = ("Error loading %q: %s"):format(module, errMsg)
+    local msg = ('Error loading %q: %s'):format(module, errMsg)
     vim.defer_fn(function()
       vim.notify(msg, vim.log.levels.ERROR)
     end, 1000)
   end
 end
-safe_require("config.options")
-safe_require("config.autocommands")
-safe_require("config.keymaps")
-safe_require("config.lazy")
+safe_require('config.options')
+safe_require('config.autocommands')
+safe_require('config.keymaps')
+safe_require('config.lazy')

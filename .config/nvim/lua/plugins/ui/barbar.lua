@@ -1,37 +1,37 @@
 return {
-  "romgrk/barbar.nvim",
+  'romgrk/barbar.nvim',
   dependencies = {
-    "echasnovski/mini.icons",
+    'echasnovski/mini.icons',
   },
   config = function()
-    require("barbar").setup({
+    require('barbar').setup({
       animation = false,
       icons = {
-        button = "",
-        separator = { left = "", right = "" },
+        button = '',
+        separator = { left = '', right = '' },
         separator_at_end = false,
-        pinned = { button = "", filename = false },
+        pinned = { button = '', filename = false },
         inactive = {
-          separator = { left = "", right = "" },
+          separator = { left = '', right = '' },
         },
       },
       insert_at_end = true,
       maximum_padding = 0,
     })
 
-    vim.keymap.set("n", "<S-Tab>", "<cmd>BufferPrevious<CR>")
-    vim.keymap.set("n", "<Tab>", "<cmd>BufferNext<CR>")
+    vim.keymap.set('n', '<S-Tab>', '<cmd>BufferPrevious<CR>')
+    vim.keymap.set('n', '<Tab>', '<cmd>BufferNext<CR>')
     vim.keymap.set(
-      "n",
-      "<leader><S-Tab>",
-      "<cmd>BufferMovePrevious<CR>",
-      { desc = "Buffer: Move Previous" }
+      'n',
+      '<leader><S-Tab>',
+      '<cmd>BufferMovePrevious<CR>',
+      { desc = 'Buffer: Move Previous' }
     )
     vim.keymap.set(
-      "n",
-      "<leader><Tab>",
-      "<cmd>BufferMoveNext<CR>",
-      { desc = "Buffer: Move Next" }
+      'n',
+      '<leader><Tab>',
+      '<cmd>BufferMoveNext<CR>',
+      { desc = 'Buffer: Move Next' }
     )
     -- for i = 1, 5 do
     --   vim.keymap.set(
@@ -47,28 +47,28 @@ return {
     --   "<cmd>BufferLast<CR>",
     --   { desc = "Buffer: Last" }
     -- )
-    vim.keymap.set("n", "gp", "<cmd>BufferPin<CR>", { desc = "Buffer: Pin" })
-    vim.keymap.set("n", "gb", "<cmd>BufferPick<CR>", { desc = "Buffer: Pick" })
+    vim.keymap.set('n', 'gp', '<cmd>BufferPin<CR>', { desc = 'Buffer: Pin' })
+    vim.keymap.set('n', 'gb', '<cmd>BufferPick<CR>', { desc = 'Buffer: Pick' })
 
     -- closing
     vim.keymap.set(
-      "n",
-      "<leader>x",
-      "<cmd>BufferClose<CR>",
-      { desc = "Buffer: Delete (Smart)" }
+      'n',
+      '<leader>x',
+      '<cmd>BufferClose<CR>',
+      { desc = 'Buffer: Delete (Smart)' }
     )
     vim.keymap.set(
-      "n",
-      "<leader>X",
-      "<cmd>BufferCloseAllButCurrentOrPinned<CR>",
-      { desc = "Buffer: Close Others" }
+      'n',
+      '<leader>X',
+      '<cmd>BufferCloseAllButCurrentOrPinned<CR>',
+      { desc = 'Buffer: Close Others' }
     )
-    vim.keymap.set("n", "<leader>d", "<cmd>bd<CR>", { desc = "Buffer: Delete" })
+    vim.keymap.set('n', '<leader>d', '<cmd>bd<CR>', { desc = 'Buffer: Delete' })
     vim.keymap.set(
-      "n",
-      "<leader>D",
-      "<cmd>bd!<CR>",
-      { desc = "Buffer: Delete (Force)" }
+      'n',
+      '<leader>D',
+      '<cmd>bd!<CR>',
+      { desc = 'Buffer: Delete (Force)' }
     )
   end,
 }
