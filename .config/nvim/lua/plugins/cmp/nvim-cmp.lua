@@ -2,7 +2,6 @@ return {
   'hrsh7th/nvim-cmp',
   event = { 'InsertEnter', 'CmdlineEnter' },
   dependencies = {
-    { 'folke/lazydev.nvim', ft = 'lua', opts = {} },
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-calc',
