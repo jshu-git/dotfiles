@@ -10,6 +10,7 @@ return {
         ['*'] = true,
         ['rip-substitute'] = false,
       },
+      debounce = true,
     })
 
     vim.keymap.set('i', '<Tab>', function()

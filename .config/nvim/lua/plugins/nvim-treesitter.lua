@@ -1,7 +1,6 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   cond = vim.env.SSH_CLIENT == nil,
-  build = ':TSUpdate',
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
   },
