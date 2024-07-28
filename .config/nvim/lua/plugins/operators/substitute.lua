@@ -1,5 +1,9 @@
 return {
   'gbprod/substitute.nvim',
+  keys = {
+    { 's', mode = { 'n', 'x' } },
+    { 'S', mode = 'n' },
+  },
   config = function()
     local substitute = require('substitute')
     substitute.setup({
