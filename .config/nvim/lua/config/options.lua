@@ -28,11 +28,12 @@ o.fillchars:append({
   foldsep = ' ',
 })
 o.list = true
-o.listchars:append({
+o.listchars = {
+  tab = '> ',
   extends = '…',
   precedes = '…',
   nbsp = '␣',
-})
+}
 
 -- statusline
 o.cmdheight = 0
