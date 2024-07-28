@@ -7,7 +7,7 @@ return {
     vim.keymap.set(
       "x",
       "<leader>L",
-      ":<C-U>'<,'>Linediff<cr>",
+      ":'<,'>Linediff<cr>",
       { desc = "Linediff (Visual)" }
     )
   end,
