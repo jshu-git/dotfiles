@@ -1,132 +1,181 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.keymap.set({ 'n', 'x' }, '<space>', '<nop>')
-vim.keymap.set('n', '<esc>', '<cmd>nohlsearch<CR>')
 
--- leader
-vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = 'Write' })
-vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit' })
-vim.keymap.set('n', '<leader>Q', '<cmd>qa!<CR>', { desc = 'Quit All' })
-vim.keymap.set('n', '<leader>o', 'o<Esc>', { desc = 'New Line Below' })
-vim.keymap.set('n', '<leader>p', '<cmd>put<CR>', { desc = 'Paste After Line' })
-vim.keymap.set('n', '<leader>S', '<cmd>so %<CR>', { desc = 'Source File' })
-vim.keymap.set('n', '<leader>i', '<cmd>Inspect<CR>', { desc = 'Inspect' })
-vim.keymap.set('n', '<leader>N', '<cmd>enew<CR>', { desc = 'New Buffer' })
-vim.keymap.set(
-  'n',
-  '<leader>,',
-  'mzA,<Esc>`z:delmarks z<cr>',
-  { desc = 'Append Comma' }
-)
-vim.keymap.set(
-  'n',
-  '<leader>;',
-  'mzA;<Esc>`z:delmarks z<cr>',
-  { desc = 'Append Semicolon' }
-)
--- toggles
-vim.keymap.set(
-  'n',
-  '<leader>tw',
-  '<cmd>setlocal wrap!<CR>',
-  { desc = 'Toggle Word Wrap' }
-)
+local H = {}
+H.map = function(mode, lhs, rhs, opts)
+  opts = vim.tbl_deep_extend('force', { silent = true }, opts or {})
+  vim.keymap.set(mode, lhs, rhs, opts)
+end
 
--- better movement
-vim.keymap.set({ 'n', 'x' }, 'j', function()
-  return vim.v.count > 0 and 'j' or 'gj'
-end, { expr = true })
-vim.keymap.set({ 'n', 'x' }, 'k', function()
-  return vim.v.count > 0 and 'k' or 'gk'
-end, { expr = true })
-vim.keymap.set({ 'n', 'x', 'o' }, 'E', '$')
--- smart 0/^ https://github.com/wscnd/LunarVim/blob/master/lua/keymappings.lua#L98
-vim.keymap.set({ 'n', 'x', 'o' }, '0', function()
-  local line = vim.fn.getline('.')
-  local col = vim.fn.col('.') - 1
-  return line:sub(1, col):match('^%s+$') and '0' or '^'
-end, { expr = true })
+H.misc = function()
+  local map = H.map
+  map({ 'n', 'x' }, '<space>', '<nop>')
+  map('n', '<esc>', '<cmd>nohlsearch<CR>')
+end
 
--- editing
-vim.keymap.set('n', '<CR>', '"_ciw')
-vim.keymap.set('n', '<S-CR>', '<CR>')
-vim.keymap.set('n', 'U', '<C-r>')
-vim.keymap.set({ 'n', 'x' }, ';', ':')
-vim.keymap.set('n', '<BS>', '<C-^>')
-vim.keymap.set('n', 'i', function()
-  return vim.fn.getline('.') == '' and '"_cc' or 'i'
-end, { expr = true })
+H.leader = function()
+  local map = H.map
+  map('n', '<leader>w', '<cmd>update<CR>', { desc = 'Write' })
+  map('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit' })
+  map('n', '<leader>Q', '<cmd>qa!<CR>', { desc = 'Quit All' })
+  map('n', '<leader>o', 'o<Esc>', { desc = 'New Line Below' })
+  map('n', '<leader>p', '<cmd>put<CR>', { desc = 'Paste After Line' })
+  map('n', '<leader>S', '<cmd>so %<CR>', { desc = 'Source File' })
+  map('n', '<leader>i', '<cmd>Inspect<CR>', { desc = 'Inspect' })
+  map('n', '<leader>N', '<cmd>enew<CR>', { desc = 'New Buffer' })
+  map('n', '<leader>,', 'mzA,<Esc>`z:delmarks z<cr>', { desc = 'Append Comma' })
+  map(
+    'n',
+    '<leader>;',
+    'mzA;<Esc>`z:delmarks z<cr>',
+    { desc = 'Append Semicolon' }
+  )
+  -- toggles
+  map(
+    'n',
+    '<leader>tw',
+    '<cmd>setlocal wrap!<CR>',
+    { desc = 'Toggle Word Wrap' }
+  )
+end
 
--- search
-vim.keymap.set('n', '*', 'g*N')
-vim.keymap.set('n', 'g*', '*N')
+H.movement = function()
+  local map = H.map
+  map({ 'n', 'x' }, 'j', function()
+    return vim.v.count > 0 and 'j' or 'gj'
+  end, { expr = true })
+  map({ 'n', 'x' }, 'k', function()
+    return vim.v.count > 0 and 'k' or 'gk'
+  end, { expr = true })
+  map({ 'n', 'x', 'o' }, 'E', '$')
 
--- preserve clipboard
-vim.keymap.set({ 'n', 'x' }, 'x', '"_x')
-vim.keymap.set({ 'n', 'x' }, 'c', '"_c')
-vim.keymap.set({ 'n', 'x' }, 'C', '"_C')
-vim.keymap.set('n', 'dD', '"_dd')
-vim.keymap.set('n', 'dd', function()
-  return vim.fn.getline('.') == '' and '"_dd' or 'dd'
-end, { expr = true })
+  -- smart 0/^ https://github.com/wscnd/LunarVim/blob/master/lua/keymappings.lua#L98
+  map({ 'n', 'x', 'o' }, '0', function()
+    local line = vim.fn.getline('.')
+    local col = vim.fn.col('.') - 1
+    return line:sub(1, col):match('^%s+$') and '0' or '^'
+  end, { expr = true })
+end
 
--- windows
-vim.keymap.set('n', '<C-h>', '<C-w>h')
-vim.keymap.set('n', '<C-j>', '<C-w>j')
-vim.keymap.set('n', '<C-k>', '<C-w>k')
-vim.keymap.set('n', '<C-l>', '<C-w>l')
--- size
-vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize -2<CR>')
-vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<CR>')
-vim.keymap.set('n', '<C-Up>', '<cmd>resize -2<CR>')
-vim.keymap.set('n', '<C-Down>', '<cmd>resize +2<CR>')
--- split
-vim.keymap.set('n', '<C-v>', '<C-w>v')
-vim.keymap.set('n', '<C-s>', '<C-w>s')
--- move
-vim.keymap.set('n', '<C-S-J>', '<C-w>J')
-vim.keymap.set('n', '<C-S-K>', '<C-w>K')
-vim.keymap.set('n', '<C-S-H>', '<C-w>H')
-vim.keymap.set('n', '<C-S-L>', '<C-w>L')
+H.editing = function()
+  local map = H.map
+  map('n', '<CR>', '"_ciw')
+  map('n', '<S-CR>', '<CR>')
+  map('n', 'U', '<C-r>')
+  map({ 'n', 'x' }, ';', ':')
+  map('n', '<BS>', '<C-^>')
 
--- visual
-vim.keymap.set('x', '<CR>', '"_c')
-vim.keymap.set('x', '<C-q>', 'j')
+  -- smart i
+  map('n', 'i', function()
+    return vim.fn.getline('.') == '' and '"_cc' or 'i'
+  end, { expr = true })
 
--- quickfix
-vim.keymap.set('n', ']q', '<cmd>cnext<CR>', { desc = 'Next Quickfix' })
-vim.keymap.set('n', '[q', '<cmd>cprev<CR>', { desc = 'Previous Quickfix' })
-vim.keymap.set('n', '[Q', '<cmd>cfirst<CR>', { desc = 'First Quickfix' })
-vim.keymap.set('n', ']Q', '<cmd>clast<CR>', { desc = 'Last Quickfix' })
-vim.keymap.set('n', '<leader>C', function()
-  for _, win in pairs(vim.fn.getwininfo()) do
-    if win.quickfix == 1 then
-      vim.cmd('cclose')
+  -- search
+  map('n', '*', 'g*N')
+  map('n', 'g*', '*N')
+
+  -- preserve clipboard
+  map({ 'n', 'x' }, 'x', '"_x')
+  map({ 'n', 'x' }, 'c', '"_c')
+  map({ 'n', 'x' }, 'C', '"_C')
+  map('n', 'dD', '"_dd')
+
+  -- smart dd
+  map('n', 'dd', function()
+    return vim.fn.getline('.') == '' and '"_dd' or 'dd'
+  end, { expr = true })
+
+  -- yanking
+  map('n', 'gy', function()
+    vim.fn.setreg('+', vim.fn.expand('%:p'))
+    vim.notify('Copied: ' .. vim.fn.expand('%:p'))
+  end)
+  map('n', 'gY', function()
+    vim.fn.setreg('+', vim.fn.expand('%'))
+    vim.notify('Copied: ' .. vim.fn.expand('%'))
+  end)
+
+  -- visual
+  map('x', '<CR>', '"_c')
+  map('x', '<C-q>', 'j')
+  map('x', 'g/', '<esc>/\\%V', { desc = 'Search inside visual selection' })
+  map('n', '<BS>', 'gv')
+end
+
+H.windows = function()
+  local map = H.map
+  map('n', '<C-h>', '<C-w>h')
+  map('n', '<C-j>', '<C-w>j')
+  map('n', '<C-k>', '<C-w>k')
+  map('n', '<C-l>', '<C-w>l')
+
+  -- size
+  map('n', '<C-Left>', '<cmd>vertical resize -2<CR>')
+  map('n', '<C-Right>', '<cmd>vertical resize +2<CR>')
+  map('n', '<C-Up>', '<cmd>resize -2<CR>')
+  map('n', '<C-Down>', '<cmd>resize +2<CR>')
+
+  -- split
+  map('n', '<C-v>', '<C-w>v')
+  map('n', '<C-s>', '<C-w>s')
+
+  -- move
+  map('n', '<C-S-J>', '<C-w>J')
+  map('n', '<C-S-K>', '<C-w>K')
+  map('n', '<C-S-H>', '<C-w>H')
+  map('n', '<C-S-L>', '<C-w>L')
+end
+
+H.quickfix = function()
+  local map = H.map
+  -- quickfix
+  map('n', ']q', '<cmd>cnext<CR>', { desc = 'Next Quickfix' })
+  map('n', '[q', '<cmd>cprev<CR>', { desc = 'Previous Quickfix' })
+  map('n', '[Q', '<cmd>cfirst<CR>', { desc = 'First Quickfix' })
+  map('n', ']Q', '<cmd>clast<CR>', { desc = 'Last Quickfix' })
+  map('n', '<leader>C', function()
+    for _, win in pairs(vim.fn.getwininfo()) do
+      if win.quickfix == 1 then
+        vim.cmd('cclose')
+        return
+      end
+    end
+    if not vim.tbl_isempty(vim.fn.getqflist()) then
+      vim.cmd('copen')
       return
     end
-  end
-  if not vim.tbl_isempty(vim.fn.getqflist()) then
-    vim.cmd('copen')
-    return
-  end
-  vim.notify('No Quickfix', vim.log.levels.WARN)
-end, { desc = 'Quickfix' })
--- tabs
-vim.keymap.set('n', ']t', '<cmd>tabnext<CR>', { desc = 'Next Tab' })
-vim.keymap.set('n', '[t', '<cmd>tabprev<CR>', { desc = 'Previous Tab' })
+    vim.notify('No Quickfix', vim.log.levels.WARN)
+  end, { desc = 'Quickfix' })
 
--- insert/command mode
-vim.keymap.set({ 'i', 'c' }, '<C-h>', '<Left>')
-vim.keymap.set({ 'i', 'c' }, '<C-l>', '<Right>')
-vim.keymap.set({ 'i', 'c' }, '<C-k>', '<Up>')
-vim.keymap.set({ 'i', 'c' }, '<C-j>', '<Down>')
--- emacs https://github.com/tscolari/nvim/blob/main/lua/keyboard.lua#L26
-vim.keymap.set({ 'i', 'c' }, '<C-a>', '<Home>')
-vim.keymap.set({ 'i', 'c' }, '<C-e>', '<End>')
-vim.keymap.set({ 'i', 'c' }, '<C-d>', '<Del>')
-vim.keymap.set({ 'i', 'c' }, '<A-d>', '<C-Right><C-w>')
-
--- undo points
-for _, key in ipairs({ ',', '.', '!', '?', ':', ';' }) do
-  vim.keymap.set('i', key, key .. '<C-g>u')
+  -- tabs
+  map('n', ']t', '<cmd>tabnext<CR>', { desc = 'Next Tab' })
+  map('n', '[t', '<cmd>tabprev<CR>', { desc = 'Previous Tab' })
 end
+
+H.insert = function()
+  local map = H.map
+  -- insert/command mode
+  map({ 'i', 'c' }, '<C-h>', '<Left>')
+  map({ 'i', 'c' }, '<C-l>', '<Right>')
+  map({ 'i', 'c' }, '<C-k>', '<Up>')
+  map({ 'i', 'c' }, '<C-j>', '<Down>')
+
+  -- emacs https://github.com/tscolari/nvim/blob/main/lua/keyboard.lua#L26
+  map({ 'i', 'c' }, '<C-a>', '<Home>')
+  map({ 'i', 'c' }, '<C-e>', '<End>')
+  map({ 'i', 'c' }, '<C-d>', '<Del>')
+  map({ 'i', 'c' }, '<A-d>', '<C-Right><C-w>')
+
+  -- undo points
+  for _, key in ipairs({ ',', '.', '!', '?', ':', ';' }) do
+    map('i', key, key .. '<C-g>u')
+  end
+end
+
+H.misc()
+H.leader()
+H.movement()
+H.editing()
+H.windows()
+H.quickfix()
+H.insert()
