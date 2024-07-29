@@ -16,18 +16,16 @@ map('n', '<leader>Q', '<cmd>qa!<CR>', { desc = 'Quit All' })
 map('n', '<leader>S', '<cmd>so %<CR>', { desc = 'Source File' })
 map('n', '<leader>i', '<cmd>Inspect<CR>', { desc = 'Inspect' })
 map('n', '<leader>N', '<cmd>enew<CR>', { desc = 'New Buffer' })
+
 map('n', '<leader>o', 'o<Esc>', { desc = 'New Line After' })
 map('n', '<leader>O', 'O<Esc>', { desc = 'New Line Before' })
 map('n', '<leader>p', '<cmd>put<CR>', { desc = 'Paste After' })
 map('n', '<leader>P', '<cmd>put!<CR>', { desc = 'Paste Before' })
--- fast append
-map('n', '<leader>,', 'mzA,<Esc>`z:delmarks z<cr>', { desc = 'Append Comma' })
-map(
-  'n',
-  '<leader>;',
-  'mzA;<Esc>`z:delmarks z<cr>',
-  { desc = 'Append Semicolon' }
-)
+
+map('n', '<leader>,', 'mzA,<Esc>`z', { desc = 'Append Comma' })
+map('n', '<leader>;', 'mzA;<Esc>`z', { desc = 'Append Semicolon' })
+map('n', 'X', 'mzA<BS><Esc>`z')
+
 -- toggles
 map('n', '<leader>tw', '<cmd>setlocal wrap!<CR>', { desc = 'Toggle Word Wrap' })
 
@@ -55,6 +53,7 @@ map('n', '<BS>', '<C-^>')
 map('n', 'i', function()
   return vim.fn.getline('.') == '' and '"_cc' or 'i'
 end, { expr = true })
+map('n', '<BS>', '<C-^>')
 
 -- search
 map('n', '*', 'g*N')
@@ -91,7 +90,6 @@ map('n', '<C-S-L>', '<C-w>L')
 -- visual
 map('x', '<CR>', '"_c')
 map('x', '<C-q>', 'j')
-map('n', '<BS>', 'gv')
 map('x', 'g/', '<esc>/\\%V', { desc = 'Search inside visual selection' })
 
 -- yanking
