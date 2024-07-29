@@ -1,3 +1,7 @@
+if vim.env.SSH_CLIENT ~= nil then
+  vim.g.editorconfig = false
+end
+
 -- https://nanotipsforvim.prose.sh/using-pcall-to-make-your-config-more-stable
 local function safe_require(module)
   local success, errMsg = pcall(require, module)
