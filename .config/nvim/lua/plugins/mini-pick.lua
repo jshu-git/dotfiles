@@ -268,5 +268,7 @@ return {
       extra.pickers.commands,
       { desc = 'Commands' }
     )
+
+    -- https://github.com/echasnovski/mini.nvim/issues/1087
   end,
 }
