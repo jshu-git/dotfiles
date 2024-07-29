@@ -1,8 +1,5 @@
 return {
   'echasnovski/mini.pick',
-  dependencies = {
-    'echasnovski/mini.extra',
-  },
   config = function()
     local pick = require('mini.pick')
     local extra = require('mini.extra')
