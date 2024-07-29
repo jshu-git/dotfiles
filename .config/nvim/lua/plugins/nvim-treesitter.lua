@@ -26,9 +26,8 @@ return {
     end
 
     require('nvim-treesitter.configs').setup({
-      highlight = {
-        enable = true,
-      },
+      ensure_installed = { 'lua', 'python' },
+      highlight = { enable = true },
       incremental_selection = {
         enable = true,
         keymaps = {
