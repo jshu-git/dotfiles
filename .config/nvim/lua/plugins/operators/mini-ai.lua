@@ -1,8 +1,5 @@
 return {
   'echasnovski/mini.ai',
-  dependencies = {
-    'echasnovski/mini.extra',
-  },
   config = function()
     local ai = require('mini.ai')
     local extra_ai = require('mini.extra').gen_ai_spec
@@ -17,30 +14,34 @@ return {
         goto_right = '',
       },
       custom_textobjects = {
-        -- override
-        c = ai.gen_spec.function_call(),
         -- extra
         g = extra_ai.buffer(),
         D = extra_ai.diagnostic(),
         L = extra_ai.line(),
         n = extra_ai.number(),
         -- treesitter
-        f = ai.gen_spec.treesitter({
+        F = ai.gen_spec.treesitter({
           a = '@function.outer',
           i = '@function.inner',
         }),
-        o = ai.gen_spec.treesitter({
-          a = { '@conditional.outer', '@loop.outer' },
-          i = { '@conditional.inner', '@loop.inner' },
+        l = ai.gen_spec.treesitter({
+          a = '@loop.outer',
+          i = '@loop.inner',
         }),
-        C = ai.gen_spec.treesitter({
-          a = '@class.outer',
-          i = '@class.inner',
+        c = ai.gen_spec.treesitter({
+          a = '@conditional.outer',
+          i = '@conditional.inner',
         }),
-        r = ai.gen_spec.treesitter({
-          a = '@return.outer',
-          i = '@return.inner',
-        }),
+        -- LazyVim
+        e = { -- Word with case
+          {
+            '%u[%l%d]+%f[^%l%d]',
+            '%f[%S][%l%d]+%f[^%l%d]',
+            '%f[%P][%l%d]+%f[^%l%d]',
+            '^[%l%d]+%f[^%l%d]',
+          },
+          '^().*()$',
+        },
       },
     })
 
