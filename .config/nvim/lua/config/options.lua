@@ -2,20 +2,21 @@ local o = vim.opt
 
 -- misc
 o.undofile = true
-o.mouse = 'a'
 o.swapfile = false
 o.confirm = true
 o.termguicolors = true
 
 -- editing
-o.clipboard = 'unnamedplus'
+vim.schedule(function()
+  o.clipboard = 'unnamedplus'
+end)
 o.virtualedit = 'block'
 o.startofline = true
 
 -- tabs/indents
 o.breakindent = true
-o.wrap = false
 o.smartindent = true
+o.wrap = false
 o.tabstop = 4
 o.shiftwidth = 4
 
@@ -23,14 +24,14 @@ o.shiftwidth = 4
 o.fillchars:append({
   eob = ' ',
   diff = '╱',
-  foldopen = ' ',
+  foldopen = '',
   foldclose = '',
-  fold = ' ',
+  fold = '╌',
   foldsep = ' ',
 })
 o.list = true
 o.listchars = {
-  tab = '> ',
+  tab = '↦ ',
   extends = '…',
   precedes = '…',
   nbsp = '␣',
@@ -63,3 +64,7 @@ o.ignorecase = true
 o.smartcase = true
 o.wrapscan = false
 o.incsearch = false
+
+-- mouse
+o.mouse = 'a'
+o.mousescroll = 'ver:1,hor:0'
