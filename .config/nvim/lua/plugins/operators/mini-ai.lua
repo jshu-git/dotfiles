@@ -47,7 +47,5 @@ return {
 
     vim.keymap.set('n', '<S-CR>', 'ciq', { remap = true })
     vim.keymap.set('x', 'v', 'iLo', { remap = true })
-    -- vim.keymap.set("n", "vil", "vilo", { remap = true })
-    -- vim.keymap.set("n", "val", "valo", { remap = true })
   end,
 }
