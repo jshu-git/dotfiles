@@ -11,7 +11,6 @@ return {
         yaml = { 'prettier' },
         python = { 'ruff_format' },
         sh = { 'shfmt' },
-        zsh = { 'shfmt' },
       },
       -- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
       format_on_save = function()

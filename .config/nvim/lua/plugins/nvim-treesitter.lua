@@ -6,27 +6,27 @@ return {
   },
   config = function()
     -- work
-    if vim.env.SSH_CLIENT ~= nil then
-      local parser_config =
-        require('nvim-treesitter.parsers').get_parser_configs()
-      parser_config.lua = {
-        install_info = {
-          url = '~/.packages/parsers/lua/',
-          files = { 'src/parser.c', 'src/scanner.c' },
-        },
-      }
-      ---@diagnostic disable-next-line: inject-field
-      parser_config.python = {
-        install_info = {
-          url = '~/.packages/parsers/python/',
-          files = { 'src/parser.c', 'src/scanner.c' },
-        },
-        filetype = 'py',
-      }
-    end
+    -- if vim.env.SSH_CLIENT ~= nil then
+    --   local parser_config =
+    --     require('nvim-treesitter.parsers').get_parser_configs()
+    --   parser_config.lua = {
+    --     install_info = {
+    --       url = '~/.packages/parsers/lua/',
+    --       files = { 'src/parser.c', 'src/scanner.c' },
+    --     },
+    --   }
+    --   ---@diagnostic disable-next-line: inject-field
+    --   parser_config.python = {
+    --     install_info = {
+    --       url = '~/.packages/parsers/python/',
+    --       files = { 'src/parser.c', 'src/scanner.c' },
+    --     },
+    --     filetype = 'py',
+    --   }
+    -- end
 
     require('nvim-treesitter.configs').setup({
-      ensure_installed = { 'lua', 'python' },
+      auto_install = vim.env.SSH_CLIENT == nil,
       highlight = { enable = true },
       incremental_selection = {
         enable = true,
@@ -37,23 +37,6 @@ return {
           node_decremental = 'M',
         },
       },
-      -- textobjects = {
-      --   select = {
-      --     enable = true,
-      --     lookahead = true,
-      --     keymaps = {
-      --       ["af"] = "@function.outer",
-      --       ["if"] = "@function.inner",
-      --       ["ac"] = "@conditional.outer",
-      --       ["ic"] = "@conditional.inner",
-      --       ["al"] = "@loop.outer",
-      --       ["il"] = "@loop.inner",
-      --
-      --       ["aC"] = "@class.outer",
-      --       ["iC"] = "@class.inner",
-      --     },
-      --   },
-      -- },
     })
 
     vim.keymap.set('n', 'gt', function()
