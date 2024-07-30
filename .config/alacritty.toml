@@ -1,0 +1,90 @@
+# https://alacritty.org/config-alacritty.html
+# https://github.com/alacritty/alacritty/issues/6999#issuecomment-1903342590# man 5 alacritty
+[env]
+TERM = "xterm-256color"
+
+[window]
+dynamic_padding = true
+decorations = "None"
+startup_mode = "Maximized"
+option_as_alt = "Both"
+
+[font]
+normal = { family = "Hack Nerd Font", style = "Regular" }
+size = 18.0
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style.blinking = "Never"
+
+[terminal]
+osc52 = "CopyPaste"
+
+[mouse]
+hide_when_typing = true
+
+[keyboard]
+bindings = [
+    { key = "Tab", mods = "Control", action = "SelectNextTab" },
+    # { key = "Tab", mods = "Control|Shift", action = "SelectPreviousTab" },
+
+    # vi mode
+    # { key = "v", mods = "Alt", action = "ToggleViMode" },
+    # { key = "v", mods = "Control|Shift", action = "ToggleViMode" },
+    { key = "a", mods = "Command", action = "ToggleViMode" },
+    { key = "q", action = "ToggleViMode", mode = "Vi" },
+    { key = "q", mods = "Control", action = "ToggleBlockSelection", mode = "Vi" },
+
+    # https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
+    { key = "Return", mods = "Shift", chars = "\u001B[13;2u", mode = "~Search" },
+    { key = "Return", mods = "Control", chars = "\u001B[13;5u" },
+    { key = "Space", mods = "Control", chars = "\u0000" },
+
+    # https://old.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and/
+    # { key = "H", mods = "Control|Shift", chars = "\u001b[72;5u" },
+    # { key = "J", mods = "Control|Shift", chars = "\u001b[74;5u" },
+    # { key = "K", mods = "Control|Shift", chars = "\u001b[75;5u" },
+    # { key = "L", mods = "Control|Shift", chars = "\u001b[77;5u" },
+    { key = "G", mods = "Control|Shift", chars = "\u001b[71;5u" },
+    { key = "C", mods = "Control|Shift", chars = "\u001b[67;5u" },
+
+    # zellij
+    # control-a tab escape
+    # { key = "Tab", mods = "Control", chars = "\u0001\u0009\u001b" },
+    # control-a P escape
+    # { key = "Tab", mods = "Control|Shift", chars = "\u0001P\u001b" },
+]
+
+# nord https://github.com/alacritty/alacritty-theme/blob/master/themes/nord.toml
+[colors]
+cursor = { cursor = "#D8DEE9" }
+vi_mode_cursor = { cursor = "#D8DEE9" }
+
+# Default colors
+[colors.primary]
+background = '#2E3440'
+foreground = '#D8DEE9'
+
+# Normal colors
+[colors.normal]
+black = '#3B4252'
+red = '#BF616A'
+green = '#A3BE8C'
+yellow = '#EBCB8B'
+blue = '#81A1C1'
+magenta = '#B48EAD'
+cyan = '#88C0D0'
+white = '#E5E9F0'
+
+# Bright colors
+[colors.bright]
+black = '#4C566A'
+red = '#BF616A'
+green = '#A3BE8C'
+yellow = '#EBCB8B'
+blue = '#81A1C1'
+magenta = '#B48EAD'
+cyan = '#8FBCBB'
+white = '#ECEFF4'
