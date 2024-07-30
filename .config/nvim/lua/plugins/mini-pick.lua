@@ -137,6 +137,14 @@ return {
       { desc = 'Special Paths' }
     )
 
+    -- diagnostics
+    vim.keymap.set('n', '<leader>fd', function()
+      extra.pickers.diagnostic({ scope = 'current' })
+    end, { desc = 'Diagnostics (Buffer)' })
+    vim.keymap.set('n', '<leader>fD', function()
+      extra.pickers.diagnostic({ scope = 'all' })
+    end, { desc = 'Diagnostics (All)' })
+
     -- git
     -- files
     vim.keymap.set('n', '<leader>gf', function()
@@ -208,6 +216,14 @@ return {
       '<leader>"',
       extra.pickers.registers,
       { desc = 'Registers' }
+    )
+
+    -- spell
+    vim.keymap.set(
+      'n',
+      'z=',
+      extra.pickers.spellsuggest,
+      { desc = 'Spell Suggest' }
     )
 
     -- custom
