@@ -1,13 +1,22 @@
 local H = {}
 
-H.signs = {
-  Error = '󰅚 ',
-  Warn = '󰀪 ',
-  Hint = '󰌶 ',
-  Info = '󰋽 ',
-}
-
+-- ui
 H.highlight_timeout = 250
+H.signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = '󰋽 ' }
+H.popup = {
+  height = math.floor(0.6 * vim.o.lines),
+  width = math.floor(0.75 * vim.o.columns),
+}
+-- H.border = { '─', '│', '─', '│', '┌', '┐', '┘', '└' }
+
+-- work related
+-- not working for some reason
+-- H.is_work = function()
+--   if vim.env.HOME ~= nil then
+--     return false
+--   end
+--   return true
+-- end
 
 H.paths = function()
   local paths = {
@@ -37,12 +46,5 @@ H.paths = function()
   table.sort(existing_paths)
   return existing_paths
 end
-
-H.popup = {
-  height = math.floor(0.6 * vim.o.lines),
-  width = math.floor(0.75 * vim.o.columns),
-}
-
-H.border = { '─', '│', '─', '│', '┌', '┐', '┘', '└' }
 
 return H
