@@ -30,7 +30,7 @@
   "linediff.vim": { "branch": "main", "commit": "ddae71ef5f94775d101c1c70032ebe8799f32745" },
   "lspkind-nvim": { "branch": "master", "commit": "cff4ae321a91ee3473a92ea1a8c637e3a9510aec" },
   "lualine.nvim": { "branch": "master", "commit": "544dd1583f9bb27b393f598475c89809c4d5e86b" },
-  "markdown.nvim": { "branch": "main", "commit": "dcfa033cb39bc4f30019925aa91d3af5ec049614" },
+  "markdown.nvim": { "branch": "main", "commit": "35f8bd24809e21219c66e2a58f1b9f5d547cc2c3" },
   "maximizer.nvim": { "branch": "main", "commit": "a517c762168bc1f9881f67d257fe9565712776f0" },
   "mini-git": { "branch": "main", "commit": "45e4c7fad7fa8029959e8a6dced5085a713f3ac0" },
   "mini.ai": { "branch": "main", "commit": "45587078f323eaf41b9f701bbc04f8d1ab008979" },
@@ -74,7 +74,6 @@
   "sentiment.nvim": { "branch": "main", "commit": "ecde8d877881bb78fdb90060c0991e76770dbdbc" },
   "spellwarn.nvim": { "branch": "main", "commit": "2f4dbc58bb90bc63b295461216b91ccf4e7f782d" },
   "substitute.nvim": { "branch": "main", "commit": "97f49d16f8eea7967d41db4f657dd63af53eeba1" },
-  "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "ca50af9dc3cd88647077330b4728f4d0a7e754c4" },
   "undotree": { "branch": "master", "commit": "56c684a805fe948936cda0d1b19505b84ad7e065" },
   "yanky.nvim": { "branch": "main", "commit": "73215b77d22ebb179cef98e7e1235825431d10e4" }
 }
