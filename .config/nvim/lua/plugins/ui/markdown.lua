@@ -1,4 +1,5 @@
 return {
+  enabled = false,
   'MeanderingProgrammer/markdown.nvim',
   ft = 'markdown',
   dependencies = {
