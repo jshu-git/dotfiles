@@ -31,7 +31,7 @@ bindings = [
     # { key = "Tab", mods = "Control", action = "SelectNextTab" },
     # { key = "Tab", mods = "Control|Shift", action = "SelectPreviousTab" },
 
-    # vi mode
+    # vi mode https://alacritty.org/config-alacritty-bindings.html
     { key = "Space", mods = "Control", action = "ToggleViMode" },
     { key = "q", action = "ToggleViMode", mode = "Vi" },
     { key = "q", mods = "Control", action = "ToggleBlockSelection", mode = "Vi" },
