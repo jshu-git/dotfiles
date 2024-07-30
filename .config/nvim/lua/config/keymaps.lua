@@ -81,11 +81,6 @@ map('n', '<C-Down>', '<cmd>resize +2<CR>')
 -- split
 map('n', '<C-v>', '<C-w>v')
 map('n', '<C-s>', '<C-w>s')
--- move
-map('n', '<C-S-J>', '<C-w>J')
-map('n', '<C-S-K>', '<C-w>K')
-map('n', '<C-S-H>', '<C-w>H')
-map('n', '<C-S-L>', '<C-w>L')
 
 -- visual
 map('x', '<CR>', '"_c')
@@ -107,7 +102,7 @@ map('n', ']q', '<cmd>cnext<CR>', { desc = 'Next Quickfix' })
 map('n', '[q', '<cmd>cprev<CR>', { desc = 'Previous Quickfix' })
 map('n', '[Q', '<cmd>cfirst<CR>', { desc = 'First Quickfix' })
 map('n', ']Q', '<cmd>clast<CR>', { desc = 'Last Quickfix' })
-map('n', '<leader>C', function()
+map('n', '<leader>c', function()
   for _, win in pairs(vim.fn.getwininfo()) do
     if win.quickfix == 1 then
       vim.cmd('cclose')

@@ -283,5 +283,13 @@ return {
     )
 
     -- https://github.com/echasnovski/mini.nvim/issues/1087
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'MiniPickStart',
+      callback = function()
+        if vim.fn.mode() == 'n' then
+          vim.o.cmdheight = 0
+        end
+      end,
+    })
   end,
 }
