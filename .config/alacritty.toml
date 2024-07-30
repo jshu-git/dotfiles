@@ -28,22 +28,24 @@ hide_when_typing = true
 [keyboard]
 bindings = [
     # alacritty
-    { key = "Tab", mods = "Control", action = "SelectNextTab" },
-    { key = "Tab", mods = "Control|Shift", action = "SelectPreviousTab" },
+    # { key = "Tab", mods = "Control", action = "SelectNextTab" },
+    # { key = "Tab", mods = "Control|Shift", action = "SelectPreviousTab" },
 
     # vi mode
     { key = "Space", mods = "Control", action = "ToggleViMode" },
+    { key = "q", action = "ToggleViMode", mode = "Vi" },
+    { key = "q", mods = "Control", action = "ToggleBlockSelection", mode = "Vi" },
     # { key = "v", mods = "Control|Shift", action = "ToggleViMode" },
     # { key = "a", mods = "Command", action = "ToggleViMode" },
-    # { key = "Escape", action = "ToggleViMode", mode = "Vi" },
-    { key = "q", mods = "Control", action = "ToggleBlockSelection", mode = "Vi" },
 
+    # vim
     # https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
     { key = "Return", mods = "Shift", chars = "\u001B[13;2u", mode = "~Search" },
     { key = "Return", mods = "Control", chars = "\u001B[13;5u" },
     # { key = "Space", mods = "Control", chars = "\u0000" },
 
     # https://old.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and/
+    # https://www.leonerd.org.uk/hacks/fixterms/
     # { key = "H", mods = "Control|Shift", chars = "\u001b[72;5u" },
     # { key = "J", mods = "Control|Shift", chars = "\u001b[74;5u" },
     # { key = "K", mods = "Control|Shift", chars = "\u001b[75;5u" },
@@ -52,10 +54,10 @@ bindings = [
     { key = "C", mods = "Control|Shift", chars = "\u001b[67;5u" },
 
     # zellij
-    # control-a tab escape
-    # { key = "Tab", mods = "Control", chars = "\u0001\u0009\u001b" },
-    # control-a P escape
-    # { key = "Tab", mods = "Control|Shift", chars = "\u0001P\u001b" },
+    # control-a control-n
+    { key = "Tab", mods = "Control", chars = "\u0001\u000e" },
+    # control-a control-p
+    { key = "Tab", mods = "Control|Shift", chars = "\u0001\u0010" },
 ]
 
 # nord https://github.com/alacritty/alacritty-theme/blob/master/themes/nord.toml

@@ -51,6 +51,8 @@ keybinds clear-defaults=true {
         bind "t"   { NewTab; SwitchToMode "Locked"; }
         bind "Tab" { GoToNextTab; }
         // bind "Shift Tab" { GoToPreviousTab; }
+        bind "Ctrl n" { GoToNextTab; SwitchToMode "Locked"; }
+        bind "Ctrl p" { GoToPreviousTab; SwitchToMode "Locked"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "1" { GoToTab 1; SwitchToMode "Locked"; }
         bind "2" { GoToTab 2; SwitchToMode "Locked"; }
