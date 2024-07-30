@@ -1,12 +1,12 @@
 -- yank highlight
--- vim.api.nvim_create_autocmd("TextYankPost", {
---   callback = function()
---     vim.highlight.on_yank({
---       timeout = require("config.utils").highlight_timeout,
---       higroup = "Search",
---     })
---   end,
--- })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank({
+      timeout = require('config.utils').highlight_timeout,
+      higroup = 'Search',
+    })
+  end,
+})
 
 -- disable auto comments
 vim.api.nvim_create_autocmd('BufEnter', {
@@ -19,18 +19,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'kdl',
   callback = function()
-    vim.opt.commentstring = '// %s'
-  end,
-})
-
--- hide certain options for some filetypes
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = {
-    'git',
-  },
-  callback = function()
-    vim.opt_local.number = false
-    vim.opt_local.relativenumber = false
+    vim.opt_local.commentstring = '// %s'
   end,
 })
 
@@ -71,7 +60,6 @@ vim.api.nvim_create_autocmd('FileType', {
     '*.txt',
     'gitcommit',
     'markdown',
-    'noice',
   },
   callback = function()
     vim.opt_local.wrap = true
