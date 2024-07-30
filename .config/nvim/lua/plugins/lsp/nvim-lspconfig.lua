@@ -115,7 +115,11 @@ return {
 
     -- diagnostics
     vim.diagnostic.config({
-      virtual_text = false,
+      virtual_text = {
+        prefix = '',
+        suffix = ' ',
+        severity_sort = true,
+      },
       float = {
         border = 'single',
         severity_sort = true,
@@ -130,5 +134,8 @@ return {
         },
       },
     })
+    vim.keymap.set('n', '<leader>tD', function()
+      vim.diagnostic.enable(not vim.diagnostic.is_enabled(), { bufnr = 0 })
+    end, { desc = 'Toggle Diagnostics' })
   end,
 }
