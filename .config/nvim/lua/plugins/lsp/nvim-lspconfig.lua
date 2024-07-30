@@ -32,12 +32,6 @@ return {
 
         -- diagnostics
         map('gl', vim.diagnostic.open_float, 'Hover Diagnostic')
-        map('<leader>fd', function()
-          require('mini.extra').pickers.diagnostic({ scope = 'current' })
-        end, 'Diagnostics (Buffer)')
-        map('<leader>fD', function()
-          require('mini.extra').pickers.diagnostic({ scope = 'all' })
-        end, 'Diagnostics (All)')
         map('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
         map(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
 
@@ -116,9 +110,12 @@ return {
     -- diagnostics
     vim.diagnostic.config({
       virtual_text = {
+        -- prefix = ' 󰧞',
         prefix = '',
         suffix = ' ',
         severity_sort = true,
+        -- virt_text_pos = 'inline',
+        -- virt_text_win_col = 80,
       },
       float = {
         border = 'single',
