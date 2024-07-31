@@ -4,7 +4,6 @@ return {
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-calc',
     'FelipeLema/cmp-async-path',
     -- cmdline
     'hrsh7th/cmp-cmdline',
@@ -22,7 +21,6 @@ return {
         { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp', max_item_count = 5 },
         { name = 'buffer', max_item_count = 3 },
-        { name = 'calc', max_item_count = 2 },
         { name = 'async_path', max_item_count = 2 },
       },
       snippet = {
@@ -67,7 +65,6 @@ return {
             async_path = 'PTH',
             cmdline = 'CMD',
             cmdline_history = 'HST',
-            calc = 'CLC',
           },
         }),
       },
