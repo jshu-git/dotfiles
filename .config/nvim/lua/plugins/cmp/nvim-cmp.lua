@@ -28,11 +28,11 @@ return {
           vim.snippet.expand(args.body)
         end,
       },
-      -- view = {
-      --   docs = {
-      --     auto_open = false,
-      --   },
-      -- },
+      view = {
+        docs = {
+          auto_open = false,
+        },
+      },
       window = {
         completion = {
           -- border = "single",
@@ -44,7 +44,7 @@ return {
         documentation = {
           -- border = "single",
           -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
-          max_width = math.floor(vim.o.columns * 0.3),
+          -- max_width = math.floor(vim.o.columns * 0.3),
           winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu',
         },
       },
@@ -53,7 +53,7 @@ return {
           mode = 'symbol_text',
           -- mode = "symbol",
           maxwidth = function()
-            return math.floor(vim.o.columns * 0.2)
+            return math.floor(vim.o.columns * 0.3)
           end,
           ellipsis_char = '…',
           -- menu = {
