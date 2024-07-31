@@ -10,16 +10,20 @@ return {
       local parser_config =
         require('nvim-treesitter.parsers').get_parser_configs()
       for lang, files in pairs({
-        python = { 'src/parser.c', 'src/scanner.c' },
+        vimdoc = { 'src/parser.c' },
+        query = { 'src/parser.c' },
       }) do
         parser_config[lang] = {
-          url = '~/.packages/grammars/tree-sitter-' .. lang,
-          files = files,
+          install_info = {
+            url = vim.env.HOME .. '/.packages/grammars/tree-sitter-' .. lang,
+            files = files,
+          },
         }
       end
     end
 
     require('nvim-treesitter.configs').setup({
+      ensure_installed = { 'vimdoc', 'query' },
       auto_install = vim.env.SSH_CLIENT == nil,
       highlight = { enable = true },
       incremental_selection = {
