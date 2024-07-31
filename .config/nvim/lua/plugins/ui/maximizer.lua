@@ -6,9 +6,9 @@ return {
     maximizer.setup()
     vim.keymap.set(
       'n',
-      '<leader>tm',
+      '<C-w>m',
       maximizer.toggle,
-      { desc = 'Toggle Maximize' }
+      { desc = 'Toggle: Maximize Window' }
     )
   end,
 }
