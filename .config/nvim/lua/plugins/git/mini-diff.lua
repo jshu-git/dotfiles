@@ -16,6 +16,8 @@ return {
         apply = '',
         reset = 'gH',
         textobject = 'gh',
+        goto_prev = '<C-n>',
+        goto_next = '<C-p>',
       },
     })
 
