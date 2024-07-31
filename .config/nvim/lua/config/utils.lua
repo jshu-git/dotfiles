@@ -19,19 +19,19 @@ H.popup = {
 -- end
 
 H.paths = function()
+  local data = vim.fn.stdpath('data')
+  local lazy = data .. '/lazy'
+
   local paths = {
-    vim.fn.stdpath('data') .. '/lazy',
-    vim.fn.stdpath('data') .. '/mini.files/trash',
+    -- nvim
+    lazy,
+    data .. '/mini.files/trash',
     require('persisted.config').options.save_dir,
+    lazy .. '/nvim-treesitter/parser',
 
     -- local
     vim.env.HOME .. '/Library/CloudStorage/Dropbox/',
     vim.env.HOME .. '/Desktop/',
-
-    -- treesitter parsers
-    vim.fn.stdpath('data')
-      .. '/lazy'
-      .. '/nvim-treesitter/parser',
 
     -- work
     vim.env.HOME .. '/p4/cacl3/test/lib/netapp_ontap/resources/',
