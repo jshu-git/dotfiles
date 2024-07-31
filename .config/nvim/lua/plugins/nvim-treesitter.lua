@@ -6,19 +6,18 @@ return {
   },
   config = function()
     -- work
-    -- if vim.env.SSH_CLIENT ~= nil then
-    --   local parser_config =
-    --     require('nvim-treesitter.parsers').get_parser_configs()
-    --   for lang, files in pairs({
-    -- python = { 'src/parser.c' },
-    -- julia = { 'src/parser.c', 'src/scanner.c' },
-    --   }) do
-    --     parser_config[lang] = {
-    --       url = '~/.packages/grammars/tree-sitter-' .. lang,
-    --       files = files,
-    --     }
-    --   end
-    -- end
+    if vim.env.SSH_CLIENT ~= nil then
+      local parser_config =
+        require('nvim-treesitter.parsers').get_parser_configs()
+      for lang, files in pairs({
+        python = { 'src/parser.c', 'src/scanner.c' },
+      }) do
+        parser_config[lang] = {
+          url = '~/.packages/grammars/tree-sitter-' .. lang,
+          files = files,
+        }
+      end
+    end
 
     require('nvim-treesitter.configs').setup({
       auto_install = vim.env.SSH_CLIENT == nil,
