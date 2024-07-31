@@ -6,6 +6,7 @@ return {
     local neocodeium = require('neocodeium')
     neocodeium.setup({
       -- manual = true,
+      silent = true,
       filetypes = {
         ['*'] = true,
         ['rip-substitute'] = false,
@@ -25,7 +26,7 @@ return {
         )
       end
     end)
-    vim.keymap.set('i', '<C-\\>', neocodeium.clear)
+    vim.keymap.set('i', '<S-Tab>', neocodeium.clear)
     -- vim.keymap.set('i', '<A-l>', function()
     --   if neocodeium.visible() then
     --     neocodeium.accept_word()
