@@ -85,7 +85,19 @@ map('n', '<C-s>', '<C-w>s')
 -- visual
 map('x', '<CR>', '"_c')
 map('x', '<C-q>', 'j')
-map('x', 'g/', '<esc>/\\%V', { desc = 'Search inside visual selection' })
+map('x', 'g/', '<esc>/\\%V', { desc = 'Search (Selection)' })
+
+-- custom operators
+-- vim.keymap.set("n", "sf", ":%s/<C-r><C-w>//gI<left><left><left>", { desc = "Substitute cword (File)" })
+-- vim.keymap.set("x", "s/", ":s///gI<left><left><left><left>", { desc = "Substitute in selection" })
+-- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
+map('n', 'sw', 'g*Ncgn', { desc = 'Substitute cword (Instance)' })
+map(
+  'x',
+  'sw',
+  [[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<NL><CR>Ncgn]],
+  { desc = 'Substitute (Instance)' }
+)
 
 -- yanking
 map('n', 'gy', function()
