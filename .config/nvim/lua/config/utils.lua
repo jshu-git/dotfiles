@@ -4,8 +4,8 @@ local H = {}
 H.highlight_timeout = 250
 H.signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = '󰋽 ' }
 H.popup = {
-  height = math.floor(0.6 * vim.o.lines),
-  width = math.floor(0.75 * vim.o.columns),
+  height = math.floor(0.8 * vim.o.lines),
+  width = math.floor(0.8 * vim.o.columns),
 }
 -- H.border = { '─', '│', '─', '│', '┌', '┐', '┘', '└' }
 
@@ -21,6 +21,7 @@ H.popup = {
 H.paths = function()
   local data = vim.fn.stdpath('data')
   local lazy = data .. '/lazy'
+  local home = vim.env.HOME
 
   local paths = {
     -- nvim
@@ -30,14 +31,14 @@ H.paths = function()
     lazy .. '/nvim-treesitter/parser',
 
     -- local
-    vim.env.HOME .. '/Library/CloudStorage/Dropbox/',
-    vim.env.HOME .. '/Desktop/',
+    home .. '/Library/CloudStorage/Dropbox/',
+    home .. '/Desktop/',
 
     -- work
-    vim.env.HOME .. '/p4/cacl3/test/lib/netapp_ontap/resources/',
-    vim.env.HOME .. '/.packages/',
-    vim.env.HOME .. '/notes/',
-    vim.env.HOME .. '/git/ontap/',
+    home .. '/p4/cacl3/test/lib/netapp_ontap/resources/',
+    home .. '/.packages/',
+    home .. '/notes/',
+    home .. '/git/ontap/',
     '/x/eng/rlse/DOT/devN/test/tools/smoke/itc/conf/class_hierarchy.cnf',
   }
 
