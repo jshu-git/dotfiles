@@ -108,6 +108,9 @@ return {
 
     -- / cmdline setup
     cmp.setup.cmdline({ '/', '?' }, {
+      completion = {
+        completeopt = 'menu,menuone,noselect',
+      },
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
         { name = 'buffer' },
@@ -116,6 +119,9 @@ return {
 
     -- : cmdline setup
     cmp.setup.cmdline(':', {
+      completion = {
+        completeopt = 'menu,menuone,noselect',
+      },
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
         { name = 'cmdline_history', max_item_count = 2 },

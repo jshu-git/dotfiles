@@ -44,7 +44,7 @@ return {
         )
       end
     end)
-    vim.keymap.set('i', '<C-\\>', suggestion.dismiss)
+    vim.keymap.set('i', '<S-Tab>', suggestion.dismiss)
     vim.keymap.set('i', '<A-l>', suggestion.accept_word)
     vim.keymap.set('i', '<A-n>', suggestion.next)
     vim.keymap.set('i', '<A-p>', suggestion.prev)
