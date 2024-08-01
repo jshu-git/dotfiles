@@ -5,7 +5,7 @@ return {
     local glance = require('glance')
     local actions = glance.actions
     glance.setup({
-      height = math.floor(0.7 * vim.o.lines),
+      height = require('config.utils').popup.height,
       border = {
         enable = true,
         top_char = '',

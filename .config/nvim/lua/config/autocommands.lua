@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- disable auto comments
 vim.api.nvim_create_autocmd('BufEnter', {
   callback = function()
-    vim.opt.formatoptions = { c = false, r = false, o = false }
+    vim.opt_local.formatoptions:remove({ 'c', 'r', 'o' })
   end,
 })
 

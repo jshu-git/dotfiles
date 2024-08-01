@@ -13,14 +13,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  { import = 'plugins' },
-  { import = 'plugins.cmp' },
-  { import = 'plugins.editing' },
-  { import = 'plugins.git' },
-  { import = 'plugins.lsp' },
-  { import = 'plugins.operators' },
-  { import = 'plugins.ui' },
-}, {
+  spec = {
+    { import = 'plugins' },
+    { import = 'plugins.cmp' },
+    { import = 'plugins.editing' },
+    { import = 'plugins.git' },
+    { import = 'plugins.lsp' },
+    { import = 'plugins.operators' },
+    { import = 'plugins.ui' },
+  },
   ui = { border = 'single', backdrop = 100 },
   change_detection = { notify = false },
 })

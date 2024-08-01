@@ -76,13 +76,6 @@ return {
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<C-e>'] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.abort()
-          else
-            fallback()
-          end
-        end),
         -- snippets
         ['<C-l>'] = cmp.mapping(function(fallback)
           if vim.snippet.active({ direction = 1 }) then
