@@ -35,17 +35,20 @@ return {
       },
       window = {
         completion = {
-          -- border = "single",
-          -- side_padding = 0,
-          -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-          winhighlight = 'Normal:Pmenu,Cursorline:Visual',
+          border = 'single',
+          side_padding = 0,
           scrolloff = 3,
+          -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+          winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
+          -- winhighlight = 'Normal:Pmenu,Cursorline:Visual',
         },
         documentation = {
-          -- border = "single",
+          border = 'single',
+          side_padding = 0,
           -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
           -- max_width = math.floor(vim.o.columns * 0.3),
-          winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu',
+          -- winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu',
+          winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
         },
       },
       formatting = {
