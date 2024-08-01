@@ -5,12 +5,15 @@ return {
       group = vim.api.nvim_create_augroup('LspConfig', { clear = true }),
       callback = function(event)
         local bufnr = event.buf
-        local map = function(keys, func, desc)
+        local map = function(keys, func, desc, extra_opts)
           vim.keymap.set(
             'n',
             keys,
             func,
-            { buffer = bufnr, desc = 'LSP: ' .. desc }
+            vim.tbl_deep_extend('force', {
+              buffer = bufnr,
+              desc = 'LSP: ' .. desc,
+            }, extra_opts or {})
           )
         end
 
@@ -21,13 +24,9 @@ return {
         map('gr', '<cmd>Glance references<CR>', 'Goto References')
 
         -- inc-rename
-        vim.keymap.set('n', 'cr', function()
+        map('cr', function()
           return ':IncRename ' .. vim.fn.expand('<cword>')
-        end, {
-          buffer = bufnr,
-          desc = 'LSP: Rename Variable',
-          expr = true,
-        })
+        end, 'LSP: Rename Variable', { expr = true })
         map('cR', ':IncRename ', 'Rename Variable')
 
         -- diagnostics
@@ -80,13 +79,13 @@ return {
               diagnosticMode = 'openFilesOnly',
             },
           },
-          python = {},
         },
       },
     }
     if vim.env.SSH_CLIENT ~= nil then
-      servers.basedpyright.settings.python.pythonPath =
-        '/u/jshu/p4/cacl3/test/tools/python/nate/rhel7-3.12/bin/python'
+      servers.basedpyright.settings.python = {
+        pythonPath = '/u/jshu/p4/cacl3/test/tools/python/nate/rhel7-3.12/bin/python',
+      }
     end
 
     -- lspconfig
@@ -97,8 +96,7 @@ return {
     )
     local lspconfig = require('lspconfig')
     for server, config in pairs(servers) do
-      config.capabilities =
-        vim.tbl_deep_extend('force', capabilities, config.capabilities or {})
+      config.capabilities = capabilities
       lspconfig[server].setup(config)
     end
 
