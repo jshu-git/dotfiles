@@ -6,6 +6,9 @@ return {
     vim.api.nvim_create_autocmd('ColorScheme', {
       callback = function()
         local c = require('nord.colors').palette
+
+        vim.api.nvim_set_hl(0, 'CursorLineNr', { link = 'Visual' })
+
         -- mini.icons
         vim.api.nvim_set_hl(0, 'MiniIconsAzure', { fg = c.frost.artic_water })
         vim.api.nvim_set_hl(0, 'MiniIconsBlue', { fg = c.frost.artic_ocean })
