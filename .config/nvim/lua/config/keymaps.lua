@@ -53,7 +53,6 @@ map('n', '<BS>', '<C-^>')
 map('n', 'i', function()
   return vim.fn.getline('.') == '' and '"_cc' or 'i'
 end, { expr = true })
-map('n', '<BS>', '<C-^>')
 
 -- search
 map('n', '*', 'g*N')
@@ -85,7 +84,7 @@ map('n', '<C-s>', '<C-w>s')
 -- visual
 map('x', '<CR>', '"_c')
 map('x', '<C-q>', 'j')
-map('x', 'g/', '<esc>/\\%V', { desc = 'Search (Selection)' })
+map('x', '/', '<esc>/\\%V', { desc = 'Search (Selection)' })
 
 -- custom operators
 -- vim.keymap.set("n", "sf", ":%s/<C-r><C-w>//gI<left><left><left>", { desc = "Substitute cword (File)" })
