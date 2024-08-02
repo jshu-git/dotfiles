@@ -20,17 +20,6 @@ return {
       end,
     })
 
-    -- pickers
-    -- vim.keymap.set("n", "<leader>fs", function()
-    --   require("mini.pick").builtin.files({}, {
-    --     source = {
-    --       name = "Sessions",
-    --       cwd = require("persisted.config").options.save_dir,
-    --       items = persisted.list(),
-    --     },
-    --   })
-    -- end, { desc = "Sessions" })
-
     vim.keymap.set('n', '<leader>sx', function()
       persisted.delete()
       vim.notify('Deleted Current Session')
