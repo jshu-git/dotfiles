@@ -112,7 +112,18 @@ return {
 
     -- grep buffer
     vim.keymap.set('n', ',', function()
-      extra.pickers.buf_lines({ scope = 'current' })
+      extra.pickers.buf_lines({ scope = 'current' }, {
+        source = {
+          choose = function(item)
+            ---@diagnostic disable:param-type-mismatch
+            local query = table.concat(pick.get_picker_query())
+            if query ~= '' then
+              vim.fn.setreg('/', query)
+            end
+            pick.default_choose(item)
+          end,
+        },
+      })
     end)
 
     -- special paths
