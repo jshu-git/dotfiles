@@ -1,5 +1,9 @@
 return {
   'echasnovski/mini.surround',
+  keys = {
+    { 'sd', 'sr' },
+    { 'S', mode = { 'x' } },
+  },
   config = function()
     require('mini.surround').setup({
       -- reverse left and right behavior
@@ -12,7 +16,7 @@ return {
         [']'] = { output = { left = '[ ', right = ' ]' } },
       },
       mappings = {
-        add = 'sS',
+        add = '',
         delete = 'sd',
         replace = 'sr',
 
@@ -27,14 +31,6 @@ return {
       respect_selection_type = true,
     })
 
-    -- quick surround in visual mode
-    for _, key in pairs({ '{', '}', '[', ']', '(', ')', "'", '"', '`' }) do
-      vim.keymap.set(
-        'x',
-        's' .. key,
-        'sS' .. key,
-        { desc = 'Add surrounding ' .. key, remap = true }
-      )
-    end
+    vim.keymap.set('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]])
   end,
 }
