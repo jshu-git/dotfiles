@@ -100,7 +100,7 @@ return {
             event = 'msg_show',
             any = {
               -- search
-              { find = 'Search hit ' },
+              -- { find = 'Search hit ' },
               -- write
               { find = '%d+L, %d+B' },
               -- undo/redo
