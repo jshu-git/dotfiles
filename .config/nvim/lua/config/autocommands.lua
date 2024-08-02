@@ -66,7 +66,7 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, {
   end,
 })
 
--- wrap and check for spell in text filetypes
+-- options for text filetypes
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {
     '*.txt',
@@ -76,6 +76,7 @@ vim.api.nvim_create_autocmd('FileType', {
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true
+    vim.opt_local.linebreak = true
   end,
 })
 

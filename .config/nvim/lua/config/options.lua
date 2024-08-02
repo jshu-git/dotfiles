@@ -17,7 +17,6 @@ o.startofline = true
 o.breakindent = true
 o.smartindent = true
 o.wrap = false
-o.linebreak = true
 o.tabstop = 4
 o.shiftwidth = 4
 

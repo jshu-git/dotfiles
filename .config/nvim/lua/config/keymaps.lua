@@ -7,7 +7,6 @@ end
 
 -- misc
 map('n', '<esc>', '<cmd>nohlsearch<CR>')
-map({ 'n', 'x' }, 'q:', '<nop>')
 
 -- leader
 map('n', '<leader>w', '<cmd>update<CR>', { desc = 'Write' })
@@ -36,7 +35,7 @@ end, { expr = true })
 map({ 'n', 'x' }, 'k', function()
   return vim.v.count > 0 and 'k' or 'gk'
 end, { expr = true })
-map({ 'n', 'x', 'o' }, 'E', '$')
+map({ 'n', 'x', 'o' }, 'E', 'g$')
 -- smart 0/^ https://github.com/wscnd/LunarVim/blob/master/lua/keymappings.lua#L98
 map({ 'n', 'x', 'o' }, '0', function()
   local line = vim.fn.getline('.')
@@ -84,7 +83,7 @@ map('n', '<C-s>', '<C-w>s')
 -- visual
 map('x', '<CR>', '"_c')
 map('x', '<C-q>', 'j')
-map('x', '/', '<esc>/\\%V', { desc = 'Search (Selection)' })
+map('x', '/', '<esc>/\\%V')
 
 -- custom operators
 -- vim.keymap.set("n", "sf", ":%s/<C-r><C-w>//gI<left><left><left>", { desc = "Substitute cword (File)" })
