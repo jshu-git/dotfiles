@@ -8,6 +8,5 @@ cp -rf $HOME/.local/share/nvim/lazy /tmp/lazy
 # treesitter
 rm -rf /tmp/lazy/nvim-treesitter/parser/*
 
-zip -q -r /tmp/lazy.zip /tmp/lazy
-mv /tmp/lazy.zip $DROPBOX/
+zip -q -r $DROPBOX/lazy.zip /tmp/lazy
 rm -rf /tmp/lazy
