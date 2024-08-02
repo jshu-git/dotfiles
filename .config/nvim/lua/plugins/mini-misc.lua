@@ -3,8 +3,7 @@ return {
   config = function()
     local misc = require('mini.misc')
     misc.setup_restore_cursor()
-    -- vim.keymap.set("n", "<leader>tm", function()
-    --   misc.zoom()
-    -- end, { desc = "Toggle Maximize" })
+    misc.setup_termbg_sync()
+    vim.keymap.set('n', '<C-w>m', misc.zoom, { desc = 'Toggle Maximize' })
   end,
 }

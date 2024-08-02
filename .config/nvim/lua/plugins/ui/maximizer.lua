@@ -1,4 +1,5 @@
 return {
+  enabled = false,
   '0x00-ketsu/maximizer.nvim',
   keys = { '<leader>tm' },
   config = function()

@@ -23,6 +23,7 @@ return {
       },
     })
 
+    -- rip.rememberCursorWord()
     vim.keymap.set({ 'n', 'x' }, 'sR', function()
       rip.sub()
     end, { desc = 'Rip/Substitute' })
