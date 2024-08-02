@@ -4,10 +4,7 @@ return {
   config = function()
     local symbol_usage = require('symbol-usage')
     symbol_usage.setup({
-      hl = {
-        italic = true,
-        fg = require('nord.colors').palette.polar_night.brighter,
-      },
+      hl = { link = 'NonText' },
       vt_position = 'end_of_line',
       request_pending_text = false,
       implementation = { enabled = true },
