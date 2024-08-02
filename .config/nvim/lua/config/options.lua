@@ -69,15 +69,3 @@ o.wrapscan = false
 -- mouse
 o.mouse = 'a'
 o.mousescroll = 'ver:1,hor:0'
-
--- filetypes
-vim.filetype.add({
-  extension = {
-    zsh = 'sh',
-    sh = 'sh',
-  },
-  filename = {
-    ['.zshrc'] = 'sh',
-    ['.zshenv'] = 'sh',
-  },
-})

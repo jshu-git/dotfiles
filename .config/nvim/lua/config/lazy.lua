@@ -24,5 +24,23 @@ require('lazy').setup({
   },
   ui = { border = 'single', backdrop = 100 },
   change_detection = { notify = false },
+  performance = {
+    cache = {
+      enabled = true,
+    },
+    reset_packpath = true, -- reset the package path to improve startup time
+    rtp = {
+      disabled_plugins = {
+        -- 'gzip',
+        'matchit',
+        'matchparen',
+        -- 'netrwPlugin',
+        -- 'tarPlugin',
+        -- 'tohtml',
+        -- 'tutor',
+        -- 'zipPlugin',
+      },
+    },
+  },
 })
 vim.keymap.set('n', '<leader>ll', '<cmd>Lazy<CR>', { desc = 'Lazy' })

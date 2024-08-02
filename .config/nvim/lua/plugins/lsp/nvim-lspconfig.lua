@@ -111,13 +111,11 @@ return {
         -- prefix = ' 󰧞',
         prefix = '',
         suffix = ' ',
-        severity_sort = true,
         -- virt_text_pos = 'inline',
         -- virt_text_win_col = 80,
       },
       float = {
         border = 'single',
-        severity_sort = true,
       },
       severity_sort = true,
       signs = {
