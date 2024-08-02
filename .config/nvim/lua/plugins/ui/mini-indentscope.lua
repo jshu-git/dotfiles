@@ -18,6 +18,7 @@ return {
       pattern = {
         'help',
         'lazy',
+        'noice',
       },
       callback = function()
         vim.b.miniindentscope_disable = true

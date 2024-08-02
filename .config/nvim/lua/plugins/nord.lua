@@ -7,7 +7,7 @@ return {
       callback = function()
         local c = require('nord.colors').palette
 
-        vim.api.nvim_set_hl(0, 'CursorLineNr', { link = 'Visual' })
+        -- vim.api.nvim_set_hl(0, 'CursorLineNr', { link = 'Visual' })
 
         -- mini.icons
         vim.api.nvim_set_hl(0, 'MiniIconsAzure', { fg = c.frost.artic_water })
@@ -37,15 +37,6 @@ return {
         vim.api.nvim_set_hl(0, 'MiniIndentScopeSymbol', { link = 'NonText' })
         vim.api.nvim_set_hl(0, 'MiniPickPrompt', { link = 'MiniPickNormal' })
         vim.api.nvim_set_hl(0, 'MiniCursorWord', { link = 'Search' })
-
-        -- noice
-        vim.api.nvim_set_hl(0, 'NoicePopupBorder', { link = 'FloatBorder' })
-        vim.api.nvim_set_hl(
-          0,
-          'NoiceCmdlinePopupBorder',
-          { link = 'FloatBorder' }
-        )
-        vim.api.nvim_set_hl(0, 'NoiceConfirmBorder', { link = 'FloatBorder' })
 
         -- copilot
         vim.api.nvim_set_hl(0, 'CopilotSuggestion', { link = 'NonText' })
