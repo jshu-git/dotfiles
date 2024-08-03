@@ -3,7 +3,7 @@ return {
   keys = {
     { '<leader>r', mode = { 'n', 'x' } },
     { '<leader>R', mode = { 'n', 'x' } },
-    { 'sf', mode = { 'n', 'x' } },
+    { 'sW', mode = { 'n', 'x' } },
   },
   config = function()
     local grug = require('grug-far')
@@ -51,7 +51,7 @@ return {
     end, { desc = 'Grug Far (Relative)' })
 
     -- current file
-    vim.keymap.set({ 'n', 'x' }, 'sf', function()
+    vim.keymap.set({ 'n', 'x' }, 'sW', function()
       grug.grug_far({
         prefills = {
           search = vim.fn.expand('<cword>'),
