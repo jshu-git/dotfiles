@@ -76,4 +76,49 @@ return {
       },
     })
   end,
+
+  -- {
+  --   'folke/which-key.nvim',
+  --   enabled = false,
+  --   event = 'VeryLazy',
+  --   config = function()
+  --     local wk = require('which-key')
+  --     wk.setup({
+  --       preset = 'helix',
+  --       delay = 200,
+  --       filter = function(mapping)
+  --         return mapping.desc and mapping.desc ~= ''
+  --       end,
+  --       plugins = {
+  --         marks = false,
+  --         registers = true,
+  --         spelling = { enabled = false },
+  --       },
+  --       win = {
+  --         width = { max = 40 },
+  --         height = { max = -1 },
+  --         border = 'single',
+  --         -- padding = { 0, 0 },
+  --       },
+  --       sort = { 'group', 'desc' },
+  --       icons = {
+  --         breadcrumb = '',
+  --         separator = '󱦰',
+  --         group = '',
+  --         mappings = false,
+  --       },
+  --       show_help = false,
+  --       show_keys = false,
+  --     })
+  --
+  --     wk.add({
+  --       { '<leader>f', group = 'Find…' },
+  --       { '<leader>l', group = 'LSP…' },
+  --       { '<leader>t', group = 'Toggle…' },
+  --       { { '<leader>g', group = 'Git…' }, mode = { 'n', 'x' } },
+  --       { '<leader>s', group = 'Session…' },
+  --       { '<leader>n', group = 'Noice…' },
+  --     })
+  --   end,
+  -- },
 }

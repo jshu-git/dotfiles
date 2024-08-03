@@ -47,11 +47,14 @@ end, { expr = true })
 map('n', '<CR>', '"_ciw')
 map('n', '<S-CR>', '<CR>')
 map('n', 'U', '<C-r>')
-map({ 'n', 'x' }, ';', ':')
 map('n', '<BS>', '<C-^>')
 map('n', 'i', function()
   return vim.fn.getline('.') == '' and '"_cc' or 'i'
 end, { expr = true })
+
+-- command mode
+map({ 'n', 'x' }, ';', ':')
+map('n', ':', '@:')
 
 -- search
 map('n', '*', 'g*N')
