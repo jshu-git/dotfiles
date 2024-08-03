@@ -62,6 +62,7 @@
   "nvim-lspconfig": { "branch": "master", "commit": "e6528f4613c8db2e04be908eb2b5886d63f62a98" },
   "nvim-numbertoggle": { "branch": "main", "commit": "c5827153f8a955886f1b38eaea6998c067d2992f" },
   "nvim-osc52": { "branch": "main", "commit": "04cfaba1865ae5c53b6f887c3ca7304973824fb2" },
+  "nvim-pqf": { "branch": "main", "commit": "148ee2ca8b06d83fd9bf6f9b9497724ad39a07d6" },
   "nvim-rip-substitute": { "branch": "main", "commit": "d1cf3ccd92735661d14f0c748ad070e4be24345b" },
   "nvim-scrollview": { "branch": "main", "commit": "401c0498689dcaa54b2e7483d823e33cdc051e72" },
   "nvim-treesitter": { "branch": "master", "commit": "a7a3b9c10e8a5fe0da05ebb65db3ed1d164e612d" },
