@@ -64,7 +64,7 @@ return {
           },
         },
         hover = {
-          border = { style = 'single', padding = { 0, 0 } },
+          border = { style = 'single', padding = { 0, 1 } },
         },
         cmdline_popup = {
           size = {
