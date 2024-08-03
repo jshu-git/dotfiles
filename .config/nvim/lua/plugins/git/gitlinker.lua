@@ -46,13 +46,13 @@ return {
         'n',
         { action_callback = actions.copy_to_clipboard }
       )
-    end, { desc = 'Copy Git URL' })
+    end, { desc = 'Yank Git URL' })
     vim.keymap.set('v', '<leader>gy', function()
       gitlinker.get_buf_range_url(
         'v',
         { action_callback = actions.copy_to_clipboard }
       )
-    end, { desc = 'Copy Git URL' })
+    end, { desc = 'Yank Git URL' })
 
     -- open in browser
     vim.keymap.set('n', '<leader>gx', function()

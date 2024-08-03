@@ -102,11 +102,11 @@ map(
 map('n', 'gy', function()
   vim.fn.setreg('+', vim.fn.expand('%:p'))
   vim.notify('Copied: ' .. vim.fn.expand('%:p'))
-end)
+end, { desc = 'Yank Path' })
 map('n', 'gY', function()
   vim.fn.setreg('+', vim.fn.expand('%'))
   vim.notify('Copied: ' .. vim.fn.expand('%'))
-end)
+end, { desc = 'Yank Path (Relative)' })
 
 -- quickfix
 map('n', ']q', '<cmd>cnext<CR>', { desc = 'Next Quickfix' })
