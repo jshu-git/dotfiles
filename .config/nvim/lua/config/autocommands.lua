@@ -35,14 +35,6 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
--- quickfix
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'qf',
-  callback = function()
-    vim.opt_local.relativenumber = false
-  end,
-})
-
 -- LazyVim
 -- close some filetypes with <esc>
 vim.api.nvim_create_autocmd('FileType', {
