@@ -1,7 +1,8 @@
 return {
   'echasnovski/mini.surround',
   keys = {
-    { 'sd', 'sr' },
+    'sd',
+    'sr',
     { 'S', mode = { 'x' } },
   },
   config = function()
@@ -19,7 +20,6 @@ return {
         add = '',
         delete = 'sd',
         replace = 'sr',
-
         update_n_lines = '',
         highlight = '',
         find = '',

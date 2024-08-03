@@ -25,10 +25,11 @@ H.paths = function()
 
   local paths = {
     -- nvim
-    lazy,
     data .. '/mini.files/trash',
-    require('persisted.config').options.save_dir,
+    vim.fn.stdpath('state'),
+    lazy,
     lazy .. '/nvim-treesitter/parser',
+    require('persisted.config').options.save_dir,
 
     -- local
     home .. '/Library/CloudStorage/Dropbox/',
