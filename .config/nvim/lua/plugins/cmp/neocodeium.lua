@@ -10,6 +10,7 @@ return {
       filetypes = {
         ['*'] = true,
         ['rip-substitute'] = false,
+        ['grug-far'] = false,
       },
       debounce = true,
     })
@@ -17,7 +18,8 @@ return {
     vim.keymap.set('i', '<Tab>', function()
       if neocodeium.visible() then
         -- neocodeium.accept()
-        neocodeium.accept_word()
+        -- neocodeium.accept_word()
+        neocodeium.accept_line()
       else
         vim.api.nvim_feedkeys(
           vim.api.nvim_replace_termcodes('<Tab>', true, false, true),
@@ -27,13 +29,7 @@ return {
       end
     end)
     vim.keymap.set('i', '<S-Tab>', neocodeium.clear)
-    -- vim.keymap.set('i', '<A-l>', function()
-    --   if neocodeium.visible() then
-    --     neocodeium.accept_word()
-    --   else
-    --     neocodeium.cycle_or_complete(1)
-    --   end
-    -- end)
+    vim.keymap.set('i', '<A-l>', neocodeium.accept_word)
     vim.keymap.set('i', '<A-n>', function()
       neocodeium.cycle_or_complete(1)
     end)
