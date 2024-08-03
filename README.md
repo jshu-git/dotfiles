@@ -1,4 +1,3 @@
-<img width="1472" alt="SCR-20240803-jicv" src="https://github.com/user-attachments/assets/a2587a6b-3131-495c-8026-de03e23d0399">
 - terminal: [alacritty](https://alacritty.org/)
   - terminal multiplexer: [zellij](https://zellij.dev/)
   - editor: [neovim](https://github.com/neovim/neovim)
