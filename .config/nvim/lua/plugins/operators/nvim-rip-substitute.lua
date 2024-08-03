@@ -13,7 +13,6 @@ return {
         hideSearchReplaceLabels = true,
       },
       prefill = {
-        visual = false,
         startInReplaceLineIfPrefill = true,
       },
       keymaps = {
