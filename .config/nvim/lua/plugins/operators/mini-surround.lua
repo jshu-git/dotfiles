@@ -6,7 +6,8 @@ return {
     { 'S', mode = { 'x' } },
   },
   config = function()
-    require('mini.surround').setup({
+    local surround = require('mini.surround')
+    surround.setup({
       -- reverse left and right behavior
       custom_surroundings = {
         ['('] = { output = { left = '(', right = ')' } },
@@ -15,6 +16,13 @@ return {
         ['}'] = { output = { left = '{ ', right = ' }' } },
         ['['] = { output = { left = '[', right = ']' } },
         [']'] = { output = { left = '[ ', right = ' ]' } },
+        -- treesitter
+        f = {
+          input = surround.gen_spec.input.treesitter({
+            outer = '@call.outer',
+            inner = '@call.inner',
+          }),
+        },
       },
       mappings = {
         add = '',

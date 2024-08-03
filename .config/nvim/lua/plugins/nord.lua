@@ -37,6 +37,9 @@ return {
 
           -- treesitter
           TreesitterContext = { link = 'CursorLine' },
+
+          -- noice
+          NoiceCmdLinePopupBorder = { link = 'FloatBorder' },
         }
         for group, hl in pairs(highlights) do
           vim.api.nvim_set_hl(0, group, hl)
