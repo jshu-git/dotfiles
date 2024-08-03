@@ -10,7 +10,6 @@ map('n', '<esc>', '<cmd>nohlsearch<CR>')
 map('n', '<leader>w', '<cmd>update<CR>', { desc = 'Write' })
 map('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit' })
 map('n', '<leader>Q', '<cmd>qa!<CR>', { desc = 'Quit All' })
-map('n', '<leader>S', '<cmd>so %<CR>', { desc = 'Source File' })
 map('n', '<leader>i', '<cmd>Inspect<CR>', { desc = 'Inspect' })
 map('n', '<leader>N', '<cmd>enew<CR>', { desc = 'New Buffer' })
 
