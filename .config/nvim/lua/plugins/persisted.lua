@@ -20,15 +20,15 @@ return {
       end,
     })
 
-    vim.keymap.set('n', '<leader>sx', function()
+    vim.keymap.set('n', '<leader>Sx', function()
       persisted.delete()
       vim.notify('Deleted Current Session')
     end, { desc = 'Delete Current Session' })
-    vim.keymap.set('n', '<leader>ss', function()
+    vim.keymap.set('n', '<leader>Ss', function()
       persisted.start()
       vim.notify('Started Recording Session')
     end, { desc = 'Start Recording Session' })
-    vim.keymap.set('n', '<leader>sS', function()
+    vim.keymap.set('n', '<leader>SS', function()
       persisted.stop()
       vim.notify('Stopped Recording Session')
     end, { desc = 'Stop Recording Session' })

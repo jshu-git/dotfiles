@@ -1,6 +1,7 @@
 return {
   'MagicDuck/grug-far.nvim',
   keys = {
+    '<leader>s',
     { '<leader>r', mode = { 'n', 'x' } },
     { '<leader>R', mode = { 'n', 'x' } },
     { 'sW', mode = { 'n', 'x' } },
@@ -8,7 +9,6 @@ return {
   config = function()
     local grug = require('grug-far')
     grug.setup({
-      startCursorRow = 4,
       transient = true,
       keymaps = {
         replace = '',
@@ -34,8 +34,13 @@ return {
       folding = { enabled = false },
     })
 
+    -- search
+    vim.keymap.set('n', '<leader>s', grug.grug_far, { desc = 'Grug Far' })
+
+    -- search/replace cword
     vim.keymap.set({ 'n', 'x' }, '<leader>r', function()
       grug.grug_far({
+        startCursorRow = 4,
         prefills = {
           search = vim.fn.expand('<cword>'),
         },
@@ -43,6 +48,7 @@ return {
     end, { desc = 'Grug Far' })
     vim.keymap.set({ 'n', 'x' }, '<leader>R', function()
       grug.grug_far({
+        startCursorRow = 4,
         prefills = {
           search = vim.fn.expand('<cword>'),
           paths = vim.fn.expand('%:p:h'),
@@ -53,6 +59,7 @@ return {
     -- current file
     vim.keymap.set({ 'n', 'x' }, 'sW', function()
       grug.grug_far({
+        startCursorRow = 4,
         prefills = {
           search = vim.fn.expand('<cword>'),
           paths = vim.fn.expand('%'),
