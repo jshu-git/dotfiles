@@ -35,7 +35,8 @@ return {
     -- https://github.com/zbirenbaum/copilot.lua/issues/91
     vim.keymap.set('i', '<Tab>', function()
       if suggestion.is_visible() then
-        suggestion.accept_word()
+        -- suggestion.accept_word()
+        suggestion.accept_line()
       else
         vim.api.nvim_feedkeys(
           vim.api.nvim_replace_termcodes('<Tab>', true, false, true),

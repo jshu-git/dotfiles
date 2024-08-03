@@ -1,9 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-local map = function(mode, lhs, rhs, opts)
-  vim.keymap.set(mode, lhs, rhs, opts)
-end
+local map = vim.keymap.set
 
 -- misc
 map('n', '<esc>', '<cmd>nohlsearch<CR>')
@@ -100,12 +98,14 @@ map(
 
 -- yanking
 map('n', 'gy', function()
-  vim.fn.setreg('+', vim.fn.expand('%:p'))
-  vim.notify('Copied: ' .. vim.fn.expand('%:p'))
+  local path = vim.fn.expand('%:p')
+  vim.fn.setreg('+', path)
+  vim.notify('Copied: ' .. path)
 end, { desc = 'Yank Path' })
 map('n', 'gY', function()
-  vim.fn.setreg('+', vim.fn.expand('%'))
-  vim.notify('Copied: ' .. vim.fn.expand('%'))
+  local path = vim.fn.expand('%')
+  vim.fn.setreg('+', path)
+  vim.notify('Copied: ' .. path)
 end, { desc = 'Yank Path (Relative)' })
 
 -- quickfix
