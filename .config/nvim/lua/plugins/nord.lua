@@ -2,60 +2,43 @@ return {
   'gbprod/nord.nvim',
   lazy = false,
   priority = 1000,
-  init = function()
-    vim.api.nvim_create_autocmd('ColorScheme', {
-      callback = function()
-        local c = require('nord.colors').palette
-
-        -- vim.api.nvim_set_hl(0, 'CursorLineNr', { link = 'Visual' })
-
-        -- mini.icons
-        vim.api.nvim_set_hl(0, 'MiniIconsAzure', { fg = c.frost.artic_water })
-        vim.api.nvim_set_hl(0, 'MiniIconsBlue', { fg = c.frost.artic_ocean })
-        vim.api.nvim_set_hl(0, 'MiniIconsCyan', { fg = c.frost.ice })
-        vim.api.nvim_set_hl(0, 'MiniIconsGreen', { fg = c.aurora.green })
-        vim.api.nvim_set_hl(0, 'MiniIconsGrey', { fg = c.polar_night.light })
-        vim.api.nvim_set_hl(0, 'MiniIconsOrange', { fg = c.aurora.orange })
-        vim.api.nvim_set_hl(0, 'MiniIconsPurple', { fg = c.aurora.purple })
-        vim.api.nvim_set_hl(0, 'MiniIconsRed', { fg = c.aurora.red })
-        vim.api.nvim_set_hl(0, 'MiniIconsYellow', { fg = c.aurora.yellow })
-
-        -- mini.diff
-        vim.api.nvim_set_hl(0, 'MiniDiffSignAdd', { link = 'GitSignsAdd' })
-        vim.api.nvim_set_hl(
-          0,
-          'MiniDiffSignChange',
-          { link = 'GitSignsChange' }
-        )
-        vim.api.nvim_set_hl(
-          0,
-          'MiniDiffSignDelete',
-          { link = 'GitSignsDelete' }
-        )
-
-        -- mini
-        vim.api.nvim_set_hl(0, 'MiniIndentScopeSymbol', { link = 'NonText' })
-        vim.api.nvim_set_hl(0, 'MiniPickPrompt', { link = 'MiniPickNormal' })
-        vim.api.nvim_set_hl(0, 'MiniCursorWord', { link = 'Search' })
-
-        -- copilot
-        vim.api.nvim_set_hl(0, 'CopilotSuggestion', { link = 'NonText' })
-        vim.api.nvim_set_hl(0, 'CopilotAnnotation', { link = 'Search' })
-        vim.api.nvim_set_hl(0, 'NeoCodeiumSuggestion', { link = 'NonText' })
-        vim.api.nvim_set_hl(0, 'NeoCodeiumLabel', { link = 'Search' })
-
-        -- lspinfo
-        vim.api.nvim_set_hl(0, 'LspInfoBorder', { link = 'FloatBorder' })
-
-        -- treesitter
-        vim.api.nvim_set_hl(0, 'TreesitterContext', { link = 'CursorLine' })
-      end,
-    })
-  end,
   config = function()
     require('nord').setup({
       -- diff = { mode = 'fg' },
       search = { theme = 'vscode' },
+      on_highlights = function(highlights, colors)
+        -- mini.icons
+        highlights.MiniIconsAzure = { fg = colors.frost.artic_water }
+        highlights.MiniIconsBlue = { fg = colors.frost.artic_ocean }
+        highlights.MiniIconsCyan = { fg = colors.frost.ice }
+        highlights.MiniIconsGreen = { fg = colors.aurora.green }
+        highlights.MiniIconsGrey = { fg = colors.polar_night.light }
+        highlights.MiniIconsOrange = { fg = colors.aurora.orange }
+        highlights.MiniIconsPurple = { fg = colors.aurora.purple }
+        highlights.MiniIconsRed = { fg = colors.aurora.red }
+        highlights.MiniIconsYellow = { fg = colors.aurora.yellow }
+
+        -- mini
+        highlights.MiniIndentScopeSymbol = { link = 'NonText' }
+        highlights.MiniPickPrompt = { link = 'MiniPickNormal' }
+        highlights.MiniCursorWord = { link = 'Search' }
+        -- diff
+        highlights.MiniDiffSignAdd = { link = 'GitSignsAdd' }
+        highlights.MiniDiffSignChange = { link = 'GitSignsChange' }
+        highlights.MiniDiffSignDelete = { link = 'GitSignsDelete' }
+
+        -- copilot
+        highlights.CopilotSuggestion = { link = 'NonText' }
+        highlights.CopilotAnnotation = { link = 'Search' }
+        highlights.NeoCodeiumSuggestion = { link = 'NonText' }
+        highlights.NeoCodeiumLabel = { link = 'Search' }
+
+        -- lspinfo
+        highlights.LspInfoBorder = { link = 'FloatBorder' }
+
+        -- treesitter
+        highlights.TreesitterContext = { link = 'CursorLine' }
+      end,
     })
     vim.cmd.colorscheme('nord')
   end,
