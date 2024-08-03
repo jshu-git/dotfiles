@@ -16,10 +16,11 @@ map('n', '<leader>S', '<cmd>so %<CR>', { desc = 'Source File' })
 map('n', '<leader>i', '<cmd>Inspect<CR>', { desc = 'Inspect' })
 map('n', '<leader>N', '<cmd>enew<CR>', { desc = 'New Buffer' })
 
-map('n', '<leader>o', 'o<Esc>', { desc = 'New Line After' })
-map('n', '<leader>O', 'O<Esc>', { desc = 'New Line Before' })
+-- map('n', '<leader>o', 'o<Esc>', { desc = 'New Line After' })
+-- map('n', '<leader>O', 'O<Esc>', { desc = 'New Line Before' })
 map('n', '<leader>p', '<cmd>put<CR>', { desc = 'Paste After' })
 map('n', '<leader>P', '<cmd>put!<CR>', { desc = 'Paste Before' })
+map('n', 'O', 'o<Esc>', { desc = 'New Line After' })
 
 map('n', '<leader>,', 'mzA,<Esc>`z', { desc = 'Append Comma' })
 map('n', '<leader>;', 'mzA;<Esc>`z', { desc = 'Append Semicolon' })
@@ -55,10 +56,6 @@ end, { expr = true })
 -- command mode
 map({ 'n', 'x' }, ';', ':')
 map('n', ':', '@:')
-
--- search
-map('n', '*', 'g*N')
-map('n', 'g*', '*N')
 
 -- preserve clipboard
 map({ 'n', 'x' }, 'x', '"_x')
@@ -124,9 +121,9 @@ map('n', '<leader>c', function()
   end
   if not vim.tbl_isempty(vim.fn.getqflist()) then
     vim.cmd('copen')
-    return
+  else
+    vim.notify('No Quickfix', vim.log.levels.WARN)
   end
-  vim.notify('No Quickfix', vim.log.levels.WARN)
 end, { desc = 'Quickfix' })
 -- tabs
 map('n', ']t', '<cmd>tabnext<CR>', { desc = 'Next Tab' })
