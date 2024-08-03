@@ -40,6 +40,8 @@ return {
         highlights.TreesitterContext = { link = 'CursorLine' }
       end,
     })
+    -- override
+    vim.api.nvim_set_hl(0, 'MiniIndentScopeSymbol', { link = 'NonText' })
     vim.cmd.colorscheme('nord')
   end,
 }
