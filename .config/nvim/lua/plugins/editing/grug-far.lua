@@ -24,7 +24,7 @@ return {
         -- pickHistoryEntry = { n = '<enter>' },
         abort = { n = '<C-c>' },
         help = { n = 'g?' },
-        toggleShowRgCommand = { n = 'gs' },
+        toggleShowCommand = { n = 'gs' },
       },
       resultsSeparatorLineChar = '▔',
       icons = { enabled = false },
