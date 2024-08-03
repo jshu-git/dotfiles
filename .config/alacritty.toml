@@ -20,7 +20,6 @@ save_to_clipboard = true
 
 [cursor]
 style.shape = "Beam"
-style.blinking = "Never"
 vi_mode_style.shape = "Block"
 
 [terminal]
