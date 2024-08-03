@@ -16,22 +16,14 @@ return {
     -- overrides
     vim.keymap.set({ 'n', 'x' }, 'y', '<Plug>(YankyYank)')
     vim.keymap.set({ 'n', 'x' }, 'p', '<Plug>(YankyPutAfter)')
-    vim.keymap.set({ 'n', 'x' }, 'P', '<Plug>(YankyPutBefore)')
-    -- vim.keymap.set({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
-    -- vim.keymap.set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
-    -- vim.keymap.set("n", "<C-S-N>", "<Plug>(YankyPreviousEntry)")
-    -- vim.keymap.set("n", "<C-S-P>", "<Plug>(YankyNextEntry)")
+    vim.keymap.set({ 'n', 'x' }, 'P', '<Plug>(YankyPutIndentAfterLinewise)')
 
-    -- yank picker
+    -- yank history
     vim.keymap.set(
       'n',
       '<leader>y',
       '<cmd>YankyRingHistory<CR>',
       { desc = 'Yank History' }
     )
-    -- text object
-    -- vim.keymap.set({ "o", "x" }, "lp", function()
-    --   require("yanky.textobj").last_put()
-    -- end)
   end,
 }

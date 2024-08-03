@@ -18,9 +18,10 @@ map('n', '<leader>N', '<cmd>enew<CR>', { desc = 'New Buffer' })
 
 -- map('n', '<leader>o', 'o<Esc>', { desc = 'New Line After' })
 -- map('n', '<leader>O', 'O<Esc>', { desc = 'New Line Before' })
-map('n', '<leader>p', '<cmd>put<CR>', { desc = 'Paste After' })
-map('n', '<leader>P', '<cmd>put!<CR>', { desc = 'Paste Before' })
+-- map('n', '<leader>p', '<cmd>put<CR>', { desc = 'Paste After' })
+-- map('n', '<leader>P', '<cmd>put!<CR>', { desc = 'Paste Before' })
 map('n', 'O', 'o<Esc>', { desc = 'New Line After' })
+map('n', 'P', '<cmd>put<CR>', { desc = 'Paste After' })
 
 map('n', '<leader>,', 'mzA,<Esc>`z', { desc = 'Append Comma' })
 map('n', '<leader>;', 'mzA;<Esc>`z', { desc = 'Append Semicolon' })
