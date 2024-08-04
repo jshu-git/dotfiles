@@ -48,7 +48,7 @@ return {
           hl_group = 'Search',
         },
         split = {
-          enter = true,
+          -- enter = true,
           close = { keys = { '<esc>' } },
         },
         popup = {
