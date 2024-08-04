@@ -8,8 +8,8 @@ layout {
 
                 // mode
                 mode_default_to_mode "locked"
-                mode_normal          "#[fg=magenta] zellij…"
-                mode_rename_tab      "#[fg=magenta] rename tab…"
+                mode_normal          "#[bg=blue,fg=black] zellij… "
+                mode_rename_tab      "#[bg=blue,fg=black] rename tab… "
                 mode_locked          ""
 
                 // tabs
