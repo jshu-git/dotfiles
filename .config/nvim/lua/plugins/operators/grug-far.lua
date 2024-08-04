@@ -45,7 +45,7 @@ return {
           search = vim.fn.expand('<cword>'),
         },
       })
-    end, { desc = 'Grug Far' })
+    end, { desc = 'Replace' })
     vim.keymap.set({ 'n', 'x' }, '<leader>R', function()
       grug.grug_far({
         startCursorRow = 4,
@@ -54,7 +54,7 @@ return {
           paths = vim.fn.expand('%:p:h'),
         },
       })
-    end, { desc = 'Grug Far (Relative)' })
+    end, { desc = 'Replace (Relative)' })
 
     -- current file
     vim.keymap.set({ 'n', 'x' }, 'sW', function()
@@ -65,6 +65,6 @@ return {
           paths = vim.fn.expand('%'),
         },
       })
-    end, { desc = 'Grug Far (File)' })
+    end, { desc = 'Subsitute cword (File)' })
   end,
 }

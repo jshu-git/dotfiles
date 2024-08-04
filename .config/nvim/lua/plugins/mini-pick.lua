@@ -214,9 +214,9 @@ return {
       extra.pickers.options,
       { desc = 'Options (All)' }
     )
-    vim.keymap.set('n', '<leader>fO', function()
-      extra.pickers.options({ scope = 'buf' })
-    end, { desc = 'Options (Buffer)' })
+    -- vim.keymap.set('n', '<leader>fO', function()
+    --   extra.pickers.options({ scope = 'buf' })
+    -- end, { desc = 'Options (Buffer)' })
 
     -- resume
     vim.keymap.set('n', "'", pick.builtin.resume)
