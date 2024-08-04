@@ -49,7 +49,7 @@ return {
   end,
   config = function()
     require('nord').setup({
-      -- diff = { mode = 'fg' },
+      diff = { mode = 'fg' },
       search = { theme = 'vscode' },
     })
     vim.cmd.colorscheme('nord')
