@@ -25,6 +25,7 @@ layout {
     }
 
     tab name="󰒓 config" cwd="~/.config" focus=true
+    tab name=" notes"  cwd="~/Library/CloudStorage/Dropbox/notes/"
     tab name="󱘗 rust"   cwd="~/git/rustlings/"
     tab name="󰌠 shokz"  cwd="~/git/shokz_downloader/"
     // tab name="ontap.api"    cwd="~/git/ontap/api/ontap/api"

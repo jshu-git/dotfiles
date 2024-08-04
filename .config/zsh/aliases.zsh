@@ -11,6 +11,7 @@ alias g='cd ~/git && ls'
 alias ppwd='pwd -P'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias drop='cd ~/Library/CloudStorage/Dropbox/ && ls'
 
 alias mnt='mount | sort | grep -E ^/dev | column -t'
 alias path='echo -e ${PATH//:/\\n} | sort'
