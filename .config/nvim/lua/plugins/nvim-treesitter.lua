@@ -25,7 +25,10 @@ return {
     require('nvim-treesitter.configs').setup({
       ensure_installed = { 'vimdoc', 'query' },
       auto_install = vim.env.SSH_CLIENT == nil,
-      highlight = { enable = true },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = { 'markdown' },
+      },
       incremental_selection = {
         enable = true,
         keymaps = {

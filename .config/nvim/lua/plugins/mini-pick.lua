@@ -246,6 +246,12 @@ return {
         },
       })
     end
+    vim.keymap.set(
+      'n',
+      '<leader>fn',
+      pick.registry.config_files,
+      { desc = 'Neovim Config Files' }
+    )
 
     -- colorschemes
     pick.registry.colorschemes = function()
