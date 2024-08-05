@@ -10,13 +10,8 @@ map('n', '<esc>', '<cmd>nohlsearch<CR>')
 map('n', '<leader>w', '<cmd>update<CR>', { desc = 'Write' })
 map('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit' })
 map('n', '<leader>Q', '<cmd>qa!<CR>', { desc = 'Quit All' })
-map('n', '<leader>i', '<cmd>Inspect<CR>', { desc = 'Inspect' })
 map('n', '<leader>N', '<cmd>enew<CR>', { desc = 'New Buffer' })
 
--- map('n', '<leader>o', 'o<Esc>', { desc = 'New Line After' })
--- map('n', '<leader>O', 'O<Esc>', { desc = 'New Line Before' })
--- map('n', '<leader>p', '<cmd>put<CR>', { desc = 'Paste After' })
--- map('n', '<leader>P', '<cmd>put!<CR>', { desc = 'Paste Before' })
 map('n', 'O', 'o<Esc>', { desc = 'New Line After' })
 map('n', 'P', '<cmd>put<CR>', { desc = 'Paste After' })
 
@@ -83,15 +78,32 @@ map('x', '<CR>', '"_c')
 map('x', '<C-q>', 'j')
 map('x', '/', '<esc>/\\%V')
 
+-- search
+map('n', '*', 'g*``')
+map('n', 'g*', '*``')
+map(
+  'x',
+  '*',
+  -- *`` doesn't work for some reason
+  [["zy/\V<C-r>=substitute(escape(@z, '/\'), '\n', '\\n', 'g')<CR><CR>``]]
+)
+
 -- custom operators
--- vim.keymap.set("n", "sf", ":%s/<C-r><C-w>//gI<left><left><left>", { desc = "Substitute cword (File)" })
--- vim.keymap.set("x", "s/", ":s///gI<left><left><left><left>", { desc = "Substitute in selection" })
+map('n', 'sw', 'g*``cgn', { desc = 'Substitute cword (Instance)' })
 -- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
-map('n', 'sw', 'g*Ncgn', { desc = 'Substitute cword (Instance)' })
+-- https://github.com/neovim/neovim/issues/21676
+-- https://vim.fandom.com/wiki/Search_and_replace
 map(
   'x',
   'sw',
-  [[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<NL><CR>Ncgn]],
+  -- "zy -> yank selection into register z
+  -- / -> search
+  -- \v -> very magic mode
+  -- <C-r>= -> expression register
+  -- substitute(escape(@z, '/\'), '\n', '\\n', 'g') -> replace each newline (if any) with \n of register z
+  -- first <CR> -> submit substitution
+  -- second <CR> -> submit search
+  [["zy/\v<C-r>=substitute(escape(@z, '/\'), '\n', '\\n', 'g')<CR><CR>``cgn]],
   { desc = 'Substitute (Instance)' }
 )
 
