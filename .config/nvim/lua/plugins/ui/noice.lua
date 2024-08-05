@@ -16,6 +16,7 @@ return {
           filter = false,
           lua = false,
           help = false,
+          calculator = false,
           input = { view = 'cmdline_popup', title = '' },
         },
       },

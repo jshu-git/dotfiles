@@ -100,7 +100,7 @@ map(
   -- / -> search
   -- \v -> very magic mode
   -- <C-r>= -> expression register
-  -- substitute(escape(@z, '/\'), '\n', '\\n', 'g') -> replace each newline (if any) with \n of register z
+  -- substitute(escape(@z, '/\'), '\n', '\\n', 'g') -> replace each ^M newline (if any) with \n of register z
   -- first <CR> -> submit substitution
   -- second <CR> -> submit search
   [["zy/\v<C-r>=substitute(escape(@z, '/\'), '\n', '\\n', 'g')<CR><CR>``cgn]],
