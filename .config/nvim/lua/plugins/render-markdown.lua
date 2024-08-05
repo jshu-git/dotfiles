@@ -7,16 +7,16 @@ return {
   --   },
   -- },
   {
-    'MeanderingProgrammer/markdown.nvim',
+    'MeanderingProgrammer/render-markdown.nvim',
     main = 'render-markdown',
     ft = 'markdown',
     opts = {},
-    -- keys = {
-    --   {
-    --     '<leader>tv',
-    --     '<cmd>RenderMarkdown toggle<cr>',
-    --     desc = 'Toggle Markdown',
-    --   },
-    -- },
+    keys = {
+      {
+        '<leader>tv',
+        '<cmd>RenderMarkdown toggle<cr>',
+        desc = 'Toggle Markdown',
+      },
+    },
   },
 }
