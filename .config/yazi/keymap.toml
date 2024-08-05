@@ -6,12 +6,19 @@
 
 keymap = [
 	{ on = "<Tab>", run = "plugin --sync hide-preview" },
+	{ on = [
+		"c",
+		"m",
+	], run = "plugin chmod", desc = "Chmod on selected files" },
 
 	{ on = "<Esc>", run = "escape", desc = "Exit visual mode, clear selected, or cancel search" },
 	# { on = "<C-[>", run = "escape", desc = "Exit visual mode, clear selected, or cancel search" },
 	# { on = "q", run = "quit", desc = "Exit the process" },
 	# { on = "Q", run = "quit --no-cwd-file", desc = "Exit the process without writing cwd-file" },
-	{ on = "q", run = "close" },
+	{ on = [
+		"<Space>",
+		"q",
+	], run = "close" },
 	# { on = "<C-z>", run = "suspend", desc = "Suspend the process" },
 
 	# Hopping
@@ -51,7 +58,10 @@ keymap = [
 	# { on = "O", run = "open --interactive", desc = "Open selected files interactively" },
 	# { on = "<Enter>", run = "open", desc = "Open selected files" },
 	# { on = "<S-Enter>", run = "open --interactive", desc = "Open selected files interactively" },
-	{ on = "y", run = "yank", desc = "Yank selected files (copy)" },
+	{ on = [
+		"y",
+		"y",
+	], run = "yank" },
 	{ on = "x", run = "yank --cut", desc = "Yank selected files (cut)" },
 	{ on = "p", run = "paste", desc = "Paste yanked files" },
 	# { on = "P", run = "paste --force", desc = "Paste yanked files (overwrite if the destination exists)" },
@@ -63,7 +73,10 @@ keymap = [
 	{ on = "d", run = "remove", desc = "Trash selected files" },
 	{ on = "D", run = "remove --permanently", desc = "Permanently delete selected files" },
 	{ on = "o", run = "create" },
-	{ on = "r", run = "rename --cursor=before_ext", desc = "Rename selected file(s)" },
+	{ on = [
+		"c",
+		"r",
+	], run = "rename --cursor=before_ext", desc = "Rename selected file(s)" },
 	# { on = ";", run = "shell --interactive", desc = "Run a shell command" },
 	# { on = ":", run = "shell --block --interactive", desc = "Run a shell command (block until finishes)" },
 	{ on = [
@@ -118,21 +131,21 @@ keymap = [
 
 	# Copy
 	{ on = [
+		"y",
 		"c",
-		"c",
-	], run = "copy path", desc = "Copy the file path" },
+	], run = "copy path" },
 	{ on = [
-		"c",
+		"y",
 		"d",
 	], run = "copy dirname", desc = "Copy the directory path" },
 	{ on = [
-		"c",
+		"y",
 		"f",
 	], run = "copy filename", desc = "Copy the filename" },
-	{ on = [
-		"c",
-		"n",
-	], run = "copy name_without_ext", desc = "Copy the filename without extension" },
+	# { on = [
+	# 	"c",
+	# 	"n",
+	# ], run = "copy name_without_ext", desc = "Copy the filename without extension" },
 
 	# Filter
 	{ on = "f", run = "filter --smart", desc = "Filter files" },
