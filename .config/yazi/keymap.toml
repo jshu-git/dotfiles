@@ -21,8 +21,8 @@ keymap = [
 	# Hopping
 	{ on = "k", run = "arrow -1", desc = "Move cursor up" },
 	{ on = "j", run = "arrow 1", desc = "Move cursor down" },
-	{ on = "<C-u>", run = "arrow -50%", desc = "Move cursor up half page" },
-	{ on = "<C-d>", run = "arrow 50%", desc = "Move cursor down half page" },
+	{ on = "<C-u>", run = "arrow -25%", desc = "Move cursor up half page" },
+	{ on = "<C-d>", run = "arrow 25%", desc = "Move cursor down half page" },
 
 	{ on = [
 		"g",
