@@ -20,7 +20,7 @@ export FZF_CTRL_R_OPTS="--info=hidden"
 bindkey "^[[A" fzf-history-widget
 
 # cd widget
-bindkey '^[[Z' fzf-cd-widget
+# bindkey '^[[Z' fzf-cd-widget
 
 # fzf-tab-completion
 if [ -d $CONFIG/fzf/plugins/fzf-tab-completion ]; then
