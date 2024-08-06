@@ -23,15 +23,19 @@ return {
         -- gotoLocation = { n = '<enter>' },
         -- pickHistoryEntry = { n = '<enter>' },
         abort = { n = '<C-c>' },
-        help = { n = 'g?' },
+        -- help = { n = 'g?' },
         toggleShowCommand = { n = 'gs' },
+        swapEngine = { n = 'ge' },
       },
       resultsSeparatorLineChar = '▔',
-      icons = { enabled = false },
+      -- currently broken
+      -- icons = { enabled = false },
       history = {
         autoSave = { onBufDelete = false },
       },
-      folding = { enabled = false },
+      folding = {
+        foldcolumn = '0',
+      },
     })
 
     -- search
