@@ -47,7 +47,7 @@ return {
         vim.api.nvim_command('normal! k')
         vim.defer_fn(function()
           vim.api.nvim_command('normal! j')
-        end, 1)
+        end, 50)
       end
     end
 

@@ -7,7 +7,7 @@ H.popup = {
   height = math.floor(0.8 * vim.o.lines),
   width = math.floor(0.8 * vim.o.columns),
 }
--- H.border = { '─', '│', '─', '│', '┌', '┐', '┘', '└' }
+H.border = { '─', '│', '─', '│', '┌', '┐', '┘', '└' }
 
 -- work related
 -- not working for some reason
