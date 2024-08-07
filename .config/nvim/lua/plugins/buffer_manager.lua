@@ -17,8 +17,11 @@ return {
       loop_nav = false,
       highlight = 'Normal:FloatBorder',
       borderchars = require('config.utils').border,
+      -- order_buffers = 'bufnr',
       show_indicators = 'after',
     })
+
+    vim.api.nvim_set_hl(0, 'BufferManagerModified', { link = 'DiagnosticWarn' })
 
     local bmui = require('buffer_manager.ui')
     vim.keymap.set('n', '<Tab>', bmui.toggle_quick_menu)

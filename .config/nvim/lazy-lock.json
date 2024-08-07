@@ -2,7 +2,7 @@
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
   "Hypersonic.nvim": { "branch": "main", "commit": "87fee832b5fbc51d39b93495805814a26e3d361f" },
   "aerial.nvim": { "branch": "master", "commit": "e75a3df2c20b3a98c786f5e61587d74a7a6b61d6" },
-  "barbar.nvim": { "branch": "master", "commit": "53b5a2f34b68875898f0531032fbf090e3952ad7" },
+  "auto-session": { "branch": "main", "commit": "fe705eed9da20ac81780134432b2e12ab28af8f9" },
   "blame.nvim": { "branch": "main", "commit": "588c80557457c747e8f299441ca14b4d3f2af386" },
   "buffer_manager.nvim": { "branch": "main", "commit": "fd36131b2b3e0f03fd6353ae2ffc88cf920b3bbb" },
   "caps-word.nvim": { "branch": "main", "commit": "564548ef557e4f873b2e67f0ea91f25042cedfe8" },
