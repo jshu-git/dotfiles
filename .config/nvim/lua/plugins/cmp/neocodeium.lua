@@ -17,9 +17,9 @@ return {
 
     vim.keymap.set('i', '<Tab>', function()
       if neocodeium.visible() then
-        -- neocodeium.accept()
+        neocodeium.accept()
         -- neocodeium.accept_word()
-        neocodeium.accept_line()
+        -- neocodeium.accept_line()
       else
         vim.api.nvim_feedkeys(
           vim.api.nvim_replace_termcodes('<Tab>', true, false, true),

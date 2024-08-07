@@ -13,12 +13,7 @@ return {
     -- })
 
     local persisted = require('persisted')
-    persisted.setup({
-      autoload = true,
-      on_autoload_no_session = function()
-        vim.notify('persisted.nvim: No existing session to autoload')
-      end,
-    })
+    persisted.setup({ autoload = true })
 
     vim.keymap.set('n', '<leader>Sx', function()
       persisted.delete()
