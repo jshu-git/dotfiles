@@ -63,10 +63,10 @@ map('n', 'dd', function()
 end, { expr = true })
 
 -- windows
--- map('n', '<C-h>', '<C-w>h')
--- map('n', '<C-j>', '<C-w>j')
--- map('n', '<C-k>', '<C-w>k')
--- map('n', '<C-l>', '<C-w>l')
+map('n', '<C-h>', '<C-w>h')
+map('n', '<C-j>', '<C-w>j')
+map('n', '<C-k>', '<C-w>k')
+map('n', '<C-l>', '<C-w>l')
 -- size
 map('n', '<C-Left>', '<cmd>vertical resize -2<CR>')
 map('n', '<C-Right>', '<cmd>vertical resize +2<CR>')
