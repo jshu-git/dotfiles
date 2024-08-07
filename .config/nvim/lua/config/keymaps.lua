@@ -127,19 +127,19 @@ map('n', ']q', '<cmd>cnext<CR>', { desc = 'Next Quickfix' })
 map('n', '[q', '<cmd>cprev<CR>', { desc = 'Previous Quickfix' })
 map('n', '[Q', '<cmd>cfirst<CR>', { desc = 'First Quickfix' })
 map('n', ']Q', '<cmd>clast<CR>', { desc = 'Last Quickfix' })
-map('n', '<leader>c', function()
-  for _, win in pairs(vim.fn.getwininfo()) do
-    if win.quickfix == 1 then
-      vim.cmd('cclose')
-      return
-    end
-  end
-  if not vim.tbl_isempty(vim.fn.getqflist()) then
-    vim.cmd('copen')
-  else
-    vim.notify('No Quickfix', vim.log.levels.WARN)
-  end
-end, { desc = 'Quickfix' })
+-- map('n', '<leader>c', function()
+--   for _, win in pairs(vim.fn.getwininfo()) do
+--     if win.quickfix == 1 then
+--       vim.cmd('cclose')
+--       return
+--     end
+--   end
+--   if not vim.tbl_isempty(vim.fn.getqflist()) then
+--     vim.cmd('copen')
+--   else
+--     vim.notify('No Quickfix', vim.log.levels.WARN)
+--   end
+-- end, { desc = 'Quickfix' })
 -- tabs
 map('n', ']t', '<cmd>tabnext<CR>', { desc = 'Next Tab' })
 map('n', '[t', '<cmd>tabprev<CR>', { desc = 'Previous Tab' })
