@@ -8,7 +8,7 @@ return {
           command = 'vsplit',
         },
         s = {
-          key = '<C-h>',
+          key = '<C-s>',
           command = 'split',
         },
       },
@@ -21,7 +21,7 @@ return {
     })
 
     local bmui = require('buffer_manager.ui')
-    vim.keymap.set('n', '<Tab>', bmui.toggle_quick_menu, { silent = true })
+    vim.keymap.set('n', '<Tab>', bmui.toggle_quick_menu)
     -- map('n', '<M-j>', bmui.nav_next, opts)
     -- map('n', '<M-k>', bmui.nav_prev, opts)
   end,
