@@ -50,5 +50,11 @@ return {
     end, {
       desc = 'Quickfix List',
     })
+    vim.keymap.set(
+      'n',
+      '<leader>C',
+      quicker.refresh,
+      { desc = 'Quickfix (Refresh)' }
+    )
   end,
 }
