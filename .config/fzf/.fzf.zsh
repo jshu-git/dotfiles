@@ -6,7 +6,7 @@ export FZF_DEFAULT_OPTS="
 --no-multi
 --pointer ▶
 --border=sharp
---bind 'tab:toggle-down,btab:toggle-up'
+--bind 'ctrl-u:half-page-up,ctrl-d:half-page-down'
 "
 
 # fd https://github.com/sharkdp/fd?tab=readme-ov-file#using-fd-with-fzf
