@@ -99,6 +99,7 @@ map('n', 'sw', 'g*``cgn', { desc = 'Substitute cword (Instance)' })
 map(
   'x',
   'sw',
+  [[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<NL><CR>Ncgn]],
   -- "zy -> yank selection into register z
   -- / -> search
   -- \v -> very magic mode
@@ -106,7 +107,7 @@ map(
   -- substitute(escape(@z, '/\'), '\n', '\\n', 'g') -> replace each ^M newline (if any) with \n of register z
   -- first <CR> -> submit substitution
   -- second <CR> -> submit search
-  [["zy/\v<C-r>=substitute(escape(@z, '/\'), '\n', '\\n', 'g')<CR><CR>``cgn]],
+  -- [["zy/\v<C-r>=substitute(escape(@z, '/\'), '\n', '\\n', 'g')<CR><CR>``cgn]],
   { desc = 'Substitute (Instance)' }
 )
 
