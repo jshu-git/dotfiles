@@ -12,16 +12,19 @@ return {
           command = 'split',
         },
       },
+      -- focus_alternate_buffer = true,
       -- width = math.floor(require('config.utils').popup.width * 0.3),
       -- height = math.floor(require('config.utils').popup.height * 0.3),
       loop_nav = false,
       highlight = 'Normal:FloatBorder',
+      win_extra_options = {
+        cursorline = true,
+        cursorlineopt = 'number',
+      },
       borderchars = require('config.utils').border,
-      -- order_buffers = 'bufnr',
+      order_buffers = 'lastused',
       show_indicators = 'after',
     })
-
-    vim.api.nvim_set_hl(0, 'BufferManagerModified', { link = 'DiagnosticWarn' })
 
     local bmui = require('buffer_manager.ui')
     vim.keymap.set('n', '<Tab>', bmui.toggle_quick_menu)

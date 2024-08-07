@@ -7,7 +7,7 @@ local map = vim.keymap.set
 map('n', '<esc>', '<cmd>nohlsearch<CR>')
 
 -- buffers
-map('n', '<leader>d', '<cmd>bd<CR>', { desc = 'Buffer: Delete' })
+map('n', '<leader>d', '<cmd>bd!<CR>', { desc = 'Buffer: Delete' })
 
 -- leader
 map('n', '<leader>w', '<cmd>update<CR>', { desc = 'Write' })
