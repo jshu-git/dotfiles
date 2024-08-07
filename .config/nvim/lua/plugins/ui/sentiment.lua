@@ -1,8 +1,18 @@
 return {
   'utilyre/sentiment.nvim',
   event = 'VeryLazy',
-  opts = {},
   init = function()
     vim.g.loaded_matchparen = 1
+  end,
+  config = function()
+    require('sentiment').setup({
+      delay = 0,
+      pairs = {
+        { '(', ')' },
+        { '{', '}' },
+        { '[', ']' },
+        { '<', '>' },
+      },
+    })
   end,
 }

@@ -46,6 +46,9 @@ return {
 
           -- quickfix
           QuickFixLine = { link = 'CursorLine' },
+
+          -- sentiment
+          MatchParen = { link = 'Underlined' },
         }
         for group, hl in pairs(highlights) do
           vim.api.nvim_set_hl(0, group, hl)
