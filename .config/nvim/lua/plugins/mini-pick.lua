@@ -308,5 +308,10 @@ return {
         end
       end,
     })
+
+    -- highlights
+    require('config.utils').apply_highlights({
+      MiniPickPrompt = { link = 'MiniPickNormal' },
+    })
   end,
 }

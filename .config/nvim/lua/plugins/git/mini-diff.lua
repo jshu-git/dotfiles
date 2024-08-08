@@ -50,5 +50,12 @@ return {
       vim.fn.setqflist(diff.export('qf'))
       vim.cmd('copen')
     end, { desc = 'Hunks (Quickfix)' })
+
+    -- highlights
+    require('config.utils').apply_highlights({
+      MiniDiffSignAdd = { link = 'GitSignsAdd' },
+      MiniDiffSignChange = { link = 'GitSignsChange' },
+      MiniDiffSignDelete = { link = 'GitSignsDelete' },
+    })
   end,
 }

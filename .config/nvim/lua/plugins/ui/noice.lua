@@ -127,6 +127,11 @@ return {
       noice.cmd('errors')
     end, { desc = 'Errors' })
 
+    -- highlights
+    require('config.utils').apply_highlights({
+      NoiceCmdLinePopupBorder = { link = 'FloatBorder' },
+    })
+
     -- amend esc
     require('keymap-amend')('n', '<esc>', function(original)
       vim.cmd('Noice dismiss')
