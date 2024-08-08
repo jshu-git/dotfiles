@@ -1,15 +1,3 @@
--- filetypes
-vim.filetype.add({
-  extension = {
-    zsh = 'sh',
-    sh = 'sh',
-  },
-  filename = {
-    ['.zshrc'] = 'sh',
-    ['.zshenv'] = 'sh',
-  },
-})
-
 -- yank highlight
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
