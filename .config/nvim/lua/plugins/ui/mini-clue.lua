@@ -64,8 +64,8 @@ return {
 
         -- submodes
         -- buffers
-        { mode = 'n', keys = '<leader><Tab>', postkeys = '<leader>' },
-        { mode = 'n', keys = '<leader><S-Tab>', postkeys = '<leader>' },
+        -- { mode = 'n', keys = '<leader><Tab>', postkeys = '<leader>' },
+        -- { mode = 'n', keys = '<leader><S-Tab>', postkeys = '<leader>' },
         -- folds
         -- { mode = "n", keys = "zj", postkeys = "z" },
         -- { mode = "n", keys = "zk", postkeys = "z" },

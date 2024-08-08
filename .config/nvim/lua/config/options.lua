@@ -49,7 +49,7 @@ o.signcolumn = 'yes'
 
 -- cursorline
 o.cursorline = true
-o.cursorlineopt = 'number'
+-- o.cursorlineopt = 'number'
 
 -- splits
 o.splitbelow = true

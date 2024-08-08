@@ -1,19 +1,9 @@
 return {
-  -- 'yorickpeterse/nvim-pqf',
-  -- filetype = 'qf',
-  -- config = function()
-  --   require('pqf').setup({
-  --     filename_truncate_prefix = '[…]',
-  --   })
-  --
-  --   vim.api.nvim_create_autocmd('FileType', {
-  --     pattern = 'qf',
-  --     callback = function()
-  --       vim.opt_local.relativenumber = false
-  --     end,
-  --   })
-  -- end,
   'stevearc/quicker.nvim',
+  keys = {
+    '<leader>c',
+    '<leader>C',
+  },
   filetype = 'qf',
   config = function()
     local quicker = require('quicker')
@@ -57,4 +47,19 @@ return {
       { desc = 'Quickfix (Refresh)' }
     )
   end,
+
+  -- 'yorickpeterse/nvim-pqf',
+  -- filetype = 'qf',
+  -- config = function()
+  --   require('pqf').setup({
+  --     filename_truncate_prefix = '[…]',
+  --   })
+  --
+  --   vim.api.nvim_create_autocmd('FileType', {
+  --     pattern = 'qf',
+  --     callback = function()
+  --       vim.opt_local.relativenumber = false
+  --     end,
+  --   })
+  -- end,
 }

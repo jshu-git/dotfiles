@@ -29,7 +29,7 @@ return {
     require('config.utils').apply_highlights({
       GrappleFooter = { link = 'FloatBorder' },
       -- GrappleName = { link = 'CursorLine' },
-      GrappleCurrent = { link = 'Normal' },
+      -- GrappleCurrent = { link = 'Normal' },
     })
   end,
 
