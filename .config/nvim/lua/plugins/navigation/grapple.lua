@@ -1,13 +1,17 @@
 return {
   'cbochs/grapple.nvim',
+  keys = {
+    '<leader>a',
+    '<Tab>',
+  },
   config = function()
     local grapple = require('grapple')
     grapple.setup({
       style = 'basename',
-      prune = '365d',
       win_opts = {
         width = 0.5,
         height = 0.25,
+        -- cursorline = true,
       },
     })
 
@@ -23,11 +27,9 @@ return {
 
     -- highlights
     require('config.utils').apply_highlights({
-      GrappleTitle = { link = 'FloatBorder' },
       GrappleFooter = { link = 'FloatBorder' },
       -- GrappleName = { link = 'CursorLine' },
-      -- GrappleCurrent = { link = 'CursorLine' },
-      -- vim.cmd('highlight! link GrappleCurrent Directory')
+      GrappleCurrent = { link = 'Normal' },
     })
   end,
 
