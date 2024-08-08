@@ -20,13 +20,5 @@ return {
     require('config.utils').apply_highlights({
       MiniCursorWord = { link = 'Search' },
     })
-
-    -- amend esc
-    require('keymap-amend')('n', '<esc>', function(original)
-      if not vim.g.minicursorword_disable then
-        vim.g.minicursorword_disable = true
-      end
-      original()
-    end)
   end,
 }

@@ -51,7 +51,6 @@ end, { expr = true })
 
 -- command mode
 map({ 'n', 'x' }, ';', ':')
-map('n', ':', '@:')
 
 -- preserve clipboard
 map({ 'n', 'x' }, 'x', '"_x')

@@ -127,15 +127,15 @@ return {
       noice.cmd('errors')
     end, { desc = 'Errors' })
 
+    -- amend esc
+    vim.keymap.set('n', '<esc>', function()
+      vim.cmd('nohlsearch')
+      vim.cmd('Noice dismiss')
+    end)
+
     -- highlights
     require('config.utils').apply_highlights({
       NoiceCmdLinePopupBorder = { link = 'FloatBorder' },
     })
-
-    -- amend esc
-    require('keymap-amend')('n', '<esc>', function(original)
-      vim.cmd('Noice dismiss')
-      original()
-    end)
   end,
 }
