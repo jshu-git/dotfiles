@@ -7,7 +7,7 @@ return {
   config = function()
     local grapple = require('grapple')
     grapple.setup({
-      style = 'basename',
+      -- style = 'basename',
       win_opts = {
         width = 0.5,
         height = 0.25,
