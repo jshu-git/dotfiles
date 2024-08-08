@@ -19,7 +19,7 @@ require('lazy').setup({
     { import = 'plugins.editing' },
     { import = 'plugins.git' },
     { import = 'plugins.lsp' },
-    { import = 'plugins.movement' },
+    { import = 'plugins.navigation' },
     { import = 'plugins.operators' },
     { import = 'plugins.ui' },
   },
