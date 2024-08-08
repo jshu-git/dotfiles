@@ -1,8 +1,8 @@
 return {
   'echasnovski/mini.jump2d',
   keys = {
-    { '<leader><leader>', mode = { 'n', 'x', 'o' } },
-    { '<leader>.', mode = { 'n', 'x', 'o' } },
+    { 'gw', mode = { 'n', 'x', 'o' } },
+    { 'g.', mode = { 'n', 'x', 'o' } },
   },
   config = function()
     local jump2d = require('mini.jump2d')
@@ -13,7 +13,7 @@ return {
     })
 
     -- jump to any word
-    vim.keymap.set({ 'n', 'x', 'o' }, '<leader><leader>', function()
+    vim.keymap.set({ 'n', 'x', 'o' }, 'gw', function()
       local opts =
         vim.tbl_deep_extend('force', jump2d.builtin_opts.word_start, {
           view = { n_steps_ahead = 1 },
@@ -22,9 +22,10 @@ return {
     end, { desc = 'Jump (Word)' })
 
     -- jump to punctuation
-    vim.keymap.set({ 'n', 'x', 'o' }, '<leader>.', function()
+    vim.keymap.set({ 'n', 'x', 'o' }, 'g.', function()
       jump2d.start({
         spotter = jump2d.gen_pattern_spotter('%p+'),
+        allowed_lines = { blank = false },
       })
     end, { desc = 'Jump (Punctuation)' })
   end,
