@@ -1,4 +1,5 @@
 return {
+  enabled = false,
   'zbirenbaum/copilot.lua',
   cond = vim.env.SSH_CLIENT ~= nil,
   cmd = 'Copilot',
