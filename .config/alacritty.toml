@@ -67,6 +67,11 @@ bindings = [
 [colors]
 cursor = { cursor = "#D8DEE9" }
 vi_mode_cursor = { cursor = "#EBCB8B" }
+selection = { text = "CellForeground", background = "CellForeground" }
+
+[colors.search]
+matches = { foreground = "#d8dee9", background = "#5b7a88" }
+# focused_match = { foreground = "#d8dee9", background = "#40505d" }
 
 # Default colors
 [colors.primary]
