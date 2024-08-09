@@ -126,6 +126,23 @@ return {
       })
     end)
 
+    -- buffers
+    vim.keymap.set('n', '<S-Tab>', function()
+      pick.builtin.buffers({ include_current = false }, {
+        mappings = {
+          wipeout = {
+            char = '<C-x>',
+            func = function()
+              vim.api.nvim_buf_delete(
+                pick.get_picker_matches().current.bufnr,
+                {}
+              )
+            end,
+          },
+        },
+      })
+    end)
+
     -- special paths
     pick.registry.special_paths = function()
       return pick.start({
