@@ -16,13 +16,6 @@ return {
         ['}'] = { output = { left = '{ ', right = ' }' } },
         ['['] = { output = { left = '[', right = ']' } },
         [']'] = { output = { left = '[ ', right = ' ]' } },
-        -- treesitter
-        f = {
-          input = surround.gen_spec.input.treesitter({
-            outer = '@call.outer',
-            inner = '@call.inner',
-          }),
-        },
       },
       mappings = {
         add = '',
