@@ -130,13 +130,28 @@ return {
     vim.keymap.set('n', '<S-Tab>', function()
       pick.builtin.buffers({ include_current = false }, {
         mappings = {
+          scroll_down = '',
           wipeout = {
-            char = '<C-x>',
+            char = '<C-d>',
             func = function()
-              vim.api.nvim_buf_delete(
-                pick.get_picker_matches().current.bufnr,
-                {}
-              )
+              local items = MiniPick.get_picker_items()
+              local matches = pick.get_picker_matches()
+              if #items > 0 and matches ~= nil then
+                local current = matches.current
+                local index = matches.current_ind
+                vim.notify(
+                  'Deleted buffer: '
+                    .. vim.fs.basename(vim.api.nvim_buf_get_name(current.bufnr))
+                )
+                vim.api.nvim_buf_delete(current.bufnr, {})
+                -- https://old.reddit.com/r/neovim/comments/1dq1o56/minipick_moveset_match_cursor/
+                table.remove(items, index)
+                pick.set_picker_items(items)
+                local mappings = pick.get_picker_opts().mappings
+                for i = 1, index - 1 do
+                  vim.api.nvim_input(mappings.move_down)
+                end
+              end
             end,
           },
         },
