@@ -3,7 +3,7 @@ return {
   keys = {
     'sd',
     'sr',
-    { 'S', mode = { 'x' } },
+    -- { 'S', mode = { 'x' } },
   },
   config = function()
     local surround = require('mini.surround')
@@ -32,6 +32,6 @@ return {
       respect_selection_type = true,
     })
 
-    vim.keymap.set('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]])
+    -- vim.keymap.set('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]])
   end,
 }
