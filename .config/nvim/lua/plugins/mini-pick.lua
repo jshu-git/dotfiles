@@ -128,23 +128,29 @@ return {
 
     -- buffers
     vim.keymap.set('n', '<S-Tab>', function()
-      pick.builtin.buffers({ include_current = false }, {
+      pick.builtin.buffers(nil, {
         mappings = {
           scroll_down = '',
           wipeout = {
             char = '<C-d>',
             func = function()
               local items = MiniPick.get_picker_items()
+              if items == nil or #items == 0 then
+                return
+              end
+
               local matches = pick.get_picker_matches()
-              if #items > 0 and matches ~= nil then
+              if matches ~= nil then
                 local current = matches.current
-                local index = matches.current_ind
+                local index = matches.current_ind -- save index for later
                 vim.notify(
                   'Deleted buffer: '
                     .. vim.fs.basename(vim.api.nvim_buf_get_name(current.bufnr))
                 )
+                -- currently this doesn't properly delete the active buffer
                 vim.api.nvim_buf_delete(current.bufnr, {})
-                -- https://old.reddit.com/r/neovim/comments/1dq1o56/minipick_moveset_match_cursor/
+
+                -- update picker https://old.reddit.com/r/neovim/comments/1dq1o56/minipick_moveset_match_cursor/
                 table.remove(items, index)
                 pick.set_picker_items(items)
                 local mappings = pick.get_picker_opts().mappings
