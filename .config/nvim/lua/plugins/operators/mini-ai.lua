@@ -14,24 +14,10 @@ return {
         goto_right = '',
       },
       custom_textobjects = {
-        -- extra
         g = extra_ai.buffer(),
         D = extra_ai.diagnostic(),
         L = extra_ai.line(),
         n = extra_ai.number(),
-        -- treesitter
-        F = ai.gen_spec.treesitter({
-          a = '@function.outer',
-          i = '@function.inner',
-        }),
-        l = ai.gen_spec.treesitter({
-          a = '@loop.outer',
-          i = '@loop.inner',
-        }),
-        c = ai.gen_spec.treesitter({
-          a = '@conditional.outer',
-          i = '@conditional.inner',
-        }),
         -- LazyVim
         e = { -- Word with case
           {

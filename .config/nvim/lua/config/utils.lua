@@ -30,6 +30,7 @@ H.paths = function()
 
   local paths = {
     -- nvim
+    data,
     data .. '/mini.files/trash',
     data .. '/sessions',
     vim.fn.stdpath('state'),
