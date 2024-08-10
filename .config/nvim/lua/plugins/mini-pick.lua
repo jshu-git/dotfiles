@@ -127,7 +127,7 @@ return {
     end)
 
     -- buffers
-    vim.keymap.set('n', '<S-Tab>', function()
+    vim.keymap.set('n', '<leader><Tab>', function()
       pick.builtin.buffers(nil, {
         mappings = {
           scroll_down = '',
@@ -162,7 +162,7 @@ return {
           },
         },
       })
-    end)
+    end, { desc = 'Buffers' })
 
     -- special paths
     pick.registry.special_paths = function()
