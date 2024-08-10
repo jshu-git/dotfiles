@@ -2,9 +2,9 @@ return {
   'gbprod/yanky.nvim',
   keys = {
     '<leader>y',
+    'p',
+    'P',
     { 'y', mode = { 'n', 'x' } },
-    { 'p', mode = { 'n', 'x' } },
-    { 'P', mode = { 'n', 'x' } },
   },
   config = function()
     local actions = require('yanky.picker').actions
@@ -20,8 +20,8 @@ return {
     })
 
     vim.keymap.set({ 'n', 'x' }, 'y', '<Plug>(YankyYank)')
-    vim.keymap.set({ 'n', 'x' }, 'p', '<Plug>(YankyPutAfter)')
-    vim.keymap.set({ 'n', 'x' }, 'P', '<Plug>(YankyPutIndentAfterLinewise)')
+    vim.keymap.set('n', 'p', '<Plug>(YankyPutAfter)')
+    vim.keymap.set('n', 'P', '<Plug>(YankyPutIndentAfterLinewise)')
 
     -- yank history
     vim.keymap.set(
