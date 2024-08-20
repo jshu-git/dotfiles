@@ -9,6 +9,7 @@ return {
   config = function()
     local grug = require('grug-far')
     grug.setup({
+      wrap = false,
       transient = true,
       keymaps = {
         replace = '',
@@ -27,14 +28,9 @@ return {
         toggleShowCommand = { n = 'gs' },
         swapEngine = { n = 'ge' },
       },
-      resultsSeparatorLineChar = '▔',
-      -- currently broken
-      -- icons = { enabled = false },
+      icons = { enabled = false },
       history = {
         autoSave = { onBufDelete = false },
-      },
-      folding = {
-        foldcolumn = '0',
       },
     })
 
