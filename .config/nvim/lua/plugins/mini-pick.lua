@@ -112,7 +112,10 @@ return {
 
     -- grep buffer
     vim.keymap.set('n', ',', function()
-      extra.pickers.buf_lines({ scope = 'current' }, {
+      extra.pickers.buf_lines({
+        scope = 'current',
+        preserve_order = true,
+      }, {
         source = {
           choose = function(item)
             ---@diagnostic disable:param-type-mismatch
@@ -336,16 +339,6 @@ return {
       extra.pickers.commands,
       { desc = 'Commands' }
     )
-
-    -- https://github.com/echasnovski/mini.nvim/issues/1087
-    vim.api.nvim_create_autocmd('User', {
-      pattern = 'MiniPickStart',
-      callback = function()
-        if vim.fn.mode() == 'n' then
-          vim.o.cmdheight = 0
-        end
-      end,
-    })
 
     -- highlights
     require('config.utils').apply_highlights({
