@@ -1,4 +1,5 @@
 return {
+  enabled = false,
   'gbprod/nord.nvim',
   lazy = false,
   priority = 1000,

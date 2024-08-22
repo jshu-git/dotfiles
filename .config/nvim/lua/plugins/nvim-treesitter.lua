@@ -47,10 +47,5 @@ return {
     vim.opt.foldmethod = 'expr'
     vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
     vim.opt.foldlevelstart = 99
-
-    -- highlights
-    require('config.utils').apply_highlights({
-      TreesitterContext = { link = 'CursorLine' },
-    })
   end,
 }

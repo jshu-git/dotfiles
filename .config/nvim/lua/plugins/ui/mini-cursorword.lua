@@ -15,10 +15,5 @@ return {
         vim.api.nvim_command('normal! h')
       end, 1)
     end, { desc = 'mini.cursorword' })
-
-    -- highlights
-    require('config.utils').apply_highlights({
-      MiniCursorWord = { link = 'Search' },
-    })
   end,
 }

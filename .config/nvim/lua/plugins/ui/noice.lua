@@ -59,10 +59,7 @@ return {
             width = require('config.utils').popup.width,
             height = require('config.utils').popup.height,
           },
-          win_options = {
-            wrap = true,
-            winhighlight = { FloatBorder = 'FloatBorder' },
-          },
+          win_options = { wrap = true },
         },
         hover = {
           border = { style = 'single', padding = { 0, 1 } },
@@ -72,9 +69,6 @@ return {
             min_width = math.floor(0.3 * vim.o.columns),
           },
           border = { style = 'single', padding = { 0, 0 } },
-          win_options = {
-            winhighlight = { FloatBorder = 'FloatBorder' },
-          },
         },
         cmdline_input = {
           border = { style = 'single', padding = { 0, 0 } },
@@ -85,9 +79,6 @@ return {
             col = '50%',
           },
           border = { style = 'single', padding = { 0, 0 } },
-          win_options = {
-            winhighlight = { FloatBorder = 'FloatBorder' },
-          },
         },
       },
       routes = {
@@ -132,10 +123,5 @@ return {
       vim.cmd('nohlsearch')
       vim.cmd('Noice dismiss')
     end)
-
-    -- highlights
-    require('config.utils').apply_highlights({
-      NoiceCmdLinePopupBorder = { link = 'FloatBorder' },
-    })
   end,
 }

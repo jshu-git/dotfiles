@@ -14,9 +14,5 @@ return {
         { '<', '>' },
       },
     })
-
-    require('config.utils').apply_highlights({
-      MatchParen = { link = 'Underlined' },
-    })
   end,
 }

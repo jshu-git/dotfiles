@@ -36,11 +36,5 @@ return {
     vim.keymap.set('i', '<A-p>', function()
       neocodeium.cycle_or_complete(-1)
     end)
-
-    -- highlights
-    require('config.utils').apply_highlights({
-      NeoCodeiumSuggestion = { link = 'NonText' },
-      NeoCodeiumLabel = { link = 'Search' },
-    })
   end,
 }

@@ -63,39 +63,39 @@ bindings = [
     { key = "Tab", mods = "Control|Shift", chars = "\u0001\u0010" },
 ]
 
-# nord https://github.com/alacritty/alacritty-theme/blob/master/themes/nord.toml
+# bamboo https://github.com/ribru17/bamboo.nvim/blob/master/extras/alacritty/bamboo.toml
 [colors]
-cursor = { cursor = "#D8DEE9" }
-vi_mode_cursor = { cursor = "#EBCB8B" }
+cursor = { cursor = "#3a4238" }
+vi_mode_cursor = { cursor = "#bb9631" }
 selection = { text = "CellForeground", background = "CellForeground" }
 
-[colors.search]
-matches = { foreground = "#d8dee9", background = "#5b7a88" }
+# [colors.search]
+# matches = { foreground = "#d8dee9", background = "#5b7a88" }
 # focused_match = { foreground = "#d8dee9", background = "#40505d" }
 
 # Default colors
 [colors.primary]
-background = '#2E3440'
-foreground = '#D8DEE9'
+background = '#fafae0'
+foreground = '#3a4238'
 
 # Normal colors
 [colors.normal]
-black = '#3B4252'
-red = '#BF616A'
-green = '#A3BE8C'
-yellow = '#EBCB8B'
-blue = '#81A1C1'
-magenta = '#B48EAD'
-cyan = '#88C0D0'
-white = '#E5E9F0'
+black = '#c7c7af'
+red = '#c72a3c'
+green = '#27850b'
+yellow = '#bb9631'
+blue = '#1745d5'
+magenta = '#8a4adf'
+cyan = '#188a9e'
+white = '#3a4238'
 
 # Bright colors
 [colors.bright]
-black = '#4C566A'
-red = '#BF616A'
-green = '#A3BE8C'
-yellow = '#EBCB8B'
-blue = '#81A1C1'
-magenta = '#B48EAD'
-cyan = '#8FBCBB'
-white = '#ECEFF4'
+black = '#a1a7a0'
+red = '#c72a3c'
+green = '#27850b'
+yellow = '#bb9631'
+blue = '#1745d5'
+magenta = '#8a4adf'
+cyan = '#188a9e'
+white = '#252623'

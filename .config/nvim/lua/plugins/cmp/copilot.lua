@@ -1,5 +1,4 @@
 return {
-  enabled = false,
   'zbirenbaum/copilot.lua',
   cond = vim.env.SSH_CLIENT ~= nil,
   cmd = 'Copilot',
@@ -50,11 +49,5 @@ return {
     vim.keymap.set('i', '<A-l>', suggestion.accept_word)
     vim.keymap.set('i', '<A-n>', suggestion.next)
     vim.keymap.set('i', '<A-p>', suggestion.prev)
-
-    -- highlights
-    require('config.utils').apply_highlights({
-      CopilotSuggestion = { link = 'NonText' },
-      CopilotAnnotation = { link = 'Search' },
-    })
   end,
 }
