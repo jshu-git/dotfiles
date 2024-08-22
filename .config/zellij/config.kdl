@@ -102,8 +102,7 @@ plugins {
     zjstatus        { location "file:.config/zellij/plugins/zjstatus.wasm"; }
 }
 pane_frames false
-// theme "nord"
-theme "everforest-light"
+theme "nord"
 default_layout "custom"
 default_mode "locked"
 layout_dir ".config/zellij/layouts/"

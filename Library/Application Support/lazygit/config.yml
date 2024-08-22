@@ -12,7 +12,7 @@ gui:
 git:
   paging:
     colorArg: always
-    pager: delta --light --paging=never
+    pager: delta --dark --paging=never
 quitOnTopLevelReturn: true
 notARepository: quit
 promptToReturnFromSubprocess: false

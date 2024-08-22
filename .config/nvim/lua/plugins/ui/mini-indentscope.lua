@@ -24,5 +24,10 @@ return {
         vim.b.miniindentscope_disable = true
       end,
     })
+
+    -- highlights
+    require('config.utils').apply_highlights({
+      MiniIndentScopeSymbol = { link = 'NonText' },
+    })
   end,
 }
