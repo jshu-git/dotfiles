@@ -46,6 +46,7 @@ CONFIG="$HOME/.config"
 ZSH="$CONFIG/zsh"
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^[l' autosuggest-accept
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#bdbfc9'
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # completions

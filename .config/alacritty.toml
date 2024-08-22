@@ -63,39 +63,81 @@ bindings = [
     { key = "Tab", mods = "Control|Shift", chars = "\u0001\u0010" },
 ]
 
-# bamboo https://github.com/ribru17/bamboo.nvim/blob/master/extras/alacritty/bamboo.toml
-[colors]
-cursor = { cursor = "#3a4238" }
-vi_mode_cursor = { cursor = "#bb9631" }
-selection = { text = "CellForeground", background = "CellForeground" }
-
-# [colors.search]
-# matches = { foreground = "#d8dee9", background = "#5b7a88" }
-# focused_match = { foreground = "#d8dee9", background = "#40505d" }
-
-# Default colors
+# Nightfox Alacritty Colors
+## name: dawnfox
+## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/dawnfox/alacritty.toml
 [colors.primary]
-background = '#fafae0'
-foreground = '#3a4238'
+background = "#faf4ed"
+foreground = "#575279"
+dim_foreground = "#4c4769"
+bright_foreground = "#625c87"
 
-# Normal colors
+[colors.cursor]
+# text = "#575279"
+cursor = "#625c87"
+
+[colors.vi_mode_cursor]
+text = "#575279"
+cursor = "#56949f"
+
+[colors.search.matches]
+foreground = "#575279"
+background = "#b8cece"
+
+[colors.search.focused_match]
+foreground = "#575279"
+background = "#618774"
+
+[colors.footer_bar]
+foreground = "#575279"
+background = "#ebdfe4"
+
+[colors.hints.start]
+foreground = "#575279"
+background = "#d7827e"
+
+[colors.hints.end]
+foreground = "#575279"
+background = "#ebdfe4"
+
+[colors.selection]
+text = "#575279"
+background = "#d0d8d8"
+
 [colors.normal]
-black = '#c7c7af'
-red = '#c72a3c'
-green = '#27850b'
-yellow = '#bb9631'
-blue = '#1745d5'
-magenta = '#8a4adf'
-cyan = '#188a9e'
-white = '#3a4238'
+black = "#575279"
+red = "#b4637a"
+green = "#618774"
+yellow = "#ea9d34"
+blue = "#286983"
+magenta = "#907aa9"
+cyan = "#56949f"
+white = "#e5e9f0"
 
-# Bright colors
 [colors.bright]
-black = '#a1a7a0'
-red = '#c72a3c'
-green = '#27850b'
-yellow = '#bb9631'
-blue = '#1745d5'
-magenta = '#8a4adf'
-cyan = '#188a9e'
-white = '#252623'
+black = "#5f5695"
+red = "#c26d85"
+green = "#629f81"
+yellow = "#eea846"
+blue = "#2d81a3"
+magenta = "#9a80b9"
+cyan = "#5ca7b4"
+white = "#e6ebf3"
+
+[colors.dim]
+black = "#504c6b"
+red = "#a5576d"
+green = "#597668"
+yellow = "#dd9024"
+blue = "#295e73"
+magenta = "#816b9a"
+cyan = "#50848c"
+white = "#c8cfde"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#d7827e"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#d685af"

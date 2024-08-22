@@ -23,14 +23,6 @@ return {
       grapple.toggle()
     end, { desc = 'Grapple' })
     vim.keymap.set('n', '<Tab>', grapple.toggle_tags)
-
-    -- highlights
-    -- has to go here since lazy loaded
-    require('config.utils').apply_highlights({
-      -- GrappleFooter = { link = 'FloatBorder' },
-      GrappleCurrent = { link = 'Normal' },
-      -- GrappleName = { link = 'CursorLine' },
-    })
   end,
 
   -- {

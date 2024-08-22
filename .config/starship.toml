@@ -18,7 +18,7 @@ disabled = false
 truncation_length = 8
 truncation_symbol = "…/"
 truncate_to_repo = false
-format = "[$path ](white)"
+format = "[$path ](black)"
 
 [git_branch]
 disabled = false
