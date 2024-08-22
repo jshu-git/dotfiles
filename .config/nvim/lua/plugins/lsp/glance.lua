@@ -8,7 +8,7 @@ return {
       height = require('config.utils').popup.height,
       border = {
         enable = true,
-        top_char = '▔',
+        top_char = '',
         bottom_char = '▔',
       },
       list = {

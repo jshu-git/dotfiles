@@ -13,7 +13,7 @@ layout {
                 mode_locked          ""
 
                 // tabs
-                tab_normal "#[fg=white] {name}{floating_indicator}{fullscreen_indicator}{sync_indicator} "
+                tab_normal "#[fg=#616e88] {name}{floating_indicator}{fullscreen_indicator}{sync_indicator} "
                 tab_active "#[bg=black] {name}{floating_indicator}{fullscreen_indicator}{sync_indicator} "
                 tab_sync_indicator       " 󰓦"
                 tab_fullscreen_indicator " 󰊓"

@@ -3,7 +3,6 @@ source <(fzf --zsh)
 
 # https://www.mankier.com/1/fzf#Options-Interface
 export FZF_DEFAULT_OPTS="
---color=light
 --no-multi
 --pointer ▶
 --border=sharp

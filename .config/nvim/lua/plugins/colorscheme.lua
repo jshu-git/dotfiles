@@ -37,6 +37,9 @@ return {
 
           -- noice
           highlights.NoiceCmdLinePopupBorder = { link = 'FloatBorder' }
+
+          -- treesitter
+          highlights.TreesitterContext = { link = 'CursorLine' }
         end,
       })
 
