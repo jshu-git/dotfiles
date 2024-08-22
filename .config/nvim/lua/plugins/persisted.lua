@@ -15,7 +15,7 @@ return {
     local persisted = require('persisted')
     persisted.setup({ autoload = true })
 
-    vim.keymap.set('n', '<leader>Sx', function()
+    vim.keymap.set('n', '<leader>Sd', function()
       persisted.delete()
       vim.notify('Deleted Current Session')
     end, { desc = 'Delete Current Session' })
@@ -27,5 +27,8 @@ return {
       persisted.stop()
       vim.notify('Stopped Recording Session')
     end, { desc = 'Stop Recording Session' })
+
+    -- picker
+    vim.keymap.set('n', '<leader>fs', persisted.select, { desc = 'Sessions' })
   end,
 }
