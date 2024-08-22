@@ -17,6 +17,7 @@ return {
             NormalFloat = { link = 'Normal' },
             CursorLineNr = { link = 'CursorLineNr' },
             CmpItemAbbrMatch = { link = 'DiagnosticWarn' },
+            EndOfBuffer = { link = 'NonText' },
 
             -- mini
             MiniPickPrompt = { link = 'Normal' },

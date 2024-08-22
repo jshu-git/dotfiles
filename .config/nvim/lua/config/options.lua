@@ -1,36 +1,35 @@
-local o = vim.opt
+local opt = vim.opt
 
 -- misc
-o.undofile = true
-o.swapfile = false
-o.confirm = true
-o.termguicolors = true
+opt.undofile = true
+opt.swapfile = false
+opt.confirm = true
+opt.termguicolors = true
 
 -- editing
 vim.schedule(function()
-  o.clipboard = 'unnamedplus'
+  opt.clipboard = 'unnamedplus'
 end)
-o.virtualedit = 'block'
-o.startofline = true
+opt.virtualedit = 'block'
+opt.startofline = true
 
 -- tabs/indents
-o.breakindent = true
-o.smartindent = true
-o.wrap = false
-o.tabstop = 4
-o.shiftwidth = 4
+opt.breakindent = true
+opt.smartindent = true
+opt.wrap = false
+opt.tabstop = 4
+opt.shiftwidth = 4
 
 -- chars
-o.fillchars:append({
-  eob = ' ',
+opt.fillchars:append({
   diff = '╱',
   foldopen = '',
   foldclose = '',
   fold = '╌',
   foldsep = ' ',
 })
-o.list = true
-o.listchars = {
+opt.list = true
+opt.listchars = {
   tab = '↦ ',
   extends = '…',
   precedes = '…',
@@ -38,33 +37,33 @@ o.listchars = {
 }
 
 -- statusline
-o.cmdheight = 0
-o.laststatus = 3
-o.showmode = false
-o.showcmd = false
+opt.cmdheight = 0
+opt.laststatus = 3
+opt.showmode = false
+opt.showcmd = false
 
 -- statuscolumn
-o.number = true
-o.signcolumn = 'yes'
+opt.number = true
+opt.signcolumn = 'yes'
 
 -- cursorline
-o.cursorline = true
-o.cursorlineopt = 'number'
+opt.cursorline = true
+opt.cursorlineopt = 'number'
 
 -- splits
-o.splitbelow = true
-o.splitright = true
-o.splitkeep = 'screen'
+opt.splitbelow = true
+opt.splitright = true
+opt.splitkeep = 'screen'
 
 -- menus
-o.pumheight = 5
+opt.pumheight = 5
 
 -- search
-o.ignorecase = true
-o.smartcase = true
-o.wrapscan = false
--- o.incsearch = false
+opt.ignorecase = true
+opt.smartcase = true
+opt.wrapscan = false
+-- opt.incsearch = false
 
 -- mouse
-o.mouse = 'a'
-o.mousescroll = 'ver:1,hor:0'
+opt.mouse = 'a'
+opt.mousescroll = 'ver:1,hor:0'
