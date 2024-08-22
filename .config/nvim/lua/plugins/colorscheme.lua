@@ -15,10 +15,12 @@ return {
         groups = {
           all = {
             NormalFloat = { link = 'Normal' },
-            CmpItemAbbrMatch = { link = 'CursorLineNr' },
+            CursorLineNr = { link = 'Visual' },
+            CmpItemAbbrMatch = { link = 'DiagnosticWarn' },
 
             -- mini
-            MiniPickMatchRanges = { link = 'CursorLineNr' },
+            MiniPickPrompt = { link = 'Normal' },
+            MiniPickMatchRanges = { link = 'DiagnosticVirtualTextWarn' },
             MiniIndentScopeSymbol = { link = 'NonText' },
 
             -- copilot
