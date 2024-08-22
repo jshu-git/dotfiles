@@ -15,7 +15,7 @@ return {
         groups = {
           all = {
             NormalFloat = { link = 'Normal' },
-            CursorLineNr = { link = 'Visual' },
+            CursorLineNr = { link = 'CursorLineNr' },
             CmpItemAbbrMatch = { link = 'DiagnosticWarn' },
 
             -- mini
@@ -31,6 +31,12 @@ return {
 
             -- sentiment
             MatchParen = { link = 'Underlined' },
+
+            -- glance
+            GlanceWinBarFilename = { link = 'CursorLine' },
+            GlanceWinBarFilepath = { link = 'CursorLine' },
+            GlanceWinBarTitle = { link = 'CursorLine' },
+            GlanceListNormal = { link = 'CursorLine' },
           },
         },
       })
