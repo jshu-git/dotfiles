@@ -54,8 +54,11 @@ later(function()
 end)
 
 -- lsp
-later(function()
-  add('neovim/nvim-lspconfig')
+now(function()
+  add({
+    source = 'neovim/nvim-lspconfig',
+    depends = { 'hrsh7th/cmp-nvim-lsp' },
+  })
   require('plugins.lsp.nvim-lspconfig')
 
   add('folke/lazydev.nvim')
@@ -63,7 +66,8 @@ later(function()
 
   add('dnlhc/glance.nvim')
   require('plugins.lsp.glance')
-
+end)
+later(function()
   add('stevearc/conform.nvim')
   require('plugins.lsp.conform')
 
@@ -75,7 +79,7 @@ later(function()
 end)
 
 -- cmp
-now(function()
+later(function()
   add({
     source = 'hrsh7th/nvim-cmp',
     depends = {
@@ -92,8 +96,7 @@ now(function()
     },
   })
   require('plugins.cmp.nvim-cmp')
-end)
-later(function()
+
   require('plugins.cmp.mini-pairs')
 
   add('monkoose/neocodeium')
