@@ -1,7 +1,7 @@
-local function total_lines()
+local total_lines = function()
   return vim.api.nvim_buf_line_count(0) .. 'L'
 end
-local function file_size()
+local file_size = function()
   local size = vim.fn.getfsize(vim.fn.expand('%:p')) / 1024
   if size < 0 then
     return ''
@@ -56,3 +56,39 @@ require('lualine').setup({
     lualine_z = {},
   },
 })
+
+-- local statusline = require('mini.statusline')
+-- statusline.setup({
+--   content = {
+--     active = function()
+--       local mode, mode_hl = statusline.section_mode({ trunc_width = 120 })
+--       local git = statusline.section_git({ trunc_width = 40 })
+--       local diff = statusline.section_diff({ icon = '', trunc_width = 75 })
+--       local diagnostics = statusline.section_diagnostics({
+--         icon = '',
+--         signs = {
+--           ERROR = require('config.utils').signs.Error,
+--           WARN = require('config.utils').signs.Warn,
+--           INFO = require('config.utils').signs.Info,
+--           HINT = require('config.utils').signs.Hint,
+--         },
+--         trunc_width = 75,
+--       })
+--       local filename = statusline.section_filename({ trunc_width = 140 })
+--       local fileinfo = statusline.section_fileinfo({ trunc_width = 120 })
+--       local total_lines = function()
+--         return vim.api.nvim_buf_line_count(0) .. 'L'
+--       end
+--
+--       return statusline.combine_groups({
+--         { hl = mode_hl, strings = { mode } },
+--         { hl = 'MiniStatuslineDevinfo', strings = { git, diff, diagnostics } },
+--         '%<',
+--         { hl = 'MiniStatuslineFilename', strings = { filename } },
+--         '%=',
+--         { hl = 'MiniStatuslineFileinfo', strings = { fileinfo } },
+--         { hl = mode_hl, strings = { total_lines() } },
+--       })
+--     end,
+--   },
+-- })
