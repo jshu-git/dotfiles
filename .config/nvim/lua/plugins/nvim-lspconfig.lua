@@ -1,9 +1,9 @@
 -- https://neovim.io/doc/user/lsp.html#lsp-defaults-disable
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(args)
-    vim.keymap.del('n', 'K', { buffer = args.buf })
-  end,
-})
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--   callback = function(args)
+--     vim.keymap.del('n', 'K', { buffer = args.buf })
+--   end,
+-- })
 
 local map = function(lhs, rhs, desc, opts)
   vim.keymap.set('n', lhs, rhs, vim.tbl_deep_extend('force', { desc = 'LSP: ' .. desc }, opts or {}))

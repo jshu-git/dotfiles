@@ -25,7 +25,8 @@ opt.fillchars:append({
   diff = '╱',
   foldopen = '',
   foldclose = '',
-  fold = '╌',
+  -- fold = '╌',
+  fold = '-',
   foldsep = ' ',
 })
 opt.list = true
