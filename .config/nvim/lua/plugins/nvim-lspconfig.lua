@@ -11,6 +11,8 @@ end
 map('gs', vim.lsp.buf.hover, 'Hover')
 map('gS', vim.lsp.buf.signature_help, 'Signature Help')
 map('ga', vim.lsp.buf.code_action, 'Code Action')
+
+-- glance
 map('gd', '<cmd>Glance definitions<CR>', 'Goto Definition')
 map('gr', '<cmd>Glance references<CR>', 'Goto References')
 

@@ -47,6 +47,9 @@ now(function()
   require('guess-indent').setup({})
 
   add('sitiom/nvim-numbertoggle')
+
+  -- HACK: this is necessary because lsp binds K and can't be disabled
+  require('plugins.editing.mini-move')
 end)
 
 later(function()
