@@ -27,10 +27,10 @@ vim.keymap.set('n', '<leader>e', function()
     files.reveal_cwd()
   end
 end, { desc = 'Explorer' })
+-- vim.keymap.set('n', '<leader>E', function()
+--   files.open(nil)
+-- end, { desc = 'Explorer (cwd)' })
 vim.keymap.set('n', '<leader>E', function()
-  files.open(nil)
-end, { desc = 'Explorer (cwd)' })
-vim.keymap.set('n', "<leader>'", function()
   files.open(files.get_latest_path())
 end, { desc = 'Explorer (Latest)' })
 

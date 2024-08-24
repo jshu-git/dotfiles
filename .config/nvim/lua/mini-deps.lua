@@ -30,7 +30,23 @@ now(function()
 
   add('gbprod/nord.nvim')
   require('plugins.colorscheme')
-  vim.cmd.colorscheme('nord')
+
+  add('nvim-lualine/lualine.nvim')
+  require('plugins.lualine')
+
+  local icons = require('mini.icons')
+  icons.setup({
+    filetype = {
+      minifiles = { glyph = '󰉋', hl = 'Directory' },
+      minipick = { glyph = '󰍉' },
+    },
+  })
+  icons.mock_nvim_web_devicons()
+
+  add('nmac427/guess-indent.nvim')
+  require('guess-indent').setup({})
+
+  add('sitiom/nvim-numbertoggle')
 end)
 
 later(function()
@@ -56,23 +72,17 @@ now(function()
     source = 'neovim/nvim-lspconfig',
     depends = { 'hrsh7th/cmp-nvim-lsp' },
   })
-  require('plugins.lsp.nvim-lspconfig')
+  require('plugins.nvim-lspconfig')
 
   add('folke/lazydev.nvim')
   require('lazydev').setup({})
-
-  add('dnlhc/glance.nvim')
-  require('plugins.lsp.glance')
 end)
 later(function()
-  add('stevearc/conform.nvim')
-  require('plugins.lsp.conform')
-
-  add('stevearc/aerial.nvim')
-  require('plugins.lsp.aerial')
-
+  add('dnlhc/glance.nvim')
   add('smjonas/inc-rename.nvim')
-  require('plugins.lsp.inc-rename')
+  add('stevearc/aerial.nvim')
+  add('stevearc/conform.nvim')
+  vim.cmd('runtime! lua/plugins/lsp/*.lua')
 end)
 
 -- cmp
@@ -92,162 +102,66 @@ later(function()
       'onsails/lspkind-nvim',
     },
   })
-  require('plugins.cmp.nvim-cmp')
-
-  require('plugins.cmp.mini-pairs')
-
-  add('monkoose/neocodeium')
-  require('plugins.cmp.neocodeium')
-
   add('dmtrKovalenko/caps-word.nvim')
-  require('plugins.cmp.caps-word')
-
+  add('monkoose/neocodeium')
   -- work
   add('zbirenbaum/copilot.lua')
-  require('plugins.cmp.copilot')
+  vim.cmd('runtime! lua/plugins/cmp/*.lua')
 end)
 
 -- ui
-now(function()
-  add('nvim-lualine/lualine.nvim')
-  require('plugins.ui.lualine')
-
-  require('plugins.ui.mini-icons')
-
-  add('sitiom/nvim-numbertoggle')
-end)
 later(function()
-  require('plugins.ui.mini-clue')
-  require('plugins.ui.mini-indentscope')
-  require('plugins.ui.mini-hipatterns')
-  require('plugins.ui.mini-trailspace')
-  require('plugins.ui.mini-cursorword')
-
-  add('MeanderingProgrammer/render-markdown.nvim')
-  require('plugins.ui.render-markdown')
-
-  add('nkakouros-original/scrollofffraction.nvim')
-  require('plugins.ui.scrollofffraction')
-
-  add('OXY2DEV/helpview.nvim')
-  require('plugins.ui.helpview')
-
-  add('luukvbaal/statuscol.nvim')
-  require('plugins.ui.statuscol')
-
-  add('utilyre/sentiment.nvim')
-  require('plugins.ui.sentiment')
-
-  add('dstein64/nvim-scrollview')
-  require('plugins.ui.nvim-scrollview')
-
-  add('stevearc/quicker.nvim')
-  require('plugins.ui.quicker')
-
   add('0xAdk/full_visual_line.nvim')
-  require('plugins.ui.full_visual_line')
-
-  add('moyiz/command-and-cursor.nvim')
-  require('plugins.ui.command-and-cursor')
-
+  add('MeanderingProgrammer/render-markdown.nvim')
+  add('OXY2DEV/helpview.nvim')
   add('briangwaltney/paren-hint.nvim')
-  require('plugins.ui.paren-hint')
-
+  add('dstein64/nvim-scrollview')
+  add('luukvbaal/statuscol.nvim')
+  add('moyiz/command-and-cursor.nvim')
+  add('nkakouros-original/scrollofffraction.nvim')
+  add('stevearc/quicker.nvim')
   add('tzachar/highlight-undo.nvim')
-  require('plugins.ui.highlight-undo')
-
+  add('utilyre/sentiment.nvim')
   add({
     source = 'folke/noice.nvim',
     depends = { 'MunifTanjim/nui.nvim' },
   })
-  require('plugins.ui.noice')
-end)
-
--- navigation
-now(function()
-  require('plugins.navigation.mini-move')
-end)
-later(function()
-  require('plugins.navigation.mini-jump')
-  require('plugins.navigation.mini-jump2d')
-
-  add('cbochs/grapple.nvim')
-  require('plugins.navigation.grapple')
-
-  add('BranimirE/fix-auto-scroll.nvim')
-  require('plugins.navigation.fix-auto-scroll')
-
-  add('chrisgrieser/nvim-early-retirement')
-  require('plugins.navigation.nvim-early-retirement')
+  vim.cmd('runtime! lua/plugins/ui/*.lua')
 end)
 
 -- editing
-now(function()
-  add('nmac427/guess-indent.nvim')
-  require('plugins.editing.guess-indent')
-end)
 later(function()
-  add('numToStr/Comment.nvim')
-  require('plugins.editing.comment')
-
-  add('monaqa/dial.nvim')
-  require('plugins.editing.dial')
-
-  add('MagicDuck/grug-far.nvim')
-  require('plugins.editing.grug-far')
-
-  add('tomiis4/Hypersonic.nvim')
-  require('plugins.editing.hypersonic')
-
   add('2kabhishek/nerdy.nvim')
-  require('plugins.editing.nerdy')
-
-  add('mbbill/undotree')
-  require('plugins.editing.undotree')
-
+  add('BranimirE/fix-auto-scroll.nvim')
+  add('MagicDuck/grug-far.nvim')
+  add('cbochs/grapple.nvim')
+  add('chrisgrieser/nvim-early-retirement')
   add('gbprod/yanky.nvim')
-  require('plugins.editing.yanky')
-
+  add('mbbill/undotree')
+  add('monaqa/dial.nvim')
+  add('numToStr/Comment.nvim')
+  add('tomiis4/Hypersonic.nvim')
   -- work
   add('ojroques/nvim-osc52')
-  require('plugins.editing.nvim-osc52')
+  vim.cmd('runtime! lua/plugins/editing/*.lua')
 end)
 
 -- operators
 later(function()
-  require('plugins.operators.mini-ai')
-  require('plugins.operators.mini-splitjoin')
-  require('plugins.operators.mini-operators')
-  require('plugins.operators.mini-surround')
-  require('plugins.operators.mini-align')
-
-  add('chrisgrieser/nvim-rip-substitute')
-  require('plugins.operators.nvim-rip-substitute')
-
-  add('gbprod/substitute.nvim')
-  require('plugins.operators.substitute')
-
   add('NStefan002/visual-surround.nvim')
-  require('plugins.operators.visual-surround')
+  add('chrisgrieser/nvim-rip-substitute')
+  add('gbprod/substitute.nvim')
+  vim.cmd('runtime! lua/plugins/operators/*.lua')
 end)
 
 -- git
 later(function()
-  require('plugins.git.mini-diff')
-  require('plugins.git.mini-git')
-
   add('sindrets/diffview.nvim')
-  require('plugins.git.diffview')
-
   add('jshu-git/blame.nvim')
-  require('plugins.git.git-blame')
-
+  add('kdheepak/lazygit.nvim')
   add({
     source = 'ruifm/gitlinker.nvim',
     depends = { 'nvim-lua/plenary.nvim' },
   })
-  require('plugins.git.gitlinker')
-
-  add('kdheepak/lazygit.nvim')
-  require('plugins.git.lazygit')
+  vim.cmd('runtime! lua/plugins/git/*.lua')
 end)

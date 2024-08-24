@@ -30,6 +30,7 @@ require('gitlinker').setup({
     end,
   },
 })
+
 -- copy url
 vim.keymap.set('n', '<leader>gy', function()
   gitlinker.get_buf_range_url('n', { action_callback = actions.copy_to_clipboard })

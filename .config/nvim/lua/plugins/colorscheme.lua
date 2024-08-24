@@ -39,3 +39,5 @@ require('nord').setup({
     highlights.GlancePreviewEndOfBuffer = { link = 'EndOfBuffer' }
   end,
 })
+
+vim.cmd.colorscheme('nord')

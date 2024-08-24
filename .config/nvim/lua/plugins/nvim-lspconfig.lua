@@ -1,46 +1,38 @@
+-- https://neovim.io/doc/user/lsp.html#lsp-defaults-disable
 vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('LspConfig', { clear = true }),
-  callback = function(event)
-    local bufnr = event.buf
-    local map = function(keys, func, desc, extra_opts)
-      vim.keymap.set(
-        'n',
-        keys,
-        func,
-        vim.tbl_deep_extend('force', {
-          buffer = bufnr,
-          desc = 'LSP: ' .. desc,
-        }, extra_opts or {})
-      )
-    end
-
-    map('gs', vim.lsp.buf.hover, 'Hover')
-    map('gS', vim.lsp.buf.signature_help, 'Signature Help')
-    map('ga', vim.lsp.buf.code_action, 'Code Action')
-    map('gd', '<cmd>Glance definitions<CR>', 'Goto Definition')
-    map('gr', '<cmd>Glance references<CR>', 'Goto References')
-
-    -- inc-rename
-    map('cr', function()
-      return ':IncRename ' .. vim.fn.expand('<cword>')
-    end, 'LSP: Rename Variable', { expr = true })
-    map('cR', ':IncRename ', 'Rename Variable')
-
-    -- diagnostics
-    map('gl', vim.diagnostic.open_float, 'Hover Diagnostic')
-    map('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
-    map(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
-
-    -- lsp menu
-    map('<leader>li', '<cmd>LspInfo<CR>', 'Info')
-    map('<leader>lr', '<cmd>LspRestart<CR>', 'Restart')
-
-    -- inlay hints
-    map('<leader>th', function()
-      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }), { bufnr = bufnr })
-    end, 'Toggle Inlay Hints')
+  callback = function(args)
+    vim.keymap.del('n', 'K', { buffer = args.buf })
   end,
 })
+
+local map = function(lhs, rhs, desc, opts)
+  vim.keymap.set('n', lhs, rhs, vim.tbl_deep_extend('force', { desc = 'LSP: ' .. desc }, opts or {}))
+end
+map('gs', vim.lsp.buf.hover, 'Hover')
+map('gS', vim.lsp.buf.signature_help, 'Signature Help')
+map('ga', vim.lsp.buf.code_action, 'Code Action')
+map('gd', '<cmd>Glance definitions<CR>', 'Goto Definition')
+map('gr', '<cmd>Glance references<CR>', 'Goto References')
+
+-- inc-rename
+map('cr', function()
+  return ':IncRename ' .. vim.fn.expand('<cword>')
+end, 'LSP: Rename Variable', { expr = true })
+map('cR', ':IncRename ', 'Rename Variable')
+
+-- diagnostics
+map('gl', vim.diagnostic.open_float, 'Hover Diagnostic')
+map('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
+map(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
+
+-- lsp menu
+map('<leader>li', '<cmd>LspInfo<CR>', 'Info')
+map('<leader>lr', '<cmd>LspRestart<CR>', 'Restart')
+
+-- inlay hints
+map('<leader>th', function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, 'Toggle Inlay Hints')
 
 local servers = {
   marksman = {},
