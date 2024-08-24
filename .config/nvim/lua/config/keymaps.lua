@@ -26,6 +26,7 @@ map('n', 'X', 'mzA<BS><Esc>`z')
 map('n', '<leader>tw', '<cmd>setlocal wrap!<CR>', { desc = 'Toggle Word Wrap' })
 
 -- movement
+map({ 'n', 'x' }, '\\', '%')
 map({ 'n', 'x' }, 'j', function()
   return vim.v.count > 0 and 'j' or 'gj'
 end, { expr = true })
