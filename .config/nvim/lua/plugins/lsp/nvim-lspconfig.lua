@@ -37,10 +37,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- inlay hints
     map('<leader>th', function()
-      vim.lsp.inlay_hint.enable(
-        not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }),
-        { bufnr = bufnr }
-      )
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }), { bufnr = bufnr })
     end, 'Toggle Inlay Hints')
   end,
 })

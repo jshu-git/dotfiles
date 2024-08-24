@@ -16,26 +16,11 @@ diff.setup({
   },
 })
 
-vim.keymap.set(
-  'n',
-  '<leader>td',
-  diff.toggle_overlay,
-  { desc = 'Git: Toggle Diff' }
-)
+vim.keymap.set('n', '<leader>td', diff.toggle_overlay, { desc = 'Git: Toggle Diff' })
 
 -- reset hunks
-vim.keymap.set(
-  'n',
-  '<leader>gr',
-  'gHgh',
-  { desc = 'Reset (Hunk)', remap = true }
-)
-vim.keymap.set(
-  'x',
-  '<leader>gr',
-  'gH',
-  { desc = 'Reset Hunk (Visual)', remap = true }
-)
+vim.keymap.set('n', '<leader>gr', 'gHgh', { desc = 'Reset (Hunk)', remap = true })
+vim.keymap.set('x', '<leader>gr', 'gH', { desc = 'Reset Hunk (Visual)', remap = true })
 vim.keymap.set('n', '<leader>gR', function()
   diff.do_hunks(0, 'reset')
 end, { desc = 'Reset (Buffer)' })

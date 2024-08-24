@@ -32,28 +32,16 @@ require('gitlinker').setup({
 })
 -- copy url
 vim.keymap.set('n', '<leader>gy', function()
-  gitlinker.get_buf_range_url(
-    'n',
-    { action_callback = actions.copy_to_clipboard }
-  )
+  gitlinker.get_buf_range_url('n', { action_callback = actions.copy_to_clipboard })
 end, { desc = 'Yank Git URL' })
 vim.keymap.set('v', '<leader>gy', function()
-  gitlinker.get_buf_range_url(
-    'v',
-    { action_callback = actions.copy_to_clipboard }
-  )
+  gitlinker.get_buf_range_url('v', { action_callback = actions.copy_to_clipboard })
 end, { desc = 'Yank Git URL' })
 
 -- open in browser
 vim.keymap.set('n', '<leader>gx', function()
-  gitlinker.get_buf_range_url(
-    'n',
-    { action_callback = actions.open_in_browser }
-  )
+  gitlinker.get_buf_range_url('n', { action_callback = actions.open_in_browser })
 end, { desc = 'Open Git URL', silent = true })
 vim.keymap.set('v', '<leader>gx', function()
-  gitlinker.get_buf_range_url(
-    'v',
-    { action_callback = actions.open_in_browser }
-  )
+  gitlinker.get_buf_range_url('v', { action_callback = actions.open_in_browser })
 end, { desc = 'Open Git URL', silent = true })

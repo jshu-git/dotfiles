@@ -32,9 +32,4 @@ vim.keymap.set('n', '<leader>c', function()
 end, {
   desc = 'Quickfix List',
 })
-vim.keymap.set(
-  'n',
-  '<leader>C',
-  quicker.refresh,
-  { desc = 'Quickfix (Refresh)' }
-)
+vim.keymap.set('n', '<leader>C', quicker.refresh, { desc = 'Quickfix (Refresh)' })

@@ -12,9 +12,4 @@ require('yanky').setup({
 vim.keymap.set({ 'n', 'x' }, 'y', '<Plug>(YankyYank)')
 vim.keymap.set('n', 'p', '<Plug>(YankyPutAfter)')
 vim.keymap.set('n', 'P', '<Plug>(YankyPutIndentAfterLinewise)')
-vim.keymap.set(
-  'n',
-  '<leader>y',
-  '<cmd>YankyRingHistory<CR>',
-  { desc = 'Yank History' }
-)
+vim.keymap.set('n', '<leader>y', '<cmd>YankyRingHistory<CR>', { desc = 'Yank History' })

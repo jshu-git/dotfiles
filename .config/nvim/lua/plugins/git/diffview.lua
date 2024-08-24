@@ -24,35 +24,15 @@ require('diffview').setup({
 })
 
 -- file history
-vim.keymap.set(
-  'n',
-  '<leader>gd',
-  '<cmd>DiffviewFileHistory %<cr>',
-  { desc = 'Diff (File)' }
-)
-vim.keymap.set(
-  'n',
-  '<leader>gD',
-  '<cmd>DiffviewFileHistory<cr>',
-  { desc = 'Diff (Branch)' }
-)
-vim.keymap.set(
-  'x',
-  '<leader>gd',
-  ":'<,'>DiffviewFileHistory<cr>",
-  { desc = 'Diff (Visual)' }
-)
+vim.keymap.set('n', '<leader>gd', '<cmd>DiffviewFileHistory %<cr>', { desc = 'Diff (File)' })
+vim.keymap.set('n', '<leader>gD', '<cmd>DiffviewFileHistory<cr>', { desc = 'Diff (Branch)' })
+vim.keymap.set('x', '<leader>gd', ":'<,'>DiffviewFileHistory<cr>", { desc = 'Diff (Visual)' })
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {
     'DiffviewFileHistory',
   },
   callback = function(event)
-    vim.keymap.set(
-      'n',
-      '<esc>',
-      '<cmd>tabclose<cr>',
-      { buffer = event.buf, silent = true }
-    )
+    vim.keymap.set('n', '<esc>', '<cmd>tabclose<cr>', { buffer = event.buf, silent = true })
   end,
 })

@@ -20,11 +20,7 @@ vim.keymap.set('i', '<Tab>', function()
     -- neocodeium.accept_word()
     -- neocodeium.accept_line()
   else
-    vim.api.nvim_feedkeys(
-      vim.api.nvim_replace_termcodes('<Tab>', true, false, true),
-      'n',
-      false
-    )
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Tab>', true, false, true), 'n', false)
   end
 end)
 vim.keymap.set('i', '<S-Tab>', neocodeium.clear)

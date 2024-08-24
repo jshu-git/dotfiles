@@ -57,12 +57,7 @@ end, { desc = 'Files' })
 vim.keymap.set('n', '<leader>fF', function()
   pick.builtin.files(nil, relative_opts('Files'))
 end, { desc = 'Files (Relative)' })
-vim.keymap.set(
-  'n',
-  '<leader>fr',
-  extra.pickers.oldfiles,
-  { desc = 'Recent Files (All)' }
-)
+vim.keymap.set('n', '<leader>fr', extra.pickers.oldfiles, { desc = 'Recent Files (All)' })
 vim.keymap.set('n', '<leader>fR', function()
   extra.pickers.oldfiles({ current_dir = true })
 end, { desc = 'Recent Files (cwd)' })
@@ -143,10 +138,7 @@ vim.keymap.set('n', '<leader><Tab>', function()
           if matches ~= nil then
             local current = matches.current
             local index = matches.current_ind -- save index for later
-            vim.notify(
-              'Deleted buffer: '
-                .. vim.fs.basename(vim.api.nvim_buf_get_name(current.bufnr))
-            )
+            vim.notify('Deleted buffer: ' .. vim.fs.basename(vim.api.nvim_buf_get_name(current.bufnr)))
             -- currently this doesn't properly delete the active buffer
             vim.api.nvim_buf_delete(current.bufnr, {})
 
@@ -179,12 +171,7 @@ pick.registry.special_paths = function()
     },
   })
 end
-vim.keymap.set(
-  'n',
-  '<leader>fp',
-  pick.registry.special_paths,
-  { desc = 'Special Paths' }
-)
+vim.keymap.set('n', '<leader>fp', pick.registry.special_paths, { desc = 'Special Paths' })
 
 -- diagnostics
 vim.keymap.set('n', '<leader>fd', function()
@@ -218,35 +205,20 @@ vim.keymap.set('n', '<leader>gH', function()
 end, { desc = 'Hunks' })
 
 -- commits
-vim.keymap.set(
-  'n',
-  '<leader>gc',
-  extra.pickers.git_commits,
-  { desc = 'Commits' }
-)
+vim.keymap.set('n', '<leader>gc', extra.pickers.git_commits, { desc = 'Commits' })
 vim.keymap.set('n', '<leader>gC', function()
   extra.pickers.git_commits({ path = vim.fn.expand('%') })
 end, { desc = 'Commits (Buffer)' })
 
 -- vim
 vim.keymap.set('n', '<leader>fh', pick.builtin.help, { desc = 'Help' })
-vim.keymap.set(
-  'n',
-  '<leader>fl',
-  extra.pickers.hl_groups,
-  { desc = 'Highlights' }
-)
+vim.keymap.set('n', '<leader>fl', extra.pickers.hl_groups, { desc = 'Highlights' })
 
 -- keymaps
 vim.keymap.set('n', '<leader>fk', extra.pickers.keymaps, { desc = 'Keymaps' })
 
 -- options
-vim.keymap.set(
-  'n',
-  '<leader>fo',
-  extra.pickers.options,
-  { desc = 'Options (All)' }
-)
+vim.keymap.set('n', '<leader>fo', extra.pickers.options, { desc = 'Options (All)' })
 -- vim.keymap.set('n', '<leader>fO', function()
 --   extra.pickers.options({ scope = 'buf' })
 -- end, { desc = 'Options (Buffer)' })
@@ -255,20 +227,10 @@ vim.keymap.set(
 vim.keymap.set('n', "'", pick.builtin.resume)
 
 -- registers
-vim.keymap.set(
-  'n',
-  '<leader>"',
-  extra.pickers.registers,
-  { desc = 'Registers' }
-)
+vim.keymap.set('n', '<leader>"', extra.pickers.registers, { desc = 'Registers' })
 
 -- spell
-vim.keymap.set(
-  'n',
-  'z=',
-  extra.pickers.spellsuggest,
-  { desc = 'Spell Suggest' }
-)
+vim.keymap.set('n', 'z=', extra.pickers.spellsuggest, { desc = 'Spell Suggest' })
 
 -- custom
 -- neovim config files
@@ -279,12 +241,7 @@ pick.registry.config_files = function()
     },
   })
 end
-vim.keymap.set(
-  'n',
-  '<leader>fn',
-  pick.registry.config_files,
-  { desc = 'Neovim Config Files' }
-)
+vim.keymap.set('n', '<leader>fn', pick.registry.config_files, { desc = 'Neovim Config Files' })
 
 -- colorschemes
 pick.registry.colorschemes = function()
@@ -301,18 +258,12 @@ pick.registry.colorschemes = function()
     },
   })
 end
-vim.keymap.set(
-  'n',
-  '<leader>ft',
-  pick.registry.colorschemes,
-  { desc = 'Themes' }
-)
+vim.keymap.set('n', '<leader>ft', pick.registry.colorschemes, { desc = 'Themes' })
 
 -- commands
 -- mini builtin registry
 vim.keymap.set('n', '<leader>fc', function()
-  local items =
-    vim.tbl_keys(vim.tbl_extend('force', pick.registry, extra.pickers))
+  local items = vim.tbl_keys(vim.tbl_extend('force', pick.registry, extra.pickers))
   table.sort(items)
   local source = {
     items = items,

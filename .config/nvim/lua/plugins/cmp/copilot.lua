@@ -36,11 +36,7 @@ vim.keymap.set('i', '<Tab>', function()
     -- suggestion.accept_word()
     suggestion.accept_line()
   else
-    vim.api.nvim_feedkeys(
-      vim.api.nvim_replace_termcodes('<Tab>', true, false, true),
-      'n',
-      false
-    )
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Tab>', true, false, true), 'n', false)
   end
 end)
 vim.keymap.set('i', '<S-Tab>', suggestion.dismiss)

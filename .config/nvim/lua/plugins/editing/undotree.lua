@@ -15,11 +15,6 @@ vim.api.nvim_create_autocmd('FileType', {
     'undotree',
   },
   callback = function(event)
-    vim.keymap.set(
-      'n',
-      '<esc>',
-      vim.cmd.UndotreeToggle,
-      { buffer = event.buf, silent = true }
-    )
+    vim.keymap.set('n', '<esc>', vim.cmd.UndotreeToggle, { buffer = event.buf, silent = true })
   end,
 })
