@@ -132,10 +132,7 @@ later(function()
   add('nkakouros-original/scrollofffraction.nvim')
   require('plugins.ui.scrollofffraction')
 
-  add({
-    source = 'OXY2DEV/helpview.nvim',
-    depends = { 'nvim-treesitter/nvim-treesitter' },
-  })
+  add('OXY2DEV/helpview.nvim')
   require('plugins.ui.helpview')
 
   add('luukvbaal/statuscol.nvim')
