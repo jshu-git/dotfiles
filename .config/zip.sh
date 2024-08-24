@@ -2,11 +2,11 @@
 
 DROPBOX="$HOME/Library/CloudStorage/Dropbox"
 
-rm -rf $DROPBOX/lazy.zip
-cp -rf $HOME/.local/share/nvim/lazy /tmp/lazy
+rm -rf $DROPBOX/site.zip
+cp -rf $HOME/.local/share/nvim/site /tmp/site
 
 # treesitter
-rm -rf /tmp/lazy/nvim-treesitter/parser/*
+rm -rf /tmp/site/pack/deps/opt/nvim-treesitter/parser/*
 
-zip -q -r $DROPBOX/lazy.zip /tmp/lazy
-rm -rf /tmp/lazy
+zip -q -r $DROPBOX/site.zip /tmp/site
+rm -rf /tmp/site
