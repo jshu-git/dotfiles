@@ -2,13 +2,12 @@ local deps = require('mini.deps')
 local add, now, later = deps.add, deps.now, deps.later
 
 later(function()
-  local trailspace = require('mini.trailspace')
-  trailspace.setup()
+  add('MeanderingProgrammer/render-markdown.nvim')
 
   vim.keymap.set(
     'n',
-    '<leader>T',
-    trailspace.trim,
-    { desc = 'Trim Trailspace' }
+    '<leader>tv',
+    '<cmd>RenderMarkdown toggle<cr>',
+    { desc = 'Toggle Markdown' }
   )
 end)

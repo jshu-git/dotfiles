@@ -1,17 +1,10 @@
-return {
-  'NStefan002/visual-surround.nvim',
-  keys = {
-    { '{', mode = { 'x' } },
-    { '[', mode = { 'x' } },
-    { '(', mode = { 'x' } },
-    { "'", mode = { 'x' } },
-    { '"', mode = { 'x' } },
-    { '`', mode = { 'x' } },
-    { '<', mode = { 'x' } },
-  },
-  config = function()
-    require('visual-surround').setup({
-      surround_chars = { '{', '[', '(', "'", '"', '`', '<' },
-    })
-  end,
-}
+local deps = require('mini.deps')
+local add, now, later = deps.add, deps.now, deps.later
+
+later(function()
+  add('NStefan002/visual-surround.nvim')
+
+  require('visual-surround').setup({
+    surround_chars = { '{', '[', '(', "'", '"', '`', '<' },
+  })
+end)

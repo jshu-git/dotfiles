@@ -30,9 +30,9 @@ vim.api.nvim_create_autocmd('FileType', {
     'lazy',
     'git',
     'help',
-    'gitsigns.blame',
     'checkhealth',
     'qf',
+    'minideps-confirm',
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false

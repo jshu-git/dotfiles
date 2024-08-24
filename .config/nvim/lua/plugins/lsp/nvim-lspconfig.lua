@@ -1,134 +1,172 @@
-return {
-  'neovim/nvim-lspconfig',
-  config = function()
-    vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('LspConfig', { clear = true }),
-      callback = function(event)
-        local bufnr = event.buf
-        local map = function(keys, func, desc, extra_opts)
-          vim.keymap.set(
-            'n',
-            keys,
-            func,
-            vim.tbl_deep_extend('force', {
-              buffer = bufnr,
-              desc = 'LSP: ' .. desc,
-            }, extra_opts or {})
-          )
-        end
+local deps = require('mini.deps')
+local add, now, later = deps.add, deps.now, deps.later
 
-        map('gs', vim.lsp.buf.hover, 'Hover')
-        map('gS', vim.lsp.buf.signature_help, 'Signature Help')
-        map('ga', vim.lsp.buf.code_action, 'Code Action')
-        map('gd', '<cmd>Glance definitions<CR>', 'Goto Definition')
-        map('gr', '<cmd>Glance references<CR>', 'Goto References')
+now(function()
+  add('neovim/nvim-lspconfig')
 
-        -- inc-rename
-        map('cr', function()
-          return ':IncRename ' .. vim.fn.expand('<cword>')
-        end, 'LSP: Rename Variable', { expr = true })
-        map('cR', ':IncRename ', 'Rename Variable')
+  -- lazydev
+  add('folke/lazydev.nvim')
+  require('lazydev').setup({})
 
-        -- diagnostics
-        map('gl', vim.diagnostic.open_float, 'Hover Diagnostic')
-        map('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
-        map(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
+  vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('LspConfig', { clear = true }),
+    callback = function(event)
+      local bufnr = event.buf
+      local map = function(keys, func, desc, extra_opts)
+        vim.keymap.set(
+          'n',
+          keys,
+          func,
+          vim.tbl_deep_extend('force', {
+            buffer = bufnr,
+            desc = 'LSP: ' .. desc,
+          }, extra_opts or {})
+        )
+      end
 
-        -- lsp menu
-        map('<leader>li', '<cmd>LspInfo<CR>', 'Info')
-        map('<leader>lr', '<cmd>LspRestart<CR>', 'Restart')
+      map('gs', vim.lsp.buf.hover, 'Hover')
+      map('gS', vim.lsp.buf.signature_help, 'Signature Help')
+      map('ga', vim.lsp.buf.code_action, 'Code Action')
+      map('gd', '<cmd>Glance definitions<CR>', 'Goto Definition')
+      map('gr', '<cmd>Glance references<CR>', 'Goto References')
 
-        -- inlay hints
-        map('<leader>th', function()
-          vim.lsp.inlay_hint.enable(
-            not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }),
-            { bufnr = bufnr }
-          )
-        end, 'Toggle Inlay Hints')
-      end,
-    })
+      -- inc-rename
+      map('cr', function()
+        return ':IncRename ' .. vim.fn.expand('<cword>')
+      end, 'LSP: Rename Variable', { expr = true })
+      map('cR', ':IncRename ', 'Rename Variable')
 
-    local servers = {
-      marksman = {},
-      taplo = {},
-      lua_ls = {
-        settings = {
-          Lua = {
-            hint = { enable = true },
-            diagnostics = {
-              disable = { 'missing-fields' },
-              globals = { 'vim' },
-            },
+      -- diagnostics
+      map('gl', vim.diagnostic.open_float, 'Hover Diagnostic')
+      map('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
+      map(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
+
+      -- lsp menu
+      map('<leader>li', '<cmd>LspInfo<CR>', 'Info')
+      map('<leader>lr', '<cmd>LspRestart<CR>', 'Restart')
+
+      -- inlay hints
+      map('<leader>th', function()
+        vim.lsp.inlay_hint.enable(
+          not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }),
+          { bufnr = bufnr }
+        )
+      end, 'Toggle Inlay Hints')
+    end,
+  })
+
+  local servers = {
+    marksman = {},
+    taplo = {},
+    lua_ls = {
+      settings = {
+        Lua = {
+          hint = { enable = true },
+          diagnostics = {
+            disable = { 'missing-fields' },
+            globals = { 'vim' },
           },
         },
       },
-      rust_analyzer = {
-        settings = {
-          ['rust-analyzer'] = {
-            checkOnSave = {
-              command = 'clippy',
-            },
+    },
+    rust_analyzer = {
+      settings = {
+        ['rust-analyzer'] = {
+          checkOnSave = {
+            command = 'clippy',
           },
         },
       },
-      basedpyright = {
-        settings = {
-          basedpyright = {
-            analysis = {
-              typeCheckingMode = 'off',
-              diagnosticMode = 'openFilesOnly',
-            },
+    },
+    basedpyright = {
+      settings = {
+        basedpyright = {
+          analysis = {
+            typeCheckingMode = 'off',
+            diagnosticMode = 'openFilesOnly',
           },
         },
       },
+    },
+  }
+  if vim.env.SSH_CLIENT ~= nil then
+    servers.basedpyright.settings.python = {
+      pythonPath = '/u/jshu/p4/cacl3/test/tools/python/nate/rhel7-3.12/bin/python',
     }
-    if vim.env.SSH_CLIENT ~= nil then
-      servers.basedpyright.settings.python = {
-        pythonPath = '/u/jshu/p4/cacl3/test/tools/python/nate/rhel7-3.12/bin/python',
-      }
-    end
+  end
 
-    -- lspconfig
-    local capabilities = vim.tbl_deep_extend(
-      'force',
-      vim.lsp.protocol.make_client_capabilities(),
-      require('cmp_nvim_lsp').default_capabilities()
-    )
-    local lspconfig = require('lspconfig')
-    for server, config in pairs(servers) do
-      config.capabilities = capabilities
-      lspconfig[server].setup(config)
-    end
+  -- lspconfig
+  local capabilities = vim.tbl_deep_extend(
+    'force',
+    vim.lsp.protocol.make_client_capabilities(),
+    require('cmp_nvim_lsp').default_capabilities()
+  )
+  local lspconfig = require('lspconfig')
+  for server, config in pairs(servers) do
+    config.capabilities = capabilities
+    lspconfig[server].setup(config)
+  end
 
-    -- lspinfo
-    require('lspconfig.ui.windows').default_options = {
+  -- lspinfo
+  require('lspconfig.ui.windows').default_options = {
+    border = 'single',
+  }
+
+  -- diagnostics
+  vim.diagnostic.config({
+    virtual_text = {
+      -- prefix = ' 󰧞',
+      prefix = '',
+      suffix = ' ',
+      -- virt_text_pos = 'inline',
+      -- virt_text_win_col = 80,
+    },
+    float = {
       border = 'single',
-    }
+    },
+    severity_sort = true,
+    signs = {
+      text = {
+        [vim.diagnostic.severity.ERROR] = require('config.utils').signs.Error,
+        [vim.diagnostic.severity.WARN] = require('config.utils').signs.Warn,
+        [vim.diagnostic.severity.INFO] = require('config.utils').signs.Info,
+        [vim.diagnostic.severity.HINT] = require('config.utils').signs.Hint,
+      },
+    },
+  })
+  vim.keymap.set('n', '<leader>tD', function()
+    vim.diagnostic.enable(not vim.diagnostic.is_enabled(), { bufnr = 0 })
+  end, { desc = 'Toggle Diagnostics' })
+end)
 
-    -- diagnostics
-    vim.diagnostic.config({
-      virtual_text = {
-        -- prefix = ' 󰧞',
-        prefix = '',
-        suffix = ' ',
-        -- virt_text_pos = 'inline',
-        -- virt_text_win_col = 80,
+later(function()
+  -- inc-rename
+  add('smjonas/inc-rename.nvim')
+  require('inc_rename').setup({
+    preview_empty_name = true,
+    save_in_cmdline_history = false,
+  })
+
+  -- glance
+  add('dnlhc/glance.nvim')
+  local glance = require('glance')
+  local actions = glance.actions
+  glance.setup({
+    height = require('config.utils').popup.height,
+    border = { enable = true, top_char = '', bottom_char = '▔' },
+    list = { width = 0.2 },
+    theme = { enable = false },
+    mappings = {
+      list = {
+        ['<C-v>'] = actions.jump_vsplit,
+        ['<C-s>'] = actions.jump_split,
+        ['<C-CR>'] = actions.enter_win('preview'),
+        ['<esc>'] = actions.close,
       },
-      float = {
-        border = 'single',
+      preview = {
+        ['<esc>'] = actions.enter_win('list'),
       },
-      severity_sort = true,
-      signs = {
-        text = {
-          [vim.diagnostic.severity.ERROR] = require('config.utils').signs.Error,
-          [vim.diagnostic.severity.WARN] = require('config.utils').signs.Warn,
-          [vim.diagnostic.severity.INFO] = require('config.utils').signs.Info,
-          [vim.diagnostic.severity.HINT] = require('config.utils').signs.Hint,
-        },
-      },
-    })
-    vim.keymap.set('n', '<leader>tD', function()
-      vim.diagnostic.enable(not vim.diagnostic.is_enabled(), { bufnr = 0 })
-    end, { desc = 'Toggle Diagnostics' })
-  end,
-}
+    },
+    folds = { folded = false },
+  })
+end)

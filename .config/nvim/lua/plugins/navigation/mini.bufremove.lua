@@ -1,17 +1,14 @@
-return {
-  'echasnovski/mini.bufremove',
-  keys = {
-    '<leader>D',
-  },
-  config = function()
-    local bufremove = require('mini.bufremove')
-    require('mini.bufremove').setup()
+local deps = require('mini.deps')
+local add, now, later = deps.add, deps.now, deps.later
 
-    vim.keymap.set(
-      'n',
-      '<leader>D',
-      bufremove.delete,
-      { desc = 'Buffer: Delete (Smart)' }
-    )
-  end,
-}
+later(function()
+  local bufremove = require('mini.bufremove')
+  bufremove.setup()
+
+  vim.keymap.set(
+    'n',
+    '<leader>D',
+    bufremove.delete,
+    { desc = 'Buffer: Delete (Smart)' }
+  )
+end)
