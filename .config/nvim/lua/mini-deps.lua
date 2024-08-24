@@ -17,15 +17,12 @@ local add, now, later = deps.add, deps.now, deps.later
 deps.setup({ path = { package = path_package } })
 vim.keymap.set('n', '<leader>lu', deps.update, { desc = 'Deps: Update' })
 vim.keymap.set('n', '<leader>lx', deps.clean, { desc = 'Deps: Clean' })
-vim.keymap.set('n', '<leader>ll', function()
+vim.keymap.set('n', '<leader>ll', '<cmd>DepsShowLog<cr>', { desc = 'Deps: Log' })
+vim.keymap.set('n', '<leader>le', function()
   vim.cmd('edit' .. deps.config.path.snapshot)
 end, { desc = 'Deps: Snapshot' })
-vim.keymap.set(
-  'n',
-  '<leader>lw',
-  deps.snap_save,
-  { desc = 'Deps: Snapshot (Set)' }
-)
+vim.keymap.set('n', '<leader>lw', deps.snap_save, { desc = 'Deps: Snapshot (Set)' })
+vim.keymap.set('n', '<leader>lr', deps.snap_load, { desc = 'Deps: Snapshot (Load)' })
 
 now(function()
   add('olimorris/persisted.nvim')
