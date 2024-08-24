@@ -1,7 +1,7 @@
 local deps = require('mini.deps')
 local add, now, later = deps.add, deps.now, deps.later
 
-now(function()
+later(function()
   add({
     source = 'folke/noice.nvim',
     depends = { 'MunifTanjim/nui.nvim' },

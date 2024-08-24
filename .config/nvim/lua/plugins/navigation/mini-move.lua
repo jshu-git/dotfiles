@@ -1,7 +1,8 @@
 local deps = require('mini.deps')
 local add, now, later = deps.add, deps.now, deps.later
 
-later(function()
+-- needs to be now because overrides lsp builtin K keymap
+now(function()
   require('mini.move').setup({
     -- can't use alt because of escape sending alt https://github.com/LunarVim/LunarVim/issues/1857
     mappings = {

@@ -138,35 +138,3 @@ now(function()
     vim.diagnostic.enable(not vim.diagnostic.is_enabled(), { bufnr = 0 })
   end, { desc = 'Toggle Diagnostics' })
 end)
-
-later(function()
-  -- inc-rename
-  add('smjonas/inc-rename.nvim')
-  require('inc_rename').setup({
-    preview_empty_name = true,
-    save_in_cmdline_history = false,
-  })
-
-  -- glance
-  add('dnlhc/glance.nvim')
-  local glance = require('glance')
-  local actions = glance.actions
-  glance.setup({
-    height = require('config.utils').popup.height,
-    border = { enable = true, top_char = '', bottom_char = '▔' },
-    list = { width = 0.2 },
-    theme = { enable = false },
-    mappings = {
-      list = {
-        ['<C-v>'] = actions.jump_vsplit,
-        ['<C-s>'] = actions.jump_split,
-        ['<C-CR>'] = actions.enter_win('preview'),
-        ['<esc>'] = actions.close,
-      },
-      preview = {
-        ['<esc>'] = actions.enter_win('list'),
-      },
-    },
-    folds = { folded = false },
-  })
-end)

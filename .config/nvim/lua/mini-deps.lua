@@ -25,11 +25,11 @@ vim.keymap.set(
   { desc = 'Deps: Snapshot (Set)' }
 )
 
+require('plugins.persisted')
 require('plugins.colorscheme')
+require('plugins.nvim-treesitter')
 require('plugins.mini-files')
 require('plugins.mini-pick')
-require('plugins.nvim-treesitter')
-require('plugins.persisted')
 
 later(function()
   require('mini.extra').setup()
