@@ -36,9 +36,4 @@ vim.keymap.set('n', 'gt', function()
   require('treesitter-context').go_to_context(vim.v.count1)
 end, { desc = 'Goto Treesitter Context' })
 
--- enable folds
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.opt.foldlevelstart = 99
-
 require('treesitter-context').setup({ max_lines = 1 })

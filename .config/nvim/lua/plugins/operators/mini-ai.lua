@@ -13,7 +13,7 @@ ai.setup({
   custom_textobjects = {
     g = extra_ai.buffer(),
     D = extra_ai.diagnostic(),
-    L = extra_ai.line(),
+    l = extra_ai.line(),
     n = extra_ai.number(),
     -- LazyVim
     e = { -- Word with case
@@ -29,4 +29,4 @@ ai.setup({
 })
 
 vim.keymap.set('n', '<S-CR>', 'ciq', { remap = true })
-vim.keymap.set('x', 'v', 'iLo', { remap = true })
+vim.keymap.set('x', 'v', 'ilo', { remap = true })

@@ -26,8 +26,8 @@ vim.keymap.set('n', '<leader>lr', deps.snap_load, { desc = 'Deps: Snapshot (Load
 
 now(function()
   -- session manager
-  add('olimorris/persisted.nvim')
-  require('plugins.persisted')
+  -- add('olimorris/persisted.nvim')
+  -- require('plugins.persisted')
 
   -- ui
   add('gbprod/nord.nvim')
@@ -50,10 +50,6 @@ now(function()
   -- HACK: this is necessary because lsp binds K and can't be disabled?
   require('plugins.editing.mini-move')
 
-  -- work
-  add('ojroques/nvim-osc52')
-  require('plugins.editing.nvim-osc52')
-
   -- lsp
   -- this is necessary because Glance doesn't bind in later() for some reason
   add({
@@ -66,6 +62,10 @@ now(function()
     },
   })
   require('plugins.nvim-lspconfig')
+
+  -- work
+  add('ojroques/nvim-osc52')
+  require('plugins.editing.nvim-osc52')
 end)
 
 later(function()
@@ -104,8 +104,9 @@ later(function()
       'onsails/lspkind-nvim',
     },
   })
-  add('dmtrKovalenko/caps-word.nvim')
   add('monkoose/neocodeium')
+  add('windwp/nvim-autopairs')
+  -- add('dmtrKovalenko/caps-word.nvim')
   -- work
   add('zbirenbaum/copilot.lua')
   vim.cmd('runtime! lua/plugins/cmp/*.lua')
@@ -116,16 +117,16 @@ later(function()
   add('OXY2DEV/helpview.nvim')
   add('briangwaltney/paren-hint.nvim')
   add('dstein64/nvim-scrollview')
-  add('luukvbaal/statuscol.nvim')
-  add('moyiz/command-and-cursor.nvim')
   add('nkakouros-original/scrollofffraction.nvim')
   add('stevearc/quicker.nvim')
-  add('tzachar/highlight-undo.nvim')
   add('utilyre/sentiment.nvim')
   add({
     source = 'folke/noice.nvim',
     depends = { 'MunifTanjim/nui.nvim' },
   })
+  -- add('luukvbaal/statuscol.nvim')
+  -- add('moyiz/command-and-cursor.nvim')
+  -- add('tzachar/highlight-undo.nvim')
   vim.cmd('runtime! lua/plugins/ui/*.lua')
 
   -- editing
@@ -133,18 +134,18 @@ later(function()
   add('BranimirE/fix-auto-scroll.nvim')
   add('MagicDuck/grug-far.nvim')
   add('cbochs/grapple.nvim')
-  add('chrisgrieser/nvim-early-retirement')
-  add('gbprod/yanky.nvim')
   add('mbbill/undotree')
   add('monaqa/dial.nvim')
   add('numToStr/Comment.nvim')
   add('tomiis4/Hypersonic.nvim')
-  add('chrisgrieser/nvim-rip-substitute')
+  -- add('chrisgrieser/nvim-early-retirement')
+  -- add('gbprod/yanky.nvim')
+  -- add('chrisgrieser/nvim-rip-substitute')
   vim.cmd('runtime! lua/plugins/editing/*.lua')
 
   -- operators
-  add('NStefan002/visual-surround.nvim')
-  add('gbprod/substitute.nvim')
+  -- add('NStefan002/visual-surround.nvim')
+  -- add('gbprod/substitute.nvim')
   vim.cmd('runtime! lua/plugins/operators/*.lua')
 
   -- git
