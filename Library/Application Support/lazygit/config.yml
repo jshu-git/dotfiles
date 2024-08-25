@@ -2,7 +2,7 @@ gui:
   scrollHeight: 16
   scrollPastBottom: false
   scrollOffMargin: 10
-  sidePanelWidth: 0.16
+  sidePanelWidth: 0.2
   showListFooter: false
   showBottomLine: false
   nerdFontsVersion: "3"
