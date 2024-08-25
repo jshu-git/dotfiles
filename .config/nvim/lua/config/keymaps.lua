@@ -33,7 +33,7 @@ end, { expr = true })
 map({ 'n', 'x' }, 'k', function()
   return vim.v.count > 0 and 'k' or 'gk'
 end, { expr = true })
-map({ 'n', 'x', 'o' }, 'E', 'g$')
+map({ 'n', 'x', 'o' }, 'E', '$')
 -- smart 0/^ https://github.com/wscnd/LunarVim/blob/master/lua/keymappings.lua#L98
 map({ 'n', 'x', 'o' }, '0', function()
   local line = vim.fn.getline('.')
