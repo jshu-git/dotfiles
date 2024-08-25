@@ -18,7 +18,13 @@ vim.api.nvim_create_autocmd('BufEnter', {
 -- LazyVim
 -- close some filetypes with <esc>
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'git', 'help', 'qf', 'minideps-confirm' },
+  pattern = {
+    'git',
+    'help',
+    'qf',
+    'minideps-confirm',
+    'mininotify-history',
+  },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set('n', '<esc>', '<cmd>close<cr>', { buffer = event.buf, silent = true })
