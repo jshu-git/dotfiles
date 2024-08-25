@@ -1,5 +1,16 @@
 local notify = require('mini.notify')
 notify.setup({
+  content = {
+    format = function(notif)
+      return notif.msg
+    end,
+    sort = function(notif_arr)
+      table.sort(notif_arr, function(a, b)
+        return a.ts_update < b.ts_update
+      end)
+      return notif_arr
+    end,
+  },
   window = {
     max_width_share = 0.5,
     config = {
