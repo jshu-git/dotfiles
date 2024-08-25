@@ -40,6 +40,7 @@ now(function()
     filetype = {
       minifiles = { glyph = '󰉋', hl = 'Directory' },
       minipick = { glyph = '󰍉' },
+      ['mininotify-history'] = { glyph = '󰋚' },
     },
   })
   icons.mock_nvim_web_devicons()
@@ -110,10 +111,10 @@ later(function()
   add('nkakouros-original/scrollofffraction.nvim')
   add('stevearc/quicker.nvim')
   add('utilyre/sentiment.nvim')
-  add({
-    source = 'folke/noice.nvim',
-    depends = { 'MunifTanjim/nui.nvim' },
-  })
+  -- add({
+  --   source = 'folke/noice.nvim',
+  --   depends = { 'MunifTanjim/nui.nvim' },
+  -- })
   -- add('luukvbaal/statuscol.nvim')
   -- add('moyiz/command-and-cursor.nvim')
   -- add('tzachar/highlight-undo.nvim')

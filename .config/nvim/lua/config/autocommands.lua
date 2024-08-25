@@ -15,25 +15,10 @@ vim.api.nvim_create_autocmd('BufEnter', {
   end,
 })
 
--- commentstring
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'kdl',
-  callback = function()
-    vim.opt_local.commentstring = '// %s'
-  end,
-})
-
 -- LazyVim
 -- close some filetypes with <esc>
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = {
-    'lazy',
-    'git',
-    'help',
-    'checkhealth',
-    'qf',
-    'minideps-confirm',
-  },
+  pattern = { 'git', 'help', 'qf', 'minideps-confirm' },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set('n', '<esc>', '<cmd>close<cr>', { buffer = event.buf, silent = true })

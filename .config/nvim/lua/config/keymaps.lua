@@ -2,14 +2,10 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 local map = vim.keymap.set
-
--- misc
-map('n', '<esc>', '<cmd>nohlsearch<CR>')
-
--- buffers
-map('n', '<leader>d', '<cmd>bd!<CR>', { desc = 'Buffer: Delete' })
+map('n', '<esc>', '<cmd>nohlsearch<cr><cmd>echon " "<cr>')
 
 -- leader
+map('n', '<leader>d', '<cmd>bd!<CR>', { desc = 'Buffer: Delete' })
 map('n', '<leader>w', '<cmd>update<CR>', { desc = 'Write' })
 map('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit' })
 map('n', '<leader>Q', '<cmd>qa!<CR>', { desc = 'Quit All' })

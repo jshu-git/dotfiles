@@ -10,16 +10,7 @@ require('mini.indentscope').setup({
   },
   symbol = '▏',
 })
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = {
-    'help',
-    'lazy',
-    'noice',
-  },
-  callback = function()
-    vim.b.miniindentscope_disable = true
-  end,
-})
+
 require('utils').apply_highlights({
   MiniIndentScopeSymbol = { link = 'NonText' },
 })
