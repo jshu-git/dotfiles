@@ -1,5 +1,16 @@
 local H = {}
 
+-- https://nanotipsforvim.prose.sh/using-pcall-to-make-your-config-more-stable
+H.safe_require = function(module)
+  local success, errMsg = pcall(require, module)
+  if not success then
+    local msg = ('Error loading %q: %s'):format(module, errMsg)
+    vim.defer_fn(function()
+      vim.notify(msg, vim.log.levels.ERROR)
+    end, 1000)
+  end
+end
+
 -- ui
 H.highlight_timeout = 250
 H.signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = '󰋽 ' }
@@ -13,15 +24,6 @@ H.apply_highlights = function(highlights)
     vim.api.nvim_set_hl(0, group, hl)
   end
 end
-
--- work related
--- not working for some reason
--- H.is_work = function()
---   if vim.env.HOME ~= nil then
---     return false
---   end
---   return true
--- end
 
 H.paths = function()
   local data = vim.fn.stdpath('data')
@@ -56,5 +58,14 @@ H.paths = function()
   table.sort(existing_paths)
   return existing_paths
 end
+
+-- work related
+-- not working for some reason
+-- H.is_work = function()
+--   if vim.env.HOME ~= nil then
+--     return false
+--   end
+--   return true
+-- end
 
 return H
