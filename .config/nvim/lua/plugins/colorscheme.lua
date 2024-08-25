@@ -37,6 +37,9 @@ require('nord').setup({
 
     -- glance
     highlights.GlancePreviewEndOfBuffer = { link = 'EndOfBuffer' }
+
+    -- paren-hint
+    highlights.ParenHint = { fg = highlights.Comment.fg, bg = highlights.CursorLine.bg }
   end,
 })
 

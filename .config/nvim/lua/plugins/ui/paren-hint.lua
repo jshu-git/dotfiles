@@ -1,5 +1,1 @@
-require('paren-hint').setup({
-  highlight = 'NonText',
-  excluded_filetypes = {},
-  excluded_buftypes = {},
-})
+require('paren-hint').setup({ highlight = 'ParenHint' })
