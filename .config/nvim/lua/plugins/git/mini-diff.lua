@@ -12,7 +12,7 @@ diff.setup({
   mappings = {
     apply = '',
     reset = 'gH',
-    textobject = 'gh',
+    textobject = '',
   },
 })
 

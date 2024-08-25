@@ -60,6 +60,7 @@ map(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
 -- lsp menu
 map('<leader>li', '<cmd>LspInfo<CR>', 'Info')
 map('<leader>lr', '<cmd>LspRestart<CR>', 'Restart')
+map('<leader>lL', '<cmd>LspLog<CR>', 'Log')
 
 -- inlay hints
 map('<leader>th', function()
