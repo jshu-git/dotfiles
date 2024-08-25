@@ -15,11 +15,11 @@ quicker.setup({
     { '<', quicker.collapse },
   },
   type_icons = {
-    E = require('config.utils').signs.Error,
-    W = require('config.utils').signs.Warn,
-    I = require('config.utils').signs.Info,
-    N = require('config.utils').signs.Hint,
-    H = require('config.utils').signs.Hint,
+    E = require('utils').signs.Error,
+    W = require('utils').signs.Warn,
+    I = require('utils').signs.Info,
+    N = require('utils').signs.Hint,
+    H = require('utils').signs.Hint,
   },
 })
 

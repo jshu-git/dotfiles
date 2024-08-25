@@ -19,7 +19,7 @@ pick.setup({
   -- centered
   window = {
     config = function()
-      local popup = require('config.utils').popup
+      local popup = require('utils').popup
       return {
         anchor = 'NW',
         height = popup.height,
@@ -161,7 +161,7 @@ pick.registry.special_paths = function()
   return pick.start({
     source = {
       name = 'Special Paths',
-      items = require('config.utils').paths,
+      items = require('utils').paths,
       choose = function(item)
         vim.cmd('e ' .. item)
       end,

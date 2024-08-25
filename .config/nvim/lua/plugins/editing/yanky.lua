@@ -6,7 +6,7 @@ require('yanky').setup({
     },
   },
   highlight = {
-    timer = require('config.utils').highlight_timeout,
+    timer = require('utils').highlight_timeout,
   },
 })
 vim.keymap.set({ 'n', 'x' }, 'y', '<Plug>(YankyYank)')

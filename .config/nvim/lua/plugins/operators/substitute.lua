@@ -8,7 +8,7 @@ later(function()
   substitute.setup({
     preserve_cursor_position = true,
     highlight_substituted_text = {
-      timer = require('config.utils').highlight_timeout,
+      timer = require('utils').highlight_timeout,
     },
   })
   vim.keymap.set('n', 's', substitute.operator)

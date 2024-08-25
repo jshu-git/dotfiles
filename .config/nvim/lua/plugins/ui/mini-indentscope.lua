@@ -20,6 +20,6 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.b.miniindentscope_disable = true
   end,
 })
-require('config.utils').apply_highlights({
+require('utils').apply_highlights({
   MiniIndentScopeSymbol = { link = 'NonText' },
 })

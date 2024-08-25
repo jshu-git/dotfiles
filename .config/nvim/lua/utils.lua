@@ -25,7 +25,6 @@ end
 
 H.paths = function()
   local data = vim.fn.stdpath('data')
-  local lazy = data .. '/lazy'
   local home = vim.env.HOME
 
   local paths = {
@@ -34,8 +33,6 @@ H.paths = function()
     data .. '/mini.files/trash',
     data .. '/sessions',
     vim.fn.stdpath('state'),
-    lazy,
-    lazy .. '/nvim-treesitter/parser',
 
     -- local
     home .. '/Library/CloudStorage/Dropbox/',

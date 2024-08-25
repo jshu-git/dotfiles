@@ -2,7 +2,7 @@ local glance = require('glance')
 local actions = glance.actions
 
 glance.setup({
-  height = require('config.utils').popup.height,
+  height = require('utils').popup.height,
   border = { enable = true, top_char = '', bottom_char = '▔' },
   list = { width = 0.2 },
   theme = { enable = false },

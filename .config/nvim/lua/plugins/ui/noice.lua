@@ -48,8 +48,8 @@ noice.setup({
       close = { keys = { '<esc>' } },
       border = { style = 'single' },
       size = {
-        width = require('config.utils').popup.width,
-        height = require('config.utils').popup.height,
+        width = require('utils').popup.width,
+        height = require('utils').popup.height,
       },
       win_options = {
         wrap = true,

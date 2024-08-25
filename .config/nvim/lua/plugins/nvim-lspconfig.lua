@@ -110,10 +110,10 @@ vim.diagnostic.config({
   signs = {
     priority = 9999,
     text = {
-      [vim.diagnostic.severity.ERROR] = require('config.utils').signs.Error,
-      [vim.diagnostic.severity.WARN] = require('config.utils').signs.Warn,
-      [vim.diagnostic.severity.INFO] = require('config.utils').signs.Info,
-      [vim.diagnostic.severity.HINT] = require('config.utils').signs.Hint,
+      [vim.diagnostic.severity.ERROR] = require('utils').signs.Error,
+      [vim.diagnostic.severity.WARN] = require('utils').signs.Warn,
+      [vim.diagnostic.severity.INFO] = require('utils').signs.Info,
+      [vim.diagnostic.severity.HINT] = require('utils').signs.Hint,
     },
   },
 })

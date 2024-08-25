@@ -1,5 +1,5 @@
 require('highlight-undo').setup({
-  duration = require('config.utils').highlight_timeout,
+  duration = require('utils').highlight_timeout,
   undo = {
     hlgroup = 'Search',
     mode = 'n',
