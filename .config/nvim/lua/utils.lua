@@ -15,8 +15,8 @@ end
 H.highlight_timeout = 250
 H.signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = '󰋽 ' }
 H.popup = {
-  height = math.floor(0.8 * vim.o.lines),
-  width = math.floor(0.8 * vim.o.columns),
+  height = math.floor(0.75 * vim.o.lines),
+  width = math.floor(0.75 * vim.o.columns),
 }
 H.border = { '─', '│', '─', '│', '┌', '┐', '┘', '└' }
 H.apply_highlights = function(highlights)
@@ -33,7 +33,6 @@ H.paths = function()
     -- nvim
     data,
     data .. '/mini.files/trash',
-    data .. '/sessions',
     vim.fn.stdpath('state'),
 
     -- local
@@ -41,10 +40,10 @@ H.paths = function()
     home .. '/Desktop/',
 
     -- work
-    home .. '/p4/cacl3/test/lib/netapp_ontap/resources/',
     home .. '/.packages/',
     home .. '/notes/',
     home .. '/git/ontap/',
+    '/x/eng/rlse/DOT/devN/test/lib/netapp_ontap/resources/',
     '/x/eng/rlse/DOT/devN/test/tools/smoke/itc/conf/class_hierarchy.cnf',
   }
 

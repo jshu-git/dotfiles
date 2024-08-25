@@ -122,7 +122,7 @@ vim.keymap.set('n', ',', function()
 end)
 
 -- buffers
-vim.keymap.set('n', '<leader><Tab>', function()
+vim.keymap.set('n', '<leader>fb', function()
   pick.builtin.buffers(nil, {
     mappings = {
       scroll_down = '',
@@ -183,19 +183,18 @@ end, { desc = 'Diagnostics (All)' })
 
 -- git
 -- files
-vim.keymap.set('n', '<leader>gf', function()
-  extra.pickers.git_files({ scope = 'tracked' })
-end, { desc = 'Files (Tracked)' })
-vim.keymap.set('n', '<leader>gF', function()
-  extra.pickers.git_files({ scope = 'untracked' })
-end, { desc = 'Files (Untracked)' })
-vim.keymap.set('n', '<leader>gm', function()
-  extra.pickers.git_files({ scope = 'modified' })
-end, { desc = 'Files (Modified)' })
-vim.keymap.set('n', '<leader>gi', function()
-  extra.pickers.git_files({ scope = 'ignored' })
-end, { desc = 'Files (Ignored)' })
-
+-- vim.keymap.set('n', '<leader>gf', function()
+--   extra.pickers.git_files({ scope = 'tracked' })
+-- end, { desc = 'Files (Tracked)' })
+-- vim.keymap.set('n', '<leader>gF', function()
+--   extra.pickers.git_files({ scope = 'untracked' })
+-- end, { desc = 'Files (Untracked)' })
+-- vim.keymap.set('n', '<leader>gm', function()
+--   extra.pickers.git_files({ scope = 'modified' })
+-- end, { desc = 'Files (Modified)' })
+-- vim.keymap.set('n', '<leader>gi', function()
+--   extra.pickers.git_files({ scope = 'ignored' })
+-- end, { desc = 'Files (Ignored)' })
 -- hunks
 vim.keymap.set('n', '<leader>gh', function()
   extra.pickers.git_hunks({ path = vim.fn.expand('%'), n_context = 5 })
@@ -213,35 +212,12 @@ end, { desc = 'Commits (Buffer)' })
 -- vim
 vim.keymap.set('n', '<leader>fh', pick.builtin.help, { desc = 'Help' })
 vim.keymap.set('n', '<leader>fl', extra.pickers.hl_groups, { desc = 'Highlights' })
-
--- keymaps
 vim.keymap.set('n', '<leader>fk', extra.pickers.keymaps, { desc = 'Keymaps' })
-
--- options
 vim.keymap.set('n', '<leader>fo', extra.pickers.options, { desc = 'Options (All)' })
+vim.keymap.set('n', '<leader>"', extra.pickers.registers, { desc = 'Registers' })
 -- vim.keymap.set('n', '<leader>fO', function()
 --   extra.pickers.options({ scope = 'buf' })
 -- end, { desc = 'Options (Buffer)' })
-
--- resume
-vim.keymap.set('n', "'", pick.builtin.resume)
-
--- registers
-vim.keymap.set('n', '<leader>"', extra.pickers.registers, { desc = 'Registers' })
-
--- spell
-vim.keymap.set('n', 'z=', extra.pickers.spellsuggest, { desc = 'Spell Suggest' })
-
--- custom
--- neovim config files
-pick.registry.config_files = function()
-  return pick.builtin.files(nil, {
-    source = {
-      cwd = vim.fn.stdpath('config'),
-    },
-  })
-end
-vim.keymap.set('n', '<leader>fn', pick.registry.config_files, { desc = 'Neovim Config Files' })
 
 -- colorschemes
 pick.registry.colorschemes = function()
@@ -252,6 +228,7 @@ pick.registry.colorschemes = function()
       choose = function(item)
         vim.cmd('colorscheme ' .. item)
       end,
+      ---@diagnostic disable-next-line: unused-local
       preview = function(buf_id, item)
         vim.cmd('colorscheme ' .. item)
       end,
@@ -260,7 +237,18 @@ pick.registry.colorschemes = function()
 end
 vim.keymap.set('n', '<leader>ft', pick.registry.colorschemes, { desc = 'Themes' })
 
+-- misc
+vim.keymap.set('n', "'", pick.builtin.resume)
+vim.keymap.set('n', 'z=', extra.pickers.spellsuggest, { desc = 'Spell Suggest' })
+pick.registry.config_files = function()
+  return pick.builtin.files(nil, {
+    source = { cwd = vim.fn.stdpath('config') },
+  })
+end
+vim.keymap.set('n', '<leader>fn', pick.registry.config_files, { desc = 'Neovim Config Files' })
+
 -- commands
+vim.keymap.set('n', '<leader>fC', extra.pickers.commands, { desc = 'Commands' })
 -- mini builtin registry
 vim.keymap.set('n', '<leader>fc', function()
   local items = vim.tbl_keys(vim.tbl_extend('force', pick.registry, extra.pickers))
@@ -276,4 +264,3 @@ vim.keymap.set('n', '<leader>fc', function()
   end
   return pick.registry[chosen_picker_name]()
 end, { desc = 'Commands (Builtin)' })
-vim.keymap.set('n', '<leader>fC', extra.pickers.commands, { desc = 'Commands' })
