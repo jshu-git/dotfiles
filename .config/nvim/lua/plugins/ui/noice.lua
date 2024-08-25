@@ -51,10 +51,7 @@ noice.setup({
         width = require('utils').popup.width,
         height = require('utils').popup.height,
       },
-      win_options = {
-        wrap = true,
-        winhighlight = { FloatBorder = 'FloatBorder' },
-      },
+      win_options = { wrap = true },
     },
     hover = {
       border = { style = 'single', padding = { 0, 1 } },
@@ -64,9 +61,6 @@ noice.setup({
         min_width = math.floor(0.3 * vim.o.columns),
       },
       border = { style = 'single', padding = { 0, 0 } },
-      win_options = {
-        winhighlight = { FloatBorder = 'FloatBorder' },
-      },
     },
     cmdline_input = {
       border = { style = 'single', padding = { 0, 0 } },
@@ -77,9 +71,6 @@ noice.setup({
         col = '50%',
       },
       border = { style = 'single', padding = { 0, 0 } },
-      win_options = {
-        winhighlight = { FloatBorder = 'FloatBorder' },
-      },
     },
   },
   routes = {

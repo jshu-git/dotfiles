@@ -19,6 +19,8 @@ require('nord').setup({
     highlights.MiniDiffSignChange = { link = 'GitSignsChangeNr' }
     highlights.MiniDiffSignDelete = { link = 'GitSignsDeleteNr' }
     highlights.MiniPickPrompt = { link = 'Normal' }
+    highlights.MiniPickMatchRanges = { link = 'DiffText' }
+    highlights.CmpItemAbbrMatch = { link = 'DiffText' }
 
     -- copilot
     highlights.NeoCodeiumSuggestion = { link = 'NonText' }
