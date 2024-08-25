@@ -7,7 +7,6 @@ files.setup({
     go_out = '',
     go_out_plus = '-',
     reset = '_',
-    show_help = '?',
     synchronize = '<leader>w',
   },
   options = {
