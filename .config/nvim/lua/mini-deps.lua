@@ -55,6 +55,7 @@ now(function()
   require('plugins.editing.nvim-osc52')
 
   -- lsp
+  -- this is necessary because Glance doesn't bind in later() for some reason
   add({
     source = 'neovim/nvim-lspconfig',
     depends = {

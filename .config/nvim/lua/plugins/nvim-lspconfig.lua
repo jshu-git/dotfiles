@@ -5,7 +5,7 @@
 --   end,
 -- })
 
-require('lazydev').setup({})
+require('lazydev').setup()
 
 -- glance
 local glance = require('glance')
