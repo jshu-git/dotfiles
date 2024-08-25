@@ -101,12 +101,14 @@ vim.diagnostic.config({
     suffix = ' ',
     -- virt_text_pos = 'inline',
     -- virt_text_win_col = 80,
+    update_in_insert = false,
   },
   float = {
     border = 'single',
   },
   severity_sort = true,
   signs = {
+    priority = 9999,
     text = {
       [vim.diagnostic.severity.ERROR] = require('config.utils').signs.Error,
       [vim.diagnostic.severity.WARN] = require('config.utils').signs.Warn,

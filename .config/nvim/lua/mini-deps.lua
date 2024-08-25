@@ -137,11 +137,11 @@ later(function()
   add('monaqa/dial.nvim')
   add('numToStr/Comment.nvim')
   add('tomiis4/Hypersonic.nvim')
+  add('chrisgrieser/nvim-rip-substitute')
   vim.cmd('runtime! lua/plugins/editing/*.lua')
 
   -- operators
   add('NStefan002/visual-surround.nvim')
-  add('chrisgrieser/nvim-rip-substitute')
   add('gbprod/substitute.nvim')
   vim.cmd('runtime! lua/plugins/operators/*.lua')
 
