@@ -43,7 +43,6 @@ opt.listchars = {
 }
 
 -- statusline
-opt.cmdheight = 0
 opt.laststatus = 3
 opt.showmode = false
 opt.showcmd = false
