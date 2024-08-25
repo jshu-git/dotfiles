@@ -1,9 +1,6 @@
 local notify = require('mini.notify')
 notify.setup({
   content = {
-    format = function(notif)
-      return notif.msg
-    end,
     sort = function(notif_arr)
       table.sort(notif_arr, function(a, b)
         return a.ts_update < b.ts_update
@@ -14,9 +11,9 @@ notify.setup({
   window = {
     max_width_share = 0.5,
     config = {
-      border = 'single',
+      border = 'none',
       anchor = 'SE',
-      row = vim.o.lines - 2,
+      row = vim.o.lines - vim.o.cmdheight - (vim.o.laststatus > 0 and 1 or 0),
     },
     winblend = 0,
   },
