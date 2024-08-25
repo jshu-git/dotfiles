@@ -57,11 +57,14 @@ now(function()
   -- lsp
   add({
     source = 'neovim/nvim-lspconfig',
-    depends = { 'hrsh7th/cmp-nvim-lsp' },
+    depends = {
+      'hrsh7th/cmp-nvim-lsp',
+      'folke/lazydev.nvim',
+      'dnlhc/glance.nvim',
+      'smjonas/inc-rename.nvim',
+    },
   })
   require('plugins.nvim-lspconfig')
-  add('folke/lazydev.nvim')
-  require('lazydev').setup({})
 end)
 
 later(function()
@@ -80,8 +83,6 @@ later(function()
   vim.keymap.set('n', '<C-w>m', misc.zoom, { desc = 'Toggle Maximize' })
 
   -- lsp
-  add('dnlhc/glance.nvim')
-  add('smjonas/inc-rename.nvim')
   add('stevearc/aerial.nvim')
   add('stevearc/conform.nvim')
   vim.cmd('runtime! lua/plugins/lsp/*.lua')

@@ -5,6 +5,36 @@
 --   end,
 -- })
 
+require('lazydev').setup({})
+
+-- glance
+local glance = require('glance')
+local actions = glance.actions
+glance.setup({
+  height = require('utils').popup.height,
+  border = { enable = true, top_char = '', bottom_char = '▔' },
+  list = { width = 0.2 },
+  theme = { enable = false },
+  mappings = {
+    list = {
+      ['<C-v>'] = actions.jump_vsplit,
+      ['<C-s>'] = actions.jump_split,
+      ['<C-CR>'] = actions.enter_win('preview'),
+      ['<esc>'] = actions.close,
+    },
+    preview = {
+      ['<esc>'] = actions.enter_win('list'),
+    },
+  },
+  folds = { folded = false },
+})
+
+-- inc-rename
+require('inc_rename').setup({
+  preview_empty_name = true,
+  save_in_cmdline_history = false,
+})
+
 local map = function(lhs, rhs, desc, opts)
   vim.keymap.set('n', lhs, rhs, vim.tbl_deep_extend('force', { desc = 'LSP: ' .. desc }, opts or {}))
 end
