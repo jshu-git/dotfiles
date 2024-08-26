@@ -54,7 +54,7 @@ opt.signcolumn = 'yes'
 
 -- cursorline
 opt.cursorline = true
--- opt.cursorlineopt = 'number'
+opt.cursorlineopt = 'number'
 
 -- splits
 opt.splitbelow = true
