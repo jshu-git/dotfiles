@@ -6,6 +6,8 @@ map('n', '<esc>', function()
   vim.cmd('nohlsearch')
   vim.cmd('echon')
 end)
+-- https://undelete.pullpush.io/r/neovim/comments/vguomm/how_can_i_map_tab_but_keep_the_default_action_for/
+vim.keymap.set('n', '<C-i>', '<C-i>')
 
 -- leader
 map('n', '<leader>d', '<cmd>bd!<CR>', { desc = 'Buffer: Delete' })
