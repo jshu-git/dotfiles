@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
   end,
 })
 
--- LazyVim
+-- from LazyVim
 -- close some filetypes with <esc>
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {

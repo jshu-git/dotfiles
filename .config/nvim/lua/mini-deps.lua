@@ -31,9 +31,6 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 now(function()
-  add('cbochs/grapple.nvim')
-  require('plugins.grapple')
-
   -- lsp
   add({
     source = 'neovim/nvim-lspconfig',
@@ -61,6 +58,10 @@ now(function()
     },
   })
   icons.mock_nvim_web_devicons()
+
+  -- editing
+  add('cbochs/grapple.nvim')
+  require('plugins.grapple')
 
   -- work
   add('ojroques/nvim-osc52')

@@ -43,6 +43,10 @@ require('nord').setup({
     -- paren-hint
     -- highlights.ParenHint = { fg = highlights.Comment.fg, bg = highlights.CursorLine.bg }
     highlights.ParenHint = { link = 'NonText' }
+
+    -- grapple
+    highlights.GrappleFooter = { link = 'FloatBorder' }
+    highlights.GrappleCurrent = { link = 'Normal' }
   end,
 })
 

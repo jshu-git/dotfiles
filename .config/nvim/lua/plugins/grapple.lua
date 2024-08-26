@@ -30,11 +30,3 @@ vim.keymap.set('n', '<leader>A', function()
     grapple.tag({ scope = 'global' })
   end
 end, { desc = 'Grapple (Global)' })
-
--- highlights
--- has to go here since lazy loaded
-require('utils').apply_highlights({
-  GrappleFooter = { link = 'FloatBorder' },
-  GrappleCurrent = { link = 'Normal' },
-  -- GrappleName = { link = 'CursorLine' },
-})
