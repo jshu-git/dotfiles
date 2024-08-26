@@ -1,3 +1,9 @@
+-- sticky yank https://nanotipsforvim.prose.sh/sticky-yank
+local cursorPreYank
+vim.keymap.set({ 'n', 'x' }, 'y', function()
+  cursorPreYank = vim.api.nvim_win_get_cursor(0)
+  return 'y'
+end, { expr = true })
 -- yank highlight
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
@@ -5,6 +11,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
       timeout = require('utils').highlight_timeout,
       higroup = 'Search',
     })
+    -- sticky yank
+    if vim.v.event.operator == 'y' and cursorPreYank then
+      vim.api.nvim_win_set_cursor(0, cursorPreYank)
+    end
   end,
 })
 
