@@ -31,16 +31,10 @@ hide_when_typing = true
 
 [keyboard]
 bindings = [
-  # alacritty
-  # { key = "Tab", mods = "Control", action = "SelectNextTab" },
-  # { key = "Tab", mods = "Control|Shift", action = "SelectPreviousTab" },
-
   # vi mode https://alacritty.org/config-alacritty-bindings.html
   { key = "Space", mods = "Control", action = "ToggleViMode" },
   { key = "q", action = "ToggleViMode", mode = "Vi" },
   { key = "q", mods = "Control", action = "ToggleBlockSelection", mode = "Vi" },
-  # { key = "v", mods = "Control|Shift", action = "ToggleViMode" },
-  # { key = "a", mods = "Command", action = "ToggleViMode" },
 
   # vim
   # https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
@@ -48,15 +42,22 @@ bindings = [
   { key = "Return", mods = "Control", chars = "\u001B[13;5u" },
   # { key = "Space", mods = "Control", chars = "\u0000" },
 
+  # csi keys
   # https://old.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and/
   # https://www.leonerd.org.uk/hacks/fixterms/
-  # { key = "H", mods = "Control|Shift", chars = "\u001b[72;5u" },
-  # { key = "J", mods = "Control|Shift", chars = "\u001b[74;5u" },
-  # { key = "K", mods = "Control|Shift", chars = "\u001b[75;5u" },
-  # { key = "L", mods = "Control|Shift", chars = "\u001b[77;5u" },
+  # https://undelete.pullpush.io/r/neovim/comments/vguomm/how_can_i_map_tab_but_keep_the_default_action_for/
+  # https://old.reddit.com/r/neovim/comments/vfqseq/enable_special_keyboard_combinations_in_alacritty/
+  # https://www.google.com/search?q=alacritty-extended-keys+github
+  # https://www.youtube.com/watch?v=-M7iQKTvTaQ
+  # https://github.com/s1n7ax/alacritty-extended-keys
+  # control
+  { key = "h", mods = "Control", chars = "\u001b[104;5u" },
+  { key = "i", mods = "Control", chars = "\u001b[105;5u" },
+  { key = "j", mods = "Control", chars = "\u001b[106;5u" },
+  { key = "m", mods = "Control", chars = "\u001b[109;5u" },
+  # control+shift
   { key = "G", mods = "Control|Shift", chars = "\u001b[71;5u" },
   { key = "C", mods = "Control|Shift", chars = "\u001b[67;5u" },
-  { key = "i", mods = "Control", chars = "\u001b[105;5u" },
 
   # zellij
   # control-a control-n
