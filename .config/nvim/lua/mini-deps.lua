@@ -38,7 +38,6 @@ now(function()
       'hrsh7th/cmp-nvim-lsp',
       'folke/lazydev.nvim',
       'smjonas/inc-rename.nvim',
-      --'dnlhc/glance.nvim',
     },
   })
   add('stevearc/aerial.nvim')
@@ -85,7 +84,10 @@ later(function()
 
   -- cmp
   add({
-    source = 'hrsh7th/nvim-cmp',
+    -- source = 'hrsh7th/nvim-cmp',
+    -- https://old.reddit.com/r/neovim/comments/1f1rxtx/share_a_tip_to_improve_your_experience_in_nvimcmp/
+    source = 'yioneko/nvim-cmp',
+    checkout = 'perf',
     depends = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',

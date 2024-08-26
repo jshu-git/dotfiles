@@ -1,5 +1,9 @@
 local cmp = require('cmp')
 cmp.setup({
+  performance = {
+    debounce = 0,
+    throttle = 0,
+  },
   sources = {
     { name = 'lazydev', group_index = 0 },
     { name = 'nvim_lsp_signature_help' },
