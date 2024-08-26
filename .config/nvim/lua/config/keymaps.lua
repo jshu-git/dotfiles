@@ -2,7 +2,10 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 local map = vim.keymap.set
-map('n', '<esc>', '<cmd>nohlsearch<cr><cmd>echon " "<cr>')
+map('n', '<esc>', function()
+  vim.cmd('nohlsearch')
+  vim.cmd('echon')
+end)
 
 -- leader
 map('n', '<leader>d', '<cmd>bd!<CR>', { desc = 'Buffer: Delete' })
@@ -10,10 +13,10 @@ map('n', '<leader>w', '<cmd>update<CR>', { desc = 'Write' })
 map('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit' })
 map('n', '<leader>Q', '<cmd>qa!<CR>', { desc = 'Quit All' })
 map('n', '<leader>N', '<cmd>enew<CR>', { desc = 'New Buffer' })
-
-map('n', 'O', 'o<Esc>', { desc = 'New Line After' })
-map('n', 'P', '<cmd>put<CR>', { desc = 'Paste After' })
-
+map('n', '<leader>S', function()
+  vim.cmd('source %')
+  vim.notify('Sourced: ' .. vim.fn.expand('%:t'))
+end, { desc = 'Source File' })
 map('n', '<leader>,', 'mzA,<Esc>`z', { desc = 'Append Comma' })
 map('n', '<leader>;', 'mzA;<Esc>`z', { desc = 'Append Semicolon' })
 map('n', 'X', 'mzA<BS><Esc>`z')
@@ -22,7 +25,6 @@ map('n', 'X', 'mzA<BS><Esc>`z')
 map('n', '<leader>tw', '<cmd>setlocal wrap!<CR>', { desc = 'Toggle Word Wrap' })
 
 -- movement
-map({ 'n', 'x' }, '\\', '%')
 map({ 'n', 'x' }, 'j', function()
   return vim.v.count > 0 and 'j' or 'gj'
 end, { expr = true })
@@ -38,6 +40,8 @@ map({ 'n', 'x', 'o' }, '0', function()
 end, { expr = true })
 
 -- editing
+map('n', 'O', 'o<Esc>')
+map('n', 'P', '<cmd>put<CR>')
 map('n', '<CR>', '"_ciw')
 map('n', '<S-CR>', '<CR>')
 map('n', 'U', '<C-r>')
@@ -108,16 +112,23 @@ map(
 )
 
 -- yanking
-map('n', 'gy', function()
-  local path = vim.fn.expand('%:p')
-  vim.fn.setreg('+', path)
-  vim.notify('Copied: ' .. path)
-end, { desc = 'Yank Path' })
-map('n', 'gY', function()
+map('n', 'yp', function()
   local path = vim.fn.expand('%')
   vim.fn.setreg('+', path)
   vim.notify('Copied: ' .. path)
-end, { desc = 'Yank Path (Relative)' })
+end)
+map('n', 'yP', function()
+  -- relative
+  local path = vim.fn.expand('%:.')
+  vim.fn.setreg('+', path)
+  vim.notify('Copied: ' .. path)
+end)
+map('n', 'yt', function()
+  -- filename
+  local path = vim.fn.expand('%:t')
+  vim.fn.setreg('+', path)
+  vim.notify('Copied: ' .. path)
+end)
 
 -- quickfix
 map('n', ']q', '<cmd>cnext<CR>', { desc = 'Next Quickfix' })
