@@ -146,6 +146,7 @@ vim.keymap.set('n', '<leader>fb', function()
             table.remove(items, index)
             pick.set_picker_items(items)
             local mappings = pick.get_picker_opts().mappings
+            ---@diagnostic disable-next-line: unused-local
             for i = 1, index - 1 do
               vim.api.nvim_input(mappings.move_down)
             end
@@ -238,7 +239,11 @@ end
 vim.keymap.set('n', '<leader>ft', pick.registry.colorschemes, { desc = 'Themes' })
 
 -- misc
-vim.keymap.set('n', "'", pick.builtin.resume)
+vim.keymap.set('n', "'", function()
+  if not pcall(pick.builtin.resume) then
+    vim.notify('No picker to resume', vim.log.levels.WARN)
+  end
+end)
 vim.keymap.set('n', 'z=', extra.pickers.spellsuggest, { desc = 'Spell Suggest' })
 pick.registry.config_files = function()
   return pick.builtin.files(nil, {
