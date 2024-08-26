@@ -20,5 +20,8 @@ notify.setup({
 })
 vim.notify = notify.make_notify()
 
-vim.keymap.set('n', '<leader>nn', notify.show_history, { desc = 'Notifications History' })
+vim.keymap.set('n', '<leader>nn', function()
+  vim.cmd('tabnew')
+  notify.show_history()
+end, { desc = 'Notifications History' })
 vim.keymap.set('n', '<leader>nx', notify.clear, { desc = 'Clear Notifications' })

@@ -15,13 +15,13 @@ end
 local deps = require('mini.deps')
 local add, now, later = deps.add, deps.now, deps.later
 deps.setup({ path = { package = path_package } })
-vim.keymap.set('n', '<leader>lu', deps.update, { desc = 'Deps: Update' })
-vim.keymap.set('n', '<leader>lx', deps.clean, { desc = 'Deps: Clean' })
-vim.keymap.set('n', '<leader>ll', '<cmd>DepsShowLog<cr>', { desc = 'Deps: Log' })
-vim.keymap.set('n', '<leader>le', function()
+vim.keymap.set('n', '<leader>mu', deps.update, { desc = 'Update' })
+vim.keymap.set('n', '<leader>mx', deps.clean, { desc = 'Clean' })
+vim.keymap.set('n', '<leader>ml', '<cmd>DepsShowLog<cr>', { desc = 'Log' })
+vim.keymap.set('n', '<leader>me', function()
   vim.cmd('edit' .. deps.config.path.snapshot)
-end, { desc = 'Deps: Snapshot' })
-vim.keymap.set('n', '<leader>lw', deps.snap_save, { desc = 'Deps: Snapshot (Set)' })
+end, { desc = 'Snapshot (Open)' })
+vim.keymap.set('n', '<leader>mw', deps.snap_save, { desc = 'Snapshot (Set)' })
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'minideps-confirm' },
@@ -36,10 +36,26 @@ now(function()
   -- add('olimorris/persisted.nvim')
   -- require('plugins.persisted')
 
+  add('cbochs/grapple.nvim')
+  require('plugins.grapple')
+
+  -- lsp
+  add({
+    source = 'neovim/nvim-lspconfig',
+    depends = {
+      'hrsh7th/cmp-nvim-lsp',
+      'folke/lazydev.nvim',
+      'smjonas/inc-rename.nvim',
+      --'dnlhc/glance.nvim',
+    },
+  })
+  add('stevearc/aerial.nvim')
+  add('stevearc/conform.nvim')
+  vim.cmd('runtime! lua/plugins/lsp/*.lua')
+
   -- ui
   add('gbprod/nord.nvim')
   require('plugins.colorscheme')
-
   add('nvim-lualine/lualine.nvim')
   require('plugins.lualine')
 
@@ -49,6 +65,7 @@ now(function()
       minifiles = { glyph = '󰉋', hl = 'Directory' },
       minipick = { glyph = '󰍉' },
       ['mininotify-history'] = { glyph = '󰋚' },
+      ['minideps-confirm'] = { glyph = '󰄵' },
     },
   })
   icons.mock_nvim_web_devicons()
@@ -72,20 +89,6 @@ later(function()
     depends = { 'nvim-treesitter/nvim-treesitter-context' },
   })
   require('plugins.nvim-treesitter')
-
-  -- lsp
-  add({
-    source = 'neovim/nvim-lspconfig',
-    depends = {
-      'hrsh7th/cmp-nvim-lsp',
-      'folke/lazydev.nvim',
-      'dnlhc/glance.nvim',
-      'smjonas/inc-rename.nvim',
-    },
-  })
-  add('stevearc/aerial.nvim')
-  add('stevearc/conform.nvim')
-  vim.cmd('runtime! lua/plugins/lsp/*.lua')
 
   -- cmp
   add({
@@ -131,31 +134,27 @@ later(function()
   -- editing
   add('BranimirE/fix-auto-scroll.nvim')
   add('MagicDuck/grug-far.nvim')
-  add('cbochs/grapple.nvim')
   add('mbbill/undotree')
   add('monaqa/dial.nvim')
   add('nmac427/guess-indent.nvim')
   add('numToStr/Comment.nvim')
   add('sitiom/nvim-numbertoggle')
-  add('tomiis4/Hypersonic.nvim')
   add('ziontee113/icon-picker.nvim')
+  -- add('tomiis4/Hypersonic.nvim')
   -- add('chrisgrieser/nvim-early-retirement')
   -- add('gbprod/yanky.nvim')
   -- add('chrisgrieser/nvim-rip-substitute')
-  vim.cmd('runtime! lua/plugins/editing/*.lua')
-
-  -- operators
   -- add('NStefan002/visual-surround.nvim')
   -- add('gbprod/substitute.nvim')
-  vim.cmd('runtime! lua/plugins/operators/*.lua')
+  vim.cmd('runtime! lua/plugins/editing/*.lua')
 
   -- git
-  -- add('sindrets/diffview.nvim')
   add('jshu-git/blame.nvim')
   add('kdheepak/lazygit.nvim')
   add({
     source = 'ruifm/gitlinker.nvim',
     depends = { 'nvim-lua/plenary.nvim' },
   })
+  -- add('sindrets/diffview.nvim')
   vim.cmd('runtime! lua/plugins/git/*.lua')
 end)

@@ -34,5 +34,3 @@ vim.keymap.set('n', '<leader>W', function()
   vim.cmd.write()
   vim.g.enable_autoformat = true
 end, { desc = 'Write (No Autoformat)' })
-
-vim.keymap.set('n', '<leader>lc', '<cmd>ConformInfo<CR>', { desc = 'Conform: Info' })

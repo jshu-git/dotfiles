@@ -57,7 +57,8 @@ clue.setup({
     { mode = 'n', keys = '<leader>g', desc = 'Git…' },
     { mode = 'x', keys = '<leader>g', desc = 'Git…' },
     { mode = 'n', keys = '<leader>S', desc = 'Session…' },
-    { mode = 'n', keys = '<leader>n', desc = 'Noice…' },
+    { mode = 'n', keys = '<leader>n', desc = 'Notifications…' },
+    { mode = 'n', keys = '<leader>m', desc = 'mini.deps…' },
 
     -- submodes
     -- buffers

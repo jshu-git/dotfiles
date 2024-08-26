@@ -20,7 +20,7 @@ end, { desc = 'Grapple' })
 -- global scope
 vim.keymap.set('n', '<leader><Tab>', function()
   grapple.toggle_tags({ scope = 'global' })
-end)
+end, { desc = 'Grapple Tags (Global)' })
 vim.keymap.set('n', '<leader>A', function()
   if grapple.exists({ scope = 'global' }) then
     vim.notify('[grapple.nvim] Ungrappled (Global)')

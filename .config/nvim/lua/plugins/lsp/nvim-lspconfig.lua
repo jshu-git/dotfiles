@@ -8,26 +8,26 @@
 require('lazydev').setup()
 
 -- glance
-local glance = require('glance')
-local actions = glance.actions
-glance.setup({
-  height = require('utils').popup.height,
-  border = { enable = true, top_char = '', bottom_char = '▔' },
-  list = { width = 0.2 },
-  theme = { enable = false },
-  mappings = {
-    list = {
-      ['<C-v>'] = actions.jump_vsplit,
-      ['<C-s>'] = actions.jump_split,
-      ['<C-CR>'] = actions.enter_win('preview'),
-      ['<esc>'] = actions.close,
-    },
-    preview = {
-      ['<esc>'] = actions.enter_win('list'),
-    },
-  },
-  folds = { folded = false },
-})
+-- local glance = require('glance')
+-- local actions = glance.actions
+-- glance.setup({
+--   height = require('utils').popup.height,
+--   border = { enable = true, top_char = '', bottom_char = '▔' },
+--   list = { width = 0.2 },
+--   theme = { enable = false },
+--   mappings = {
+--     list = {
+--       ['<C-v>'] = actions.jump_vsplit,
+--       ['<C-s>'] = actions.jump_split,
+--       ['<C-CR>'] = actions.enter_win('preview'),
+--       ['<esc>'] = actions.close,
+--     },
+--     preview = {
+--       ['<esc>'] = actions.enter_win('list'),
+--     },
+--   },
+--   folds = { folded = false },
+-- })
 
 -- inc-rename
 require('inc_rename').setup({
@@ -43,8 +43,14 @@ map('gS', vim.lsp.buf.signature_help, 'Signature Help')
 map('ga', vim.lsp.buf.code_action, 'Code Action')
 
 -- glance
-map('gd', '<cmd>Glance definitions<CR>', 'Goto Definition')
-map('gr', '<cmd>Glance references<CR>', 'Goto References')
+-- map('gd', '<cmd>Glance definitions<CR>', 'Goto Definition')
+-- map('gr', '<cmd>Glance references<CR>', 'Goto References')
+map('gd', function()
+  require('mini.extra').pickers.lsp({ scope = 'definition' })
+end, 'Goto Definition')
+map('gr', function()
+  require('mini.extra').pickers.lsp({ scope = 'references' })
+end, 'Goto Refernces')
 
 -- inc-rename
 map('cr', function()
