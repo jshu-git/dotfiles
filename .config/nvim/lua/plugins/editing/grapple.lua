@@ -6,6 +6,9 @@ grapple.setup({
   },
 })
 
+-- https://undelete.pullpush.io/r/neovim/comments/vguomm/how_can_i_map_tab_but_keep_the_default_action_for/
+vim.keymap.set('n', '<C-i>', '<C-i>')
+
 -- default scope (git)
 vim.keymap.set('n', '<Tab>', grapple.toggle_tags)
 vim.keymap.set('n', '<leader>a', function()
