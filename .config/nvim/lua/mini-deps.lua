@@ -99,10 +99,8 @@ later(function()
       'onsails/lspkind-nvim',
     },
   })
-  add('monkoose/neocodeium')
   add('windwp/nvim-autopairs')
-  -- work
-  -- add('zbirenbaum/copilot.lua')
+  add('monkoose/neocodeium')
   add('github/copilot.vim')
   vim.cmd('runtime! lua/plugins/cmp/*.lua')
 
@@ -111,13 +109,12 @@ later(function()
   add('MeanderingProgrammer/render-markdown.nvim')
   add('OXY2DEV/helpview.nvim')
   add('briangwaltney/paren-hint.nvim')
-  add('dstein64/nvim-scrollview')
   add('nkakouros-original/scrollofffraction.nvim')
-  add('stevearc/quicker.nvim')
   add('utilyre/sentiment.nvim')
   vim.cmd('runtime! lua/plugins/ui/*.lua')
 
   -- editing
+  add('stevearc/quicker.nvim')
   add('BranimirE/fix-auto-scroll.nvim')
   add('MagicDuck/grug-far.nvim')
   add('mbbill/undotree')
