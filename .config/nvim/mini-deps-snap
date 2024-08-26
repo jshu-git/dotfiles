@@ -24,7 +24,7 @@ return {
   ["lazygit.nvim"] = "2432b447483f42ff2e18b2d392cb2bb27e495c08",
   ["lspkind-nvim"] = "cff4ae321a91ee3473a92ea1a8c637e3a9510aec",
   ["lualine.nvim"] = "b431d228b7bbcdaea818bdc3e25b8cdbe861f056",
-  ["mini.nvim"] = "3cf9265bbde75d1358d126701eb6055034491df6",
+  ["mini.nvim"] = "42744fd81136fdd7e01ce81fb99fc6b5e9a17f0f",
   neocodeium = "79d611ed38642d047aa7739c858c9fb57cab34be",
   ["nord.nvim"] = "6d6bae56a002a4da507ba263776e9691f47deb5f",
   ["nvim-autopairs"] = "19606af7c039271d5aa96bceff101e7523af3136",
