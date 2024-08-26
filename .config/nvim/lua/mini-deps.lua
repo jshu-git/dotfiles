@@ -23,6 +23,14 @@ vim.keymap.set('n', '<leader>le', function()
 end, { desc = 'Deps: Snapshot' })
 vim.keymap.set('n', '<leader>lw', deps.snap_save, { desc = 'Deps: Snapshot (Set)' })
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'minideps-confirm' },
+  callback = function(event)
+    vim.keymap.set('n', '<esc>', '<cmd>bd<cr>', { buffer = event.buf, silent = true })
+    vim.opt_local.foldlevel = 0
+  end,
+})
+
 now(function()
   -- session manager
   -- add('olimorris/persisted.nvim')

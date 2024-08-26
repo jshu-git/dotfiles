@@ -22,7 +22,6 @@ vim.api.nvim_create_autocmd('FileType', {
     'git',
     'help',
     'qf',
-    'minideps-confirm',
     'mininotify-history',
   },
   callback = function(event)
