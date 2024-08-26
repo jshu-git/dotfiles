@@ -141,7 +141,7 @@ map({ 'i', 'c' }, '<C-j>', '<Down>')
 map({ 'i', 'c' }, '<C-a>', '<Home>')
 map({ 'i', 'c' }, '<C-e>', '<End>')
 map({ 'i', 'c' }, '<C-d>', '<Del>')
-map({ 'i', 'c' }, '<A-d>', '<C-Right><C-w>')
+map({ 'i', 'c' }, '<C-S-D>', '<C-Right><C-w>')
 
 -- undo points
 for _, key in ipairs({ ',', '.', '!', '?', ':', ';' }) do

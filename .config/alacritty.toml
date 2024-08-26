@@ -56,8 +56,9 @@ bindings = [
   { key = "j", mods = "Control", chars = "\u001b[106;5u" },
   { key = "m", mods = "Control", chars = "\u001b[109;5u" },
   # control+shift
-  { key = "G", mods = "Control|Shift", chars = "\u001b[71;5u" },
   { key = "C", mods = "Control|Shift", chars = "\u001b[67;5u" },
+  { key = "D", mods = "Control|Shift", chars = "\u001b[68;5u" },
+  { key = "G", mods = "Control|Shift", chars = "\u001b[71;5u" },
 
   # zellij
   # control-a control-n
