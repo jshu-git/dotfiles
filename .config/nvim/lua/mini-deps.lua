@@ -121,16 +121,16 @@ later(function()
   vim.cmd('runtime! lua/plugins/ui/*.lua')
 
   -- editing
-  add('sitiom/nvim-numbertoggle')
-  add('nmac427/guess-indent.nvim')
-  add('2kabhishek/nerdy.nvim')
   add('BranimirE/fix-auto-scroll.nvim')
   add('MagicDuck/grug-far.nvim')
   add('cbochs/grapple.nvim')
   add('mbbill/undotree')
   add('monaqa/dial.nvim')
+  add('nmac427/guess-indent.nvim')
   add('numToStr/Comment.nvim')
+  add('sitiom/nvim-numbertoggle')
   add('tomiis4/Hypersonic.nvim')
+  add('ziontee113/icon-picker.nvim')
   -- add('chrisgrieser/nvim-early-retirement')
   -- add('gbprod/yanky.nvim')
   -- add('chrisgrieser/nvim-rip-substitute')
@@ -142,7 +142,7 @@ later(function()
   vim.cmd('runtime! lua/plugins/operators/*.lua')
 
   -- git
-  add('sindrets/diffview.nvim')
+  -- add('sindrets/diffview.nvim')
   add('jshu-git/blame.nvim')
   add('kdheepak/lazygit.nvim')
   add({
