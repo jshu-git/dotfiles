@@ -25,7 +25,7 @@ quicker.setup({
 
 vim.keymap.set('n', '<leader>c', function()
   if vim.tbl_isempty(vim.fn.getqflist()) then
-    vim.notify('No Quickfix', vim.log.levels.WARN)
+    vim.notify('[quicker.nvim] No Quickfix', vim.log.levels.WARN)
   else
     quicker.toggle({ focus = true })
   end

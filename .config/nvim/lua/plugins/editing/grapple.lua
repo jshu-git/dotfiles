@@ -13,9 +13,9 @@ vim.keymap.set('n', '<C-i>', '<C-i>')
 vim.keymap.set('n', '<Tab>', grapple.toggle_tags)
 vim.keymap.set('n', '<leader>a', function()
   if grapple.exists() then
-    vim.notify('Ungrappled')
+    vim.notify('[grapple.nvim] Ungrappled')
   else
-    vim.notify('Grappled: ' .. vim.fn.expand('%:t'))
+    vim.notify('[grapple.nvim] : ' .. vim.fn.expand('%:t'))
   end
   grapple.toggle()
 end, { desc = 'Grapple' })
@@ -26,10 +26,10 @@ vim.keymap.set('n', '<leader><Tab>', function()
 end)
 vim.keymap.set('n', '<leader>A', function()
   if grapple.exists({ scope = 'global' }) then
-    vim.notify('Ungrappled (Global)')
+    vim.notify('[grapple.nvim] Ungrappled (Global)')
     grapple.untag({ scope = 'global' })
   else
-    vim.notify('Grappled (Global): ' .. vim.fn.expand('%:t'))
+    vim.notify('[grapple.nvim] Grappled (Global): ' .. vim.fn.expand('%:t'))
     grapple.tag({ scope = 'global' })
   end
 end, { desc = 'Grapple (Global)' })

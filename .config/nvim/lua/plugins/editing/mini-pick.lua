@@ -122,7 +122,7 @@ vim.keymap.set('n', ',', function()
 end)
 
 -- buffers
-vim.keymap.set('n', '<leader>fb', function()
+vim.keymap.set('n', '<leader>b', function()
   pick.builtin.buffers(nil, {
     mappings = {
       scroll_down = '',
@@ -138,7 +138,7 @@ vim.keymap.set('n', '<leader>fb', function()
           if matches ~= nil then
             local current = matches.current
             local index = matches.current_ind -- save index for later
-            vim.notify('Deleted buffer: ' .. vim.fs.basename(vim.api.nvim_buf_get_name(current.bufnr)))
+            vim.notify('[mini.pick] Deleted buffer: ' .. vim.fs.basename(vim.api.nvim_buf_get_name(current.bufnr)))
             -- currently this doesn't properly delete the active buffer
             vim.api.nvim_buf_delete(current.bufnr, {})
 
@@ -241,7 +241,7 @@ vim.keymap.set('n', '<leader>ft', pick.registry.colorschemes, { desc = 'Themes' 
 -- misc
 vim.keymap.set('n', "'", function()
   if not pcall(pick.builtin.resume) then
-    vim.notify('No picker to resume', vim.log.levels.WARN)
+    vim.notify('[mini.pick] No picker to resume', vim.log.levels.WARN)
   end
 end)
 vim.keymap.set('n', 'z=', extra.pickers.spellsuggest, { desc = 'Spell Suggest' })
