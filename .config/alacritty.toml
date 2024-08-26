@@ -31,7 +31,7 @@ hide_when_typing = true
 
 [keyboard]
 bindings = [
-  # vi mode https://alacritty.org/config-alacritty-bindings.html
+  # vi mode
   { key = "Space", mods = "Control", action = "ToggleViMode" },
   { key = "q", action = "ToggleViMode", mode = "Vi" },
   { key = "q", mods = "Control", action = "ToggleBlockSelection", mode = "Vi" },
