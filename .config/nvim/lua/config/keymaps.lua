@@ -123,20 +123,12 @@ map('n', 'yP', function()
   vim.fn.setreg('+', path)
   vim.notify('Copied: ' .. path)
 end)
-map('n', 'yt', function()
+map('n', 'yf', function()
   -- filename
   local path = vim.fn.expand('%:t')
   vim.fn.setreg('+', path)
   vim.notify('Copied: ' .. path)
 end)
-
--- quickfix
-map('n', ']q', '<cmd>cnext<CR>', { desc = 'Next Quickfix' })
-map('n', '[q', '<cmd>cprev<CR>', { desc = 'Previous Quickfix' })
-map('n', '[Q', '<cmd>cfirst<CR>', { desc = 'First Quickfix' })
-map('n', ']Q', '<cmd>clast<CR>', { desc = 'Last Quickfix' })
-map('n', ']t', '<cmd>tabnext<CR>', { desc = 'Next Tab' })
-map('n', '[t', '<cmd>tabprev<CR>', { desc = 'Previous Tab' })
 
 -- insert/command mode
 map({ 'i', 'c' }, '<C-h>', '<Left>')

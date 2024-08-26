@@ -23,6 +23,9 @@ quicker.setup({
   },
 })
 
+vim.keymap.set('n', '<down>', '<cmd>cnext<cr>')
+vim.keymap.set('n', '<up>', '<cmd>cprev<cr>')
+
 vim.keymap.set('n', '<leader>c', function()
   if vim.tbl_isempty(vim.fn.getqflist()) then
     vim.notify('[quicker.nvim] No Quickfix', vim.log.levels.WARN)
