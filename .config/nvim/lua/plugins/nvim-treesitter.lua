@@ -4,6 +4,7 @@ if vim.env.SSH_CLIENT ~= nil then
   for lang, files in pairs({
     vimdoc = { 'src/parser.c' },
     query = { 'src/parser.c' },
+    python = { 'src/parser.c', 'src/scanner.c' },
   }) do
     parser_config[lang] = {
       install_info = {
@@ -15,7 +16,7 @@ if vim.env.SSH_CLIENT ~= nil then
 end
 
 require('nvim-treesitter.configs').setup({
-  ensure_installed = { 'vimdoc', 'query' },
+  ensure_installed = { 'vimdoc', 'query', 'python' },
   auto_install = vim.env.SSH_CLIENT == nil,
   highlight = {
     enable = true,
