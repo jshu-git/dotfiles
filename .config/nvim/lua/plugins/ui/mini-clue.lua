@@ -52,7 +52,6 @@ clue.setup({
 
     -- leader
     { mode = 'n', keys = '<leader>f', desc = 'Find…' },
-    { mode = 'n', keys = '<leader>l', desc = 'LSP…' },
     { mode = 'n', keys = '<leader>t', desc = 'Toggle…' },
     { mode = 'n', keys = '<leader>g', desc = 'Git…' },
     { mode = 'x', keys = '<leader>g', desc = 'Git…' },

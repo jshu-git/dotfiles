@@ -63,11 +63,6 @@ map('gl', vim.diagnostic.open_float, 'Hover Diagnostic')
 map('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
 map(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
 
--- lsp menu
-map('<leader>li', '<cmd>LspInfo<CR>', 'Info')
-map('<leader>lr', '<cmd>LspRestart<CR>', 'Restart')
-map('<leader>lL', '<cmd>LspLog<CR>', 'Log')
-
 -- inlay hints
 map('<leader>th', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
