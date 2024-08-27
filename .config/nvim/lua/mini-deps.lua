@@ -63,8 +63,15 @@ now(function()
   require('plugins.grapple')
 
   -- work
-  add('ojroques/nvim-osc52')
-  require('plugins.editing.nvim-osc52')
+  if vim.env.SSH_CLIENT ~= nil then
+    add('ojroques/nvim-osc52')
+    require('plugins.editing.nvim-osc52')
+
+    add('github/copilot.vim')
+    vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
+    vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
+    vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
+  end
 end)
 
 later(function()
@@ -103,13 +110,6 @@ later(function()
   })
   add('windwp/nvim-autopairs')
   add('monkoose/neocodeium')
-  if vim.env.SSH_CLIENT ~= nil then
-    add('github/copilot.vim')
-    vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
-    vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
-    vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
-  end
-
   vim.cmd('runtime! lua/plugins/cmp/*.lua')
 
   -- ui

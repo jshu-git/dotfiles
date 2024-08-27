@@ -22,10 +22,6 @@
 
 -- the workaround is to use this plugin, and use command-v for pasting from outside
 
-if vim.env.SSH_CLIENT == nil then
-  return
-end
-
 require('osc52').setup({
   silent = true,
 })
