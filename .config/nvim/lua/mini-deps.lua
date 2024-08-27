@@ -47,8 +47,6 @@ now(function()
   -- ui
   add('gbprod/nord.nvim')
   require('plugins.colorscheme')
-  add('nvim-lualine/lualine.nvim')
-  require('plugins.lualine')
   local icons = require('mini.icons')
   icons.setup({
     filetype = {
