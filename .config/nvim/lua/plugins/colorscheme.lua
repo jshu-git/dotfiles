@@ -52,9 +52,10 @@ require('nord').setup({
     hl.MiniPickMatchRanges = { link = 'DiffText' }
 
     hl.MiniStatuslineModeNormal = { fg = c.polar_night.bright, bg = c.frost.ice }
-    hl.MiniStatuslineModeVisual = { fg = c.polar_night.bright, bg = c.frost.polar_water }
+    hl.MiniStatuslineModeVisual = { fg = c.polar_night.bright, bg = c.aurora.green }
     hl.MiniStatuslineModeInsert = { fg = c.polar_night.bright, bg = c.snow_storm.origin }
     hl.MiniStatuslineModeCommand = { fg = c.polar_night.bright, bg = c.aurora.purple }
+    hl.MiniStatuslineModeReplace = { fg = c.polar_night.bright, bg = c.aurora.red }
 
     -- copilot
     hl.NeoCodeiumSuggestion = { link = 'NonText' }
@@ -65,18 +66,8 @@ require('nord').setup({
     -- sentiment
     hl.MatchParen = { link = 'Underlined' }
 
-    -- noice
-    hl.NoiceCmdLinePopupBorder = { link = 'FloatBorder' }
-
     -- treesitter
     hl.TreesitterContext = { link = 'CursorLine' }
-
-    -- glance
-    hl.GlancePreviewEndOfBuffer = { link = 'EndOfBuffer' }
-
-    -- paren-hint
-    -- highlights.ParenHint = { fg = highlights.Comment.fg, bg = highlights.CursorLine.bg }
-    hl.ParenHint = { link = 'NonText' }
 
     -- grapple
     hl.GrappleFooter = { link = 'FloatBorder' }
