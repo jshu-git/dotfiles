@@ -157,23 +157,6 @@ vim.keymap.set('n', '<leader>b', function()
   })
 end, { desc = 'Buffers' })
 
--- special paths
-pick.registry.special_paths = function()
-  return pick.start({
-    source = {
-      name = 'Special Paths',
-      items = require('utils').paths,
-      choose = function(item)
-        vim.cmd('e ' .. item)
-      end,
-      show = function(buf_id, items, query)
-        pick.default_show(buf_id, items, query, { show_icons = true })
-      end,
-    },
-  })
-end
-vim.keymap.set('n', '<leader>fp', pick.registry.special_paths, { desc = 'Special Paths' })
-
 -- diagnostics
 vim.keymap.set('n', '<leader>fd', function()
   extra.pickers.diagnostic({ scope = 'all' })

@@ -25,46 +25,4 @@ H.apply_highlights = function(highlights)
   end
 end
 
-H.paths = function()
-  local data = vim.fn.stdpath('data')
-  local home = vim.env.HOME
-
-  local paths = {
-    -- nvim
-    data,
-    data .. '/mini.files/trash',
-    vim.fn.stdpath('state'),
-
-    -- local
-    home .. '/Library/CloudStorage/Dropbox/',
-    home .. '/Desktop/',
-
-    -- work
-    home .. '/.packages/',
-    home .. '/notes/',
-    home .. '/git/ontap/',
-    '/x/eng/rlse/DOT/devN/test/lib/netapp_ontap/resources/',
-    '/x/eng/rlse/DOT/devN/test/tools/smoke/itc/conf/class_hierarchy.cnf',
-  }
-
-  local existing_paths = {}
-  for _, path in ipairs(paths) do
-    if vim.fn.isdirectory(path) ~= 0 then
-      table.insert(existing_paths, path)
-    end
-  end
-
-  table.sort(existing_paths)
-  return existing_paths
-end
-
--- work related
--- not working for some reason
--- H.is_work = function()
---   if vim.env.HOME ~= nil then
---     return false
---   end
---   return true
--- end
-
 return H
