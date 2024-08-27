@@ -128,12 +128,12 @@ later(function()
   vim.cmd('runtime! lua/plugins/editing/*.lua')
 
   -- git
-  add('jshu-git/blame.nvim')
   add('kdheepak/lazygit.nvim')
   add({
     source = 'ruifm/gitlinker.nvim',
     depends = { 'nvim-lua/plenary.nvim' },
   })
+  -- add('jshu-git/blame.nvim')
   -- add('sindrets/diffview.nvim')
   vim.cmd('runtime! lua/plugins/git/*.lua')
 end)
