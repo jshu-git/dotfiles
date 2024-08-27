@@ -1,1 +1,1 @@
-require('paren-hint').setup({ highlight = 'ParenHint' })
+require('paren-hint').setup({ highlight = 'NonText' })
