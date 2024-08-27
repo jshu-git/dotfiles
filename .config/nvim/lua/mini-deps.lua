@@ -103,7 +103,13 @@ later(function()
   })
   add('windwp/nvim-autopairs')
   add('monkoose/neocodeium')
-  add('github/copilot.vim')
+  if vim.env.SSH_CLIENT ~= nil then
+    add('github/copilot.vim')
+    vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
+    vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
+    vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
+  end
+
   vim.cmd('runtime! lua/plugins/cmp/*.lua')
 
   -- ui
