@@ -65,7 +65,7 @@ now(function()
   -- work
   if vim.env.SSH_CLIENT ~= nil then
     add('ojroques/nvim-osc52')
-    require('plugins.editing.nvim-osc52')
+    require('plugins.nvim-osc52')
 
     add('github/copilot.vim')
     vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
