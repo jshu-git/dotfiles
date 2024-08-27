@@ -4,9 +4,6 @@ cmp.setup({
     debounce = 0,
     throttle = 0,
   },
-  experimental = {
-    ghost_text = false,
-  },
   sources = {
     { name = 'lazydev', group_index = 0 },
     { name = 'nvim_lsp_signature_help' },
