@@ -35,15 +35,16 @@ require('nord').setup({
     hl.CmpItemAbbrMatch = { link = 'DiffText' }
 
     -- mini
-    hl.MiniIconsAzure = { fg = c.frost.artic_water }
+    hl.MiniIconsGrey = { fg = c.polar_night.brightest }
+    hl.MiniIconsCyan = { fg = c.frost.polar_water }
+    hl.MiniIconsAzure = { fg = c.frost.ice }
+
     hl.MiniIconsBlue = { fg = c.frost.artic_ocean }
-    hl.MiniIconsCyan = { fg = c.frost.ice }
-    hl.MiniIconsGreen = { fg = c.aurora.green }
-    hl.MiniIconsGrey = { fg = c.polar_night.light }
-    hl.MiniIconsOrange = { fg = c.aurora.orange }
-    hl.MiniIconsPurple = { fg = c.aurora.purple }
     hl.MiniIconsRed = { fg = c.aurora.red }
+    hl.MiniIconsOrange = { fg = c.aurora.orange }
     hl.MiniIconsYellow = { fg = c.aurora.yellow }
+    hl.MiniIconsGreen = { fg = c.aurora.green }
+    hl.MiniIconsPurple = { fg = c.aurora.purple }
 
     hl.MiniDiffSignAdd = { link = 'GitSignsAddNr' }
     hl.MiniDiffSignChange = { link = 'GitSignsChangeNr' }
