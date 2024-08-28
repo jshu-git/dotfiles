@@ -35,9 +35,10 @@ require('nord').setup({
     hl.CmpItemAbbrMatch = { link = 'DiffText' }
 
     -- mini
-    hl.MiniIconsGrey = { fg = c.polar_night.brightest }
     hl.MiniIconsCyan = { fg = c.frost.polar_water }
     hl.MiniIconsAzure = { fg = c.frost.ice }
+
+    hl.MiniIconsGrey = { fg = c.polar_night.brightest }
     hl.MiniIconsBlue = { fg = c.frost.artic_water }
     hl.MiniIconsRed = { fg = c.aurora.red }
     hl.MiniIconsOrange = { fg = c.aurora.orange }
