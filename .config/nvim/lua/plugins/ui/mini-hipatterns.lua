@@ -6,19 +6,24 @@ for palette, colors in pairs(require('nord.colors').palette) do
     ---@diagnostic disable-next-line: param-type-mismatch
     for color, hex in pairs(colors) do
       nord_colors[palette .. '.' .. color] = {
-        pattern = palette .. '.' .. color, -- polar_night.origin
+        pattern = function(buf_id)
+          if vim.bo[buf_id].filetype ~= 'lua' then
+            return nil
+          end
+          return palette .. '.' .. color
+        end,
         group = hipatterns.compute_hex_color_group(hex, 'bg'),
       }
     end
   end
 end
 
-local highlighters = {
+local highlighters = vim.tbl_deep_extend('force', {
   hex_color = hipatterns.gen_highlighter.hex_color(),
-}
+}, nord_colors)
 
 hipatterns.setup({
-  highlighters = vim.tbl_deep_extend('force', highlighters, nord_colors),
+  highlighters = highlighters,
 })
 
 -- local nord_colors = {}
