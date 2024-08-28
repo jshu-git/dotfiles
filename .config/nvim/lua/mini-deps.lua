@@ -61,7 +61,7 @@ now(function()
 
   -- editing
   add('pteroctopus/faster.nvim')
-  require('faster').setup({ behaviours = { bigfile = { filesize = 1 } } })
+  require('faster').setup({ behaviours = { bigfile = { filesize = 2 } } })
 
   -- work
   if vim.env.SSH_CLIENT ~= nil then
