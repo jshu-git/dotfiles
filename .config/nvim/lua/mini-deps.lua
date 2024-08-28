@@ -59,6 +59,10 @@ now(function()
   })
   icons.mock_nvim_web_devicons()
 
+  -- editing
+  add('pteroctopus/faster.nvim')
+  require('faster').setup({ behaviours = { bigfile = { filesize = 0.1 } } })
+
   -- work
   if vim.env.SSH_CLIENT ~= nil then
     add('ojroques/nvim-osc52')
@@ -72,9 +76,6 @@ now(function()
     vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
     vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
     vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
-
-    add('pteroctopus/faster.nvim')
-    require('faster').setup()
   end
 end)
 
