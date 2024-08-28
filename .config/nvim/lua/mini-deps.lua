@@ -60,10 +60,14 @@ now(function()
   if vim.env.SSH_CLIENT ~= nil then
     add('ojroques/nvim-osc52')
     require('plugins.nvim-osc52')
+
     add('github/copilot.vim')
     vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
     vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
     vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
+
+    add('pteroctopus/faster.nvim')
+    require('faster').setup()
   end
 end)
 
