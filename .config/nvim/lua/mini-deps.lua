@@ -65,7 +65,7 @@ now(function()
     require('plugins.nvim-osc52')
 
     add('github/copilot.vim')
-    vim.gcopilot_filetypes = {
+    vim.g.copilot_filetypes = {
       ['*'] = true,
       ['grug-far'] = false,
     }
