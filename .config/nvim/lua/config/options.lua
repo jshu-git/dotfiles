@@ -68,7 +68,7 @@ opt.pumheight = 5
 opt.ignorecase = true
 opt.smartcase = true
 opt.wrapscan = false
--- opt.incsearch = false
+opt.incsearch = false
 
 -- mouse
 opt.mouse = 'a'
