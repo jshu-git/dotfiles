@@ -1,4 +1,5 @@
 require('nord').setup({
+  terminal_colors = false,
   diff = { mode = 'fg' },
   search = { theme = 'vscode' },
   on_highlights = function(hl, c)
@@ -56,6 +57,8 @@ require('nord').setup({
     hl.MiniStatuslineModeInsert = { fg = c.polar_night.bright, bg = c.snow_storm.origin }
     hl.MiniStatuslineModeCommand = { fg = c.polar_night.bright, bg = c.aurora.purple }
     hl.MiniStatuslineModeReplace = { fg = c.polar_night.bright, bg = c.aurora.red }
+
+    hl.MiniIndentScopeSymbol = { link = 'NonText' }
 
     -- copilot
     hl.NeoCodeiumSuggestion = { link = 'NonText' }

@@ -49,7 +49,7 @@ now(function()
 
   -- ui
   add('gbprod/nord.nvim')
-  require('plugins.colorscheme')
+  require('plugins.nord')
   local icons = require('mini.icons')
   icons.setup({
     filetype = {
