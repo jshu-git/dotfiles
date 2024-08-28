@@ -38,7 +38,7 @@ now(function()
   add({
     source = 'neovim/nvim-lspconfig',
     depends = {
-      'hrsh7th/cmp-nvim-lsp',
+      -- 'hrsh7th/cmp-nvim-lsp',
       'folke/lazydev.nvim',
       'smjonas/inc-rename.nvim',
     },
@@ -58,6 +58,7 @@ now(function()
     },
   })
   icons.mock_nvim_web_devicons()
+  icons.tweak_lsp_kind()
 
   -- editing
   add('pteroctopus/faster.nvim')
@@ -95,24 +96,24 @@ later(function()
   require('plugins.nvim-treesitter')
 
   -- cmp
-  add({
-    -- source = 'hrsh7th/nvim-cmp',
-    -- https://old.reddit.com/r/neovim/comments/1f1rxtx/share_a_tip_to_improve_your_experience_in_nvimcmp/
-    source = 'yioneko/nvim-cmp',
-    checkout = 'perf',
-    depends = {
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'FelipeLema/cmp-async-path',
-      -- cmdline
-      'hrsh7th/cmp-cmdline',
-      'dmitmel/cmp-cmdline-history',
-      -- signature
-      -- 'hrsh7th/cmp-nvim-lsp-signature-help',
-      -- ui
-      'onsails/lspkind-nvim',
-    },
-  })
+  -- add({
+  --   -- source = 'hrsh7th/nvim-cmp',
+  --   -- https://old.reddit.com/r/neovim/comments/1f1rxtx/share_a_tip_to_improve_your_experience_in_nvimcmp/
+  --   source = 'yioneko/nvim-cmp',
+  --   checkout = 'perf',
+  --   depends = {
+  --     'hrsh7th/cmp-nvim-lsp',
+  --     'hrsh7th/cmp-buffer',
+  --     'FelipeLema/cmp-async-path',
+  --     -- cmdline
+  --     'hrsh7th/cmp-cmdline',
+  --     'dmitmel/cmp-cmdline-history',
+  --     -- signature
+  --     -- 'hrsh7th/cmp-nvim-lsp-signature-help',
+  --     -- ui
+  --     'onsails/lspkind-nvim',
+  --   },
+  -- })
   add('windwp/nvim-autopairs')
   add('monkoose/neocodeium')
   vim.cmd('runtime! lua/plugins/cmp/*.lua')

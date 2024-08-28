@@ -13,6 +13,14 @@ end)
 opt.virtualedit = 'block'
 opt.startofline = true
 
+-- cmp
+opt.pumheight = 5
+opt.completeopt = 'menu,menuone,noinsert'
+opt.shortmess:append('c')
+if vim.fn.has('nvim-0.11') == 1 then
+  opt.completeopt:append('fuzzy')
+end
+
 -- fold
 opt.foldmethod = 'expr'
 opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
@@ -60,9 +68,6 @@ opt.cursorlineopt = 'number'
 opt.splitbelow = true
 opt.splitright = true
 opt.splitkeep = 'screen'
-
--- menus
-opt.pumheight = 5
 
 -- search
 opt.ignorecase = true
