@@ -56,15 +56,10 @@ now(function()
   })
   icons.mock_nvim_web_devicons()
 
-  -- editing
-  add('cbochs/grapple.nvim')
-  require('plugins.grapple')
-
   -- work
   if vim.env.SSH_CLIENT ~= nil then
     add('ojroques/nvim-osc52')
     require('plugins.nvim-osc52')
-
     add('github/copilot.vim')
     vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
     vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
@@ -120,6 +115,7 @@ later(function()
   vim.cmd('runtime! lua/plugins/ui/*.lua')
 
   -- editing
+  add('cbochs/grapple.nvim')
   add('stevearc/quicker.nvim')
   add('BranimirE/fix-auto-scroll.nvim')
   add('MagicDuck/grug-far.nvim')
