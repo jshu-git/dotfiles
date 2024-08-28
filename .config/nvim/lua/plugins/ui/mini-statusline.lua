@@ -47,10 +47,19 @@ statusline.setup({
       local custom_fileinfo = string.match(fileinfo, '^[^%s]+%s+[^%s]+')
 
       -- z
-      local total_lines = function()
-        local lines = vim.api.nvim_buf_line_count(0)
-        return string.format('%dL', lines)
+      local progress = function()
+        local cur = vim.fn.line('.')
+        local total = vim.fn.line('$')
+        if cur == 1 then
+          return 'TOP'
+        elseif cur == total then
+          return 'BOT'
+        else
+          return string.format('%2d%%%%', math.floor(cur / total * 100))
+        end
       end
+      local search = statusline.section_searchcount({ trunc_width = 75 })
+      local lines = string.format('%dL', vim.fn.line('$'))
 
       return statusline.combine_groups({
         { hl = mode_hl, strings = { mode } },
@@ -60,7 +69,7 @@ statusline.setup({
         '%=',
         { hl = 'MiniStatuslineFilename', strings = { file_size() } },
         { hl = 'MiniStatuslineFileinfo', strings = { custom_fileinfo } },
-        { hl = mode_hl, strings = { total_lines() } },
+        { hl = mode_hl, strings = { search, progress(), lines } },
       })
     end,
     inactive = nil,
