@@ -43,7 +43,7 @@ now(function()
       'smjonas/inc-rename.nvim',
     },
   })
-  add('stevearc/aerial.nvim')
+  -- add('stevearc/aerial.nvim')
   add('stevearc/conform.nvim')
   vim.cmd('runtime! lua/plugins/lsp/*.lua')
 
