@@ -121,7 +121,6 @@ later(function()
   add('MeanderingProgrammer/render-markdown.nvim')
   add('OXY2DEV/helpview.nvim')
   add('briangwaltney/paren-hint.nvim')
-  add('nkakouros-original/scrollofffraction.nvim')
   add('utilyre/sentiment.nvim')
   vim.cmd('runtime! lua/plugins/ui/*.lua')
 
@@ -136,6 +135,7 @@ later(function()
   add('numToStr/Comment.nvim')
   add('sitiom/nvim-numbertoggle')
   add('ziontee113/icon-picker.nvim')
+  add('nkakouros-original/scrollofffraction.nvim')
   vim.cmd('runtime! lua/plugins/editing/*.lua')
 
   -- git
