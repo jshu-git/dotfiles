@@ -38,8 +38,7 @@ require('nord').setup({
     hl.MiniIconsGrey = { fg = c.polar_night.brightest }
     hl.MiniIconsCyan = { fg = c.frost.polar_water }
     hl.MiniIconsAzure = { fg = c.frost.ice }
-
-    hl.MiniIconsBlue = { fg = c.frost.artic_ocean }
+    hl.MiniIconsBlue = { fg = c.frost.artic_water }
     hl.MiniIconsRed = { fg = c.aurora.red }
     hl.MiniIconsOrange = { fg = c.aurora.orange }
     hl.MiniIconsYellow = { fg = c.aurora.yellow }
