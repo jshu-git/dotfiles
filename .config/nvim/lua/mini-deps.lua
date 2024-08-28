@@ -83,7 +83,7 @@ later(function()
   require('mini.extra').setup()
   local misc = require('mini.misc')
   misc.setup_restore_cursor()
-  misc.setup_termbg_sync()
+  -- misc.setup_termbg_sync()
   vim.keymap.set('n', '<C-w>m', misc.zoom, { desc = 'Toggle Maximize' })
 
   -- treesitter

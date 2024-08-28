@@ -46,9 +46,9 @@ require('nord').setup({
     hl.MiniIconsGreen = { fg = c.aurora.green }
     hl.MiniIconsPurple = { fg = c.aurora.purple }
 
-    hl.MiniDiffSignAdd = { link = 'GitSignsAddNr' }
-    hl.MiniDiffSignChange = { link = 'GitSignsChangeNr' }
-    hl.MiniDiffSignDelete = { link = 'GitSignsDeleteNr' }
+    hl.MiniDiffSignAdd = { fg = c.aurora.green }
+    hl.MiniDiffSignChange = { fg = c.aurora.yellow }
+    hl.MiniDiffSignDelete = { fg = c.aurora.red }
 
     hl.MiniPickPrompt = { link = 'Normal' }
     hl.MiniPickMatchRanges = { link = 'DiffText' }
