@@ -14,9 +14,9 @@ opt.virtualedit = 'block'
 opt.startofline = true
 
 -- fold
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.opt.foldlevelstart = 99
+opt.foldmethod = 'expr'
+opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+opt.foldlevelstart = 99
 
 -- tabs/indents
 opt.breakindent = true
