@@ -5,8 +5,6 @@ cmp.setup({
     throttle = 0,
   },
   sources = {
-    { name = 'lazydev', group_index = 0 },
-    { name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lsp', max_item_count = 5 },
     { name = 'buffer', max_item_count = 3 },
     { name = 'async_path', max_item_count = 2 },

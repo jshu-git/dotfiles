@@ -22,11 +22,14 @@ vim.keymap.set('n', '<leader>me', function()
   vim.cmd('edit' .. deps.config.path.snapshot)
 end, { desc = 'Snapshot (Open)' })
 vim.keymap.set('n', '<leader>mw', deps.snap_save, { desc = 'Snapshot (Set)' })
-
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'minideps-confirm' },
-  callback = function()
+  callback = function(event)
     vim.opt_local.foldlevel = 0
+    vim.keymap.set('n', '<leader>w', function()
+      vim.cmd('write')
+      deps.snap_save()
+    end, { buffer = event.buf })
   end,
 })
 
@@ -62,6 +65,10 @@ now(function()
     require('plugins.nvim-osc52')
 
     add('github/copilot.vim')
+    vim.gcopilot_filetypes = {
+      ['*'] = true,
+      ['grug-far'] = false,
+    }
     vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
     vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
     vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
@@ -100,7 +107,7 @@ later(function()
       'hrsh7th/cmp-cmdline',
       'dmitmel/cmp-cmdline-history',
       -- signature
-      'hrsh7th/cmp-nvim-lsp-signature-help',
+      -- 'hrsh7th/cmp-nvim-lsp-signature-help',
       -- ui
       'onsails/lspkind-nvim',
     },
