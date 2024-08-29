@@ -8,6 +8,7 @@ MUtils.completion_confirm = function()
     if vim.fn.complete_info()['selected'] ~= -1 then
       return autopairs.esc('<c-y>')
     else
+      -- only relevant went completeopt has 'noselect'
       return autopairs.esc('<c-e>') .. autopairs.autopairs_cr()
     end
   else
