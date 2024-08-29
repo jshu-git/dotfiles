@@ -34,35 +34,24 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 now(function()
+  -- editing
+  add('pteroctopus/faster.nvim')
+  require('faster').setup({ behaviours = { bigfile = { filesize = 0.5 } } }) -- 500KB
+
   -- lsp
   add({
     source = 'neovim/nvim-lspconfig',
     depends = {
-      -- 'hrsh7th/cmp-nvim-lsp',
       'folke/lazydev.nvim',
       'smjonas/inc-rename.nvim',
     },
   })
-  -- add('stevearc/aerial.nvim')
   add('stevearc/conform.nvim')
   vim.cmd('runtime! lua/plugins/lsp/*.lua')
 
   -- ui
   add('gbprod/nord.nvim')
   require('plugins.nord')
-  local icons = require('mini.icons')
-  icons.setup({
-    filetype = {
-      minifiles = { glyph = '󰉋', hl = 'Directory' },
-      minipick = { glyph = '󰍉' },
-    },
-  })
-  icons.mock_nvim_web_devicons()
-  icons.tweak_lsp_kind()
-
-  -- editing
-  add('pteroctopus/faster.nvim')
-  require('faster').setup({ behaviours = { bigfile = { filesize = 2 } } })
 
   -- work
   if vim.env.SSH_CLIENT ~= nil then
