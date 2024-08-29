@@ -26,13 +26,23 @@ statusline.setup({
         },
       })
       -- c
-      local filename = statusline.section_filename({ trunc_width = 140 })
+      -- local filename = statusline.section_filename({ trunc_width = 140 })
+      local custom_filename = '%f %m%r'
+      local grapple = function()
+        if require('grapple').exists() then
+          return ' '
+        elseif require('grapple').exists({ scope = 'global' }) then
+          return ' '
+        else
+          return nil
+        end
+      end
 
       -- x
       local file_size = function()
         local size = vim.fn.getfsize(vim.fn.getreg('%'))
         if size <= 0 then
-          return ''
+          return nil
         elseif size < 1024 then
           return string.format('%dB', size)
         elseif size < 1048576 then
@@ -65,7 +75,7 @@ statusline.setup({
         { hl = mode_hl, strings = { mode } },
         { hl = 'MiniStatuslineDevinfo', strings = { custom_git(), diagnostics } },
         '%<',
-        { hl = 'MiniStatuslineFilename', strings = { filename } },
+        { hl = 'MiniStatuslineFilename', strings = { grapple(), custom_filename } },
         '%=',
         { hl = 'MiniStatuslineFilename', strings = { file_size() } },
         { hl = 'MiniStatuslineFileinfo', strings = { custom_fileinfo } },
