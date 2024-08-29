@@ -1,4 +1,5 @@
-require('mini.completion').setup({
+local completion = require('mini.completion')
+completion.setup({
   delay = {
     completion = 0,
     info = 10 ^ 7,
