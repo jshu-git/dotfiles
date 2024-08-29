@@ -17,7 +17,7 @@ local add, now, later = deps.add, deps.now, deps.later
 deps.setup({ path = { package = path_package } })
 vim.keymap.set('n', '<leader>mu', deps.update, { desc = 'Update' })
 vim.keymap.set('n', '<leader>mx', deps.clean, { desc = 'Clean' })
-vim.keymap.set('n', '<leader>mm', '<cmd>DepsShowLog<cr>', { desc = 'Log' })
+vim.keymap.set('n', '<leader>mm', '<cmd>DepsShowLog<cr><cmd>norm! G<cr>', { desc = 'Log' })
 vim.keymap.set('n', '<leader>me', function()
   vim.cmd('edit' .. deps.config.path.snapshot)
 end, { desc = 'Snapshot (Open)' })
