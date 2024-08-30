@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('FileType', {
 now(function()
   -- editing
   add('pteroctopus/faster.nvim')
-  require('faster').setup({ behaviours = { bigfile = { filesize = 0.3 } } }) -- 300KB
+  require('faster').setup({ behaviours = { bigfile = { filesize = 0.5 } } })
 
   -- lsp
   add({
