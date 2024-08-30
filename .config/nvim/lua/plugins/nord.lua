@@ -53,7 +53,7 @@ require('nord').setup({
     hl.MiniDiffSignDelete = { fg = c.aurora.red }
 
     hl.MiniPickPrompt = { link = 'Normal' }
-    hl.MiniPickMatchRanges = { link = 'PmenuMatchSel' }
+    hl.MiniPickMatchRanges = { link = 'DiffText' }
 
     hl.MiniStatuslineModeNormal = { fg = c.polar_night.bright, bg = c.frost.ice }
     hl.MiniStatuslineModeVisual = { fg = c.polar_night.bright, bg = c.aurora.green }

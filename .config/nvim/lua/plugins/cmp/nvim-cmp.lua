@@ -22,9 +22,9 @@ cmp.setup({
   window = {
     completion = {
       -- border = 'single',
-      side_padding = 0,
+      -- side_padding = 0,
       scrolloff = 3,
-      col_offset = 1,
+      -- col_offset = 0,
       winhighlight = 'Normal:Pmenu,CursorLine:Visual',
       -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
       -- winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
@@ -113,3 +113,8 @@ cmp.setup.cmdline(':', {
     { name = 'async_path', max_item_count = 2 },
   }),
 })
+
+-- autopairs
+require('nvim-autopairs').setup()
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())

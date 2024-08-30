@@ -99,9 +99,10 @@ later(function()
       'dmitmel/cmp-cmdline-history',
       -- ui
       'onsails/lspkind-nvim',
+      -- autopairs
+      'windwp/nvim-autopairs',
     },
   })
-  add('windwp/nvim-autopairs')
   add('monkoose/neocodeium')
   vim.cmd('runtime! lua/plugins/cmp/*.lua')
 
