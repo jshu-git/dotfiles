@@ -34,10 +34,6 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 now(function()
-  -- editing
-  add('pteroctopus/faster.nvim')
-  require('faster').setup({ behaviours = { bigfile = { filesize = 0.5 } } })
-
   -- lsp
   add({
     source = 'neovim/nvim-lspconfig',
@@ -67,6 +63,9 @@ now(function()
     vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
     vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
     vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
+
+    add('pteroctopus/faster.nvim')
+    require('faster').setup({ behaviours = { bigfile = { filesize = 0.5 } } })
   end
 end)
 
