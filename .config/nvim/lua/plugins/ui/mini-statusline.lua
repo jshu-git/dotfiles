@@ -28,15 +28,15 @@ statusline.setup({
       -- c
       -- local filename = statusline.section_filename({ trunc_width = 140 })
       local custom_filename = '%f %m%r'
-      local grapple = function()
-        if require('grapple').exists() then
-          return ' '
-        elseif require('grapple').exists({ scope = 'global' }) then
-          return ' '
-        else
-          return nil
-        end
-      end
+      -- local grapple = function()
+      --   if require('grapple').exists() then
+      --     return ' '
+      --   elseif require('grapple').exists({ scope = 'global' }) then
+      --     return ' '
+      --   else
+      --     return nil
+      --   end
+      -- end
 
       -- x
       local file_size = function()
@@ -75,7 +75,7 @@ statusline.setup({
         { hl = mode_hl, strings = { mode } },
         { hl = 'MiniStatuslineDevinfo', strings = { custom_git(), diagnostics } },
         '%<',
-        { hl = 'MiniStatuslineFilename', strings = { grapple(), custom_filename } },
+        { hl = 'MiniStatuslineFilename', strings = { custom_filename } },
         '%=',
         { hl = 'MiniStatuslineFilename', strings = { file_size() } },
         { hl = 'MiniStatuslineFileinfo', strings = { custom_fileinfo } },

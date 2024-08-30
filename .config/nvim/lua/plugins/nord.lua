@@ -33,8 +33,8 @@ require('nord').setup({
     hl.LspInfoBorder = { link = 'FloatBorder' }
     hl.QuickFixLine = { link = 'CursorLine' }
     -- hl.CmpItemAbbrMatch = { link = 'DiffText' }
-    hl.PmenuMatchSel = { fg = c.frost.artic_water, bg = hl.PmenuSel.bg }
-    hl.PmenuMatch = { fg = c.frost.artic_water, bg = hl.Pmenu.bg }
+    -- hl.PmenuMatchSel = { fg = c.frost.artic_water, bg = hl.PmenuSel.bg }
+    -- hl.PmenuMatch = { fg = c.frost.artic_water, bg = hl.Pmenu.bg }
 
     -- mini
     hl.MiniIconsAzure = { fg = c.frost.artic_water }
