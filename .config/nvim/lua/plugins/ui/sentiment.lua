@@ -1,4 +1,1 @@
-require('sentiment').setup({
-  delay = 0,
-  pairs = { { '(', ')' }, { '{', '}' }, { '[', ']' }, { '<', '>' } },
-})
+require('sentiment').setup({ delay = 0 })
