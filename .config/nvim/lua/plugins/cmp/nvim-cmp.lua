@@ -30,14 +30,14 @@ cmp.setup({
       -- winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
       -- winhighlight = 'Normal:Pmenu,Cursorline:Visual',
     },
-    -- documentation = {
-    -- border = 'single',
-    -- side_padding = 0,
-    -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
-    -- max_width = math.floor(vim.o.columns * 0.3),
-    -- winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu',
-    -- winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
-    -- },
+    documentation = {
+      border = 'single',
+      -- side_padding = 0,
+      winhighlight = 'FloatBorder:FloatBorder',
+      -- max_width = math.floor(vim.o.columns * 0.3),
+      -- winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu',
+      -- winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
+    },
   },
   formatting = {
     format = require('lspkind').cmp_format({
