@@ -12,6 +12,8 @@ grug.setup({
     historyAdd = '',
     refresh = { n = 'gr' },
     openLocation = { n = '<Tab>' },
+    -- openNextLocation = { n = '<down>' },
+    -- openPrevLocation = { n = '<up>' },
     -- gotoLocation = { n = '<enter>' },
     -- pickHistoryEntry = { n = '<enter>' },
     abort = { n = '<C-c>' },
@@ -23,14 +25,17 @@ grug.setup({
   history = {
     autoSave = { onBufDelete = false },
   },
+  resultLocation = {
+    showNumberLabel = false,
+  },
 })
 
 -- search
-vim.keymap.set('n', '<leader>s', grug.grug_far, { desc = 'Grug Far' })
+vim.keymap.set('n', '<leader>s', grug.open, { desc = 'Grug Far' })
 
--- search/replace cword
+-- replace cword
 vim.keymap.set({ 'n', 'x' }, '<leader>r', function()
-  grug.grug_far({
+  grug.open({
     startCursorRow = 4,
     prefills = {
       search = vim.fn.expand('<cword>'),
@@ -38,7 +43,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>r', function()
   })
 end, { desc = 'Replace' })
 vim.keymap.set({ 'n', 'x' }, '<leader>R', function()
-  grug.grug_far({
+  grug.open({
     startCursorRow = 4,
     prefills = {
       search = vim.fn.expand('<cword>'),
@@ -47,9 +52,9 @@ vim.keymap.set({ 'n', 'x' }, '<leader>R', function()
   })
 end, { desc = 'Replace (Relative)' })
 
--- current file
+-- replace (current file)
 vim.keymap.set({ 'n', 'x' }, 'sW', function()
-  grug.grug_far({
+  grug.open({
     startCursorRow = 4,
     prefills = {
       search = vim.fn.expand('<cword>'),
