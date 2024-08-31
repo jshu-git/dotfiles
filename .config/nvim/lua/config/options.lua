@@ -39,7 +39,7 @@ opt.fillchars:append({
 })
 opt.list = true
 opt.listchars = {
-  tab = '↦ ',
+  tab = '> ',
   extends = '…',
   precedes = '…',
   nbsp = '␣',
