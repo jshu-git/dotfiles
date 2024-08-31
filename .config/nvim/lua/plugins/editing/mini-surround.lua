@@ -7,7 +7,7 @@ surround.setup({
     ['{'] = { output = { left = '{', right = '}' } },
     ['<'] = { output = { left = '<', right = '>' } },
     -- lua function
-    f = { output = { left = 'function()', right = 'end' } },
+    f = { output = { left = 'function() ', right = ' end' } },
   },
   mappings = {
     add = '',
