@@ -59,7 +59,6 @@ map({ 'n', 'x' }, ';', ':')
 map({ 'n', 'x' }, 'x', '"_x')
 map({ 'n', 'x' }, 'c', '"_c')
 map({ 'n', 'x' }, 'C', '"_C')
-map('n', 'dD', '"_dd')
 map('n', 'dd', function()
   return vim.fn.getline('.') == '' and '"_dd' or 'dd'
 end, { expr = true })
