@@ -11,7 +11,7 @@ return {
   ["full_visual_line.nvim"] = "4cf9977388e09d876ae59ae32b303cdd3e100ae4",
   ["gitlinker.nvim"] = "cc59f732f3d043b626c8702cb725c82e54d35c25",
   ["grapple.nvim"] = "7aedc261b05a6c030397c4bc26416efbe746ebf1",
-  ["grug-far.nvim"] = "986fca5ffc354f48f2c329c8dff8a41632832600",
+  ["grug-far.nvim"] = "8058c2366f21af6f446d8e0f9333ae7c22f7679a",
   ["guess-indent.nvim"] = "6cd61f7a600bb756e558627cd2e740302c58e32d",
   ["helpview.nvim"] = "857aec1dab331252910da158ab6cbfbc65239c71",
   ["icon-picker.nvim"] = "3ee9a0ea9feeef08ae35e40c8be6a2fa2c20f2d3",
@@ -26,12 +26,13 @@ return {
   ["nvim-cmp"] = "6c3d595f3223c1ae7392d4fde1626355439af6c1",
   ["nvim-lspconfig"] = "3ad562700d0615818bf358268ac8914f6ce2b079",
   ["nvim-numbertoggle"] = "c5827153f8a955886f1b38eaea6998c067d2992f",
-  ["nvim-treesitter"] = "c7920f2bc5080e1d04708332f6a0e7e9368b2197",
+  ["nvim-treesitter"] = "749df308870381979dc098063973f6ace9968ef6",
   ["nvim-treesitter-context"] = "0ec9a8e00cedfb52e3c2259b55f46a7c18fc2429",
   ["plenary.nvim"] = "ec289423a1693aeae6cd0d503bac2856af74edaa",
   ["quicker.nvim"] = "308088ebcec33f9ed551714e52390206b8f62ed6",
   ["render-markdown.nvim"] = "bc8213ddcd91d2045cc3813df861adb93fbf2d2d",
   ["scrollofffraction.nvim"] = "0618a3e3e1a4e13a04edf6fd35bfcee4bd5afe38",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
-  undotree = "56c684a805fe948936cda0d1b19505b84ad7e065"
+  undotree = "56c684a805fe948936cda0d1b19505b84ad7e065",
+  ["visual-whitespace.nvim"] = "e22d8508a0236f274dde39775ee127c85d30c0c0"
 }
