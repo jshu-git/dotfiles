@@ -110,6 +110,7 @@ later(function()
   add('MeanderingProgrammer/render-markdown.nvim')
   add('OXY2DEV/helpview.nvim')
   add('utilyre/sentiment.nvim')
+  add('mcauley-penney/visual-whitespace.nvim')
   vim.cmd('runtime! lua/plugins/ui/*.lua')
 
   -- editing

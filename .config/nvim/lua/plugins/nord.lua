@@ -78,6 +78,9 @@ require('nord').setup({
     -- grapple
     hl.GrappleFooter = { link = 'FloatBorder' }
     hl.GrappleCurrent = { link = 'Normal' }
+
+    -- visual-whitespace
+    hl.VisualWhitespace = { bg = hl.Visual.bg, fg = hl.Comment.fg }
   end,
 })
 
