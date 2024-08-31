@@ -27,12 +27,9 @@ vim.keymap.set('n', '<down>', '<cmd>cnext<cr>')
 vim.keymap.set('n', '<up>', '<cmd>cprev<cr>')
 
 vim.keymap.set('n', '<leader>c', function()
-  if vim.tbl_isempty(vim.fn.getqflist()) then
-    vim.notify('[quicker.nvim] No Quickfix', vim.log.levels.WARN)
-  else
-    quicker.toggle({ focus = true })
-  end
-end, {
-  desc = 'Quickfix List',
-})
-vim.keymap.set('n', '<leader>C', quicker.refresh, { desc = 'Quickfix (Refresh)' })
+  quicker.toggle({ focus = true })
+end, { desc = 'Quickfix List' })
+-- vim.keymap.set('n', '<leader>C', function()
+--   quicker.refresh()
+--   vim.notify('[quicker.nvim] Refreshed Quickfix List')
+-- end, { desc = 'Quickfix (Refresh)' })
