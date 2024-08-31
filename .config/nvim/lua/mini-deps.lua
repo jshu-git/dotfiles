@@ -109,7 +109,6 @@ later(function()
   add('0xAdk/full_visual_line.nvim')
   add('MeanderingProgrammer/render-markdown.nvim')
   add('OXY2DEV/helpview.nvim')
-  add('briangwaltney/paren-hint.nvim')
   add('utilyre/sentiment.nvim')
   vim.cmd('runtime! lua/plugins/ui/*.lua')
 
