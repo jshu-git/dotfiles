@@ -10,7 +10,3 @@ require('mini.indentscope').setup({
   },
   symbol = '▏',
 })
-
--- require('utils').apply_highlights({
---   MiniIndentScopeSymbol = { link = 'NonText' },
--- })

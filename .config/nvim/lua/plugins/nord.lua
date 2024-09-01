@@ -64,9 +64,9 @@ require('nord').setup({
     hl.MiniIndentScopeSymbol = { link = 'NonText' }
 
     -- copilot
-    hl.NeoCodeiumSuggestion = { link = 'NonText' }
+    hl.NeoCodeiumSuggestion = { fg = c.polar_night.brightest }
     hl.NeoCodeiumLabel = { link = 'Search' }
-    hl.CopilotSuggestion = { link = 'NonText' }
+    hl.CopilotSuggestion = { fg = c.polar_night.brightest }
     hl.CopilotAnnotation = { link = 'Search' }
 
     -- sentiment
