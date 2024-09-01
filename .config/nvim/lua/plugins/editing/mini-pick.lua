@@ -122,40 +122,41 @@ vim.keymap.set('n', ',', function()
 end)
 
 -- buffers
-vim.keymap.set('n', '<leader>b', function()
-  pick.builtin.buffers(nil, {
-    mappings = {
-      scroll_down = '',
-      wipeout = {
-        char = '<C-d>',
-        func = function()
-          local items = MiniPick.get_picker_items()
-          if items == nil or #items == 0 then
-            return
-          end
-
-          local matches = pick.get_picker_matches()
-          if matches ~= nil then
-            local current = matches.current
-            local index = matches.current_ind -- save index for later
-            vim.notify('[mini.pick] Deleted buffer: ' .. vim.fs.basename(vim.api.nvim_buf_get_name(current.bufnr)))
-            -- currently this doesn't properly delete the active buffer
-            vim.api.nvim_buf_delete(current.bufnr, {})
-
-            -- update picker https://old.reddit.com/r/neovim/comments/1dq1o56/minipick_moveset_match_cursor/
-            table.remove(items, index)
-            pick.set_picker_items(items)
-            local mappings = pick.get_picker_opts().mappings
-            ---@diagnostic disable-next-line: unused-local
-            for i = 1, index - 1 do
-              vim.api.nvim_input(mappings.move_down)
-            end
-          end
-        end,
-      },
-    },
-  })
-end, { desc = 'Buffers' })
+vim.keymap.set('n', '<leader>b', pick.builtin.buffers, { desc = 'Buffers' })
+-- vim.keymap.set('n', '<leader>b', function()
+--   pick.builtin.buffers(nil, {
+--     mappings = {
+--       scroll_down = '',
+--       wipeout = {
+--         char = '<C-d>',
+--         func = function()
+--           local items = MiniPick.get_picker_items()
+--           if items == nil or #items == 0 then
+--             return
+--           end
+--
+--           local matches = pick.get_picker_matches()
+--           if matches ~= nil then
+--             local current = matches.current
+--             local index = matches.current_ind -- save index for later
+--             vim.notify('[mini.pick] Deleted buffer: ' .. vim.fs.basename(vim.api.nvim_buf_get_name(current.bufnr)))
+--             -- currently this doesn't properly delete the active buffer
+--             vim.api.nvim_buf_delete(current.bufnr, {})
+--
+--             -- update picker https://old.reddit.com/r/neovim/comments/1dq1o56/minipick_moveset_match_cursor/
+--             table.remove(items, index)
+--             pick.set_picker_items(items)
+--             local mappings = pick.get_picker_opts().mappings
+--             ---@diagnostic disable-next-line: unused-local
+--             for i = 1, index - 1 do
+--               vim.api.nvim_input(mappings.move_down)
+--             end
+--           end
+--         end,
+--       },
+--     },
+--   })
+-- end, { desc = 'Buffers' })
 
 -- diagnostics
 vim.keymap.set('n', '<leader>fd', function()
