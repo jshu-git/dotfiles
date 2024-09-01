@@ -13,7 +13,12 @@ end
 
 -- ui
 H.highlight_timeout = 250
-H.signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = '󰋽 ' }
+H.signs = {
+  Error = '󰅚 ',
+  Warn = '󰀪 ',
+  Hint = '󰌶 ',
+  Info = '󰋽 ',
+}
 H.popup = {
   height = math.floor(0.75 * vim.o.lines),
   width = math.floor(0.75 * vim.o.columns),
