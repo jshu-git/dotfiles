@@ -137,4 +137,7 @@ later(function()
   -- add('jshu-git/blame.nvim')
   -- add('sindrets/diffview.nvim')
   vim.cmd('runtime! lua/plugins/git/*.lua')
+
+  -- pico8
+  add('bakudankun/pico-8.vim')
 end)

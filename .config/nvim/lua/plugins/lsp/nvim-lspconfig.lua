@@ -101,6 +101,7 @@ local servers = {
       },
     },
   },
+  pico8_ls = {}, -- not working for some reason
 }
 if vim.env.SSH_CLIENT ~= nil then
   servers.basedpyright.settings.python = {
@@ -114,12 +115,33 @@ local capabilities = vim.tbl_deep_extend(
   vim.lsp.protocol.make_client_capabilities(),
   require('cmp_nvim_lsp').default_capabilities()
 )
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
 local lspconfig = require('lspconfig')
 for server, config in pairs(servers) do
   config.capabilities = capabilities
   lspconfig[server].setup(config)
 end
+
+-- pico8
+-- vim.api.nvim_create_autocmd({ 'BufNew', 'BufEnter' }, {
+--   pattern = { '*.p8' },
+--   callback = function(args)
+--     vim.lsp.start({
+--       name = 'pico8-ls',
+--       cmd = { 'pico8-ls', '--stdio' },
+--       root_dir = vim.fs.dirname(vim.api.nvim_buf_get_name(args.buf)),
+--     })
+--   end,
+-- })
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'pico8',
+  callback = function(args)
+    vim.lsp.start({
+      name = 'pico8-ls',
+      cmd = { 'pico8-ls', '--stdio' },
+      root_dir = vim.fs.dirname(vim.api.nvim_buf_get_name(args.buf)),
+    })
+  end,
+})
 
 -- lspinfo
 require('lspconfig.ui.windows').default_options = {
