@@ -27,6 +27,7 @@ opt.linebreak = true
 opt.wrap = false
 opt.tabstop = 4
 opt.shiftwidth = 4
+opt.showbreak = '↳ '
 
 -- chars
 opt.fillchars:append({
