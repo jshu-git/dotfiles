@@ -1,7 +1,7 @@
 local clue = require('mini.clue')
 clue.setup({
   window = {
-    delay = 200,
+    delay = require('utils').highlight_timeout,
     config = function(bufnr)
       local max_width = 0
       for _, line in ipairs(vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)) do
