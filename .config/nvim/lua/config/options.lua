@@ -46,7 +46,6 @@ opt.listchars = {
 }
 
 -- statusline
--- opt.cmdheight = 0
 opt.laststatus = 3
 opt.showmode = false
 opt.showcmd = false
@@ -69,7 +68,7 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.wrapscan = false
 opt.incsearch = false
-opt.shortmess:append('S')
+opt.shortmess:append({ S = true })
 
 -- mouse
 opt.mouse = 'a'
