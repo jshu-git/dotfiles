@@ -3,7 +3,6 @@ require('nord').setup({
   diff = { mode = 'fg' },
   search = { theme = 'vscode' },
   on_highlights = function(hl, c)
-    local utils = require('nord.utils')
     -- defaults = {
     --   polar_night = {
     --     origin = "#2E3440", -- nord0
@@ -81,7 +80,7 @@ require('nord').setup({
     hl.GrappleCurrent = { link = 'Normal' }
 
     -- visual-whitespace
-    hl.VisualWhitespace = { bg = hl.Visual.bg, fg = utils.darken(hl.Comment.fg, 0.2) }
+    hl.VisualWhitespace = { bg = hl.Visual.bg, fg = c.polar_night.brightest }
   end,
 })
 
