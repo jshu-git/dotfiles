@@ -5,11 +5,11 @@ require('nord').setup({
   on_highlights = function(hl, c)
     -- defaults = {
     --   polar_night = {
-    --     origin = "#2E3440", -- nord0
-    --     bright = "#3B4252", -- nord1
-    --     brighter = "#434C5E", -- nord2
-    --     brightest = "#4C566A", -- nord3
-    --     light = "#616E88", -- out of palette
+    --     origin = "#2E3440", -- nord0  (Normal)
+    --     bright = "#3B4252", -- nord1 (CursorLine)
+    --     brighter = "#434C5E", -- nord2 (Visual)
+    --     brightest = "#4C566A", -- nord3 (FloatBorder)
+    --     light = "#616E88", -- out of palette (Comment)
     --   },
     --   snow_storm = {
     --     origin = "#D8DEE9", -- nord4
