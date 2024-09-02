@@ -14,11 +14,11 @@ cmp.setup({
       vim.snippet.expand(args.body)
     end,
   },
-  view = {
-    docs = {
-      auto_open = false,
-    },
-  },
+  -- view = {
+  --   docs = {
+  --     auto_open = false,
+  --   },
+  -- },
   window = {
     completion = {
       -- border = 'single',
