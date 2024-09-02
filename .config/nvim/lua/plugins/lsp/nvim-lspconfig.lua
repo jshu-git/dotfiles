@@ -102,6 +102,7 @@ local servers = {
     },
   },
   pico8_ls = {},
+  tsserver = {},
 }
 if vim.env.SSH_CLIENT ~= nil then
   servers.basedpyright.settings.python = {
