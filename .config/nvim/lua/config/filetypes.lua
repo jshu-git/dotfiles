@@ -3,7 +3,6 @@ vim.filetype.add({
     zsh = 'sh',
     sh = 'sh',
     suite = 'yaml',
-    p8 = 'pico8',
   },
   filename = {
     ['.zshrc'] = 'sh',
