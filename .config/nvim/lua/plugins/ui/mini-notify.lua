@@ -15,7 +15,7 @@ notify.setup({
       anchor = 'SE',
       row = vim.o.lines - vim.o.cmdheight - 1,
     },
-    winblend = 0,
+    winblend = 100,
   },
 })
 vim.notify = notify.make_notify()
