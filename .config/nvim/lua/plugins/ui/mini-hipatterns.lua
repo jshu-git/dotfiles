@@ -1,27 +1,26 @@
 local hipatterns = require('mini.hipatterns')
 
--- local nord_colors = {}
--- for palette, colors in pairs(require('nord.colors').palette) do
---   if palette ~= 'none' then
---     ---@diagnostic disable-next-line: param-type-mismatch
---     for color, hex in pairs(colors) do
---       nord_colors[palette .. '.' .. color] = {
---         pattern = function(buf_id)
---           if vim.bo[buf_id].filetype ~= 'lua' then
---             return nil
---           end
---           return palette .. '.' .. color
---         end,
---         group = hipatterns.compute_hex_color_group(hex, 'bg'),
---       }
---     end
---   end
--- end
+local nord_colors = {}
+for palette, colors in pairs(require('nord.colors').palette) do
+  if palette ~= 'none' then
+    ---@diagnostic disable-next-line: param-type-mismatch
+    for color, hex in pairs(colors) do
+      nord_colors[palette .. '.' .. color] = {
+        pattern = function(buf_id)
+          if vim.bo[buf_id].filetype ~= 'lua' then
+            return nil
+          end
+          return palette .. '.' .. color
+        end,
+        group = hipatterns.compute_hex_color_group(hex, 'bg'),
+      }
+    end
+  end
+end
 
 local highlighters = vim.tbl_deep_extend('force', {
   hex_color = hipatterns.gen_highlighter.hex_color(),
-  -- }, nord_colors)
-}, {})
+}, nord_colors)
 
 hipatterns.setup({
   highlighters = highlighters,

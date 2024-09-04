@@ -30,6 +30,7 @@ require('nord').setup({
     --     purple = "#B48EAD", -- nord15
     --   },
     -- }
+
     hl.LspInfoBorder = { link = 'FloatBorder' }
     hl.QuickFixLine = { link = 'CursorLine' }
     -- hl.CmpItemAbbrMatch = { link = 'DiffText' }
@@ -38,7 +39,6 @@ require('nord').setup({
 
     -- mini
     hl.MiniIconsAzure = { fg = c.frost.artic_water }
-
     hl.MiniIconsCyan = { fg = c.frost.polar_water }
     hl.MiniIconsGrey = { fg = c.polar_night.brightest }
     hl.MiniIconsBlue = { fg = c.frost.artic_water }
