@@ -26,12 +26,12 @@
 local highlights = {
   NormalFloat = { link = 'Normal' },
   FloatBorder = { link = 'NonText' },
+  LspInfoBorder = { link = 'FloatBorder' },
   QuickFixLine = { link = 'CursorLine' },
 
   -- cmp
   CmpItemAbbrMatch = { fg = 'NvimLightCyan' },
   CmpItemAbbrMatchFuzzy = { fg = 'NvimLightCyan' },
-
   -- PmenuMatchSel = { fg = c.frost.artic_water, bg = PmenuSel.bg },
   -- PmenuMatch = { fg = c.frost.artic_water, bg = Pmenu.bg },
 
@@ -49,7 +49,7 @@ local highlights = {
   MiniDiffSignChange = { fg = 'NvimLightYellow' },
   MiniDiffSignDelete = { fg = 'NvimDarkRed' },
   MiniPickPrompt = { link = 'Normal' },
-  MiniPickMatchRanges = { link = 'CmpItemAbbrMatchDefault' },
+  MiniPickMatchRanges = { link = 'CmpItemAbbrMatch' },
   MiniIndentScopeSymbol = { link = 'NonText' },
 
   -- copilot
