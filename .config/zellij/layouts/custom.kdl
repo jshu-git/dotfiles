@@ -13,7 +13,7 @@ layout {
                 mode_locked          ""
 
                 // tabs
-                tab_normal "#[fg=#616e88]{name}{floating_indicator}{fullscreen_indicator}{sync_indicator} " // nord
+                tab_normal "#[fg=#4C566A]{name}{floating_indicator}{fullscreen_indicator}{sync_indicator} " // nord
                 // tab_normal "#[fg=#4f5258]{name}{floating_indicator}{fullscreen_indicator}{sync_indicator} " // nvimdark
                 tab_active "#[fg=white]{name}{floating_indicator}{fullscreen_indicator}{sync_indicator} "
                 tab_sync_indicator       " 󰓦"
