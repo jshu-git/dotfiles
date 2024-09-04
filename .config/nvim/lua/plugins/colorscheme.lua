@@ -5,9 +5,9 @@
 -- #007373 (Dark cyan)
 -- #005523 (Dark green)
 -- #07080d (Dark grey1)
--- #14161b (Dark grey2)
--- #2c2e33 (Dark grey3)
--- #4f5258 (Dark grey4)
+-- #14161b (Dark grey2) -- Normal bg
+-- #2c2e33 (Dark grey3) -- CursorLine
+-- #4f5258 (Dark grey4) -- Visual, NonText, FloatBorder
 -- #470045 (Dark magenta)
 -- #590008 (Dark red)
 -- #6b5300 (Dark yellow)
@@ -16,9 +16,9 @@
 -- #8cf8f7 (Light cyan)
 -- #b3f6c0 (Light green)
 -- #eef1f8 (Light grey1)
--- #e0e2ea (Light grey2)
+-- #e0e2ea (Light grey2) -- Normal fg
 -- #c4c6cd (Light grey3)
--- #9b9ea4 (Light grey4)
+-- #9b9ea4 (Light grey4) -- Comment
 -- #ffcaff (Light magenta)
 -- #ffc0b9 (Light red)
 -- #fce094 (Light yellow)
@@ -28,6 +28,7 @@ local highlights = {
   FloatBorder = { link = 'NonText' },
   LspInfoBorder = { link = 'FloatBorder' },
   QuickFixLine = { link = 'CursorLine' },
+  Comment = { fg = 'NvimLightGrey4', italic = true },
 
   -- cmp
   CmpItemAbbrMatch = { fg = 'NvimLightCyan' },
