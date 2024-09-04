@@ -106,7 +106,7 @@ end, { desc = 'Grep cword (Relative)' })
 vim.keymap.set('n', ',', function()
   extra.pickers.buf_lines({
     scope = 'current',
-    preserve_order = true,
+    -- preserve_order = true,
   }, {
     source = {
       choose = function(item)
