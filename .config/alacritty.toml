@@ -99,14 +99,17 @@ bindings = [
 # text = '#e0e2ea'
 
 
-# nord https://github.com/alacritty/alacritty-theme/blob/master/themes/nord.toml
-[colors]
-cursor = { cursor = "#D8DEE9" }
-vi_mode_cursor = { cursor = "#EBCB8B" }
-selection = { text = "CellForeground", background = "CellForeground" }
-# [colors.search]
-# matches = { foreground = "#d8dee9", background = "#5b7a88" }
-# focused_match = { foreground = "#d8dee9", background = "#40505d" }
+# nord
+# https://github.com/alacritty/alacritty-theme/blob/master/themes/nord.toml
+# https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/alacritty/nord.toml
+[colors.cursor]
+cursor = '#eceff4'
+text = '#282828'
+[colors.selection]
+background = '#eceff4'
+text = '#4c566a'
+[colors.vi_mode_cursor]
+cursor = "#EBCB8B"
 [colors.primary]
 background = '#2E3440'
 foreground = '#D8DEE9'
