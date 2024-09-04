@@ -58,6 +58,11 @@ map('cr', function()
 end, 'LSP: Rename Variable', { expr = true })
 map('cR', ':IncRename ', 'Rename Variable')
 
+-- lspinfo
+map('<leader>li', '<cmd>LspInfo<CR>', 'Info')
+map('<leader>lr', '<cmd>LspRestart<CR>', 'Restart')
+map('<leader>lr', '<cmd>LspLog<CR>', 'Restart')
+
 -- diagnostics
 map('gl', vim.diagnostic.open_float, 'Hover Diagnostic')
 map('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
