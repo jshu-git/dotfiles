@@ -77,14 +77,11 @@ bindings = [
 # red = '#ffc0b9'
 # white = '#eef1f8'
 # yellow = '#fce094'
-#
 # [colors.cursor]
 # cursor = '#9b9ea4'
 # # text = '#e0e2ea'
-#
 # [colors.vi_mode_cursor]
 # cursor = '#fce094'
-#
 # [colors.normal]
 # black = '#07080d'
 # blue = '#a6dbff'
@@ -94,11 +91,9 @@ bindings = [
 # red = '#ffc0b9'
 # white = '#eef1f8'
 # yellow = '#fce094'
-#
 # [colors.primary]
 # background = '#14161b'
 # foreground = '#e0e2ea'
-#
 # [colors.selection]
 # background = '#4f5258'
 # text = '#e0e2ea'
@@ -109,17 +104,12 @@ bindings = [
 cursor = { cursor = "#D8DEE9" }
 vi_mode_cursor = { cursor = "#EBCB8B" }
 selection = { text = "CellForeground", background = "CellForeground" }
-
 # [colors.search]
 # matches = { foreground = "#d8dee9", background = "#5b7a88" }
 # focused_match = { foreground = "#d8dee9", background = "#40505d" }
-
-# Default colors
 [colors.primary]
 background = '#2E3440'
 foreground = '#D8DEE9'
-
-# Normal colors
 [colors.normal]
 black = '#3B4252'
 red = '#BF616A'
@@ -129,8 +119,6 @@ blue = '#81A1C1'
 magenta = '#B48EAD'
 cyan = '#88C0D0'
 white = '#E5E9F0'
-
-# Bright colors
 [colors.bright]
 black = '#4C566A'
 red = '#BF616A'

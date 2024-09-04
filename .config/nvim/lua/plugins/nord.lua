@@ -5,11 +5,11 @@ require('nord').setup({
   on_highlights = function(hl, c)
     -- defaults = {
     --   polar_night = {
-    --     origin = "#2E3440", -- nord0  (Normal)
-    --     bright = "#3B4252", -- nord1 (CursorLine)
-    --     brighter = "#434C5E", -- nord2 (Visual)
-    --     brightest = "#4C566A", -- nord3 (FloatBorder)
-    --     light = "#616E88", -- out of palette (Comment)
+    --     origin = "#2E3440", -- nord0 Normal
+    --     bright = "#3B4252", -- nord1 CursorLine
+    --     brighter = "#434C5E", -- nord2 Visual, NonText, Whitespace
+    --     brightest = "#4C566A", -- nord3 FloatBorder
+    --     light = "#616E88", -- out of palette Comment
     --   },
     --   snow_storm = {
     --     origin = "#D8DEE9", -- nord4
@@ -33,7 +33,10 @@ require('nord').setup({
 
     hl.LspInfoBorder = { link = 'FloatBorder' }
     hl.QuickFixLine = { link = 'CursorLine' }
-    -- hl.CmpItemAbbrMatch = { link = 'DiffText' }
+
+    -- cmp
+    hl.CmpItemAbbrMatch = { fg = c.frost.artic_water }
+    hl.CmpItemAbbrMatchFuzzy = { link = 'CmpItemAbbrMatch' }
     -- hl.PmenuMatchSel = { fg = c.frost.artic_water, bg = hl.PmenuSel.bg }
     -- hl.PmenuMatch = { fg = c.frost.artic_water, bg = hl.Pmenu.bg }
 
@@ -47,33 +50,24 @@ require('nord').setup({
     hl.MiniIconsYellow = { fg = c.aurora.yellow }
     hl.MiniIconsGreen = { fg = c.aurora.green }
     hl.MiniIconsPurple = { fg = c.aurora.purple }
-
     hl.MiniDiffSignAdd = { fg = c.aurora.green }
     hl.MiniDiffSignChange = { fg = c.aurora.yellow }
     hl.MiniDiffSignDelete = { fg = c.aurora.red }
-
     hl.MiniPickPrompt = { link = 'Normal' }
     hl.MiniPickMatchRanges = { link = 'DiffText' }
-
+    -- hl.MiniPickMatchRanges = { link = 'CmpItemAbbrMatch' }
     hl.MiniStatuslineModeNormal = { fg = c.polar_night.bright, bg = c.frost.ice }
     hl.MiniStatuslineModeVisual = { fg = c.polar_night.bright, bg = c.aurora.green }
     hl.MiniStatuslineModeInsert = { fg = c.polar_night.bright, bg = c.snow_storm.origin }
     hl.MiniStatuslineModeCommand = { fg = c.polar_night.bright, bg = c.aurora.purple }
     hl.MiniStatuslineModeReplace = { fg = c.polar_night.bright, bg = c.aurora.red }
-
     hl.MiniIndentScopeSymbol = { link = 'NonText' }
 
     -- copilot
-    hl.NeoCodeiumSuggestion = { fg = c.polar_night.brightest }
+    hl.NeoCodeiumSuggestion = { fg = c.polar_night.brightest } -- NonText with Cursorline is too dark
     hl.NeoCodeiumLabel = { link = 'Search' }
     hl.CopilotSuggestion = { fg = c.polar_night.brightest }
     hl.CopilotAnnotation = { link = 'Search' }
-
-    -- sentiment
-    hl.MatchParen = { link = 'Underlined' }
-
-    -- treesitter
-    hl.TreesitterContext = { link = 'CursorLine' }
 
     -- grapple
     hl.GrappleFooter = { link = 'FloatBorder' }
