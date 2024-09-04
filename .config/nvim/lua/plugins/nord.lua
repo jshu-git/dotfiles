@@ -74,7 +74,7 @@ require('nord').setup({
     hl.GrappleCurrent = { link = 'Normal' }
 
     -- visual-whitespace
-    hl.VisualWhitespace = { bg = hl.Visual.bg, fg = c.polar_night.brightest }
+    hl.VisualWhitespace = { bg = hl.Visual.bg, fg = hl.Comment.fg }
   end,
 })
 
