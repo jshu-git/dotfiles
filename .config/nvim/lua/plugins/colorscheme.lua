@@ -6,7 +6,7 @@
 -- #005523 (Dark green)
 -- #07080d (Dark grey1)
 -- #14161b (Dark grey2) -- Normal bg
--- #2c2e33 (Dark grey3) -- CursorLine
+-- #2c2e33 (Dark grey3) -- CursorLine, Pmenu
 -- #4f5258 (Dark grey4) -- Visual, NonText, FloatBorder
 -- #470045 (Dark magenta)
 -- #590008 (Dark red)
@@ -70,7 +70,7 @@ local highlights = {
   GrappleCurrent = { link = 'Normal' },
 
   -- visual-whitespace
-  VisualWhitespace = { bg = 'NvimDarkGrey4', fg = 'NvimDarkGrey3' },
+  VisualWhitespace = { fg = 'NvimDarkGrey3', bg = 'NvimDarkGrey4' }, -- fg=CursorLine, bg=NonText
 }
 
 for group, hl in pairs(highlights) do
