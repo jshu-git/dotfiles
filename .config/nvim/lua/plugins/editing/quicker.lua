@@ -23,8 +23,8 @@ quicker.setup({
   },
 })
 
-vim.keymap.set('n', '<down>', '<cmd>cnext<cr>')
-vim.keymap.set('n', '<up>', '<cmd>cprev<cr>')
+vim.keymap.set('n', ']q', '<cmd>cnext<cr>', { desc = 'Next Quickfix' })
+vim.keymap.set('n', '[q', '<cmd>cprev<cr>', { desc = 'Prev Quickfix' })
 
 vim.keymap.set('n', '<leader>c', function()
   quicker.toggle({ focus = true })
