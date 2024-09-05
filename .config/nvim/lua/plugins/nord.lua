@@ -40,27 +40,33 @@ require('nord').setup({
     -- hl.PmenuMatchSel = { fg = c.frost.artic_water, bg = hl.PmenuSel.bg }
     -- hl.PmenuMatch = { fg = c.frost.artic_water, bg = hl.Pmenu.bg }
 
-    -- mini
+    -- mini https://github.com/shaunsingh/nord.nvim/blob/cf312a83afadfadc0a515d41744fffece60ba344/lua/nord/theme.lua
+    -- hl.MiniIconsAzure = { fg = c.frost.ice }
     hl.MiniIconsAzure = { fg = c.frost.artic_water }
-    hl.MiniIconsCyan = { fg = c.frost.polar_water }
-    hl.MiniIconsGrey = { fg = c.polar_night.brightest }
     hl.MiniIconsBlue = { fg = c.frost.artic_water }
-    hl.MiniIconsRed = { fg = c.aurora.red }
-    hl.MiniIconsOrange = { fg = c.aurora.orange }
-    hl.MiniIconsYellow = { fg = c.aurora.yellow }
+    hl.MiniIconsCyan = { fg = c.frost.polar_water }
     hl.MiniIconsGreen = { fg = c.aurora.green }
+    hl.MiniIconsGrey = { fg = c.snow_storm.brighter }
+    hl.MiniIconsOrange = { fg = c.aurora.orange }
     hl.MiniIconsPurple = { fg = c.aurora.purple }
+    hl.MiniIconsRed = { fg = c.aurora.red }
+    hl.MiniIconsYellow = { fg = c.aurora.yellow }
+
     hl.MiniDiffSignAdd = { fg = c.aurora.green }
     hl.MiniDiffSignChange = { fg = c.aurora.yellow }
     hl.MiniDiffSignDelete = { fg = c.aurora.red }
+
     hl.MiniPickPrompt = { link = 'Normal' }
     hl.MiniPickMatchRanges = { link = 'DiffText' }
     -- hl.MiniPickMatchRanges = { link = 'CmpItemAbbrMatch' }
+
+    hl.MiniStatuslineFilename = { fg = c.snow_storm.origin, bg = c.polar_night.bright }
     hl.MiniStatuslineModeNormal = { fg = c.polar_night.bright, bg = c.frost.ice }
     hl.MiniStatuslineModeVisual = { fg = c.polar_night.bright, bg = c.aurora.green }
     hl.MiniStatuslineModeInsert = { fg = c.polar_night.bright, bg = c.snow_storm.origin }
     hl.MiniStatuslineModeCommand = { fg = c.polar_night.bright, bg = c.aurora.purple }
     hl.MiniStatuslineModeReplace = { fg = c.polar_night.bright, bg = c.aurora.red }
+
     hl.MiniIndentScopeSymbol = { link = 'NonText' }
 
     -- copilot
