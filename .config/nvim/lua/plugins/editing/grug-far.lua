@@ -11,7 +11,7 @@ grug.setup({
     historyOpen = { n = 'gh' },
     historyAdd = '',
     refresh = { n = 'gr' },
-    openLocation = { n = '<Tab>' },
+    openLocation = '',
     -- openNextLocation = { n = '<down>' },
     -- openPrevLocation = { n = '<up>' },
     -- gotoLocation = { n = '<enter>' },
@@ -20,6 +20,7 @@ grug.setup({
     -- help = { n = 'g?' },
     toggleShowCommand = { n = 'gs' },
     swapEngine = { n = 'ge' },
+    previewLocation = { n = '<Tab>' },
   },
   icons = { enabled = false },
   history = {
