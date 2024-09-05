@@ -47,8 +47,9 @@ now(function()
   vim.cmd('runtime! lua/plugins/lsp/*.lua')
 
   -- ui
-  add('gbprod/nord.nvim')
-  require('plugins.nord')
+  -- add('gbprod/nord.nvim')
+  -- require('plugins.nord')
+  vim.cmd('colorscheme nord')
 
   -- work
   if vim.env.SSH_CLIENT ~= nil then
