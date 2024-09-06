@@ -51,7 +51,7 @@ local p = hues.make_palette(opts)
 --   accent = "#d1def9",
 --   accent_bg = "#2E3440",
 
---   bg = "#2E3440",
+--   bg = "#2E3440", -- Normal
 --   bg_edge = "#1d232e",
 --   bg_edge2 = "#0a0f1a",
 --   bg_mid = "#474e5b", -- CursorLine, FloatBorder
@@ -83,11 +83,13 @@ local p = hues.make_palette(opts)
 
 local highlights = {
   Comment = { fg = p.fg_mid2, italic = true },
-  QuickFixLine = { link = 'CursorLine' },
+  QuickFixLine = { link = 'Underlined' },
 
   -- search
-  Search = { bg = '#58637a' }, -- lighten p.bg 25%
-  IncSearch = { bg = '#a2abbc' }, -- lighten p.bg 60%
+  -- Search = { bg = '#58637a' }, -- lighten p.bg 25%
+  -- IncSearch = { bg = '#a2abbc' }, -- lighten p.bg 60%
+  Search = { bg = p.bg_mid2 },
+  IncSearch = { bg = p.fg_mid },
   CurSearch = { link = 'IncSearch' },
 
   -- floating windows
@@ -120,6 +122,12 @@ local highlights = {
 
   -- visual-whitespace
   VisualWhitespace = { fg = p.fg_mid2, bg = p.bg_mid2 }, -- fg=Comment bg=Visual
+
+  -- treesitter
+  TreesitterContext = { link = 'CursorLine' },
+
+  -- sentiment
+  MatchParen = { link = 'Underlined' },
 }
 for group, hl in pairs(highlights) do
   vim.api.nvim_set_hl(0, group, hl)
