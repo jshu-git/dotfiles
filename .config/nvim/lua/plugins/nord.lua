@@ -7,7 +7,7 @@ require('nord').setup({
     --   polar_night = {
     --     origin = "#2E3440", -- nord0 Normal
     --     bright = "#3B4252", -- nord1 CursorLine
-    --     brighter = "#434C5E", -- nord2 Visual, NonText, Whitespace
+    --     brighter = "#434C5E", -- nord2 Visual, NonText
     --     brightest = "#4C566A", -- nord3 FloatBorder
     --     light = "#616E88", -- out of palette Comment
     --   },
@@ -81,6 +81,12 @@ require('nord').setup({
 
     -- visual-whitespace
     hl.VisualWhitespace = { bg = hl.Visual.bg, fg = hl.Comment.fg }
+
+    -- treesitter
+    hl.TreesitterContext = { link = 'CursorLine' }
+
+    -- sentiment
+    hl.MatchParen = { link = 'Underlined' }
   end,
 })
 
