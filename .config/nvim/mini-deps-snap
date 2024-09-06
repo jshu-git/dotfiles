@@ -21,7 +21,6 @@ return {
   ["lspkind-nvim"] = "cff4ae321a91ee3473a92ea1a8c637e3a9510aec",
   ["mini.nvim"] = "eb0f557a5797cfe9c720ed84a71582c22bccb4f8",
   neocodeium = "ea44ff2b6f05912cd40ca6e13580bb75a1f619a8",
-  ["nord.nvim"] = "70fc2425b50396e5f1230200b59527d8440a24df",
   ["nvim-autopairs"] = "fd2badc24e675f947162a16c124d395bde80dbd6",
   ["nvim-cmp"] = "6c3d595f3223c1ae7392d4fde1626355439af6c1",
   ["nvim-lspconfig"] = "bdbc65aadc708ce528efb22bca5f82a7cca6b54d",
