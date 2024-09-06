@@ -80,8 +80,9 @@ require('nord').setup({
 
     -- treesitter
     hl.TreesitterContext = { link = 'CursorLine' }
-    -- hl['@property'] = { fg = c.frost.artic_water }
-    hl['@lsp.type.property'] = { fg = c.frost.artic_water }
+    -- hl['@variable.member'] = { fg = c.frost.artic_water }
+    hl['@property'] = { fg = c.frost.artic_water }
+    -- hl['@lsp.type.property'] = { fg = c.frost.artic_water }
 
     -- sentiment
     hl.MatchParen = { link = 'Underlined' }
