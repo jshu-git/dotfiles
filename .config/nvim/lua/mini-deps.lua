@@ -49,7 +49,6 @@ now(function()
   -- ui
   add('gbprod/nord.nvim')
   require('plugins.nord')
-  -- vim.cmd('colorscheme nord')
 
   -- work
   if vim.env.SSH_CLIENT ~= nil then
