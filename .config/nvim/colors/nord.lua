@@ -1,7 +1,7 @@
 -- nord
--- background = "#252312",
--- foreground = "#c8c7c0",
 -- local palette = {
+--   background = "#252312",
+--   foreground = "#c8c7c0",
 --   base00 = '#2E3440',
 --   base01 = '#3B4252',
 --   base02 = '#434C5E',
@@ -25,13 +25,13 @@ local hues = require('mini.hues')
 -- math.randomseed(vim.loop.hrtime())
 -- local base_colors = hues.gen_random_base_colors()
 local opts = {
-  -- background = base_colors.background,
-  -- foreground = base_colors.foreground,
-
   -- nord
   background = '#2E3440',
   foreground = '#D8DEE9',
+
   -- random
+  -- background = base_colors.background,
+  -- foreground = base_colors.foreground,
   -- background = "#252312",
   -- foreground = "#c8c7c0",
 
@@ -46,7 +46,7 @@ local opts = {
 hues.setup(opts)
 local p = hues.make_palette(opts)
 
-print(vim.inspect(p))
+-- print(vim.inspect(p))
 -- {
 --   accent = "#d1def9",
 --   accent_bg = "#2E3440",
@@ -82,17 +82,23 @@ print(vim.inspect(p))
 -- }
 
 local highlights = {
+  Comment = { fg = p.fg_mid2, italic = true },
+  QuickFixLine = { link = 'CursorLine' },
+
+  -- floating windows
   NormalFloat = { link = 'Normal' },
   FloatBorder = { fg = p.bg_mid },
   FloatTitle = { link = 'Normal' },
   FloatFooter = { link = 'NonText' },
-  LspInfoBorder = { link = 'FloatBorder' },
-  QuickFixLine = { link = 'CursorLine' },
-  Comment = { fg = p.fg_mid2, italic = true },
+
+  -- splits
+  VertSplit = { link = 'NonText' },
+  WinSeparator = { link = 'NonText' },
 
   -- cmp
   CmpItemAbbrMatch = { bg = p.bg_mid2 },
   CmpItemAbbrMatchFuzzy = { link = 'CmpItemAbbrMatch' },
+  CmpItemKindText = { fg = p.fg },
 
   -- mini
   MiniPickPrompt = { link = 'Normal' },
