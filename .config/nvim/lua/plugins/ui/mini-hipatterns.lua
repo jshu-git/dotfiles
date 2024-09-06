@@ -20,7 +20,10 @@ local hipatterns = require('mini.hipatterns')
 
 hipatterns.setup({
   highlighters = {
-    hex_color = hipatterns.gen_highlighter.hex_color(),
+    hex_color = hipatterns.gen_highlighter.hex_color({
+      style = 'inline',
+      inline_text = ' ',
+    }),
     -- mini.hues https://github.com/pkazmier/nvim/blob/main/lua/plugins/mini/hipatterns.lua#L63
     hl_color = {
       pattern = { '%f[%w]()p%.[%w_%.]+()%f[%W]' },
@@ -29,6 +32,13 @@ hipatterns.setup({
         ---@diagnostic disable-next-line: missing-parameter
         local color = vim.tbl_get(require('mini.hues').make_palette(), parts[2])
         return type(color) == 'string' and hipatterns.compute_hex_color_group(color, 'fg')
+      end,
+      extmark_opts = function(_, _, data)
+        return {
+          virt_text = { { ' ', data.hl_group } },
+          virt_text_pos = 'inline',
+          priority = 2000,
+        }
       end,
     },
   },
