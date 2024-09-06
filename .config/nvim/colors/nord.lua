@@ -85,6 +85,11 @@ local highlights = {
   Comment = { fg = p.fg_mid2, italic = true },
   QuickFixLine = { link = 'CursorLine' },
 
+  -- search
+  Search = { bg = '#58637a' }, -- lighten p.bg 25%
+  IncSearch = { bg = '#a2abbc' }, -- lighten p.bg 60%
+  CurSearch = { link = 'IncSearch' },
+
   -- floating windows
   NormalFloat = { link = 'Normal' },
   FloatBorder = { fg = p.bg_mid },
