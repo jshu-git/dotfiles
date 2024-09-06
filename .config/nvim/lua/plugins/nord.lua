@@ -32,10 +32,10 @@ require('nord').setup({
     -- }
 
     hl.LspInfoBorder = { link = 'FloatBorder' }
-    hl.QuickFixLine = { link = 'CursorLine' }
+    hl.QuickFixLine = { link = 'Underlined' }
 
     -- cmp
-    hl.CmpItemAbbrMatch = { fg = c.frost.artic_water }
+    hl.CmpItemAbbrMatch = { bg = c.polar_night.brightest }
     hl.CmpItemAbbrMatchFuzzy = { link = 'CmpItemAbbrMatch' }
     -- hl.PmenuMatchSel = { fg = c.frost.artic_water, bg = hl.PmenuSel.bg }
     -- hl.PmenuMatch = { fg = c.frost.artic_water, bg = hl.Pmenu.bg }
@@ -57,8 +57,7 @@ require('nord').setup({
     hl.MiniDiffSignDelete = { fg = c.aurora.red }
 
     hl.MiniPickPrompt = { link = 'Normal' }
-    hl.MiniPickMatchRanges = { link = 'DiffText' }
-    -- hl.MiniPickMatchRanges = { link = 'CmpItemAbbrMatch' }
+    hl.MiniPickMatchRanges = { link = 'CmpItemAbbrMatch' }
 
     hl.MiniStatuslineFilename = { fg = c.snow_storm.origin, bg = c.polar_night.bright }
     hl.MiniStatuslineModeNormal = { fg = c.polar_night.bright, bg = c.frost.ice }
