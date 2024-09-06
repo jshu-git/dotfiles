@@ -18,13 +18,25 @@ local hipatterns = require('mini.hipatterns')
 --   end
 -- end
 
-local highlighters = vim.tbl_deep_extend('force', {
-  hex_color = hipatterns.gen_highlighter.hex_color(),
-}, {})
+-- local highlighters = vim.tbl_deep_extend('force', {
+--   hex_color = hipatterns.gen_highlighter.hex_color(),
+-- }, {})
 -- }, nord_colors)
 
 hipatterns.setup({
-  highlighters = highlighters,
+  highlighters = {
+    hex_color = hipatterns.gen_highlighter.hex_color(),
+    -- mini.hues https://github.com/pkazmier/nvim/blob/main/lua/plugins/mini/hipatterns.lua#L63
+    hl_color = {
+      pattern = { '%f[%w]()p%.[%w_%.]+()%f[%W]' },
+      group = function(_, match)
+        local parts = vim.split(match, '.', { plain = true })
+        ---@diagnostic disable-next-line: missing-parameter
+        local color = vim.tbl_get(require('mini.hues').make_palette(), parts[2])
+        return type(color) == 'string' and hipatterns.compute_hex_color_group(color, 'fg')
+      end,
+    },
+  },
 })
 
 -- local nord_colors = {}
