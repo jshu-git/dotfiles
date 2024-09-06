@@ -33,6 +33,7 @@ require('nord').setup({
 
     hl.LspInfoBorder = { link = 'FloatBorder' }
     hl.QuickFixLine = { link = 'Underlined' }
+    hl.FloatFooter = { link = 'NonText' }
 
     -- cmp
     hl.CmpItemAbbrMatch = { bg = c.polar_night.brightest }
@@ -73,10 +74,6 @@ require('nord').setup({
     hl.NeoCodeiumLabel = { link = 'Search' }
     hl.CopilotSuggestion = { fg = c.polar_night.brightest }
     hl.CopilotAnnotation = { link = 'Search' }
-
-    -- grapple
-    hl.GrappleFooter = { link = 'FloatBorder' }
-    hl.GrappleCurrent = { link = 'Normal' }
 
     -- visual-whitespace
     hl.VisualWhitespace = { bg = hl.Visual.bg, fg = hl.Comment.fg }
