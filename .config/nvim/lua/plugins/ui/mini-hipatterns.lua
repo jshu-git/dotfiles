@@ -26,7 +26,12 @@ hipatterns.setup({
     }),
     -- mini.hues https://github.com/pkazmier/nvim/blob/main/lua/plugins/mini/hipatterns.lua#L63
     hl_color = {
-      pattern = { '%f[%w]()p%.[%w_%.]+()%f[%W]' },
+      pattern = function(buf_id)
+        if vim.bo[buf_id].filetype ~= 'lua' then
+          return nil
+        end
+        return '%f[%w]()p%.[%w_%.]+()%f[%W]'
+      end,
       group = function(_, match)
         local parts = vim.split(match, '.', { plain = true })
         ---@diagnostic disable-next-line: missing-parameter
