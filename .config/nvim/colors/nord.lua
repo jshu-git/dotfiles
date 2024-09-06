@@ -1,4 +1,6 @@
--- if vim.o.background == 'dark' then
+-- nord
+-- background = "#252312",
+-- foreground = "#c8c7c0",
 -- local palette = {
 --   base00 = '#2E3440',
 --   base01 = '#3B4252',
@@ -20,10 +22,16 @@
 -- end
 
 local hues = require('mini.hues')
+-- math.randomseed(vim.loop.hrtime())
+-- local base_colors = hues.gen_random_base_colors()
 local opts = {
+  -- background = base_colors.background,
+  -- foreground = base_colors.foreground,
+
+  -- nord
   background = '#2E3440',
   foreground = '#D8DEE9',
-
+  -- random
   -- background = "#252312",
   -- foreground = "#c8c7c0",
 
@@ -37,26 +45,30 @@ local opts = {
 }
 hues.setup(opts)
 local p = hues.make_palette(opts)
--- print(vim.inspect(palette))
+
+print(vim.inspect(p))
 -- {
 --   accent = "#d1def9",
 --   accent_bg = "#2E3440",
---   azure = "#c7e2f6",
---   azure_bg = "#213747",
+
 --   bg = "#2E3440",
 --   bg_edge = "#1d232e",
 --   bg_edge2 = "#0a0f1a",
 --   bg_mid = "#474e5b", -- CursorLine, FloatBorder
 --   bg_mid2 = "#636977", -- Visual, NonText
---   blue = "#dbdbf8",
---   blue_bg = "#323148",
---   cyan = "#c0e7e6",
---   cyan_bg = "#183a3b",
+
 --   fg = "#D8DEE9",
 --   fg_edge = "#e3e9f4",
 --   fg_edge2 = "#eef4ff",
 --   fg_mid = "#bac0ca",
 --   fg_mid2 = "#9ca2ac",
+
+--   azure = "#c7e2f6",
+--   azure_bg = "#213747",
+--   blue = "#dbdbf8",
+--   blue_bg = "#323148",
+--   cyan = "#c0e7e6",
+--   cyan_bg = "#183a3b",
 --   green = "#cce6d1",
 --   green_bg = "#243a29",
 --   orange = "#f2d8c4",
@@ -68,6 +80,7 @@ local p = hues.make_palette(opts)
 --   yellow = "#e1e0c2",
 --   yellow_bg = "#37351c"
 -- }
+
 local highlights = {
   NormalFloat = { link = 'Normal' },
   FloatBorder = { fg = p.bg_mid },

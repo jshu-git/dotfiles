@@ -23,6 +23,7 @@ map('n', '<leader>,', 'mzA,<Esc>`z', { desc = 'Append Comma' })
 map('n', '<leader>;', 'mzA;<Esc>`z', { desc = 'Append Semicolon' })
 map('n', 'X', 'mzA<BS><Esc>`z')
 map('n', '<leader>nN', '<cmd>messages<CR>', { desc = 'Messages' })
+map('n', '<leader>I', '<cmd>Inspect<CR>', { desc = 'Inspect' })
 
 -- toggles
 map('n', '<leader>tw', '<cmd>setlocal wrap!<CR>', { desc = 'Toggle Word Wrap' })
