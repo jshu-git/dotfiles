@@ -36,7 +36,7 @@ require('nord').setup({
     hl.FloatFooter = { link = 'NonText' }
 
     -- cmp
-    hl.CmpItemAbbrMatch = { bg = c.polar_night.brightest }
+    hl.CmpItemAbbrMatch = { bg = c.polar_night.brightest, fg = c.frost.artic_water }
     hl.CmpItemAbbrMatchFuzzy = { link = 'CmpItemAbbrMatch' }
     -- hl.PmenuMatchSel = { fg = c.frost.artic_water, bg = hl.PmenuSel.bg }
     -- hl.PmenuMatch = { fg = c.frost.artic_water, bg = hl.Pmenu.bg }
@@ -47,7 +47,7 @@ require('nord').setup({
     hl.MiniIconsBlue = { fg = c.frost.artic_water }
     hl.MiniIconsCyan = { fg = c.frost.polar_water }
     hl.MiniIconsGreen = { fg = c.aurora.green }
-    hl.MiniIconsGrey = { fg = c.snow_storm.brighter }
+    hl.MiniIconsGrey = { fg = c.polar_night.brightest }
     hl.MiniIconsOrange = { fg = c.aurora.orange }
     hl.MiniIconsPurple = { fg = c.aurora.purple }
     hl.MiniIconsRed = { fg = c.aurora.red }
@@ -80,6 +80,8 @@ require('nord').setup({
 
     -- treesitter
     hl.TreesitterContext = { link = 'CursorLine' }
+    -- hl['@property'] = { fg = c.frost.artic_water }
+    hl['@lsp.type.property'] = { fg = c.frost.artic_water }
 
     -- sentiment
     hl.MatchParen = { link = 'Underlined' }
