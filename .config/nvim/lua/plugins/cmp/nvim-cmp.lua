@@ -93,7 +93,8 @@ cmp.setup({
 -- / cmdline setup
 cmp.setup.cmdline({ '/', '?' }, {
   completion = {
-    completeopt = 'menu,menuone,noselect',
+    -- completeopt = 'menu,menuone,noselect',
+    completeopt = 'menu,menuone,noinsert',
   },
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
@@ -104,7 +105,8 @@ cmp.setup.cmdline({ '/', '?' }, {
 -- : cmdline setup
 cmp.setup.cmdline(':', {
   completion = {
-    completeopt = 'menu,menuone,noselect',
+    -- completeopt = 'menu,menuone,noselect',
+    completeopt = 'menu,menuone,noinsert',
   },
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
