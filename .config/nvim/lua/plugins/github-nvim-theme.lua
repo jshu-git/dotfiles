@@ -11,6 +11,7 @@ require('github-theme').setup({
     all = {
       -- Comment = { link = 'NonText' },
       FloatBorder = { link = 'Whitespace' },
+      FloatTitle = { link = 'Normal' },
       FloatFooter = { link = 'FloatBorder' },
       QuickFixLine = { link = 'Underlined' },
       VertSplit = { link = 'Whitespace' },

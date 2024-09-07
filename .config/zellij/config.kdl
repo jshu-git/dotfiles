@@ -102,7 +102,22 @@ plugins {
     zjstatus        { location "file:.config/zellij/plugins/zjstatus.wasm"; }
 }
 pane_frames false
-theme "nord"
+themes {
+    github_dark {
+        bg "#30363d"
+        fg "#e6edf3"
+        black "#484f58"
+        red "#ff7b72"
+        green "#3fb950"
+        yellow "#d29922"
+        blue "#58a6ff"
+        magenta "#bc8cff"
+        cyan "#39c5cf"
+        white "#b1bac4"
+        orange "#f0883e"
+    }
+}
+theme "github_dark"
 default_layout "custom"
 default_mode "locked"
 layout_dir ".config/zellij/layouts/"

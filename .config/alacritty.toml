@@ -96,7 +96,6 @@ magenta = '#bc8cff'
 cyan = '#39c5cf'
 white = '#b1bac4'
 
-
 # https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/alacritty/NvimDark.toml
 # Colors (NvimDark)
 # [colors.bright]
