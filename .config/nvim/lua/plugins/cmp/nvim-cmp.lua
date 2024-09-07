@@ -25,7 +25,7 @@ cmp.setup({
       -- side_padding = 0,
       scrolloff = 3,
       -- col_offset = 0,
-      winhighlight = 'Normal:Pmenu,CursorLine:Visual',
+      -- winhighlight = 'Normal:NormalFloat,CursorLine:Visual',
       -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
       -- winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
       -- winhighlight = 'Normal:Pmenu,Cursorline:Visual',

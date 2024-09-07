@@ -49,8 +49,11 @@ now(function()
   -- ui
   -- add('gbprod/nord.nvim')
   -- require('plugins.nord')
-  add('projekt0n/github-nvim-theme')
-  require('plugins.github-nvim-theme')
+  -- add('projekt0n/github-nvim-theme')
+  -- require('plugins.github-nvim-theme')
+  add('EdenEast/nightfox.nvim')
+
+  require('plugins.colorscheme')
 
   -- work
   if vim.env.SSH_CLIENT ~= nil then
