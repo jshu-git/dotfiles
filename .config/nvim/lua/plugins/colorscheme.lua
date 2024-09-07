@@ -16,6 +16,8 @@ require('nightfox').setup({
       QuickFixLine = { link = 'Underlined' },
       VertSplit = { link = 'NonText' },
       WinSeparator = { link = 'VertSplit' },
+      CmpItemAbbrMatch = { fg = 'palette.magenta' },
+      CmpItemAbbrMatchFuzzy = { link = 'CmpItemAbbrMatch' },
 
       -- floating windows
       NormalFloat = { link = 'Normal' },
@@ -28,6 +30,15 @@ require('nightfox').setup({
       MiniPickMatchRanges = { link = 'CmpItemAbbrMatch' },
       MiniIndentscopeSymbol = { link = 'NonText' },
       MiniStatuslineFilename = { link = 'Normal' },
+
+      -- treesitter
+      TreesitterContext = { link = 'ColorColumn' },
+
+      -- copilot
+      NeoCodeiumSuggestion = { fg = 'palette.comment' },
+      NeoCodeiumLabel = { link = 'Search' },
+      CopilotSuggestion = { fg = 'palette.comment' },
+      CopilotAnnotation = { link = 'Search' },
 
       -- visual-whitespace
       VisualWhitespace = { bg = 'palette.sel0', fg = 'palette.comment' }, -- bg=Visual, fg=Comment
