@@ -122,7 +122,7 @@ vim.keymap.set('n', ',', function()
 end)
 
 -- buffers
-vim.keymap.set('n', '<leader>b', pick.builtin.buffers, { desc = 'Buffers' })
+-- vim.keymap.set('n', '<leader>b', pick.builtin.buffers, { desc = 'Buffers' })
 -- vim.keymap.set('n', '<leader>b', function()
 --   pick.builtin.buffers(nil, {
 --     mappings = {

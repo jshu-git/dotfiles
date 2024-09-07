@@ -42,7 +42,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>r', function()
       search = vim.fn.expand('<cword>'),
     },
   })
-end, { desc = 'Replace' })
+end, { desc = 'Replace cword' })
 vim.keymap.set({ 'n', 'x' }, '<leader>R', function()
   grug.open({
     startCursorRow = 4,
@@ -51,7 +51,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>R', function()
       paths = vim.fn.expand('%:p:h'),
     },
   })
-end, { desc = 'Replace (Relative)' })
+end, { desc = 'Replace cword (Relative)' })
 
 -- replace (current file)
 vim.keymap.set({ 'n', 'x' }, 'sW', function()
