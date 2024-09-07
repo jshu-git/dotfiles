@@ -24,10 +24,5 @@ H.popup = {
   width = math.floor(0.75 * vim.o.columns),
 }
 H.border = { '─', '│', '─', '│', '┌', '┐', '┘', '└' }
-H.apply_highlights = function(highlights)
-  for group, hl in pairs(highlights) do
-    vim.api.nvim_set_hl(0, group, hl)
-  end
-end
 
 return H

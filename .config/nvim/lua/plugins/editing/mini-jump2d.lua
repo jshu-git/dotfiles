@@ -8,6 +8,7 @@ jump2d.setup({
 vim.keymap.set({ 'n', 'x', 'o' }, 'gw', function()
   local opts = vim.tbl_deep_extend('force', jump2d.builtin_opts.word_start, {
     view = { n_steps_ahead = 1 },
+    allowed_lines = { blank = false },
   })
   jump2d.start(opts)
 end, { desc = 'Jump (Word)' })
