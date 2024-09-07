@@ -6,10 +6,18 @@ require('github-theme').setup({
     terminal_colors = false,
     styles = { comments = 'italic' },
     darken = { floats = false },
+    module_default = false,
+    modules = {
+      cmp = true,
+      mini = true,
+      diagnostic = true,
+      native_lsp = true,
+      treesitter = true,
+      treesitter_context = true,
+    },
   },
   groups = {
     all = {
-      -- Comment = { link = 'NonText' },
       FloatBorder = { link = 'Whitespace' },
       FloatTitle = { link = 'Normal' },
       FloatFooter = { link = 'FloatBorder' },
