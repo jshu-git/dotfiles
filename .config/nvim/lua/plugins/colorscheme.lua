@@ -30,7 +30,7 @@ require('nightfox').setup({
       MiniStatuslineFilename = { link = 'Normal' },
 
       -- visual-whitespace
-      VisualWhitespace = { bg = '#2b3b51', fg = '#738091' }, -- bg=Visual, fg=Comment
+      VisualWhitespace = { bg = 'palette.sel0', fg = 'palette.comment' }, -- bg=Visual, fg=Comment
 
       -- sentiment
       MatchParen = { link = 'Underlined' },
