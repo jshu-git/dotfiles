@@ -103,21 +103,21 @@ plugins {
 }
 pane_frames false
 themes {
-    github_dark {
-        bg "#30363d"
-        fg "#e6edf3"
-        black "#484f58"
-        red "#ff7b72"
-        green "#3fb950"
-        yellow "#d29922"
-        blue "#58a6ff"
-        magenta "#bc8cff"
-        cyan "#39c5cf"
-        white "#b1bac4"
-        orange "#f0883e"
-    }
+    nightfox {
+        bg "#2b3b51"
+        fg "#cdcecf"
+        red "#c94f6d"
+        green "#81b29a"
+        blue "#719cd6"
+        yellow "#dbc074"
+        magenta "#9d79d6"
+        orange "#f4a261"
+        cyan "#63cdcf"
+        black "#29394f"
+        white "#aeafb0"
+  }
 }
-theme "github_dark"
+theme "nightfox"
 default_layout "custom"
 default_mode "locked"
 layout_dir ".config/zellij/layouts/"

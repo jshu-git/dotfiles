@@ -13,12 +13,12 @@ layout {
                 mode_locked          ""
 
                 // tabs
-                tab_normal "#[fg=black]{name}{floating_indicator}{fullscreen_indicator}{sync_indicator} "
-                tab_active "#[fg=white]{name}{floating_indicator}{fullscreen_indicator}{sync_indicator} "
-                tab_sync_indicator       " 󰓦"
-                tab_fullscreen_indicator " 󰊓"
-                tab_floating_indicator   " 󰉈"
-                tab_separator            "  "
+                tab_normal "#[fg=black]{name} {floating_indicator}{fullscreen_indicator}{sync_indicator}"
+                tab_active "#[fg=white]{name} {floating_indicator}{fullscreen_indicator}{sync_indicator}"
+                tab_sync_indicator       "󰓦 "
+                tab_fullscreen_indicator "󰊓 "
+                tab_floating_indicator   "󰉈 "
+                tab_separator            "   "
             }
         }
         children
