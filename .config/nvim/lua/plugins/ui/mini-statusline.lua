@@ -69,6 +69,9 @@ statusline.setup({
         end
       end
       local search = statusline.section_searchcount({ trunc_width = 75 })
+      if search ~= '' then
+        search = '󰍉 ' .. search
+      end
       local lines = string.format('%dL', vim.fn.line('$'))
 
       return statusline.combine_groups({
@@ -79,7 +82,8 @@ statusline.setup({
         '%=',
         { hl = 'MiniStatuslineFilename', strings = { file_size() } },
         { hl = 'MiniStatuslineFileinfo', strings = { custom_fileinfo } },
-        { hl = mode_hl, strings = { search, progress(), '/', lines } },
+        { hl = mode_hl, strings = { progress(), '/', lines } },
+        { hl = 'MiniStatuslineModeReplace', strings = { search } },
       })
     end,
     inactive = nil,
