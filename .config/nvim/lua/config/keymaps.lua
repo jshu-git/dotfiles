@@ -148,3 +148,9 @@ map({ 'i', 'c' }, '<A-d>', '<C-Right><C-w>')
 for _, key in ipairs({ ',', '.', '!', '?', ':', ';' }) do
   map('i', key, key .. '<C-g>u')
 end
+
+-- command mode
+-- https://old.reddit.com/r/neovim/comments/1f9rdgl/help_me_convert_that_line_from_vimscript_to_lua/
+vim.keymap.set('c', ';;', function()
+  return vim.fn.getcmdtype() == ':' and vim.fn.expand('%:h') .. '/' or ';;'
+end, { expr = true })
