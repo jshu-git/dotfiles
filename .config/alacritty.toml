@@ -66,6 +66,37 @@ bindings = [
   { key = "Tab", mods = "Control|Shift", chars = "\u0001\u0010" },
 ]
 
+# https://github.com/christopher-lawrence/dotfiles/blob/main/alacritty/github-dark.toml
+# https://github.com/projekt0n/github-theme-contrib/blob/main/themes/alacritty/github_dark.yml
+[colors.primary]
+background = "#30363d"
+foreground = '#e6edf3'
+
+[colors.cursor]
+text = '#30363d'
+cursor = '#e6edf3'
+
+[colors.normal]
+black = '#484f58'
+red = '#ff7b72'
+green = '#3fb950'
+yellow = '#d29922'
+blue = '#58a6ff'
+magenta = '#bc8cff'
+cyan = '#39c5cf'
+white = '#b1bac4'
+
+[colors.bright]
+black = '#6e7681'
+red = '#ffa198'
+green = '#56d364'
+yellow = '#e3b341'
+blue = '#79c0ff'
+magenta = '#bc8cff'
+cyan = '#39c5cf'
+white = '#b1bac4'
+
+
 # https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/alacritty/NvimDark.toml
 # Colors (NvimDark)
 # [colors.bright]
@@ -102,37 +133,37 @@ bindings = [
 # nord
 # https://github.com/alacritty/alacritty-theme/blob/master/themes/nord.toml
 # https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/alacritty/nord.toml
-[colors.cursor]
-cursor = '#eceff4'
-text = '#282828'
-
-[colors.selection]
-background = '#eceff4'
-text = '#4c566a'
-
-[colors.vi_mode_cursor]
-cursor = "#EBCB8B"
-
-[colors.primary]
-background = '#2E3440'
-foreground = '#D8DEE9'
-
-[colors.normal]
-black = '#3B4252'
-red = '#BF616A'
-green = '#A3BE8C'
-yellow = '#EBCB8B'
-blue = '#81A1C1'
-magenta = '#B48EAD'
-cyan = '#88C0D0'
-white = '#E5E9F0'
-
-[colors.bright]
-black = '#4C566A'
-red = '#BF616A'
-green = '#A3BE8C'
-yellow = '#EBCB8B'
-blue = '#81A1C1'
-magenta = '#B48EAD'
-cyan = '#8FBCBB'
-white = '#ECEFF4'
+# [colors.cursor]
+# cursor = '#eceff4'
+# text = '#282828'
+#
+# [colors.selection]
+# background = '#eceff4'
+# text = '#4c566a'
+#
+# [colors.vi_mode_cursor]
+# cursor = "#EBCB8B"
+#
+# [colors.primary]
+# background = '#2E3440'
+# foreground = '#D8DEE9'
+#
+# [colors.normal]
+# black = '#3B4252'
+# red = '#BF616A'
+# green = '#A3BE8C'
+# yellow = '#EBCB8B'
+# blue = '#81A1C1'
+# magenta = '#B48EAD'
+# cyan = '#88C0D0'
+# white = '#E5E9F0'
+#
+# [colors.bright]
+# black = '#4C566A'
+# red = '#BF616A'
+# green = '#A3BE8C'
+# yellow = '#EBCB8B'
+# blue = '#81A1C1'
+# magenta = '#B48EAD'
+# cyan = '#8FBCBB'
+# white = '#ECEFF4'

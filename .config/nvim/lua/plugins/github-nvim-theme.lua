@@ -8,10 +8,13 @@ require('github-theme').setup({
     darken = { floats = false },
   },
   groups = {
-    github_dark = {
+    all = {
+      -- Comment = { link = 'NonText' },
       FloatBorder = { link = 'Whitespace' },
       FloatFooter = { link = 'FloatBorder' },
       QuickFixLine = { link = 'Underlined' },
+      VertSplit = { link = 'Whitespace' },
+      WinSeparator = { link = 'VertSplit' },
 
       -- mini
       MiniPickPrompt = { link = 'Normal' },
