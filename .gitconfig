@@ -8,5 +8,10 @@
 	rebase = true
 	autoStash = true
 [delta]
-	line-numbers = true
+	; line-numbers = false
+	side-by-side = true
+	line-numbers-left-format = ""
+	line-numbers-right-format = "│"
+	navigate = true
 	zero-style = dim syntax
+	tabs = 4
