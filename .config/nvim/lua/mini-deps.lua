@@ -112,6 +112,7 @@ later(function()
   add('OXY2DEV/helpview.nvim')
   add('utilyre/sentiment.nvim')
   add('mcauley-penney/visual-whitespace.nvim')
+  add('aaron-p1/match-visual.nvim')
   vim.cmd('runtime! lua/plugins/ui/*.lua')
 
   -- editing
