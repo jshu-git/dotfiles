@@ -106,7 +106,7 @@ local servers = {
       },
     },
   },
-  ts_ls = {},
+  -- ts_ls = {},
   -- pico8_ls = {},
 }
 if vim.env.SSH_CLIENT ~= nil then
