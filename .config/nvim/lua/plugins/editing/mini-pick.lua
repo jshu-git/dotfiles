@@ -180,28 +180,36 @@ end, { desc = 'Diagnostics (Buffer)' })
 -- vim.keymap.set('n', '<leader>gi', function()
 --   extra.pickers.git_files({ scope = 'ignored' })
 -- end, { desc = 'Files (Ignored)' })
+
 -- hunks
-vim.keymap.set('n', '<leader>gh', function()
-  extra.pickers.git_hunks({ n_context = 5 })
-end, { desc = 'Hunks' })
+vim.keymap.set('n', '<leader>gh', extra.pickers.git_hunks, { desc = 'Hunks' })
 vim.keymap.set('n', '<leader>gH', function()
-  extra.pickers.git_hunks({ path = vim.fn.expand('%'), n_context = 5 })
+  extra.pickers.git_hunks({ path = vim.fn.expand('%:p') })
 end, { desc = 'Hunks (Buffer)' })
 
 -- commits
 vim.keymap.set('n', '<leader>gc', extra.pickers.git_commits, { desc = 'Commits' })
 vim.keymap.set('n', '<leader>gC', function()
-  extra.pickers.git_commits({ path = vim.fn.expand('%') })
+  extra.pickers.git_commits({ path = vim.fn.expand('%:p') })
 end, { desc = 'Commits (Buffer)' })
 
 -- vim
 vim.keymap.set('n', '<leader>fh', pick.builtin.help, { desc = 'Help' })
 vim.keymap.set('n', '<leader>fl', extra.pickers.hl_groups, { desc = 'Highlights' })
 vim.keymap.set('n', '<leader>fk', extra.pickers.keymaps, { desc = 'Keymaps' })
-vim.keymap.set('n', '<leader>fo', extra.pickers.options, { desc = 'Options (All)' })
-vim.keymap.set('n', '<leader>fO', function()
+vim.keymap.set('n', '<leader>fK', function()
+  extra.pickers.keymaps({ scope = 'buf' })
+end, { desc = 'Keymaps (Buffer)' })
+vim.keymap.set('n', '<leader>foo', extra.pickers.options, { desc = 'Options (All)' })
+vim.keymap.set('n', '<leader>fob', function()
   extra.pickers.options({ scope = 'buf' })
 end, { desc = 'Options (Buffer)' })
+vim.keymap.set('n', '<leader>fow', function()
+  extra.pickers.options({ scope = 'win' })
+end, { desc = 'Options (Window)' })
+vim.keymap.set('n', '<leader>fog', function()
+  extra.pickers.options({ scope = 'global' })
+end, { desc = 'Options (Global)' })
 vim.keymap.set('n', '<leader>"', extra.pickers.registers, { desc = 'Registers' })
 
 -- colorschemes
