@@ -21,7 +21,7 @@ map('n', '<leader>S', function()
 end, { desc = 'Source File' })
 map('n', '<leader>,', 'mzA,<Esc>`z', { desc = 'Append Comma' })
 map('n', '<leader>;', 'mzA;<Esc>`z', { desc = 'Append Semicolon' })
-map('n', '<leader>y', 'mzA<Esc>p`z', { desc = 'Append Paste' })
+map('n', '<leader>p', 'mzA<Esc>p`z', { desc = 'Append Paste' })
 map('n', 'X', 'mzA<BS><Esc>`z')
 map('n', '<leader>nN', '<cmd>messages<CR>', { desc = 'Messages' })
 map('n', '<leader>I', '<cmd>Inspect<CR>', { desc = 'Inspect' })
@@ -117,7 +117,8 @@ map(
 
 -- yanking
 map('n', 'yp', function()
-  local path = vim.fn.expand('%')
+  -- absolute path
+  local path = vim.fn.expand('%:p')
   vim.fn.setreg('+', path)
   vim.notify('Copied: ' .. path)
 end)
@@ -128,7 +129,7 @@ map('n', 'yP', function()
   vim.notify('Copied: ' .. path)
 end)
 map('n', 'yf', function()
-  -- filename
+  -- tail
   local path = vim.fn.expand('%:t')
   vim.fn.setreg('+', path)
   vim.notify('Copied: ' .. path)
@@ -153,5 +154,5 @@ end
 -- command mode
 -- https://old.reddit.com/r/neovim/comments/1f9rdgl/help_me_convert_that_line_from_vimscript_to_lua/
 vim.keymap.set('c', ';;', function()
-  return vim.fn.getcmdtype() == ':' and vim.fn.expand('%:h') .. '/' or ';;'
+  return vim.fn.getcmdtype() == ':' and vim.fn.expand('%:p:h') .. '/' or ';;'
 end, { expr = true })
