@@ -24,4 +24,4 @@ surround.setup({
   respect_selection_type = true,
 })
 
-vim.keymap.set('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]])
+vim.keymap.set('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true })
