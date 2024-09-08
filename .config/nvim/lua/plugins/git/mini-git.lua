@@ -47,4 +47,4 @@ vim.api.nvim_create_autocmd('User', {
     vim.wo[win_src].scrollbind, vim.wo.scrollbind = true, true
   end,
 })
-vim.keymap.set('n', '<leader>gb', '<cmd>leftabove Git blame -- %<cr>', { desc = 'Blame' })
+vim.keymap.set('n', '<leader>gb', '<cmd>leftabove Git blame -- %:p<cr>', { desc = 'Blame' })
