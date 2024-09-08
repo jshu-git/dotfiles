@@ -47,7 +47,8 @@ statusline.setup({
 
       -- y
       local fileinfo = statusline.section_fileinfo({ trunc_width = 120 })
-      local custom_fileinfo = string.match(fileinfo, '^[^%s]+%s+[^%s]+')
+      -- 󰢱 lua utf-8[unix] 3.96KiB
+      local custom_fileinfo = string.match(fileinfo, '^[^%s]+ [^%s]+')
 
       -- z
       local progress = function()
