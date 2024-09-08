@@ -3,6 +3,7 @@ icons.setup({
   filetype = {
     minifiles = { glyph = '󰉋', hl = 'Directory' },
     minipick = { glyph = '󰍉' },
+    grapple = { glyph = '' },
   },
 })
 icons.mock_nvim_web_devicons()
