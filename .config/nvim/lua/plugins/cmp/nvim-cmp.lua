@@ -42,18 +42,18 @@ cmp.setup({
   formatting = {
     format = require('lspkind').cmp_format({
       mode = 'symbol_text',
-      -- mode = "symbol",
+      -- mode = 'symbol',
       maxwidth = function()
         return math.floor(vim.o.columns * 0.3)
       end,
       ellipsis_char = '…',
-      -- menu = {
-      --   nvim_lsp = 'LSP',
-      --   buffer = 'BUF',
-      --   async_path = 'PTH',
-      --   cmdline = 'CMD',
-      --   cmdline_history = 'HST',
-      -- },
+      menu = {
+        nvim_lsp = 'LSP',
+        buffer = 'BUF',
+        async_path = 'PTH',
+        cmdline = 'CMD',
+        cmdline_history = 'HST',
+      },
     }),
   },
   completion = {
@@ -93,8 +93,7 @@ cmp.setup({
 -- / cmdline setup
 cmp.setup.cmdline({ '/', '?' }, {
   completion = {
-    -- completeopt = 'menu,menuone,noselect',
-    completeopt = 'menu,menuone,noinsert',
+    completeopt = 'menu,menuone,noselect',
   },
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
@@ -105,8 +104,7 @@ cmp.setup.cmdline({ '/', '?' }, {
 -- : cmdline setup
 cmp.setup.cmdline(':', {
   completion = {
-    -- completeopt = 'menu,menuone,noselect',
-    completeopt = 'menu,menuone,noinsert',
+    completeopt = 'menu,menuone,noselect',
   },
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
