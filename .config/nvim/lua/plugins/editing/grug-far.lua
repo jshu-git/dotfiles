@@ -59,7 +59,7 @@ vim.keymap.set({ 'n', 'x' }, 'sW', function()
     startCursorRow = 4,
     prefills = {
       search = vim.fn.expand('<cword>'),
-      paths = vim.fn.expand('%'),
+      paths = vim.fn.expand('%:p'),
     },
   })
 end, { desc = 'Subsitute cword (File)' })
