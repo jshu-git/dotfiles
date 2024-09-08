@@ -49,7 +49,8 @@ require('nightfox').setup({
       CopilotAnnotation = { link = 'Search' },
 
       -- visual-whitespace
-      VisualWhitespace = { bg = 'palette.sel0', fg = 'palette.comment' }, -- bg=Visual, fg=Comment
+      VisualWhitespace = { bg = 'palette.sel0', fg = 'palette.sel1' }, -- bg=Visual, fg=Search bg
+      -- VisualWhitespace = { link = 'Visual' }, -- bg=Visual, fg=Comment
 
       -- sentiment
       MatchParen = { link = 'Underlined' },
