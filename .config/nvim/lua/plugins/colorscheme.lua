@@ -14,16 +14,24 @@ require('nightfox').setup({
   groups = {
     all = {
       QuickFixLine = { link = 'Underlined' },
-      VertSplit = { link = 'NonText' },
-      WinSeparator = { link = 'VertSplit' },
-      CmpItemAbbrMatch = { fg = 'palette.magenta' },
-      CmpItemAbbrMatchFuzzy = { link = 'CmpItemAbbrMatch' },
 
       -- floating windows
       NormalFloat = { link = 'Normal' },
       FloatBorder = { link = 'Whitespace' },
       FloatTitle = { link = 'Normal' },
       FloatFooter = { link = 'FloatBorder' },
+
+      -- splits
+      VertSplit = { link = 'Whitespace' },
+      WinSeparator = { link = 'VertSplit' },
+
+      -- lsp
+      LspInfoBorder = { link = 'FloatBorder' },
+      LspInlayHint = { fg = 'palette.comment', bg = 'palette.bg2' },
+
+      -- cmp
+      CmpItemAbbrMatch = { fg = 'palette.magenta' },
+      CmpItemAbbrMatchFuzzy = { link = 'CmpItemAbbrMatch' },
 
       -- mini
       MiniPickPrompt = { link = 'Normal' },
@@ -35,9 +43,9 @@ require('nightfox').setup({
       TreesitterContext = { link = 'ColorColumn' },
 
       -- copilot
-      NeoCodeiumSuggestion = { fg = 'palette.comment' },
+      NeoCodeiumSuggestion = { link = 'NonText' },
       NeoCodeiumLabel = { link = 'Search' },
-      CopilotSuggestion = { fg = 'palette.comment' },
+      CopilotSuggestion = { link = 'NonText' },
       CopilotAnnotation = { link = 'Search' },
 
       -- visual-whitespace
