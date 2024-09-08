@@ -15,6 +15,7 @@ statusline.setup({
       local custom_git = function()
         return vim.b.minigit_summary_string and (' ' .. vim.b.minigit_summary_string) or ''
       end
+
       local diagnostics = statusline.section_diagnostics({
         trunc_width = 75,
         icon = '',
@@ -25,18 +26,10 @@ statusline.setup({
           HINT = require('utils').signs.Hint,
         },
       })
+
       -- c
       -- local filename = statusline.section_filename({ trunc_width = 140 })
       local custom_filename = '%f %m%r'
-      -- local grapple = function()
-      --   if require('grapple').exists() then
-      --     return ' '
-      --   elseif require('grapple').exists({ scope = 'global' }) then
-      --     return ' '
-      --   else
-      --     return nil
-      --   end
-      -- end
 
       -- x
       local file_size = function()
@@ -68,25 +61,43 @@ statusline.setup({
           return string.format(' %2d%%%%', math.floor(cur / total * 100))
         end
       end
+
       local search = statusline.section_searchcount({ trunc_width = 75 })
       if search ~= '' then
         search = '󰍉 ' .. search
       end
+
       local lines = string.format('%dL', vim.fn.line('$'))
 
+      local grapple = function()
+        if require('grapple').exists() then
+          return ''
+        elseif require('grapple').exists({ scope = 'global' }) then
+          return ''
+        else
+          return ''
+        end
+      end
+
       return statusline.combine_groups({
+        -- a
         { hl = mode_hl, strings = { mode } },
+        -- b
         { hl = 'MiniStatuslineDevinfo', strings = { custom_git(), diagnostics } },
-        '%<',
+        '%<', -- Mark general truncate point
+        -- c
         { hl = 'MiniStatuslineFilename', strings = { custom_filename } },
-        '%=',
+        '%=', -- End left alignment
+        -- x
         { hl = 'MiniStatuslineFilename', strings = { file_size() } },
+        -- y
         { hl = 'MiniStatuslineFileinfo', strings = { custom_fileinfo } },
+        -- z
         { hl = mode_hl, strings = { progress(), '/', lines } },
         { hl = 'MiniStatuslineModeReplace', strings = { search } },
+        { hl = 'MiniStatuslineModeOther', strings = { grapple() } },
       })
     end,
-    inactive = nil,
   },
 })
 
