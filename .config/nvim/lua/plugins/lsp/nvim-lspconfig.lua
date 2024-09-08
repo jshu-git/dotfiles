@@ -61,7 +61,7 @@ map('cR', ':IncRename ', 'Rename Variable')
 -- lspinfo
 map('<leader>li', '<cmd>LspInfo<CR>', 'Info')
 map('<leader>lr', '<cmd>LspRestart<CR>', 'Restart')
-map('<leader>ll', '<cmd>LspLog<CR>', 'Restart')
+map('<leader>ll', '<cmd>LspLog<CR>', 'Log')
 
 -- diagnostics
 map('gl', vim.diagnostic.open_float, 'Hover Diagnostic')
