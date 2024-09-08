@@ -22,7 +22,7 @@ require('nightfox').setup({
       FloatFooter = { link = 'FloatBorder' },
 
       -- splits
-      VertSplit = { link = 'Whitespace' },
+      VertSplit = { link = 'FloatBorder' },
       WinSeparator = { link = 'VertSplit' },
 
       -- lsp
