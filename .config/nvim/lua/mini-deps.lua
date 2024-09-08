@@ -48,9 +48,7 @@ now(function()
 
   -- ui
   -- add('gbprod/nord.nvim')
-  -- add('projekt0n/github-nvim-theme')
   add('EdenEast/nightfox.nvim')
-
   require('plugins.colorscheme')
 
   -- work
