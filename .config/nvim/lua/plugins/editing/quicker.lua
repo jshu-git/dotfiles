@@ -28,7 +28,7 @@ vim.keymap.set('n', '[q', '<cmd>cprev<cr>', { desc = 'Prev Quickfix' })
 
 vim.keymap.set('n', '<leader>c', function()
   quicker.toggle({ focus = true })
-end, { desc = 'Quickfix List' })
+end, { desc = 'Quickfix' })
 -- vim.keymap.set('n', '<leader>C', function()
 --   quicker.refresh()
 --   vim.notify('[quicker.nvim] Refreshed Quickfix List')

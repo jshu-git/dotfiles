@@ -89,18 +89,18 @@ vim.keymap.set('n', '<leader>fG', function()
 end, { desc = 'Grep (Relative)' })
 
 -- grep cword
-vim.keymap.set('n', '<leader>*', function()
-  local cword = vim.fn.expand('<cword>')
-  local opts = cwd_opts('Grep cword')
-  opts.source.name = opts.source.name .. ': ' .. cword
-  pick.builtin.grep({ pattern = cword }, opts)
-end, { desc = 'Grep cword' })
-vim.keymap.set('n', '<leader>#', function()
-  local cword = vim.fn.expand('<cword>')
-  local opts = relative_opts('Grep cword')
-  opts.source.name = opts.source.name .. ': ' .. cword
-  pick.builtin.grep({ pattern = cword }, opts)
-end, { desc = 'Grep cword (Relative)' })
+-- vim.keymap.set('n', '<leader>*', function()
+--   local cword = vim.fn.expand('<cword>')
+--   local opts = cwd_opts('Grep cword')
+--   opts.source.name = opts.source.name .. ': ' .. cword
+--   pick.builtin.grep({ pattern = cword }, opts)
+-- end, { desc = 'Grep cword' })
+-- vim.keymap.set('n', '<leader>#', function()
+--   local cword = vim.fn.expand('<cword>')
+--   local opts = relative_opts('Grep cword')
+--   opts.source.name = opts.source.name .. ': ' .. cword
+--   pick.builtin.grep({ pattern = cword }, opts)
+-- end, { desc = 'Grep cword (Relative)' })
 
 -- grep buffer
 vim.keymap.set('n', ',', function()
