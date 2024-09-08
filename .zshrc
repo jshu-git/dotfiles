@@ -129,7 +129,3 @@ fi
 if command -v rg >/dev/null 2>&1; then
 	export RIPGREP_CONFIG_PATH="$CONFIG/.ripgreprc"
 fi
-
-if command -v yazi >/dev/null 2>&1; then
-	bindkey -s '^[[Z' 'yazi^M'
-fi
