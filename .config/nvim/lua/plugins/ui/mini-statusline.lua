@@ -28,8 +28,8 @@ statusline.setup({
       })
 
       -- c
-      -- local filename = statusline.section_filename({ trunc_width = 140 })
-      local custom_filename = '%f %m%r'
+      local filename = statusline.section_filename({ trunc_width = 140 })
+      -- local custom_filename = '%f %m%r'
 
       -- x
       local file_size = function()
@@ -86,7 +86,7 @@ statusline.setup({
         { hl = 'MiniStatuslineDevinfo', strings = { custom_git(), diagnostics } },
         '%<', -- Mark general truncate point
         -- c
-        { hl = 'MiniStatuslineFilename', strings = { custom_filename } },
+        { hl = 'MiniStatuslineFilename', strings = { filename } },
         '%=', -- End left alignment
         -- x
         { hl = 'MiniStatuslineFilename', strings = { file_size() } },
