@@ -16,6 +16,8 @@ git:
 keybinding:
   universal:
     copyToClipboard: "y"
+    undo: u
+    redo: U
 quitOnTopLevelReturn: true
 notARepository: quit
 promptToReturnFromSubprocess: false
