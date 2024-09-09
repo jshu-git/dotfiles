@@ -7,6 +7,8 @@
 [pull]
 	rebase = true
 	autoStash = true
+[rebase]
+	autoStash = true
 [delta]
 	; line-numbers = false
 	side-by-side = true
