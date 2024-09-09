@@ -1,5 +1,5 @@
 gui:
-  scrollHeight: 16
+  scrollHeight: 20
   scrollPastBottom: false
   scrollOffMargin: 10
   sidePanelWidth: 0.2
