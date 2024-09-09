@@ -57,10 +57,7 @@ now(function()
     require('plugins.nvim-osc52')
 
     add('github/copilot.vim')
-    vim.g.copilot_filetypes = {
-      ['*'] = true,
-      ['grug-far'] = false,
-    }
+    vim.g.copilot_filetypes = { ['*'] = true, ['grug-far'] = false }
     vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
     vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
     vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
