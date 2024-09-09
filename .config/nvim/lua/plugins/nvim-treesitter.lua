@@ -6,6 +6,7 @@ if vim.env.SSH_CLIENT ~= nil then
     -- query = { 'src/parser.c' },
     python = { 'src/parser.c', 'src/scanner.c' },
     yaml = { 'src/parser.c', 'src/scanner.cc' },
+    perl = { 'src/parser.c', 'src/scanner.c' },
   }) do
     parser_config[lang] = {
       install_info = {
