@@ -1,4 +1,5 @@
 vim.g.undotree_WindowLayout = 3
+vim.g.undotree_SplitWidth = 25
 vim.g.undotree_DiffAutoOpen = 0
 vim.g.undotree_SetFocusWhenToggle = 1
 vim.g.undotree_TreeNodeShape = '󰧞'
