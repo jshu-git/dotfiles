@@ -5,12 +5,17 @@
 -- local hyper = { "ctrl", "cmd", "alt" }
 hs.loadSpoon("EmmyLua")
 
-for key, bundleID in pairs({
-	["1"] = "company.thebrowser.Browser",
-	["2"] = "org.alacritty",
+hs.hotkey.bind("alt", "r", hs.reload)
+
+for key, name in pairs({
+	-- ["1"] = "company.thebrowser.Browser",
+	-- ["2"] = "org.alacritty",
+	["1"] = "Arc",
+	["2"] = "Alacritty",
 }) do
 	hs.hotkey.bind("alt", key, function()
-		hs.application.launchOrFocusByBundleID(bundleID)
+		-- hs.application.launchOrFocusByBundleID(name)
+		hs.application.launchOrFocus(name)
 	end)
 end
 
