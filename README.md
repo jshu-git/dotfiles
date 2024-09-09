@@ -15,5 +15,4 @@
   - [Ice](https://github.com/jordanbaird/Ice)
   - [MiddleClick](https://github.com/artginzburg/MiddleClick-Sonoma)
   - [QuickRecorder](https://github.com/lihaoyun6/QuickRecorder)
-  - [rcmd](https://lowtechguys.com/rcmd/)
   - [Shottr](https://shottr.cc/)
