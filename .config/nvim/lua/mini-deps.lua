@@ -66,7 +66,7 @@ now(function()
     vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
 
     add('pteroctopus/faster.nvim')
-    require('faster').setup({ behaviours = { bigfile = { filesize = 0.5 } } })
+    require('faster').setup({ behaviours = { bigfile = { filesize = 0.3 } } })
   end
 end)
 
