@@ -5,8 +5,10 @@
 -- local hyper = { "ctrl", "cmd", "alt" }
 hs.loadSpoon("EmmyLua")
 
+-- reload
 hs.hotkey.bind("alt", "r", hs.reload)
 
+-- application switcher
 for key, name in pairs({
 	-- ["1"] = "company.thebrowser.Browser",
 	-- ["2"] = "org.alacritty",
