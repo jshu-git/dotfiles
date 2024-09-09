@@ -1,11 +1,9 @@
--- https://neovim.io/doc/user/lsp.html#lsp-defaults-disable
--- vim.api.nvim_create_autocmd('LspAttach', {
---   callback = function(args)
---     vim.keymap.del('n', 'K', { buffer = args.buf })
---   end,
--- })
-
-require('lazydev').setup()
+require('lazydev').setup({
+  library = {
+    -- https://github.com/gnudad/dotfiles/blob/main/neovim.lua#L301
+    { path = '~/.config/hammerspoon/Spoons/EmmyLua.spoon/annotations' },
+  },
+})
 
 -- glance
 -- local glance = require('glance')
@@ -81,8 +79,7 @@ local servers = {
       Lua = {
         hint = { enable = true },
         diagnostics = {
-          disable = { 'missing-fields' },
-          globals = { 'vim' },
+          globals = { 'vim', 'hs' },
         },
       },
     },
