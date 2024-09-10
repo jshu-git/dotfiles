@@ -120,10 +120,10 @@ later(function()
   add('stevearc/quicker.nvim')
   add('MagicDuck/grug-far.nvim')
   add('mbbill/undotree')
-  add('monaqa/dial.nvim')
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
   add('ziontee113/icon-picker.nvim')
+  -- add('monaqa/dial.nvim')
   vim.cmd('runtime! lua/plugins/editing/*.lua')
 
   -- git
