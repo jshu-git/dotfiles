@@ -2,7 +2,7 @@ require('lazydev').setup({
   library = {
     -- https://github.com/Hammerspoon/Spoons/pull/240
     -- https://github.com/gnudad/dotfiles/blob/main/neovim.lua#L301
-    { path = '~/.config/hammerspoon/Spoons/EmmyLua.spoon/annotations' },
+    { path = vim.env.HOME .. '/.config/hammerspoon/Spoons/EmmyLua.spoon/annotations' },
   },
 })
 

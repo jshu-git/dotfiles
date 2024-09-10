@@ -31,8 +31,8 @@ require('nvim-treesitter.configs').setup({
   },
 })
 
+local context = require('treesitter-context')
+context.setup({ max_lines = 1 })
 vim.keymap.set('n', 'gt', function()
-  require('treesitter-context').go_to_context(vim.v.count1)
+  context.go_to_context(vim.v.count1)
 end, { desc = 'Goto Treesitter Context' })
-
-require('treesitter-context').setup({ max_lines = 1 })
