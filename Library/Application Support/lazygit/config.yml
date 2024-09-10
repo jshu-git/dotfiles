@@ -12,8 +12,8 @@ gui:
 git:
   paging:
     # pager: delta --dark --paging=never
-    # --display=inline
-    externalDiffCommand: difft --color=always --context=2 --display=side-by-side-show-both --syntax-highlight=off --tab-width=2
+    # --display=side-by-side-show-both
+    externalDiffCommand: difft --color=always --context=2 --syntax-highlight=off --tab-width=2 --display=inline
 keybinding:
   universal:
     copyToClipboard: "y"
