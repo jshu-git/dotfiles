@@ -3,19 +3,18 @@
 	email = jasonshu@terpmail.umd.edu
 [core]
 	editor = nvim
-	; pager = delta
+	pager = delta
 [pull]
 	rebase = true
 	autoStash = true
 [rebase]
 	autoStash = true
-; [delta]
-; 	; line-numbers = false
-; 	side-by-side = true
-; 	line-numbers-left-format = ""
-; 	line-numbers-right-format = "│"
-; 	navigate = true
-; 	zero-style = dim syntax
-; 	tabs = 4
-[diff]
-	external = difft
+[delta]
+	; side-by-side = true
+	; line-numbers-left-format = ""
+	; line-numbers-right-format = "│"
+
+	; line-numbers = false
+	navigate = true
+	zero-style = dim syntax
+	tabs = 4
