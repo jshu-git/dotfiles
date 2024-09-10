@@ -1,19 +1,18 @@
---
---  bg0  = "#131a24", -- unused
---  bg1  = "#192330", -- Normal bg
---  bg2  = "#212e3f", -- ColorColumn
---  bg3  = "#29394f", -- CursorLine, Whitespace
---  bg4  = "#39506d", -- NonText, Conceal
+-- bg0  = "#131a24", -- unused
+-- bg1  = "#192330", -- Normal
+-- bg2  = "#212e3f", -- ColorColumn
+-- bg3  = "#29394f", -- CursorLine, Whitespace
+-- bg4  = "#39506d", -- NonText, Conceal
 
---  sel0 = "#2b3b51", -- Visual
---  sel1 = "#3c5372", -- Search
+-- sel0 = "#2b3b51", -- Visual
+-- sel1 = "#3c5372", -- Search
 
---  fg0  = "#d6d6d7", -- Lighter fg
---  fg1  = "#cdcecf", -- Default fg
---  fg2  = "#aeafb0", -- Darker fg (status line)
---  fg3  = "#71839b", -- FloatBorder
+-- fg0  = "#d6d6d7", -- Lighter fg
+-- fg1  = "#cdcecf", -- Default fg
+-- fg2  = "#aeafb0", -- Darker fg (status line)
+-- fg3  = "#71839b", -- FloatBorder
 
---  comment = "#738091",
+-- comment = "#738091",
 
 require('nightfox').setup({
   options = {
