@@ -47,6 +47,7 @@ keybinds clear-defaults=true {
         bind "m" { ToggleFocusFullscreen; SwitchToMode "Locked"; }
         bind "X" { CloseFocus; SwitchToMode "Locked"; }
         bind "F" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
+        bind "R" { SwitchToMode "RenamePane"; PaneNameInput 0; }
 
         // tab
         bind "t"   { NewTab; SwitchToMode "Locked"; }
@@ -91,6 +92,10 @@ keybinds clear-defaults=true {
     }
     renametab {
         bind "Esc" { UndoRenameTab; SwitchToMode "Locked"; }
+        bind "Enter" { SwitchToMode "Locked"; }
+    }
+    renamepane {
+        bind "Esc" { UndoRenamePane; SwitchToMode "Locked"; }
         bind "Enter" { SwitchToMode "Locked"; }
     }
 }
