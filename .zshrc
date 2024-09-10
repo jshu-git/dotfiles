@@ -98,9 +98,14 @@ if command -v starship >/dev/null 2>&1; then
 fi
 
 # neovim
-path+=$HOME/.local/share/bob/nvim-bin
 if command -v nvim >/dev/null 2>&1; then
+	# bob
+	if command -v bob >/dev/null 2>&1; then
+		path+=$HOME/.local/share/bob/nvim-bin
+	fi
+
 	function v() {
+		# yadm
 		if [[ "$PWD" == $CONFIG* ]]; then
 			if command -v yadm >/dev/null 2>&1; then
 				yadm enter nvim $@
@@ -115,6 +120,7 @@ fi
 # lazygit
 if command -v lazygit >/dev/null 2>&1; then
 	function gg() {
+		# yadm
 		if [[ "$PWD" == $CONFIG* ]]; then
 			if command -v yadm >/dev/null 2>&1; then
 				cd
