@@ -9,6 +9,9 @@ gui:
   commitHashLength: 4
   showDivergenceFromBaseBranch: arrowAndNumber
   border: single
+  theme:
+    inactiveBorderColor:
+      - black
 git:
   paging:
     # pager: delta --dark --paging=never
