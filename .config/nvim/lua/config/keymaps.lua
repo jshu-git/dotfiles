@@ -153,6 +153,6 @@ end
 
 -- command mode
 -- https://old.reddit.com/r/neovim/comments/1f9rdgl/help_me_convert_that_line_from_vimscript_to_lua/
-vim.keymap.set('c', ';;', function()
+map('c', ';;', function()
   return vim.fn.getcmdtype() == ':' and vim.fn.expand('%:p:h') .. '/' or ';;'
 end, { expr = true })
