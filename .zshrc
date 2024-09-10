@@ -66,6 +66,7 @@ fi
 
 # aliases after eza since eza overrides ls
 source $ZSH/aliases.zsh
+[ -f $ZSH/work_aliases.zsh ] && source $ZSH/work_aliases.zsh
 
 # fzf
 if command -v fzf >/dev/null 2>&1; then
