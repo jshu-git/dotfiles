@@ -26,7 +26,8 @@ keybinds clear-defaults=true {
         // lazygit
         bind "a" {
             // https://github.com/zellij-org/zellij/discussions/2518
-            Run "zellij" "run" "--close-on-exit" "--floating" "--" "lazygit" {
+            // ~/.config/zsh/scripts/zellij-lazygit
+            Run "zellij" "run" "--close-on-exit" "--floating" "--" "zellij-lazygit" {
                 close_on_exit true
             }
             SwitchToMode "Locked"
@@ -39,28 +40,28 @@ keybinds clear-defaults=true {
         bind "k" { MoveFocus "Up";    SwitchToMode "Locked"; }
         bind "s" { NewPane "Down";  SwitchToMode "Locked"; }
         bind "v" { NewPane "Right"; SwitchToMode "Locked"; }
-        bind "Alt h" { MovePane "Left";  }
-        bind "Alt j" { MovePane "Down";  }
-        bind "Alt k" { MovePane "Up";    }
-        bind "Alt l" { MovePane "Right"; }
+        bind "H" { MovePane "Left";  }
+        bind "J" { MovePane "Down";  }
+        bind "K" { MovePane "Up";    }
+        bind "L" { MovePane "Right"; }
         bind "m" { ToggleFocusFullscreen; SwitchToMode "Locked"; }
         bind "X" { CloseFocus; SwitchToMode "Locked"; }
         bind "F" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
 
         // tab
         bind "t"   { NewTab; SwitchToMode "Locked"; }
-        bind "Tab" { GoToNextTab; }
+        // bind "Tab" { GoToNextTab; }
         // bind "Shift Tab" { GoToPreviousTab; }
         bind "Ctrl n" { GoToNextTab; SwitchToMode "Locked"; }
         bind "Ctrl p" { GoToPreviousTab; SwitchToMode "Locked"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
-        bind "1" { GoToTab 1; SwitchToMode "Locked"; }
-        bind "2" { GoToTab 2; SwitchToMode "Locked"; }
-        bind "3" { GoToTab 3; SwitchToMode "Locked"; }
-        bind "4" { GoToTab 4; SwitchToMode "Locked"; }
-        bind "5" { GoToTab 5; SwitchToMode "Locked"; }
-        bind "L" { MoveTab "Right"; }
-        bind "H" { MoveTab "Left";  }
+        // bind "1" { GoToTab 1; SwitchToMode "Locked"; }
+        // bind "2" { GoToTab 2; SwitchToMode "Locked"; }
+        // bind "3" { GoToTab 3; SwitchToMode "Locked"; }
+        // bind "4" { GoToTab 4; SwitchToMode "Locked"; }
+        // bind "5" { GoToTab 5; SwitchToMode "Locked"; }
+        bind "Right" { MoveTab "Right"; }
+        bind "Left"  { MoveTab "Left";  }
         bind "S" { ToggleActiveSyncTab; SwitchToMode "Locked"; }
         // bind "X" { CloseTab; SwitchToMode "Locked"; }
 

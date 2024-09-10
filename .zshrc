@@ -44,6 +44,7 @@ CONFIG="$HOME/.config"
 
 # zsh
 ZSH="$CONFIG/zsh"
+path+=$ZSH/scripts
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^[l' autosuggest-accept
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
