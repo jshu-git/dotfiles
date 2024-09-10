@@ -127,7 +127,7 @@ later(function()
   vim.cmd('runtime! lua/plugins/editing/*.lua')
 
   -- git
-  add('kdheepak/lazygit.nvim')
+  -- add('kdheepak/lazygit.nvim')
   add({
     source = 'ruifm/gitlinker.nvim',
     depends = { 'nvim-lua/plenary.nvim' },
