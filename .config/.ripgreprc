@@ -6,4 +6,4 @@
 # !{lazy-lock.json,.DS_Store}
 # dirs
 --glob
-!{.git,fzf/plugins,zsh/plugins,zellij/plugins}
+!{.git,fzf/plugins,zsh/plugins,zellij/plugins,hammerspoon/Spoons}
