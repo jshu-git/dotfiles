@@ -40,7 +40,7 @@ now(function()
     depends = {
       'hrsh7th/cmp-nvim-lsp',
       'folke/lazydev.nvim',
-      'smjonas/inc-rename.nvim',
+      -- 'smjonas/inc-rename.nvim',
     },
   })
   add('stevearc/conform.nvim')

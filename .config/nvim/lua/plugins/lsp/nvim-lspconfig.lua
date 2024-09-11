@@ -28,18 +28,13 @@ require('lazydev').setup({
 --   folds = { folded = false },
 -- })
 
--- inc-rename
-require('inc_rename').setup({
-  preview_empty_name = true,
-  save_in_cmdline_history = false,
-})
-
 local map = function(lhs, rhs, desc, opts)
   vim.keymap.set('n', lhs, rhs, vim.tbl_deep_extend('force', { desc = 'LSP: ' .. desc }, opts or {}))
 end
 map('gs', vim.lsp.buf.hover, 'Hover')
 map('gS', vim.lsp.buf.signature_help, 'Signature Help')
 map('ga', vim.lsp.buf.code_action, 'Code Action')
+map('cr', vim.lsp.buf.rename, 'Rename Variable')
 
 -- glance
 -- map('gd', '<cmd>Glance definitions<CR>', 'Goto Definition')
@@ -52,10 +47,14 @@ map('gr', function()
 end, 'Goto References')
 
 -- inc-rename
-map('cr', function()
-  return ':IncRename ' .. vim.fn.expand('<cword>')
-end, 'LSP: Rename Variable', { expr = true })
-map('cR', ':IncRename ', 'Rename Variable')
+-- require('inc_rename').setup({
+--   preview_empty_name = true,
+--   save_in_cmdline_history = false,
+-- })
+-- map('cr', function()
+--   return ':IncRename ' .. vim.fn.expand('<cword>')
+-- end, 'LSP: Rename Variable', { expr = true })
+-- map('cR', ':IncRename ', 'Rename Variable')
 
 -- lspinfo
 map('<leader>li', '<cmd>LspInfo<CR>', 'Info')

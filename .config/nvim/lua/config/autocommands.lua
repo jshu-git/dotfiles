@@ -57,17 +57,18 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, {
   end,
 })
 
--- options for text filetypes
+-- set wrap in some filetypes
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {
     '*.txt',
     'gitcommit',
     'markdown',
+    'mininotify-history',
   },
   callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
-    vim.opt_local.linebreak = true
+    vim.wo.wrap = true
+    -- vim.opt_local.spell = true
+    -- vim.opt_local.linebreak = true
   end,
 })
 
