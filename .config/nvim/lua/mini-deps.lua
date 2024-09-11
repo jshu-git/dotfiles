@@ -34,20 +34,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 now(function()
-  -- lsp
-  add({
-    source = 'neovim/nvim-lspconfig',
-    depends = {
-      'hrsh7th/cmp-nvim-lsp',
-      'folke/lazydev.nvim',
-      -- 'smjonas/inc-rename.nvim',
-    },
-  })
-  add('stevearc/conform.nvim')
-  vim.cmd('runtime! lua/plugins/lsp/*.lua')
-
   -- ui
-  -- add('gbprod/nord.nvim')
   add('EdenEast/nightfox.nvim')
   require('plugins.colorscheme')
 
@@ -80,6 +67,18 @@ later(function()
     depends = { 'nvim-treesitter/nvim-treesitter-context' },
   })
   require('plugins.nvim-treesitter')
+
+  -- lsp
+  add({
+    source = 'neovim/nvim-lspconfig',
+    depends = {
+      'hrsh7th/cmp-nvim-lsp',
+      'folke/lazydev.nvim',
+      -- 'smjonas/inc-rename.nvim',
+    },
+  })
+  add('stevearc/conform.nvim')
+  vim.cmd('runtime! lua/plugins/lsp/*.lua')
 
   -- cmp
   add({
