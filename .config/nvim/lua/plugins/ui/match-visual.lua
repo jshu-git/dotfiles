@@ -1,3 +1,3 @@
 require('match-visual').setup({
-  min_length = 4,
+  min_length = 3,
 })
