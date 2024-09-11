@@ -42,13 +42,13 @@ noice.setup({
         width = require('utils').popup.width,
         height = require('utils').popup.height,
       },
-      win_options = { wrap = true },
+      win_options = { wrap = true, cursorline = true },
     },
     hover = {
       border = { style = 'single', padding = { 0, 0 } },
     },
     cmdline_popup = {
-      size = { min_width = math.floor(0.3 * vim.o.columns) },
+      size = { min_width = math.floor(0.2 * vim.o.columns) },
       border = { style = 'single', padding = { 0, 0 } },
     },
     cmdline_input = {
@@ -63,7 +63,7 @@ noice.setup({
     -- macros
     { view = 'virtualtext', filter = { event = 'msg_showmode' } },
     -- {
-    --   filter = {
+    --jjfilter = {
     --     event = 'msg_show',
     --     any = {
     --       -- search
@@ -83,7 +83,7 @@ noice.setup({
 vim.keymap.set('n', '<leader>nn', function()
   noice.cmd('Noice')
   vim.cmd('norm! G')
-end, { desc = 'Messages (Noice)' })
+end, { desc = 'Noice' })
 vim.keymap.set('n', '<leader>nN', function()
   vim.cmd('messages')
 end, { desc = 'Messages' })
