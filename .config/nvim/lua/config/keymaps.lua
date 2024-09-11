@@ -84,7 +84,7 @@ map('n', '<C-s>', '<C-w>s')
 map('x', '<CR>', '"_c')
 map('x', '<C-q>', 'j')
 -- map('x', '/', '<esc>/\\%V')
-map('x', 'v', 'iw')
+-- map('x', 'v', 'iw')
 
 -- search
 map('n', '*', 'g*``')
