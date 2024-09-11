@@ -1,8 +1,11 @@
 local grapple = require('grapple')
+local popup = require('utils').popup
 grapple.setup({
   win_opts = {
-    width = 0.5,
-    height = 0.4,
+    height = popup.height,
+    width = popup.width,
+    row = math.floor(0.5 * (vim.o.lines - popup.height)),
+    col = math.floor(0.5 * (vim.o.columns - popup.width)),
   },
 })
 
