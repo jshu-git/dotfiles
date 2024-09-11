@@ -34,7 +34,7 @@ require('nightfox').setup({
 
       -- floating windows
       NormalFloat = { link = 'Normal' },
-      -- FloatBorder = { link = 'Whitespace' },
+      FloatBorder = { link = 'NonText' },
       FloatTitle = { link = 'Normal' },
       FloatFooter = { link = 'FloatBorder' },
 
