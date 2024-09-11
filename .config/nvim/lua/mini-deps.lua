@@ -36,7 +36,12 @@ vim.api.nvim_create_autocmd('FileType', {
 now(function()
   -- ui
   add('EdenEast/nightfox.nvim')
+  add({
+    source = 'folke/noice.nvim',
+    depends = { 'MunifTanjim/nui.nvim' },
+  })
   require('plugins.colorscheme')
+  require('plugins.noice')
 
   -- work
   if vim.env.SSH_CLIENT ~= nil then

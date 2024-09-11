@@ -71,6 +71,10 @@ require('nightfox').setup({
 
       -- sentiment
       MatchParen = { link = 'Underlined' },
+
+      -- noice
+      NoiceCmdlinePopupBorder = { link = 'FloatBorder' },
+      NoiceConfirmBorder = { link = 'DiagnosticFloatingWarn' },
     },
   },
 })
