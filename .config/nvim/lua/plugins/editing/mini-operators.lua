@@ -13,3 +13,4 @@ operators.make_mappings('replace', {
   selection = 'ss',
 })
 vim.keymap.set('n', 'S', 's$', { remap = true })
+vim.keymap.set('n', 'sE', 'se$', { remap = true, desc = 'Evaluate (EOL)' })

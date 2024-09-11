@@ -29,4 +29,4 @@ ai.setup({
 })
 
 vim.keymap.set('n', '<S-CR>', 'ciq', { remap = true })
-vim.keymap.set('x', 'v', 'ilo', { remap = true })
+-- vim.keymap.set('x', 'v', 'ilo', { remap = true })
