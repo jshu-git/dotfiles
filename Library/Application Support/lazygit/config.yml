@@ -5,6 +5,7 @@ gui:
   sidePanelWidth: 0.2
   showListFooter: false
   showBottomLine: false
+  showPanelJumps: false
   nerdFontsVersion: "3"
   commitHashLength: 4
   showDivergenceFromBaseBranch: arrowAndNumber
