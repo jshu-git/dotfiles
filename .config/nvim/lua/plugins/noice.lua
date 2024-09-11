@@ -43,6 +43,7 @@ noice.setup({
         height = require('utils').popup.height,
       },
       win_options = { wrap = true, cursorline = true },
+      scrollbar = false,
     },
     hover = {
       border = { style = 'single', padding = { 0, 0 } },
@@ -84,9 +85,6 @@ vim.keymap.set('n', '<leader>nn', function()
   noice.cmd('Noice')
   vim.cmd('norm! G')
 end, { desc = 'Noice' })
-vim.keymap.set('n', '<leader>nN', function()
-  vim.cmd('messages')
-end, { desc = 'Messages' })
 
 -- amend esc
 vim.keymap.set('n', '<esc>', function()
