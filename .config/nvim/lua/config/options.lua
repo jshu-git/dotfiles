@@ -23,10 +23,12 @@ opt.foldlevelstart = 99
 -- tabs/indents
 opt.breakindent = true
 opt.smartindent = true
-opt.linebreak = true
-opt.wrap = false
 opt.tabstop = 4
 opt.shiftwidth = 4
+
+-- wrap
+opt.linebreak = true
+opt.wrap = false
 opt.showbreak = '↳ '
 
 -- chars
