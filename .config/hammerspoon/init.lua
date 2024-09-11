@@ -8,6 +8,9 @@ hs.loadSpoon("EmmyLua")
 -- reload
 hs.hotkey.bind("alt", "r", hs.reload)
 
+-- show desktop
+hs.hotkey.bind("alt", "d", hs.spaces.toggleShowDesktop)
+
 -- application switcher
 for key, name in pairs({
 	-- ["1"] = "company.thebrowser.Browser",
