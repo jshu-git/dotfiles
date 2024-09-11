@@ -21,16 +21,16 @@ vim.api.nvim_create_autocmd('BufEnter', {
 --   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
 --   autocmd WinLeave * setlocal nocursorline
 -- augroup END
-vim.api.nvim_create_autocmd({ 'WinEnter', 'BufWinEnter' }, {
-  callback = function()
-    vim.wo.cursorline = true
-  end,
-})
-vim.api.nvim_create_autocmd({ 'WinLeave' }, {
-  callback = function()
-    vim.wo.cursorline = false
-  end,
-})
+-- vim.api.nvim_create_autocmd({ 'WinEnter', 'BufWinEnter' }, {
+--   callback = function()
+--     vim.wo.cursorline = true
+--   end,
+-- })
+-- vim.api.nvim_create_autocmd({ 'WinLeave' }, {
+--   callback = function()
+--     vim.wo.cursorline = false
+--   end,
+-- })
 
 -- from LazyVim
 -- close some filetypes with <esc>
@@ -41,6 +41,7 @@ vim.api.nvim_create_autocmd('FileType', {
     'qf',
     'mininotify-history',
     'minideps-confirm',
+    'noice',
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
