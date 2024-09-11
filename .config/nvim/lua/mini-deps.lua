@@ -113,7 +113,6 @@ later(function()
   add('nkakouros-original/scrollofffraction.nvim')
   add('mcauley-penney/visual-whitespace.nvim')
   add('aaron-p1/match-visual.nvim')
-  add('Aasim-A/scrollEOF.nvim')
   vim.cmd('runtime! lua/plugins/ui/*.lua')
 
   -- editing
