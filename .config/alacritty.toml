@@ -51,10 +51,10 @@ bindings = [
   # https://www.youtube.com/watch?v=-M7iQKTvTaQ
   # https://github.com/s1n7ax/alacritty-extended-keys
   # control
-  { key = "h", mods = "Control", chars = "\u001b[104;5u" },
   { key = "i", mods = "Control", chars = "\u001b[105;5u" },
-  { key = "j", mods = "Control", chars = "\u001b[106;5u" },
-  { key = "m", mods = "Control", chars = "\u001b[109;5u" },
+  # { key = "h", mods = "Control", chars = "\u001b[104;5u" },
+  # { key = "j", mods = "Control", chars = "\u001b[106;5u" },
+  # { key = "m", mods = "Control", chars = "\u001b[109;5u" },
   # control+shift
   { key = "C", mods = "Control|Shift", chars = "\u001b[67;5u" },
   { key = "G", mods = "Control|Shift", chars = "\u001b[71;5u" },
