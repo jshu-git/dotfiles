@@ -18,6 +18,7 @@ for key, name in pairs({
 	["1"] = "Arc",
 	["2"] = "Alacritty",
 	["3"] = "Messages",
+	["b"] = "BambuStudio",
 }) do
 	hs.hotkey.bind("alt", key, function()
 		-- hs.application.launchOrFocusByBundleID(name)
