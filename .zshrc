@@ -97,13 +97,12 @@ if command -v starship >/dev/null 2>&1; then
 	eval "$(starship init zsh)"
 fi
 
+# bob
+if command -v bob >/dev/null 2>&1; then
+	path+=$HOME/.local/share/bob/nvim-bin
+fi
 # neovim
 if command -v nvim >/dev/null 2>&1; then
-	# bob
-	if command -v bob >/dev/null 2>&1; then
-		path+=$HOME/.local/share/bob/nvim-bin
-	fi
-
 	function v() {
 		# yadm
 		if [[ "$PWD" == $CONFIG* ]]; then
