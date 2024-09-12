@@ -36,12 +36,7 @@ vim.api.nvim_create_autocmd('FileType', {
 now(function()
   -- ui
   add('EdenEast/nightfox.nvim')
-  add({
-    source = 'folke/noice.nvim',
-    depends = { 'MunifTanjim/nui.nvim' },
-  })
   require('plugins.colorscheme')
-  require('plugins.noice')
 
   -- work
   if vim.env.SSH_CLIENT ~= nil then
@@ -117,6 +112,10 @@ later(function()
   add('nkakouros-original/scrollofffraction.nvim')
   add('mcauley-penney/visual-whitespace.nvim')
   add('aaron-p1/match-visual.nvim')
+  add({
+    source = 'folke/noice.nvim',
+    depends = { 'MunifTanjim/nui.nvim' },
+  })
   vim.cmd('runtime! lua/plugins/ui/*.lua')
 
   -- editing
