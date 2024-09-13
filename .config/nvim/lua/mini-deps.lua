@@ -92,7 +92,7 @@ later(function()
       'FelipeLema/cmp-async-path',
       -- cmdline
       'hrsh7th/cmp-cmdline',
-      'dmitmel/cmp-cmdline-history',
+      -- 'dmitmel/cmp-cmdline-history',
       -- ui
       'onsails/lspkind-nvim',
       -- autopairs
