@@ -74,6 +74,7 @@ end, 'Toggle Inlay Hints')
 local servers = {
   marksman = {},
   taplo = {},
+
   lua_ls = {
     settings = {
       Lua = {
@@ -104,6 +105,15 @@ local servers = {
       },
     },
   },
+  zls = {
+    settings = {
+      -- https://github.com/zigtools/zls/blob/master/src/Config.zig
+      warn_style = true,
+      highlight_global_var_declarations = true,
+      zig_exe_path = '/usr/local/bin/zig/zig',
+    },
+  },
+
   -- ts_ls = {},
   -- pico8_ls = {},
 }

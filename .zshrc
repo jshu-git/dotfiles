@@ -139,3 +139,4 @@ fi
 
 # zig
 path+=/usr/local/bin/zig
+path+=~/git/zls/zig-out/bin
