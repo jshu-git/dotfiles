@@ -45,7 +45,7 @@ clue.setup({
   },
   clues = {
     -- clue.gen_clues.g(),
-    clue.gen_clues.marks(),
+    -- clue.gen_clues.marks(),
     clue.gen_clues.registers(),
     clue.gen_clues.windows(),
     clue.gen_clues.z(),
