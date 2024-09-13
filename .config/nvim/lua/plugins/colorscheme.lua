@@ -1,4 +1,15 @@
--- bg0  = "#131a24", -- unused
+-- black   = Shade.new("#393b44", 0.15, -0.15),
+-- red     = Shade.new("#c94f6d", 0.15, -0.15),
+-- green   = Shade.new("#81b29a", 0.10, -0.15),
+-- yellow  = Shade.new("#dbc074", 0.15, -0.15),
+-- blue    = Shade.new("#719cd6", 0.15, -0.15),
+-- magenta = Shade.new("#9d79d6", 0.30, -0.15),
+-- cyan    = Shade.new("#63cdcf", 0.15, -0.15),
+-- white   = Shade.new("#dfdfe0", 0.15, -0.15),
+-- orange  = Shade.new("#f4a261", 0.15, -0.15),
+-- pink    = Shade.new("#d67ad2", 0.15, -0.15),
+
+-- bg0  = "#131a24", -- darker Normal
 -- bg1  = "#192330", -- Normal
 -- bg2  = "#212e3f", -- ColorColumn
 -- bg3  = "#29394f", -- CursorLine, Whitespace
@@ -55,6 +66,9 @@ require('nightfox').setup({
       MiniPickMatchRanges = { link = 'CmpItemAbbrMatch' },
       MiniIndentscopeSymbol = { link = 'NonText' },
       MiniStatuslineFilename = { link = 'Normal' },
+      MiniJump2dSpot = { fg = 'palette.fg0', bg = 'black' },
+      MiniJump2dSpotAhead = { fg = 'palette.fg2', bg = 'black' },
+      MiniJump2dSpotUnique = { link = 'MiniJump2dSpot' },
 
       -- treesitter
       TreesitterContext = { link = 'ColorColumn' },
