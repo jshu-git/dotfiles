@@ -1,1 +1,0 @@
-require('early-retirement').setup({})
