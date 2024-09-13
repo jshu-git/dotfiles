@@ -66,9 +66,10 @@ require('nightfox').setup({
       MiniPickMatchRanges = { link = 'CmpItemAbbrMatch' },
       MiniIndentscopeSymbol = { link = 'NonText' },
       MiniStatuslineFilename = { link = 'Normal' },
-      MiniJump2dSpot = { fg = 'palette.fg0', bg = 'black' },
-      MiniJump2dSpotAhead = { fg = 'palette.fg2', bg = 'black' },
+      MiniJump2dSpot = { fg = 'palette.magenta', bg = 'black' },
+      MiniJump2dSpotAhead = { fg = 'palette.magenta', bg = 'black' },
       MiniJump2dSpotUnique = { link = 'MiniJump2dSpot' },
+      MiniJump = { link = 'MiniJump2dSpot' },
 
       -- treesitter
       TreesitterContext = { link = 'ColorColumn' },
