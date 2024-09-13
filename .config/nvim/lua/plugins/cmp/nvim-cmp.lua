@@ -23,7 +23,7 @@ cmp.setup({
     completion = {
       -- border = 'single',
       -- side_padding = 0,
-      scrolloff = 3,
+      -- scrolloff = 3,
       -- col_offset = 0,
       -- winhighlight = 'Normal:NormalFloat,CursorLine:Visual',
       -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",

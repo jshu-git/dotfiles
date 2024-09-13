@@ -54,6 +54,8 @@ map('n', '<BS>', '<C-^>')
 map('n', 'i', function()
   return vim.fn.getline('.') == '' and '"_cc' or 'i'
 end, { expr = true })
+map('n', '+', '<C-a>')
+map('n', '-', '<C-x>')
 
 -- command mode
 map({ 'n', 'x' }, ';', ':')
