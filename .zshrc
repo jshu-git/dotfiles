@@ -136,3 +136,6 @@ fi
 if command -v rg >/dev/null 2>&1; then
 	export RIPGREP_CONFIG_PATH="$CONFIG/.ripgreprc"
 fi
+
+# zig
+path+=/usr/local/bin/zig
