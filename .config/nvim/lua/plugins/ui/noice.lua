@@ -63,21 +63,16 @@ noice.setup({
   routes = {
     -- macros
     { view = 'virtualtext', filter = { event = 'msg_showmode' } },
-    -- {
-    --jjfilter = {
-    --     event = 'msg_show',
-    --     any = {
-    --       -- search
-    --       -- { find = 'Search hit ' },
-    --       -- write
-    --       { find = '%d+L, %d+B' },
-    --       -- undo/redo
-    --       { find = '; after #%d+' },
-    --       { find = '; before #%d+' },
-    --     },
-    --     opts = { skip = true },
-    --   },
-    -- },
+    {
+      filter = {
+        event = 'lsp',
+        any = {
+          -- zig warning
+          { find = 'expected file path' },
+        },
+      },
+      opts = { skip = true },
+    },
   },
 })
 
