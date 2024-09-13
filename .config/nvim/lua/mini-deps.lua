@@ -34,10 +34,11 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 now(function()
-  -- ui
   add('EdenEast/nightfox.nvim')
   require('plugins.colorscheme')
+end)
 
+later(function()
   -- work
   if vim.env.SSH_CLIENT ~= nil then
     add('ojroques/nvim-osc52')
@@ -49,12 +50,10 @@ now(function()
     vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
     vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
 
-    add('pteroctopus/faster.nvim')
-    require('faster').setup({ behaviours = { bigfile = { filesize = 0.3 } } })
+    -- add('pteroctopus/faster.nvim')
+    -- require('faster').setup({ behaviours = { bigfile = { filesize = 0.3 } } })
   end
-end)
 
-later(function()
   -- mini
   require('mini.extra').setup()
   local misc = require('mini.misc')
