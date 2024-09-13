@@ -74,7 +74,7 @@ require('nightfox').setup({
 
       -- noice
       NoiceCmdlinePopupBorder = { link = 'FloatBorder' },
-      NoiceConfirmBorder = { link = 'DiagnosticFloatingWarn' },
+      -- NoiceConfirmBorder = { link = 'DiagnosticFloatingWarn' },
     },
   },
 })
