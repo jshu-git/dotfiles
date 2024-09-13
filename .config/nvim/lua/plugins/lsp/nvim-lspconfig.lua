@@ -79,6 +79,7 @@ local servers = {
       Lua = {
         hint = { enable = true },
         diagnostics = {
+          disable = { 'missing-fields' },
           globals = { 'vim', 'hs' },
         },
       },

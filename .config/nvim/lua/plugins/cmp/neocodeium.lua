@@ -4,6 +4,7 @@ end
 
 local neocodeium = require('neocodeium')
 neocodeium.setup({
+  manual = true,
   silent = true,
   filetypes = {
     ['*'] = true,
