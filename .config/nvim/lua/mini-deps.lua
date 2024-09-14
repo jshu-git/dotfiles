@@ -42,6 +42,11 @@ later(function()
   -- work
   add('ojroques/nvim-osc52')
   require('plugins.nvim-osc52')
+  add({
+    source = 'ruifm/gitlinker.nvim',
+    depends = { 'nvim-lua/plenary.nvim' },
+  })
+  require('plugins.gitlinker')
   -- if vim.env.SSH_CLIENT ~= nil then
   -- add('github/copilot.vim')
   -- vim.g.copilot_filetypes = { ['*'] = true, ['grug-far'] = false }
@@ -128,10 +133,6 @@ later(function()
 
   -- git
   -- add('kdheepak/lazygit.nvim')
-  add({
-    source = 'ruifm/gitlinker.nvim',
-    depends = { 'nvim-lua/plenary.nvim' },
-  })
   -- add('jshu-git/blame.nvim')
   -- add('sindrets/diffview.nvim')
   vim.cmd('runtime! lua/plugins/git/*.lua')
