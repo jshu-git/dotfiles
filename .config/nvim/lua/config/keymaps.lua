@@ -117,6 +117,7 @@ map(
   -- [["zy/\v<C-r>=substitute(escape(@z, '/\'), '\n', '\\n', 'g')<CR><CR>``cgn]],
   { desc = 'Substitute (Instance)' }
 )
+map('x', 's/', ':s///gcI<Left><Left><Left><Left><Left>', { desc = 'Substitute (In Selection)' })
 
 -- yanking
 map('n', 'yp', function()
