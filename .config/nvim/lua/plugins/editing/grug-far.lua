@@ -62,4 +62,4 @@ vim.keymap.set({ 'n', 'x' }, 'sW', function()
       paths = vim.fn.expand('%:p'),
     },
   })
-end, { desc = 'Substitute cword (File)' })
+end, { desc = 'Substitute cword (Buffer)' })
