@@ -1,3 +1,7 @@
+if vim.env.SSH_CLIENT == nil then
+  return
+end
+
 -- currently, zellij supports OSC52 copy (copy_command), but not paste
 -- copying to system clipboard works from neovim to outside works fine
 --  links:

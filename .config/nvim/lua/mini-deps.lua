@@ -40,16 +40,14 @@ end)
 
 later(function()
   -- work
+  add('ojroques/nvim-osc52')
+  require('plugins.nvim-osc52')
   if vim.env.SSH_CLIENT ~= nil then
-    add('ojroques/nvim-osc52')
-    require('plugins.nvim-osc52')
-
-    add('github/copilot.vim')
-    vim.g.copilot_filetypes = { ['*'] = true, ['grug-far'] = false }
-    vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
-    vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
-    vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
-
+    -- add('github/copilot.vim')
+    -- vim.g.copilot_filetypes = { ['*'] = true, ['grug-far'] = false }
+    -- vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
+    -- vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
+    -- vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
     -- add('pteroctopus/faster.nvim')
     -- require('faster').setup({ behaviours = { bigfile = { filesize = 0.3 } } })
   end
@@ -98,7 +96,7 @@ later(function()
       'windwp/nvim-autopairs',
     },
   })
-  add('monkoose/neocodeium')
+  -- add('monkoose/neocodeium')
   vim.cmd('runtime! lua/plugins/cmp/*.lua')
 
   -- ui
