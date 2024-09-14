@@ -30,7 +30,6 @@ return {
   ["quicker.nvim"] = "183041a46d6c908eefb1c23ea02cce9c8f41256e",
   ["render-markdown.nvim"] = "044f2d6d76712de69a79b25a7cd8311cb505a9f4",
   ["scrollofffraction.nvim"] = "0618a3e3e1a4e13a04edf6fd35bfcee4bd5afe38",
-  ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
   undotree = "56c684a805fe948936cda0d1b19505b84ad7e065",
   ["visual-whitespace.nvim"] = "e22d8508a0236f274dde39775ee127c85d30c0c0"
 }

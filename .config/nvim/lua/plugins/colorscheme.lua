@@ -85,7 +85,7 @@ require('nightfox').setup({
       -- VisualWhitespace = { bg = 'palette.sel0', fg = 'palette.comment' }, -- bg=Visual, fg=Comment
 
       -- sentiment
-      MatchParen = { link = 'Underlined' },
+      -- MatchParen = { link = 'Underlined' },
 
       -- noice
       NoiceCmdlinePopupBorder = { link = 'FloatBorder' },
