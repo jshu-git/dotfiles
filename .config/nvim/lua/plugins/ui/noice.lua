@@ -25,10 +25,6 @@ noice.setup({
     },
     signature = { enabled = false },
   },
-  presets = {
-    lsp_doc_border = true,
-    -- cmdline_output_to_split = true,
-  },
   views = {
     virtualtext = { hl_group = 'Search' },
     -- split = {
@@ -47,6 +43,7 @@ noice.setup({
     },
     hover = {
       border = { style = 'single', padding = { 0, 0 } },
+      position = { row = 2, col = 2 },
     },
     cmdline_popup = {
       size = { min_width = math.floor(0.2 * vim.o.columns) },
