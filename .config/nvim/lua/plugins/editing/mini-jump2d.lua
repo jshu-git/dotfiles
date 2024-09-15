@@ -3,6 +3,7 @@ jump2d.setup({
   spotter = jump2d.builtin_opts.word_start.spotter,
   view = {
     n_steps_ahead = 1,
+    dim = true,
   },
   allowed_lines = {
     blank = false,
