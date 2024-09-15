@@ -8,11 +8,6 @@ diff.setup({
       delete = '█',
     },
   },
-  mappings = {
-    apply = '',
-    reset = 'gH',
-    textobject = 'gh',
-  },
 })
 
 vim.keymap.set('n', '<leader>td', diff.toggle_overlay, { desc = 'Git: Toggle Diff' })
