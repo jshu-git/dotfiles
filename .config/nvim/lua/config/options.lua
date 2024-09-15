@@ -11,6 +11,7 @@ vim.schedule(function()
   opt.clipboard = 'unnamedplus'
 end)
 opt.virtualedit = 'block'
+opt.startofline = true
 
 -- cmp
 opt.pumheight = 5
