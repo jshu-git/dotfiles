@@ -1,6 +1,6 @@
 local grug = require('grug-far')
 grug.setup({
-  wrap = false,
+  -- wrap = false,
   transient = true,
   keymaps = {
     replace = '',
