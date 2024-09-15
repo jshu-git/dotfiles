@@ -102,7 +102,8 @@ later(function()
     },
   })
   -- add('monkoose/neocodeium')
-  vim.cmd('runtime! lua/plugins/cmp/*.lua')
+  -- vim.cmd('runtime! lua/plugins/cmp/*.lua')
+  require('plugins.cmp.nvim-cmp')
 
   -- ui
   add('0xAdk/full_visual_line.nvim')
