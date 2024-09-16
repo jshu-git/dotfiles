@@ -13,7 +13,7 @@ notify.setup({
     config = {
       border = 'none',
       anchor = 'SE',
-      row = vim.o.lines - vim.o.cmdheight - 1,
+      row = vim.o.lines - 2,
     },
     winblend = 0,
   },
