@@ -72,7 +72,7 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.wrapscan = false
 opt.incsearch = false
--- opt.shortmess:append({ S = true })
+opt.shortmess:append({ S = true })
 
 -- mouse
 opt.mouse = 'a'
