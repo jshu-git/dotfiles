@@ -63,10 +63,10 @@ statusline.setup({
         end
       end
 
-      -- local search = statusline.section_searchcount({ trunc_width = 75 })
-      -- if search ~= '' then
-      --   search = '󰍉 ' .. search
-      -- end
+      local search = statusline.section_searchcount({ trunc_width = 75 })
+      if search ~= '' then
+        search = '󰍉 ' .. search
+      end
 
       local lines = string.format('%dL', vim.fn.line('$'))
 
@@ -95,7 +95,7 @@ statusline.setup({
         { hl = 'MiniStatuslineFileinfo', strings = { custom_fileinfo } },
         -- z
         { hl = mode_hl, strings = { progress(), '/', lines } },
-        -- { hl = 'MiniStatuslineModeReplace', strings = { search } },
+        { hl = 'MiniStatuslineModeReplace', strings = { search } },
         { hl = 'MiniStatuslineModeOther', strings = { grapple() } },
       })
     end,
