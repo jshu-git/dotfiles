@@ -1,4 +1,4 @@
-<img width="1472" alt="SCR-20240908-nmrj" src="https://github.com/user-attachments/assets/c69d8460-b865-447a-b2d6-2b5ba37bb364">
+<img width="1472" alt="SCR-20240916-pwgy" src="https://github.com/user-attachments/assets/1345e422-71b0-41b5-80f9-e9b8367bfd3f">
 
 - terminal: [alacritty](https://alacritty.org/)
   - terminal multiplexer: [zellij](https://zellij.dev/)
