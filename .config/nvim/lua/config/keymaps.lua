@@ -7,23 +7,23 @@ map('n', '<esc>', function()
   vim.cmd('echon')
 end)
 -- https://undelete.pullpush.io/r/neovim/comments/vguomm/how_can_i_map_tab_but_keep_the_default_action_for/
-vim.keymap.set('n', '<C-i>', '<C-i>')
+map('n', '<C-i>', '<C-i>')
 
 -- leader
-map('n', '<leader>d', '<cmd>bd!<CR>', { desc = 'Buffer: Delete' })
 map('n', '<leader>w', '<cmd>update<CR>', { desc = 'Write' })
 map('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit' })
-map('n', '<leader>Q', '<cmd>qa!<CR>', { desc = 'Quit All' })
-map('n', '<leader>N', '<cmd>enew<CR>', { desc = 'Buffer: New' })
+map('n', '<leader>d', '<cmd>bd!<CR>', { desc = 'Buffer: Delete' })
+map('n', '<leader>Q', '<cmd>qa!<CR>', { desc = 'Quit (All)' })
 map('n', '<leader>S', function()
   vim.cmd('source %')
   vim.notify('Sourced: ' .. vim.fn.expand('%:t'))
 end, { desc = 'Source File' })
+map('n', '<leader>nN', '<cmd>messages<CR>', { desc = 'Messages' })
+
+-- append
 map('n', '<leader>,', 'mzA,<Esc>`z', { desc = 'Append Comma' })
 map('n', '<leader>;', 'mzA;<Esc>`z', { desc = 'Append Semicolon' })
 map('n', '<leader>p', 'mzA<Esc>p`z', { desc = 'Append Paste' })
-map('n', '<leader>nN', '<cmd>messages<CR>', { desc = 'Messages' })
-map('n', '<leader>I', '<cmd>Inspect<CR>', { desc = 'Inspect' })
 
 -- toggles
 map('n', '<leader>tw', '<cmd>setlocal wrap!<CR>', { desc = 'Toggle Word Wrap' })
@@ -56,6 +56,10 @@ end, { expr = true })
 map('n', '=', '<C-a>')
 map('n', '-', '<C-x>')
 map('n', 'X', 'mzA<BS><Esc>`z')
+map('x', '<CR>', '"_c')
+-- map('x', '<C-q>', 'j')
+-- map('x', '/', '<esc>/\\%V')
+-- map('x', 'v', 'iw')
 
 -- preserve clipboard
 map({ 'n', 'x' }, 'x', '"_x')
@@ -65,38 +69,13 @@ map('n', 'dd', function()
   return vim.fn.getline('.') == '' and '"_dd' or 'dd'
 end, { expr = true })
 
--- windows
-map('n', '<C-h>', '<C-w>h')
-map('n', '<C-j>', '<C-w>j')
-map('n', '<C-k>', '<C-w>k')
-map('n', '<C-l>', '<C-w>l')
--- size
-map('n', '<C-Left>', '<cmd>vertical resize -2<CR>')
-map('n', '<C-Right>', '<cmd>vertical resize +2<CR>')
-map('n', '<C-Up>', '<cmd>resize -2<CR>')
-map('n', '<C-Down>', '<cmd>resize +2<CR>')
--- split
-map('n', '<C-v>', '<C-w>v')
-map('n', '<C-s>', '<C-w>s')
-
--- visual
-map('x', '<CR>', '"_c')
-map('x', '<C-q>', 'j')
--- map('x', '/', '<esc>/\\%V')
--- map('x', 'v', 'iw')
-
 -- search
 map('n', '*', 'g*``')
 map('n', 'g*', '*``')
 -- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
 -- https://github.com/neovim/neovim/issues/21676
 -- https://vim.fandom.com/wiki/Search_and_replace
-map('x', '*', [["zy/<C-r>z<CR>``]])
--- "zy    -> yank selection into register z
--- /      -> search
--- <C-r>z -> expression register into register z
--- <CR>   -> search
--- ``     -> return to previous position
+map('x', '*', '"zy/<C-r>z<CR>``')
 
 -- custom operators
 map('n', 'sw', 'g*``cgn', { desc = 'Substitute cword (Instance)' })
@@ -122,6 +101,20 @@ map('n', 'yf', function()
   vim.fn.setreg('+', path)
   vim.notify('Copied: ' .. path)
 end)
+
+-- windows
+map('n', '<C-h>', '<C-w>h')
+map('n', '<C-j>', '<C-w>j')
+map('n', '<C-k>', '<C-w>k')
+map('n', '<C-l>', '<C-w>l')
+-- size
+map('n', '<C-Left>', '<cmd>vertical resize -2<CR>')
+map('n', '<C-Right>', '<cmd>vertical resize +2<CR>')
+map('n', '<C-Up>', '<cmd>resize -2<CR>')
+map('n', '<C-Down>', '<cmd>resize +2<CR>')
+-- split
+map('n', '<C-v>', '<C-w>v')
+map('n', '<C-s>', '<C-w>s')
 
 -- insert/command
 map({ 'i', 'c' }, '<C-h>', '<Left>')
