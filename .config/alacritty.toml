@@ -77,11 +77,11 @@ dim_foreground = "#aeafb0"
 bright_foreground = "#d6d6d7"
 
 [colors.cursor]
-text = "#cdcecf"
+# text = "#cdcecf"
 cursor = "#aeafb0"
 
 [colors.vi_mode_cursor]
-text = "#cdcecf"
+# text = "#cdcecf"
 cursor = "#dbc074"
 
 [colors.search.matches]
@@ -145,74 +145,3 @@ color = "#f4a261"
 [[colors.indexed_colors]]
 index = 17
 color = "#d67ad2"
-
-# https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/alacritty/NvimDark.toml
-# Colors (NvimDark)
-# [colors.bright]
-# black = '#4f5258'
-# blue = '#a6dbff'
-# cyan = '#8cf8f7'
-# green = '#b3f6c0'
-# magenta = '#ffcaff'
-# red = '#ffc0b9'
-# white = '#eef1f8'
-# yellow = '#fce094'
-# [colors.cursor]
-# cursor = '#9b9ea4'
-# # text = '#e0e2ea'
-# [colors.vi_mode_cursor]
-# cursor = '#fce094'
-# [colors.normal]
-# black = '#07080d'
-# blue = '#a6dbff'
-# cyan = '#8cf8f7'
-# green = '#b3f6c0'
-# magenta = '#ffcaff'
-# red = '#ffc0b9'
-# white = '#eef1f8'
-# yellow = '#fce094'
-# [colors.primary]
-# background = '#14161b'
-# foreground = '#e0e2ea'
-# [colors.selection]
-# background = '#4f5258'
-# text = '#e0e2ea'
-
-
-# nord
-# https://github.com/alacritty/alacritty-theme/blob/master/themes/nord.toml
-# https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/alacritty/nord.toml
-# [colors.cursor]
-# cursor = '#eceff4'
-# text = '#282828'
-#
-# [colors.selection]
-# background = '#eceff4'
-# text = '#4c566a'
-#
-# [colors.vi_mode_cursor]
-# cursor = "#EBCB8B"
-#
-# [colors.primary]
-# background = '#2E3440'
-# foreground = '#D8DEE9'
-#
-# [colors.normal]
-# black = '#3B4252'
-# red = '#BF616A'
-# green = '#A3BE8C'
-# yellow = '#EBCB8B'
-# blue = '#81A1C1'
-# magenta = '#B48EAD'
-# cyan = '#88C0D0'
-# white = '#E5E9F0'
-#
-# [colors.bright]
-# black = '#4C566A'
-# red = '#BF616A'
-# green = '#A3BE8C'
-# yellow = '#EBCB8B'
-# blue = '#81A1C1'
-# magenta = '#B48EAD'
-# cyan = '#8FBCBB'
-# white = '#ECEFF4'
