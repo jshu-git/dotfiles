@@ -91,32 +91,30 @@ map('x', '<C-q>', 'j')
 -- search
 map('n', '*', 'g*``')
 map('n', 'g*', '*``')
-map(
-  'x',
-  '*',
-  -- *`` doesn't work for some reason
-  [["zy/\V<C-r>=substitute(escape(@z, '/\'), '\n', '\\n', 'g')<CR><CR>``]]
-)
+-- *`` doesn't work for some reason
+map('x', '*', [["zy/<C-r>z<CR>``]])
+-- "zy    -> yank selection into register z
+-- /      -> search
+-- <C-r>z -> expression register into register z
+-- <CR>   -> search
+-- ``     -> return to previous position
+
+-- this accounts for new lines
+-- [[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<NL><CR>Ncgn]],
+-- y      -> yank selection
+-- /      -> search
+-- \V     -> very nomagic
+-- <C-r>= -> expression register
+-- substitute(escape(@z, '/\'), '\n', '\\n', 'g') -> replace each ^M newline (if any) with \n of register z
+-- first <CR>  -> submit substitution
+-- second <CR> -> submit search
 
 -- custom operators
 map('n', 'sw', 'g*``cgn', { desc = 'Substitute cword (Instance)' })
 -- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
 -- https://github.com/neovim/neovim/issues/21676
 -- https://vim.fandom.com/wiki/Search_and_replace
-map(
-  'x',
-  'sw',
-  [[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<NL><CR>Ncgn]],
-  -- "zy -> yank selection into register z
-  -- / -> search
-  -- \v -> very magic mode
-  -- <C-r>= -> expression register
-  -- substitute(escape(@z, '/\'), '\n', '\\n', 'g') -> replace each ^M newline (if any) with \n of register z
-  -- first <CR> -> submit substitution
-  -- second <CR> -> submit search
-  -- [["zy/\v<C-r>=substitute(escape(@z, '/\'), '\n', '\\n', 'g')<CR><CR>``cgn]],
-  { desc = 'Substitute (Instance)' }
-)
+map('x', 'sw', '*cgn', { desc = 'Substitute (Instance)', remap = true })
 map('x', 's/', ':s///gcI<Left><Left><Left><Left><Left>', { desc = 'Substitute (In Selection)' })
 
 -- yanking
