@@ -57,7 +57,7 @@ map('n', '=', '<C-a>')
 map('n', '-', '<C-x>')
 map('n', 'X', 'mzA<BS><Esc>`z')
 map('x', '<CR>', '"_c')
--- map('x', '<C-q>', 'j')
+map('x', '<C-q>', 'j')
 -- map('x', '/', '<esc>/\\%V')
 -- map('x', 'v', 'iw')
 
