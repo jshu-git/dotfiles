@@ -34,7 +34,7 @@ end
 map('gs', vim.lsp.buf.hover, 'Hover')
 map('gS', vim.lsp.buf.signature_help, 'Signature Help')
 map('ga', vim.lsp.buf.code_action, 'Code Action')
-map('cr', vim.lsp.buf.rename, 'Rename Variable')
+map('gR', vim.lsp.buf.rename, 'Rename Variable')
 
 -- glance
 -- map('gd', '<cmd>Glance definitions<CR>', 'Goto Definition')

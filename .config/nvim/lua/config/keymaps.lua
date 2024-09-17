@@ -96,7 +96,7 @@ map('n', 'g*', '*``')
 -- https://github.com/neovim/neovim/issues/21676
 -- https://vim.fandom.com/wiki/Search_and_replace
 -- *`` doesn't work for some reason
-map('x', '*', [["zy/<C-r>z<CR>]])
+map('x', '*', [["zy/<C-r>z<CR>``]])
 -- "zy    -> yank selection into register z
 -- /      -> search
 -- <C-r>z -> expression register into register z
