@@ -91,6 +91,10 @@ map('x', '<C-q>', 'j')
 -- search
 map('n', '*', 'g*``')
 map('n', 'g*', '*``')
+
+-- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
+-- https://github.com/neovim/neovim/issues/21676
+-- https://vim.fandom.com/wiki/Search_and_replace
 -- *`` doesn't work for some reason
 map('x', '*', [["zy/<C-r>z<CR>``]])
 -- "zy    -> yank selection into register z
@@ -111,9 +115,6 @@ map('x', '*', [["zy/<C-r>z<CR>``]])
 
 -- custom operators
 map('n', 'sw', 'g*``cgn', { desc = 'Substitute cword (Instance)' })
--- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
--- https://github.com/neovim/neovim/issues/21676
--- https://vim.fandom.com/wiki/Search_and_replace
 map('x', 'sw', '*cgn', { desc = 'Substitute (Instance)', remap = true })
 map('x', 's/', ':s///gcI<Left><Left><Left><Left><Left>', { desc = 'Substitute (In Selection)' })
 
