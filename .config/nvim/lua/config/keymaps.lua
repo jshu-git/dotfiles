@@ -22,7 +22,6 @@ end, { desc = 'Source File' })
 map('n', '<leader>,', 'mzA,<Esc>`z', { desc = 'Append Comma' })
 map('n', '<leader>;', 'mzA;<Esc>`z', { desc = 'Append Semicolon' })
 map('n', '<leader>p', 'mzA<Esc>p`z', { desc = 'Append Paste' })
-map('n', 'X', 'mzA<BS><Esc>`z')
 map('n', '<leader>nN', '<cmd>messages<CR>', { desc = 'Messages' })
 map('n', '<leader>I', '<cmd>Inspect<CR>', { desc = 'Inspect' })
 
@@ -56,9 +55,7 @@ map('n', 'i', function()
 end, { expr = true })
 map('n', '=', '<C-a>')
 map('n', '-', '<C-x>')
-
--- command mode
-map({ 'n', 'x' }, ';', ':')
+map('n', 'X', 'mzA<BS><Esc>`z')
 
 -- preserve clipboard
 map({ 'n', 'x' }, 'x', '"_x')
@@ -91,27 +88,15 @@ map('x', '<C-q>', 'j')
 -- search
 map('n', '*', 'g*``')
 map('n', 'g*', '*``')
-
 -- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
 -- https://github.com/neovim/neovim/issues/21676
 -- https://vim.fandom.com/wiki/Search_and_replace
--- *`` doesn't work for some reason
 map('x', '*', [["zy/<C-r>z<CR>``]])
 -- "zy    -> yank selection into register z
 -- /      -> search
 -- <C-r>z -> expression register into register z
 -- <CR>   -> search
 -- ``     -> return to previous position
-
--- this accounts for new lines
--- [[y/\V<C-R>=substitute(escape(@", '/\'), '\n', '\\n', 'g')<NL><CR>Ncgn]],
--- y      -> yank selection
--- /      -> search
--- \V     -> very nomagic
--- <C-r>= -> expression register
--- substitute(escape(@z, '/\'), '\n', '\\n', 'g') -> replace each ^M newline (if any) with \n of register z
--- first <CR>  -> submit substitution
--- second <CR> -> submit search
 
 -- custom operators
 map('n', 'sw', 'g*``cgn', { desc = 'Substitute cword (Instance)' })
@@ -138,12 +123,12 @@ map('n', 'yf', function()
   vim.notify('Copied: ' .. path)
 end)
 
--- insert/command mode
+-- insert/command
 map({ 'i', 'c' }, '<C-h>', '<Left>')
 map({ 'i', 'c' }, '<C-l>', '<Right>')
 map({ 'i', 'c' }, '<C-k>', '<Up>')
 map({ 'i', 'c' }, '<C-j>', '<Down>')
--- emacs https://github.com/tscolari/nvim/blob/main/lua/keyboard.lua#L26
+-- emacs
 map({ 'i', 'c' }, '<C-a>', '<Home>')
 map({ 'i', 'c' }, '<C-e>', '<End>')
 map({ 'i', 'c' }, '<C-d>', '<Del>')
@@ -154,7 +139,8 @@ for _, key in ipairs({ ',', '.', '!', '?', ':', ';' }) do
   map('i', key, key .. '<C-g>u')
 end
 
--- command mode
+-- command
+map({ 'n', 'x' }, ';', ':')
 -- https://old.reddit.com/r/neovim/comments/1f9rdgl/help_me_convert_that_line_from_vimscript_to_lua/
 map('c', ';;', function()
   return vim.fn.getcmdtype() == ':' and vim.fn.expand('%:p:h') .. '/' or ';;'
