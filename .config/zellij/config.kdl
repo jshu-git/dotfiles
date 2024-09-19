@@ -74,6 +74,12 @@ keybinds clear-defaults=true {
         // bind "Ctrl Up"    { Resize "Increase Up";    }
         // bind "Ctrl Right" { Resize "Increase Right"; }
 
+        // scroll
+        bind "Ctrl u" { PageScrollUp;   }
+        bind "Ctrl d" { PageScrollDown; }
+        bind "G" { ScrollToBottom; }
+        bind "g" { ScrollToTop; }
+
         // session
         bind "q" { Detach; }
         bind "M" {
