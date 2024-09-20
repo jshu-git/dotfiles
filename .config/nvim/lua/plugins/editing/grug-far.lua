@@ -22,7 +22,7 @@ grug.setup({
     swapEngine = { n = 'ge' },
     previewLocation = { n = '<Tab>' },
   },
-  icons = { enabled = false },
+  -- icons = { enabled = false },
   history = {
     autoSave = { onBufDelete = false },
   },
