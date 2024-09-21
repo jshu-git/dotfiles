@@ -15,8 +15,9 @@ telescope.setup({
       anchor = 'S',
       anchor_padding = 4,
       height = 0.5,
-      width = 0.8,
       prompt_position = 'top',
+      scroll_speed = 4,
+      width = 0.8,
       preview_cutoff = 1,
     },
     borderchars = {
@@ -31,12 +32,15 @@ telescope.setup({
     entry_prefix = '',
     multi_icon = '',
 
-    dynamic_preview_title = true,
+    -- dynamic_preview_title = true,
     results_title = false,
     -- path_display = { 'smart' },
     -- path_display = {},
     -- path_display = { 'filename_first' },
-    preview = { hide_on_startup = true },
+    preview = {
+      filesize_limit = 2,
+      hide_on_startup = true,
+    },
 
     -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua#L133
     mappings = {
@@ -79,11 +83,19 @@ telescope.setup({
       mappings = { i = { ['<CR>'] = actions.edit_command_line } },
       sorting_strategy = 'descending',
       layout_config = { prompt_position = 'bottom' },
+      borderchars = {
+        prompt = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
+        results = { '─', '│', '─', '│', '┌', '┐', '┤', '├' },
+      },
     },
     search_history = {
       mappings = { i = { ['<CR>'] = actions.edit_search_line } },
       sorting_strategy = 'descending',
       layout_config = { prompt_position = 'bottom' },
+      borderchars = {
+        prompt = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
+        results = { '─', '│', '─', '│', '┌', '┐', '┤', '├' },
+      },
     },
   },
 })
@@ -148,5 +160,7 @@ vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Keymaps' })
 vim.keymap.set('n', '<leader>fK', function()
   builtin.keymaps({ only_buf = true })
 end, { desc = 'Keymaps (Buffer)' })
-vim.keymap.set('n', '<leader>fl', builtin.highlights, { desc = 'Highlights' })
+vim.keymap.set('n', '<leader>fl', function()
+  builtin.highlights({ preview = { hide_on_startup = false } })
+end, { desc = 'Highlights' })
 vim.keymap.set('n', '<leader>fa', builtin.autocommands, { desc = 'Autocommands' })
