@@ -138,6 +138,13 @@ later(function()
   -- add('sindrets/diffview.nvim')
   vim.cmd('runtime! lua/plugins/git/*.lua')
 
-  -- pico8
-  -- add('bakudankun/pico-8.vim')
+  add({
+    source = 'nvim-telescope/telescope.nvim',
+    depends = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-ui-select.nvim',
+      'natecraddock/telescope-zf-native.nvim',
+    },
+  })
+  require('plugins.telescope')
 end)
