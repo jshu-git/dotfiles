@@ -10,21 +10,23 @@ telescope.setup({
     scroll_strategy = 'limit',
 
     -- layout
-    layout_strategy = 'vertical',
+    layout_strategy = 'center',
     layout_config = {
-      width = require('utils').popup.width,
-      height = require('utils').popup.height,
+      anchor = 'S',
+      anchor_padding = 4,
+      height = 0.5,
+      width = 0.8,
       prompt_position = 'top',
       preview_cutoff = 1,
     },
-    -- borderchars = {
-    --   prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
-    --   results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
-    --   preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-    -- },
+    borderchars = {
+      prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
+      results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
+      preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+    },
 
     -- icons
-    prompt_prefix = ' ',
+    prompt_prefix = '',
     selection_caret = '',
     entry_prefix = '',
     multi_icon = '',
@@ -69,11 +71,19 @@ telescope.setup({
     },
   },
   pickers = {
-    -- find_files = {
-    --   hidden = true,
-    -- },
+    find_files = {
+      hidden = true,
+      find_command = { 'fd', '--type', 'f', '--color', 'never' },
+    },
     command_history = {
       mappings = { i = { ['<CR>'] = actions.edit_command_line } },
+      sorting_strategy = 'descending',
+      layout_config = { prompt_position = 'bottom' },
+    },
+    search_history = {
+      mappings = { i = { ['<CR>'] = actions.edit_search_line } },
+      sorting_strategy = 'descending',
+      layout_config = { prompt_position = 'bottom' },
     },
   },
 })
@@ -128,8 +138,8 @@ vim.keymap.set('n', "'", builtin.resume)
 -- vim
 vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'Commands' })
 vim.keymap.set('n', '<leader>fC', builtin.builtin, { desc = 'Commands (Telescope)' })
-vim.keymap.set('n', '<leader>f:', builtin.command_history, { desc = 'Command History' })
-vim.keymap.set('n', '?', builtin.search_history)
+vim.keymap.set('n', '<leader>:', builtin.command_history, { desc = 'Command History' })
+vim.keymap.set('n', '<leader>/', builtin.search_history, { desc = 'Search History' })
 vim.keymap.set('n', '<leader>fo', builtin.vim_options, { desc = 'Options' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help' })
 vim.keymap.set('n', '<leader>ft', builtin.colorscheme, { desc = 'Colorschemes' })
