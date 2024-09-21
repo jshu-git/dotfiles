@@ -63,10 +63,10 @@ telescope.setup({
 
         -- preview
         ['<Tab>'] = layout.toggle_preview,
-        ['<A-u>'] = actions.preview_scrolling_up,
-        ['<A-d>'] = actions.preview_scrolling_down,
-        ['<A-h>'] = actions.preview_scrolling_left,
-        ['<A-l>'] = actions.preview_scrolling_right,
+        ['<C-y>'] = actions.preview_scrolling_up,
+        ['<C-e>'] = actions.preview_scrolling_down,
+        -- ['<C-h>'] = actions.preview_scrolling_left,
+        -- ['<C-l>'] = actions.preview_scrolling_right,
       },
     },
   },
