@@ -1,33 +1,40 @@
 local telescope = require('telescope')
 local actions = require('telescope.actions')
 local layout = require('telescope.actions.layout')
+local utils = require('telescope.utils')
+local builtin = require('telescope.builtin')
 
 telescope.setup({
   defaults = {
     sorting_strategy = 'ascending',
     scroll_strategy = 'limit',
+
+    -- layout
     layout_strategy = 'vertical',
     layout_config = {
-      -- center = {
-      --   height = 0.2,
-      --   -- preview_cutoff = 360,
-      --   prompt_position = 'top',
-      --   width = 0.9,
-      -- },
+      width = require('utils').popup.width,
+      height = require('utils').popup.height,
+      prompt_position = 'top',
+      preview_cutoff = 1,
     },
+    -- borderchars = {
+    --   prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
+    --   results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
+    --   preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+    -- },
 
+    -- icons
     prompt_prefix = ' ',
-    selection_caret = '▍ ',
-    -- entry_prefix = '  ',
-    multi_icon = ' ',
+    selection_caret = '',
+    entry_prefix = '',
+    multi_icon = '',
 
+    dynamic_preview_title = true,
     results_title = false,
     -- path_display = { 'smart' },
     -- path_display = {},
     -- path_display = { 'filename_first' },
-    preview = {
-      hide_on_startup = true,
-    },
+    preview = { hide_on_startup = true },
 
     -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua#L133
     mappings = {
@@ -43,6 +50,8 @@ telescope.setup({
         ['<M-q>'] = actions.send_to_qflist + actions.open_qflist,
 
         -- scrolling
+        ['<C-u>'] = actions.results_scrolling_up,
+        ['<C-d>'] = actions.results_scrolling_down,
         ['<C-h>'] = actions.results_scrolling_left,
         ['<C-l>'] = actions.results_scrolling_right,
 
@@ -52,6 +61,10 @@ telescope.setup({
 
         -- preview
         ['<Tab>'] = layout.toggle_preview,
+        ['<A-u>'] = actions.preview_scrolling_up,
+        ['<A-d>'] = actions.preview_scrolling_down,
+        ['<A-h>'] = actions.preview_scrolling_left,
+        ['<A-l>'] = actions.preview_scrolling_right,
       },
     },
   },
@@ -59,30 +72,57 @@ telescope.setup({
     -- find_files = {
     --   hidden = true,
     -- },
+    command_history = {
+      mappings = { i = { ['<CR>'] = actions.edit_command_line } },
+    },
   },
 })
-
--- extensions
 telescope.load_extension('ui-select')
 telescope.load_extension('zf-native')
 
-local builtin = require('telescope.builtin')
-
 -- files
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Files' })
+vim.keymap.set('n', '<leader>fF', function()
+  builtin.find_files({ cwd = utils.buffer_dir() })
+end, { desc = 'Files (Relative)' })
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Oldfiles' })
 
 -- grep
-vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'Grep (Live)' })
--- vim.keymap.set('n', '<leader>fg', builtin.grep_string, { desc = 'Grep' })
+vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'Grep Live' })
+vim.keymap.set('n', '<leader>fW', function()
+  builtin.live_grep({ cwd = utils.buffer_dir() })
+end, { desc = 'Grep Live (Relative)' })
+
+-- lsp
+vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'LSP: Diagnostics' })
+vim.keymap.set('n', '<leader>fD', function()
+  builtin.diagnostics({ bufnr = 0 })
+end, { desc = 'LSP: Diagnostics (Buffer)' })
+vim.keymap.set('n', 'gd', function()
+  builtin.lsp_definitions({
+    preview = { hide_on_startup = false },
+    jump_type = 'never',
+    show_line = false,
+    trim_text = true,
+  })
+end, { desc = 'LSP: Definition' })
+vim.keymap.set('n', 'gr', function()
+  builtin.lsp_references({
+    preview = { hide_on_startup = false },
+    include_declaration = false,
+    jump_type = 'never',
+    show_line = false,
+    trim_text = true,
+  })
+end, { desc = 'LSP: References' })
+
+-- misc
 vim.keymap.set('n', ',', function()
   builtin.current_buffer_fuzzy_find({
     skip_empty_lines = true,
     results_ts_highlight = false,
   })
 end)
-
--- misc
 vim.keymap.set('n', "'", builtin.resume)
 
 -- vim
@@ -100,13 +140,3 @@ vim.keymap.set('n', '<leader>fK', function()
 end, { desc = 'Keymaps (Buffer)' })
 vim.keymap.set('n', '<leader>fl', builtin.highlights, { desc = 'Highlights' })
 vim.keymap.set('n', '<leader>fa', builtin.autocommands, { desc = 'Autocommands' })
-
--- git
--- vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'Commits' })
--- vim.keymap.set('n', '<leader>gC', builtin.git_bcommits, { desc = 'Commits (Buffer)' })
-
--- lsp
-vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Diagnostics' })
-vim.keymap.set('n', '<leader>fD', function()
-  builtin.diagnostics({ bufnr = 0 })
-end, { desc = 'Diagnostics (Buffer)' })

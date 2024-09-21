@@ -39,12 +39,14 @@ map('gR', vim.lsp.buf.rename, 'Rename Variable')
 -- glance
 -- map('gd', '<cmd>Glance definitions<CR>', 'Goto Definition')
 -- map('gr', '<cmd>Glance references<CR>', 'Goto References')
-map('gd', function()
-  require('mini.extra').pickers.lsp({ scope = 'definition' })
-end, 'Goto Definition')
-map('gr', function()
-  require('mini.extra').pickers.lsp({ scope = 'references' })
-end, 'Goto References')
+
+-- mini pick
+-- map('gd', function()
+--   require('mini.extra').pickers.lsp({ scope = 'definition' })
+-- end, 'Goto Definition')
+-- map('gr', function()
+--   require('mini.extra').pickers.lsp({ scope = 'references' })
+-- end, 'Goto References')
 
 -- inc-rename
 -- require('inc_rename').setup({

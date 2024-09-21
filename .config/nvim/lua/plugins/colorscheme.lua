@@ -91,6 +91,10 @@ require('nightfox').setup({
       -- noice
       NoiceCmdlinePopupBorder = { link = 'FloatBorder' },
       NoiceConfirmBorder = { link = 'DiagnosticFloatingWarn' },
+
+      -- telescope
+      TelescopeBorder = { link = 'FloatBorder' },
+      TelescopeMatching = { link = 'CmpItemAbbrMatch' },
     },
   },
 })

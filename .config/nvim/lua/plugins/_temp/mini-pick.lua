@@ -236,28 +236,28 @@ vim.keymap.set('n', "'", function()
     vim.notify('[mini.pick] No picker to resume', vim.log.levels.WARN)
   end
 end)
-vim.keymap.set('n', 'z=', extra.pickers.spellsuggest, { desc = 'Spell Suggest' })
-pick.registry.config_files = function()
-  return pick.builtin.files(nil, {
-    source = { cwd = vim.fn.stdpath('config') },
-  })
-end
-vim.keymap.set('n', '<leader>fn', pick.registry.config_files, { desc = 'Neovim Config Files' })
+-- vim.keymap.set('n', 'z=', extra.pickers.spellsuggest, { desc = 'Spell Suggest' })
+-- pick.registry.config_files = function()
+--   return pick.builtin.files(nil, {
+--     source = { cwd = vim.fn.stdpath('config') },
+--   })
+-- end
+-- vim.keymap.set('n', '<leader>fn', pick.registry.config_files, { desc = 'Neovim Config Files' })
 
 -- commands
-vim.keymap.set('n', '<leader>fC', extra.pickers.commands, { desc = 'Commands' })
+-- vim.keymap.set('n', '<leader>fC', extra.pickers.commands, { desc = 'Commands' })
 -- mini builtin registry
-vim.keymap.set('n', '<leader>fc', function()
-  local items = vim.tbl_keys(vim.tbl_extend('force', pick.registry, extra.pickers))
-  table.sort(items)
-  local source = {
-    items = items,
-    name = 'Registry',
-    choose = function() end,
-  }
-  local chosen_picker_name = pick.start({ source = source })
-  if chosen_picker_name == nil then
-    return
-  end
-  return pick.registry[chosen_picker_name]()
-end, { desc = 'Commands (Builtin)' })
+-- vim.keymap.set('n', '<leader>fc', function()
+--   local items = vim.tbl_keys(vim.tbl_extend('force', pick.registry, extra.pickers))
+--   table.sort(items)
+--   local source = {
+--     items = items,
+--     name = 'Registry',
+--     choose = function() end,
+--   }
+--   local chosen_picker_name = pick.start({ source = source })
+--   if chosen_picker_name == nil then
+--     return
+--   end
+--   return pick.registry[chosen_picker_name]()
+-- end, { desc = 'Commands (Builtin)' })

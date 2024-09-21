@@ -129,15 +129,6 @@ later(function()
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
   add('ziontee113/icon-picker.nvim')
-  -- add('monaqa/dial.nvim')
-  vim.cmd('runtime! lua/plugins/editing/*.lua')
-
-  -- git
-  -- add('kdheepak/lazygit.nvim')
-  -- add('jshu-git/blame.nvim')
-  -- add('sindrets/diffview.nvim')
-  vim.cmd('runtime! lua/plugins/git/*.lua')
-
   add({
     source = 'nvim-telescope/telescope.nvim',
     depends = {
@@ -146,5 +137,12 @@ later(function()
       'natecraddock/telescope-zf-native.nvim',
     },
   })
-  require('plugins.telescope')
+  -- add('monaqa/dial.nvim')
+  vim.cmd('runtime! lua/plugins/editing/*.lua')
+
+  -- git
+  -- add('kdheepak/lazygit.nvim')
+  -- add('jshu-git/blame.nvim')
+  -- add('sindrets/diffview.nvim')
+  vim.cmd('runtime! lua/plugins/git/*.lua')
 end)
