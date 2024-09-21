@@ -9,7 +9,7 @@ hs.loadSpoon("EmmyLua")
 hs.hotkey.bind("alt", "r", hs.reload)
 
 -- show desktop
-hs.hotkey.bind("alt", "d", hs.spaces.toggleShowDesktop)
+-- hs.hotkey.bind("alt", "d", hs.spaces.toggleShowDesktop)
 
 -- application switcher
 for key, name in pairs({
