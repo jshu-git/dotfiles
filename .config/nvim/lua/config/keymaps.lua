@@ -80,6 +80,7 @@ map('x', '*', '"zy/<C-r>z<CR>``')
 -- custom operators
 map('n', 'sw', 'g*``cgn', { desc = 'Substitute cword (Instance)' })
 map('x', 'sw', '*cgn', { desc = 'Substitute (Instance)', remap = true })
+map('n', 's/', ':%s///gcI<Left><Left><Left><Left><Left>', { desc = 'Substitute (Buffer)' })
 map('x', 's/', ':s///gcI<Left><Left><Left><Left><Left>', { desc = 'Substitute (In Selection)' })
 
 -- yanking
