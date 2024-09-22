@@ -41,7 +41,7 @@ vim.api.nvim_create_autocmd('FileType', {
     'qf',
     'mininotify-history',
     'minideps-confirm',
-    'noice',
+    -- 'noice',
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false

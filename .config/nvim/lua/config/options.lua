@@ -22,12 +22,12 @@ opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 opt.foldlevelstart = 99
 
 -- tabs/indents
-opt.breakindent = true
 opt.smartindent = true
 opt.tabstop = 4
 opt.shiftwidth = 4
 
 -- wrap
+opt.breakindent = true
 opt.linebreak = true
 opt.wrap = false
 opt.showbreak = '↳ '

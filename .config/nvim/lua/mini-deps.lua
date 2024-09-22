@@ -139,5 +139,6 @@ later(function()
   -- git
   -- add('jshu-git/blame.nvim')
   -- add('sindrets/diffview.nvim')
-  vim.cmd('runtime! lua/plugins/git/*.lua')
+  require('plugins.git.mini-diff')
+  require('plugins.git.mini-git')
 end)

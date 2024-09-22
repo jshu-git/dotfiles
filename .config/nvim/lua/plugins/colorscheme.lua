@@ -89,10 +89,11 @@ require('nightfox').setup({
       -- MatchParen = { link = 'Underlined' },
 
       -- noice
-      NoiceCmdlinePopupBorder = { link = 'FloatBorder' },
-      NoiceConfirmBorder = { link = 'DiagnosticFloatingWarn' },
+      -- NoiceCmdlinePopupBorder = { link = 'FloatBorder' },
+      -- NoiceConfirmBorder = { link = 'DiagnosticFloatingWarn' },
 
       -- telescope
+      TelescopeTitle = { link = 'FloatTitle' },
       TelescopeBorder = { link = 'FloatBorder' },
       TelescopeMatching = { link = 'CmpItemAbbrMatch' },
       TelescopeMultiSelection = { link = 'CmpItemAbbrMatch' },
