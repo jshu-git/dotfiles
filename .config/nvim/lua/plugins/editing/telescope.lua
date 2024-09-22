@@ -62,6 +62,7 @@ telescope.setup({
         ['<C-s>'] = actions.select_horizontal,
         ['<C-g>'] = actions.to_fuzzy_refine,
         ['<Tab>'] = layout.toggle_preview,
+        ['<S-Tab>'] = actions.cycle_previewers_next,
         -- history
         ['<Down>'] = actions.cycle_history_next,
         ['<Up>'] = actions.cycle_history_prev,
@@ -184,6 +185,14 @@ vim.keymap.set('n', 'gr', function()
     trim_text = true,
   })
 end, { desc = 'LSP: References' })
+
+-- git
+vim.keymap.set('n', '<leader>gc', function()
+  builtin.git_commits({ preview = { hide_on_startup = false } })
+end, { desc = 'Commits' })
+vim.keymap.set('n', '<leader>gC', function()
+  builtin.git_bcommits({ preview = { hide_on_startup = false } })
+end, { desc = 'Commits (Buffer)' })
 
 -- misc
 vim.keymap.set('n', ',', function()
