@@ -25,7 +25,7 @@ vim.keymap.set('n', '<leader>mw', deps.snap_save, { desc = 'Snapshot (Set)' })
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'minideps-confirm' },
   callback = function(event)
-    vim.opt_local.foldlevel = 0
+    vim.wo.foldlevel = 0
     vim.keymap.set('n', '<leader>w', function()
       vim.cmd('write')
       deps.snap_save()
