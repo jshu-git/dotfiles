@@ -48,6 +48,7 @@ telescope.setup({
     entry_prefix = '',
     multi_icon = '',
 
+    -- preview
     dynamic_preview_title = true,
     results_title = false,
     preview = {
@@ -61,8 +62,11 @@ telescope.setup({
         ['<esc>'] = actions.close,
         ['<C-s>'] = actions.select_horizontal,
         ['<C-g>'] = actions.to_fuzzy_refine,
+
+        -- preview
         ['<Tab>'] = layout.toggle_preview,
         ['<S-Tab>'] = actions.cycle_previewers_next,
+
         -- history
         ['<Down>'] = actions.cycle_history_next,
         ['<Up>'] = actions.cycle_history_prev,
