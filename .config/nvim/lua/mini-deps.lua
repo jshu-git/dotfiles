@@ -80,7 +80,8 @@ later(function()
     },
   })
   add('stevearc/conform.nvim')
-  vim.cmd('runtime! lua/plugins/lsp/*.lua')
+  require('plugins.lsp.conform')
+  require('plugins.lsp.nvim-lspconfig')
 
   -- cmp
   add({
