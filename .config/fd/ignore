@@ -1,0 +1,6 @@
+**/.git/*
+**/fzf/plugins/*
+**/zsh/plugins/*
+**/zellij/plugins/*
+**/hammerspoon/Spoons/*
+**/StardewValley/*
