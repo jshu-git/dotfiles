@@ -120,7 +120,7 @@ later(function()
   -- editing
   add('cbochs/grapple.nvim')
   add('stevearc/quicker.nvim')
-  add('MagicDuck/grug-far.nvim')
+  -- add('MagicDuck/grug-far.nvim')
   add('mbbill/undotree')
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
