@@ -29,6 +29,7 @@ require('nvim-treesitter.configs').setup({
       node_decremental = 'M',
     },
   },
+  highlight = { enable = true },
 })
 
 local context = require('treesitter-context')
