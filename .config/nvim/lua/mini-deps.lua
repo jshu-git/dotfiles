@@ -109,16 +109,12 @@ later(function()
   add('0xAdk/full_visual_line.nvim')
   add('MeanderingProgrammer/render-markdown.nvim')
   add('OXY2DEV/helpview.nvim')
-  -- add('utilyre/sentiment.nvim')
-  -- add('sitiom/nvim-numbertoggle')
   add('BranimirE/fix-auto-scroll.nvim')
   add('nkakouros-original/scrollofffraction.nvim')
   add('mcauley-penney/visual-whitespace.nvim')
   add('aaron-p1/match-visual.nvim')
-  -- add({
-  --   source = 'folke/noice.nvim',
-  --   depends = { 'MunifTanjim/nui.nvim' },
-  -- })
+  -- add('utilyre/sentiment.nvim')
+  -- add('sitiom/nvim-numbertoggle')
   vim.cmd('runtime! lua/plugins/ui/*.lua')
 
   -- editing
@@ -137,11 +133,9 @@ later(function()
       'natecraddock/telescope-zf-native.nvim',
     },
   })
-  -- add('monaqa/dial.nvim')
   vim.cmd('runtime! lua/plugins/editing/*.lua')
 
   -- git
-  -- add('kdheepak/lazygit.nvim')
   -- add('jshu-git/blame.nvim')
   -- add('sindrets/diffview.nvim')
   vim.cmd('runtime! lua/plugins/git/*.lua')
