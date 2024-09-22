@@ -24,8 +24,8 @@ telescope.setup({
     -- layout
     layout_strategy = 'center',
     layout_config = {
-      anchor = 'S',
-      anchor_padding = 4,
+      anchor = 'N',
+      anchor_padding = 2,
       height = 0.4,
       prompt_position = 'top',
       scroll_speed = 4,
@@ -93,8 +93,9 @@ telescope.setup({
   },
   pickers = {
     find_files = {
-      hidden = true,
       find_command = { 'fd', '--type', 'f', '--color', 'never' },
+      follow = true,
+      hidden = true,
     },
     command_history = {
       mappings = { i = { ['<CR>'] = actions.edit_command_line } },
@@ -114,6 +115,28 @@ telescope.setup({
         results = { '─', '│', '─', '│', '┌', '┐', '┤', '├' },
       },
     },
+    current_buffer_fuzzy_find = {
+      mappings = {
+        i = {
+          ['<CR>'] = function(prompt_bufnr)
+            local prompt = action_state.get_current_line()
+            if prompt ~= '' then
+              vim.fn.setreg('/', prompt)
+            end
+            return actions.select_default(prompt_bufnr)
+          end,
+        },
+      },
+    },
+    colorscheme = {
+      mappings = {
+        i = {
+          ['<Tab>'] = function()
+            vim.cmd.colorscheme(action_state.get_selected_entry().value)
+          end,
+        },
+      },
+    },
   },
 })
 telescope.load_extension('ui-select')
@@ -122,14 +145,14 @@ telescope.load_extension('zf-native')
 -- files
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Files' })
 vim.keymap.set('n', '<leader>fF', function()
-  builtin.find_files({ cwd = utils.buffer_dir() })
+  builtin.find_files({ prompt_title = 'Find Files (Relative)', cwd = utils.buffer_dir() })
 end, { desc = 'Files (Relative)' })
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Oldfiles' })
 
 -- grep
-vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'Grep Live' })
+vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'Live Grep' })
 vim.keymap.set('n', '<leader>fW', function()
-  builtin.live_grep({ cwd = utils.buffer_dir() })
+  builtin.live_grep({ prompt_title = 'Live Grep (Relative)', cwd = utils.buffer_dir() })
 end, { desc = 'Grep Live (Relative)' })
 
 -- lsp
@@ -170,7 +193,9 @@ vim.keymap.set('n', '<leader>fC', builtin.builtin, { desc = 'Commands (Telescope
 vim.keymap.set('n', '<leader>:', builtin.command_history, { desc = 'Command History' })
 vim.keymap.set('n', '<leader>/', builtin.search_history, { desc = 'Search History' })
 vim.keymap.set('n', '<leader>fo', builtin.vim_options, { desc = 'Options' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help' })
+vim.keymap.set('n', '<leader>fh', function()
+  builtin.help_tags({ preview = { hide_on_startup = false } })
+end, { desc = 'Help' })
 vim.keymap.set('n', '<leader>ft', builtin.colorscheme, { desc = 'Colorschemes' })
 vim.keymap.set('n', '<leader>"', builtin.registers, { desc = 'Registers' })
 vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Keymaps' })
