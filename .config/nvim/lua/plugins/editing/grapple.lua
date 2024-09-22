@@ -28,4 +28,5 @@ vim.keymap.set('n', '<leader>A', function()
     vim.notify('[grapple.nvim] Grappled (Global): ' .. vim.fn.expand('%:t'))
     grapple.tag({ scope = 'global' })
   end
+  vim.cmd('redrawstatus')
 end, { desc = 'Grapple (Global)' })
