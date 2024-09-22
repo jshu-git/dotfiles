@@ -3,7 +3,6 @@ local actions = require('telescope.actions')
 local layout = require('telescope.actions.layout')
 local utils = require('telescope.utils')
 local builtin = require('telescope.builtin')
-
 local state = require('telescope.state')
 local action_state = require('telescope.actions.state')
 
@@ -44,7 +43,7 @@ telescope.setup({
     entry_prefix = '',
     multi_icon = '',
 
-    -- dynamic_preview_title = true,
+    dynamic_preview_title = true,
     results_title = false,
     -- path_display = { 'smart' },
     -- path_display = {},
@@ -68,8 +67,7 @@ telescope.setup({
         -- marking
         ['<C-a>'] = actions.toggle_all,
         ['<C-x>'] = actions.toggle_selection,
-        ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
-        ['<M-q>'] = actions.send_to_qflist + actions.open_qflist,
+        ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
 
         -- smart scroll
         ['<C-u>'] = function(prompt_bufnr)
@@ -153,6 +151,10 @@ vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Oldfiles' })
 vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'Live Grep' })
 vim.keymap.set('n', '<leader>fW', function()
   builtin.live_grep({ prompt_title = 'Live Grep (Relative)', cwd = utils.buffer_dir() })
+end, { desc = 'Grep Live (Relative)' })
+vim.keymap.set('x', '<leader>fw', builtin.grep_string, { desc = 'Grep' })
+vim.keymap.set('x', '<leader>fW', function()
+  builtin.grep_string({ cwd = utils.buffer_dir() })
 end, { desc = 'Grep Live (Relative)' })
 
 -- lsp
