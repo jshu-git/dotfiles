@@ -95,7 +95,7 @@ require('nightfox').setup({
       -- telescope
       TelescopeBorder = { link = 'FloatBorder' },
       TelescopeMatching = { link = 'CmpItemAbbrMatch' },
-      TelescopeMultiSelection = { fg = 'palette.magenta' },
+      TelescopeMultiSelection = { link = 'CmpItemAbbrMatch' },
     },
   },
 })
