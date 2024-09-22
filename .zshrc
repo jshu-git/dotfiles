@@ -137,6 +137,14 @@ if command -v rg >/dev/null 2>&1; then
 	export RIPGREP_CONFIG_PATH="$CONFIG/.ripgreprc"
 fi
 
+# zoxide
+if command -v zoxide >/dev/null 2>&1; then
+	eval "$(zoxide init zsh)"
+	function Z() {
+		z "$1" && ls
+	}
+fi
+
 # zig
 path+=/usr/local/bin/zig
 path+=~/git/zig/zls/zig-out/bin
