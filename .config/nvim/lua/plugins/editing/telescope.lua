@@ -208,3 +208,5 @@ vim.keymap.set('n', '<leader>fl', function()
   builtin.highlights({ preview = { hide_on_startup = false } })
 end, { desc = 'Highlights' })
 vim.keymap.set('n', '<leader>fa', builtin.autocommands, { desc = 'Autocommands' })
+
+-- vim.keymap.set('c', '<C-r><C-t>', '<Plug>(TelescopeFuzzyCommandSearch)', { silent = true, noremap = true })
