@@ -33,3 +33,11 @@ end, { desc = 'Quickfix' })
 --   quicker.refresh()
 --   vim.notify('[quicker.nvim] Refreshed Quickfix List')
 -- end, { desc = 'Quickfix (Refresh)' })
+
+-- override my <cr> map
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'qf' },
+  callback = function(event)
+    vim.keymap.set('n', '<cr>', '<cr>', { buffer = event.buf, silent = true })
+  end,
+})
