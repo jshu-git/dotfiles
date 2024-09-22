@@ -7,14 +7,14 @@ statusline.setup({
       mode = string.upper(mode)
 
       -- b
-      -- local git = statusline.section_git({ trunc_width = 40 })
+      local git = statusline.section_git({ trunc_width = 40 })
       -- local diff = statusline.section_diff({ trunc_width = 75 })
       -- local custom_diff = function()
       --   return vim.b.minidiff_summary_string or ''
       -- end
-      local custom_git = function()
-        return vim.b.minigit_summary_string and (' ' .. vim.b.minigit_summary_string) or ''
-      end
+      -- local custom_git = function()
+      --   return vim.b.minigit_summary_string and (' ' .. vim.b.minigit_summary_string) or ''
+      -- end
 
       local diagnostics = statusline.section_diagnostics({
         trunc_width = 75,
@@ -70,10 +70,11 @@ statusline.setup({
 
       local lines = string.format('%dL', vim.fn.line('$'))
 
-      local grapple = function()
-        if require('grapple').exists() then
+      local grapple = require('grapple')
+      local grappled = function()
+        if grapple.exists() then
           return ''
-        elseif require('grapple').exists({ scope = 'global' }) then
+        elseif grapple.exists({ scope = 'global' }) then
           return ''
         else
           return ''
@@ -84,7 +85,7 @@ statusline.setup({
         -- a
         { hl = mode_hl, strings = { mode } },
         -- b
-        { hl = 'MiniStatuslineDevinfo', strings = { custom_git(), diagnostics } },
+        { hl = 'MiniStatuslineDevinfo', strings = { git, diagnostics } },
         '%<', -- Mark general truncate point
         -- c
         { hl = 'MiniStatuslineFilename', strings = { filename } },
@@ -96,7 +97,7 @@ statusline.setup({
         -- z
         { hl = mode_hl, strings = { progress(), '/', lines } },
         { hl = 'MiniStatuslineModeReplace', strings = { search } },
-        { hl = 'MiniStatuslineModeOther', strings = { grapple() } },
+        { hl = 'MiniStatuslineModeOther', strings = { grappled() } },
       })
     end,
   },

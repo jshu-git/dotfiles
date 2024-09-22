@@ -1,11 +1,6 @@
 local grapple = require('grapple')
 grapple.setup({
-  win_opts = {
-    height = 0.5,
-    width = 0.75,
-    row = 0.5,
-    col = 0.5,
-  },
+  win_opts = { height = 0.5, width = 0.75, row = 0.5, col = 0.5 },
 })
 
 -- default scope (git)
@@ -17,11 +12,13 @@ vim.keymap.set('n', '<leader>a', function()
     vim.notify('[grapple.nvim] Grappled: ' .. vim.fn.expand('%:t'))
   end
   grapple.toggle()
+  vim.cmd('redrawstatus')
 end, { desc = 'Grapple' })
 
 -- global scope
 vim.keymap.set('n', '<leader><Tab>', function()
   grapple.toggle_tags({ scope = 'global' })
+  vim.cmd('redrawstatus')
 end, { desc = 'Grapple Tags (Global)' })
 vim.keymap.set('n', '<leader>A', function()
   if grapple.exists({ scope = 'global' }) then
