@@ -72,6 +72,7 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.wrapscan = false
 opt.incsearch = false
+-- don't show search count
 opt.shortmess:append({ S = true })
 
 -- mouse
