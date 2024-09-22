@@ -10,10 +10,7 @@ export FZF_DEFAULT_OPTS="
 "
 
 # fd https://github.com/sharkdp/fd?tab=readme-ov-file#using-fd-with-fzf
-for i in .git .cache .vscode .cargo .rustup .npm; do
-	FD_EXCLUDE="$FD_EXCLUDE --exclude $i"
-done
-export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden $FD_EXCLUDE"
+export FZF_DEFAULT_COMMAND="fd --type f --type l --follow --hidden"
 
 # history
 export FZF_CTRL_R_OPTS="--info=hidden"
