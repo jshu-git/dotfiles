@@ -35,14 +35,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 -- from LazyVim
 -- close some filetypes with <esc>
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = {
-    'git',
-    'help',
-    'qf',
-    'mininotify-history',
-    'minideps-confirm',
-    -- 'noice',
-  },
+  pattern = { 'git', 'help', 'qf', 'mininotify-history', 'minideps-confirm' },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set('n', '<esc>', '<cmd>close<cr>', { buffer = event.buf, silent = true })
@@ -59,19 +52,19 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, {
 })
 
 -- set wrap in some filetypes
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = {
-    '*.txt',
-    'gitcommit',
-    'markdown',
-    'mininotify-history',
-  },
-  callback = function()
-    vim.wo.wrap = true
-    -- vim.opt_local.spell = true
-    -- vim.opt_local.linebreak = true
-  end,
-})
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = {
+--     '*.txt',
+--     'gitcommit',
+--     'markdown',
+--     'mininotify-history',
+--   },
+--   callback = function()
+--     vim.wo.wrap = true
+--     -- vim.opt_local.spell = true
+--     -- vim.opt_local.linebreak = true
+--   end,
+-- })
 
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
