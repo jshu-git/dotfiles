@@ -49,7 +49,7 @@ telescope.setup({
     multi_icon = '',
 
     dynamic_preview_title = true,
-    -- results_title = false,
+    results_title = false,
     preview = {
       filesize_limit = 0.1,
       hide_on_startup = true,
@@ -104,19 +104,11 @@ telescope.setup({
       mappings = { i = { ['<CR>'] = actions.edit_command_line } },
       sorting_strategy = 'descending',
       layout_config = { prompt_position = 'bottom' },
-      borderchars = {
-        prompt = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
-        results = { '─', '│', '─', '│', '┌', '┐', '┤', '├' },
-      },
     },
     search_history = {
       mappings = { i = { ['<CR>'] = actions.edit_search_line } },
       sorting_strategy = 'descending',
       layout_config = { prompt_position = 'bottom' },
-      borderchars = {
-        prompt = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
-        results = { '─', '│', '─', '│', '┌', '┐', '┤', '├' },
-      },
     },
     current_buffer_fuzzy_find = {
       mappings = {
@@ -202,18 +194,18 @@ vim.keymap.set('n', ',', function()
   })
 end)
 vim.keymap.set('n', "'", builtin.resume)
+vim.keymap.set('n', '<leader>:', builtin.command_history, { desc = 'Command History' })
+vim.keymap.set('n', '<leader>/', builtin.search_history, { desc = 'Search History' })
+vim.keymap.set('n', '<leader>"', builtin.registers, { desc = 'Registers' })
 
 -- vim
 vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'Commands' })
 vim.keymap.set('n', '<leader>fC', builtin.builtin, { desc = 'Commands (Telescope)' })
-vim.keymap.set('n', '<leader>:', builtin.command_history, { desc = 'Command History' })
-vim.keymap.set('n', '<leader>/', builtin.search_history, { desc = 'Search History' })
 vim.keymap.set('n', '<leader>fo', builtin.vim_options, { desc = 'Options' })
 vim.keymap.set('n', '<leader>fh', function()
   builtin.help_tags({ preview = { hide_on_startup = false } })
 end, { desc = 'Help' })
 vim.keymap.set('n', '<leader>ft', builtin.colorscheme, { desc = 'Colorschemes' })
-vim.keymap.set('n', '<leader>"', builtin.registers, { desc = 'Registers' })
 vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Keymaps' })
 vim.keymap.set('n', '<leader>fK', function()
   builtin.keymaps({ only_buf = true })
