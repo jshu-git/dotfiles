@@ -62,8 +62,8 @@ require('nightfox').setup({
       CmpItemAbbrMatchFuzzy = { link = 'CmpItemAbbrMatch' },
 
       -- mini
-      MiniPickPrompt = { link = 'Normal' },
-      MiniPickMatchRanges = { link = 'CmpItemAbbrMatch' },
+      -- MiniPickPrompt = { link = 'Normal' },
+      -- MiniPickMatchRanges = { link = 'CmpItemAbbrMatch' },
       MiniIndentscopeSymbol = { link = 'NonText' },
       MiniStatuslineFilename = { link = 'Normal' },
       MiniJump2dSpot = { fg = 'white', bg = 'black' },
@@ -95,6 +95,7 @@ require('nightfox').setup({
       -- telescope
       TelescopeBorder = { link = 'FloatBorder' },
       TelescopeMatching = { link = 'CmpItemAbbrMatch' },
+      TelescopeMultiSelection = { fg = 'palette.magenta' },
     },
   },
 })

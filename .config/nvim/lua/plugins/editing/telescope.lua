@@ -4,6 +4,18 @@ local layout = require('telescope.actions.layout')
 local utils = require('telescope.utils')
 local builtin = require('telescope.builtin')
 
+local state = require('telescope.state')
+local action_state = require('telescope.actions.state')
+
+-- preview helper https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/actions/set.lua#L237
+local is_previewing = function(prompt_bufnr)
+  local previewer = action_state.get_current_picker(prompt_bufnr).previewer
+  local status = state.get_status(prompt_bufnr)
+  local preview_winid = status.layout.preview and status.layout.preview.winid
+  -- Check if we actually have a previewer and a preview window
+  return type(previewer) ~= 'table' or not preview_winid
+end
+
 telescope.setup({
   defaults = {
     sorting_strategy = 'ascending',
@@ -14,7 +26,7 @@ telescope.setup({
     layout_config = {
       anchor = 'S',
       anchor_padding = 4,
-      height = 0.5,
+      height = 0.4,
       prompt_position = 'top',
       scroll_speed = 4,
       width = 0.8,
@@ -48,6 +60,10 @@ telescope.setup({
         ['<esc>'] = actions.close,
         ['<C-s>'] = actions.select_horizontal,
         ['<C-g>'] = actions.to_fuzzy_refine,
+        ['<Tab>'] = layout.toggle_preview,
+        -- history
+        ['<Down>'] = actions.cycle_history_next,
+        ['<Up>'] = actions.cycle_history_prev,
 
         -- marking
         ['<C-a>'] = actions.toggle_all,
@@ -55,22 +71,23 @@ telescope.setup({
         ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
         ['<M-q>'] = actions.send_to_qflist + actions.open_qflist,
 
-        -- scrolling
-        ['<C-u>'] = actions.results_scrolling_up,
-        ['<C-d>'] = actions.results_scrolling_down,
-        ['<C-h>'] = actions.results_scrolling_left,
-        ['<C-l>'] = actions.results_scrolling_right,
-
-        -- history
-        ['<Down>'] = actions.cycle_history_next,
-        ['<Up>'] = actions.cycle_history_prev,
-
-        -- preview
-        ['<Tab>'] = layout.toggle_preview,
-        ['<C-y>'] = actions.preview_scrolling_up,
-        ['<C-e>'] = actions.preview_scrolling_down,
-        -- ['<C-h>'] = actions.preview_scrolling_left,
-        -- ['<C-l>'] = actions.preview_scrolling_right,
+        -- smart scroll
+        ['<C-u>'] = function(prompt_bufnr)
+          return is_previewing(prompt_bufnr) and actions.results_scrolling_up(prompt_bufnr)
+            or actions.preview_scrolling_up(prompt_bufnr)
+        end,
+        ['<C-d>'] = function(prompt_bufnr)
+          return is_previewing(prompt_bufnr) and actions.results_scrolling_down(prompt_bufnr)
+            or actions.preview_scrolling_down(prompt_bufnr)
+        end,
+        ['<C-h>'] = function(prompt_bufnr)
+          return is_previewing(prompt_bufnr) and actions.results_scrolling_left(prompt_bufnr)
+            or actions.preview_scrolling_left(prompt_bufnr)
+        end,
+        ['<C-l>'] = function(prompt_bufnr)
+          return is_previewing(prompt_bufnr) and actions.results_scrolling_right(prompt_bufnr)
+            or actions.preview_scrolling_right(prompt_bufnr)
+        end,
       },
     },
   },
