@@ -95,6 +95,8 @@ telescope.setup({
       follow = true,
       hidden = true,
     },
+    live_grep = { disable_coordinates = true },
+    grep_string = { disable_coordinates = true },
     command_history = {
       mappings = { i = { ['<CR>'] = actions.edit_command_line } },
       sorting_strategy = 'descending',
@@ -136,6 +138,7 @@ telescope.setup({
       },
     },
   },
+  -- generic_sorter = require('mini.fuzzy').get_telescope_sorter,
 })
 telescope.load_extension('ui-select')
 telescope.load_extension('zf-native')
