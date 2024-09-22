@@ -21,21 +21,26 @@ telescope.setup({
     scroll_strategy = 'limit',
 
     -- layout
-    layout_strategy = 'center',
+    layout_strategy = 'horizontal',
     layout_config = {
       anchor = 'N',
       anchor_padding = 2,
-      height = 0.4,
+      height = 0.9,
       prompt_position = 'top',
       scroll_speed = 4,
-      width = 0.8,
+      width = 0.9,
       preview_cutoff = 1,
+      horizontal = {
+        preview_width = 0.66,
+      },
     },
-    borderchars = {
-      prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
-      results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
-      preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-    },
+    borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+    -- center
+    -- borderchars = {
+    --   prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
+    --   results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
+    --   preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+    -- },
 
     -- icons
     prompt_prefix = '',
@@ -44,7 +49,7 @@ telescope.setup({
     multi_icon = '',
 
     dynamic_preview_title = true,
-    results_title = false,
+    -- results_title = false,
     -- path_display = { 'smart' },
     -- path_display = {},
     -- path_display = { 'filename_first' },
