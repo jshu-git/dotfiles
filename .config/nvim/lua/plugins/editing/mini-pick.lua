@@ -112,6 +112,20 @@ vim.keymap.set('n', ',', function()
   })
 end)
 
+-- lsp
+vim.keymap.set('n', 'gd', function()
+  extra.pickers.lsp({ scope = 'definition' })
+end, { desc = 'LSP: Goto Definition' })
+vim.keymap.set('n', 'gr', function()
+  extra.pickers.lsp({ scope = 'references' })
+end, { desc = 'LSP: Goto References' })
+vim.keymap.set('n', '<leader>fd', function()
+  extra.pickers.diagnostic({ scope = 'all' })
+end, { desc = 'LSP: Diagnostics' })
+vim.keymap.set('n', '<leader>fD', function()
+  extra.pickers.diagnostic({ scope = 'current' })
+end, { desc = 'LSP: Diagnostics (Buffer)' })
+
 -- git
 -- files
 -- vim.keymap.set('n', '<leader>gf', function()

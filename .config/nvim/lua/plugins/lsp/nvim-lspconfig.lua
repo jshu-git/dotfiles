@@ -11,14 +11,6 @@ vim.keymap.set('n', 'gs', vim.lsp.buf.hover, { desc = 'LSP: Hover' })
 vim.keymap.set('n', 'gS', vim.lsp.buf.signature_help, { desc = 'LSP: Signature Help' })
 vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { desc = 'LSP: Code Action' })
 vim.keymap.set('n', 'gR', vim.lsp.buf.rename, { desc = 'LSP: Rename Variable' })
--- mini.pick
-local extra = require('mini.extra')
-vim.keymap.set('n', 'gd', function()
-  extra.pickers.lsp({ scope = 'definition' })
-end, { desc = 'LSP: Goto Definition' })
-vim.keymap.set('n', 'gr', function()
-  extra.pickers.lsp({ scope = 'references' })
-end, { desc = 'LSP: Goto References' })
 
 -- diagnostics
 vim.diagnostic.config({
@@ -51,12 +43,6 @@ end, { desc = 'LSP: Toggle Diagnostics' })
 vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'LSP: Hover Diagnostic' })
 vim.keymap.set('n', '[d', vim.diagnostic.get_next, { desc = 'LSP: Previous Diagnostic' })
 vim.keymap.set('n', ']d', vim.diagnostic.get_prev, { desc = 'LSP: Next Diagnostic' })
-vim.keymap.set('n', '<leader>fd', function()
-  extra.pickers.diagnostic({ scope = 'all' })
-end, { desc = 'Diagnostics' })
-vim.keymap.set('n', '<leader>fD', function()
-  extra.pickers.diagnostic({ scope = 'current' })
-end, { desc = 'Diagnostics (Buffer)' })
 
 -- inlay hints
 vim.keymap.set('n', '<leader>th', function()
