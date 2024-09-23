@@ -8,7 +8,7 @@ icons.setup({
     -- extra
     -- ['grug-far'] = { glyph = '󰾹' },
     undotree = { glyph = '󰕌' },
-    grapple = { glyph = '' },
+    grapple = { glyph = '' },
     lspinfo = { glyph = '󰋽' },
   },
 })
