@@ -125,14 +125,14 @@ later(function()
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
   add('ziontee113/icon-picker.nvim')
-  -- add({
-  --   source = 'nvim-telescope/telescope.nvim',
-  --   depends = {
-  --     'nvim-lua/plenary.nvim',
-  --     'nvim-telescope/telescope-ui-select.nvim',
-  --     'natecraddock/telescope-zf-native.nvim',
-  --   },
-  -- })
+  add({
+    source = 'nvim-telescope/telescope.nvim',
+    depends = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-ui-select.nvim',
+      'natecraddock/telescope-zf-native.nvim',
+    },
+  })
   vim.cmd('runtime! lua/plugins/editing/*.lua')
 
   -- git

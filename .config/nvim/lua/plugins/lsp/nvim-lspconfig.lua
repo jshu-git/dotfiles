@@ -125,7 +125,10 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 
 -- delete bad defaults
 if vim.fn.has('nvim-0.11') == 1 then
-  pcall(vim.keymap.del, 'n', 'grr')
-  pcall(vim.keymap.del, 'n', 'gra')
-  pcall(vim.keymap.del, { 'n', 'x' }, 'grr')
+  vim.keymap.del('n', 'grr')
+  vim.keymap.del('n', 'grn')
+  vim.keymap.del({ 'n', 'x' }, 'gra')
+  -- pcall(vim.keymap.del, 'n', 'grr')
+  -- pcall(vim.keymap.del, 'n', 'gra')
+  -- pcall(vim.keymap.del, { 'n', 'x' }, 'grr')
 end

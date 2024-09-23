@@ -35,12 +35,6 @@ telescope.setup({
       },
     },
     borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-    -- center
-    -- borderchars = {
-    --   prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
-    --   results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
-    --   preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-    -- },
 
     -- icons
     prompt_prefix = '',
@@ -160,10 +154,6 @@ vim.keymap.set('x', '<leader>fW', function()
 end, { desc = 'Grep Live (Relative)' })
 
 -- lsp
-vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'LSP: Diagnostics' })
-vim.keymap.set('n', '<leader>fD', function()
-  builtin.diagnostics({ bufnr = 0 })
-end, { desc = 'LSP: Diagnostics (Buffer)' })
 vim.keymap.set('n', 'gd', function()
   builtin.lsp_definitions({
     preview = { hide_on_startup = false },
@@ -181,14 +171,18 @@ vim.keymap.set('n', 'gr', function()
     trim_text = true,
   })
 end, { desc = 'LSP: References' })
+vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'LSP: Diagnostics' })
+vim.keymap.set('n', '<leader>fD', function()
+  builtin.diagnostics({ bufnr = 0 })
+end, { desc = 'LSP: Diagnostics (Buffer)' })
 
 -- git
-vim.keymap.set('n', '<leader>gc', function()
-  builtin.git_commits({ preview = { hide_on_startup = false } })
-end, { desc = 'Commits' })
-vim.keymap.set('n', '<leader>gC', function()
-  builtin.git_bcommits({ preview = { hide_on_startup = false } })
-end, { desc = 'Commits (Buffer)' })
+-- vim.keymap.set('n', '<leader>gc', function()
+--   builtin.git_commits({ preview = { hide_on_startup = false } })
+-- end, { desc = 'Commits' })
+-- vim.keymap.set('n', '<leader>gC', function()
+--   builtin.git_bcommits({ preview = { hide_on_startup = false } })
+-- end, { desc = 'Commits (Buffer)' })
 
 -- misc
 vim.keymap.set('n', ',', function()
@@ -218,5 +212,3 @@ vim.keymap.set('n', '<leader>fl', function()
   builtin.highlights({ preview = { hide_on_startup = false } })
 end, { desc = 'Highlights' })
 vim.keymap.set('n', '<leader>fa', builtin.autocommands, { desc = 'Autocommands' })
-
--- vim.keymap.set('c', '<C-r><C-t>', '<Plug>(TelescopeFuzzyCommandSearch)', { silent = true, noremap = true })
