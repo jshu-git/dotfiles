@@ -98,15 +98,12 @@ later(function()
       'FelipeLema/cmp-async-path',
       -- cmdline
       'hrsh7th/cmp-cmdline',
-      -- 'dmitmel/cmp-cmdline-history',
       -- ui
       'onsails/lspkind-nvim',
       -- autopairs
       'windwp/nvim-autopairs',
     },
   })
-  -- add('monkoose/neocodeium')
-  -- vim.cmd('runtime! lua/plugins/cmp/*.lua')
   require('plugins.cmp.nvim-cmp')
 
   -- ui
@@ -124,7 +121,6 @@ later(function()
   -- editing
   add('cbochs/grapple.nvim')
   add('stevearc/quicker.nvim')
-  -- add('MagicDuck/grug-far.nvim')
   add('mbbill/undotree')
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
@@ -140,8 +136,6 @@ later(function()
   vim.cmd('runtime! lua/plugins/editing/*.lua')
 
   -- git
-  -- add('jshu-git/blame.nvim')
-  -- add('sindrets/diffview.nvim')
   require('plugins.git.mini-diff')
   require('plugins.git.mini-git')
 end)
