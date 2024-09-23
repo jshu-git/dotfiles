@@ -10,7 +10,7 @@ diff.setup({
   },
 })
 
-vim.keymap.set('n', '<leader>td', diff.toggle_overlay, { desc = 'Git: Toggle Diff' })
+vim.keymap.set('n', '<leader>gd', diff.toggle_overlay, { desc = 'Toggle Diff' })
 
 -- stage hunk
 vim.keymap.set('n', '<leader>ga', 'gHgh', { desc = 'Stage Hunk', remap = true })
