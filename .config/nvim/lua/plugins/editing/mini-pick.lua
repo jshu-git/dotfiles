@@ -13,9 +13,6 @@ pick.setup({
     scroll_down = '<C-d>',
     scroll_up = '<C-u>',
   },
-  options = {
-    use_cache = true,
-  },
   -- centered
   window = {
     config = function()
@@ -44,23 +41,20 @@ local function relative_opts(name, opts)
   local relative_path = vim.fn.expand('%:p:h')
   return vim.tbl_deep_extend('force', {
     source = {
-      cwd = relative_path,
       name = name .. ' (' .. relative_path .. ')',
+      cwd = relative_path,
     },
   }, opts or {})
 end
 
 -- files
 vim.keymap.set('n', '<leader>ff', function()
-  pick.builtin.files(nil, cwd_opts('Files'))
+  pick.builtin.files({ tool = 'fd' }, cwd_opts('Files'))
 end, { desc = 'Files' })
 vim.keymap.set('n', '<leader>fF', function()
-  pick.builtin.files(nil, relative_opts('Files'))
+  pick.builtin.files({ tool = 'fd' }, relative_opts('Files'))
 end, { desc = 'Files (Relative)' })
-vim.keymap.set('n', '<leader>fr', extra.pickers.oldfiles, { desc = 'Recent Files (All)' })
-vim.keymap.set('n', '<leader>fR', function()
-  extra.pickers.oldfiles({ current_dir = true })
-end, { desc = 'Recent Files (cwd)' })
+vim.keymap.set({ tool = 'fd' }, '<leader>fr', extra.pickers.oldfiles, { desc = 'Files (Recent)' })
 
 -- grep live
 vim.keymap.set('n', '<leader>fw', function()
@@ -88,26 +82,23 @@ vim.keymap.set('n', '<leader>fG', function()
   end
 end, { desc = 'Grep (Relative)' })
 
--- grep cword
--- vim.keymap.set('n', '<leader>*', function()
+-- grep (visual)
+-- vim.keymap.set('x', '<leader>fg function()
 --   local cword = vim.fn.expand('<cword>')
 --   local opts = cwd_opts('Grep cword')
 --   opts.source.name = opts.source.name .. ': ' .. cword
 --   pick.builtin.grep({ pattern = cword }, opts)
--- end, { desc = 'Grep cword' })
--- vim.keymap.set('n', '<leader>#', function()
+-- end, { desc = 'Grep' })
+-- vim.keymap.set('x', '<leader>fG', function()
 --   local cword = vim.fn.expand('<cword>')
 --   local opts = relative_opts('Grep cword')
 --   opts.source.name = opts.source.name .. ': ' .. cword
 --   pick.builtin.grep({ pattern = cword }, opts)
--- end, { desc = 'Grep cword (Relative)' })
+-- end, { desc = 'Grep (Relative)' })
 
--- grep buffer
+-- grep (buffer)
 vim.keymap.set('n', ',', function()
-  extra.pickers.buf_lines({
-    scope = 'current',
-    -- preserve_order = true,
-  }, {
+  extra.pickers.buf_lines({ scope = 'current' }, {
     source = {
       choose = function(item)
         ---@diagnostic disable:param-type-mismatch
@@ -120,51 +111,6 @@ vim.keymap.set('n', ',', function()
     },
   })
 end)
-
--- buffers
--- vim.keymap.set('n', '<leader>b', pick.builtin.buffers, { desc = 'Buffers' })
--- vim.keymap.set('n', '<leader>b', function()
---   pick.builtin.buffers(nil, {
---     mappings = {
---       scroll_down = '',
---       wipeout = {
---         char = '<C-d>',
---         func = function()
---           local items = MiniPick.get_picker_items()
---           if items == nil or #items == 0 then
---             return
---           end
---
---           local matches = pick.get_picker_matches()
---           if matches ~= nil then
---             local current = matches.current
---             local index = matches.current_ind -- save index for later
---             vim.notify('[mini.pick] Deleted buffer: ' .. vim.fs.basename(vim.api.nvim_buf_get_name(current.bufnr)))
---             -- currently this doesn't properly delete the active buffer
---             vim.api.nvim_buf_delete(current.bufnr, {})
---
---             -- update picker https://old.reddit.com/r/neovim/comments/1dq1o56/minipick_moveset_match_cursor/
---             table.remove(items, index)
---             pick.set_picker_items(items)
---             local mappings = pick.get_picker_opts().mappings
---             ---@diagnostic disable-next-line: unused-local
---             for i = 1, index - 1 do
---               vim.api.nvim_input(mappings.move_down)
---             end
---           end
---         end,
---       },
---     },
---   })
--- end, { desc = 'Buffers' })
-
--- diagnostics
-vim.keymap.set('n', '<leader>fd', function()
-  extra.pickers.diagnostic({ scope = 'all' })
-end, { desc = 'Diagnostics' })
-vim.keymap.set('n', '<leader>fD', function()
-  extra.pickers.diagnostic({ scope = 'current' })
-end, { desc = 'Diagnostics (Buffer)' })
 
 -- git
 -- files
@@ -193,6 +139,13 @@ vim.keymap.set('n', '<leader>gC', function()
   extra.pickers.git_commits({ path = vim.fn.expand('%:p') })
 end, { desc = 'Commits (Buffer)' })
 
+-- misc
+vim.keymap.set('n', "'", function()
+  if not pcall(pick.builtin.resume) then
+    vim.notify('[mini.pick] No picker to resume', vim.log.levels.WARN)
+  end
+end)
+
 -- vim
 vim.keymap.set('n', '<leader>fh', pick.builtin.help, { desc = 'Help' })
 vim.keymap.set('n', '<leader>fl', extra.pickers.hl_groups, { desc = 'Highlights' })
@@ -200,20 +153,21 @@ vim.keymap.set('n', '<leader>fk', extra.pickers.keymaps, { desc = 'Keymaps' })
 vim.keymap.set('n', '<leader>fK', function()
   extra.pickers.keymaps({ scope = 'buf' })
 end, { desc = 'Keymaps (Buffer)' })
-vim.keymap.set('n', '<leader>foo', extra.pickers.options, { desc = 'Options (All)' })
-vim.keymap.set('n', '<leader>fob', function()
-  extra.pickers.options({ scope = 'buf' })
-end, { desc = 'Options (Buffer)' })
-vim.keymap.set('n', '<leader>fow', function()
-  extra.pickers.options({ scope = 'win' })
-end, { desc = 'Options (Window)' })
-vim.keymap.set('n', '<leader>fog', function()
-  extra.pickers.options({ scope = 'global' })
-end, { desc = 'Options (Global)' })
+vim.keymap.set('n', '<leader>fo', extra.pickers.options, { desc = 'Options' })
+-- vim.keymap.set('n', '<leader>fob', function()
+--   extra.pickers.options({ scope = 'buf' })
+-- end, { desc = 'Options (Buffer)' })
+-- vim.keymap.set('n', '<leader>fow', function()
+--   extra.pickers.options({ scope = 'win' })
+-- end, { desc = 'Options (Window)' })
+-- vim.keymap.set('n', '<leader>fog', function()
+--   extra.pickers.options({ scope = 'global' })
+-- end, { desc = 'Options (Global)' })
 vim.keymap.set('n', '<leader>"', extra.pickers.registers, { desc = 'Registers' })
-
--- colorschemes
-pick.registry.colorschemes = function()
+-- vim.keymap.set('n', '<leader>:', pick.history, { desc = 'Command History' })
+-- vim.keymap.set('n', '<leader>/', pick.history, { desc = 'Search History' })
+vim.keymap.set('n', '<leader>fc', extra.pickers.commands, { desc = 'Commands' })
+vim.keymap.set('n', '<leader>ft', function()
   return pick.start({
     source = {
       name = 'Colorschemes',
@@ -227,37 +181,4 @@ pick.registry.colorschemes = function()
       end,
     },
   })
-end
-vim.keymap.set('n', '<leader>ft', pick.registry.colorschemes, { desc = 'Themes' })
-
--- misc
-vim.keymap.set('n', "'", function()
-  if not pcall(pick.builtin.resume) then
-    vim.notify('[mini.pick] No picker to resume', vim.log.levels.WARN)
-  end
-end)
--- vim.keymap.set('n', 'z=', extra.pickers.spellsuggest, { desc = 'Spell Suggest' })
--- pick.registry.config_files = function()
---   return pick.builtin.files(nil, {
---     source = { cwd = vim.fn.stdpath('config') },
---   })
--- end
--- vim.keymap.set('n', '<leader>fn', pick.registry.config_files, { desc = 'Neovim Config Files' })
-
--- commands
--- vim.keymap.set('n', '<leader>fC', extra.pickers.commands, { desc = 'Commands' })
--- mini builtin registry
--- vim.keymap.set('n', '<leader>fc', function()
---   local items = vim.tbl_keys(vim.tbl_extend('force', pick.registry, extra.pickers))
---   table.sort(items)
---   local source = {
---     items = items,
---     name = 'Registry',
---     choose = function() end,
---   }
---   local chosen_picker_name = pick.start({ source = source })
---   if chosen_picker_name == nil then
---     return
---   end
---   return pick.registry[chosen_picker_name]()
--- end, { desc = 'Commands (Builtin)' })
+end, { desc = 'Themes' })

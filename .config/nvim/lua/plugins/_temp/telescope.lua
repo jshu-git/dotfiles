@@ -52,7 +52,7 @@ telescope.setup({
     dynamic_preview_title = true,
     results_title = false,
     preview = {
-      filesize_limit = 0.1,
+      filesize_limit = 2,
       hide_on_startup = true,
     },
 

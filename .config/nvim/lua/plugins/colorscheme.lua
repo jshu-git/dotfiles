@@ -42,6 +42,7 @@ require('nightfox').setup({
     all = {
       QuickFixLine = { link = 'Underlined' },
       EndOfBuffer = { link = 'Conceal' },
+      CursorLineNr = { link = 'LineNr' },
 
       -- floating windows
       NormalFloat = { link = 'Normal' },
@@ -62,8 +63,9 @@ require('nightfox').setup({
       CmpItemAbbrMatchFuzzy = { link = 'CmpItemAbbrMatch' },
 
       -- mini
-      -- MiniPickPrompt = { link = 'Normal' },
-      -- MiniPickMatchRanges = { link = 'CmpItemAbbrMatch' },
+      MiniPickPrompt = { link = 'Normal' },
+      MiniPickMatchRanges = { link = 'CmpItemAbbrMatch' },
+      MiniPickMatchMarked = { link = 'CmpItemAbbrMatch' },
       MiniIndentscopeSymbol = { link = 'NonText' },
       MiniStatuslineFilename = { link = 'Normal' },
       MiniJump2dSpot = { fg = 'white', bg = 'black' },

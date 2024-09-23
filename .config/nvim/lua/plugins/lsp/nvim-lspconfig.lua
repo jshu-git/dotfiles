@@ -11,6 +11,14 @@ vim.keymap.set('n', 'gs', vim.lsp.buf.hover, { desc = 'LSP: Hover' })
 vim.keymap.set('n', 'gS', vim.lsp.buf.signature_help, { desc = 'LSP: Signature Help' })
 vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { desc = 'LSP: Code Action' })
 vim.keymap.set('n', 'gR', vim.lsp.buf.rename, { desc = 'LSP: Rename Variable' })
+-- mini.pick
+local extra = require('mini.extra')
+vim.keymap.set('n', 'gd', function()
+  extra.pickers.lsp({ scope = 'definition' })
+end, { desc = 'LSP: Goto Definition' })
+vim.keymap.set('n', 'gr', function()
+  extra.pickers.lsp({ scope = 'references' })
+end, { desc = 'LSP: Goto References' })
 
 -- diagnostics
 vim.diagnostic.config({
@@ -26,15 +34,16 @@ vim.diagnostic.config({
     border = 'single',
   },
   severity_sort = true,
-  signs = {
-    priority = 9999,
-    text = {
-      [vim.diagnostic.severity.ERROR] = require('utils').signs.Error,
-      [vim.diagnostic.severity.WARN] = require('utils').signs.Warn,
-      [vim.diagnostic.severity.INFO] = require('utils').signs.Info,
-      [vim.diagnostic.severity.HINT] = require('utils').signs.Hint,
-    },
-  },
+  signs = false,
+  -- signs = {
+  --   priority = 9999,
+  --   text = {
+  --     [vim.diagnostic.severity.ERROR] = require('utils').signs.Error,
+  --     [vim.diagnostic.severity.WARN] = require('utils').signs.Warn,
+  --     [vim.diagnostic.severity.INFO] = require('utils').signs.Info,
+  --     [vim.diagnostic.severity.HINT] = require('utils').signs.Hint,
+  --   },
+  -- },
 })
 vim.keymap.set('n', '<leader>td', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled(), { bufnr = 0 })
@@ -42,6 +51,12 @@ end, { desc = 'LSP: Toggle Diagnostics' })
 vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'LSP: Hover Diagnostic' })
 vim.keymap.set('n', '[d', vim.diagnostic.get_next, { desc = 'LSP: Previous Diagnostic' })
 vim.keymap.set('n', ']d', vim.diagnostic.get_prev, { desc = 'LSP: Next Diagnostic' })
+vim.keymap.set('n', '<leader>fd', function()
+  extra.pickers.diagnostic({ scope = 'all' })
+end, { desc = 'Diagnostics' })
+vim.keymap.set('n', '<leader>fD', function()
+  extra.pickers.diagnostic({ scope = 'current' })
+end, { desc = 'Diagnostics (Buffer)' })
 
 -- inlay hints
 vim.keymap.set('n', '<leader>th', function()
@@ -125,6 +140,6 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 -- delete bad defaults
 if vim.fn.has('nvim-0.11') == 1 then
   pcall(vim.keymap.del, 'n', 'grr')
-  pcall(vim.keymap.del, 'n', 'grn')
+  pcall(vim.keymap.del, 'n', 'gra')
   pcall(vim.keymap.del, { 'n', 'x' }, 'grr')
 end
