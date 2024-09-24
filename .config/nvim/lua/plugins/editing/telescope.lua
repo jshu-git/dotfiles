@@ -30,9 +30,7 @@ telescope.setup({
       scroll_speed = 4,
       width = 0.9,
       preview_cutoff = 1,
-      horizontal = {
-        preview_width = 0.66,
-      },
+      horizontal = { preview_width = 0.5 },
     },
     borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
 
@@ -69,6 +67,10 @@ telescope.setup({
         ['<C-a>'] = actions.toggle_all,
         ['<C-x>'] = actions.toggle_selection,
         ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
+
+        -- layout
+        ['<Left>'] = layout.cycle_layout_prev,
+        ['<Right>'] = layout.cycle_layout_next,
 
         -- smart scroll
         ['<C-u>'] = function(prompt_bufnr)
@@ -131,10 +133,26 @@ telescope.setup({
       },
     },
   },
-  -- generic_sorter = require('mini.fuzzy').get_telescope_sorter,
+  extensions = {
+    zoxide = {
+      prompt_title = 'Zoxide',
+      list_command = 'zoxide query -ls',
+      mappings = {
+        default = { action = require('telescope._extensions.zoxide.utils').create_basic_command('edit') },
+        ['<S-CR>'] = {
+          keepinsert = true,
+          action = function(selection)
+            builtin.find_files({ cwd = selection.path })
+          end,
+        },
+      },
+    },
+  },
 })
 telescope.load_extension('ui-select')
 telescope.load_extension('zf-native')
+telescope.load_extension('zoxide')
+vim.keymap.set('n', '<leader>fz', telescope.extensions.zoxide.list, { desc = 'Zoxide' })
 
 -- files
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Files' })
