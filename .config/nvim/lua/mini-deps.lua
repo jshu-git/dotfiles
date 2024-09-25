@@ -77,7 +77,7 @@ later(function()
   add({
     source = 'neovim/nvim-lspconfig',
     depends = {
-      'hrsh7th/cmp-nvim-lsp',
+      -- 'hrsh7th/cmp-nvim-lsp',
       'folke/lazydev.nvim',
       -- 'smjonas/inc-rename.nvim',
     },
@@ -87,24 +87,22 @@ later(function()
   require('plugins.lsp.nvim-lspconfig')
 
   -- cmp
-  add({
-    -- source = 'hrsh7th/nvim-cmp',
-    -- https://old.reddit.com/r/neovim/comments/1f1rxtx/share_a_tip_to_improve_your_experience_in_nvimcmp/
-    source = 'yioneko/nvim-cmp',
-    checkout = 'perf',
-    depends = {
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'FelipeLema/cmp-async-path',
-      -- cmdline
-      'hrsh7th/cmp-cmdline',
-      -- ui
-      'onsails/lspkind-nvim',
-      -- autopairs
-      'windwp/nvim-autopairs',
-    },
-  })
-  require('plugins.cmp.nvim-cmp')
+  require('plugins.cmp.mini-completion')
+  -- add({
+  --   -- source = 'hrsh7th/nvim-cmp',
+  --   -- https://old.reddit.com/r/neovim/comments/1f1rxtx/share_a_tip_to_improve_your_experience_in_nvimcmp/
+  --   source = 'yioneko/nvim-cmp',
+  --   checkout = 'perf',
+  --   depends = {
+  --     'hrsh7th/cmp-nvim-lsp',
+  --     'hrsh7th/cmp-buffer',
+  --     'FelipeLema/cmp-async-path',
+  --     'hrsh7th/cmp-cmdline',
+  --     'onsails/lspkind-nvim',
+  --     'windwp/nvim-autopairs',
+  --   },
+  -- })
+  -- require('plugins.cmp.nvim-cmp')
 
   -- ui
   add('0xAdk/full_visual_line.nvim')

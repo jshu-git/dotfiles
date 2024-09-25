@@ -42,10 +42,13 @@ require('nightfox').setup({
       FloatBorder = { link = 'NonText' },
       FloatFooter = { link = 'FloatBorder' },
       WinSeparator = { link = 'FloatBorder' },
+      LspInfoBorder = { link = 'FloatBorder' },
 
       -- cmp
-      CmpItemAbbrMatch = { fg = 'palette.magenta' },
-      CmpItemAbbrMatchFuzzy = { link = 'CmpItemAbbrMatch' },
+      PmenuMatchSel = { fg = 'palette.magenta', bg = 'palette.sel1' }, -- Search
+      PmenuMatch = { fg = 'palette.magenta', bg = 'palette.sel0' }, -- Visual
+      -- CmpItemAbbrMatch = { fg = 'palette.magenta' },
+      -- CmpItemAbbrMatchFuzzy = { link = 'CmpItemAbbrMatch' },
 
       -- mini
       -- MiniIndentscopeSymbol = { link = 'FloatBorder' },
