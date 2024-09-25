@@ -114,7 +114,7 @@ end
 require('lspconfig.ui.windows').default_options = { border = 'single' }
 vim.keymap.set('n', '<leader>li', '<cmd>LspInfo<CR>', { desc = 'Info' })
 vim.keymap.set('n', '<leader>lr', '<cmd>LspRestart<CR>', { desc = 'Restart' })
-vim.keymap.set('n', '<leader>ll', '<cmd>LspLog<CR>', { desc = 'Log' })
+vim.keymap.set('n', '<leader>ll', '<cmd>LspLog<CR><cmd>norm! G<cr>', { desc = 'Log' })
 
 -- ui
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {

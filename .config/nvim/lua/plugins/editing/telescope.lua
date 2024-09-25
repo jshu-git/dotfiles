@@ -160,6 +160,9 @@ vim.keymap.set('n', '<leader>fF', function()
   builtin.find_files({ prompt_title = 'Find Files (Relative)', cwd = utils.buffer_dir() })
 end, { desc = 'Files (Relative)' })
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Files (Recent)' })
+vim.keymap.set('n', '<leader>fn', function()
+  builtin.find_files({ cwd = vim.fn.stdpath('config') })
+end, { desc = 'Files (nvim)' })
 
 -- grep
 vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'Live Grep' })
