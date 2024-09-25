@@ -41,10 +41,7 @@ require('nightfox').setup({
       NormalFloat = { link = 'Normal' },
       FloatBorder = { link = 'NonText' },
       FloatFooter = { link = 'FloatBorder' },
-
-      -- splits
-      VertSplit = { link = 'FloatBorder' },
-      WinSeparator = { link = 'VertSplit' },
+      WinSeparator = { link = 'FloatBorder' },
 
       -- cmp
       CmpItemAbbrMatch = { fg = 'palette.magenta' },
@@ -64,16 +61,16 @@ require('nightfox').setup({
       -- treesitter
       TreesitterContext = { link = 'ColorColumn' },
 
-      -- visual-whitespace
-      VisualWhitespace = { bg = 'palette.sel0', fg = 'palette.sel1' }, -- bg=Visual, fg=Search
-      -- VisualWhitespace = { bg = 'palette.sel0', fg = 'palette.comment' }, -- bg=Visual, fg=Comment
-
       -- telescope
       TelescopeTitle = { link = 'FloatTitle' },
       TelescopeBorder = { link = 'FloatBorder' },
       TelescopeMatching = { link = 'CmpItemAbbrMatch' },
       TelescopeMultiSelection = { link = 'CmpItemAbbrMatch' },
       TelescopeSelection = { link = 'CursorLine' },
+
+      -- visual-whitespace
+      -- VisualWhitespace = { bg = 'palette.sel0', fg = 'palette.sel1' }, -- bg=Visual, fg=Search
+      -- VisualWhitespace = { bg = 'palette.sel0', fg = 'palette.comment' }, -- bg=Visual, fg=Comment
 
       -- sentiment
       -- MatchParen = { link = 'Underlined' },
