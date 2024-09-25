@@ -87,6 +87,8 @@ later(function()
   require('plugins.lsp.nvim-lspconfig')
 
   -- cmp
+  add('windwp/nvim-autopairs')
+  require('plugins.cmp.nvim-autopairs')
   require('plugins.cmp.mini-completion')
   -- add({
   --   -- source = 'hrsh7th/nvim-cmp',
@@ -105,7 +107,7 @@ later(function()
   -- require('plugins.cmp.nvim-cmp')
 
   -- ui
-  add('0xAdk/full_visual_line.nvim')
+  -- add('0xAdk/full_visual_line.nvim')
   add('BranimirE/fix-auto-scroll.nvim')
   add('nkakouros-original/scrollofffraction.nvim')
   -- add('MeanderingProgrammer/render-markdown.nvim')

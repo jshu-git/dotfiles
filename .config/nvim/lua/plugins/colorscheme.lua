@@ -15,8 +15,8 @@
 -- bg3  = "#29394f", -- CursorLine, Whitespace
 -- bg4  = "#39506d", -- NonText, Conceal
 
--- sel0 = "#2b3b51", -- Visual
--- sel1 = "#3c5372", -- Search
+-- sel0 = "#2b3b51", -- Pmenu bg, Visual
+-- sel1 = "#3c5372", -- Pmenu sel, Search
 
 -- fg0  = "#d6d6d7", -- Lighter fg
 -- fg1  = "#cdcecf", -- Default fg
@@ -67,8 +67,8 @@ require('nightfox').setup({
       -- telescope
       TelescopeTitle = { link = 'FloatTitle' },
       TelescopeBorder = { link = 'FloatBorder' },
-      TelescopeMatching = { link = 'CmpItemAbbrMatch' },
-      TelescopeMultiSelection = { link = 'CmpItemAbbrMatch' },
+      TelescopeMatching = { fg = 'palette.magenta' },
+      TelescopeMultiSelection = { fg = 'palette.magenta' },
       TelescopeSelection = { link = 'CursorLine' },
 
       -- visual-whitespace
