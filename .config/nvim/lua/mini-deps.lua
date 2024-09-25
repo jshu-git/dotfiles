@@ -116,7 +116,7 @@ later(function()
   -- add('aaron-p1/match-visual.nvim')
   -- add('utilyre/sentiment.nvim')
   -- add('sitiom/nvim-numbertoggle')
-  vim.cmd('runtime! lua/plugins/ui/*.lua')
+  vim.cmd('runtime! lua/plugins/ui/*')
 
   -- editing
   add('cbochs/grapple.nvim')
@@ -134,7 +134,7 @@ later(function()
       'jvgrootveld/telescope-zoxide',
     },
   })
-  vim.cmd('runtime! lua/plugins/editing/*.lua')
+  vim.cmd('runtime! lua/plugins/editing/*')
 
   -- git
   require('plugins.git.mini-diff')
