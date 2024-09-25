@@ -29,7 +29,6 @@ statusline.setup({
 
       -- c
       local filename = statusline.section_filename({ trunc_width = 140 })
-      -- local custom_filename = '%f %m%r'
 
       -- x
       local file_size = function()
@@ -68,7 +67,7 @@ statusline.setup({
         search = '󰍉 ' .. search
       end
 
-      local lines = string.format('%dL', vim.fn.line('$'))
+      local lines = string.format('%d', vim.fn.line('$'))
 
       local grapple = require('grapple')
       local grappled = function()
