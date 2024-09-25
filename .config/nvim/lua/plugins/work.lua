@@ -101,3 +101,11 @@ end, { desc = 'Open Git URL', silent = true })
 -- vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
 -- vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
 -- vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
+
+-- blame
+-- local formats = require('blame.formats.default_formats')
+-- require('blame').setup({
+--   merge_consecutive = true,
+--   format_fn = formats.date_author_message,
+-- })
+-- vim.keymap.set('n', '<leader>gb', '<cmd>BlameToggle<cr>', { desc = 'Blame' })
