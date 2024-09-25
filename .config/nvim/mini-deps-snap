@@ -1,7 +1,6 @@
 return {
   ["Comment.nvim"] = "e30b7f2008e52442154b66f7c519bfd2f1e32acb",
   ["conform.nvim"] = "1a99fdc1d3aa9ccdf3021e67982a679a8c5c740c",
-  ["fix-auto-scroll.nvim"] = "c211a42f4030c9ed03a1456919917cdf1a193bd9",
   ["gitlinker.nvim"] = "cc59f732f3d043b626c8702cb725c82e54d35c25",
   ["grapple.nvim"] = "7aedc261b05a6c030397c4bc26416efbe746ebf1",
   ["guess-indent.nvim"] = "6cd61f7a600bb756e558627cd2e740302c58e32d",

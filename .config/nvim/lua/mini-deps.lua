@@ -44,21 +44,9 @@ end)
 later(function()
   -- work
   add('ojroques/nvim-osc52')
-  require('plugins.nvim-osc52')
-  add({
-    source = 'ruifm/gitlinker.nvim',
-    depends = { 'nvim-lua/plenary.nvim' },
-  })
-  require('plugins.gitlinker')
-  -- if vim.env.SSH_CLIENT ~= nil then
+  add({ source = 'ruifm/gitlinker.nvim', depends = { 'nvim-lua/plenary.nvim' } })
   -- add('github/copilot.vim')
-  -- vim.g.copilot_filetypes = { ['*'] = true, ['grug-far'] = false }
-  -- vim.keymap.set('i', '<A-l>', '<Plug>(copilot-accept-word)')
-  -- vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
-  -- vim.keymap.set('i', '<A-p>', '<Plug>(copilot-previous)')
-  -- add('pteroctopus/faster.nvim')
-  -- require('faster').setup({ behaviours = { bigfile = { filesize = 0.3 } } })
-  -- end
+  require('plugins.work')
 
   -- mini
   require('mini.extra').setup()
@@ -107,9 +95,9 @@ later(function()
   -- require('plugins.cmp.nvim-cmp')
 
   -- ui
-  -- add('0xAdk/full_visual_line.nvim')
-  add('BranimirE/fix-auto-scroll.nvim')
   add('nkakouros-original/scrollofffraction.nvim')
+  -- add('0xAdk/full_visual_line.nvim')
+  -- add('BranimirE/fix-auto-scroll.nvim')
   -- add('MeanderingProgrammer/render-markdown.nvim')
   -- add('OXY2DEV/helpview.nvim')
   -- add('mcauley-penney/visual-whitespace.nvim')

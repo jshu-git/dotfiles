@@ -1,7 +1,3 @@
-if vim.env.SSH_CLIENT ~= nil then
-  return
-end
-
 local neocodeium = require('neocodeium')
 neocodeium.setup({
   manual = true,
