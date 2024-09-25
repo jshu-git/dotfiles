@@ -31,12 +31,13 @@ opt.breakindent = true
 opt.linebreak = true
 opt.wrap = false
 opt.showbreak = '↳ '
+opt.sidescrolloff = 8
 
 -- chars
 opt.fillchars:append({
   diff = '╱',
-  foldopen = '',
-  foldclose = '',
+  foldopen = '▾',
+  foldclose = '▸',
   -- fold = '╌',
   fold = '-',
   foldsep = ' ',
@@ -60,7 +61,6 @@ opt.signcolumn = 'yes'
 
 -- cursorline
 opt.cursorline = true
--- opt.cursorlineopt = 'number'
 
 -- splits
 opt.splitbelow = true
