@@ -10,11 +10,9 @@ return {
   ["gitlinker.nvim"] = "cc59f732f3d043b626c8702cb725c82e54d35c25",
   ["grapple.nvim"] = "7aedc261b05a6c030397c4bc26416efbe746ebf1",
   ["guess-indent.nvim"] = "6cd61f7a600bb756e558627cd2e740302c58e32d",
-  ["helpview.nvim"] = "857aec1dab331252910da158ab6cbfbc65239c71",
   ["icon-picker.nvim"] = "3ee9a0ea9feeef08ae35e40c8be6a2fa2c20f2d3",
   ["lazydev.nvim"] = "491452cf1ca6f029e90ad0d0368848fac717c6d2",
   ["lspkind-nvim"] = "cff4ae321a91ee3473a92ea1a8c637e3a9510aec",
-  ["match-visual.nvim"] = "98540e79c151126187907278ff5bc61823edcebc",
   ["mini.nvim"] = "e50cf9de614500a20e47cfc50e30a100042f91c3",
   ["nightfox.nvim"] = "7557f26defd093c4e9bc17f28b08403f706f5a44",
   ["nvim-autopairs"] = "f158dcb865c36f72c92358f87787dab2c272eaf3",
@@ -25,11 +23,10 @@ return {
   ["nvim-treesitter-context"] = "3d5390c49e3f8fe457b376df2a49aa39d75b7911",
   ["plenary.nvim"] = "2d9b06177a975543726ce5c73fca176cedbffe9d",
   ["quicker.nvim"] = "183041a46d6c908eefb1c23ea02cce9c8f41256e",
-  ["render-markdown.nvim"] = "3adb9d539a016bc63fee83aa740e38fa4eeab094",
   ["scrollofffraction.nvim"] = "0618a3e3e1a4e13a04edf6fd35bfcee4bd5afe38",
   ["telescope-ui-select.nvim"] = "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
   ["telescope-zf-native.nvim"] = "5721be27df11a19b9cd95e6a4887f16f26599802",
+  ["telescope-zoxide"] = "54bfe630bad08dc9891ec78c7cf8db38dd725c97",
   ["telescope.nvim"] = "b324469959908c1c7434eb65d80e87895e6828f7",
-  undotree = "78b5241191852ffa9bb5da5ff2ee033160798c3b",
-  ["visual-whitespace.nvim"] = "e22d8508a0236f274dde39775ee127c85d30c0c0"
+  undotree = "78b5241191852ffa9bb5da5ff2ee033160798c3b"
 }
