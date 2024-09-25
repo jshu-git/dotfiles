@@ -29,14 +29,7 @@ require('nightfox').setup({
   options = {
     styles = { comments = 'italic' },
     module_default = false,
-    modules = {
-      cmp = true,
-      mini = true,
-      -- default
-      diagnostic = true,
-      native_lsp = true,
-      treesitter = true,
-    },
+    modules = { cmp = true, mini = true },
   },
   groups = {
     all = {
@@ -47,45 +40,40 @@ require('nightfox').setup({
       -- floating windows
       NormalFloat = { link = 'Normal' },
       FloatBorder = { link = 'NonText' },
-      FloatTitle = { link = 'Normal' },
       FloatFooter = { link = 'FloatBorder' },
 
       -- splits
       VertSplit = { link = 'FloatBorder' },
       WinSeparator = { link = 'VertSplit' },
 
-      -- lsp
-      LspInfoBorder = { link = 'FloatBorder' },
-      LspInlayHint = { fg = 'palette.comment', bg = 'palette.bg2' },
-
       -- cmp
       CmpItemAbbrMatch = { fg = 'palette.magenta' },
       CmpItemAbbrMatchFuzzy = { link = 'CmpItemAbbrMatch' },
 
       -- mini
-      -- MiniPickPrompt = { link = 'Normal' },
-      -- MiniPickMatchRanges = { link = 'CmpItemAbbrMatch' },
-      -- MiniPickMatchMarked = { link = 'CmpItemAbbrMatch' },
+      -- MiniIndentscopeSymbol = { link = 'FloatBorder' },
+      MiniFilesTitle = { link = 'FloatBorder' },
       MiniIndentscopeSymbol = { link = 'NonText' },
-      MiniStatuslineFilename = { link = 'Normal' },
+      MiniJump = { link = 'MiniJump2dSpot' },
+      MiniJump2dDim = { link = 'NonText' },
       MiniJump2dSpot = { fg = 'white', bg = 'black' },
       MiniJump2dSpotAhead = { link = 'MiniJump2dSpot' },
       MiniJump2dSpotUnique = { link = 'MiniJump2dSpot' },
-      MiniJump2dDim = { link = 'NonText' },
-      MiniJump = { link = 'MiniJump2dSpot' },
+      MiniStatuslineFilename = { link = 'Normal' },
 
       -- treesitter
       TreesitterContext = { link = 'ColorColumn' },
 
-      -- copilot
-      NeoCodeiumSuggestion = { link = 'NonText' },
-      NeoCodeiumLabel = { link = 'Search' },
-      CopilotSuggestion = { link = 'NonText' },
-      CopilotAnnotation = { link = 'Search' },
-
       -- visual-whitespace
       VisualWhitespace = { bg = 'palette.sel0', fg = 'palette.sel1' }, -- bg=Visual, fg=Search
       -- VisualWhitespace = { bg = 'palette.sel0', fg = 'palette.comment' }, -- bg=Visual, fg=Comment
+
+      -- telescope
+      TelescopeTitle = { link = 'FloatTitle' },
+      TelescopeBorder = { link = 'FloatBorder' },
+      TelescopeMatching = { link = 'CmpItemAbbrMatch' },
+      TelescopeMultiSelection = { link = 'CmpItemAbbrMatch' },
+      TelescopeSelection = { link = 'CursorLine' },
 
       -- sentiment
       -- MatchParen = { link = 'Underlined' },
@@ -94,11 +82,11 @@ require('nightfox').setup({
       -- NoiceCmdlinePopupBorder = { link = 'FloatBorder' },
       -- NoiceConfirmBorder = { link = 'DiagnosticFloatingWarn' },
 
-      -- telescope
-      TelescopeTitle = { link = 'FloatTitle' },
-      TelescopeBorder = { link = 'FloatBorder' },
-      TelescopeMatching = { link = 'CmpItemAbbrMatch' },
-      TelescopeMultiSelection = { link = 'CmpItemAbbrMatch' },
+      -- copilot
+      -- NeoCodeiumSuggestion = { link = 'NonText' },
+      -- NeoCodeiumLabel = { link = 'Search' },
+      -- CopilotSuggestion = { link = 'NonText' },
+      -- CopilotAnnotation = { link = 'Search' },
     },
   },
 })
