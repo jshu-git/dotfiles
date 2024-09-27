@@ -88,7 +88,7 @@ vim.api.nvim_create_autocmd('User', {
     local win_id = args.data.win_id
     local config = vim.api.nvim_win_get_config(win_id)
     config.title_pos = 'center'
-    -- vim.wo[win_id].cursorlineopt = 'line'
+    vim.wo[win_id].cursorlineopt = 'line'
     vim.api.nvim_win_set_config(win_id, config)
   end,
 })

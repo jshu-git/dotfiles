@@ -33,9 +33,9 @@ require('nightfox').setup({
   },
   groups = {
     all = {
-      QuickFixLine = { link = 'Underlined' },
-      EndOfBuffer = { link = 'Conceal' },
-      CursorLineNr = { link = 'LineNr' },
+      EndOfBuffer = { link = 'NonText' },
+      LineNr = { fg = 'palette.bg3' },
+      CursorLineNr = { fg = 'palette.fg0' },
 
       -- floating windows
       NormalFloat = { link = 'Normal' },
