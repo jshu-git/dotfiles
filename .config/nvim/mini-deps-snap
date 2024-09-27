@@ -11,7 +11,7 @@ return {
   ["nvim-autopairs"] = "f158dcb865c36f72c92358f87787dab2c272eaf3",
   ["nvim-lspconfig"] = "a9bc587e9ae0cbcb3e90a2e9342f86b3b78c4408",
   ["nvim-osc52"] = "04cfaba1865ae5c53b6f887c3ca7304973824fb2",
-  ["nvim-treesitter"] = "0c8a582e474e248f2a4406188e0c653f92a064cf",
+  ["nvim-treesitter"] = "679883ad31f1752cac92a4ca182cee8b2751d4f1",
   ["nvim-treesitter-context"] = "3d5390c49e3f8fe457b376df2a49aa39d75b7911",
   ["plenary.nvim"] = "2d9b06177a975543726ce5c73fca176cedbffe9d",
   ["quicker.nvim"] = "183041a46d6c908eefb1c23ea02cce9c8f41256e",
@@ -19,6 +19,6 @@ return {
   ["telescope-ui-select.nvim"] = "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
   ["telescope-zf-native.nvim"] = "5721be27df11a19b9cd95e6a4887f16f26599802",
   ["telescope-zoxide"] = "54bfe630bad08dc9891ec78c7cf8db38dd725c97",
-  ["telescope.nvim"] = "6b08cdcc22a630d19172b9db55f7b8db5f81d761",
+  ["telescope.nvim"] = "cb3f98d935842836cc115e8c9e4b38c1380fbb6b",
   undotree = "78b5241191852ffa9bb5da5ff2ee033160798c3b"
 }
