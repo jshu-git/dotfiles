@@ -3,8 +3,6 @@ grapple.setup({
   win_opts = {
     height = 0.5,
     width = 0.75,
-    row = 0.5,
-    col = 0.5,
   },
 })
 
