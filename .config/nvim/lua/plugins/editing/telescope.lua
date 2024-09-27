@@ -99,7 +99,6 @@ telescope.setup({
       hidden = true,
     },
     live_grep = { disable_coordinates = true },
-    grep_string = { disable_coordinates = true },
     command_history = {
       mappings = { i = { ['<CR>'] = actions.edit_command_line } },
       sorting_strategy = 'descending',
@@ -169,10 +168,17 @@ vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'Live Grep' })
 vim.keymap.set('n', '<leader>fW', function()
   builtin.live_grep({ prompt_title = 'Live Grep (Relative)', cwd = utils.buffer_dir() })
 end, { desc = 'Grep Live (Relative)' })
-vim.keymap.set('x', '<leader>fw', builtin.grep_string, { desc = 'Grep' })
+vim.keymap.set('x', '<leader>fw', function()
+  builtin.live_grep({
+    default_text = table.concat(vim.fn.getregion(vim.fn.getpos('v'), vim.fn.getpos('.')), '\n'),
+  })
+end, { desc = 'Live Grep' })
 vim.keymap.set('x', '<leader>fW', function()
-  builtin.grep_string({ cwd = utils.buffer_dir() })
-end, { desc = 'Grep Live (Relative)' })
+  builtin.grep_string({
+    default_text = table.concat(vim.fn.getregion(vim.fn.getpos('v'), vim.fn.getpos('.')), '\n'),
+    cwd = utils.buffer_dir(),
+  })
+end, { desc = 'Live Grep (Relative)' })
 
 -- lsp
 vim.keymap.set('n', 'gd', function()
