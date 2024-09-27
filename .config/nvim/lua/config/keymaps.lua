@@ -79,9 +79,9 @@ map('x', '*', '"zy/<C-r>z<CR>N')
 
 -- custom operators
 map('n', 'sw', '"zyiwg*N"_cgn<C-r>z', { desc = 'Substitute cword (Instance)' })
-map('n', 'sW', 'g*N"_cgn', { desc = 'Delete cword (Instance)' })
-map('x', 'sw', 'sW<C-r>z', { desc = 'Substitute (Instance)', remap = true })
-map('x', 'sW', '*"_cgn', { desc = 'Delete (Instance)', remap = true })
+map('n', 'sx', 'g*N"_cgn', { desc = 'Delete cword (Instance)' })
+map('x', 'sw', 'sx<C-r>z', { desc = 'Substitute (Instance)', remap = true })
+map('x', 'sx', '*"_cgn', { desc = 'Delete (Instance)', remap = true })
 map('n', 's/', ':%s/<C-r><C-w>/<C-r><C-w>/gcI<Left><Left><Left><Left>', { desc = 'Substitute cword (Buffer)' })
 map('x', 's/', ':s///gcI<Left><Left><Left><Left><Left>', { desc = 'Substitute (In Selection)' })
 
