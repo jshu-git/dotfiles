@@ -18,7 +18,7 @@ if vim.env.SSH_CLIENT ~= nil then
 end
 
 require('nvim-treesitter.configs').setup({
-  ensure_installed = { 'python', 'yaml' },
+  ensure_installed = { 'python', 'yaml', 'perl' },
   auto_install = vim.env.SSH_CLIENT == nil,
   incremental_selection = {
     enable = true,
