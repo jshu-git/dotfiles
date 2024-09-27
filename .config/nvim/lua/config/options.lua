@@ -36,9 +36,6 @@ opt.sidescrolloff = 8
 -- chars
 opt.fillchars:append({
   diff = '╱',
-  foldopen = '▾',
-  foldclose = '▸',
-  -- fold = '╌',
   fold = '-',
   foldsep = ' ',
 })
@@ -72,8 +69,6 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.wrapscan = false
 opt.incsearch = false
--- don't show search count
-opt.shortmess:append({ S = true })
 
 -- mouse
 opt.mouse = 'a'
