@@ -35,7 +35,7 @@ require('nightfox').setup({
     all = {
       EndOfBuffer = { link = 'NonText' },
       LineNr = { fg = 'palette.bg3' },
-      CursorLineNr = { fg = 'palette.fg0' },
+      CursorLineNr = { fg = 'palette.white' },
 
       -- floating windows
       NormalFloat = { link = 'Normal' },
