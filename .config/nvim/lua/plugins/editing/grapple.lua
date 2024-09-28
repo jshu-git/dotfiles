@@ -9,10 +9,20 @@ grapple.setup({
 -- default scope (git)
 vim.keymap.set('n', '<Tab>', grapple.toggle_tags)
 vim.keymap.set('n', '<leader>a', function()
+  local name = vim.fn.expand('%:t')
   if grapple.exists() then
-    vim.notify('[grapple.nvim] Ungrappled')
+    local input = vim.fn.input('Ungrapple ' .. name .. ' (y/n)? ')
+    if input == 'y' then
+      vim.notify('[grapple.nvim] Ungrappled')
+    else
+      vim.defer_fn(function()
+        vim.cmd('echon')
+      end, 10)
+      return
+    end
+    vim.cmd('echon')
   else
-    vim.notify('[grapple.nvim] Grappled: ' .. vim.fn.expand('%:t'))
+    vim.notify('[grapple.nvim] Grappled: ' .. name)
   end
   grapple.toggle()
   vim.cmd('redrawstatus')
