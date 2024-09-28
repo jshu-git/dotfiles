@@ -7,7 +7,6 @@ return {
   ["icon-picker.nvim"] = "3ee9a0ea9feeef08ae35e40c8be6a2fa2c20f2d3",
   ["lazydev.nvim"] = "491452cf1ca6f029e90ad0d0368848fac717c6d2",
   ["mini.nvim"] = "73af55e44865f2ede67a772b0972a5d34dcedd0e",
-  ["nightfox.nvim"] = "7557f26defd093c4e9bc17f28b08403f706f5a44",
   ["nvim-autopairs"] = "f158dcb865c36f72c92358f87787dab2c272eaf3",
   ["nvim-lspconfig"] = "a9bc587e9ae0cbcb3e90a2e9342f86b3b78c4408",
   ["nvim-osc52"] = "04cfaba1865ae5c53b6f887c3ca7304973824fb2",

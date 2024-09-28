@@ -49,7 +49,7 @@ local highlights = {
   -- mini
   MiniIconsAzure = { fg = 'NvimLightBlue' },
   MiniIconsCyan = { fg = 'NvimLightCyan' },
-  MiniIconsGrey = { fg = 'NvimLightGrey1' },
+  MiniIconsGrey = { fg = 'NvimLightGrey3' },
   MiniIconsBlue = { fg = 'NvimDarkBlue' },
   MiniIconsRed = { fg = 'NvimDarkRed' },
   MiniIconsOrange = { fg = 'NvimLightRed' },
