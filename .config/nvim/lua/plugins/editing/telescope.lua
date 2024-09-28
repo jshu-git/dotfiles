@@ -65,7 +65,7 @@ telescope.setup({
 
         -- marking
         ['<C-a>'] = actions.toggle_all,
-        ['<C-x>'] = actions.toggle_selection,
+        ['<C-x>'] = actions.toggle_selection + actions.move_selection_worse,
         ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
 
         -- layout
@@ -204,12 +204,12 @@ vim.keymap.set('n', '<leader>fD', function()
 end, { desc = 'LSP: Diagnostics (Buffer)' })
 
 -- git
--- vim.keymap.set('n', '<leader>gc', function()
---   builtin.git_commits({ preview = { hide_on_startup = false } })
--- end, { desc = 'Commits' })
--- vim.keymap.set('n', '<leader>gC', function()
---   builtin.git_bcommits({ preview = { hide_on_startup = false } })
--- end, { desc = 'Commits (Buffer)' })
+vim.keymap.set('n', '<leader>gc', function()
+  builtin.git_commits({ preview = { hide_on_startup = false } })
+end, { desc = 'Commits' })
+vim.keymap.set('n', '<leader>gC', function()
+  builtin.git_bcommits({ preview = { hide_on_startup = false } })
+end, { desc = 'Commits (Buffer)' })
 
 -- misc
 vim.keymap.set('n', ',', function()
