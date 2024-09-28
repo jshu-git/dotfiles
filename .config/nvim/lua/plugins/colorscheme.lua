@@ -29,6 +29,11 @@ local highlights = {
   QuickFixLine = { link = 'CursorLine' },
   Comment = { fg = 'NvimLightGrey4', italic = true },
 
+  -- diff
+  Changed = { fg = 'NvimLightYellow' },
+  DiffChange = { fg = 'NvimLightGrey1', bg = 'NvimDarkYellow' },
+  DiffText = { fg = 'NvimLightGrey1', bg = 'NvimDarkYellow' },
+
   -- floating windows
   NormalFloat = { link = 'Normal' },
   FloatBorder = { link = 'NonText' },
@@ -37,8 +42,8 @@ local highlights = {
   LspInfoBorder = { link = 'FloatBorder' },
 
   -- cmp
-  PmenuMatchSel = { fg = 'NvimLightCyan', bg = 'NvimDarkGrey4' },
   PmenuSel = { link = 'Visual' },
+  PmenuMatchSel = { fg = 'NvimLightCyan', bg = 'NvimDarkGrey4' },
   PmenuMatch = { fg = 'NvimLightCyan', bg = 'NvimDarkGrey3' },
 
   -- mini
@@ -52,7 +57,7 @@ local highlights = {
   MiniIconsGreen = { fg = 'NvimLightGreen' },
   MiniIconsPurple = { fg = 'NvimLightMagenta' },
   -- MiniDiffSignAdd = { fg = 'NvimLightGreen' },
-  MiniDiffSignChange = { fg = 'NvimLightYellow' },
+  -- MiniDiffSignChange = { fg = 'NvimLightYellow' },
   -- MiniDiffSignDelete = { fg = 'NvimDarkRed' },
   MiniIndentScopeSymbol = { link = 'NonText' },
   MiniFilesTitle = { link = 'FloatBorder' },

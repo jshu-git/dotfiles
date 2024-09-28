@@ -12,6 +12,8 @@ gui:
   border: single
   theme:
     inactiveBorderColor:
+      - "#4f5258" # NvimDarkGrey4
+    selectedLineBgColor:
       - "#4f5258"
 git:
   paging:
