@@ -16,8 +16,8 @@ vim.keymap.set('n', 'gR', vim.lsp.buf.rename, { desc = 'LSP: Rename Variable' })
 vim.diagnostic.config({
   virtual_text = {
     -- prefix = ' 󰧞',
-    prefix = '',
-    suffix = ' ',
+    -- prefix = '',
+    -- suffix = ' ',
     -- virt_text_pos = 'inline',
     -- virt_text_win_col = 80,
     update_in_insert = false,

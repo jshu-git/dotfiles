@@ -16,16 +16,7 @@ statusline.setup({
       --   return vim.b.minigit_summary_string and (' ' .. vim.b.minigit_summary_string) or ''
       -- end
 
-      local diagnostics = statusline.section_diagnostics({
-        trunc_width = 75,
-        icon = '',
-        signs = {
-          ERROR = require('utils').signs.Error,
-          WARN = require('utils').signs.Warn,
-          INFO = require('utils').signs.Info,
-          HINT = require('utils').signs.Hint,
-        },
-      })
+      local diagnostics = statusline.section_diagnostics({ trunc_width = 75, icon = '' })
 
       -- c
       local filename = statusline.section_filename({ trunc_width = 140 })
