@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 now(function()
-  add('EdenEast/nightfox.nvim')
+  -- add('EdenEast/nightfox.nvim')
   require('plugins.colorscheme')
 end)
 
