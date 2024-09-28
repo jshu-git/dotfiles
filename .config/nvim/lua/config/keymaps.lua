@@ -70,16 +70,16 @@ map('n', 'dd', function()
   return vim.api.nvim_get_current_line():match('^%s*$') and '"_dd' or 'dd'
 end, { expr = true })
 -- search
-map('n', '*', 'g*N')
+map('n', '*', 'g*``')
 map('n', 'g/', '/\\v', { desc = 'Search (Very Magic)' })
-map('x', '*', '"zy/<C-r>z<CR>N')
+map('x', '*', '"zy/<C-r>z<CR>``')
 -- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
 -- https://github.com/neovim/neovim/issues/21676
 -- https://vim.fandom.com/wiki/Search_and_replace
 
 -- custom operators
-map('n', 'sw', '"zyiwg*N"_cgn<C-r>z', { desc = 'Substitute cword (Instance)' })
-map('n', 'sx', 'g*N"_cgn', { desc = 'Delete cword (Instance)' })
+map('n', 'sw', '"zyiwg*``"_cgn<C-r>z', { desc = 'Substitute cword (Instance)' })
+map('n', 'sx', 'g*``"_cgn', { desc = 'Delete cword (Instance)' })
 map('x', 'sw', 'sx<C-r>z', { desc = 'Substitute (Instance)', remap = true })
 map('x', 'sx', '*"_cgn', { desc = 'Delete (Instance)', remap = true })
 map('n', 's/', ':%s/<C-r><C-w>/<C-r><C-w>/gcI<Left><Left><Left><Left>', { desc = 'Substitute cword (Buffer)' })

@@ -21,7 +21,7 @@ notify.setup({
 vim.notify = notify.make_notify()
 
 vim.keymap.set('n', '<leader>nn', function()
-  vim.cmd('tabnew')
+  vim.cmd('split')
   notify.show_history()
   vim.cmd('norm! G')
 end, { desc = 'Notifications History' })
