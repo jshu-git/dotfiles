@@ -12,7 +12,7 @@ gui:
   border: single
   theme:
     inactiveBorderColor:
-      - black
+      - "#4f5258"
 git:
   paging:
     pager: delta --dark --paging=never
