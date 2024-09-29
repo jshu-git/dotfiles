@@ -74,7 +74,7 @@ statusline.setup({
 
       return statusline.combine_groups({
         -- a
-        { hl = mode_hl, strings = { mode } },
+        -- { hl = mode_hl, strings = { mode } },
         -- b
         { hl = 'MiniStatuslineDevinfo', strings = { git, diagnostics } },
         '%<', -- Mark general truncate point
@@ -84,10 +84,11 @@ statusline.setup({
         -- x
         { hl = 'MiniStatuslineFilename', strings = { file_size() } },
         -- y
-        { hl = 'MiniStatuslineFileinfo', strings = { custom_fileinfo } },
+        -- { hl = 'MiniStatuslineFileinfo', strings = { custom_fileinfo } },
         -- z
-        { hl = mode_hl, strings = { progress(), '/', lines } },
-        { hl = 'MiniStatuslineModeReplace', strings = { search } },
+        -- { hl = mode_hl, strings = { progress(), '/', lines } },
+        { hl = 'MiniStatuslineDevinfo', strings = { progress(), '/', lines } },
+        { hl = 'CurSearch', strings = { search } },
       })
     end,
   },
