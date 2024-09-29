@@ -56,7 +56,7 @@ local highlights = {
   MiniIconsYellow = { fg = 'NvimLightYellow' },
   MiniIconsGreen = { fg = 'NvimLightGreen' },
   MiniIconsPurple = { fg = 'NvimLightMagenta' },
-  -- MiniIndentScopeSymbol = { link = 'NonText' },
+  MiniIndentScopeSymbol = { link = 'NonText' },
   MiniFilesTitle = { link = 'FloatBorder' },
 
   -- treesitter
