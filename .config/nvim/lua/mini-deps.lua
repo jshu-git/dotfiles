@@ -24,7 +24,6 @@ vim.keymap.set('n', '<leader>mm', '<cmd>DepsShowLog<cr><cmd>norm! G<cr>', { desc
 vim.keymap.set('n', '<leader>me', function()
   vim.cmd('edit' .. deps.config.path.snapshot)
 end, { desc = 'Snapshot (Open)' })
-vim.keymap.set('n', '<leader>mw', deps.snap_save, { desc = 'Snapshot (Set)' })
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'minideps-confirm' },
   callback = function(event)
@@ -58,11 +57,7 @@ later(function()
   -- lsp
   add({
     source = 'neovim/nvim-lspconfig',
-    depends = {
-      -- 'hrsh7th/cmp-nvim-lsp',
-      'folke/lazydev.nvim',
-      -- 'smjonas/inc-rename.nvim',
-    },
+    depends = { 'folke/lazydev.nvim' },
   })
   add('stevearc/conform.nvim')
   require('plugins.lsp.conform')
@@ -72,32 +67,9 @@ later(function()
   add('windwp/nvim-autopairs')
   require('plugins.cmp.nvim-autopairs')
   require('plugins.cmp.mini-completion')
-  -- add({
-  --   -- source = 'hrsh7th/nvim-cmp',
-  --   -- https://old.reddit.com/r/neovim/comments/1f1rxtx/share_a_tip_to_improve_your_experience_in_nvimcmp/
-  --   source = 'yioneko/nvim-cmp',
-  --   checkout = 'perf',
-  --   depends = {
-  --     'hrsh7th/cmp-nvim-lsp',
-  --     'hrsh7th/cmp-buffer',
-  --     'FelipeLema/cmp-async-path',
-  --     'hrsh7th/cmp-cmdline',
-  --     'onsails/lspkind-nvim',
-  --     'windwp/nvim-autopairs',
-  --   },
-  -- })
-  -- require('plugins.cmp.nvim-cmp')
 
   -- ui
   add('nkakouros-original/scrollofffraction.nvim')
-  -- add('0xAdk/full_visual_line.nvim')
-  -- add('BranimirE/fix-auto-scroll.nvim')
-  -- add('MeanderingProgrammer/render-markdown.nvim')
-  -- add('OXY2DEV/helpview.nvim')
-  -- add('mcauley-penney/visual-whitespace.nvim')
-  -- add('aaron-p1/match-visual.nvim')
-  -- add('utilyre/sentiment.nvim')
-  -- add('sitiom/nvim-numbertoggle')
   vim.cmd('runtime! lua/plugins/ui/*')
 
   -- editing
