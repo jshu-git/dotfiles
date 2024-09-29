@@ -8,5 +8,5 @@ require('mini.indentscope').setup({
     indent_at_cursor = false,
     try_as_border = true,
   },
-  symbol = '▏',
+  symbol = '',
 })
