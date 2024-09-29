@@ -31,8 +31,8 @@ local highlights = {
 
   -- diff
   Changed = { fg = 'NvimLightYellow' },
-  DiffChange = { fg = 'NvimLightGrey1', bg = 'NvimDarkYellow' },
-  DiffText = { fg = 'NvimLightGrey1', bg = 'NvimDarkYellow' },
+  DiffChange = { fg = 'NvimLightYellow' },
+  DiffText = { bg = 'NvimDarkYellow' },
 
   -- floating windows
   NormalFloat = { link = 'Normal' },
@@ -56,9 +56,6 @@ local highlights = {
   MiniIconsYellow = { fg = 'NvimLightYellow' },
   MiniIconsGreen = { fg = 'NvimLightGreen' },
   MiniIconsPurple = { fg = 'NvimLightMagenta' },
-  -- MiniDiffSignAdd = { fg = 'NvimLightGreen' },
-  -- MiniDiffSignChange = { fg = 'NvimLightYellow' },
-  -- MiniDiffSignDelete = { fg = 'NvimDarkRed' },
   MiniIndentScopeSymbol = { link = 'NonText' },
   MiniFilesTitle = { link = 'FloatBorder' },
 

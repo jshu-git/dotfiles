@@ -3,9 +3,9 @@ diff.setup({
   view = {
     style = 'sign',
     signs = {
-      add = '█',
-      change = '█',
-      delete = '█',
+      add = '+',
+      change = '~',
+      delete = '-',
     },
   },
 })
