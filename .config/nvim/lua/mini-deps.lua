@@ -48,12 +48,6 @@ later(function()
   -- add('github/copilot.vim')
   require('plugins.work')
 
-  -- mini
-  require('mini.extra').setup()
-  local misc = require('mini.misc')
-  misc.setup_restore_cursor()
-  vim.keymap.set('n', '<C-w>m', misc.zoom, { desc = 'Toggle Maximize' })
-
   -- treesitter
   add({
     source = 'nvim-treesitter/nvim-treesitter',
