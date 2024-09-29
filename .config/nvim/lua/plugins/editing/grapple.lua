@@ -12,8 +12,8 @@ vim.keymap.set('n', '<Tab>', grapple.toggle_tags)
 vim.keymap.set('n', '<leader>a', function()
   local name = vim.fn.expand('%:t')
   if grapple.exists() then
-    local input = vim.fn.input('Ungrapple ' .. name .. ' (y/n)? ')
-    if input == 'y' then
+    local confirm = vim.fn.confirm('Ungrapple ' .. name .. '?', '&Yes\n&No\n', 1, 'Question')
+    if confirm == 1 then
       vim.notify('[grapple.nvim] Ungrappled')
     else
       vim.defer_fn(function()
