@@ -3,8 +3,8 @@ statusline.setup({
   content = {
     active = function()
       -- a
-      local mode, mode_hl = statusline.section_mode({ trunc_width = 120 })
-      mode = string.upper(mode)
+      -- local mode, mode_hl = statusline.section_mode({ trunc_width = 120 })
+      -- mode = string.upper(mode)
 
       -- b
       local git = statusline.section_git({ trunc_width = 40 })
@@ -36,9 +36,9 @@ statusline.setup({
       end
 
       -- y
-      local fileinfo = statusline.section_fileinfo({ trunc_width = 120 })
+      -- local fileinfo = statusline.section_fileinfo({ trunc_width = 120 })
       -- 󰢱 lua utf-8[unix] 3.96KiB
-      local custom_fileinfo = string.match(fileinfo, '^[^%s]+ [^%s]+')
+      -- local custom_fileinfo = string.match(fileinfo, '^[^%s]+ [^%s]+')
 
       -- z
       local progress = function()
