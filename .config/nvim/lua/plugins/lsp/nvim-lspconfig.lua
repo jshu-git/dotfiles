@@ -72,16 +72,7 @@ local servers = {
       },
     },
   },
-  basedpyright = {
-    settings = {
-      basedpyright = {
-        analysis = {
-          typeCheckingMode = 'off',
-          diagnosticMode = 'openFilesOnly',
-        },
-      },
-    },
-  },
+  basedpyright = {},
   zls = {
     settings = {
       -- https://github.com/zigtools/zls/blob/master/src/Config.zig
@@ -92,8 +83,18 @@ local servers = {
   },
 }
 if vim.env.SSH_CLIENT ~= nil then
-  servers.basedpyright.settings.python = {
-    pythonPath = '/u/jshu/p4/cacl3/test/tools/python/nate/rhel7-3.12/bin/python',
+  servers.basedpyright = {
+    settings = {
+      basedpyright = {
+        analysis = {
+          typeCheckingMode = 'off',
+          diagnosticMode = 'openFilesOnly',
+        },
+      },
+    },
+    python = {
+      pythonPath = '/u/jshu/p4/cacl3/test/tools/python/nate/rhel7-3.12/bin/python',
+    },
   }
 end
 
