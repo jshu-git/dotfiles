@@ -64,9 +64,9 @@ statusline.setup({
       local grapple = require('grapple')
       local grappled = function()
         if grapple.exists() then
-          return ''
+          return ' '
         elseif grapple.exists({ scope = 'global' }) then
-          return ''
+          return ' '
         else
           return ''
         end
@@ -75,6 +75,7 @@ statusline.setup({
       return statusline.combine_groups({
         -- a
         -- { hl = mode_hl, strings = { mode } },
+        { hl = 'MiniStatuslineModeNormal', strings = { grappled() } },
         -- b
         {
           hl = 'MiniStatuslineDevinfo',
@@ -85,10 +86,7 @@ statusline.setup({
         },
         '%<', -- Mark general truncate point
         -- c
-        {
-          hl = 'MiniStatuslineFilename',
-          strings = { grappled(), statusline.section_filename({ trunc_width = 140 }) },
-        },
+        { hl = 'MiniStatuslineFilename', strings = { statusline.section_filename({ trunc_width = 140 }) } },
         '%=', -- End left alignment
         -- x
         { hl = 'MiniStatuslineFilename', strings = { file_size() } },
