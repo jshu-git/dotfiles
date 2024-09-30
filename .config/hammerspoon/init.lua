@@ -13,8 +13,9 @@ hs.hotkey.bind("alt", "r", hs.reload)
 
 -- application switcher
 for key, name in pairs({
-	-- ["1"] = "company.thebrowser.Browser",
-	-- ["2"] = "org.alacritty",
+	-- https://github.com/Hammerspoon/hammerspoon/issues/2256
+	-- ["1"] = "Firefox",
+
 	["1"] = "Arc",
 	["2"] = "Alacritty",
 	["3"] = "Messages",
