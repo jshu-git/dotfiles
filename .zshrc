@@ -146,5 +146,12 @@ if command -v zoxide >/dev/null 2>&1; then
 fi
 
 # zig
-path+=/usr/local/bin/zig
-path+=~/git/zig/zls/zig-out/bin
+if command -v zig >/dev/null 2>&1; then
+	path+=/usr/local/bin/zig
+	path+=~/git/zig/zls/zig-out/bin
+fi
+
+# go
+if command -v go >/dev/null 2>&1; then
+	path+=~/go/bin
+fi
