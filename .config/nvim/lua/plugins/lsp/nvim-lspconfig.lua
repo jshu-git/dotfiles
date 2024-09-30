@@ -72,7 +72,15 @@ local servers = {
       },
     },
   },
-  basedpyright = {},
+  basedpyright = {
+    settings = {
+      basedpyright = {
+        analysis = {
+          typeCheckingMode = 'basic',
+        },
+      },
+    },
+  },
   zls = {
     settings = {
       -- https://github.com/zigtools/zls/blob/master/src/Config.zig
