@@ -7,7 +7,7 @@
 -- #07080d (Dark grey1)
 -- #14161b (Dark grey2) -- Normal bg
 -- #2c2e33 (Dark grey3) -- CursorLine, Pmenu
--- #4f5258 (Dark grey4) -- Visual, NonText, FloatBorder
+-- #4f5258 (Dark grey4) -- Visual, NonText/Whitespace, FloatBorder
 -- #470045 (Dark magenta)
 -- #590008 (Dark red)
 -- #6b5300 (Dark yellow)

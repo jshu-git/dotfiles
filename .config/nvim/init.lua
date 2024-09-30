@@ -2,7 +2,7 @@ if vim.env.SSH_CLIENT ~= nil then
   vim.g.editorconfig = false
 end
 
-vim.loader.enable()
+-- vim.loader.enable()
 -- disable builtin plugins
 vim.g.loaded_2html_plugin = 1
 vim.g.loaded_gzip = 1
@@ -26,7 +26,6 @@ vim.g.loaded_perl_provider = 1
 vim.g.loaded_python3_provider = 1
 vim.g.loaded_ruby_provider = 1
 
--- local safe_require = require('utils').safe_require
 require('config.options')
 require('config.autocommands')
 require('config.keymaps')
