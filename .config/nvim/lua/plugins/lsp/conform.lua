@@ -9,6 +9,7 @@ conform.setup({
     markdown = { 'prettier' },
     yaml = { 'prettier' },
     javascript = { 'prettier' },
+    css = { 'prettier' },
 
     python = { 'ruff_format' },
   },
