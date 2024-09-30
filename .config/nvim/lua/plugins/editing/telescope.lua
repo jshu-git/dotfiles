@@ -32,7 +32,7 @@ telescope.setup({
       preview_cutoff = 1,
       horizontal = { preview_width = 0.5 },
     },
-    borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+    borderchars = require('utils').border,
 
     -- icons
     prompt_prefix = '',
