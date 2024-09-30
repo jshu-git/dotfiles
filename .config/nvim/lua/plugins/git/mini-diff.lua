@@ -13,7 +13,7 @@ diff.setup({
 vim.keymap.set('n', '<leader>gd', diff.toggle_overlay, { desc = 'Toggle Diff' })
 
 -- stage hunk
-vim.keymap.set('n', '<leader>ga', 'gHgh', { desc = 'Stage Hunk', remap = true })
+vim.keymap.set('n', '<leader>ga', 'ghgh', { desc = 'Stage Hunk', remap = true })
 vim.keymap.set('x', '<leader>ga', 'gh', { desc = 'Stage Hunk (Visual)', remap = true })
 
 -- reset hunks
