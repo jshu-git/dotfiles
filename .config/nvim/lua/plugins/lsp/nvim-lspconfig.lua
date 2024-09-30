@@ -77,6 +77,7 @@ local servers = {
       basedpyright = {
         analysis = {
           typeCheckingMode = 'basic',
+          diagnosticMode = 'workspace',
         },
       },
     },
