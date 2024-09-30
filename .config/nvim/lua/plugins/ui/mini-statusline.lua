@@ -7,7 +7,7 @@ statusline.setup({
       -- mode = string.upper(mode)
 
       -- b
-      local git = statusline.section_git({ trunc_width = 40 })
+      -- local git = statusline.section_git({ trunc_width = 40 })
       -- local diff = statusline.section_diff({ trunc_width = 75 })
       -- local custom_diff = function()
       --   return vim.b.minidiff_summary_string or ''
@@ -16,10 +16,10 @@ statusline.setup({
       --   return vim.b.minigit_summary_string and (' ' .. vim.b.minigit_summary_string) or ''
       -- end
 
-      local diagnostics = statusline.section_diagnostics({ trunc_width = 75, icon = '' })
+      -- local diagnostics = statusline.section_diagnostics({ trunc_width = 75, icon = '' })
 
       -- c
-      local filename = statusline.section_filename({ trunc_width = 140 })
+      -- local filename = statusline.section_filename({ trunc_width = 140 })
 
       -- x
       local file_size = function()
@@ -36,9 +36,9 @@ statusline.setup({
       end
 
       -- y
-      -- local fileinfo = statusline.section_fileinfo({ trunc_width = 120 })
+      local fileinfo = statusline.section_fileinfo({ trunc_width = 120 })
       -- 󰢱 lua utf-8[unix] 3.96KiB
-      -- local custom_fileinfo = string.match(fileinfo, '^[^%s]+ [^%s]+')
+      local custom_fileinfo = string.match(fileinfo, '^[^%s]+ [^%s]+')
 
       -- z
       local progress = function()
@@ -76,18 +76,26 @@ statusline.setup({
         -- a
         -- { hl = mode_hl, strings = { mode } },
         -- b
-        { hl = 'MiniStatuslineDevinfo', strings = { git, diagnostics } },
+        {
+          hl = 'MiniStatuslineDevinfo',
+          strings = {
+            statusline.section_git({ trunc_width = 40 }),
+            statusline.section_diagnostics({ trunc_width = 75, icon = '' }),
+          },
+        },
         '%<', -- Mark general truncate point
         -- c
-        { hl = 'MiniStatuslineFilename', strings = { grappled(), filename } },
+        {
+          hl = 'MiniStatuslineFilename',
+          strings = { grappled(), statusline.section_filename({ trunc_width = 140 }) },
+        },
         '%=', -- End left alignment
         -- x
         { hl = 'MiniStatuslineFilename', strings = { file_size() } },
         -- y
-        -- { hl = 'MiniStatuslineFileinfo', strings = { custom_fileinfo } },
+        { hl = 'MiniStatuslineFileinfo', strings = { custom_fileinfo } },
         -- z
-        -- { hl = mode_hl, strings = { progress(), '/', lines } },
-        { hl = 'MiniStatuslineDevinfo', strings = { progress(), '/', lines } },
+        { hl = 'MiniStatuslineModeNormal', strings = { progress(), '/', lines } },
         { hl = 'CurSearch', strings = { search } },
       })
     end,
