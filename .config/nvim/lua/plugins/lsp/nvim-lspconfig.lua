@@ -90,6 +90,7 @@ local servers = {
       zig_exe_path = '/usr/local/bin/zig/zig',
     },
   },
+  gopls = {},
 }
 if vim.env.SSH_CLIENT ~= nil then
   servers.basedpyright = {
