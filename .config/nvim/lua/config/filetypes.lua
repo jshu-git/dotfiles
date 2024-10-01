@@ -5,6 +5,7 @@ vim.filetype.add({
     suite = 'yaml',
     nxsuite = 'yaml',
     thpl = 'perl',
+    thpy = 'python',
   },
   filename = {
     ['.zshrc'] = 'sh',
