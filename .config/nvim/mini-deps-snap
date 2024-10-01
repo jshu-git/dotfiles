@@ -11,7 +11,7 @@ return {
   ["nvim-lspconfig"] = "aa615f62300465eef5115e0b7dfcf6dedc274f5d",
   ["nvim-osc52"] = "04cfaba1865ae5c53b6f887c3ca7304973824fb2",
   ["nvim-treesitter"] = "da61d31a3d51f38a78a739392aabf79e7b2f523f",
-  ["nvim-treesitter-context"] = "17d9c1a6c378f5dc040f4e2e7dc4600434c51d1e",
+  ["nvim-treesitter-context"] = "0dd00bb6423b4c655e6a0f9dd2f5332167bb6d33",
   ["plenary.nvim"] = "2d9b06177a975543726ce5c73fca176cedbffe9d",
   ["quicker.nvim"] = "183041a46d6c908eefb1c23ea02cce9c8f41256e",
   ["scrollofffraction.nvim"] = "0618a3e3e1a4e13a04edf6fd35bfcee4bd5afe38",
