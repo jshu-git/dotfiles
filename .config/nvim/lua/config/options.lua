@@ -8,7 +8,6 @@ vim.o.termguicolors = true
 vim.o.clipboard = 'unnamedplus'
 vim.o.virtualedit = 'block'
 vim.o.startofline = true
-vim.opt.iskeyword:append('-')
 
 -- cmp
 vim.o.pumheight = 5
