@@ -192,7 +192,7 @@ end, { desc = 'LSP: Definition' })
 vim.keymap.set('n', 'gr', function()
   builtin.lsp_references({
     preview = { hide_on_startup = false },
-    include_declaration = false,
+    -- include_declaration = false,
     jump_type = 'never',
     show_line = false,
     trim_text = true,
