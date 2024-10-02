@@ -13,6 +13,12 @@ completion.setup({
   set_vim_settings = false,
 })
 
+-- autopairs
+local autopairs = require('nvim-autopairs')
+autopairs.setup({ map_cr = false })
+
+-- https://github.com/echasnovski/mini.completion/blob/main/doc/mini-completion.txt#L129
+-- https://github.com/windwp/nvim-autopairs/wiki/Completion-plugin
 local keycode = vim.keycode or function(x)
   return vim.api.nvim_replace_termcodes(x, true, true, true)
 end
@@ -21,12 +27,6 @@ local keys = {
   ['ctrl-y'] = keycode('<C-y>'),
   ['ctrl-y_cr'] = keycode('<C-y><CR>'),
 }
-
--- autopairs
-local autopairs = require('nvim-autopairs')
-autopairs.setup({ map_cr = false })
-
--- https://github.com/windwp/nvim-autopairs/wiki/Completion-plugin
 _G.cr_action = function()
   if vim.fn.pumvisible() ~= 0 then
     -- If popup is visible, confirm selected item or add new line otherwise
