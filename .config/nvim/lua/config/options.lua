@@ -15,6 +15,9 @@ vim.o.pumheight = 5
 vim.o.completeopt = 'menu,menuone,noinsert'
 vim.o.infercase = true
 vim.opt.shortmess:append('c')
+if vim.fn.has('nvim-0.11') == 1 then
+  vim.opt.completeopt:append('fuzzy')
+end
 
 -- fold
 vim.o.foldmethod = 'expr'

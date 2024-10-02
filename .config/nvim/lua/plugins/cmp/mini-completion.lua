@@ -1,7 +1,3 @@
-if vim.fn.has('nvim-0.11') == 1 then
-  vim.opt.completeopt:append('fuzzy')
-end
-
 local completion = require('mini.completion')
 completion.setup({
   delay = {
