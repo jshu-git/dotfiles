@@ -63,9 +63,9 @@ statusline.setup({
       local grapple = require('grapple')
       local grappled = function()
         if grapple.exists() then
-          return ' '
+          return '󰐃'
         elseif grapple.exists({ scope = 'global' }) then
-          return ' '
+          return ''
         else
           return ''
         end

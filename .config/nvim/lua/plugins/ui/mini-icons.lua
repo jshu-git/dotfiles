@@ -6,7 +6,7 @@ icons.setup({
     ['minideps-confirm'] = { glyph = '󰄵' },
     ['mininotify-history'] = { glyph = '󰋚' },
     undotree = { glyph = '󰕌' },
-    grapple = { glyph = '' },
+    grapple = { glyph = '󰐃' },
     lspinfo = { glyph = '󰋽' },
   },
 })
