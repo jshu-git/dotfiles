@@ -65,7 +65,6 @@ later(function()
 
   -- cmp
   add('windwp/nvim-autopairs')
-  require('plugins.cmp.nvim-autopairs')
   require('plugins.cmp.mini-completion')
 
   -- ui
