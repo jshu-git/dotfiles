@@ -1,76 +1,68 @@
-local opt = vim.opt
-
 -- misc
-opt.undofile = true
-opt.swapfile = false
-opt.confirm = true
-opt.termguicolors = true
+vim.o.undofile = true
+vim.o.swapfile = false
+vim.o.confirm = true
+vim.o.termguicolors = true
 
 -- editing
-vim.schedule(function()
-  opt.clipboard = 'unnamedplus'
-end)
-opt.virtualedit = 'block'
-opt.startofline = true
+vim.o.clipboard = 'unnamedplus'
+vim.o.virtualedit = 'block'
+vim.o.startofline = true
+vim.opt.iskeyword:append('-')
 
 -- cmp
-opt.pumheight = 5
+vim.o.pumheight = 5
+vim.o.completeopt = 'menu,menuone,noinsert'
+vim.o.infercase = true
+vim.opt.shortmess:append('c')
 
 -- fold
-opt.foldmethod = 'expr'
-opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-opt.foldlevelstart = 99
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.o.foldlevelstart = 99
 
 -- tabs/indents
-opt.smartindent = true
-opt.tabstop = 4
-opt.shiftwidth = 4
+vim.o.smartindent = true
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
 
 -- wrap
-opt.breakindent = true
-opt.linebreak = true
-opt.wrap = false
-opt.showbreak = '↳ '
-opt.sidescrolloff = 8
+vim.o.breakindent = true
+vim.o.linebreak = true
+vim.o.wrap = false
+vim.o.showbreak = '↳ '
+vim.o.sidescrolloff = 8
 
 -- chars
-opt.fillchars:append({
-  diff = '╱',
-  fold = '-',
-  foldsep = ' ',
-})
-opt.list = true
-opt.listchars = {
-  tab = '> ',
-  extends = '…',
-  precedes = '…',
-  nbsp = '␣',
-}
+vim.o.list = true
+vim.o.listchars = 'tab:> ,extends:…,precedes:…,nbsp:␣'
+vim.opt.fillchars:append({ diff = '╱', fold = '-', foldsep = ' ' })
 
 -- statusline
-opt.laststatus = 3
-opt.showmode = false
-opt.showcmd = false
+vim.o.laststatus = 3
+vim.o.showmode = false
+vim.o.showcmd = false
 
 -- statuscolumn
-opt.number = true
-opt.signcolumn = 'yes'
+vim.o.number = true
+vim.o.signcolumn = 'yes'
 
 -- cursorline
-opt.cursorline = true
-opt.cursorlineopt = 'number'
+vim.o.cursorline = true
+vim.o.cursorlineopt = 'number'
 
 -- splits
-opt.splitbelow = true
-opt.splitright = true
-opt.splitkeep = 'screen'
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.splitkeep = 'screen'
 
 -- search
-opt.ignorecase = true
-opt.smartcase = true
-opt.wrapscan = false
-opt.incsearch = false
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.wrapscan = false
+vim.o.incsearch = false
+vim.opt.shortmess:append('S')
 
 -- mouse
-opt.mouse = 'a'
-opt.mousescroll = 'ver:1,hor:0'
+vim.o.mouse = 'a'
+vim.o.mousescroll = 'ver:1,hor:0'

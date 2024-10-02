@@ -1,5 +1,3 @@
-vim.opt.completeopt = 'menu,menuone,noinsert'
-vim.opt.shortmess:append('c')
 if vim.fn.has('nvim-0.11') == 1 then
   vim.opt.completeopt:append('fuzzy')
 end

@@ -53,7 +53,6 @@ statusline.setup({
         end
       end
 
-      vim.opt.shortmess:append({ S = true })
       local search = statusline.section_searchcount({ trunc_width = 75 })
       if search ~= '' then
         search = '󰍉 ' .. search
