@@ -84,6 +84,9 @@ if command -v zellij >/dev/null 2>&1; then
 			zellij -s "$1"
 		fi
 	}
+	function zd() {
+		zellij delete-all-sessions
+	}
 fi
 
 # bat
