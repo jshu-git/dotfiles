@@ -47,20 +47,19 @@ keybinds clear-defaults=true {
         bind "m" { ToggleFocusFullscreen; SwitchToMode "Locked"; }
         bind "X" { CloseFocus; SwitchToMode "Locked"; }
         bind "F" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
-        bind "R" { SwitchToMode "RenamePane"; PaneNameInput 0; }
 
         // tab
-        bind "t"   { NewTab; SwitchToMode "Locked"; }
+        bind "t" { NewTab; SwitchToMode "Locked"; }
         // bind "Tab" { GoToNextTab; }
         // bind "Shift Tab" { GoToPreviousTab; }
         bind "Ctrl n" { GoToNextTab; SwitchToMode "Locked"; }
         bind "Ctrl p" { GoToPreviousTab; SwitchToMode "Locked"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
-        // bind "1" { GoToTab 1; SwitchToMode "Locked"; }
-        // bind "2" { GoToTab 2; SwitchToMode "Locked"; }
-        // bind "3" { GoToTab 3; SwitchToMode "Locked"; }
-        // bind "4" { GoToTab 4; SwitchToMode "Locked"; }
-        // bind "5" { GoToTab 5; SwitchToMode "Locked"; }
+        bind "1" { GoToTab 1; SwitchToMode "Locked"; }
+        bind "2" { GoToTab 2; SwitchToMode "Locked"; }
+        bind "3" { GoToTab 3; SwitchToMode "Locked"; }
+        bind "4" { GoToTab 4; SwitchToMode "Locked"; }
+        bind "5" { GoToTab 5; SwitchToMode "Locked"; }
         bind "Right" { MoveTab "Right"; }
         bind "Left"  { MoveTab "Left";  }
         bind "S" { ToggleActiveSyncTab; SwitchToMode "Locked"; }
