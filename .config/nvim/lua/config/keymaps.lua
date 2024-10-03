@@ -78,10 +78,11 @@ map('x', '*', '"zy/<C-r>z<CR>``')
 -- https://vim.fandom.com/wiki/Search_and_replace
 
 -- custom operators
-map('n', 'sw', '"zyiwg*``"_cgn<C-r>z', { desc = 'Substitute cword (Instance)' })
-map('n', 'sx', 'g*``"_cgn', { desc = 'Delete cword (Instance)' })
-map('x', 'sw', 'sx<C-r>z', { desc = 'Substitute (Instance)', remap = true })
-map('x', 'sx', '*"_cgn', { desc = 'Delete (Instance)', remap = true })
+map('n', 'sw', 'yiwg*``"_cgn', { desc = 'Substitute cword (Instance)' })
+-- map('n', 'sw', '"zyiwg*``"_cgn<C-r>z', { desc = 'Substitute cword (Instance)' })
+-- map('n', 'sx', 'g*``"_cgn', { desc = 'Delete cword (Instance)' })
+-- map('x', 'sw', 'sx<C-r>z', { desc = 'Substitute (Instance)', remap = true })
+-- map('x', 'sx', '*"_cgn', { desc = 'Delete (Instance)', remap = true })
 map('n', 's/', ':%s/<C-r><C-w>/<C-r><C-w>/gcI<Left><Left><Left><Left>', { desc = 'Substitute cword (Buffer)' })
 map('x', 's/', ':s///gcI<Left><Left><Left><Left><Left>', { desc = 'Substitute (In Selection)' })
 
