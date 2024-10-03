@@ -4,7 +4,7 @@
   - terminal multiplexer: [zellij](https://zellij.dev/)
   - editor: [neovim](https://github.com/neovim/neovim)
   - shell: [zsh](https://www.zsh.org/)
-- theme: [Nightfox](https://github.com/EdenEast/nightfox.nvim)
+- theme: [nvim](https://github.com/neovim/neovim/blob/master/src/nvim/highlight_group.c)
 - font: [MesloLGS Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 - dotfile manager: [yadm](https://yadm.io/docs/overview)
 - macapps:
