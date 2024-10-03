@@ -5,7 +5,9 @@ vim.o.confirm = true
 vim.o.termguicolors = true
 
 -- editing
-vim.o.clipboard = 'unnamedplus'
+vim.schedule(function()
+  vim.o.clipboard = 'unnamedplus'
+end)
 vim.o.virtualedit = 'block'
 vim.o.startofline = true
 
