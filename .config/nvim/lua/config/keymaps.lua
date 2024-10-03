@@ -79,6 +79,7 @@ map('x', '*', '"zy/<C-r>z<CR>``')
 
 -- custom operators
 map('n', 'sw', 'yiwg*``"_cgn', { desc = 'Substitute cword (Instance)' })
+map('x', 'sw', 'y/<C-r>0<CR>``_cgn', { desc = 'Substitute (Instance)' })
 -- map('n', 'sw', '"zyiwg*``"_cgn<C-r>z', { desc = 'Substitute cword (Instance)' })
 -- map('n', 'sx', 'g*``"_cgn', { desc = 'Delete cword (Instance)' })
 -- map('x', 'sw', 'sx<C-r>z', { desc = 'Substitute (Instance)', remap = true })
