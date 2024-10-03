@@ -70,8 +70,7 @@ map('n', 'dd', function()
   return vim.api.nvim_get_current_line():match('^%s*$') and '"_dd' or 'dd'
 end, { expr = true })
 -- search
--- map('n', '*', 'g*``')
-map('n', '*', '*``')
+map('n', '*', 'g*``')
 map('n', 'g/', '/\\v', { desc = 'Search (Very Magic)' })
 map('x', '*', '"zy' .. '/<C-r>z<CR>``')
 -- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
