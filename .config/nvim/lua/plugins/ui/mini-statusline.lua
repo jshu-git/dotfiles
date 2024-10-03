@@ -45,11 +45,11 @@ statusline.setup({
         local cur = vim.fn.line('.')
         local total = vim.fn.line('$')
         if cur == 1 then
-          return ' TOP'
+          return 'TOP'
         elseif cur == total then
-          return ' BOT'
+          return 'BOT'
         else
-          return string.format(' %2d%%%%', math.floor(cur / total * 100))
+          return string.format('%2d%%%%', math.floor(cur / total * 100))
         end
       end
 
