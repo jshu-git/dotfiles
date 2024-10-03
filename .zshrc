@@ -1,5 +1,5 @@
 # history
-HISTFILE=~/.zsh_history
+HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 # https://github.com/rothgar/mastering-zsh/blob/master/docs/config/history.md
@@ -151,10 +151,10 @@ fi
 # zig
 if command -v zig >/dev/null 2>&1; then
 	path+=/usr/local/bin/zig
-	path+=~/git/zig/zls/zig-out/bin
+	path+=$HOME/git/zig/zls/zig-out/bin
 fi
 
 # go
 if command -v go >/dev/null 2>&1; then
-	path+=~/go/bin
+	path+=$HOME/go/bin
 fi
