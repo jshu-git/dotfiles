@@ -30,7 +30,7 @@ telescope.setup({
       scroll_speed = 4,
       width = 0.9,
       preview_cutoff = 1,
-      horizontal = { preview_width = 0.5 },
+      horizontal = { preview_width = 0.66 },
     },
     borderchars = require('utils').border,
 
