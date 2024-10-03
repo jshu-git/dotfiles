@@ -18,7 +18,7 @@ layout {
                 tab_sync_indicator       "󰓦 "
                 tab_fullscreen_indicator "󰊓 "
                 tab_floating_indicator   "󰉈 "
-                tab_separator            "   "
+                tab_separator            " "
             }
         }
         children
