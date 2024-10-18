@@ -69,6 +69,7 @@ later(function()
 
   -- ui
   add('nkakouros-original/scrollofffraction.nvim')
+  add('OXY2DEV/helpview.nvim')
   vim.cmd('runtime! lua/plugins/ui/*')
 
   -- editing
