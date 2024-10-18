@@ -76,8 +76,8 @@ local servers = {
     settings = {
       basedpyright = {
         analysis = {
-          typeCheckingMode = 'basic',
-          diagnosticMode = 'workspace',
+          typeCheckingMode = 'off',
+          diagnosticMode = 'openFilesOnly',
         },
       },
     },
@@ -93,18 +93,8 @@ local servers = {
   gopls = {},
 }
 if vim.env.SSH_CLIENT ~= nil then
-  servers.basedpyright = {
-    settings = {
-      basedpyright = {
-        analysis = {
-          typeCheckingMode = 'off',
-          diagnosticMode = 'openFilesOnly',
-        },
-      },
-    },
-    python = {
-      pythonPath = '/u/jshu/p4/cacl3/test/tools/python/nate/rhel7-3.12/bin/python',
-    },
+  servers.basedpyright.settings.python = {
+    pythonPath = '/u/jshu/p4/cacl3/test/tools/python/nate/rhel7-3.12/bin/python',
   }
 end
 
