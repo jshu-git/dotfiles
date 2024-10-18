@@ -69,7 +69,10 @@ later(function()
 
   -- ui
   add('nkakouros-original/scrollofffraction.nvim')
-  add('OXY2DEV/helpview.nvim')
+  add({
+    source = 'OXY2DEV/helpview.nvim',
+    depends = { 'nvim-treesitter/nvim-treesitter' },
+  })
   vim.cmd('runtime! lua/plugins/ui/*')
 
   -- editing
