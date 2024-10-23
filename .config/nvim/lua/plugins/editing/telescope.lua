@@ -21,7 +21,7 @@ telescope.setup({
     scroll_strategy = 'limit',
 
     -- layout
-    layout_strategy = 'vertical',
+    layout_strategy = 'horizontal',
     layout_config = {
       anchor = 'N',
       anchor_padding = 2,
@@ -31,7 +31,6 @@ telescope.setup({
       width = 0.9,
       preview_cutoff = 1,
       horizontal = { preview_width = 0.66 },
-      vertical = { preview_height = 0.5 },
     },
     borderchars = require('utils').border,
 
@@ -68,10 +67,6 @@ telescope.setup({
         ['<C-a>'] = actions.toggle_all,
         ['<C-x>'] = actions.toggle_selection + actions.move_selection_worse,
         ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
-
-        -- layout
-        ['<C-Left>'] = layout.cycle_layout_prev,
-        ['<C-Right>'] = layout.cycle_layout_next,
 
         -- smart scroll
         ['<C-u>'] = function(prompt_bufnr)
