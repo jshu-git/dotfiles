@@ -53,7 +53,7 @@ vim.o.signcolumn = 'yes'
 
 -- cursorline
 vim.o.cursorline = true
-vim.o.cursorlineopt = 'number'
+-- vim.o.cursorlineopt = 'number'
 
 -- splits
 vim.o.splitbelow = true
