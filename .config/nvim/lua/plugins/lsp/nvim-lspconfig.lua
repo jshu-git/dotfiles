@@ -100,11 +100,6 @@ end
 
 -- lspconfig
 local capabilities = vim.lsp.protocol.make_client_capabilities()
--- local capabilities = vim.tbl_deep_extend(
---   'force',
---   vim.lsp.protocol.make_client_capabilities(),
---   require('cmp_nvim_lsp').default_capabilities()
--- )
 local lspconfig = require('lspconfig')
 for server, config in pairs(servers) do
   config.capabilities = capabilities
@@ -127,11 +122,13 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 
 -- delete bad defaults
 if vim.fn.has('nvim-0.11') == 1 then
-  vim.keymap.del('n', 'grr')
-  vim.keymap.del('n', 'grn')
-  vim.keymap.del('n', 'gri')
-  vim.keymap.del({ 'n', 'x' }, 'gra')
-  -- pcall(vim.keymap.del, 'n', 'grr')
-  -- pcall(vim.keymap.del, 'n', 'gra')
-  -- pcall(vim.keymap.del, { 'n', 'x' }, 'grr')
+  -- vim.keymap.del('n', 'grr')
+  -- vim.keymap.del('n', 'grn')
+  -- vim.keymap.del('n', 'gri')
+  -- vim.keymap.del({ 'n', 'x' }, 'gra')
+  pcall(vim.keymap.del, 'n', 'grr')
+  pcall(vim.keymap.del, 'n', 'gra')
+  pcall(vim.keymap.del, 'n', 'gri')
+  pcall(vim.keymap.del, 'n', 'grn')
+  pcall(vim.keymap.del, { 'n', 'x' }, 'grr')
 end
