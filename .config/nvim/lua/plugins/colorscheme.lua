@@ -24,8 +24,6 @@
 -- #fce094 (Light yellow)
 
 local highlights = {
-  CursorLineNr = { fg = 'white' },
-  LineNr = { fg = 'NvimDarkGrey3' },
   QuickFixLine = { link = 'CursorLine' },
   Comment = { fg = 'NvimLightGrey4', italic = true },
 
