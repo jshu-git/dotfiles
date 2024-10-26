@@ -73,6 +73,7 @@ later(function()
     source = 'OXY2DEV/helpview.nvim',
     depends = { 'nvim-treesitter/nvim-treesitter' },
   })
+  add('nvchad/showkeys')
   vim.cmd('runtime! lua/plugins/ui/*')
 
   -- editing
