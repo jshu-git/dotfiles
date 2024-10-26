@@ -43,10 +43,7 @@ telescope.setup({
     -- preview
     dynamic_preview_title = true,
     results_title = false,
-    preview = {
-      filesize_limit = 2,
-      hide_on_startup = true,
-    },
+    preview = { hide_on_startup = true },
 
     -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua#L133
     mappings = {
