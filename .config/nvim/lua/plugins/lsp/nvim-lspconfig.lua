@@ -14,28 +14,9 @@ vim.keymap.set('n', 'gR', vim.lsp.buf.rename, { desc = 'LSP: Rename Variable' })
 
 -- diagnostics
 vim.diagnostic.config({
-  virtual_text = {
-    -- prefix = ' 󰧞',
-    -- prefix = '',
-    -- suffix = ' ',
-    -- virt_text_pos = 'inline',
-    -- virt_text_win_col = 80,
-    update_in_insert = false,
-  },
-  float = {
-    border = 'single',
-  },
-  severity_sort = true,
   signs = false,
-  -- signs = {
-  --   priority = 9999,
-  --   text = {
-  --     [vim.diagnostic.severity.ERROR] = require('utils').signs.Error,
-  --     [vim.diagnostic.severity.WARN] = require('utils').signs.Warn,
-  --     [vim.diagnostic.severity.INFO] = require('utils').signs.Info,
-  --     [vim.diagnostic.severity.HINT] = require('utils').signs.Hint,
-  --   },
-  -- },
+  float = { border = 'single' },
+  severity_sort = true,
 })
 vim.keymap.set('n', '<leader>td', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled(), { bufnr = 0 })
