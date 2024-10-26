@@ -51,10 +51,7 @@ telescope.setup({
         ['<esc>'] = actions.close,
         ['<C-s>'] = actions.select_horizontal,
         ['<C-g>'] = actions.to_fuzzy_refine,
-
-        -- preview
         ['<Tab>'] = layout.toggle_preview,
-        ['<S-Tab>'] = actions.cycle_previewers_next,
 
         -- history
         ['<Down>'] = actions.cycle_history_next,
@@ -62,7 +59,7 @@ telescope.setup({
 
         -- marking
         ['<C-a>'] = actions.toggle_all,
-        ['<C-x>'] = actions.toggle_selection + actions.move_selection_worse,
+        ['<C-x>'] = actions.toggle_selection,
         ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
 
         -- smart scroll
