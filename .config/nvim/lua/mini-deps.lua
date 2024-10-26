@@ -89,7 +89,6 @@ later(function()
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-ui-select.nvim',
       'natecraddock/telescope-zf-native.nvim',
-      'jvgrootveld/telescope-zoxide',
     },
   })
   add('pteroctopus/faster.nvim')
