@@ -14,7 +14,7 @@ multiplier = 1
 [font]
 # normal = { family = "Hack Nerd Font" }
 normal = { family = "MesloLGS Nerd Font" }
-size = 18.0
+size = 16.0
 
 [selection]
 save_to_clipboard = true
