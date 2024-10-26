@@ -92,6 +92,7 @@ later(function()
       'jvgrootveld/telescope-zoxide',
     },
   })
+  add('pteroctopus/faster.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- git
