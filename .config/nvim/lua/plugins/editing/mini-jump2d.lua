@@ -14,7 +14,8 @@ jump2d.setup({
     not_current = false,
   },
   mappings = {
-    start_jumping = 'gw',
+    -- start_jumping = 'gw',
+    start_jumping = '\\',
   },
 })
 
