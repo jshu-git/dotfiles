@@ -1,6 +1,7 @@
 return {
   ["Comment.nvim"] = "e30b7f2008e52442154b66f7c519bfd2f1e32acb",
   ["conform.nvim"] = "278376b953bcab65e2ab9508b5575d1f9a2cbac1",
+  ["faster.nvim"] = "e85c5bdff0cd1e17cbee855ae23c25e7b8e597cb",
   ["gitlinker.nvim"] = "cc59f732f3d043b626c8702cb725c82e54d35c25",
   ["grapple.nvim"] = "b41ddfc1c39f87f3d1799b99c2f0f1daa524c5f7",
   ["guess-indent.nvim"] = "6cd61f7a600bb756e558627cd2e740302c58e32d",
@@ -16,6 +17,7 @@ return {
   ["plenary.nvim"] = "2d9b06177a975543726ce5c73fca176cedbffe9d",
   ["quicker.nvim"] = "11f9eb0c803bb9ced8c6043805de89c62bd04515",
   ["scrollofffraction.nvim"] = "0618a3e3e1a4e13a04edf6fd35bfcee4bd5afe38",
+  showkeys = "b5c031888ac519a231f26f8fba99621ed5120ef4",
   ["telescope-ui-select.nvim"] = "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
   ["telescope-zf-native.nvim"] = "5721be27df11a19b9cd95e6a4887f16f26599802",
   ["telescope-zoxide"] = "54bfe630bad08dc9891ec78c7cf8db38dd725c97",
