@@ -24,5 +24,6 @@ vim.keymap.set('n', '<leader>nn', function()
   vim.cmd('split')
   notify.show_history()
   vim.cmd('norm! G')
+  vim.wo.wrap = true
 end, { desc = 'Notifications History' })
 vim.keymap.set('n', '<leader>nx', notify.clear, { desc = 'Clear Notifications' })
