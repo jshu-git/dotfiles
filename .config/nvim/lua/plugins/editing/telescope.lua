@@ -140,7 +140,7 @@ end, { desc = 'Files (nvim)' })
 vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'Live Grep' })
 vim.keymap.set('n', '<leader>fW', function()
   builtin.live_grep({ prompt_title = 'Live Grep (Relative)', cwd = utils.buffer_dir() })
-end, { desc = 'Grep Live (Relative)' })
+end, { desc = 'Live Grep (Relative)' })
 vim.keymap.set('x', '<leader>fw', function()
   builtin.live_grep({
     default_text = table.concat(vim.fn.getregion(vim.fn.getpos('v'), vim.fn.getpos('.')), '\n'),
