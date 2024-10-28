@@ -16,7 +16,7 @@ for key, name in pairs({
 	-- https://github.com/Hammerspoon/hammerspoon/issues/2256
 	-- ["1"] = "Firefox",
 
-	["1"] = "Google Chrome",
+	["1"] = "Zen Browser",
 	["2"] = "Alacritty",
 	["3"] = "Messages",
 	["b"] = "BambuStudio",
