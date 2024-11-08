@@ -1,5 +1,6 @@
 local showkeys = require('showkeys')
 showkeys.setup({
+  winopts = { row = 0 },
   maxkeys = 5,
   position = 'top-right',
 })
