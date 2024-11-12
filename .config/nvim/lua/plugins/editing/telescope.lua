@@ -136,6 +136,9 @@ vim.keymap.set('n', '<leader>fn', function()
   builtin.find_files({ cwd = vim.fn.stdpath('config') })
 end, { desc = 'Files (nvim)' })
 
+-- buffers
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Buffers' })
+
 -- grep
 vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'Live Grep' })
 vim.keymap.set('n', '<leader>fW', function()
