@@ -44,7 +44,6 @@ later(function()
   -- work
   add('ojroques/nvim-osc52')
   add({ source = 'ruifm/gitlinker.nvim', depends = { 'nvim-lua/plenary.nvim' } })
-  -- add('github/copilot.vim')
   require('plugins.work')
 
   -- treesitter
@@ -92,6 +91,7 @@ later(function()
     },
   })
   add('pteroctopus/faster.nvim')
+  add('zbirenbaum/copilot.lua')
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- git
