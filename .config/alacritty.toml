@@ -3,16 +3,12 @@
 
 [window]
 dynamic_padding = true
-# decorations = "None"
 startup_mode = "Maximized"
 dynamic_title = false
 option_as_alt = "Both"
 
-[scrolling]
-multiplier = 1
-
 [font]
-# normal = { family = "Hack Nerd Font" }
+# normal = { family = "ZedMono Nerd Font" }
 normal = { family = "MesloLGS Nerd Font" }
 size = 16.0
 
@@ -40,7 +36,6 @@ bindings = [
   # https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
   { key = "Return", mods = "Shift", chars = "\u001B[13;2u", mode = "~Search" },
   { key = "Return", mods = "Control", chars = "\u001B[13;5u" },
-  # { key = "Space", mods = "Control", chars = "\u0000" },
 
   # csi keys
   # https://old.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and/
@@ -50,22 +45,9 @@ bindings = [
   # https://www.google.com/search?q=alacritty-extended-keys+github
   # https://www.youtube.com/watch?v=-M7iQKTvTaQ
   # https://github.com/s1n7ax/alacritty-extended-keys
-  # control
   { key = "i", mods = "Control", chars = "\u001b[105;5u" },
-  # { key = "h", mods = "Control", chars = "\u001b[104;5u" },
-  # { key = "j", mods = "Control", chars = "\u001b[106;5u" },
-  # { key = "m", mods = "Control", chars = "\u001b[109;5u" },
-  # control+shift
   { key = "C", mods = "Control|Shift", chars = "\u001b[67;5u" },
-  { key = "G", mods = "Control|Shift", chars = "\u001b[71;5u" },
-
-  # zellij
-  # control-a control-n
-  { key = "Tab", mods = "Control", chars = "\u0001\u000e" },
-  # control-a control-p
-  { key = "Tab", mods = "Control|Shift", chars = "\u0001\u0010" },
 ]
-
 
 # https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/alacritty/NvimDark.toml
 # Colors (NvimDark)
@@ -93,84 +75,3 @@ foreground = '#e0e2ea'
 [colors.selection]
 background = '#4f5258'
 text = '#e0e2ea'
-
-
-# Nightfox Alacritty Colors
-## name: nightfox
-## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox/alacritty.toml
-
-# [colors.primary]
-# background = "#192330"
-# foreground = "#cdcecf"
-# dim_foreground = "#aeafb0"
-# bright_foreground = "#d6d6d7"
-#
-# [colors.cursor]
-# # text = "#cdcecf"
-# cursor = "#aeafb0"
-#
-# [colors.vi_mode_cursor]
-# # text = "#cdcecf"
-# cursor = "#dbc074"
-#
-# [colors.search.matches]
-# foreground = "#cdcecf"
-# background = "#3c5372"
-#
-# [colors.search.focused_match]
-# foreground = "#cdcecf"
-# background = "#81b29a"
-#
-# [colors.footer_bar]
-# foreground = "#cdcecf"
-# background = "#29394f"
-#
-# [colors.hints.start]
-# foreground = "#cdcecf"
-# background = "#f4a261"
-#
-# [colors.hints.end]
-# foreground = "#cdcecf"
-# background = "#29394f"
-#
-# [colors.selection]
-# text = "#cdcecf"
-# background = "#2b3b51"
-#
-# [colors.normal]
-# black = "#393b44"
-# red = "#c94f6d"
-# green = "#81b29a"
-# yellow = "#dbc074"
-# blue = "#719cd6"
-# magenta = "#9d79d6"
-# cyan = "#63cdcf"
-# white = "#dfdfe0"
-#
-# [colors.bright]
-# black = "#575860"
-# red = "#d16983"
-# green = "#8ebaa4"
-# yellow = "#e0c989"
-# blue = "#86abdc"
-# magenta = "#baa1e2"
-# cyan = "#7ad5d6"
-# white = "#e4e4e5"
-#
-# [colors.dim]
-# black = "#30323a"
-# red = "#ab435d"
-# green = "#6e9783"
-# yellow = "#baa363"
-# blue = "#6085b6"
-# magenta = "#8567b6"
-# cyan = "#54aeb0"
-# white = "#bebebe"
-#
-# [[colors.indexed_colors]]
-# index = 16
-# color = "#f4a261"
-#
-# [[colors.indexed_colors]]
-# index = 17
-# color = "#d67ad2"
