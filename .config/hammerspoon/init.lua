@@ -13,14 +13,8 @@ hs.hotkey.bind("alt", "r", hs.reload)
 
 -- application switcher
 for key, name in pairs({
-	-- https://github.com/Hammerspoon/hammerspoon/issues/2256
-	-- ["1"] = "Firefox",
-
-	-- ["1"] = "Google Chrome",
 	["1"] = "Zen Browser",
 	["2"] = "Alacritty",
-	["3"] = "Messages",
-	["b"] = "BambuStudio",
 }) do
 	hs.hotkey.bind("alt", key, function()
 		-- hs.application.launchOrFocusByBundleID(name)
