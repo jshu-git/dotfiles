@@ -120,29 +120,30 @@ keybinds clear-defaults=true {
 }
 
 plugins {
-    tab-bar         { path "tab-bar";         }
-    status-bar      { path "status-bar";      }
-    compact-bar     { path "compact-bar";     }
+    tab-bar         { path "tab-bar"; }
+    status-bar      { path "status-bar"; }
+    compact-bar     { path "compact-bar"; }
     session-manager { path "session-manager"; }
     zjstatus        { location "file:.config/zellij/plugins/zjstatus.wasm"; }
 }
 pane_frames false
+serialize_pane_viewport true
 themes {
-    nightfox {
-        bg "#2b3b51"
-        fg "#cdcecf"
-        red "#c94f6d"
-        green "#81b29a"
-        blue "#719cd6"
-        yellow "#dbc074"
-        magenta "#9d79d6"
+    nvim-dark {
+        bg "#14161b"
+        fg "#e0e2ea"
+        red "#ffc0b9"
+        green "#b3f6c0"
+        blue "#a6dbff"
+        yellow "#fce094"
+        magenta "#ffcaff"
         orange "#f4a261"
-        cyan "#63cdcf"
-        black "#29394f"
-        white "#aeafb0"
+        cyan "#8cf8f7"
+        black "#07080d"
+        white "#eef1f8"
   }
 }
-theme "nightfox"
+theme "nvim-dark"
 default_layout "custom"
 default_mode "locked"
 layout_dir ".config/zellij/layouts/"
