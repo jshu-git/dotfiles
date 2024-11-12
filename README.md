@@ -12,6 +12,8 @@
   - [Alfred](https://www.alfredapp.com/)
   - [AppCleaner](https://freemacsoft.net/appcleaner/)
   - [BatFi](https://github.com/rurza/BatFi)
+  - [BetterDisplay](https://github.com/waydabber/BetterDisplay)
+  - [Cork](https://github.com/buresdv/Cork)
   - [Hammerspoon](https://www.hammerspoon.org/)
   - [Ice](https://github.com/jordanbaird/Ice)
   - [MiddleClick](https://github.com/artginzburg/MiddleClick-Sonoma)
