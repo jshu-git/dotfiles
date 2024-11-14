@@ -1,6 +1,7 @@
 return {
   ["Comment.nvim"] = "e30b7f2008e52442154b66f7c519bfd2f1e32acb",
   ["conform.nvim"] = "1a7ff54dcfbe1af139b11829c6d58f5ffab87707",
+  ["copilot.lua"] = "f8d8d872bb319f640d5177dad5fbf01f7a16d7d0",
   ["faster.nvim"] = "ee58dbb46e5d16b72cdfd0cd246a3b1a33ec2487",
   ["gitlinker.nvim"] = "cc59f732f3d043b626c8702cb725c82e54d35c25",
   ["grapple.nvim"] = "b41ddfc1c39f87f3d1799b99c2f0f1daa524c5f7",

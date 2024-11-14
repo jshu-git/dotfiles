@@ -113,10 +113,6 @@ keybinds clear-defaults=true {
         bind "Esc" { UndoRenameTab; SwitchToMode "Locked"; }
         bind "Enter" { SwitchToMode "Locked"; }
     }
-    renamepane {
-        bind "Esc" { UndoRenamePane; SwitchToMode "Locked"; }
-        bind "Enter" { SwitchToMode "Locked"; }
-    }
 }
 
 plugins {
