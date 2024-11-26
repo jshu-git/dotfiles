@@ -7,21 +7,25 @@ require('lazydev').setup({
 })
 
 -- lsp
-vim.keymap.set('n', 'gs', vim.lsp.buf.hover, { desc = 'LSP: Hover' })
-vim.keymap.set('n', 'gS', vim.lsp.buf.signature_help, { desc = 'LSP: Signature Help' })
+vim.keymap.set('n', 'gs', function()
+  vim.lsp.buf.hover({ border = 'single' })
+end, { desc = 'LSP: Hover' })
+vim.keymap.set('n', 'gS', function()
+  vim.lsp.buf.signature_help({ border = 'single' })
+end, { desc = 'LSP: Signature Help' })
 vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { desc = 'LSP: Code Action' })
 vim.keymap.set('n', 'gR', vim.lsp.buf.rename, { desc = 'LSP: Rename Variable' })
 
 -- diagnostics
 vim.diagnostic.config({
-  signs = false,
+  signs = { priority = 200 },
   float = { border = 'single' },
   severity_sort = true,
 })
 vim.keymap.set('n', '<leader>td', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled(), { bufnr = 0 })
 end, { desc = 'LSP: Toggle Diagnostics' })
-vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'LSP: Hover Diagnostic' })
+vim.keymap.set('n', 'gD', vim.diagnostic.open_float, { desc = 'LSP: Hover Diagnostic' })
 vim.keymap.set('n', '[d', vim.diagnostic.get_next, { desc = 'LSP: Previous Diagnostic' })
 vim.keymap.set('n', ']d', vim.diagnostic.get_prev, { desc = 'LSP: Next Diagnostic' })
 
@@ -92,14 +96,6 @@ require('lspconfig.ui.windows').default_options = { border = 'single' }
 vim.keymap.set('n', '<leader>li', '<cmd>LspInfo<CR>', { desc = 'Info' })
 vim.keymap.set('n', '<leader>lr', '<cmd>LspRestart<CR>', { desc = 'Restart' })
 vim.keymap.set('n', '<leader>ll', '<cmd>LspLog<CR><cmd>norm! G<cr>', { desc = 'Log' })
-
--- ui
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = 'single',
-})
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-  border = 'single',
-})
 
 -- delete bad defaults
 if vim.fn.has('nvim-0.11') == 1 then
