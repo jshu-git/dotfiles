@@ -59,7 +59,6 @@ clue.setup({
     { mode = 'n', keys = '<leader>t', desc = 'Toggle…' },
     { mode = 'n', keys = '<leader>g', desc = 'Git…' },
     { mode = 'x', keys = '<leader>g', desc = 'Git…' },
-    { mode = 'n', keys = '<leader>S', desc = 'Session…' },
     { mode = 'n', keys = '<leader>n', desc = 'Notifications…' },
     { mode = 'n', keys = '<leader>m', desc = 'mini.deps…' },
     { mode = 'n', keys = '<leader>l', desc = 'LSP…' },
