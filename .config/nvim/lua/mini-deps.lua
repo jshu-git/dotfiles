@@ -73,6 +73,7 @@ later(function()
   })
   add('nvchad/showkeys')
   add('utilyre/sentiment.nvim')
+  add('sphamba/smear-cursor.nvim')
   vim.cmd('runtime! lua/plugins/ui/*')
 
   -- editing
