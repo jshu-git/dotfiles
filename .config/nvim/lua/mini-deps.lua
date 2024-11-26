@@ -72,6 +72,7 @@ later(function()
     depends = { 'nvim-treesitter/nvim-treesitter' },
   })
   add('nvchad/showkeys')
+  add('utilyre/sentiment.nvim')
   vim.cmd('runtime! lua/plugins/ui/*')
 
   -- editing
@@ -90,7 +91,7 @@ later(function()
     },
   })
   add('pteroctopus/faster.nvim')
-  add('zbirenbaum/copilot.lua')
+  add('andrewferrier/debugprint.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- git
