@@ -44,3 +44,14 @@ vim.keymap.set('n', '<leader>A', function()
   end
   vim.cmd('redrawstatus')
 end, { desc = 'Grapple (Global)' })
+
+-- telescope
+vim.keymap.set('n', '<leader>fg', '<cmd>Telescope grapple tags<cr>')
+vim.keymap.set('n', '<leader>fG', function()
+  local results = {}
+  ---@diagnostic disable-next-line: param-type-mismatch
+  for _, tag in ipairs(grapple.tags()) do
+    table.insert(results, tag.path)
+  end
+  require('telescope.builtin').live_grep({ search_dirs = results })
+end)
