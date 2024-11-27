@@ -46,7 +46,7 @@ vim.keymap.set('n', '<leader>A', function()
 end, { desc = 'Grapple (Global)' })
 
 -- telescope
-vim.keymap.set('n', '<leader>fg', '<cmd>Telescope grapple tags<cr>')
+vim.keymap.set('n', '<leader>fg', '<cmd>Telescope grapple tags<cr>', { desc = 'Files (Grapple)' })
 vim.keymap.set('n', '<leader>fG', function()
   local results = {}
   ---@diagnostic disable-next-line: param-type-mismatch
@@ -54,4 +54,4 @@ vim.keymap.set('n', '<leader>fG', function()
     table.insert(results, tag.path)
   end
   require('telescope.builtin').live_grep({ search_dirs = results })
-end)
+end, { desc = 'Live Grep (Grapple)' })
