@@ -21,8 +21,17 @@ require('debugprint').setup({
       variable_above = 'gL',
     },
   },
-  move_to_debugline = true,
   display_counter = false,
   display_snippet = false,
+  move_to_debugline = true,
   print_tag = '[JSHU DEBUGGING]',
+  filetypes = {
+    -- work
+    ['perl'] = {
+      left = '$log_global->log("',
+      right = '',
+      mid_var = '" .. Dumper($',
+      right_var = ');',
+    },
+  },
 })
