@@ -1,9 +1,15 @@
 # https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#configuration-file
 --hidden
 --smart-case
-# files
-# --glob
-# !{lazy-lock.json,.DS_Store}
-# dirs
 --glob
-!{**/.git/*, **/fzf/plugins/*, **/zsh/plugins/*, **/zsh/completions/*, **/zellij/plugins/*, **/hammerspoon/Spoons/*}
+!.git
+--glob
+!fzf/plugins
+--glob
+!zsh/plugins
+--glob
+!zsh/completions
+--glob
+!zellij/plugins
+--glob
+!hammerspoon/Spoons
