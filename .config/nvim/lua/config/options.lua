@@ -41,6 +41,7 @@ vim.o.sidescrolloff = 8
 vim.o.list = true
 vim.opt.listchars:append({
   tab = '> ',
+  trail = ' ',
   extends = '…',
   precedes = '…',
   nbsp = '␣',
