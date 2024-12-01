@@ -39,8 +39,19 @@ vim.o.sidescrolloff = 8
 
 -- chars
 vim.o.list = true
-vim.o.listchars = 'tab:> ,extends:…,precedes:…,nbsp:␣'
-vim.opt.fillchars:append({ diff = '╱', fold = '-', foldsep = ' ' })
+vim.opt.listchars:append({
+  tab = '> ',
+  extends = '…',
+  precedes = '…',
+  nbsp = '␣',
+})
+vim.opt.fillchars:append({
+  diff = '╱',
+  fold = ' ',
+  foldsep = ' ',
+  foldopen = '',
+  foldclose = '',
+})
 
 -- statusline
 vim.o.laststatus = 3
