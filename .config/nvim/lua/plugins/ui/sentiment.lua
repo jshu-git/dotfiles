@@ -1,1 +1,6 @@
-require('sentiment').setup({ delay = 0 })
+require('sentiment').setup({
+  excluded_filetypes = {
+    help = false,
+  },
+  delay = 0,
+})

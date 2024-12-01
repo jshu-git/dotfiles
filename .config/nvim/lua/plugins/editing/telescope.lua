@@ -88,7 +88,7 @@ telescope.setup({
       follow = true,
       hidden = true,
     },
-    live_grep = { disable_coordinates = true },
+    -- live_grep = { disable_coordinates = true },
     command_history = {
       mappings = { i = { ['<CR>'] = actions.edit_command_line } },
       sorting_strategy = 'descending',
