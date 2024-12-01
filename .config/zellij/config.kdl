@@ -9,10 +9,21 @@ keybinds clear-defaults=true {
         bind "Ctrl f" { ToggleFloatingPanes; }
         bind "Ctrl Tab" { GoToNextTab; SwitchToMode "Locked"; }
         bind "Ctrl Shift Tab" { GoToPreviousTab; SwitchToMode "Locked"; }
+
+        // lazygit
+        bind "`" {
+            // https://github.com/zellij-org/zellij/discussions/2518
+            // ~/.config/zsh/scripts/zellij-lazygit
+            Run "zellij" "run" "--close-on-exit" "--floating" "--" "zellij-lazygit" {
+                close_on_exit true
+            }
+            SwitchToMode "Locked"
+        }
     }
     normal {
-        bind "Ctrl a" { Write 1; SwitchToMode "Locked"; }
-        bind "Ctrl f" { Write 6; SwitchToMode "Locked"; }
+        bind "Ctrl a" { Write 1;  SwitchToMode "Locked"; }
+        bind "Ctrl f" { Write 6;  SwitchToMode "Locked"; }
+        bind "`"      { Write 96; SwitchToMode "Locked"; }
 
         // lock
         bind "Esc" "Enter" { SwitchToMode "Locked"; }
@@ -20,16 +31,6 @@ keybinds clear-defaults=true {
         // add floating pane
         bind "f" {
             Run "zellij" "action" "new-pane" "--floating" {
-                close_on_exit true
-            }
-            SwitchToMode "Locked"
-        }
-
-        // lazygit
-        bind "a" {
-            // https://github.com/zellij-org/zellij/discussions/2518
-            // ~/.config/zsh/scripts/zellij-lazygit
-            Run "zellij" "run" "--close-on-exit" "--floating" "--" "zellij-lazygit" {
                 close_on_exit true
             }
             SwitchToMode "Locked"
