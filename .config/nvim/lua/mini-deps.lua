@@ -74,6 +74,7 @@ later(function()
   add('nvchad/showkeys')
   add('utilyre/sentiment.nvim')
   add('sphamba/smear-cursor.nvim')
+  add('TaDaa/vimade')
   vim.cmd('runtime! lua/plugins/ui/*')
 
   -- editing
