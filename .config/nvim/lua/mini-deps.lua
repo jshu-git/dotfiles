@@ -93,6 +93,7 @@ later(function()
   })
   add('pteroctopus/faster.nvim')
   add('andrewferrier/debugprint.nvim')
+  add('MagicDuck/grug-far.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- git
