@@ -5,6 +5,7 @@ return {
   ["faster.nvim"] = "ee58dbb46e5d16b72cdfd0cd246a3b1a33ec2487",
   ["gitlinker.nvim"] = "cc59f732f3d043b626c8702cb725c82e54d35c25",
   ["grapple.nvim"] = "b41ddfc1c39f87f3d1799b99c2f0f1daa524c5f7",
+  ["grug-far.nvim"] = "9a2f78219390b47d67795ab09390d7f092e23976",
   ["guess-indent.nvim"] = "6cd61f7a600bb756e558627cd2e740302c58e32d",
   ["helpview.nvim"] = "857aec1dab331252910da158ab6cbfbc65239c71",
   ["icon-picker.nvim"] = "3ee9a0ea9feeef08ae35e40c8be6a2fa2c20f2d3",
@@ -18,11 +19,11 @@ return {
   ["plenary.nvim"] = "2d9b06177a975543726ce5c73fca176cedbffe9d",
   ["quicker.nvim"] = "049d66534d3de5920663ee1b8dd0096d70f55a67",
   ["scrollofffraction.nvim"] = "0618a3e3e1a4e13a04edf6fd35bfcee4bd5afe38",
-  ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
   showkeys = "3c62fd88e685fd08f0f2724e1c0856d77dd0d552",
   ["smear-cursor.nvim"] = "78c42170f9326fb70d09aff2184c81189eddf144",
   ["telescope-ui-select.nvim"] = "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
   ["telescope-zf-native.nvim"] = "5721be27df11a19b9cd95e6a4887f16f26599802",
   ["telescope.nvim"] = "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc",
-  undotree = "78b5241191852ffa9bb5da5ff2ee033160798c3b"
+  undotree = "78b5241191852ffa9bb5da5ff2ee033160798c3b",
+  vimade = "3877d2a4b82bac7e7ea5e753e2187d491cb4e812"
 }

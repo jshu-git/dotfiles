@@ -72,7 +72,6 @@ later(function()
     depends = { 'nvim-treesitter/nvim-treesitter' },
   })
   add('nvchad/showkeys')
-  add('utilyre/sentiment.nvim')
   add('sphamba/smear-cursor.nvim')
   add('TaDaa/vimade')
   vim.cmd('runtime! lua/plugins/ui/*')
