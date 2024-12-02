@@ -1,4 +1,6 @@
 .git
+.venv
+
 fzf/plugins
 zsh/plugins
 zsh/completions

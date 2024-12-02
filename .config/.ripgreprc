@@ -1,8 +1,11 @@
 # https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#configuration-file
 --hidden
 --smart-case
+
 --glob
 !.git
+--glob
+!.venv
 --glob
 !fzf/plugins
 --glob
