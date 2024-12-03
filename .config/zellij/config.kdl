@@ -13,7 +13,6 @@ keybinds clear-defaults=true {
     normal {
         bind "Ctrl a" { Write 1;  SwitchToMode "Locked"; }
         bind "Ctrl f" { Write 6;  SwitchToMode "Locked"; }
-        bind "`"      { Write 96; SwitchToMode "Locked"; }
 
         // lock
         bind "Esc" "Enter" { SwitchToMode "Locked"; }
