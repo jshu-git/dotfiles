@@ -4,7 +4,7 @@ require('debugprint').setup({
       plain_below = nil,
       plain_above = nil,
       variable_below = 'gl',
-      variable_above = 'gL',
+      variable_above = nil,
       variable_below_alwaysprompt = nil,
       variable_above_alwaysprompt = nil,
       textobj_below = 'g?o',
@@ -18,7 +18,7 @@ require('debugprint').setup({
     },
     visual = {
       variable_below = 'gl',
-      variable_above = 'gL',
+      variable_above = nil,
     },
   },
   display_counter = false,
