@@ -1,11 +1,11 @@
 return {
   ["Comment.nvim"] = "e30b7f2008e52442154b66f7c519bfd2f1e32acb",
-  ["conform.nvim"] = "a203480a350b03092e473bf3001733d547160a73",
+  ["conform.nvim"] = "02fd64fb3d4b18ec029c0e0683c3dc3ec6d2c5b8",
   ["debugprint.nvim"] = "9d1d703edd8bd6550174dd21d9ecdddc98065758",
   ["faster.nvim"] = "ee58dbb46e5d16b72cdfd0cd246a3b1a33ec2487",
   ["gitlinker.nvim"] = "cc59f732f3d043b626c8702cb725c82e54d35c25",
   ["grapple.nvim"] = "b41ddfc1c39f87f3d1799b99c2f0f1daa524c5f7",
-  ["grug-far.nvim"] = "9a2f78219390b47d67795ab09390d7f092e23976",
+  ["grug-far.nvim"] = "6a293a68365cff235faad3dd3851c36c829be13e",
   ["guess-indent.nvim"] = "6cd61f7a600bb756e558627cd2e740302c58e32d",
   ["helpview.nvim"] = "857aec1dab331252910da158ab6cbfbc65239c71",
   ["icon-picker.nvim"] = "3ee9a0ea9feeef08ae35e40c8be6a2fa2c20f2d3",
@@ -14,16 +14,16 @@ return {
   ["nvim-autopairs"] = "b464658e9b880f463b9f7e6ccddd93fb0013f559",
   ["nvim-lspconfig"] = "1aa9f36b6d542dafc0b4a38c48969d036003b00a",
   ["nvim-osc52"] = "04cfaba1865ae5c53b6f887c3ca7304973824fb2",
-  ["nvim-treesitter"] = "69170c93149ddb71a22bd954514806395c430c02",
+  ["nvim-treesitter"] = "b31188671d8a060022dbbeb6905019e69e310108",
   ["nvim-treesitter-context"] = "920999bf53daa63ddf12efdeb5137a7cea1cc201",
   ["plenary.nvim"] = "2d9b06177a975543726ce5c73fca176cedbffe9d",
   ["quicker.nvim"] = "049d66534d3de5920663ee1b8dd0096d70f55a67",
   ["scrollofffraction.nvim"] = "0618a3e3e1a4e13a04edf6fd35bfcee4bd5afe38",
   showkeys = "3c62fd88e685fd08f0f2724e1c0856d77dd0d552",
-  ["smear-cursor.nvim"] = "4417c543687475c19f8a85e2f2f0bf0483a0cfaf",
+  ["smear-cursor.nvim"] = "29a2c0e2f9ab95a97275f9c1adf39f3e77080282",
   ["telescope-ui-select.nvim"] = "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
   ["telescope-zf-native.nvim"] = "5721be27df11a19b9cd95e6a4887f16f26599802",
   ["telescope.nvim"] = "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc",
   undotree = "78b5241191852ffa9bb5da5ff2ee033160798c3b",
-  vimade = "364452635fc4f358824d5fcfa5476e6795bb47ea"
+  vimade = "f5291e1425b773e30db76bd050bc3b7543acf958"
 }
