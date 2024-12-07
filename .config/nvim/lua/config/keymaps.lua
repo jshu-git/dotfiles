@@ -57,6 +57,9 @@ map('n', '=', '<C-a>')
 map('n', '-', '<C-x>')
 map('n', 'X', 'mzA<BS><Esc>`z')
 map('n', 'M', '%', { remap = true })
+map('n', 'y<C-c>', 'yygccp', { remap = true })
+
+-- visual
 map('x', '<CR>', '"_c')
 map('x', '<C-q>', 'j')
 map('x', 'I', function()
