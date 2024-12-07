@@ -59,6 +59,12 @@ map('n', 'X', 'mzA<BS><Esc>`z')
 map('n', 'M', '%', { remap = true })
 map('x', '<CR>', '"_c')
 map('x', '<C-q>', 'j')
+map('x', 'I', function()
+  return vim.fn.mode() == 'V' and '0<C-v>I' or 'I'
+end, { expr = true })
+map('x', 'A', function()
+  return vim.fn.mode() == 'V' and '$<C-v>A' or 'A'
+end, { expr = true })
 -- map('x', '/', '<esc>/\\%V')
 -- map('x', 'v', 'iw')
 
@@ -69,23 +75,22 @@ map({ 'n', 'x' }, 'C', '"_C')
 map('n', 'dd', function()
   return vim.api.nvim_get_current_line():match('^%s*$') and '"_dd' or 'dd'
 end, { expr = true })
+
 -- search
 map('n', '*', 'g*``')
-map('n', 'g/', '/\\v', { desc = 'Search (Very Magic)' })
+-- map('n', 'g/', '/\\v', { desc = 'Search (Very Magic)' })
 map('x', '*', '"zy' .. '/<C-r>z<CR>``')
+
+-- custom operators
 -- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
 -- https://github.com/neovim/neovim/issues/21676
 -- https://vim.fandom.com/wiki/Search_and_replace
-
--- custom operators
 map('n', 'sw', 'yiw' .. 'g*``' .. '"_cgn', { desc = 'Substitute cword (Instance)' })
 map('n', 'sx', '*``' .. '"_dgn', { desc = 'Delete cword (Instance)' })
 map('x', 'sw', 'y' .. '/<C-r>0<CR>``' .. '_cgn', { desc = 'Substitute (Instance)' })
 map('x', 'sx', '*' .. '"_dgn', { desc = 'Delete (Instance)', remap = true })
--- map('n', 'sw', '"zyiwg*``"_cgn<C-r>z', { desc = 'Substitute cword (Instance)' })
--- map('x', 'sw', 'sx<C-r>z', { desc = 'Substitute (Instance)', remap = true })
 -- map('n', 's/', ':%s/<C-r><C-w>/<C-r><C-w>/gcI<Left><Left><Left><Left>', { desc = 'Substitute cword (Buffer)' })
--- map('x', 's/', ':s///gcI<Left><Left><Left><Left><Left>', { desc = 'Substitute (In Selection)' })
+map('x', 's/', ':s///gcI<Left><Left><Left><Left><Left>', { desc = 'Substitute (In Selection)' })
 
 -- yanking
 map('n', 'yp', function()
