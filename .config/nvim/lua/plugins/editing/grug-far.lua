@@ -61,7 +61,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>R', function()
 end, { desc = 'Replace cword (Relative)' })
 
 -- replace cword (buffer)
-vim.keymap.set({ 'n', 'x' }, '<leader>*', function()
+vim.keymap.set({ 'n', 'x' }, 's*', function()
   grug.open({
     startCursorRow = 3,
     prefills = {

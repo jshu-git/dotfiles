@@ -3,7 +3,7 @@ operators.setup({
   evaluate = { prefix = 'se' },
   exchange = { prefix = '' },
   multiply = { prefix = 'sm' },
-  replace = { prefix = '' }, -- using substitute.nvim for highlight
+  replace = { prefix = '' },
   sort = { prefix = 'so' },
 })
 
