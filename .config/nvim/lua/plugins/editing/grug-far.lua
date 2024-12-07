@@ -1,12 +1,12 @@
 local grug = require('grug-far')
 grug.setup({
   debounceMs = 100,
-  windowCreationCommand = '60vsplit',
+  -- windowCreationCommand = '60vsplit',
   helpLine = {
     -- whether to show the help line at the top of the buffer
     enabled = false,
   },
-  -- wrap = false,
+  wrap = false,
   transient = true,
   keymaps = {
     replace = '',
