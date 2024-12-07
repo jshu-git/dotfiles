@@ -40,7 +40,7 @@ map({ 'n', 'x', 'o' }, 'E', 'g$')
 map({ 'n', 'x', 'o' }, '0', function()
   local line = vim.fn.getline('.')
   local col = vim.fn.col('.') - 1
-  return line:sub(1, col):match('^%s+$') and 'g0' or 'g^'
+  return line:sub(1, col):match('^%s+$') and '0' or '^'
 end, { expr = true })
 
 -- editing
