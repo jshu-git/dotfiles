@@ -20,7 +20,7 @@ notify.setup({
 })
 vim.notify = notify.make_notify()
 
-vim.keymap.set('n', '<leader>nn', function()
+vim.keymap.set('n', '<leader>nN', function()
   vim.cmd('split')
   notify.show_history()
   vim.cmd('norm! G')
