@@ -25,7 +25,7 @@ vim.diagnostic.config({
 vim.keymap.set('n', '<leader>td', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled(), { bufnr = 0 })
 end, { desc = 'LSP: Toggle Diagnostics' })
-vim.keymap.set('n', 'gD', vim.diagnostic.open_float, { desc = 'LSP: Hover Diagnostic' })
+vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'LSP: Hover Diagnostic' })
 vim.keymap.set('n', '[d', function()
   vim.diagnostic.get_next({ wrap = false })
 end, { desc = 'LSP: Previous Diagnostic' })
