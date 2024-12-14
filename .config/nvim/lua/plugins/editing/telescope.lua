@@ -25,10 +25,10 @@ telescope.setup({
     layout_config = {
       anchor = 'N',
       anchor_padding = 1,
-      height = 0.98,
+      height = 0.96,
       prompt_position = 'top',
       scroll_speed = 4,
-      width = 0.94,
+      width = 0.9,
       preview_cutoff = 1,
       horizontal = { preview_width = 0.66 },
     },
