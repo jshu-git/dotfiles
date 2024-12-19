@@ -19,7 +19,6 @@ return {
   ["plenary.nvim"] = "2d9b06177a975543726ce5c73fca176cedbffe9d",
   ["quicker.nvim"] = "049d66534d3de5920663ee1b8dd0096d70f55a67",
   ["scrollofffraction.nvim"] = "0618a3e3e1a4e13a04edf6fd35bfcee4bd5afe38",
-  ["smear-cursor.nvim"] = "05b3beeee9ffa50caf486f00a7bec83292efd594",
   ["telescope-ui-select.nvim"] = "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
   ["telescope-zf-native.nvim"] = "5721be27df11a19b9cd95e6a4887f16f26599802",
   ["telescope.nvim"] = "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc",

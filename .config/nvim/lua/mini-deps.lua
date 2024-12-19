@@ -71,7 +71,6 @@ later(function()
     source = 'OXY2DEV/helpview.nvim',
     depends = { 'nvim-treesitter/nvim-treesitter' },
   })
-  add('sphamba/smear-cursor.nvim')
   add('TaDaa/vimade')
   vim.cmd('runtime! lua/plugins/ui/*')
 
