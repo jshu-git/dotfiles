@@ -66,6 +66,9 @@ local highlights = {
   TelescopeMatching = { link = 'Search' },
   TelescopeMultiSelection = { link = 'Search' },
   TelescopeSelection = { link = 'CursorLine' },
+
+  -- sentiment
+  MatchParen = { link = 'Underlined' },
 }
 
 for group, hl in pairs(highlights) do
