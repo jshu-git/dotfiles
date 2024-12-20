@@ -1,6 +1,11 @@
 local grug = require('grug-far')
 grug.setup({
   debounceMs = 250,
+  engines = {
+    ripgrep = {
+      placeholders = { enabled = false },
+    },
+  },
   -- windowCreationCommand = '60vsplit',
   helpLine = {
     -- whether to show the help line at the top of the buffer
