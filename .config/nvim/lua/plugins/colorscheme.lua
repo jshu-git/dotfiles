@@ -1,3 +1,30 @@
+vim.api.nvim_create_autocmd('ColorScheme', {
+  callback = function()
+    local highlights = {
+      -- floating windows
+      FloatTitle = { link = 'NightflyWhite' },
+
+      -- cmp
+      PmenuMatch = { link = 'NightflyOrange' },
+
+      -- mini
+      MiniIndentScopeSymbol = { link = 'Whitespace' },
+      MiniFilesTitle = { link = 'FloatBorder' },
+      MiniFilesTitleFocused = { link = 'FloatTitle' },
+    }
+
+    for group, hl in pairs(highlights) do
+      vim.api.nvim_set_hl(0, group, hl)
+    end
+  end,
+})
+vim.g.nightflyNormalFloat = true
+vim.g.nightflyUnderlineMatchParen = true
+vim.g.nightflyVirtualTextColor = true
+vim.g.nightflyWinSeparator = 2
+
+-- nvim-dark
+--[[
 -- https://old.reddit.com/r/neovim/comments/1bcsa1b/new_default_colorscheme_palette/
 -- https://github.com/neovim/neovim/blob/master/src/nvim/highlight_group.c#L2918
 
@@ -73,4 +100,4 @@ local highlights = {
 
 for group, hl in pairs(highlights) do
   vim.api.nvim_set_hl(0, group, hl)
-end
+end ]]

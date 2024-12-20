@@ -138,8 +138,21 @@ themes {
         black "#07080d"
         white "#eef1f8"
   }
+  nightfly {
+        bg "#011627"
+        fg "#bdc1c6"
+        black "#092236"
+        red "#ff5874"
+        green "#a1cd5e"
+        yellow "#e3d18a"
+        blue "#82aaff"
+        magenta "#c792ea"
+        cyan "#7fdbca"
+        white "#a1aab8"
+        orange "#f09479"
+    }
 }
-theme "nvim-dark"
+theme "nightfly"
 default_layout "custom"
 default_mode "locked"
 layout_dir ".config/zellij/layouts/"

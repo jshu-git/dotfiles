@@ -36,7 +36,9 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 now(function()
+  add('bluz71/vim-nightfly-colors')
   require('plugins.colorscheme')
+  vim.cmd.colorscheme('nightfly')
 end)
 
 later(function()

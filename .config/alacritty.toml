@@ -49,29 +49,52 @@ bindings = [
   { key = "C", mods = "Control|Shift", chars = "\u001b[67;5u" },
 ]
 
-# https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/alacritty/NvimDark.toml
-# Colors (NvimDark)
-[colors.cursor]
-cursor = '#9b9ea4'
-# text = '#e0e2ea'
-
 [colors.vi_mode_cursor]
 cursor = '#fce094'
 
+# https://github.com/bluz71/vim-nightfly-colors
+[colors.cursor]
+cursor = "#9ca1aa"
+text = "#080808"
+
 [colors.normal]
-black = '#07080d'
-blue = '#a6dbff'
-cyan = '#8cf8f7'
-green = '#b3f6c0'
-magenta = '#ffcaff'
-red = '#ffc0b9'
-white = '#eef1f8'
-yellow = '#fce094'
+black = "#1d3b53"
+blue = "#82aaff"
+cyan = "#7fdbca"
+green = "#a1cd5e"
+magenta = "#c792ea"
+red = "#fc514e"
+white = "#a1aab8"
+yellow = "#e3d18a"
 
 [colors.primary]
-background = '#14161b'
-foreground = '#e0e2ea'
+background = "#011627"
+foreground = "#bdc1c6"
 
 [colors.selection]
-background = '#4f5258'
-text = '#e0e2ea'
+background = "#b2ceee"
+text = "#080808"
+
+# # https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/alacritty/NvimDark.toml
+# # Colors (NvimDark)
+# [colors.cursor]
+# cursor = '#9b9ea4'
+# # text = '#e0e2ea'
+#
+# [colors.normal]
+# black = '#07080d'
+# blue = '#a6dbff'
+# cyan = '#8cf8f7'
+# green = '#b3f6c0'
+# magenta = '#ffcaff'
+# red = '#ffc0b9'
+# white = '#eef1f8'
+# yellow = '#fce094'
+#
+# [colors.primary]
+# background = '#14161b'
+# foreground = '#e0e2ea'
+#
+# [colors.selection]
+# background = '#4f5258'
+# text = '#e0e2ea'
