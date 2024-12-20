@@ -1,3 +1,4 @@
+-- local palette = require('nightfly').palette
 -- local black = '#011627'
 -- local white = '#c3ccdc'
 -- local black_blue = '#081e2f'
@@ -31,13 +32,15 @@
 -- local bay_blue = '#24567F'
 -- local kashmir_blue = '#4d618e'
 -- local plant_green = '#2a4e57'
--- local palette = require('nightfly').palette
 
 vim.g.nightflyNormalFloat = true
 vim.g.nightflyUnderlineMatchParen = true
 vim.g.nightflyVirtualTextColor = true
 vim.g.nightflyWinSeparator = 2
+local custom_highlight = vim.api.nvim_create_augroup('Nightfly', {})
 vim.api.nvim_create_autocmd('ColorScheme', {
+  pattern = 'nightfly',
+  group = custom_highlight,
   callback = function()
     local highlights = {
       -- floating windows
@@ -54,6 +57,9 @@ vim.api.nvim_create_autocmd('ColorScheme', {
       -- telescope
       TelescopeTitle = { link = 'FloatTitle' },
       TelescopeSelection = { link = 'Visual' },
+
+      -- grapple
+      GrappleCurrent = { link = 'GrappleName' },
     }
 
     for group, hl in pairs(highlights) do
