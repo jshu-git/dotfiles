@@ -1,3 +1,4 @@
+-- https://github.com/bluz71/vim-nightfly-colors/blob/master/lua/nightfly/init.lua
 -- local palette = require('nightfly').palette
 -- local black = '#011627'
 -- local white = '#c3ccdc'
@@ -43,6 +44,8 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   group = custom_highlight,
   callback = function()
     local highlights = {
+      FoldColumn = { link = 'Normal' },
+
       -- floating windows
       FloatTitle = { link = 'NightflyWhite' },
 
