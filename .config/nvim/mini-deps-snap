@@ -11,7 +11,7 @@ return {
   ["helpview.nvim"] = "857aec1dab331252910da158ab6cbfbc65239c71",
   ["icon-picker.nvim"] = "3ee9a0ea9feeef08ae35e40c8be6a2fa2c20f2d3",
   ["lazydev.nvim"] = "8620f82ee3f59ff2187647167b6b47387a13a018",
-  ["mini.nvim"] = "7ebfab26d77a4b9b05aaae565907e7fa4b2ee154",
+  ["mini.nvim"] = "2011aff270bcd3e1f3ad088253ace2d574967bed",
   ["nvim-autopairs"] = "b464658e9b880f463b9f7e6ccddd93fb0013f559",
   ["nvim-lspconfig"] = "c580f34bc5fdca8aaf737a9ab8a5d775cb940e57",
   ["nvim-osc52"] = "04cfaba1865ae5c53b6f887c3ca7304973824fb2",
@@ -25,5 +25,5 @@ return {
   ["telescope-zf-native.nvim"] = "5721be27df11a19b9cd95e6a4887f16f26599802",
   ["telescope.nvim"] = "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc",
   undotree = "78b5241191852ffa9bb5da5ff2ee033160798c3b",
-  vimade = "961b86612977ae70ef19ac7c9c95ff245f6ff666"
+  vimade = "a5b0039c2522b4edb9f5557a7a51f422ff2b3f8c"
 }
