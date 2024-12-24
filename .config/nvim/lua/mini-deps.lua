@@ -38,7 +38,6 @@ vim.api.nvim_create_autocmd('FileType', {
 now(function()
   add({ source = 'catppuccin/nvim', name = 'catppuccin' })
   require('plugins.colorscheme')
-  vim.cmd.colorscheme('catppuccin-mocha')
 end)
 
 later(function()
@@ -54,18 +53,22 @@ later(function()
   })
   require('plugins.nvim-treesitter')
 
-  -- lsp
+  -- lsp and cmp
   add({
     source = 'neovim/nvim-lspconfig',
-    depends = { 'folke/lazydev.nvim' },
+    depends = {
+      'folke/lazydev.nvim',
+      { source = 'saghen/blink.cmp', checkout = 'v0.8.2' },
+    },
   })
   add('stevearc/conform.nvim')
   require('plugins.lsp.conform')
   require('plugins.lsp.nvim-lspconfig')
+  require('plugins.cmp.blink-cmp')
 
   -- cmp
-  add('windwp/nvim-autopairs')
-  require('plugins.cmp.mini-completion')
+  -- add('windwp/nvim-autopairs')
+  -- require('plugins.cmp.mini-completion')
 
   -- ui
   add('nkakouros-original/scrollofffraction.nvim')
