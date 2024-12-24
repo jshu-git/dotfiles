@@ -59,7 +59,7 @@ telescope.setup({
 
         -- marking
         ['<C-a>'] = actions.toggle_all,
-        ['<C-x>'] = actions.toggle_selection,
+        ['<C-x>'] = actions.toggle_selection + actions.move_selection_worse,
         ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
 
         -- smart scroll
