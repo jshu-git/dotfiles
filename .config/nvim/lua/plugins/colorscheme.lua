@@ -14,12 +14,6 @@ require('catppuccin').setup({
       NormalFloat = { link = 'Normal' },
       FloatBorder = { link = 'NonText' },
 
-      -- cmp
-      -- PmenuMatch = { fg = colors.peach },
-
-      -- mini
-      -- MiniIndentScopeSymbol = { link = 'NonText' },
-
       -- telescope
       TelescopeMatching = { bg = colors.surface2, fg = colors.text },
       TelescopeSelection = { link = 'ColorColumn' },
