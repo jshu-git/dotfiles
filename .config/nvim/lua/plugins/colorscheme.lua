@@ -18,7 +18,7 @@ require('catppuccin').setup({
       PmenuMatch = { fg = colors.peach },
 
       -- mini
-      MiniIndentScopeSymbol = { link = 'NonText' },
+      -- MiniIndentScopeSymbol = { link = 'NonText' },
 
       -- telescope
       TelescopeMatching = { link = 'PmenuMatch' },
