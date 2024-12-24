@@ -124,35 +124,7 @@ plugins {
 }
 pane_frames false
 serialize_pane_viewport true
-themes {
-    nvim-dark {
-        bg "#14161b"
-        fg "#e0e2ea"
-        red "#ffc0b9"
-        green "#b3f6c0"
-        blue "#a6dbff"
-        yellow "#fce094"
-        magenta "#ffcaff"
-        orange "#f4a261"
-        cyan "#8cf8f7"
-        black "#07080d"
-        white "#eef1f8"
-  }
-  nightfly {
-        bg "#011627"
-        fg "#bdc1c6"
-        black "#092236"
-        red "#ff5874"
-        green "#a1cd5e"
-        yellow "#e3d18a"
-        blue "#82aaff"
-        magenta "#c792ea"
-        cyan "#7fdbca"
-        white "#a1aab8"
-        orange "#f09479"
-    }
-}
-theme "nightfly"
+theme "catppuccin-mocha"
 default_layout "custom"
 default_mode "locked"
 layout_dir ".config/zellij/layouts/"
