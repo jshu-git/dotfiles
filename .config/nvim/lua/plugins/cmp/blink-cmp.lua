@@ -14,7 +14,6 @@ require('blink.cmp').setup({
     },
     menu = {
       max_height = 5,
-      -- winhighlight = 'Normal:BlinkCmpMenu,CursorLine:BlinkCmpMenuSelection,Search:None',
       scrolloff = 3,
       draw = {
         columns = {
