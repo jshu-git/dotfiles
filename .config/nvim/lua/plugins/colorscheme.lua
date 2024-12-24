@@ -15,13 +15,13 @@ require('catppuccin').setup({
       FloatBorder = { link = 'NonText' },
 
       -- cmp
-      PmenuMatch = { fg = colors.peach },
+      -- PmenuMatch = { fg = colors.peach },
 
       -- mini
       -- MiniIndentScopeSymbol = { link = 'NonText' },
 
       -- telescope
-      TelescopeMatching = { link = 'PmenuMatch' },
+      TelescopeMatching = { bg = colors.surface2, fg = colors.text },
       TelescopeSelection = { link = 'ColorColumn' },
       TelescopeMultiSelection = { link = 'Visual' },
 
@@ -31,5 +31,17 @@ require('catppuccin').setup({
   end,
   integrations = {
     mini = { indentscope_color = 'overlay0' }, -- NonText
+    blink_cmp = true,
+
+    -- disable
+    alpha = false,
+    dashboard = false,
+    fzf = false,
+    neotree = false,
+    neogit = false,
+    cmp = false,
+    nvimtree = false,
   },
 })
+
+vim.cmd.colorscheme('catppuccin')
