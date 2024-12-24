@@ -29,4 +29,7 @@ require('catppuccin').setup({
       MatchParen = { link = 'Underlined' },
     }
   end,
+  integrations = {
+    mini = { indentscope_color = 'overlay0' }, -- NonText
+  },
 })
