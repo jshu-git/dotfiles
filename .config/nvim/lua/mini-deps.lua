@@ -39,7 +39,6 @@ now(function()
   add({ source = 'catppuccin/nvim', name = 'catppuccin' })
   require('plugins.colorscheme')
   vim.cmd.colorscheme('catppuccin-mocha')
-  -- vim.api.nvim_set_hl(0, 'MiniIndentScopeSymbol', {link = 'NonText'})
 end)
 
 later(function()
