@@ -4,7 +4,6 @@ require('blink.cmp').setup({
   },
   keymap = {
     preset = 'enter',
-    ['<C-e>'] = { 'hide', 'show' },
   },
   completion = {
     list = {
