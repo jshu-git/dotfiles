@@ -62,13 +62,10 @@ later(function()
     },
   })
   add('stevearc/conform.nvim')
+  add('windwp/nvim-autopairs')
   require('plugins.lsp.conform')
   require('plugins.lsp.nvim-lspconfig')
   require('plugins.cmp.blink-cmp')
-
-  -- cmp
-  -- add('windwp/nvim-autopairs')
-  -- require('plugins.cmp.mini-completion')
 
   -- ui
   add('nkakouros-original/scrollofffraction.nvim')

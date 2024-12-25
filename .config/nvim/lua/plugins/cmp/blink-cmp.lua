@@ -1,10 +1,14 @@
+local autopairs = require('nvim-autopairs')
+autopairs.setup({ map_cr = false })
+-- TODO
+-- return autopairs.autopairs_cr()
+
 require('blink.cmp').setup({
   enabled = function()
     return not vim.tbl_contains({ 'grug-far' }, vim.bo.filetype)
+      and vim.bo.buftype ~= 'prompt'
+      and vim.b.completion ~= false
   end,
-  appearance = {
-    use_nvim_cmp_as_default = false,
-  },
   keymap = {
     preset = 'enter',
   },
@@ -13,6 +17,9 @@ require('blink.cmp').setup({
       selection = function(ctx)
         return ctx.mode == 'cmdline' and 'auto_insert' or 'preselect'
       end,
+    },
+    accept = {
+      auto_brackets = { enabled = false },
     },
     menu = {
       max_height = 5,
