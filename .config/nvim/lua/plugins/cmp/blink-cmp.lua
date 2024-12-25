@@ -1,4 +1,7 @@
 require('blink.cmp').setup({
+  enabled = function()
+    return not vim.tbl_contains({ 'grug-far' }, vim.bo.filetype)
+  end,
   appearance = {
     use_nvim_cmp_as_default = false,
   },
