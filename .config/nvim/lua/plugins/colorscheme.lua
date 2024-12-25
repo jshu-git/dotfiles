@@ -26,15 +26,8 @@ require('catppuccin').setup({
   integrations = {
     mini = { indentscope_color = 'overlay0' }, -- NonText
     blink_cmp = true,
-
-    -- disable
-    alpha = false,
-    dashboard = false,
-    fzf = false,
-    neotree = false,
-    neogit = false,
+    grug_far = true,
     cmp = false,
-    nvimtree = false,
   },
 })
 
