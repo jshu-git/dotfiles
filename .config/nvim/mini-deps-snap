@@ -25,6 +25,5 @@ return {
   ["telescope-ui-select.nvim"] = "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
   ["telescope-zf-native.nvim"] = "5721be27df11a19b9cd95e6a4887f16f26599802",
   ["telescope.nvim"] = "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc",
-  undotree = "78b5241191852ffa9bb5da5ff2ee033160798c3b",
-  vimade = "f751502b61e2c1ed0183a897993b00d0d4d3e556"
+  undotree = "78b5241191852ffa9bb5da5ff2ee033160798c3b"
 }

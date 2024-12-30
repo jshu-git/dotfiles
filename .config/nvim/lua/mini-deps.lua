@@ -73,7 +73,7 @@ later(function()
     source = 'OXY2DEV/helpview.nvim',
     depends = { 'nvim-treesitter/nvim-treesitter' },
   })
-  add('TaDaa/vimade')
+  -- add('TaDaa/vimade')
   add('utilyre/sentiment.nvim')
   vim.cmd('runtime! lua/plugins/ui/*')
 
