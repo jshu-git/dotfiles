@@ -70,7 +70,7 @@ vim.o.cursorline = true
 -- splits
 vim.o.splitbelow = true
 vim.o.splitright = true
-vim.o.splitkeep = 'screen'
+-- vim.o.splitkeep = 'screen'
 
 -- search
 vim.o.ignorecase = true
