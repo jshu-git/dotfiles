@@ -49,9 +49,6 @@ bindings = [
   { key = "C", mods = "Control|Shift", chars = "\u001b[67;5u" },
 ]
 
-# [colors.vi_mode_cursor]
-# cursor = '#fce094'
-
 # https://github.com/catppuccin/alacritty/blob/main/catppuccin-mocha.toml
 [colors.primary]
 background = "#1e1e2e"
@@ -61,11 +58,13 @@ bright_foreground = "#cdd6f4"
 
 [colors.cursor]
 text = "#1e1e2e"
-cursor = "#f5e0dc"
+# cursor = "#f5e0dc"
+cursor = "#ffffff"
 
 [colors.vi_mode_cursor]
 text = "#1e1e2e"
 cursor = "#b4befe"
+# cursor = '#fce094'
 
 [colors.search.matches]
 foreground = "#1e1e2e"
