@@ -12,13 +12,16 @@ require('catppuccin').setup({
       WinSeparator = { link = 'VertSplit' },
 
       -- floating windows
-      NormalFloat = { link = 'Normal' },
+      -- NormalFloat = { link = 'Normal' },
       FloatBorder = { link = 'NonText' },
 
       -- telescope
       TelescopeMatching = { bg = colors.surface2, fg = colors.text },
       TelescopeSelection = { link = 'ColorColumn' },
       TelescopeMultiSelection = { link = 'Visual' },
+
+      -- mini
+      MiniJump = { link = 'SpellRare' },
 
       -- sentiment
       MatchParen = { link = 'Underlined' },
