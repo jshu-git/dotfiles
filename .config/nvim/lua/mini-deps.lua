@@ -73,7 +73,6 @@ later(function()
     source = 'OXY2DEV/helpview.nvim',
     depends = { 'nvim-treesitter/nvim-treesitter' },
   })
-  -- add('TaDaa/vimade')
   add('utilyre/sentiment.nvim')
   vim.cmd('runtime! lua/plugins/ui/*')
 
@@ -93,7 +92,6 @@ later(function()
     },
   })
   add('pteroctopus/faster.nvim')
-  add('andrewferrier/debugprint.nvim')
   add('MagicDuck/grug-far.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
 
