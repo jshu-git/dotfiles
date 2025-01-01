@@ -1,8 +1,3 @@
-local autopairs = require('nvim-autopairs')
-autopairs.setup({ map_cr = false })
--- TODO
--- return autopairs.autopairs_cr()
-
 require('blink.cmp').setup({
   enabled = function()
     return not vim.tbl_contains({ 'grug-far' }, vim.bo.filetype)

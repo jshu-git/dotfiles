@@ -53,7 +53,7 @@ later(function()
   })
   require('plugins.nvim-treesitter')
 
-  -- lsp and cmp
+  -- lsp
   add({
     source = 'neovim/nvim-lspconfig',
     depends = {
@@ -62,10 +62,11 @@ later(function()
     },
   })
   add('stevearc/conform.nvim')
+  vim.cmd('runtime! lua/plugins/lsp/*')
+
+  -- cmp
   add('windwp/nvim-autopairs')
-  require('plugins.lsp.conform')
-  require('plugins.lsp.nvim-lspconfig')
-  require('plugins.cmp.blink-cmp')
+  vim.cmd('runtime! lua/plugins/cmp/*')
 
   -- ui
   add('nkakouros-original/scrollofffraction.nvim')
