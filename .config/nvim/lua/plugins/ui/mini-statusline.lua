@@ -53,11 +53,6 @@ statusline.setup({
         end
       end
 
-      local search = statusline.section_searchcount({ trunc_width = 75 })
-      if search ~= '' then
-        search = '󰍉 ' .. search
-      end
-
       local lines = string.format('%d', vim.fn.line('$'))
 
       local grapple = require('grapple')
@@ -93,7 +88,6 @@ statusline.setup({
         { hl = 'MiniStatuslineFileinfo', strings = { custom_fileinfo } },
         -- z
         { hl = 'MiniStatuslineModeNormal', strings = { progress(), '/', lines } },
-        { hl = 'CurSearch', strings = { search } },
       })
     end,
   },

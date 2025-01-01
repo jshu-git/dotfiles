@@ -1,24 +1,13 @@
 -- misc
+vim.o.cursorline = true
 vim.o.undofile = true
 vim.o.swapfile = false
 vim.o.confirm = true
 vim.o.termguicolors = true
-
--- editing
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 vim.o.virtualedit = 'block'
-vim.o.startofline = true
-
--- cmp
-vim.o.pumheight = 5
-vim.o.completeopt = 'menu,menuone,noinsert'
-vim.o.infercase = true
-vim.opt.shortmess:append('c')
-if vim.fn.has('nvim-0.11') == 1 then
-  vim.opt.completeopt:append('fuzzy')
-end
 
 -- fold
 vim.o.foldmethod = 'expr'
@@ -63,21 +52,15 @@ vim.o.showcmd = false
 vim.o.number = true
 vim.o.signcolumn = 'yes'
 
--- cursorline
-vim.o.cursorline = true
--- vim.o.cursorlineopt = 'number'
-
 -- splits
 vim.o.splitbelow = true
 vim.o.splitright = true
--- vim.o.splitkeep = 'screen'
 
 -- search
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.wrapscan = false
 vim.o.incsearch = false
-vim.opt.shortmess:append('S')
 
 -- mouse
 vim.o.mouse = 'a'
