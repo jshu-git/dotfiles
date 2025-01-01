@@ -1,6 +1,5 @@
 require('catppuccin').setup({
   flavour = 'mocha',
-  transparent_background = true,
   show_end_of_buffer = true,
   no_bold = true,
   styles = {
@@ -25,14 +24,15 @@ require('catppuccin').setup({
 
       -- sentiment
       MatchParen = { link = 'Underlined' },
+
+      -- treesitter
+      TreesitterContext = { link = 'ColorColumn' },
     }
   end,
   integrations = {
     mini = { indentscope_color = 'overlay0' }, -- NonText
     blink_cmp = true,
-    grug_far = true,
+    treesitter_context = false,
     cmp = false,
   },
 })
-
-vim.cmd.colorscheme('catppuccin')
