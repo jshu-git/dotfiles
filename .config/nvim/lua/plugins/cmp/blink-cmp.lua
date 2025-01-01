@@ -6,6 +6,9 @@ require('blink.cmp').setup({
   end,
   keymap = {
     preset = 'enter',
+    ['<C-z>'] = { 'show_documentation', 'hide_documentation', 'fallback' },
+    ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
+    ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
   },
   completion = {
     list = {
@@ -26,6 +29,15 @@ require('blink.cmp').setup({
         },
       },
     },
+    documentation = {
+      window = { border = 'single' },
+    },
+  },
+  fuzzy = {
+    -- work
+    prebuilt_binaries = {
+      download = vim.env.SSH_CLIENT == nil,
+    },
   },
   sources = {
     cmdline = function()
@@ -38,11 +50,5 @@ require('blink.cmp').setup({
       end
       return {}
     end,
-  },
-  fuzzy = {
-    -- work
-    prebuilt_binaries = {
-      download = vim.env.SSH_CLIENT == nil,
-    },
   },
 })
