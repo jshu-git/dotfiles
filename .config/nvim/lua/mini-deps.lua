@@ -82,7 +82,6 @@ later(function()
   add('mbbill/undotree')
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
-  add('ziontee113/icon-picker.nvim')
   add({
     source = 'nvim-telescope/telescope.nvim',
     depends = {
