@@ -76,6 +76,7 @@ later(function()
     depends = { 'nvim-treesitter/nvim-treesitter' },
   })
   add('utilyre/sentiment.nvim')
+  add('BranimirE/fix-auto-scroll.nvim')
   vim.cmd('runtime! lua/plugins/ui/*')
 
   -- editing
