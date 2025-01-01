@@ -1,9 +1,4 @@
 require('blink.cmp').setup({
-  enabled = function()
-    return not vim.tbl_contains({ 'grug-far' }, vim.bo.filetype)
-      and vim.bo.buftype ~= 'prompt'
-      and vim.b.completion ~= false
-  end,
   keymap = {
     preset = 'enter',
     ['<C-z>'] = { 'show_documentation', 'hide_documentation', 'fallback' },
@@ -29,10 +24,9 @@ require('blink.cmp').setup({
         },
       },
     },
-    documentation = {
-      window = { border = 'single' },
-    },
+    documentation = { window = { border = 'single' } },
   },
+  signature = { window = { border = 'single' } },
   fuzzy = {
     -- work
     prebuilt_binaries = {
