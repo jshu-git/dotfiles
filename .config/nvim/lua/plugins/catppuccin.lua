@@ -11,7 +11,7 @@ require('catppuccin').setup({
       WinSeparator = { link = 'VertSplit' },
 
       -- floating windows
-      -- NormalFloat = { link = 'Normal' },
+      NormalFloat = { link = 'Normal' },
       FloatBorder = { link = 'NonText' },
 
       -- telescope
