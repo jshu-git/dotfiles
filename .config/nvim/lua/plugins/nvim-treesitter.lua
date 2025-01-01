@@ -2,8 +2,6 @@
 if vim.env.SSH_CLIENT ~= nil then
   local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
   for lang, files in pairs({
-    -- vimdoc = { 'src/parser.c' },
-    -- query = { 'src/parser.c' },
     python = { 'src/parser.c', 'src/scanner.c' },
     yaml = { 'src/parser.c', 'src/scanner.cc' },
     perl = { 'src/parser.c', 'src/scanner.c' },
