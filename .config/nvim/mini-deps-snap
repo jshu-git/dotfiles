@@ -9,11 +9,11 @@ return {
   ["guess-indent.nvim"] = "6cd61f7a600bb756e558627cd2e740302c58e32d",
   ["helpview.nvim"] = "857aec1dab331252910da158ab6cbfbc65239c71",
   ["lazydev.nvim"] = "8620f82ee3f59ff2187647167b6b47387a13a018",
-  ["mini.nvim"] = "2011aff270bcd3e1f3ad088253ace2d574967bed",
+  ["mini.nvim"] = "e91e854299429c986888711668743711acd8a14b",
   ["nvim-autopairs"] = "b464658e9b880f463b9f7e6ccddd93fb0013f559",
   ["nvim-lspconfig"] = "8b15a1a597a59f4f5306fad9adfe99454feab743",
   ["nvim-osc52"] = "04cfaba1865ae5c53b6f887c3ca7304973824fb2",
-  ["nvim-treesitter"] = "7e0fcf0d456fc5818da1af35b1a3f5c784fce457",
+  ["nvim-treesitter"] = "e947d35bbf919ea88a24c21cb8afa4621e3cf547",
   ["nvim-treesitter-context"] = "2bcf700b59bc92850ca83a1c02e86ba832e0fae0",
   ["plenary.nvim"] = "2d9b06177a975543726ce5c73fca176cedbffe9d",
   ["quicker.nvim"] = "87dae0f25733b7bd79b600a70ca38040db68ec0b",
@@ -22,5 +22,5 @@ return {
   ["telescope-ui-select.nvim"] = "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
   ["telescope-zf-native.nvim"] = "5721be27df11a19b9cd95e6a4887f16f26599802",
   ["telescope.nvim"] = "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc",
-  undotree = "78b5241191852ffa9bb5da5ff2ee033160798c3b"
+  undotree = "2556c6800b210b2096b55b66e74b4cc1d9ebbe4f"
 }
