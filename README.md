@@ -1,4 +1,4 @@
-<img width="1472" alt="SCR-20241003-pqqc" src="https://github.com/user-attachments/assets/61e3ba73-1bf7-48db-96e5-002185f65d65">
+<img width="1472" alt="SCR-20250102-nzax" src="https://github.com/user-attachments/assets/0c328589-cc4a-473d-820d-06d09f3e00ac" />
 
 - browser: [zen](https://zen-browser.app/)
 - terminal: [alacritty](https://alacritty.org/)
