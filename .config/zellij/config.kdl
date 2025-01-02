@@ -7,8 +7,13 @@ keybinds clear-defaults=true {
     locked {
         bind "Ctrl a" { SwitchToMode "Normal"; }
         bind "Ctrl f" { ToggleFloatingPanes; }
+
+        // ghostty doesn't work with yet
         bind "Ctrl Tab" { GoToNextTab; SwitchToMode "Locked"; }
         bind "Ctrl Shift Tab" { GoToPreviousTab; SwitchToMode "Locked"; }
+
+        bind "Ctrl L" { GoToNextTab; SwitchToMode "Locked"; }
+        bind "Ctrl H" { GoToPreviousTab; SwitchToMode "Locked"; }
     }
     normal {
         bind "Ctrl a" { Write 1;  SwitchToMode "Locked"; }
@@ -86,22 +91,6 @@ keybinds clear-defaults=true {
             };
             SwitchToMode "Locked"
         }
-
-        // plugins
-        // bind "c" {
-        //     LaunchOrFocusPlugin "configuration" {
-        //         floating true
-        //         move_to_focused_tab true
-        //     };
-        //     SwitchToMode "Locked"
-        // }
-        // bind "p" {
-        //     LaunchOrFocusPlugin "plugin-manager" {
-        //         floating true
-        //         move_to_focused_tab true
-        //     };
-        //     SwitchToMode "Locked"
-        // }
 
         // layout
         bind "Space" { NextSwapLayout; }
