@@ -1,13 +1,13 @@
 <img width="1472" alt="SCR-20250102-nzax" src="https://github.com/user-attachments/assets/0c328589-cc4a-473d-820d-06d09f3e00ac" />
 
 - browser: [zen](https://zen-browser.app/)
-- terminal: [alacritty](https://alacritty.org/)
+- terminal: [ghostty](https://ghostty.org/)
   - terminal multiplexer: [zellij](https://zellij.dev/)
-  - editor: [neovim](https://github.com/neovim/neovim)
+  - editor: [neovim](https://neovim.io/)
   - shell: [zsh](https://www.zsh.org/)
-- theme: [nvim](https://github.com/neovim/neovim/blob/master/src/nvim/highlight_group.c)
+- theme: [catppuccin](https://catppuccin.com/)
 - font: [MesloLGS Nerd Font](https://github.com/ryanoasis/nerd-fonts)
-- dotfile manager: [yadm](https://yadm.io/docs/overview)
+- dotfile manager: [yadm](https://yadm.io/)
 - macapps:
   - [Alfred](https://www.alfredapp.com/)
   - [AppCleaner](https://freemacsoft.net/appcleaner/)
