@@ -1,0 +1,30 @@
+# theme
+theme = catppuccin-mocha
+
+# font
+font-family = MesloLGS Nerd Font
+font-size   = 16
+# font-thicken = true
+
+# cursor
+cursor-style       = bar
+cursor-style-blink = false
+
+# window
+title                  = " "
+window-padding-balance = true
+window-save-state      = always
+macos-titlebar-style   = hidden
+confirm-close-surface  = false
+
+# clipboard
+clipboard-read = allow
+copy-on-select = true
+
+# keybinds
+# keybind = ctrl+shift+n=text:hi
+# keybind = ctrl+tab=csi:105;5u
+# keybind = ctrl+tab=csi:\x1b[67;5u
+# keybind = ctrl+tab=csi:27;5;9~
+# keybind = ctrl+shift+tab=csi:27;6;9~
+
