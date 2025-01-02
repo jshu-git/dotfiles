@@ -11,8 +11,9 @@ gui:
   showDivergenceFromBaseBranch: arrowAndNumber
   border: single
   theme:
+    # catppuccin-mocha
     inactiveBorderColor:
-      - "black"
+      - "#6c7086"
     selectedLineBgColor:
       - "#2a2b3c"
 git:
