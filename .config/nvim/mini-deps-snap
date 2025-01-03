@@ -8,7 +8,6 @@ return {
   ["gitlinker.nvim"] = "cc59f732f3d043b626c8702cb725c82e54d35c25",
   ["grapple.nvim"] = "b41ddfc1c39f87f3d1799b99c2f0f1daa524c5f7",
   ["guess-indent.nvim"] = "6cd61f7a600bb756e558627cd2e740302c58e32d",
-  ["helpview.nvim"] = "857aec1dab331252910da158ab6cbfbc65239c71",
   ["lazydev.nvim"] = "8620f82ee3f59ff2187647167b6b47387a13a018",
   ["mini.nvim"] = "782969a40d2870b1d7cd7c9db8f965d8aa9705ef",
   ["nvim-autopairs"] = "b464658e9b880f463b9f7e6ccddd93fb0013f559",

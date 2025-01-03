@@ -71,10 +71,6 @@ later(function()
 
   -- ui
   add('nkakouros-original/scrollofffraction.nvim')
-  add({
-    source = 'OXY2DEV/helpview.nvim',
-    depends = { 'nvim-treesitter/nvim-treesitter' },
-  })
   add('utilyre/sentiment.nvim')
   add('BranimirE/fix-auto-scroll.nvim')
   vim.cmd('runtime! lua/plugins/ui/*')
