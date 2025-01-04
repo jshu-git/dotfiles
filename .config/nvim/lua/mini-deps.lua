@@ -60,6 +60,7 @@ later(function()
     depends = {
       'folke/lazydev.nvim',
       { source = 'saghen/blink.cmp', checkout = 'v0.9.0' },
+      { source = 'saghen/blink.cmp', checkout = 'v0.9.2' },
     },
   })
   add('stevearc/conform.nvim')
