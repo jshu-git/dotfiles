@@ -30,7 +30,7 @@ require('catppuccin').setup({
     }
   end,
   integrations = {
-    mini = { indentscope_color = 'overlay0' }, -- NonText
+    mini = { indentscope_color = 'surface1' }, -- NonText
     blink_cmp = true,
     treesitter_context = false,
     cmp = false,
