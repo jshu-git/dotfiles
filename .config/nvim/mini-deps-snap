@@ -22,5 +22,6 @@ return {
   ["scrollofffraction.nvim"] = "0618a3e3e1a4e13a04edf6fd35bfcee4bd5afe38",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
   ["telescope.nvim"] = "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc",
+  ["tiny-inline-diagnostic.nvim"] = "867902d5974a18c156c918ab8addbf091719de27",
   undotree = "2556c6800b210b2096b55b66e74b4cc1d9ebbe4f"
 }
