@@ -95,4 +95,17 @@ later(function()
   -- git
   require('plugins.git.mini-diff')
   require('plugins.git.mini-git')
+
+  -- leetcode
+  if vim.env.SSH_CLIENT == nil then
+    add({
+      source = 'kawre/leetcode.nvim',
+      depends = {
+        'nvim-telescope/telescope.nvim',
+        'nvim-lua/plenary.nvim',
+        'MunifTanjim/nui.nvim',
+      },
+    })
+    require('plugins.leetcode')
+  end
 end)
