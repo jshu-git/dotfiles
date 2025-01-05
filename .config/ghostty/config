@@ -4,11 +4,12 @@ auto-update-channel = tip
 
 # theme
 theme = catppuccin-mocha
+cursor-color = white
+cursor-text = black
 
 # font
 font-family = MesloLGS Nerd Font
-font-size   = 16
-# font-thicken = true
+font-size   = 15
 
 # cursor
 cursor-style       = bar
