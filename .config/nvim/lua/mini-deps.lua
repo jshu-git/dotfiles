@@ -48,10 +48,8 @@ later(function()
   require('plugins.work')
 
   -- treesitter
-  add({
-    source = 'nvim-treesitter/nvim-treesitter',
-    depends = { 'nvim-treesitter/nvim-treesitter-context' },
-  })
+  add('nvim-treesitter/nvim-treesitter')
+  add('nvim-treesitter/nvim-treesitter-context')
   require('plugins.nvim-treesitter')
 
   -- lsp
