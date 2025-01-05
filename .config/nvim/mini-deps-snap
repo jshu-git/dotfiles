@@ -21,8 +21,6 @@ return {
   ["quicker.nvim"] = "e4fb0b1862284757561d1d51091cdee907585948",
   ["scrollofffraction.nvim"] = "0618a3e3e1a4e13a04edf6fd35bfcee4bd5afe38",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
-  ["telescope-ui-select.nvim"] = "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
-  ["telescope-zf-native.nvim"] = "5721be27df11a19b9cd95e6a4887f16f26599802",
   ["telescope.nvim"] = "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc",
   undotree = "2556c6800b210b2096b55b66e74b4cc1d9ebbe4f"
 }
