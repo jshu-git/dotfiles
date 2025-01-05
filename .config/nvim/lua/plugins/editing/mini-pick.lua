@@ -108,6 +108,7 @@ end, { desc = 'LSP: Goto References' })
 -- end, { desc = 'LSP: Diagnostics (Buffer)' })
 
 -- misc
+vim.keymap.set('n', '<leader>fb', pick.builtin.buffers, { desc = 'Buffers' })
 vim.keymap.set('n', ',', function()
   extras.buf_lines({ scope = 'current' }, {
     source = {
