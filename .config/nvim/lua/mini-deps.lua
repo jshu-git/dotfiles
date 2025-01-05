@@ -94,8 +94,7 @@ later(function()
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- git
-  require('plugins.git.mini-diff')
-  require('plugins.git.mini-git')
+  vim.cmd('runtime! lua/plugins/git/*')
 
   -- leetcode
   if vim.env.SSH_CLIENT == nil then
