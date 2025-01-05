@@ -11,4 +11,4 @@ icons.setup({
   },
 })
 icons.mock_nvim_web_devicons()
-icons.tweak_lsp_kind()
+-- icons.tweak_lsp_kind()
