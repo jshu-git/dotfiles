@@ -81,14 +81,14 @@ later(function()
   add('mbbill/undotree')
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
-  add({
-    source = 'nvim-telescope/telescope.nvim',
-    depends = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope-ui-select.nvim',
-      'natecraddock/telescope-zf-native.nvim',
-    },
-  })
+  -- add({
+  --   source = 'nvim-telescope/telescope.nvim',
+  --   depends = {
+  --     'nvim-lua/plenary.nvim',
+  --     'nvim-telescope/telescope-ui-select.nvim',
+  --     'natecraddock/telescope-zf-native.nvim',
+  --   },
+  -- })
   add('pteroctopus/faster.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
 
