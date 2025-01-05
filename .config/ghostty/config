@@ -1,3 +1,7 @@
+# misc
+auto-update         = check
+auto-update-channel = tip
+
 # theme
 theme = catppuccin-mocha
 
@@ -22,9 +26,6 @@ clipboard-read = allow
 copy-on-select = true
 
 # keybinds
-# keybind = ctrl+shift+n=text:hi
-# keybind = ctrl+tab=csi:105;5u
-# keybind = ctrl+tab=csi:\x1b[67;5u
-# keybind = ctrl+tab=csi:27;5;9~
-# keybind = ctrl+shift+tab=csi:27;6;9~
+keybind = ctrl+tab=text:\x1b[27;5;9~
+keybind = ctrl+shift+tab=esc:[27;6;9~
 

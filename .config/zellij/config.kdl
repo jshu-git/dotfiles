@@ -7,13 +7,8 @@ keybinds clear-defaults=true {
     locked {
         bind "Ctrl a" { SwitchToMode "Normal"; }
         bind "Ctrl f" { ToggleFloatingPanes; }
-
-        // ghostty doesn't work with yet
-        bind "Ctrl Tab" { GoToNextTab; SwitchToMode "Locked"; }
+        bind "Ctrl Tab"       { GoToNextTab; SwitchToMode "Locked"; }
         bind "Ctrl Shift Tab" { GoToPreviousTab; SwitchToMode "Locked"; }
-
-        bind "Ctrl L" { GoToNextTab; SwitchToMode "Locked"; }
-        bind "Ctrl H" { GoToPreviousTab; SwitchToMode "Locked"; }
     }
     normal {
         bind "Ctrl a" { Write 1;  SwitchToMode "Locked"; }
@@ -77,10 +72,10 @@ keybinds clear-defaults=true {
         bind "Ctrl Right" { Resize "Increase Right"; }
 
         // scroll
-        bind "Ctrl u" { PageScrollUp; }
-        bind "Ctrl d" { PageScrollDown; }
-        bind "G" { ScrollToBottom; }
-        bind "g" { ScrollToTop; }
+        // bind "Ctrl u" { PageScrollUp; }
+        // bind "Ctrl d" { PageScrollDown; }
+        // bind "G" { ScrollToBottom; }
+        // bind "g" { ScrollToTop; }
 
         // session
         bind "q" { Detach; }
