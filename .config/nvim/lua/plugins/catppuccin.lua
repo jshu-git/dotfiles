@@ -11,16 +11,21 @@ require('catppuccin').setup({
       WinSeparator = { link = 'VertSplit' },
 
       -- floating windows
-      NormalFloat = { link = 'Normal' },
+      -- NormalFloat = { link = 'Normal' },
       FloatBorder = { link = 'NonText' },
 
+      -- cmp
+      BlinkCmpLabel = { fg = colors.overlay1 },
+
       -- telescope
-      TelescopeMatching = { bg = colors.surface2, fg = colors.text },
-      TelescopeSelection = { link = 'ColorColumn' },
-      TelescopeMultiSelection = { link = 'Visual' },
+      -- TelescopeMatching = { bg = colors.surface2, fg = colors.text },
+      -- TelescopeSelection = { link = 'ColorColumn' },
+      -- TelescopeMultiSelection = { link = 'Visual' },
 
       -- mini
       MiniJump = { link = 'SpellRare' },
+      MiniPickNormal = { bg = colors.mantle, fg = colors.overlay0 }, -- bg=NormalFloat, fg=NonText
+      MiniPickMatchRanges = { fg = colors.text },
 
       -- sentiment
       MatchParen = { link = 'Underlined' },
