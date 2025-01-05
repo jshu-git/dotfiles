@@ -9,9 +9,11 @@ return {
   ["grapple.nvim"] = "b41ddfc1c39f87f3d1799b99c2f0f1daa524c5f7",
   ["guess-indent.nvim"] = "6cd61f7a600bb756e558627cd2e740302c58e32d",
   ["lazydev.nvim"] = "8620f82ee3f59ff2187647167b6b47387a13a018",
+  ["leetcode.nvim"] = "db7e1cd6b9191b34b4c1f2f96e4e3949cde9f951",
   ["mini.nvim"] = "f968becf44b05d8c54d4fa95c9ca699df4de363b",
+  ["nui.nvim"] = "53e907ffe5eedebdca1cd503b00aa8692068ca46",
   ["nvim-autopairs"] = "b464658e9b880f463b9f7e6ccddd93fb0013f559",
-  ["nvim-lspconfig"] = "343ac34abc7ab53fae33357f915024aaacb76a3e",
+  ["nvim-lspconfig"] = "8121483b8132b7053120fafd83728178fb3febf6",
   ["nvim-osc52"] = "04cfaba1865ae5c53b6f887c3ca7304973824fb2",
   ["nvim-treesitter"] = "556ac68cd33973a38d3f2abac47f361432593fe2",
   ["nvim-treesitter-context"] = "2bcf700b59bc92850ca83a1c02e86ba832e0fae0",
@@ -19,5 +21,6 @@ return {
   ["quicker.nvim"] = "e4fb0b1862284757561d1d51091cdee907585948",
   ["scrollofffraction.nvim"] = "0618a3e3e1a4e13a04edf6fd35bfcee4bd5afe38",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
+  ["telescope.nvim"] = "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc",
   undotree = "2556c6800b210b2096b55b66e74b4cc1d9ebbe4f"
 }
