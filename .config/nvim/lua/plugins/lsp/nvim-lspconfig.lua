@@ -18,7 +18,7 @@ vim.keymap.set('n', 'gR', vim.lsp.buf.rename, { desc = 'LSP: Rename Variable' })
 
 -- diagnostics
 vim.diagnostic.config({
-  signs = { priority = 200 },
+  signs = false,
   float = { border = 'single' },
   severity_sort = true,
 })
