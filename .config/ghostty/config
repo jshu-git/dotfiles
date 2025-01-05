@@ -29,4 +29,3 @@ copy-on-select = true
 # keybinds
 keybind = ctrl+tab=text:\x1b[27;5;9~
 keybind = ctrl+shift+tab=esc:[27;6;9~
-
