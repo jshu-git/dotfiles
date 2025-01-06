@@ -46,11 +46,6 @@ require('catppuccin').setup({
       -- cmp
       BlinkCmpLabel = { fg = colors.overlay1 },
 
-      -- telescope
-      -- TelescopeMatching = { bg = colors.surface2, fg = colors.text },
-      -- TelescopeSelection = { link = 'ColorColumn' },
-      -- TelescopeMultiSelection = { link = 'Visual' },
-
       -- mini
       MiniJump = { link = 'SpellRare' },
       MiniPickNormal = { fg = colors.overlay0, bg = colors.mantle }, -- fg=NonText bg=NormalFloat
