@@ -55,3 +55,11 @@ vim.keymap.set('n', '<leader>fG', function()
   end
   require('telescope.builtin').live_grep({ search_dirs = results })
 end, { desc = 'Live Grep (Grapple)' })
+
+-- override custom keymaps
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'grapple' },
+  callback = function(event)
+    vim.keymap.set('n', '<C-v>', '<C-v>', { buffer = event.buf })
+  end,
+})
