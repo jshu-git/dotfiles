@@ -3,9 +3,9 @@ auto-update         = check
 auto-update-channel = tip
 
 # theme
-theme = catppuccin-mocha
+theme        = catppuccin-mocha
 cursor-color = white
-cursor-text = black
+cursor-text  = black
 
 # font
 font-family = MesloLGS Nerd Font
