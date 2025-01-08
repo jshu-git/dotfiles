@@ -64,6 +64,7 @@ local map_split = function(buf_id, lhs, direction)
   vim.keymap.set('n', lhs, rhs, { buffer = buf_id, desc = 'Split ' .. direction })
 end
 
+-- create mappings
 vim.api.nvim_create_autocmd('User', {
   pattern = 'MiniFilesBufferCreate',
   callback = function(args)
@@ -77,6 +78,16 @@ vim.api.nvim_create_autocmd('User', {
     vim.keymap.set('n', '<Tab>', toggle_preview, {
       buffer = buf_id,
       desc = 'Toggle Preview',
+    })
+
+    -- path
+    vim.keymap.set('n', 'gy', function()
+      local path = files.get_fs_entry().path
+      vim.fn.setreg(vim.v.register, path)
+      vim.notify('Copied: ' .. path)
+    end, {
+      buffer = buf_id,
+      desc = 'Copy path',
     })
   end,
 })
