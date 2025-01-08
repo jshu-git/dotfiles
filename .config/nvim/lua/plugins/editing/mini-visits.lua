@@ -37,18 +37,3 @@ vim.keymap.set('n', '<leader>A', function()
   visits.add_label('global')
   vim.notify('[mini.visits] Visited global label: ' .. vim.fn.expand('%:t'))
 end, { desc = 'Visit (global)' })
-
--- mini.files integration
-vim.api.nvim_create_autocmd('User', {
-  pattern = 'MiniFilesBufferCreate',
-  callback = function(args)
-    vim.keymap.set('n', '<leader>A', function()
-      local path = require('mini.files').get_fs_entry().path
-      visits.add_label('global', path)
-      vim.notify('[mini.visits] Visited global label: ' .. path)
-    end, {
-      buffer = args.data.buf_id,
-      desc = 'Visit (global)',
-    })
-  end,
-})

@@ -89,6 +89,16 @@ vim.api.nvim_create_autocmd('User', {
       buffer = buf_id,
       desc = 'Copy path',
     })
+
+    -- mini.visits
+    vim.keymap.set('n', '<leader>A', function()
+      local path = files.get_fs_entry().path
+      require('mini.visits').add_label('global', path)
+      vim.notify('[mini.visits] Visited global label: ' .. path)
+    end, {
+      buffer = args.data.buf_id,
+      desc = 'Visit (global)',
+    })
   end,
 })
 
