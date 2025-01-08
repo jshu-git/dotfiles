@@ -76,7 +76,6 @@ later(function()
   vim.cmd('runtime! lua/plugins/ui/*')
 
   -- editing
-  add('cbochs/grapple.nvim')
   add('stevearc/quicker.nvim')
   add('mbbill/undotree')
   add('numToStr/Comment.nvim')
