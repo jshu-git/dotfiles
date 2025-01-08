@@ -44,7 +44,6 @@ end)
 later(function()
   -- work
   add('ojroques/nvim-osc52')
-  add({ source = 'ruifm/gitlinker.nvim', depends = { 'nvim-lua/plenary.nvim' } })
   if vim.env.SSH_CLIENT ~= nil then
     vim.cmd('runtime! lua/plugins/work/*')
   end
@@ -86,6 +85,7 @@ later(function()
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- git
+  add('folke/snacks.nvim')
   vim.cmd('runtime! lua/plugins/git/*')
 
   -- leetcode
@@ -100,26 +100,4 @@ later(function()
     })
     require('plugins.leetcode')
   end
-
-  add('folke/snacks.nvim')
-  -- require('snacks').setup({
-  --   gitbrowse = {
-  --     open = function(url)
-  --       vim.fn.setreg('+', url)
-  --     end,
-  --   },
-  --   url_patterns = {
-  --     ['bitbucket%.com'] = {
-  --       branch = '/projects/op/repos/{branch}',
-  --       file = '/src/{branch}/{file}#lines-{line_start}-L{line_end}',
-  --       commit = '/commits/{commit}',
-  --     },
-  --   },
-  -- })
-  -- vim.keymap.set({ 'n', 'x' }, '<leader>gy', function()
-  --   require('snacks').gitbrowse()
-  -- end, { desc = 'Copy URL' })
-  -- vim.keymap.set({ 'n', 'x' }, '<leader>gb', function()
-  --   require('snacks').git.blame_line()
-  -- end, { desc = 'Blame' })
 end)
