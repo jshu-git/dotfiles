@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh
-
-file=`mktemp`.sh
-tmux capture-pane -pS - > $file
-tmux new-window -n tmux-edit-scrollback "$EDITOR '+ normal G $' $file"
