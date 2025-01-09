@@ -23,7 +23,6 @@ vim.o.shiftwidth = 4
 vim.o.breakindent = true
 vim.o.linebreak = true
 vim.o.wrap = false
-vim.o.showbreak = '↳ '
 vim.o.sidescrolloff = 8
 
 -- chars

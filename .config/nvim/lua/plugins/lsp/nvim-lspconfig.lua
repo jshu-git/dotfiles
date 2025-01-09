@@ -20,12 +20,10 @@ vim.keymap.set('n', 'gR', vim.lsp.buf.rename, { desc = 'LSP: Rename Variable' })
 vim.diagnostic.config({
   signs = false,
   float = { border = 'single' },
-  severity_sort = true,
 })
 vim.keymap.set('n', '<leader>td', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled(), { bufnr = 0 })
 end, { desc = 'LSP: Toggle Diagnostics' })
-vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'LSP: Hover Diagnostic' })
 vim.keymap.set('n', '[d', function()
   vim.diagnostic.get_next({ wrap = false })
 end, { desc = 'LSP: Previous Diagnostic' })
@@ -34,7 +32,7 @@ vim.keymap.set('n', ']d', function()
 end, { desc = 'LSP: Next Diagnostic' })
 
 -- inlay hints
-vim.keymap.set('n', '<leader>th', function()
+vim.keymap.set('n', '<leader>ti', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = 'LSP: Toggle Inlay Hints' })
 
