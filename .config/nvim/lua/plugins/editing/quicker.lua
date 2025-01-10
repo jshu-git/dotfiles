@@ -1,21 +1,8 @@
 local quicker = require('quicker')
 quicker.setup({
   opts = { number = true },
-  keys = {
-    {
-      '>',
-      function()
-        quicker.expand({
-          before = 1,
-          after = 1,
-          add_to_existing = true,
-        })
-      end,
-    },
-    { '<', quicker.collapse },
-  },
+  trim_leading_whitespace = 'all',
 })
-
 vim.keymap.set('n', ']q', '<cmd>cnext<cr>', { desc = 'Next Quickfix' })
 vim.keymap.set('n', '[q', '<cmd>cprev<cr>', { desc = 'Prev Quickfix' })
 
