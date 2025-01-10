@@ -21,7 +21,7 @@ end, { desc = 'Source File' })
 map('n', '<leader>nn', '<cmd>messages<CR>', { desc = 'Messages' })
 map('n', '<leader>o', function()
   os.execute('open -R ' .. vim.api.nvim_buf_get_name(0))
-end)
+end, { desc = 'Reveal in Finder' })
 
 -- append
 map('n', '<leader>,', 'mzA,<Esc>`z', { desc = 'Append Comma' })
