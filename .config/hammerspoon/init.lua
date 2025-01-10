@@ -3,19 +3,12 @@
 
 hs.loadSpoon("EmmyLua")
 
--- reload
-hs.hotkey.bind("alt", "r", hs.reload)
-
--- show desktop
-hs.hotkey.bind("alt", "d", hs.spaces.toggleShowDesktop)
-
 -- application switcher
 for key, name in pairs({
 	["1"] = "Zen Browser",
 	["2"] = "Ghostty",
 }) do
 	hs.hotkey.bind("alt", key, function()
-		-- hs.application.launchOrFocusByBundleID(name)
 		hs.application.launchOrFocus(name)
 	end)
 end
