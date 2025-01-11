@@ -9,7 +9,7 @@ cursor-text  = black
 
 # font
 font-family = MesloLGS Nerd Font
-font-size   = 16
+font-size   = 15
 
 # cursor
 cursor-style       = bar
