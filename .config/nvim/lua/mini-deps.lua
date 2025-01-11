@@ -70,7 +70,6 @@ later(function()
   vim.cmd('runtime! lua/plugins/cmp/*')
 
   -- ui
-  add('nkakouros-original/scrollofffraction.nvim')
   add('utilyre/sentiment.nvim')
   add('BranimirE/fix-auto-scroll.nvim')
   vim.cmd('runtime! lua/plugins/ui/*')
