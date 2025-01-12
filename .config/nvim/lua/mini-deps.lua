@@ -75,7 +75,6 @@ later(function()
   vim.cmd('runtime! lua/plugins/ui/*')
 
   -- editing
-  add('stevearc/quicker.nvim')
   add('mbbill/undotree')
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
