@@ -51,8 +51,9 @@ require('catppuccin').setup({
       MiniFilesTitleFocused = { bg = colors.surface0 },
 
       -- snacks
+      SnacksPickerDir = { fg = colors.overlay1 },
       SnacksPickerFile = { link = 'SnacksPickerDir' },
-      SnacksPickerMatch = { bg = colors.overlay1, fg = colors.flamingo },
+      SnacksPickerMatch = { bg = colors.overlay1, fg = colors.text },
 
       -- sentiment
       MatchParen = { link = 'Underlined' },
