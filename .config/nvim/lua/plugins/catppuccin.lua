@@ -48,10 +48,11 @@ require('catppuccin').setup({
 
       -- mini
       MiniJump = { link = 'SpellRare' },
-      MiniPickNormal = { fg = colors.overlay0, bg = colors.mantle }, -- fg=NonText bg=NormalFloat
-      MiniPickMatchRanges = { fg = colors.text },
-      MiniPickBorderText = { bg = colors.surface0 },
       MiniFilesTitleFocused = { bg = colors.surface0 },
+
+      -- snacks
+      SnacksPickerFile = { link = 'SnacksPickerDir' },
+      SnacksPickerMatch = { bg = colors.overlay1, fg = colors.flamingo },
 
       -- sentiment
       MatchParen = { link = 'Underlined' },

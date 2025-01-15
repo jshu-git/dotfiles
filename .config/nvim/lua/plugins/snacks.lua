@@ -31,6 +31,9 @@ snacks.setup({
       recent = {
         layout = { preview = false },
       },
+      grep = {
+        layout = { preview = false },
+      },
       lines = {
         layout = { preview = false, preset = 'default' },
       },
@@ -48,18 +51,19 @@ snacks.setup({
     layouts = {
       select = {
         layout = {
-          row = math.floor(0.5 * (vim.o.lines - require('utils').popup.height)),
-          col = math.floor(0.5 * (vim.o.columns - require('utils').popup.width)),
-          height = require('utils').popup.height,
-          width = require('utils').popup.width,
+          box = 'horizontal',
           backdrop = false,
-          box = 'vertical',
-          border = 'single',
-          title = '{source} {live}',
-          title_pos = 'center',
-          { win = 'input', height = 1, border = 'bottom' },
-          { win = 'list', border = 'none' },
-          { win = 'preview', height = 0.5, border = 'top' },
+          width = require('utils').popup.width,
+          height = require('utils').popup.height,
+          {
+            box = 'vertical',
+            border = 'single',
+            title = '{source} {live}',
+            title_pos = 'center',
+            { win = 'input', height = 1, border = 'bottom' },
+            { win = 'list', border = 'none' },
+          },
+          { win = 'preview', border = 'single', width = math.floor(require('utils').popup.width / 2) },
         },
       },
     },
