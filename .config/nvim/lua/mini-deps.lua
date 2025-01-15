@@ -48,6 +48,10 @@ later(function()
     vim.cmd('runtime! lua/plugins/work/*')
   end
 
+  -- snacks
+  add('folke/snacks.nvim')
+  require('plugins.snacks')
+
   -- treesitter
   add('nvim-treesitter/nvim-treesitter')
   add('nvim-treesitter/nvim-treesitter-context')
@@ -82,7 +86,6 @@ later(function()
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- git
-  add('folke/snacks.nvim')
   vim.cmd('runtime! lua/plugins/git/*')
 
   -- leetcode
