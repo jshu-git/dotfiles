@@ -43,16 +43,16 @@ snacks.setup({
     },
     layout = {
       cycle = false,
-      preset = 'custom_vertical',
+      preset = 'select',
     },
     layouts = {
-      custom_vertical = {
+      select = {
         layout = {
+          row = math.floor(0.5 * (vim.o.lines - require('utils').popup.height)),
+          col = math.floor(0.5 * (vim.o.columns - require('utils').popup.width)),
+          height = require('utils').popup.height,
+          width = require('utils').popup.width,
           backdrop = false,
-          width = 0.9,
-          min_width = 80,
-          height = 0.9,
-          min_height = 30,
           box = 'vertical',
           border = 'single',
           title = '{source} {live}',
