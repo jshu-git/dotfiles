@@ -32,10 +32,14 @@ snacks.setup({
         layout = { preview = false },
       },
       grep = {
+        hidden = true,
         layout = { preview = false },
       },
       lines = {
-        layout = { preview = false, preset = 'default' },
+        layout = {
+          preview = false,
+          preset = 'select',
+        },
       },
       buffers = {
         layout = { preview = false },
