@@ -91,7 +91,15 @@ vim.api.nvim_create_autocmd('User', {
     })
 
     -- mini.visits
-    vim.keymap.set('n', '<leader>A', function()
+    vim.keymap.set('n', '<leader>a', function()
+      local path = files.get_fs_entry().path
+      require('mini.visits').add_label('core', path)
+      vim.notify('[mini.visits] Visited core label: ' .. path)
+    end, {
+      buffer = args.data.buf_id,
+      desc = 'Visit (global)',
+    })
+    vim.keymap.set('n', '<leader>v', function()
       local path = files.get_fs_entry().path
       require('mini.visits').add_label('global', path)
       vim.notify('[mini.visits] Visited global label: ' .. path)
