@@ -13,7 +13,7 @@ end, { desc = 'LSP: Hover' })
 vim.keymap.set('n', 'gS', function()
   vim.lsp.buf.signature_help({ border = 'single' })
 end, { desc = 'LSP: Signature Help' })
-vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { desc = 'LSP: Code Action' })
+-- vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { desc = 'LSP: Code Action' })
 vim.keymap.set('n', 'gR', vim.lsp.buf.rename, { desc = 'LSP: Rename Variable' })
 
 -- diagnostics
