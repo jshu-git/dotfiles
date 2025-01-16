@@ -89,41 +89,6 @@ vim.api.nvim_create_autocmd('User', {
       buffer = buf_id,
       desc = 'Copy path',
     })
-
-    -- mini.visits
-    local visits = require('mini.visits')
-    vim.keymap.set('n', '<leader>a', function()
-      local path = files.get_fs_entry().path
-      visits.add_label('core', path)
-      vim.notify('[mini.visits] Visited core label: ' .. path)
-    end, {
-      buffer = args.data.buf_id,
-      desc = 'Visit (global)',
-    })
-    vim.keymap.set('n', '<leader>A', function()
-      local path = files.get_fs_entry().path
-      visits.remove_label('core', path)
-      vim.notify('[mini.visits] Removed core label: ' .. path)
-    end, {
-      buffer = args.data.buf_id,
-      desc = 'Visit (global)',
-    })
-    vim.keymap.set('n', '<leader>v', function()
-      local path = files.get_fs_entry().path
-      visits.add_label('global', path)
-      vim.notify('[mini.visits] Visited global label: ' .. path)
-    end, {
-      buffer = args.data.buf_id,
-      desc = 'Visit (global)',
-    })
-    vim.keymap.set('n', '<leader>V', function()
-      local path = files.get_fs_entry().path
-      visits.remove_label('global', path)
-      vim.notify('[mini.visits] Removed global label: ' .. path)
-    end, {
-      buffer = args.data.buf_id,
-      desc = 'Visit (global)',
-    })
   end,
 })
 
