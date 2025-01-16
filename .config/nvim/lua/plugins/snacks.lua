@@ -24,11 +24,19 @@ snacks.setup({
   picker = {
     prompt = '> ',
     sources = {
+      smart = {
+        hidden = true,
+        layout = { preview = false },
+      },
       files = {
         hidden = true,
         layout = { preview = false },
       },
       recent = {
+        hidden = true,
+        layout = { preview = false },
+      },
+      buffers = {
         layout = { preview = false },
       },
       grep = {
@@ -41,33 +49,30 @@ snacks.setup({
           preset = 'select',
         },
       },
-      buffers = {
-        layout = { preview = false },
-      },
       lsp_definitions = { auto_confirm = false },
       lsp_references = { auto_confirm = false },
       colorschemes = { layout = { preview = false } },
     },
     layout = {
       cycle = false,
-      preset = 'select',
+      preset = 'default',
     },
     layouts = {
-      select = {
+      default = {
         layout = {
           box = 'horizontal',
           backdrop = false,
-          width = require('utils').popup.width,
-          height = require('utils').popup.height,
+          width = 0.8,
+          height = 0.8,
           {
             box = 'vertical',
             border = 'single',
-            title = '{source} {live}',
+            title = '{source}',
             title_pos = 'center',
             { win = 'input', height = 1, border = 'bottom' },
             { win = 'list', border = 'none' },
           },
-          { win = 'preview', border = 'single', width = math.floor(require('utils').popup.width / 2) },
+          { win = 'preview', border = 'single', width = 0.5 },
         },
       },
     },
@@ -99,8 +104,15 @@ vim.keymap.set({ 'n', 'x' }, '<leader>gb', function()
 end, { desc = 'Blame' })
 
 -- picker
--- files
 local picker = snacks.picker
+
+-- smart
+vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
+-- vim.keymap.set('n', '<leader><Tab>', function()
+--   picker.smart({ filter = { cwd = vim.fn.getcwd() } })
+-- end, { desc = 'Files (Smart) (cwd)' })
+
+-- files
 vim.keymap.set('n', '<leader>ff', picker.files, { desc = 'Files' })
 vim.keymap.set('n', '<leader>fF', function()
   picker.files({ cwd = vim.fn.expand('%:p:h') })
@@ -109,6 +121,7 @@ vim.keymap.set('n', '<leader>fr', picker.recent, { desc = 'Files (Recent)' })
 vim.keymap.set('n', '<leader>fR', function()
   picker.recent({ filter = { cwd = vim.fn.getcwd() } })
 end, { desc = 'Files (Recent) (cwd)' })
+vim.keymap.set('n', '<leader>fb', picker.buffers)
 
 -- grep
 vim.keymap.set('n', '<leader>fw', picker.grep, { desc = 'Grep Live' })
@@ -147,7 +160,6 @@ vim.keymap.set('n', "'", picker.resume)
 vim.keymap.set('n', '<leader>gl', picker.git_log, { desc = 'Log' })
 
 -- vim
-vim.keymap.set('n', '<leader>fb', picker.buffers)
 vim.keymap.set('n', '<leader>fh', picker.help, { desc = 'Help' })
 vim.keymap.set('n', '<leader>fl', picker.highlights, { desc = 'Highlights' })
 -- vim.keymap.set('n', '<leader>ft', picker.colorschemes, { desc = 'Colorschemes' })
