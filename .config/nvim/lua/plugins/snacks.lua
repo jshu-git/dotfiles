@@ -157,7 +157,8 @@ end)
 vim.keymap.set('n', "'", picker.resume)
 
 -- git
-vim.keymap.set('n', '<leader>gl', picker.git_log, { desc = 'Log' })
+vim.keymap.set('n', '<leader>gl', picker.git_log_file, { desc = 'Log' })
+vim.keymap.set('x', '<leader>gl', picker.git_log_line, { desc = 'Log' })
 
 -- vim
 vim.keymap.set('n', '<leader>fh', picker.help, { desc = 'Help' })
