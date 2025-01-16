@@ -23,7 +23,8 @@ end
 -- core
 vim.keymap.set('n', '<Tab>', function()
   -- extra.pickers.visit_paths({ filter = 'core' }, { mappings = custom_mappings('core') })
-  visits.select_path('', { filter = 'core' })
+  -- cwd=nil to select from paths only under the cwd
+  visits.select_path(nil, { filter = 'core' })
 end, { desc = 'Visits (core)' })
 vim.keymap.set('n', '<leader>a', function()
   visits.add_label('core')
@@ -37,6 +38,7 @@ end, { desc = 'Removed Visit (core)' })
 -- global
 vim.keymap.set('n', '<leader><Tab>', function()
   -- extra.pickers.visit_paths({ cwd = '', filter = 'global' }, { mappings = custom_mappings('global') })
+  -- cwd='' to select from all paths, aka globally
   visits.select_path('', { filter = 'global' })
 end, { desc = 'Visits (global)' })
 vim.keymap.set('n', '<leader>v', function()
