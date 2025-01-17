@@ -63,6 +63,14 @@ require('catppuccin').setup({
     }
   end,
   integrations = {
+    native_lsp = {
+      underlines = {
+        errors = { 'undercurl' },
+        hints = { 'undercurl' },
+        warnings = { 'undercurl' },
+        information = { 'undercurl' },
+      },
+    },
     mini = { indentscope_color = 'surface1' }, -- NonText
     blink_cmp = true,
     treesitter_context = false,
