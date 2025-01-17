@@ -76,6 +76,9 @@ snacks.setup({
         },
       },
     },
+    formatters = {
+      file = { filename_first = true },
+    },
     previewers = {
       git = { native = true },
     },
