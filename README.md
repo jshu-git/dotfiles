@@ -1,10 +1,11 @@
-<img width="1472" alt="SCR-20250105-lpkp" src="https://github.com/user-attachments/assets/a05f4fe0-d9e0-4342-a7bf-0e60d909b799" />
+<img width="1472" alt="SCR-20250116-thib" src="https://github.com/user-attachments/assets/92eca931-1f10-42c9-9830-3c9c34328fef" />
 
 - browser: [zen](https://zen-browser.app/)
 - terminal: [ghostty](https://ghostty.org/)
   - terminal multiplexer: [zellij](https://zellij.dev/)
   - editor: [neovim](https://neovim.io/)
   - shell: [zsh](https://www.zsh.org/)
+
 - theme: [catppuccin](https://catppuccin.com/)
 - font: [MesloLGS Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 - dotfile manager: [yadm](https://yadm.io/)
