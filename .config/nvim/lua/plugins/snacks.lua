@@ -22,27 +22,12 @@ snacks.setup({
 
   -- pickers
   picker = {
-    prompt = '> ',
+    prompt = '  > ',
     sources = {
-      smart = {
-        hidden = true,
-        layout = { preview = false },
-      },
-      files = {
-        hidden = true,
-        layout = { preview = false },
-      },
-      recent = {
-        hidden = true,
-        layout = { preview = false },
-      },
-      buffers = {
-        layout = { preview = false },
-      },
-      grep = {
-        hidden = true,
-        layout = { preview = false },
-      },
+      smart = { hidden = true },
+      files = { hidden = true },
+      recent = { hidden = true },
+      grep = { hidden = true },
       lines = {
         layout = {
           preview = false,
@@ -51,7 +36,6 @@ snacks.setup({
       },
       lsp_definitions = { auto_confirm = false },
       lsp_references = { auto_confirm = false },
-      colorschemes = { layout = { preview = false } },
     },
     layout = {
       cycle = false,
@@ -59,20 +43,18 @@ snacks.setup({
     },
     layouts = {
       default = {
+        preview = false,
         layout = {
-          box = 'horizontal',
           backdrop = false,
           width = 0.8,
           height = 0.8,
-          {
-            box = 'vertical',
-            border = 'single',
-            title = '{source}',
-            title_pos = 'center',
-            { win = 'input', height = 1, border = 'bottom' },
-            { win = 'list', border = 'none' },
-          },
-          { win = 'preview', border = 'single', width = 0.5 },
+          box = 'vertical',
+          border = 'single',
+          title = '{source}',
+          title_pos = 'center',
+          { win = 'input', height = 1, border = 'bottom' },
+          { win = 'list', border = 'none' },
+          { win = 'preview', height = 0.5, border = 'top' },
         },
       },
     },
