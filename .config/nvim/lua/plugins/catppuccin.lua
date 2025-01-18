@@ -38,9 +38,6 @@ require('catppuccin').setup({
     return {
       VertSplit = { link = 'NonText' },
       WinSeparator = { link = 'VertSplit' },
-
-      -- floating windows
-      -- NormalFloat = { link = 'Normal' },
       FloatBorder = { link = 'NonText' },
 
       -- cmp
@@ -48,7 +45,7 @@ require('catppuccin').setup({
 
       -- mini
       MiniJump = { link = 'SpellRare' },
-      MiniFilesTitleFocused = { bg = colors.surface0 },
+      MiniFilesTitleFocused = { link = 'Visual' },
 
       -- snacks
       -- SnacksPickerDir = { fg = colors.surface2 },
