@@ -15,13 +15,22 @@ vim.api.nvim_create_autocmd('BufEnter', {
   end,
 })
 
+-- help maps https://old.reddit.com/r/neovim/comments/1i44vke/what_keymaps_or_sequences_do_you_use_over_the/m7utbiy/
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'help' },
+  callback = function(event)
+    vim.keymap.set('n', '<CR>', '<C-]>', { buffer = event.buf })
+    vim.keymap.set('n', '<BS>', '<C-t>', { buffer = event.buf })
+  end,
+})
+
 -- from LazyVim
 -- close some filetypes with <esc>
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'help', 'qf' },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
-    vim.keymap.set('n', '<esc>', '<cmd>close<cr>', { buffer = event.buf, silent = true })
+    vim.keymap.set('n', '<esc>', '<cmd>close<cr>', { buffer = event.buf })
   end,
 })
 
@@ -36,13 +45,7 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, {
 
 -- set wrap in some filetypes
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = {
-    '*.txt',
-    '*.log',
-    'gitcommit',
-    'markdown',
-    'mininotify-history',
-  },
+  pattern = { '*.txt', '*.log', 'gitcommit', 'markdown', 'mininotify-history' },
   callback = function()
     vim.wo.wrap = true
   end,
