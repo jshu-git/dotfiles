@@ -22,20 +22,13 @@ snacks.setup({
 
   -- pickers
   picker = {
-    prompt = ' > ',
+    prompt = '',
+    -- prompt = '> ',
     sources = {
       smart = { hidden = true },
       files = { hidden = true },
       recent = { hidden = true },
       grep = { hidden = true },
-      lines = {
-        layout = {
-          preview = false,
-          preset = 'select',
-        },
-      },
-      lsp_definitions = { auto_confirm = false },
-      lsp_references = { auto_confirm = false },
     },
     layout = {
       cycle = false,
@@ -134,13 +127,28 @@ vim.keymap.set('x', '<leader>fW', function()
 end, { desc = 'Grep (Relative)' })
 
 -- lsp
-vim.keymap.set('n', 'gd', picker.lsp_definitions, { desc = 'LSP: Goto Definition' })
-vim.keymap.set('n', 'gr', picker.lsp_references, { desc = 'LSP: Goto References' })
+vim.keymap.set('n', 'gd', function()
+  picker.lsp_definitions({
+    auto_confirm = false,
+    layout = { preview = true },
+  })
+end, { desc = 'LSP: Goto Definition' })
+vim.keymap.set('n', 'gr', function()
+  picker.lsp_references({
+    auto_confirm = false,
+    layout = { preview = true },
+  })
+end, { desc = 'LSP: Goto References' })
 vim.keymap.set('n', '<leader>fd', picker.diagnostics, { desc = 'LSP: Diagnostics' })
 
 -- misc
 vim.keymap.set('n', ',', function()
-  picker.lines()
+  picker.lines({
+    layout = {
+      preview = false,
+      preset = 'select',
+    },
+  })
   -- source = {
   --   choose = function(item)
   --     ---@diagnostic disable:param-type-mismatch
@@ -155,8 +163,12 @@ end)
 vim.keymap.set('n', "'", picker.resume)
 
 -- git
-vim.keymap.set('n', '<leader>gl', picker.git_log_file, { desc = 'Log' })
-vim.keymap.set('x', '<leader>gl', picker.git_log_line, { desc = 'Log' })
+vim.keymap.set('n', '<leader>gl', function()
+  picker.git_log_file({ layout = { preview = true } })
+end, { desc = 'Log' })
+vim.keymap.set('x', '<leader>gl', function()
+  picker.git_log_line({ layout = { preview = true } })
+end, { desc = 'Log' })
 
 -- vim
 vim.keymap.set('n', '<leader>fh', picker.help, { desc = 'Help' })
