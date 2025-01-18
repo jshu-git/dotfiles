@@ -67,19 +67,19 @@ snacks.setup({
           -- ['<c-u>'] = { 'list_scroll_up', mode = { 'i', 'n' } },
           ['<C-S-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
           ['<C-S-d>'] = { 'preview_scroll_down', mode = { 'i', 'n' } },
-          ['<C-z>'] = { 'cycle_win', mode = { 'i', 'n' } },
+          ['<C-space>'] = { 'cycle_win', mode = { 'i', 'n' } },
         },
       },
       list = {
         keys = {
           ['<Tab>'] = 'toggle_preview',
-          ['<C-z>'] = 'cycle_win',
+          ['<C-space>'] = 'cycle_win',
         },
       },
       preview = {
         keys = {
           ['<Tab>'] = 'toggle_preview',
-          ['<C-z>'] = 'cycle_win',
+          ['<C-space>'] = 'cycle_win',
         },
       },
     },
