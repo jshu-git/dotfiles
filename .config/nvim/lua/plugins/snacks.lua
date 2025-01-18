@@ -22,7 +22,7 @@ snacks.setup({
 
   -- pickers
   picker = {
-    prompt = '  > ',
+    prompt = ' > ',
     sources = {
       smart = { hidden = true },
       files = { hidden = true },
