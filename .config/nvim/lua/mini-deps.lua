@@ -45,17 +45,8 @@ later(function()
   -- work
   add('ojroques/nvim-osc52')
   if vim.env.SSH_CLIENT ~= nil then
-    vim.cmd('runtime! lua/plugins/work/*')
+    require('plugins.nvim-osc52')
   end
-
-  -- snacks
-  add('folke/snacks.nvim')
-  require('plugins.snacks')
-
-  -- treesitter
-  add('nvim-treesitter/nvim-treesitter')
-  add('nvim-treesitter/nvim-treesitter-context')
-  require('plugins.nvim-treesitter')
 
   -- lsp
   add({
@@ -79,11 +70,17 @@ later(function()
   vim.cmd('runtime! lua/plugins/ui/*')
 
   -- editing
+  add('nvim-treesitter/nvim-treesitter')
+  add('nvim-treesitter/nvim-treesitter-context')
   add('mbbill/undotree')
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
   add('pteroctopus/faster.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
+
+  -- snacks
+  add('folke/snacks.nvim')
+  require('plugins.snacks')
 
   -- git
   vim.cmd('runtime! lua/plugins/git/*')
