@@ -15,23 +15,6 @@ vim.api.nvim_create_autocmd('BufEnter', {
   end,
 })
 
--- only show cursorline in active window
--- augroup CursorLineOnlyInActiveWindow
---   autocmd!
---   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
---   autocmd WinLeave * setlocal nocursorline
--- augroup END
--- vim.api.nvim_create_autocmd({ 'WinEnter', 'BufWinEnter' }, {
---   callback = function()
---     vim.wo.cursorline = true
---   end,
--- })
--- vim.api.nvim_create_autocmd({ 'WinLeave' }, {
---   callback = function()
---     vim.wo.cursorline = false
---   end,
--- })
-
 -- from LazyVim
 -- close some filetypes with <esc>
 vim.api.nvim_create_autocmd('FileType', {
@@ -52,19 +35,18 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, {
 })
 
 -- set wrap in some filetypes
--- vim.api.nvim_create_autocmd('FileType', {
---   pattern = {
---     '*.txt',
---     'gitcommit',
---     'markdown',
---     'mininotify-history',
---   },
---   callback = function()
---     vim.wo.wrap = true
---     -- vim.opt_local.spell = true
---     -- vim.opt_local.linebreak = true
---   end,
--- })
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = {
+    '*.txt',
+    '*.log',
+    'gitcommit',
+    'markdown',
+    'mininotify-history',
+  },
+  callback = function()
+    vim.wo.wrap = true
+  end,
+})
 
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
