@@ -47,7 +47,7 @@ snacks.setup({
           title_pos = 'center',
           { win = 'input', height = 1, border = 'bottom' },
           { win = 'list', border = 'none' },
-          { win = 'preview', height = 0.5, border = 'top' },
+          { win = 'preview', title = '{preview}', height = 0.5, border = 'top' },
         },
       },
     },
@@ -99,20 +99,20 @@ local picker = snacks.picker
 
 -- smart
 vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
+vim.keymap.set('n', '<leader><Tab>', picker.buffers, { desc = 'Buffers' })
 -- vim.keymap.set('n', '<leader><Tab>', function()
 --   picker.smart({ filter = { cwd = vim.fn.getcwd() } })
 -- end, { desc = 'Files (Smart) (cwd)' })
 
 -- files
-vim.keymap.set('n', '<leader>ff', picker.files, { desc = 'Files' })
+-- vim.keymap.set('n', '<leader>ff', picker.files, { desc = 'Files' })
 vim.keymap.set('n', '<leader>fF', function()
   picker.files({ cwd = vim.fn.expand('%:p:h') })
 end, { desc = 'Files (Relative)' })
-vim.keymap.set('n', '<leader>fr', picker.recent, { desc = 'Files (Recent)' })
-vim.keymap.set('n', '<leader>fR', function()
-  picker.recent({ filter = { cwd = vim.fn.getcwd() } })
-end, { desc = 'Files (Recent) (cwd)' })
-vim.keymap.set('n', '<leader>fb', picker.buffers)
+-- vim.keymap.set('n', '<leader>fr', picker.recent, { desc = 'Files (Recent)' })
+-- vim.keymap.set('n', '<leader>fR', function()
+--   picker.recent({ filter = { cwd = vim.fn.getcwd() } })
+-- end, { desc = 'Files (Recent) (cwd)' })
 
 -- grep
 vim.keymap.set('n', '<leader>fw', picker.grep, { desc = 'Grep Live' })
