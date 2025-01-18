@@ -16,11 +16,12 @@ cursor-style       = bar
 cursor-style-blink = false
 
 # window
-title                  = " "
-window-padding-balance = true
-window-save-state      = always
-macos-titlebar-style   = hidden
-confirm-close-surface  = false
+# title                     = " "
+# macos-titlebar-proxy-icon = hidden
+macos-titlebar-style      = hidden
+window-padding-balance    = true
+window-save-state         = always
+confirm-close-surface     = false
 
 # clipboard
 clipboard-read = allow
