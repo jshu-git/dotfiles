@@ -50,18 +50,11 @@ require('catppuccin').setup({
       MiniJump = { link = 'SpellRare' },
       MiniFilesTitleFocused = { bg = colors.surface0 },
 
-      -- telescope
-      TelescopeNormal = { link = 'NonText' },
-      TelescopePromptNormal = { fg = colors.text },
-      TelescopeSelection = { link = 'CursorLine' },
-      TelescopeMatching = { bg = colors.overlay0, fg = colors.text },
-      TelescopeMultiSelection = { link = 'Visual' },
-
       -- snacks
       -- SnacksPickerDir = { fg = colors.surface2 },
       -- SnacksPickerFile = { fg = colors.overlay2 },
-      -- SnacksPickerMatch = { bg = colors.overlay0, fg = colors.text },
-      -- SnacksPickerListCursorLine = { bg = colors.surface0 },
+      SnacksPickerMatch = { bg = colors.overlay0, fg = colors.text },
+      SnacksPickerListCursorLine = { bg = colors.surface0 },
 
       -- sentiment
       MatchParen = { link = 'Underlined' },

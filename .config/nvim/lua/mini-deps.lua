@@ -49,8 +49,8 @@ later(function()
   end
 
   -- snacks
-  -- add('folke/snacks.nvim')
-  -- require('plugins.snacks')
+  add('folke/snacks.nvim')
+  require('plugins.snacks')
 
   -- treesitter
   add('nvim-treesitter/nvim-treesitter')
@@ -87,16 +87,6 @@ later(function()
 
   -- git
   vim.cmd('runtime! lua/plugins/git/*')
-
-  add({
-    source = 'nvim-telescope/telescope.nvim',
-    depends = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope-ui-select.nvim',
-      'natecraddock/telescope-zf-native.nvim',
-    },
-  })
-  require('plugins.telescope')
 
   -- leetcode
   if vim.env.SSH_CLIENT == nil then
