@@ -24,6 +24,24 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+-- only show cursorline in active window
+vim.api.nvim_create_autocmd({ 'WinEnter' }, {
+  callback = function()
+    if vim.w.auto_cursorline then
+      vim.wo.cursorline = true
+      vim.w.auto_cursorline = nil
+    end
+  end,
+})
+vim.api.nvim_create_autocmd({ 'WinLeave' }, {
+  callback = function()
+    if vim.wo.cursorline then
+      vim.w.auto_cursorline = true
+      vim.wo.cursorline = false
+    end
+  end,
+})
+
 -- from LazyVim
 -- close some filetypes with <esc>
 vim.api.nvim_create_autocmd('FileType', {
