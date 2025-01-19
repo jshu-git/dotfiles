@@ -13,11 +13,11 @@ return {
   ["nvim-autopairs"] = "3d02855468f94bf435db41b661b58ec4f48a06b7",
   ["nvim-lspconfig"] = "14b5a806c928390fac9ff4a5630d20eb902afad8",
   ["nvim-osc52"] = "04cfaba1865ae5c53b6f887c3ca7304973824fb2",
-  ["nvim-treesitter"] = "5da195ac3dfafd08d8b10756d975f0e01e1d563a",
+  ["nvim-treesitter"] = "645d14f40f6c83da255591e16de1c0dfe5bf8ed4",
   ["nvim-treesitter-context"] = "bece284c5322ddf6946fa4bdc383a2bc033269d7",
   ["plenary.nvim"] = "3707cdb1e43f5cea73afb6037e6494e7ce847a66",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
-  ["snacks.nvim"] = "cd58a14e20fdcd810b55e8aee535486a3ad8719f",
+  ["snacks.nvim"] = "eb0e5b7efe603bea7a0823ffaed13c52b395d04b",
   ["telescope.nvim"] = "415af52339215926d705cccc08145f3782c4d132",
   ["tiny-inline-diagnostic.nvim"] = "aaa6f0dd097f8ca2478cad259e61b7cb26ec0eb8",
   undotree = "2556c6800b210b2096b55b66e74b4cc1d9ebbe4f"
