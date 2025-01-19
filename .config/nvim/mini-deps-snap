@@ -1,7 +1,6 @@
 return {
   ["Comment.nvim"] = "e30b7f2008e52442154b66f7c519bfd2f1e32acb",
   ["blink.cmp"] = "1cc3b1a908fbcfd15451c4772759549724f38524",
-  catppuccin = "f67b886d65a029f12ffa298701fb8f1efd89295d",
   ["conform.nvim"] = "6dc21d4ce050c2e592d9635b7983d67baf216e3d",
   ["faster.nvim"] = "c3a5286765b43263791eb736affeb6fdff81e4ef",
   ["fix-auto-scroll.nvim"] = "c211a42f4030c9ed03a1456919917cdf1a193bd9",
@@ -9,6 +8,7 @@ return {
   ["lazydev.nvim"] = "8620f82ee3f59ff2187647167b6b47387a13a018",
   ["leetcode.nvim"] = "db7e1cd6b9191b34b4c1f2f96e4e3949cde9f951",
   ["mini.nvim"] = "855fdb116408085b7a00be8511c566cdc33648b7",
+  ["nord.nvim"] = "b0f3ed242fd8e5bafa7231367821d46c6c835dd8",
   ["nui.nvim"] = "53e907ffe5eedebdca1cd503b00aa8692068ca46",
   ["nvim-autopairs"] = "3d02855468f94bf435db41b661b58ec4f48a06b7",
   ["nvim-lspconfig"] = "14b5a806c928390fac9ff4a5630d20eb902afad8",

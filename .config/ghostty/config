@@ -3,13 +3,14 @@ auto-update         = check
 auto-update-channel = tip
 
 # theme
-theme        = catppuccin-mocha
+theme        = nord
 cursor-color = white
 cursor-text  = black
 
 # font
-font-family = MesloLGS Nerd Font
-font-size   = 14
+font-family          = MesloLGS Nerd Font
+font-synthetic-style = false
+font-size            = 14
 
 # cursor
 cursor-style       = bar

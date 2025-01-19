@@ -11,11 +11,10 @@ gui:
   showDivergenceFromBaseBranch: arrowAndNumber
   border: single
   theme:
-    # catppuccin-mocha
     inactiveBorderColor:
-      - "#6c7086"
+      - "#4C566A"
     selectedLineBgColor:
-      - "#2a2b3c"
+      - "#3B4252"
 git:
   paging:
     pager: delta --dark --paging=never
