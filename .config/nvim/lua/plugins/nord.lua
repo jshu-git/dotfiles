@@ -29,17 +29,17 @@
 require('nord').setup({
   -- diff = { mode = 'fg' },
   search = { theme = 'vscode' },
-  on_highlights = function(hl, colors)
+  on_highlights = function(hl, c)
     -- sentiment
     hl.MatchParen = { link = 'Underlined' }
 
     -- cmp
-    hl.BlinkCmpLabel = { fg = colors.polar_night.light }
-    hl.BlinkCmpLabelMatch = { fg = colors.snow_storm.origin }
+    hl.BlinkCmpLabel = { fg = c.polar_night.light }
+    hl.BlinkCmpLabelMatch = { fg = c.snow_storm.origin }
 
     -- snacks
-    hl.SnacksPickerMatch = { bg = colors.frost.artic_ocean, fg = colors.snow_storm.origin }
-    hl.SnacksPickerDir = { fg = colors.polar_night.light }
+    hl.SnacksPickerMatch = { bg = c.frost.artic_ocean, fg = c.snow_storm.origin }
+    hl.SnacksPickerDir = { fg = c.polar_night.light }
     hl.SnacksPickerFile = { link = 'SnacksPickerDir' }
 
     -- mini
