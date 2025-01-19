@@ -1,4 +1,4 @@
-<img width="1472" alt="SCR-20250116-thib" src="https://github.com/user-attachments/assets/92eca931-1f10-42c9-9830-3c9c34328fef" />
+<img width="1472" alt="SCR-20250119-nsuj" src="https://github.com/user-attachments/assets/60333bc0-c06f-4486-879a-1c2e10ff9e58" />
 
 - browser: [zen](https://zen-browser.app/)
 - terminal: [ghostty](https://ghostty.org/)
