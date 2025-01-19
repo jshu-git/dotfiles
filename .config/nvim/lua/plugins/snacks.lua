@@ -110,9 +110,9 @@ vim.keymap.set('n', '<leader>fF', function()
   picker.files({ cwd = vim.fn.expand('%:p:h') })
 end, { desc = 'Files (Relative)' })
 -- vim.keymap.set('n', '<leader>fr', picker.recent, { desc = 'Files (Recent)' })
--- vim.keymap.set('n', '<leader>fR', function()
---   picker.recent({ filter = { cwd = vim.fn.getcwd() } })
--- end, { desc = 'Files (Recent) (cwd)' })
+vim.keymap.set('n', '<leader>fR', function()
+  picker.recent({ filter = { cwd = vim.fn.getcwd() } })
+end, { desc = 'Files (Recent) (Relative)' })
 
 -- grep
 vim.keymap.set('n', '<leader>fw', picker.grep, { desc = 'Grep Live' })
