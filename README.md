@@ -6,7 +6,7 @@
   - editor: [neovim](https://neovim.io/)
   - shell: [zsh](https://www.zsh.org/)
 
-- theme: [catppuccin](https://catppuccin.com/)
+- theme: [Nord](https://www.nordtheme.com/)
 - font: [MesloLGS Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 - dotfile manager: [yadm](https://yadm.io/)
 - macapps:
