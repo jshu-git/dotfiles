@@ -51,9 +51,9 @@ snacks.setup({
         },
       },
     },
-    formatters = {
-      file = { filename_first = true },
-    },
+    -- formatters = {
+    --   file = { filename_first = true },
+    -- },
     previewers = {
       git = { native = true },
     },
