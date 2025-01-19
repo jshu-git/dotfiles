@@ -48,7 +48,7 @@ keybinds clear-defaults=true {
         bind "L" { MovePane "Right"; }
         bind "m" { ToggleFocusFullscreen; SwitchToMode "Locked"; }
         bind "X" { CloseFocus; SwitchToMode "Locked"; }
-        bind "F" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
+        bind "E" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
 
         // tab
         bind "t" { NewTab; SwitchToMode "Locked"; }
