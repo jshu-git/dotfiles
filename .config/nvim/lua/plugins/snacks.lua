@@ -128,16 +128,10 @@ end, { desc = 'Grep (Relative)' })
 
 -- lsp
 vim.keymap.set('n', 'gd', function()
-  picker.lsp_definitions({
-    auto_confirm = false,
-    layout = { preview = true },
-  })
+  picker.lsp_definitions({ auto_confirm = false, layout = { preview = true } })
 end, { desc = 'LSP: Goto Definition' })
 vim.keymap.set('n', 'gr', function()
-  picker.lsp_references({
-    auto_confirm = false,
-    layout = { preview = true },
-  })
+  picker.lsp_references({ auto_confirm = false, layout = { preview = true } })
 end, { desc = 'LSP: Goto References' })
 vim.keymap.set('n', '<leader>fd', picker.diagnostics, { desc = 'LSP: Diagnostics' })
 
@@ -188,5 +182,9 @@ vim.keymap.set('n', '<leader>fk', picker.keymaps, { desc = 'Keymaps' })
 vim.keymap.set('n', '<leader>"', function()
   picker.registers({ layout = { preview = true } })
 end, { desc = 'Registers' })
-vim.keymap.set('n', '<leader>:', picker.command_history, { desc = 'Command History' })
-vim.keymap.set('n', '<leader>/', picker.search_history, { desc = 'Search History' })
+vim.keymap.set('n', '<leader>:', function()
+  picker.command_history({ layout = { preset = 'select' } })
+end, { desc = 'Command History' })
+vim.keymap.set('n', '<leader>/', function()
+  picker.search_history({ layout = { preset = 'select' } })
+end, { desc = 'Search History' })
