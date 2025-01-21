@@ -11,14 +11,14 @@ return {
   ["nord.nvim"] = "b0f3ed242fd8e5bafa7231367821d46c6c835dd8",
   ["nui.nvim"] = "53e907ffe5eedebdca1cd503b00aa8692068ca46",
   ["nvim-autopairs"] = "3d02855468f94bf435db41b661b58ec4f48a06b7",
-  ["nvim-lspconfig"] = "14b5a806c928390fac9ff4a5630d20eb902afad8",
+  ["nvim-lspconfig"] = "46de45200afab642a134cf4e26f8f495ab7a49dd",
   ["nvim-osc52"] = "04cfaba1865ae5c53b6f887c3ca7304973824fb2",
-  ["nvim-treesitter"] = "645d14f40f6c83da255591e16de1c0dfe5bf8ed4",
+  ["nvim-treesitter"] = "0fb02ac5c39423b5c863eb7c8dd7b093879f1488",
   ["nvim-treesitter-context"] = "bece284c5322ddf6946fa4bdc383a2bc033269d7",
   ["plenary.nvim"] = "3707cdb1e43f5cea73afb6037e6494e7ce847a66",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
-  ["snacks.nvim"] = "eb0e5b7efe603bea7a0823ffaed13c52b395d04b",
+  ["snacks.nvim"] = "233356e6c9fecf6dfcfddac788580a79d6a3ab6e",
   ["telescope.nvim"] = "415af52339215926d705cccc08145f3782c4d132",
-  ["tiny-inline-diagnostic.nvim"] = "aaa6f0dd097f8ca2478cad259e61b7cb26ec0eb8",
+  ["tiny-inline-diagnostic.nvim"] = "2c50854895c9b553482d4289976194a477b41b8f",
   undotree = "2556c6800b210b2096b55b66e74b4cc1d9ebbe4f"
 }
