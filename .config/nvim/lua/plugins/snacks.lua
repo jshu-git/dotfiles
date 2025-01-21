@@ -63,11 +63,11 @@ snacks.setup({
           ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
           ['<Tab>'] = { 'toggle_preview', mode = { 'i', 'n' } },
           ['<C-x>'] = { 'select_and_next', mode = { 'i', 'n' } },
-          -- ['<c-d>'] = { 'list_scroll_down', mode = { 'i', 'n' } },
-          -- ['<c-u>'] = { 'list_scroll_up', mode = { 'i', 'n' } },
           ['<C-S-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
           ['<C-S-d>'] = { 'preview_scroll_down', mode = { 'i', 'n' } },
           ['<C-space>'] = { 'cycle_win', mode = { 'i', 'n' } },
+          ['<Up>'] = { 'history_back', mode = { 'i', 'n' } },
+          ['<Down>'] = { 'history_forward', mode = { 'i', 'n' } },
         },
       },
       list = {
@@ -99,12 +99,12 @@ local picker = snacks.picker
 
 -- smart
 vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
-vim.keymap.set('n', '<leader><Tab>', picker.buffers, { desc = 'Buffers' })
 -- vim.keymap.set('n', '<leader><Tab>', function()
 --   picker.smart({ filter = { cwd = vim.fn.getcwd() } })
 -- end, { desc = 'Files (Smart) (cwd)' })
 
 -- files
+vim.keymap.set('n', '<leade>fb', picker.buffers, { desc = 'Buffers' })
 -- vim.keymap.set('n', '<leader>ff', picker.files, { desc = 'Files' })
 vim.keymap.set('n', '<leader>fF', function()
   picker.files({ cwd = vim.fn.expand('%:p:h') })
