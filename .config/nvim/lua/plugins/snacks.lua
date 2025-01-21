@@ -99,20 +99,20 @@ local picker = snacks.picker
 
 -- smart
 vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
--- vim.keymap.set('n', '<leader><Tab>', function()
---   picker.smart({ filter = { cwd = vim.fn.getcwd() } })
--- end, { desc = 'Files (Smart) (cwd)' })
+vim.keymap.set('n', '<leader><Tab>', function()
+  picker.smart({ filter = { cwd = vim.fn.getcwd() } })
+end, { desc = 'Files (Smart) (Relative)' })
 
 -- files
 vim.keymap.set('n', '<leade>fb', picker.buffers, { desc = 'Buffers' })
 -- vim.keymap.set('n', '<leader>ff', picker.files, { desc = 'Files' })
-vim.keymap.set('n', '<leader>fF', function()
-  picker.files({ cwd = vim.fn.expand('%:p:h') })
-end, { desc = 'Files (Relative)' })
+-- vim.keymap.set('n', '<leader>fF', function()
+--   picker.files({ cwd = vim.fn.expand('%:p:h') })
+-- end, { desc = 'Files (Relative)' })
 -- vim.keymap.set('n', '<leader>fr', picker.recent, { desc = 'Files (Recent)' })
-vim.keymap.set('n', '<leader>fR', function()
-  picker.recent({ filter = { cwd = vim.fn.getcwd() } })
-end, { desc = 'Files (Recent) (Relative)' })
+-- vim.keymap.set('n', '<leader>fR', function()
+--   picker.recent({ filter = { cwd = vim.fn.getcwd() } })
+-- end, { desc = 'Files (Recent) (Relative)' })
 
 -- grep
 vim.keymap.set('n', '<leader>fw', picker.grep, { desc = 'Grep Live' })
