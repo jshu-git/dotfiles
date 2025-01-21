@@ -2,26 +2,9 @@ local statusline = require('mini.statusline')
 statusline.setup({
   content = {
     active = function()
-      -- a
       local mode, mode_hl = statusline.section_mode({ trunc_width = 120 })
       mode = string.upper(mode)
 
-      -- b
-      -- local git = statusline.section_git({ trunc_width = 40 })
-      -- local diff = statusline.section_diff({ trunc_width = 75 })
-      -- local custom_diff = function()
-      --   return vim.b.minidiff_summary_string or ''
-      -- end
-      -- local custom_git = function()
-      --   return vim.b.minigit_summary_string and (' ' .. vim.b.minigit_summary_string) or ''
-      -- end
-
-      -- local diagnostics = statusline.section_diagnostics({ trunc_width = 75, icon = '' })
-
-      -- c
-      -- local filename = statusline.section_filename({ trunc_width = 140 })
-
-      -- x
       local file_size = function()
         local size = vim.fn.getfsize(vim.fn.getreg('%'))
         if size <= 0 then
@@ -35,12 +18,10 @@ statusline.setup({
         end
       end
 
-      -- y
       local fileinfo = statusline.section_fileinfo({ trunc_width = 120 })
       -- 󰢱 lua utf-8[unix] 3.96KiB
       local custom_fileinfo = string.match(fileinfo, '^[^%s]+ [^%s]+')
 
-      -- z
       local progress = function()
         local cur = vim.fn.line('.')
         local total = vim.fn.line('$')
@@ -55,26 +36,15 @@ statusline.setup({
 
       local lines = string.format('%d', vim.fn.line('$'))
 
-      -- local grapple = require('grapple')
-      -- local grappled = function()
-      --   if grapple.exists() then
-      --     return '󰐃'
-      --   elseif grapple.exists({ scope = 'global' }) then
-      --     return ''
-      --   else
-      --     return ''
-      --   end
-      -- end
-
       return statusline.combine_groups({
         -- a
-        -- { hl = 'MiniStatuslineModeNormal', strings = { grappled() } },
         { hl = mode_hl, strings = { mode } },
         -- b
         {
           hl = 'MiniStatuslineDevinfo',
           strings = {
             statusline.section_git({ trunc_width = 40 }),
+            statusline.section_diff({ trunc_width = 75 }),
             statusline.section_diagnostics({ trunc_width = 75, icon = '' }),
           },
         },
@@ -92,38 +62,3 @@ statusline.setup({
     end,
   },
 })
-
--- require('lualine').setup({
---   options = {
---     component_separators = '',
---     -- section_separators = '',
---   },
---   sections = {
---     lualine_a = { 'mode' },
---     lualine_b = { 'branch', 'diff', 'diagnostics' },
---     lualine_c = {
---       {
---         function()
---           if require('grapple').exists() then
---             return ' '
---           else
---             return ''
---           end
---         end,
---         padding = { left = 1, right = 0 },
---       },
---       { 'filename', path = 1 },
---     },
---     lualine_x = { file_size },
---     lualine_y = { 'filetype' },
---     lualine_z = { total_lines },
---   },
---   inactive_sections = {
---     lualine_a = {},
---     lualine_b = {},
---     lualine_c = {},
---     lualine_x = {},
---     lualine_y = {},
---     lualine_z = {},
---   },
--- })
