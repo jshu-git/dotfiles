@@ -161,6 +161,9 @@ vim.keymap.set('n', ',', function()
   -- },
 end)
 vim.keymap.set('n', "'", picker.resume)
+vim.keymap.set('n', '<leader>u', function()
+  picker.undo({ layout = { preview = true } })
+end)
 
 -- git
 vim.keymap.set('n', '<leader>gl', function()
