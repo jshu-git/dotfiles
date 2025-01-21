@@ -19,6 +19,5 @@ return {
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
   ["snacks.nvim"] = "233356e6c9fecf6dfcfddac788580a79d6a3ab6e",
   ["telescope.nvim"] = "415af52339215926d705cccc08145f3782c4d132",
-  ["tiny-inline-diagnostic.nvim"] = "2c50854895c9b553482d4289976194a477b41b8f",
-  undotree = "2556c6800b210b2096b55b66e74b4cc1d9ebbe4f"
+  ["tiny-inline-diagnostic.nvim"] = "2c50854895c9b553482d4289976194a477b41b8f"
 }

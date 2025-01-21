@@ -72,7 +72,6 @@ later(function()
   -- editing
   add('nvim-treesitter/nvim-treesitter')
   add('nvim-treesitter/nvim-treesitter-context')
-  add('mbbill/undotree')
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
   add('pteroctopus/faster.nvim')
