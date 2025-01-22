@@ -25,10 +25,8 @@ snacks.setup({
     prompt = '',
     -- prompt = '> ',
     sources = {
-      smart = { hidden = true },
-      files = { hidden = true },
-      recent = { hidden = true },
-      grep = { hidden = true },
+      smart = { hidden = vim.env.SSH_CLIENT == nil },
+      grep = { hidden = vim.env.SSH_CLIENT == nil },
     },
     layout = {
       cycle = false,
@@ -99,12 +97,12 @@ local picker = snacks.picker
 
 -- smart
 vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
-vim.keymap.set('n', '<leader><Tab>', function()
-  picker.smart({ filter = { cwd = vim.fn.getcwd() } })
-end, { desc = 'Files (Smart) (Relative)' })
+-- vim.keymap.set('n', '<leader><Tab>', function()
+--   picker.smart({ filter = { cwd = vim.fn.getcwd() } })
+-- end, { desc = 'Files (Smart) (Relative)' })
+vim.keymap.set('n', '<leader><S-Tab>', picker.buffers, { desc = 'Buffers' })
 
 -- files
-vim.keymap.set('n', '<leade>fb', picker.buffers, { desc = 'Buffers' })
 -- vim.keymap.set('n', '<leader>ff', picker.files, { desc = 'Files' })
 -- vim.keymap.set('n', '<leader>fF', function()
 --   picker.files({ cwd = vim.fn.expand('%:p:h') })
