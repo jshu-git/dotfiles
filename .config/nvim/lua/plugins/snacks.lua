@@ -103,9 +103,9 @@ vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
 -- vim.keymap.set('n', '<leader><Tab>', function()
 --   picker.smart({ filter = { cwd = vim.fn.getcwd() } })
 -- end, { desc = 'Files (Smart) (Relative)' })
-vim.keymap.set('n', '<leader><S-Tab>', picker.buffers, { desc = 'Buffers' })
 
 -- files
+vim.keymap.set('n', '<leader>fb', picker.buffers, { desc = 'Buffers' })
 -- vim.keymap.set('n', '<leader>ff', picker.files, { desc = 'Files' })
 -- vim.keymap.set('n', '<leader>fF', function()
 --   picker.files({ cwd = vim.fn.expand('%:p:h') })
