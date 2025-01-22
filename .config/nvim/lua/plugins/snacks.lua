@@ -25,7 +25,10 @@ snacks.setup({
     prompt = '',
     -- prompt = '> ',
     sources = {
-      smart = { hidden = vim.env.SSH_CLIENT == nil },
+      smart = {
+        matcher = { sort_empty = false },
+        hidden = vim.env.SSH_CLIENT == nil,
+      },
       grep = { hidden = vim.env.SSH_CLIENT == nil },
     },
     layout = {
