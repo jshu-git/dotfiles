@@ -30,6 +30,8 @@ require('nord').setup({
   -- diff = { mode = 'fg' },
   search = { theme = 'vscode' },
   on_highlights = function(hl, c)
+    hl.NormalFloat = { bg = '#292f3a' } -- darken polar_night.origin 10%
+
     -- sentiment
     hl.MatchParen = { link = 'Underlined' }
 
@@ -38,8 +40,8 @@ require('nord').setup({
     hl.BlinkCmpLabelMatch = { fg = c.snow_storm.origin }
 
     -- snacks
-    hl.SnacksPickerMatch = { bg = c.frost.artic_ocean, fg = c.snow_storm.origin }
-    hl.SnacksPickerDir = { fg = c.polar_night.light }
+    hl.SnacksPickerMatch = { link = 'IncSearch' }
+    hl.SnacksPickerDir = { fg = c.polar_night.light } -- Comment
     hl.SnacksPickerFile = { link = 'SnacksPickerDir' }
 
     -- mini
