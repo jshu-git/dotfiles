@@ -66,9 +66,13 @@ snacks.setup({
           ['<C-x>'] = { 'select_and_next', mode = { 'i', 'n' } },
           ['<C-S-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
           ['<C-S-d>'] = { 'preview_scroll_down', mode = { 'i', 'n' } },
+          ['<C-S-h>'] = { 'preview_scroll_left', mode = { 'i', 'n' } },
+          ['<C-S-l>'] = { 'preview_scroll_right', mode = { 'i', 'n' } },
           ['<C-space>'] = { 'cycle_win', mode = { 'i', 'n' } },
           ['<Up>'] = { 'history_back', mode = { 'i', 'n' } },
           ['<Down>'] = { 'history_forward', mode = { 'i', 'n' } },
+          ['<C-h>'] = false,
+          ['<C-l>'] = false,
         },
       },
       list = {
@@ -159,6 +163,12 @@ vim.keymap.set('n', "'", picker.resume)
 vim.keymap.set('n', '<leader>u', function()
   picker.undo({ layout = { preview = true } })
 end)
+vim.keymap.set('n', '<leader>fi', function()
+  picker.icons({
+    layout = { preset = 'select' },
+    confirm = 'yank',
+  })
+end, { desc = 'Icons' })
 
 -- git
 vim.keymap.set('n', '<leader>gl', function()
