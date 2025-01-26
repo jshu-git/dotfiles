@@ -24,12 +24,6 @@ vim.diagnostic.config({
 vim.keymap.set('n', '<leader>td', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled(), { bufnr = 0 })
 end, { desc = 'LSP: Toggle Diagnostics' })
-vim.keymap.set('n', '[d', function()
-  vim.diagnostic.get_next({ wrap = false })
-end, { desc = 'LSP: Previous Diagnostic' })
-vim.keymap.set('n', ']d', function()
-  vim.diagnostic.get_prev({ wrap = false })
-end, { desc = 'LSP: Next Diagnostic' })
 
 -- inlay hints
 vim.keymap.set('n', '<leader>ti', function()
