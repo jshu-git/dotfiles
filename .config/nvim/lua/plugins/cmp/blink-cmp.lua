@@ -1,4 +1,9 @@
 require('blink.cmp').setup({
+  enabled = function()
+    return not vim.tbl_contains({ 'rip-substitute' }, vim.bo.filetype)
+      and vim.bo.buftype ~= 'prompt'
+      and vim.b.completion ~= false
+  end,
   keymap = {
     preset = 'enter',
     ['<C-z>'] = { 'show_documentation', 'hide_documentation', 'fallback' },
