@@ -97,8 +97,6 @@ map('n', 'sw', 'yiw' .. '*``' .. '"_cgn', { desc = 'Substitute cword (Instance)'
 map('n', 'sx', '*``' .. '"_dgn', { desc = 'Delete cword (Instance)' })
 map('x', 'sw', 'y' .. '/<C-r>0<CR>``' .. '_cgn', { desc = 'Substitute (Instance)' })
 map('x', 'sx', '*' .. '"_dgn', { desc = 'Delete (Instance)', remap = true })
--- map('n', 's/', ':%s/<C-r><C-w>/<C-r><C-w>/gcI<Left><Left><Left><Left>', { desc = 'Substitute cword (Buffer)' })
--- map('x', 's/', ':s///gcI<Left><Left><Left><Left><Left>', { desc = 'Substitute (In Selection)' })
 
 -- yanking
 map('n', 'yp', function()

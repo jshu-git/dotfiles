@@ -7,7 +7,7 @@ rip.setup({
   },
   prefill = {
     startInReplaceLineIfPrefill = true,
-    alsoPrefillReplaceLine = true,
+    -- alsoPrefillReplaceLine = true,
   },
   keymaps = {
     abort = '<esc>',
