@@ -42,7 +42,7 @@ require('nord').setup({
     -- snacks
     hl.SnacksPickerMatch = { link = 'IncSearch' }
     hl.SnacksPickerDir = { fg = c.polar_night.light } -- Comment
-    hl.SnacksPickerFile = { link = 'SnacksPickerDir' }
+    -- hl.SnacksPickerFile = { link = 'SnacksPickerDir' }
 
     -- mini
     hl.MiniFilesTitleFocused = { link = 'Visual' }

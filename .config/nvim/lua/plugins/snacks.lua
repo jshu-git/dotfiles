@@ -52,9 +52,12 @@ snacks.setup({
         },
       },
     },
-    -- formatters = {
-    --   file = { filename_first = true },
-    -- },
+    formatters = {
+      file = {
+        -- filename_first = true,
+        truncate = 80,
+      },
+    },
     previewers = {
       git = { native = true },
     },
