@@ -78,7 +78,11 @@ later(function()
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- snacks
-  add('folke/snacks.nvim')
+  add({
+    source = 'folke/snacks.nvim',
+    -- https://github.com/folke/snacks.nvim/commit/4e30ff0f1ed58b0bdc8fd3f5f1a9a440959eb998 makes deps.lua not show
+    checkout = 'db6bc8b7e5fad9a705f58aa0a54236cc716c42cb',
+  })
   require('plugins.snacks')
 
   -- git
