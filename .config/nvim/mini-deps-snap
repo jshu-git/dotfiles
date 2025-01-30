@@ -2,7 +2,6 @@ return {
   ["Comment.nvim"] = "e30b7f2008e52442154b66f7c519bfd2f1e32acb",
   ["blink.cmp"] = "1cc3b1a908fbcfd15451c4772759549724f38524",
   ["conform.nvim"] = "363243c03102a531a8203311d4f2ae704c620d9b",
-  ["faster.nvim"] = "c3a5286765b43263791eb736affeb6fdff81e4ef",
   ["fix-auto-scroll.nvim"] = "c211a42f4030c9ed03a1456919917cdf1a193bd9",
   ["guess-indent.nvim"] = "6cd61f7a600bb756e558627cd2e740302c58e32d",
   ["lazydev.nvim"] = "a1b78b2ac6f978c72e76ea90ae92a94edf380cfc",

@@ -74,7 +74,6 @@ later(function()
   add('nvim-treesitter/nvim-treesitter-context')
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
-  add('pteroctopus/faster.nvim')
   add('chrisgrieser/nvim-rip-substitute')
   vim.cmd('runtime! lua/plugins/editing/*')
 
