@@ -80,7 +80,8 @@ later(function()
   -- snacks
   add({
     source = 'folke/snacks.nvim',
-    -- https://github.com/folke/snacks.nvim/commit/4e30ff0f1ed58b0bdc8fd3f5f1a9a440959eb998 makes deps.lua not show
+    -- https://github.com/folke/snacks.nvim/commit/4e30ff0f1ed58b0bdc8fd3f5f1a9a440959eb998 makes deps.lua not show in smart
+    -- https://github.com/folke/snacks.nvim/commit/ac20c6ff5d0ac8747e164d592e8ae7e8f2581b2e makes deps.lua not show in recent
     checkout = 'db6bc8b7e5fad9a705f58aa0a54236cc716c42cb',
   })
   require('plugins.snacks')
