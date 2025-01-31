@@ -43,16 +43,4 @@ require('blink.cmp').setup({
       download = vim.env.SSH_CLIENT == nil,
     },
   },
-  sources = {
-    cmdline = function()
-      local type = vim.fn.getcmdtype()
-      if type == '/' or type == '?' then
-        return { 'buffer' }
-      end
-      if type == ':' then
-        return { 'cmdline' }
-      end
-      return {}
-    end,
-  },
 })
