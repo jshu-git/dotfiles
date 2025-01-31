@@ -17,9 +17,9 @@ cursor-style       = bar
 cursor-style-blink = false
 
 # window
-# title                     = " "
-# macos-titlebar-proxy-icon = hidden
-macos-titlebar-style      = hidden
+title                     = "👻 Ghostty"
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style      = native
 window-padding-balance    = true
 window-save-state         = always
 confirm-close-surface     = false
