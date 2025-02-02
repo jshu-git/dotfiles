@@ -49,7 +49,7 @@ require('nord').setup({
     hl.MiniDiffSignAdd = { link = 'DiagnosticOk' }
     hl.MiniDiffSignChange = { link = 'DiagnosticWarn' }
     hl.MiniDiffSignDelete = { link = 'DiagnosticError' }
-    hl.MiniIndentScopeSymbol = { link = 'NonText' }
+    hl.MiniIndentScopeSymbol = { fg = c.polar_night.light } -- Comment
 
     -- treesitter
     hl.TreesitterContext = { link = 'ColorColumn' }
