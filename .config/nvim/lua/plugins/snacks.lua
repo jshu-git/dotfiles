@@ -33,6 +33,8 @@ snacks.setup({
       smart = {
         matcher = { sort_empty = false },
         hidden = vim.env.SSH_CLIENT == nil,
+        -- needed for ~/.local/share/nvim files to show
+        filter = false,
       },
       grep = { hidden = vim.env.SSH_CLIENT == nil },
     },
@@ -60,7 +62,7 @@ snacks.setup({
     formatters = {
       file = {
         -- filename_first = true,
-        truncate = 80,
+        truncate = 120,
       },
     },
     previewers = {
