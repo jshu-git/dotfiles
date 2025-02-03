@@ -1,3 +1,5 @@
+vim.o.backupcopy = 'yes'
+
 -- misc
 vim.o.cursorline = true
 vim.o.undofile = true

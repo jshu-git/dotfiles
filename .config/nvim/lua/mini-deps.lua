@@ -36,9 +36,12 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 now(function()
-  add('gbprod/nord.nvim')
-  require('plugins.nord')
-  vim.cmd.colorscheme('nord')
+  add('aileot/ex-colors.nvim')
+  require('ex-colors').setup({})
+  vim.cmd.colorscheme('ex-nord')
+
+  -- add('gbprod/nord.nvim')
+  -- require('plugins.nord')
 end)
 
 later(function()

@@ -55,3 +55,5 @@ require('nord').setup({
     hl.TreesitterContext = { link = 'ColorColumn' }
   end,
 })
+
+vim.cmd.colorscheme('nord')
