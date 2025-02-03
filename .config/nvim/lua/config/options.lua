@@ -1,4 +1,4 @@
-vim.o.backupcopy = 'yes'
+-- vim.o.backupcopy = 'yes'
 
 -- misc
 vim.o.cursorline = true
