@@ -6,7 +6,7 @@ statusline.setup({
       mode = string.upper(mode)
 
       local file_size = function()
-        local size = math.max(vim.fn.line2byte(vim.fn.line('$') + 1) - 1, 0)
+        local size = vim.fn.getfsize(vim.fn.getreg('%'))
         if size <= 0 then
           return nil
         elseif size < 1024 then
