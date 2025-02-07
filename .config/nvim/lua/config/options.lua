@@ -51,6 +51,7 @@ vim.o.showcmd = false
 -- statuscolumn
 vim.o.number = true
 vim.o.signcolumn = 'yes'
+vim.o.numberwidth = 3
 
 -- splits
 vim.o.splitbelow = true
