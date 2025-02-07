@@ -50,7 +50,7 @@ statusline.setup({
           strings = {
             statusline.section_git({ trunc_width = 40 }),
             statusline.section_diff({ trunc_width = 75 }),
-            statusline.section_diagnostics({ trunc_width = 75, icon = '' }),
+            statusline.section_diagnostics({ trunc_width = 75 }),
           },
         },
         '%<', -- Mark general truncate point
