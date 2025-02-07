@@ -6,7 +6,7 @@ statusline.setup({
       mode = string.upper(mode)
 
       local file_size = function()
-        local size = vim.fn.getfsize(vim.fn.getreg('%'))
+        local size = math.max(vim.fn.line2byte(vim.fn.line('$') + 1) - 1, 0)
         if size <= 0 then
           return nil
         elseif size < 1024 then
@@ -18,9 +18,14 @@ statusline.setup({
         end
       end
 
-      local fileinfo = statusline.section_fileinfo({ trunc_width = 120 })
-      -- 󰢱 lua utf-8[unix] 3.96KiB
-      local custom_fileinfo = string.match(fileinfo, '^[^%s]+ [^%s]+')
+      local filetype = function()
+        local filetype = vim.bo.filetype
+        if filetype == '' then
+          return ''
+        end
+        filetype = require('mini.icons').get('filetype', filetype) .. ' ' .. filetype
+        return string.format('%s', filetype)
+      end
 
       local progress = function()
         local cur = vim.fn.line('.')
@@ -55,7 +60,7 @@ statusline.setup({
         -- x
         { hl = 'MiniStatuslineFilename', strings = { file_size() } },
         -- y
-        { hl = 'MiniStatuslineFileinfo', strings = { custom_fileinfo } },
+        { hl = 'MiniStatuslineFileinfo', strings = { filetype() } },
         -- z
         { hl = 'MiniStatuslineModeNormal', strings = { progress(), '/', lines } },
       })
