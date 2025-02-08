@@ -15,6 +15,8 @@ return {
   ["nvim-rip-substitute"] = "7be26ea5ebb0fe38fbfc3c69c22d535d02c9ab1e",
   ["nvim-treesitter"] = "62911c78a868bac24c8a86f2c1c412d0b799f885",
   ["nvim-treesitter-context"] = "03f382ef224c27a8508cdab2d0b463dcb8ca12a6",
+  ["quicker.nvim"] = "92e0f61a5d6422424cf7728ad323d2a06e3ab2d5",
+  ["select-undo.nvim"] = "226970c92e417ebd3264a7a70568a108462e584d",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
   ["snacks.nvim"] = "790d257c48f0455304c86366c197e5ffe2d80844",
   ["tabnine-nvim"] = "0a3cdceb69494396dc83d91247d69bf28beaa73a",
