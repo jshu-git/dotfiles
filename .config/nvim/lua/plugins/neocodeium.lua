@@ -2,7 +2,7 @@ local neocodeium = require('neocodeium')
 neocodeium.setup({
   -- manual = true,
   show_label = false,
-  debounce = true,
+  -- debounce = true,
   silent = true,
   filetypes = {
     ['*'] = true,
