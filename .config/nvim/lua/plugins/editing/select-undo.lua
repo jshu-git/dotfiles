@@ -1,4 +1,4 @@
 require('select-undo').setup({
   line_mapping = 'u',
-  -- partial_mapping = 'gcu',
+  partial_mapping = 'gu',
 })
