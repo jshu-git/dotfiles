@@ -12,9 +12,9 @@ gui:
   border: single
   theme:
     inactiveBorderColor:
-      - "#4C566A"
+      - "black"
     selectedLineBgColor:
-      - "#3B4252"
+      - "#2a2b3c"
 git:
   paging:
     pager: delta --dark --paging=never
