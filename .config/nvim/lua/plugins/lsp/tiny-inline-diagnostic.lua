@@ -12,7 +12,7 @@ require('tiny-inline-diagnostic').setup({
   signs = {
     left = '',
     right = '',
-    diag = '● ',
+    diag = ' ',
   },
   blend = {
     factor = 0.1,
