@@ -3,7 +3,7 @@ auto-update         = check
 auto-update-channel = tip
 
 # theme
-theme        = nord
+theme        = catppuccin-mocha
 cursor-color = white
 cursor-text  = black
 

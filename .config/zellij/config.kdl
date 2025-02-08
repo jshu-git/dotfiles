@@ -108,7 +108,7 @@ plugins {
 }
 pane_frames false
 serialize_pane_viewport true
-theme "nord"
+theme "catppuccin-mocha"
 default_layout "custom"
 default_mode "locked"
 layout_dir ".config/zellij/layouts/"
