@@ -7,6 +7,10 @@ theme        = catppuccin-mocha
 cursor-color = white
 cursor-text  = black
 
+# background
+background-opacity = 0.92
+background-blur = true
+
 # font
 font-family          = MesloLGS Nerd Font
 font-synthetic-style = false
