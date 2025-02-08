@@ -53,5 +53,11 @@ require('nord').setup({
 
     -- treesitter
     hl.TreesitterContext = { link = 'ColorColumn' }
+
+    -- copilot
+    hl.CopilotSuggestion = { fg = c.polar_night.light } -- Comment
+    hl.CopilotAnnotation = { link = 'Search' }
+    hl.NeocodeiumSuggestion = { fg = c.polar_night.light } -- Comment
+    hl.NeocodeiumLabel = { link = 'Search' }
   end,
 })
