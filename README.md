@@ -1,4 +1,4 @@
-<img width="1472" alt="SCR-20250206-tdcr" src="https://github.com/user-attachments/assets/dd60ad74-3aeb-4779-9030-120d07cd553f" />
+<img width="1470" alt="SCR-20250208-jnye" src="https://github.com/user-attachments/assets/39d47d60-6954-4d9b-b15e-30989b20d032" />
 
 - browser: [zen](https://zen-browser.app/)
 - terminal: [ghostty](https://ghostty.org/)
@@ -6,7 +6,7 @@
   - editor: [neovim](https://neovim.io/)
   - shell: [zsh](https://www.zsh.org/)
 
-- theme: [Nord](https://www.nordtheme.com/)
+- theme: [Catppuccin](https://catppuccin.com/)
 - font: [MesloLGS Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 - dotfile manager: [yadm](https://yadm.io/)
 - macapps:
