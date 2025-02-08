@@ -6,7 +6,6 @@ files.setup({
     go_in_plus = '<CR>',
     go_out = '',
     go_out_plus = '-',
-    reset = '_',
     synchronize = '<leader>w',
   },
   options = {
