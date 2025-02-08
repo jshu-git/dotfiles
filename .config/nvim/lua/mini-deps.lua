@@ -87,6 +87,7 @@ later(function()
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
   add('chrisgrieser/nvim-rip-substitute')
+  add('zbirenbaum/copilot.lua')
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- snacks
