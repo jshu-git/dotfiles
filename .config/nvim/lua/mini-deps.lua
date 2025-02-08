@@ -48,17 +48,6 @@ later(function()
     require('plugins.nvim-osc52')
   end
 
-  -- ai completion
-  add('zbirenbaum/copilot.lua')
-  add('codota/tabnine-nvim')
-  add('monkoose/neocodeium')
-  if vim.env.SSH_CLIENT ~= nil then
-    -- require('plugins.tabnine')
-    -- require('plugins.copilot')
-  else
-    require('plugins.neocodeium')
-  end
-
   -- lsp
   add({
     source = 'neovim/nvim-lspconfig',
@@ -73,6 +62,15 @@ later(function()
 
   -- cmp
   add('windwp/nvim-autopairs')
+  add('zbirenbaum/copilot.lua')
+  add('codota/tabnine-nvim')
+  add('monkoose/neocodeium')
+  if vim.env.SSH_CLIENT ~= nil then
+    -- require('plugins.tabnine')
+    -- require('plugins.copilot')
+  else
+    require('plugins.neocodeium')
+  end
   vim.cmd('runtime! lua/plugins/cmp/*')
 
   -- ui
