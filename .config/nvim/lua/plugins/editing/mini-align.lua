@@ -1,1 +1,1 @@
-require('mini.align').setup({ mappings = { start = '&', start_with_preview = 's&' } })
+require('mini.align').setup()
