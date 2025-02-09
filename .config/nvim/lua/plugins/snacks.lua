@@ -30,6 +30,8 @@ snacks.setup({
     animate = { enabled = false },
     scope = { enabled = false },
   },
+  -- scope
+  scope = {},
 
   -- pickers
   picker = {

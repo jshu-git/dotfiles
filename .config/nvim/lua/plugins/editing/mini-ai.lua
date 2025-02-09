@@ -12,9 +12,7 @@ ai.setup({
   },
   custom_textobjects = {
     g = extra_ai.buffer(),
-    D = extra_ai.diagnostic(),
     l = extra_ai.line(),
-    n = extra_ai.number(),
     -- LazyVim
     e = { -- Word with case
       {
