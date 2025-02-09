@@ -59,14 +59,6 @@ local servers = {
       },
     },
   },
-  zls = {
-    settings = {
-      -- https://github.com/zigtools/zls/blob/master/src/Config.zig
-      warn_style = true,
-      highlight_global_var_declarations = true,
-      zig_exe_path = '/usr/local/bin/zig/zig',
-    },
-  },
   gopls = {},
 }
 if vim.env.SSH_CLIENT ~= nil then

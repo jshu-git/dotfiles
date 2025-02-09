@@ -14,7 +14,4 @@ require('tiny-inline-diagnostic').setup({
     right = '',
     diag = ' ',
   },
-  blend = {
-    factor = 0.1,
-  },
 })
