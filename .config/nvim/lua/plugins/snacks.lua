@@ -43,7 +43,7 @@ snacks.setup({
       preset = 'default',
     },
     layouts = {
-      default = {
+      default = { -- modified vertical
         preview = false,
         layout = {
           backdrop = false,
@@ -112,22 +112,12 @@ end, { desc = 'Blame' })
 -- picker
 local picker = snacks.picker
 
--- smart
-vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
--- vim.keymap.set('n', '<leader><Tab>', function()
---   picker.smart({ filter = { cwd = vim.fn.getcwd() } })
--- end, { desc = 'Files (Smart) (Relative)' })
-
 -- files
+vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
+vim.keymap.set('n', '<leader><Tab>', function()
+  picker.smart({ filter = { cwd = vim.fn.getcwd() } })
+end, { desc = 'Files (Smart) (Relative)' })
 vim.keymap.set('n', '<leader>fb', picker.buffers, { desc = 'Buffers' })
--- vim.keymap.set('n', '<leader>ff', picker.files, { desc = 'Files' })
--- vim.keymap.set('n', '<leader>fF', function()
---   picker.files({ cwd = vim.fn.expand('%:p:h') })
--- end, { desc = 'Files (Relative)' })
--- vim.keymap.set('n', '<leader>fr', picker.recent, { desc = 'Files (Recent)' })
--- vim.keymap.set('n', '<leader>fR', function()
---   picker.recent({ filter = { cwd = vim.fn.getcwd() } })
--- end, { desc = 'Files (Recent) (Relative)' })
 
 -- grep
 vim.keymap.set('n', '<leader>fw', picker.grep, { desc = 'Grep Live' })
@@ -138,8 +128,6 @@ vim.keymap.set('n', '<leader>*', picker.grep_word, { desc = 'Grep cword' })
 vim.keymap.set('n', '<leader>#', function()
   picker.grep_word({ cwd = vim.fn.expand('%:p:h') })
 end, { desc = 'Grep cword (Relative)' })
-
--- grep (visual)
 vim.keymap.set('x', '<leader>fw', picker.grep_word, { desc = 'Grep' })
 vim.keymap.set('x', '<leader>fW', function()
   picker.grep_word({ cwd = vim.fn.expand('%:p:h') })
@@ -179,10 +167,11 @@ vim.keymap.set('n', '<leader>u', function()
 end)
 vim.keymap.set('n', '<leader>fi', function()
   picker.icons({
-    layout = { preset = 'select' },
+    layout = { preset = 'default' },
     confirm = 'yank',
   })
 end, { desc = 'Icons' })
+vim.keymap.set('n', '<leader>fz', picker.zoxide, { desc = 'Zoxide' })
 
 -- git
 vim.keymap.set('n', '<leader>gl', function()
@@ -211,8 +200,8 @@ vim.keymap.set('n', '<leader>"', function()
   picker.registers({ layout = { preview = true } })
 end, { desc = 'Registers' })
 vim.keymap.set('n', '<leader>:', function()
-  picker.command_history({ layout = { preset = 'select' } })
+  picker.command_history({ layout = { preset = 'default' } })
 end, { desc = 'Command History' })
 vim.keymap.set('n', '<leader>/', function()
-  picker.search_history({ layout = { preset = 'select' } })
+  picker.search_history({ layout = { preset = 'default' } })
 end, { desc = 'Search History' })
