@@ -8,7 +8,7 @@ cursor-color = white
 cursor-text  = black
 
 # background
-background-opacity = 0.92
+background-opacity = 0.88
 background-blur = true
 
 # font
