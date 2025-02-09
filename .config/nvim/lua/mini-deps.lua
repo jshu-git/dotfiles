@@ -84,7 +84,6 @@ later(function()
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
   add('chrisgrieser/nvim-rip-substitute')
-  add('SunnyTamang/select-undo.nvim')
   add('stevearc/quicker.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
 
