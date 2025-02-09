@@ -148,7 +148,12 @@ end, { desc = 'LSP: Goto Definition' })
 vim.keymap.set('n', 'gr', function()
   picker.lsp_references({ auto_confirm = false, layout = { preview = true } })
 end, { desc = 'LSP: Goto References' })
-vim.keymap.set('n', '<leader>fd', picker.diagnostics, { desc = 'LSP: Diagnostics' })
+vim.keymap.set('n', '<leader>fd', function()
+  picker.diagnostics_buffer({ layout = { preview = true } })
+end, { desc = 'LSP: Diagnostics (Buffer)' })
+vim.keymap.set('n', '<leader>fD', function()
+  picker.diagnostics({ layout = { preview = true } })
+end, { desc = 'LSP: Diagnostics' })
 
 -- misc
 vim.keymap.set('n', ',', function()
