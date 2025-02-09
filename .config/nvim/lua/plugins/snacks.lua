@@ -66,6 +66,11 @@ snacks.setup({
           { win = 'preview', title = '{preview}', height = 0.5, border = 'top' },
         },
       },
+      select = {
+        layout = {
+          border = 'single',
+        },
+      },
     },
     formatters = {
       file = {
