@@ -30,15 +30,13 @@ oil.setup({
   },
 
   view_options = {
-    show_hidden = true,
+    show_hidden = vim.env.SSH == nil,
   },
   float = {
-    padding = 4,
     max_width = 0.8,
     max_height = 0.8,
     border = 'single',
     preview_split = 'right',
-    preview_title_pos = 'center',
   },
   confirmation = { border = 'single' },
   progress = { border = 'single' },
