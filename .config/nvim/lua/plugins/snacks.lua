@@ -41,6 +41,10 @@ snacks.setup({
       smart = {
         matcher = { sort_empty = false },
         hidden = vim.env.SSH_CLIENT == nil,
+
+        -- testing
+        -- follow = true
+
         -- needed for ~/.local/share/nvim files to show
         filter = false,
       },
