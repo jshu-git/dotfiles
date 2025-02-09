@@ -6,9 +6,13 @@ require('blink.cmp').setup({
   end,
   keymap = {
     preset = 'enter',
-    ['<C-z>'] = { 'show_documentation', 'hide_documentation', 'fallback' },
-    ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
-    ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
+    ['<C-S-u>'] = { 'scroll_documentation_up', 'fallback' },
+    ['<C-S-d>'] = { 'scroll_documentation_down', 'fallback' },
+    ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
+
+    -- cmdline = {
+    --   ['<CR>'] = { 'select_and_enter', 'fallback' },
+    -- },
   },
   completion = {
     list = {
@@ -31,9 +35,28 @@ require('blink.cmp').setup({
         },
       },
     },
-    documentation = { window = { border = 'single' } },
+    documentation = {
+      auto_show = false,
+      auto_show_delay_ms = 0,
+      window = {
+        border = 'single',
+        winhighlight = 'FloatBorder:FloatBorder',
+      },
+    },
   },
-  signature = { window = { border = 'single' } },
+  signature = {
+    enabled = true,
+    trigger = {
+      enabled = false,
+      show_on_trigger_character = false,
+      show_on_insert_on_trigger_character = false,
+    },
+    window = {
+      border = 'single',
+      winhighlight = 'FloatBorder:FloatBorder',
+      show_documentation = false,
+    },
+  },
   fuzzy = {
     -- work
     prebuilt_binaries = {
