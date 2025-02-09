@@ -25,6 +25,12 @@ snacks.setup({
     },
   },
 
+  -- indent
+  indent = {
+    animate = { enabled = false },
+    scope = { enabled = false },
+  },
+
   -- pickers
   picker = {
     prompt = '',

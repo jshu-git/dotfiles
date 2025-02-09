@@ -61,6 +61,7 @@ require('catppuccin').setup({
       -- SnacksPickerMatch = { bg = c.overlay0, fg = c.text },
       SnacksPickerMatch = { link = 'Search' },
       SnacksPickerListCursorLine = { bg = c.surface0 },
+      SnacksIndent = { fg = c.surface0 },
 
       -- sentiment
       MatchParen = { link = 'Underlined' },
@@ -84,7 +85,6 @@ require('catppuccin').setup({
         information = { 'undercurl' },
       },
     },
-    mini = { indentscope_color = 'surface1' }, -- NonText
     blink_cmp = true,
     treesitter_context = false,
     cmp = false,
