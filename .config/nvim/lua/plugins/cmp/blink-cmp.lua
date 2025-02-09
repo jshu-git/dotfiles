@@ -26,8 +26,8 @@ require('blink.cmp').setup({
       auto_brackets = { enabled = false },
     },
     menu = {
-      max_height = 3,
-      scrolloff = 1,
+      max_height = 5,
+      scrolloff = 3,
       draw = {
         columns = {
           { 'label', 'label_description', gap = 1 },
