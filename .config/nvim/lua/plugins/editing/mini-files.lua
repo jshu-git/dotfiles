@@ -18,16 +18,13 @@ files.setup({
   },
 })
 
--- toggle explorer
+-- explorer
 vim.keymap.set('n', '<leader>e', function()
   if not files.close() then
-    files.open(vim.api.nvim_buf_get_name(0))
+    files.open(vim.api.nvim_buf_get_name(0), false)
     files.reveal_cwd()
   end
 end, { desc = 'Explorer' })
--- vim.keymap.set('n', '<leader>E', function()
---   files.open(nil)
--- end, { desc = 'Explorer (cwd)' })
 vim.keymap.set('n', '<leader>E', function()
   files.open(files.get_latest_path())
 end, { desc = 'Explorer (Latest)' })
@@ -47,20 +44,16 @@ local toggle_preview = function()
 end
 
 -- open in split
-local map_split = function(buf_id, lhs, direction)
-  local rhs = function()
-    local cur_target = files.get_explorer_state().target_window
-    local new_target = vim.api.nvim_win_call(cur_target, function()
-      vim.cmd(direction .. ' split')
-      return vim.api.nvim_get_current_win()
-    end)
-    files.set_target_window(new_target)
+local map_split = function(direction)
+  local cur_target = files.get_explorer_state().target_window
+  local new_target = vim.api.nvim_win_call(cur_target, function()
+    vim.cmd(direction .. ' split')
+    return vim.api.nvim_get_current_win()
+  end)
+  files.set_target_window(new_target)
 
-    -- close explorer
-    files.go_in({ close_on_file = true })
-  end
-  -- Adding `desc` will result into `show_help` entries
-  vim.keymap.set('n', lhs, rhs, { buffer = buf_id, desc = 'Split ' .. direction })
+  -- close explorer
+  files.go_in({ close_on_file = true })
 end
 
 -- create mappings
@@ -70,24 +63,27 @@ vim.api.nvim_create_autocmd('User', {
     local buf_id = args.data.buf_id
 
     -- splits
-    map_split(buf_id, '<C-s>', 'horizontal')
-    map_split(buf_id, '<C-v>', 'vertical')
+    vim.keymap.set('n', '<C-s>', function()
+      map_split('horizontal')
+    end, { buffer = buf_id })
+    vim.keymap.set('n', '<C-v>', function()
+      map_split('vertical')
+    end, { buffer = buf_id })
 
     -- preview
-    vim.keymap.set('n', '<Tab>', toggle_preview, {
-      buffer = buf_id,
-      desc = 'Toggle Preview',
-    })
+    vim.keymap.set('n', '<Tab>', toggle_preview, { buffer = buf_id, desc = 'Toggle Preview' })
 
-    -- path
+    -- copy path
     vim.keymap.set('n', 'gy', function()
       local path = files.get_fs_entry().path
       vim.fn.setreg(vim.v.register, path)
       vim.notify('Copied: ' .. path)
-    end, {
-      buffer = buf_id,
-      desc = 'Copy path',
-    })
+    end, { buffer = buf_id, desc = 'Copy path' })
+
+    -- reset to cwd
+    vim.keymap.set('n', '_', function()
+      files.open(nil, false)
+    end, { buffer = buf_id, desc = 'Reset cwd' })
   end,
 })
 
