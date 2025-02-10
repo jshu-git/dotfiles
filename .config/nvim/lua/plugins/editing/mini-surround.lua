@@ -10,7 +10,7 @@ surround.setup({
     f = { output = { left = 'function() ', right = ' end' } },
   },
   mappings = {
-    add = 'sS',
+    add = '',
     delete = 'sd',
     replace = 'sr',
     update_n_lines = '',
