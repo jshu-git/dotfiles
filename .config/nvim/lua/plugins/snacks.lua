@@ -123,7 +123,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>gy', function()
   snacks.gitbrowse()
 end, { desc = 'Copy URL' })
 vim.keymap.set({ 'n', 'x' }, '<leader>gb', function()
-  snacks.git.blame_line()
+  snacks.git.blame_line({ win = { border = 'single' } })
 end, { desc = 'Blame' })
 
 -- picker
