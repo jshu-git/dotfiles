@@ -85,7 +85,6 @@ later(function()
   add('nmac427/guess-indent.nvim')
   add('chrisgrieser/nvim-rip-substitute')
   add('stevearc/quicker.nvim')
-  add('stevearc/oil.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- snacks
