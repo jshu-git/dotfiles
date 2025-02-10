@@ -9,7 +9,7 @@ snacks.setup({
   -- git
   gitbrowse = {
     open = function(url)
-      vim.fn.setreg('+', url)
+      vim.fn.setreg(vim.v.register, url)
     end,
     remote_patterns = {
       -- https://github.com/jshu-git/dotfiles.git/blob/main/.config/nvim/lua/plugins/git/snacks.lua#L21-L21

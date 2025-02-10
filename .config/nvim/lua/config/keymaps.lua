@@ -102,19 +102,19 @@ map('x', 'sx', '*' .. '"_dgn', { desc = 'Delete (Instance)', remap = true })
 map('n', 'yp', function()
   -- absolute path
   local path = vim.fn.expand('%:p')
-  vim.fn.setreg('+', path)
+  vim.fn.setreg(vim.v.register, path)
   vim.notify('Copied: ' .. path)
 end)
 map('n', 'yP', function()
   -- relative
   local path = vim.fn.expand('%:.')
-  vim.fn.setreg('+', path)
+  vim.fn.setreg(vim.v.register, path)
   vim.notify('Copied: ' .. path)
 end)
 map('n', 'yf', function()
   -- tail
   local path = vim.fn.expand('%:t')
-  vim.fn.setreg('+', path)
+  vim.fn.setreg(vim.v.register, path)
   vim.notify('Copied: ' .. path)
 end)
 
