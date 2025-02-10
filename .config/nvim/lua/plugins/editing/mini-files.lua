@@ -7,6 +7,7 @@ files.setup({
     go_out = '',
     go_out_plus = '-',
     synchronize = '<leader>w',
+    reveal_cwd = '',
   },
   options = {
     permanent_delete = false,
@@ -79,6 +80,12 @@ vim.api.nvim_create_autocmd('User', {
       vim.fn.setreg(vim.v.register, path)
       vim.notify('Copied: ' .. path)
     end, { buffer = buf_id, desc = 'Copy path' })
+
+    -- reset to first entry and reveal
+    vim.keymap.set('n', '<BS>', function()
+      files.reset()
+      files.reveal_cwd()
+    end, { buffer = buf_id, desc = 'Reset cwd' })
 
     -- reset to cwd
     vim.keymap.set('n', '_', function()
