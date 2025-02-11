@@ -70,6 +70,12 @@ if command -v fzf >/dev/null 2>&1; then
 	[ -f $CONFIG/fzf/.fzf.zsh ] && source "$CONFIG/fzf/.fzf.zsh"
 fi
 
+# tmux
+if command -v tmux >/dev/null 2>&1; then
+	function zd() {
+		tmux kill-server
+	}
+fi
 if command -v tmuxp >/dev/null 2>&1; then
 	function zz() {
 		tmuxp load -y "~/.config/tmux/layouts/dev.yaml"
