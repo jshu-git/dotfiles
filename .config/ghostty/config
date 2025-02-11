@@ -21,6 +21,7 @@ cursor-style       = bar
 cursor-style-blink = false
 
 # window
+maximize                  = true
 title                     = "👻 Ghostty"
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style      = native
