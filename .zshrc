@@ -70,21 +70,27 @@ if command -v fzf >/dev/null 2>&1; then
 	[ -f $CONFIG/fzf/.fzf.zsh ] && source "$CONFIG/fzf/.fzf.zsh"
 fi
 
-# zellij
-if command -v zellij >/dev/null 2>&1; then
+if command -v tmuxp >/dev/null 2>&1; then
 	function zz() {
-		# default to dev session
-		if [ -z "$1" ]; then
-			zellij a dev
-		# otherwise create/attach to a named session
-		else
-			zellij -s "$1"
-		fi
-	}
-	function zd() {
-		zellij delete-all-sessions
+		tmuxp load -y "~/.config/tmux/layouts/dev.yaml"
 	}
 fi
+
+# zellij
+# if command -v zellij >/dev/null 2>&1; then
+# 	function zz() {
+# 		# default to dev session
+# 		if [ -z "$1" ]; then
+# 			zellij a dev
+# 		# otherwise create/attach to a named session
+# 		else
+# 			zellij -s "$1"
+# 		fi
+# 	}
+# 	function zd() {
+# 		zellij delete-all-sessions
+# 	}
+# fi
 
 # bat
 if command -v bat >/dev/null 2>&1; then
