@@ -42,12 +42,6 @@ now(function()
 end)
 
 later(function()
-  -- work
-  add('ojroques/nvim-osc52')
-  if vim.env.SSH_CLIENT ~= nil then
-    require('plugins.nvim-osc52')
-  end
-
   -- lsp
   add({
     source = 'neovim/nvim-lspconfig',
@@ -65,6 +59,7 @@ later(function()
   add('zbirenbaum/copilot.lua')
   add('codota/tabnine-nvim')
   add('monkoose/neocodeium')
+  -- work
   if vim.env.SSH_CLIENT ~= nil then
     -- require('plugins.tabnine')
     -- require('plugins.copilot')

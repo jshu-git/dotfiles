@@ -11,7 +11,6 @@ return {
   neocodeium = "a2b5257c736886ec3ccbd961766f8ab9c82b2a72",
   ["nvim-autopairs"] = "3d02855468f94bf435db41b661b58ec4f48a06b7",
   ["nvim-lspconfig"] = "6c17f8656f667727b27f5f598463afedb7791b18",
-  ["nvim-osc52"] = "04cfaba1865ae5c53b6f887c3ca7304973824fb2",
   ["nvim-rip-substitute"] = "7be26ea5ebb0fe38fbfc3c69c22d535d02c9ab1e",
   ["nvim-treesitter"] = "a840137349fcc35b5ad2c718a9b034b93012fa43",
   ["nvim-treesitter-context"] = "03f382ef224c27a8508cdab2d0b463dcb8ca12a6",
