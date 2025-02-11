@@ -1,0 +1,10 @@
+session_name: dev
+windows:
+  - window_name: "󰒓 .config"
+    start_directory: "~/.config/"
+
+  - window_name: "󰌠 shokz"
+    start_directory: "~/git/shokz_downloader/"
+
+  - window_name: "󰟓 go"
+    start_directory: "~/git/golings/"
