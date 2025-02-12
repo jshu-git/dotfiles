@@ -3,10 +3,9 @@ require('tabnine').setup({
   accept_keymap = false,
   dismiss_keymap = false,
   debounce_ms = 0,
-  -- suggestion_color = { gui = '#616E88', cterm = 'bold' },
   codelens_enabled = false,
-  exclude_filetypes = { 'snacks_picker_input' },
-  -- tabnine_enterprise_host = ""
+  -- exclude_filetypes = { 'snacks_picker_input' },
+  tabnine_enterprise_host = 'https://tabnine.eng.netapp.com',
 })
 
 local keymaps = require('tabnine.keymaps')

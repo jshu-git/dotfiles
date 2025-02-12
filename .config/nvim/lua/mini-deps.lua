@@ -61,7 +61,7 @@ later(function()
   add('monkoose/neocodeium')
   -- work
   if vim.env.SSH_CLIENT ~= nil then
-    -- require('plugins.tabnine')
+    require('plugins.tabnine')
     -- require('plugins.copilot')
   else
     require('plugins.neocodeium')

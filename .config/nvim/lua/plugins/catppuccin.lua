@@ -74,6 +74,7 @@ require('catppuccin').setup({
       CopilotAnnotation = { link = 'Search' },
       NeocodeiumSuggestion = { fg = c.surface1 },
       NeocodeiumLabel = { link = 'Search' },
+      TabnineSuggestion = { fg = c.surface1, bg = '#2A2B3C' }, -- bg=CursorLine
     }
   end,
   integrations = {
