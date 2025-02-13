@@ -18,6 +18,7 @@ end
 require('nvim-treesitter.configs').setup({
   ensure_installed = { 'python', 'yaml', 'perl' },
   auto_install = vim.env.SSH_CLIENT == nil,
+  ignore_install = { 'tmux' },
   incremental_selection = {
     enable = true,
     keymaps = {
