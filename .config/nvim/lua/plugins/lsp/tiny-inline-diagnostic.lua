@@ -10,8 +10,6 @@ require('tiny-inline-diagnostic').setup({
     },
   },
   signs = {
-    left = '',
-    right = '',
     diag = ' ',
   },
 })

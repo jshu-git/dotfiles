@@ -10,11 +10,11 @@ surround.setup({
     f = { output = { left = 'function() ', right = ' end' } },
   },
   mappings = {
-    add = '',
-    delete = 'sd',
-    replace = 'sr',
+    add = 'sS',
+    -- delete = 'sd',
+    -- replace = 'sr',
     update_n_lines = '',
-    highlight = '',
+    highlight = 'sf',
     find = '',
     find_left = '',
     suffix_last = '',
@@ -25,3 +25,4 @@ surround.setup({
 })
 
 vim.keymap.set('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true })
+vim.keymap.set('n', 'sA', 'sS_', { remap = true })
