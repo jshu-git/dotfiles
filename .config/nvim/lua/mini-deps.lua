@@ -84,7 +84,11 @@ later(function()
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- snacks
-  add('folke/snacks.nvim')
+  add({
+    source = 'folke/snacks.nvim',
+    -- this refactor broke <C-p> to in pickers https://github.com/folke/snacks.nvim/commit/593adccd90f15b02be25c3d478822eca8d243d58
+    checkout = '3841a8705a5e433d88539176d7c67a0ee6a9a92c',
+  })
   require('plugins.snacks')
 
   -- git
