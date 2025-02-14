@@ -15,7 +15,6 @@ return {
   ["nvim-tmux-navigation"] = "4898c98702954439233fdaf764c39636681e2861",
   ["nvim-treesitter"] = "80e6de9d24eec68d82d5f4e6feae94c9c753ebd6",
   ["nvim-treesitter-context"] = "03f382ef224c27a8508cdab2d0b463dcb8ca12a6",
-  ["quicker.nvim"] = "5e272a7b88892c4313f25b09a11e2ae5ebc68ba5",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
   ["snacks.nvim"] = "3841a8705a5e433d88539176d7c67a0ee6a9a92c",
   ["tabnine-nvim"] = "49be0a5c6c6662679074a2a560c80b7053de89d7",
