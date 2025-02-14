@@ -152,17 +152,19 @@ end, { desc = 'Grep (Relative)' })
 
 -- lsp
 vim.keymap.set('n', 'gd', function()
-  picker.lsp_definitions({ auto_confirm = false, layout = { preview = true } })
+  picker.lsp_definitions({
+    auto_confirm = false,
+    layout = { preview = true },
+  })
 end, { desc = 'LSP: Goto Definition' })
 vim.keymap.set('n', 'gr', function()
-  picker.lsp_references({ auto_confirm = false, layout = { preview = true } })
+  picker.lsp_references({
+    auto_confirm = false,
+    layout = { preview = true },
+  })
 end, { desc = 'LSP: Goto References' })
-vim.keymap.set('n', '<leader>fd', function()
-  picker.diagnostics_buffer({ layout = { preview = true } })
-end, { desc = 'LSP: Diagnostics (Buffer)' })
-vim.keymap.set('n', '<leader>fD', function()
-  picker.diagnostics({ layout = { preview = true } })
-end, { desc = 'LSP: Diagnostics' })
+vim.keymap.set('n', '<leader>fd', picker.diagnostics_buffer, { desc = 'LSP: Diagnostics (Buffer)' })
+vim.keymap.set('n', '<leader>fD', picker.diagnostics, { desc = 'LSP: Diagnostics' })
 
 -- misc
 vim.keymap.set('n', ',', function()
@@ -190,7 +192,7 @@ end)
 vim.keymap.set('n', '<leader>fi', function()
   picker.icons({
     layout = { preset = 'default' },
-    confirm = 'yank',
+    confirm = { action = { 'yank', 'close' } },
   })
 end, { desc = 'Icons' })
 vim.keymap.set('n', '<leader>fz', picker.zoxide, { desc = 'Zoxide' })
@@ -208,19 +210,18 @@ vim.keymap.set('n', '<leader>fh', function()
   picker.help({ layout = { preview = true } })
 end, { desc = 'Help' })
 vim.keymap.set('n', '<leader>fl', function()
-  picker.highlights({ layout = { preview = true } })
+  picker.highlights({
+    layout = { preview = true },
+    confirm = { action = { 'yank', 'close' } },
+  })
 end, { desc = 'Highlights' })
 vim.keymap.set('n', '<leader>ft', picker.colorschemes, { desc = 'Colorschemes' })
 vim.keymap.set('n', '<leader>fc', picker.commands, { desc = 'Commands' })
 vim.keymap.set('n', '<leader>fC', picker.pickers, { desc = 'Pickers' })
 vim.keymap.set('n', '<leader>fa', picker.autocmds, { desc = 'Autocommands' })
-vim.keymap.set('n', '<leader>fk', function()
-  picker.keymaps({ layout = { preview = true } })
-end, { desc = 'Keymaps' })
+vim.keymap.set('n', '<leader>fk', picker.keymaps, { desc = 'Keymaps' })
 vim.keymap.set('n', '<leader>fn', picker.notifications, { desc = 'Notifications' })
-vim.keymap.set('n', '<leader>"', function()
-  picker.registers({ layout = { preview = true } })
-end, { desc = 'Registers' })
+vim.keymap.set('n', '<leader>"', picker.registers, { desc = 'Registers' })
 vim.keymap.set('n', '<leader>:', function()
   picker.command_history({ layout = { preset = 'default' } })
 end, { desc = 'Command History' })
