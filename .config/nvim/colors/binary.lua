@@ -140,6 +140,7 @@ local highlights = {
   SnacksPickerFile = { link = 'SnacksPickerDir' },
   SnacksPickerMatch = { link = 'Search' },
   SnacksPickerListCursorLine = { link = 'CursorLine' },
+  SnacksPickerPreviewCursorLine = { link = 'SnacksPickerListCursorLine' },
   SnacksIndent = { fg = p.bg20 },
 
   -- treesitter
