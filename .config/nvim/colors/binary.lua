@@ -1,7 +1,7 @@
 vim.cmd('highlight clear')
 
 -- helpers
-local function brighten(color, percentage)
+local brighten = function(color, percentage)
   local hsluv = require('hsluv')
   local hsl = hsluv.hex_to_hsluv(color)
   local larpSpace = 100 - hsl[3]
@@ -30,7 +30,7 @@ local p = {
   syntax = '#5de4c7', -- poimandres
   bg10 = brighten(M.bg, 0.1), -- CursorLine, StatusLine
   bg20 = brighten(M.bg, 0.2), -- LineNr, Pmenu
-  bg30 = brighten(M.bg, 0.3), -- FloatBorder, PmenuSel, Search, Visual
+  bg30 = brighten(M.bg, 0.3), -- FloatBorder, Search, Visual, PmenuSel
   bg50 = brighten(M.bg, 0.5), -- Comment, NonText, Whitespace
 }
 
@@ -143,7 +143,7 @@ local highlights = {
   SnacksIndent = { fg = p.bg20 },
 
   -- treesitter
-  TreesitterContext = { bg = p.bg20 },
+  TreesitterContext = { link = 'CursorLine' },
 
   -- copilot
   CopilotSuggestion = { fg = p.bg30 },
