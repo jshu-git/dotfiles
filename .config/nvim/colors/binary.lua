@@ -127,6 +127,10 @@ local highlights = {
   MiniJump = { fg = p.yellow, undercurl = true },
   MiniFilesTitleFocused = { link = 'Visual' },
   MiniStatuslineModeInsert = { link = 'DiffText' },
+  MiniStatuslineModeNormal = { bg = p.bg20 },
+  MiniStatuslineDevinfo = { bg = p.bg10 },
+  MiniStatuslineFileinfo = { bg = p.bg10 },
+  MiniStatuslineFilename = { bg = p.bg },
 
   -- snacks
   SnacksPickerDir = { fg = p.bg50 },
