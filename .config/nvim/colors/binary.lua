@@ -28,7 +28,7 @@ local p = {
   blue = '#89b4fa',
 
   syntax = '#5de4c7', -- poimandres
-  bg10 = brighten(M.bg, 0.1), -- CursorLine, StatusLine
+  bg10 = brighten(M.bg, 0.1), -- CursorLine
   bg20 = brighten(M.bg, 0.2), -- LineNr, Pmenu
   bg30 = brighten(M.bg, 0.3), -- FloatBorder, Search, Visual, PmenuSel
   bg50 = brighten(M.bg, 0.5), -- Comment, NonText, Whitespace
@@ -48,7 +48,7 @@ local highlights = {
   LineNr = { fg = p.bg20 },
   MatchParen = { link = 'Underlined' },
   NonText = { fg = p.bg50 },
-  StatusLine = { bg = p.bg10 },
+  -- StatusLine = { bg = p.bg10 },
   TablineSel = { bg = p.bg20 },
   Visual = { bg = p.bg30 },
   Whitespace = { fg = p.bg50 },
@@ -133,7 +133,7 @@ local highlights = {
   MiniStatuslineModeNormal = { bg = p.bg20 },
   MiniStatuslineDevinfo = { bg = p.bg10 },
   MiniStatuslineFileinfo = { bg = p.bg10 },
-  MiniStatuslineFilename = { bg = p.bg },
+  -- MiniStatuslineFilename = { bg = p.bg },
 
   -- snacks
   SnacksPickerDir = { fg = p.bg50 },
