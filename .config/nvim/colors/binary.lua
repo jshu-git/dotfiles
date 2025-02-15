@@ -45,6 +45,7 @@ local highlights = {
   LineNr = { fg = p.bg20 },
   MatchParen = { link = 'Underlined' },
   StatusLine = { bg = p.bg10 },
+  TablineSel = { bg = p.bg20 },
   Visual = { bg = p.bg30 },
   -- NonText = { fg = p.bg10 },
   -- Whitespace = { fg = p.bg10 },
@@ -80,10 +81,10 @@ local highlights = {
   -- diff
   DiffText = { fg = p.bg, bg = p.yellow },
   DiffAdd = { fg = p.bg, bg = p.green },
-  -- DiffChange = { fg = p.bg, bg = p.blue },
+  DiffChange = { fg = p.fg, bg = p.bg20 },
   DiffDelete = { fg = p.bg, bg = p.red },
   -- diffAdded = { fg = p.green },
-  -- diffChanged = { fg = },
+  -- diffChanged = { fg = p.yellow },
   -- diffFile = { fg = p.yellow },
   -- diffLine = { fg = },
   -- diffRemoved = { fg = p.red },
@@ -120,6 +121,9 @@ local highlights = {
   BlinkCmpLabelMatch = { fg = p.fg },
 
   -- mini
+  MiniDepsTitleUpdate = { link = 'DiffAdd' },
+  MiniDepsTitleSame = { link = 'DiffChange' },
+  MiniDepsTitleError = { link = 'DiffDelete' },
   MiniJump = { fg = p.yellow, undercurl = true },
   MiniFilesTitleFocused = { link = 'Visual' },
   MiniStatuslineModeInsert = { link = 'DiffText' },
@@ -139,7 +143,7 @@ local highlights = {
   CopilotAnnotation = { link = 'Search' },
   NeocodeiumSuggestion = { fg = p.bg30 },
   NeocodeiumLabel = { link = 'Search' },
-  -- TabnineSuggestion = { fg = c.surface1, bg = '#2A2B3C' }, -- bg=CursorLine
+  TabnineSuggestion = { fg = p.bg30, bg = p.bg10 },
 }
 
 for group, hl in pairs(highlights) do
