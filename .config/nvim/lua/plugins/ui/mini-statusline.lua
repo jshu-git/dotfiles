@@ -5,14 +5,14 @@ statusline.setup({
       local mode, mode_hl = statusline.section_mode({ trunc_width = 120 })
       mode = string.upper(mode)
 
-      local diff = function()
-        -- only show if present
-        local summary = vim.b.minidiff_summary_string
-        if summary == nil or summary == '' then
-          return ''
-        end
-        return ' ' .. summary
-      end
+      -- local diff = function()
+      --   -- only show if present
+      --   local summary = vim.b.minidiff_summary_string
+      --   if summary == nil or summary == '' then
+      --     return ''
+      --   end
+      --   return ' ' .. summary
+      -- end
 
       local file_size = function()
         local size = vim.fn.getfsize(vim.fn.getreg('%'))
@@ -56,7 +56,7 @@ statusline.setup({
           hl = 'MiniStatuslineDevinfo',
           strings = {
             statusline.section_git({ trunc_width = 40 }),
-            diff(),
+            -- diff(),
             statusline.section_diagnostics({ trunc_width = 75 }),
           },
         },
