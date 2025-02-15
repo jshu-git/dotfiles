@@ -1,28 +1,35 @@
--- vim.cmd('highlight clear')
+vim.cmd('highlight clear')
 
-local p = {
+local function brighten(color, percentage)
+  local hsluv = require('hsluv')
+  local hsl = hsluv.hex_to_hsluv(color)
+  local larpSpace = 100 - hsl[3]
+  if percentage < 0 then
+    larpSpace = hsl[3]
+  end
+  hsl[3] = hsl[3] + larpSpace * percentage
+  return hsluv.hsluv_to_hex(hsl)
+end
+
+local M = {
   bg = '#1b1e28',
-  fg = '#cdd6f4',
+  fg = '#ffffff',
+}
+local p = {
+  bg = M.bg,
+  fg = M.fg,
 
-  red = '#732626',
-  red_bg = '',
-  green = '#61662d',
-  green_bg = '',
-  yellow = '#f0c674',
-  yellow_bg = '',
-  cyan = '#30756f',
-  cyan_bg = '',
-  blue = '#365269',
-  blue_bg = '',
-  teal = '#5de4c7', -- poimandres
+  -- catppuccin
+  red = '#f38ba8',
+  green = '#a6e3a1',
+  yellow = '#f9e2af',
+  blue = '#89b4fa',
 
-  bg10 = '#2d3242',
-  bg20 = '#3f465d',
-  bg30 = '#515977',
-  bg50 = '#7b85a6',
-
-  white = '#ffffff',
-  black = '#000000',
+  teal = '#5de4c7', -- syntax (poimandres)
+  bg10 = brighten(M.bg, 0.1), -- CursorLine, StatusLine, Pmenu
+  bg20 = brighten(M.bg, 0.2), -- LineNr, PmenuSel, SnacksIndent
+  bg30 = brighten(M.bg, 0.3), -- FloatBorder, Visual, Search, CopilotSuggestion
+  bg50 = brighten(M.bg, 0.5), -- Comment
 }
 
 vim.api.nvim_set_hl(0, 'Binary', { fg = p.fg })
@@ -34,20 +41,23 @@ local highlights = {
   -- builtin
   CursorLine = { bg = p.bg10 },
   EndOfBuffer = { fg = p.bg20 },
-  ErrorMsg = { fg = p.white, bg = p.red },
   FloatBorder = { fg = p.bg30 },
   LineNr = { fg = p.bg20 },
   MatchParen = { link = 'Underlined' },
-  -- NonText = { fg = p.bg10 },
   StatusLine = { bg = p.bg10 },
   Visual = { bg = p.bg30 },
-  WarningMsg = { fg = p.yellow, bg = nil },
+  -- NonText = { fg = p.bg10 },
   -- Whitespace = { fg = p.bg10 },
 
+  -- msg
+  ErrorMsg = { fg = p.red },
+  WarningMsg = { fg = p.yellow },
+  MsgSeparator = { link = 'Underlined' },
+
   -- search
-  CurSearch = { fg = p.black, bg = p.yellow },
-  -- IncSearch = { link = 'CurSearch' },
-  Search = { fg = p.white, bg = p.bg30 },
+  CurSearch = { fg = p.bg, bg = p.yellow },
+  Search = { fg = p.fg, bg = p.bg30 },
+  IncSearch = { link = 'Search' },
 
   -- pmenu
   Pmenu = { bg = p.bg10 },
@@ -55,57 +65,50 @@ local highlights = {
 
   -- syntax
   Boolean = { fg = p.teal },
-  ['@boolean'] = { link = 'Boolean' },
   Comment = { fg = p.bg50, italic = true },
-  ['@comment'] = { link = 'Comment' },
   Number = { fg = p.teal },
-  ['@number'] = { link = 'Number' },
   String = { fg = p.teal },
-  ['@string'] = { link = 'String' },
-  Bold = { bold = true },
+  -- Bold = { bold = true },
   Italic = { italic = true },
   Underlined = { underline = true },
+  -- treesitter
+  ['@boolean'] = { link = 'Boolean' },
+  ['@comment'] = { link = 'Comment' },
+  ['@number'] = { link = 'Number' },
+  ['@string'] = { link = 'String' },
 
   -- diff
-  DiffText = { bg = p.yellow },
-  DiffAdd = { bg = p.green },
-  DiffChange = { bg = p.cyan },
-  DiffDelete = { bg = p.red },
-  diffAdded = { fg = p.green },
-  diffChanged = { fg = p.cyan },
-  diffFile = { fg = p.yellow },
-  diffLine = { fg = p.blue },
-  diffRemoved = { fg = p.red },
+  DiffText = { fg = p.bg, bg = p.yellow },
+  DiffAdd = { fg = p.bg, bg = p.green },
+  -- DiffChange = { fg = p.bg, bg = p.blue },
+  DiffDelete = { fg = p.bg, bg = p.red },
+  -- diffAdded = { fg = p.green },
+  -- diffChanged = { fg = },
+  -- diffFile = { fg = p.yellow },
+  -- diffLine = { fg = },
+  -- diffRemoved = { fg = p.red },
   -- Added = { fg = p.green },
-  -- Changed = { fg = p.cyan },
+  -- Changed = { fg = p.yellow },
   -- Removed = { fg = p.red },
 
   -- diag
   DiagnosticError = { fg = p.red },
-  DiagnosticHint = { fg = p.cyan },
+  DiagnosticHint = { fg = p.teal },
   DiagnosticInfo = { fg = p.blue },
   DiagnosticOk = { fg = p.green },
   DiagnosticWarn = { fg = p.yellow },
-  DiagnosticUnderlineError = { undercurl = true },
-  DiagnosticUnderlineHint = { fg = p.cyan, undercurl = true },
+  DiagnosticUnderlineError = { fg = p.red, undercurl = true },
+  DiagnosticUnderlineHint = { fg = p.teal, undercurl = true },
   DiagnosticUnderlineInfo = { fg = p.blue, undercurl = true },
   DiagnosticUnderlineOk = { fg = p.green, undercurl = true },
   DiagnosticUnderlineWarn = { fg = p.yellow, undercurl = true },
-  -- DiagnosticFloatingError = { link = 'DiagnosticError' },
-  -- DiagnosticFloatingHint = { link = 'DiagnosticHint' },
-  -- DiagnosticFloatingInfo = { link = 'DiagnosticInfo' },
-  -- DiagnosticFloatingOk = { link = 'DiagnosticOk' },
-  -- DiagnosticFloatingWarn = { link = 'DiagnosticWarn' },
-  -- DiagnosticVirtualTextError = { link = 'DiagnosticError' },
-  -- DiagnosticVirtualTextWarn = { link = 'DiagnosticWarn' },
-  -- DiagnosticVirtualTextInfo = { link = 'DiagnosticInfo' },
-  -- DiagnosticVirtualTextHint = { link = 'DiagnosticHint' },
-  -- DiagnosticVirtualTextOk = { link = 'DiagnosticOk' },
-  -- DiagnosticSignError = { link = 'DiagnosticError' },
-  -- DiagnosticSignWarn = { link = 'DiagnosticWarn' },
-  -- DiagnosticSignInfo = { link = 'DiagnosticInfo' },
-  -- DiagnosticSignHint = { link = 'DiagnosticHint' },
-  -- DiagnosticSignOk = { link = 'DiagnosticOk' },
+  DiagnosticFloatingError = { link = 'DiagnosticError' },
+  DiagnosticFloatingHint = { link = 'DiagnosticHint' },
+  DiagnosticFloatingInfo = { link = 'DiagnosticInfo' },
+  DiagnosticFloatingOk = { link = 'DiagnosticOk' },
+  DiagnosticFloatingWarn = { link = 'DiagnosticWarn' },
+  DiagnosticDeprecated = { fg = p.yellow, strikethrough = true },
+  DiagnosticUnnecessary = { link = 'Comment' },
 
   -- lsp
   LspSignatureActiveParameter = { bg = p.bg30 },
@@ -114,11 +117,12 @@ local highlights = {
   -- plugins
   -- blink
   BlinkCmpLabel = { fg = p.bg50 },
-  BlinkCmpLabelMatch = { fg = p.white },
+  BlinkCmpLabelMatch = { fg = p.fg },
 
   -- mini
-  -- MiniJump = { reverse = true },
+  MiniJump = { fg = p.yellow, undercurl = true },
   MiniFilesTitleFocused = { link = 'Visual' },
+  MiniStatuslineModeInsert = { link = 'DiffText' },
 
   -- snacks
   SnacksPickerDir = { fg = p.bg50 },
@@ -131,10 +135,10 @@ local highlights = {
   TreesitterContext = { bg = p.bg20 },
 
   -- copilot
-  -- CopilotSuggestion = { fg = c.surface1 },
-  -- CopilotAnnotation = { link = 'Search' },
+  CopilotSuggestion = { fg = p.bg30 },
+  CopilotAnnotation = { link = 'Search' },
   NeocodeiumSuggestion = { fg = p.bg30 },
-  -- NeocodeiumLabel = { link = 'Search' },
+  NeocodeiumLabel = { link = 'Search' },
   -- TabnineSuggestion = { fg = c.surface1, bg = '#2A2B3C' }, -- bg=CursorLine
 }
 
