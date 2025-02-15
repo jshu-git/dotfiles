@@ -43,6 +43,7 @@ end
 local highlights = {
   -- builtin
   CursorLine = { bg = p.bg10 },
+  Directory = { fg = p.blue },
   EndOfBuffer = { fg = p.bg20 },
   FloatBorder = { fg = p.bg30 },
   LineNr = { fg = p.bg20 },
@@ -127,6 +128,7 @@ local highlights = {
   MiniDepsTitleUpdate = { link = 'DiffAdd' },
   MiniDepsTitleSame = { link = 'DiffChange' },
   MiniDepsTitleError = { link = 'DiffDelete' },
+  MiniIconsAzure = { link = 'Directory' },
   MiniJump = { link = 'DiagnosticUnderlineWarn' },
   MiniFilesTitleFocused = { link = 'Visual' },
   MiniStatuslineModeInsert = { link = 'DiffText' },
