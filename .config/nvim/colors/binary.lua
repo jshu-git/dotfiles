@@ -1,5 +1,6 @@
 vim.cmd('highlight clear')
 
+-- helpers
 local function brighten(color, percentage)
   local hsluv = require('hsluv')
   local hsl = hsluv.hex_to_hsluv(color)
@@ -11,8 +12,9 @@ local function brighten(color, percentage)
   return hsluv.hsluv_to_hex(hsl)
 end
 
+-- palette
 local M = {
-  bg = '#1b1e28',
+  bg = '#1b1e28', -- poimandres
   fg = '#ffffff',
 }
 local p = {
@@ -25,13 +27,14 @@ local p = {
   yellow = '#f9e2af',
   blue = '#89b4fa',
 
-  teal = '#5de4c7', -- syntax (poimandres)
-  bg10 = brighten(M.bg, 0.1), -- CursorLine, StatusLine, Pmenu
-  bg20 = brighten(M.bg, 0.2), -- LineNr, PmenuSel, SnacksIndent
-  bg30 = brighten(M.bg, 0.3), -- FloatBorder, Visual, Search, CopilotSuggestion
-  bg50 = brighten(M.bg, 0.5), -- Comment
+  syntax = '#5de4c7', -- poimandres
+  bg10 = brighten(M.bg, 0.1), -- CursorLine, StatusLine
+  bg20 = brighten(M.bg, 0.2), -- LineNr, Pmenu
+  bg30 = brighten(M.bg, 0.3), -- FloatBorder, PmenuSel, Search, Visual
+  bg50 = brighten(M.bg, 0.5), -- Comment, NonText, Whitespace
 }
 
+-- override all highlights
 vim.api.nvim_set_hl(0, 'Binary', { fg = p.fg })
 for group, _ in pairs(vim.api.nvim_get_hl(0, {})) do
   vim.api.nvim_set_hl(0, group, { link = 'Binary' })
@@ -44,11 +47,11 @@ local highlights = {
   FloatBorder = { fg = p.bg30 },
   LineNr = { fg = p.bg20 },
   MatchParen = { link = 'Underlined' },
+  NonText = { fg = p.bg50 },
   StatusLine = { bg = p.bg10 },
   TablineSel = { bg = p.bg20 },
   Visual = { bg = p.bg30 },
-  -- NonText = { fg = p.bg10 },
-  -- Whitespace = { fg = p.bg10 },
+  Whitespace = { fg = p.bg50 },
 
   -- msg
   ErrorMsg = { fg = p.red },
@@ -61,14 +64,14 @@ local highlights = {
   IncSearch = { link = 'Search' },
 
   -- pmenu
-  Pmenu = { bg = p.bg10 },
-  PmenuSel = { bg = p.bg20 },
+  Pmenu = { bg = p.bg20 },
+  PmenuSel = { bg = p.bg30 },
 
   -- syntax
-  Boolean = { fg = p.teal },
+  Boolean = { fg = p.syntax },
   Comment = { fg = p.bg50, italic = true },
-  Number = { fg = p.teal },
-  String = { fg = p.teal },
+  Number = { fg = p.syntax },
+  String = { fg = p.syntax },
   -- Bold = { bold = true },
   Italic = { italic = true },
   Underlined = { underline = true },
@@ -94,12 +97,12 @@ local highlights = {
 
   -- diag
   DiagnosticError = { fg = p.red },
-  DiagnosticHint = { fg = p.teal },
+  DiagnosticHint = { fg = p.syntax },
   DiagnosticInfo = { fg = p.blue },
   DiagnosticOk = { fg = p.green },
   DiagnosticWarn = { fg = p.yellow },
   DiagnosticUnderlineError = { fg = p.red, undercurl = true },
-  DiagnosticUnderlineHint = { fg = p.teal, undercurl = true },
+  DiagnosticUnderlineHint = { fg = p.syntax, undercurl = true },
   DiagnosticUnderlineInfo = { fg = p.blue, undercurl = true },
   DiagnosticUnderlineOk = { fg = p.green, undercurl = true },
   DiagnosticUnderlineWarn = { fg = p.yellow, undercurl = true },
@@ -112,7 +115,7 @@ local highlights = {
   DiagnosticUnnecessary = { link = 'Comment' },
 
   -- lsp
-  LspSignatureActiveParameter = { bg = p.bg30 },
+  LspSignatureActiveParameter = { link = 'Visual' },
   LspInlayHint = { bg = p.bg30, italic = true },
 
   -- plugins
@@ -124,7 +127,7 @@ local highlights = {
   MiniDepsTitleUpdate = { link = 'DiffAdd' },
   MiniDepsTitleSame = { link = 'DiffChange' },
   MiniDepsTitleError = { link = 'DiffDelete' },
-  MiniJump = { fg = p.yellow, undercurl = true },
+  MiniJump = { link = 'DiagnosticUnderlineWarn' },
   MiniFilesTitleFocused = { link = 'Visual' },
   MiniStatuslineModeInsert = { link = 'DiffText' },
   MiniStatuslineModeNormal = { bg = p.bg20 },
@@ -136,7 +139,7 @@ local highlights = {
   SnacksPickerDir = { fg = p.bg50 },
   SnacksPickerFile = { link = 'SnacksPickerDir' },
   SnacksPickerMatch = { link = 'Search' },
-  SnacksPickerListCursorLine = { bg = p.bg10 },
+  SnacksPickerListCursorLine = { link = 'CursorLine' },
   SnacksIndent = { fg = p.bg20 },
 
   -- treesitter
