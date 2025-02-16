@@ -1,6 +1,7 @@
 return {
   ["Comment.nvim"] = "e30b7f2008e52442154b66f7c519bfd2f1e32acb",
-  ["blink.cmp"] = "4780af2dc6dfef6eb2a0fbf27574ae88dcf83e83",
+  ["blink.cmp"] = "b6f11a0aa33e601c469a126e3ed6e35208fe3ea3",
+  catppuccin = "0b2437bcc12b4021614dc41fcea9d0f136d94063",
   ["conform.nvim"] = "a6f5bdb78caa305496357d17e962bbc4c0b392e2",
   ["copilot.lua"] = "30321e33b03cb924fdcd6a806a0dc6fa0b0eafb9",
   ["fix-auto-scroll.nvim"] = "c211a42f4030c9ed03a1456919917cdf1a193bd9",
