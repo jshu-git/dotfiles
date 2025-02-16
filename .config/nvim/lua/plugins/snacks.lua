@@ -36,7 +36,6 @@ snacks.setup({
   -- pickers
   picker = {
     prompt = '',
-    -- prompt = '> ',
     sources = {
       smart = {
         matcher = { sort_empty = false },
@@ -49,6 +48,15 @@ snacks.setup({
         filter = false,
       },
       grep = { hidden = vim.env.SSH_CLIENT == nil },
+      buffers = {
+        win = {
+          input = {
+            keys = {
+              ['<C-x>'] = { 'select_and_next', mode = { 'i', 'n' } },
+            },
+          },
+        },
+      },
     },
     layout = {
       cycle = false,
