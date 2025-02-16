@@ -56,7 +56,7 @@ snacks.setup({
     },
     layouts = {
       default = { -- modified vertical
-        preview = false,
+        hidden = { 'preview' },
         layout = {
           backdrop = false,
           width = 0.8,
@@ -154,13 +154,13 @@ end, { desc = 'Grep (Relative)' })
 vim.keymap.set('n', 'gd', function()
   picker.lsp_definitions({
     auto_confirm = false,
-    layout = { preview = true },
+    layout = { hidden = {} },
   })
 end, { desc = 'LSP: Goto Definition' })
 vim.keymap.set('n', 'gr', function()
   picker.lsp_references({
     auto_confirm = false,
-    layout = { preview = true },
+    layout = { hidden = {} },
   })
 end, { desc = 'LSP: Goto References' })
 vim.keymap.set('n', '<leader>fd', picker.diagnostics_buffer, { desc = 'LSP: Diagnostics (Buffer)' })
@@ -187,7 +187,7 @@ vim.keymap.set('n', ',', function()
 end)
 vim.keymap.set('n', "'", picker.resume)
 vim.keymap.set('n', '<leader>u', function()
-  picker.undo({ layout = { preview = true } })
+  picker.undo({ layout = { hidden = {} } })
 end)
 vim.keymap.set('n', '<leader>fi', function()
   picker.icons({
@@ -199,19 +199,19 @@ vim.keymap.set('n', '<leader>fz', picker.zoxide, { desc = 'Zoxide' })
 
 -- git
 vim.keymap.set('n', '<leader>gl', function()
-  picker.git_log_file({ layout = { preview = true } })
+  picker.git_log_file({ layout = { hidden = {} } })
 end, { desc = 'Log' })
 vim.keymap.set('x', '<leader>gl', function()
-  picker.git_log_line({ layout = { preview = true } })
+  picker.git_log_line({ layout = { hidden = {} } })
 end, { desc = 'Log' })
 
 -- vim
 vim.keymap.set('n', '<leader>fh', function()
-  picker.help({ layout = { preview = true } })
+  picker.help({ layout = { hidden = {} } })
 end, { desc = 'Help' })
 vim.keymap.set('n', '<leader>fl', function()
   picker.highlights({
-    layout = { preview = true },
+    layout = { hidden = {} },
     confirm = { action = { 'yank', 'close' } },
   })
 end, { desc = 'Highlights' })
