@@ -14,8 +14,8 @@ end
 
 -- palette
 local M = {
-  bg = '#1b1e28', -- poimandres
-  fg = '#ffffff',
+  bg = '#1b1e28',
+  fg = '#cdd6f4',
 }
 local p = {
   bg = M.bg,
@@ -34,18 +34,15 @@ local p = {
   bg50 = brighten(M.bg, 0.5), -- Comment, NonText, Whitespace
 }
 
--- override all highlights
-vim.api.nvim_set_hl(0, 'Binary', { fg = p.fg })
-for group, _ in pairs(vim.api.nvim_get_hl(0, {})) do
-  vim.api.nvim_set_hl(0, group, { link = 'Binary' })
-end
-
 local highlights = {
+  Normal = { fg = p.fg, bg = p.bg },
+
   -- builtin
   CursorLine = { bg = p.bg10 },
   Directory = { fg = p.blue },
   EndOfBuffer = { fg = p.bg20 },
   FloatBorder = { fg = p.bg30 },
+  Folded = { link = 'CursorLine' },
   LineNr = { fg = p.bg20 },
   MatchParen = { link = 'Underlined' },
   NonText = { fg = p.bg50 },
@@ -164,6 +161,11 @@ local highlights = {
   TabnineSuggestion = { fg = p.bg30, bg = p.bg10 },
 }
 
+-- set highlights
+vim.api.nvim_set_hl(0, 'Binary', { fg = p.fg })
+for group, _ in pairs(vim.api.nvim_get_hl(0, {})) do
+  vim.api.nvim_set_hl(0, group, { link = 'Binary' })
+end
 for group, hl in pairs(highlights) do
   vim.api.nvim_set_hl(0, group, hl)
 end
