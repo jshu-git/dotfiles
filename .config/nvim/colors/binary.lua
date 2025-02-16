@@ -127,9 +127,15 @@ local highlights = {
   BlinkCmpSignatureHelpBorder = { link = 'FloatBorder' },
 
   -- mini
-  MiniDepsTitleUpdate = { link = 'DiffAdd' },
-  MiniDepsTitleSame = { link = 'DiffChange' },
+  MiniDepsChangeAdded = { link = 'DiagnosticOk' },
+  MiniDepsChangeRemoved = { link = 'DiagnosticError' },
+  MiniDepsHint = { link = 'DiagnosticHint' },
+  MiniDepsInfo = { link = 'DiagnosticInfo' },
+  MiniDepsMsgBreaking = { link = 'DiagnosticWarn' },
+  MiniDepsPlaceholder = { link = 'Comment' },
   MiniDepsTitleError = { link = 'DiffDelete' },
+  MiniDepsTitleSame = { link = 'DiffChange' },
+  MiniDepsTitleUpdate = { link = 'DiffAdd' },
   MiniIconsAzure = { link = 'Directory' },
   MiniJump = { link = 'DiagnosticUnderlineWarn' },
   MiniFilesTitleFocused = { link = 'Visual' },
