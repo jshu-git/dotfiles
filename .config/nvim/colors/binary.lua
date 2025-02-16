@@ -123,6 +123,8 @@ local highlights = {
   -- blink
   BlinkCmpLabel = { fg = p.bg50 },
   BlinkCmpLabelMatch = { fg = p.fg },
+  BlinkCmpDocBorder = { link = 'FloatBorder' },
+  BlinkCmpSignatureHelpBorder = { link = 'FloatBorder' },
 
   -- mini
   MiniDepsTitleUpdate = { link = 'DiffAdd' },

@@ -37,7 +37,6 @@ require('blink.cmp').setup({
       auto_show_delay_ms = 0,
       window = {
         border = 'single',
-        winhighlight = 'FloatBorder:FloatBorder',
       },
     },
   },
@@ -50,7 +49,6 @@ require('blink.cmp').setup({
     },
     window = {
       border = 'single',
-      winhighlight = 'FloatBorder:FloatBorder',
       show_documentation = false,
     },
   },
