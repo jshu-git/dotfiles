@@ -10,10 +10,6 @@ require('blink.cmp').setup({
     ['<C-S-d>'] = { 'scroll_documentation_down', 'fallback' },
     ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
     ['<C-k>'] = {},
-
-    -- cmdline = {
-    --   ['<CR>'] = { 'select_and_enter', 'fallback' },
-    -- },
   },
   completion = {
     list = {
@@ -37,7 +33,7 @@ require('blink.cmp').setup({
       },
     },
     documentation = {
-      auto_show = false,
+      -- auto_show = true,
       auto_show_delay_ms = 0,
       window = {
         border = 'single',
@@ -64,4 +60,10 @@ require('blink.cmp').setup({
       download = vim.env.SSH_CLIENT == nil,
     },
   },
+  -- currently bugged
+  -- cmdline = {
+  -- keymap = {
+  --   ['<CR>'] = { 'accept_and_enter', 'fallback' },
+  -- },
+  -- },
 })

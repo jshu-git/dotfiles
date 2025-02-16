@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 now(function()
-  -- add({ source = 'catppuccin/nvim', name = 'catppuccin' })
+  add({ source = 'catppuccin/nvim', name = 'catppuccin' })
   -- require('plugins.catppuccin')
   -- vim.cmd.colorscheme('catppuccin')
   vim.cmd.colorscheme('binary')
@@ -48,7 +48,7 @@ later(function()
     source = 'neovim/nvim-lspconfig',
     depends = {
       'folke/lazydev.nvim',
-      { source = 'saghen/blink.cmp', checkout = 'v0.11.0' },
+      { source = 'saghen/blink.cmp', checkout = 'v0.12.2' },
     },
   })
   add('stevearc/conform.nvim')
