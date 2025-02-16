@@ -196,7 +196,7 @@ end)
 vim.keymap.set('n', "'", picker.resume)
 vim.keymap.set('n', '<leader>u', function()
   picker.undo({ layout = { hidden = {} } })
-end)
+end, { desc = 'Undo Tree' })
 vim.keymap.set('n', '<leader>fi', function()
   picker.icons({
     layout = { preset = 'default' },

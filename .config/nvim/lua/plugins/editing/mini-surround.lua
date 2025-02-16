@@ -25,4 +25,4 @@ surround.setup({
 })
 
 vim.keymap.set('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true })
-vim.keymap.set('n', 'sA', 'sS_', { remap = true })
+vim.keymap.set('n', 'sA', 'sS_', { remap = true, desc = 'Add surrounding (New Lines)' })

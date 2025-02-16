@@ -20,4 +20,4 @@ rip.setup({
   },
 })
 
-vim.keymap.set({ 'n', 'x' }, '<leader>r', rip.sub, { desc = 'RipSubstitute' })
+vim.keymap.set({ 'n', 'x' }, '<leader>r', rip.sub, { desc = 'Replace (rip-substitute)' })
