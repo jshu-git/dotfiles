@@ -86,7 +86,6 @@ end, { expr = true })
 map('n', 'n', 'nzzzv')
 map('n', 'N', 'Nzzzv')
 map('n', '*', '*``')
-map('n', 'g*', 'g*``')
 map('x', '*', '"zy' .. '/<C-r>z<CR>``')
 
 -- custom operators

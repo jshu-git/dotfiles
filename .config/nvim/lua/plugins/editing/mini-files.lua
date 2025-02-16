@@ -78,7 +78,7 @@ vim.api.nvim_create_autocmd('User', {
     vim.keymap.set('n', '<Tab>', toggle_preview, { buffer = buf_id, desc = 'Toggle Preview' })
 
     -- copy path
-    vim.keymap.set('n', 'gy', function()
+    vim.keymap.set('n', 'yp', function()
       local path = files.get_fs_entry().path
       vim.fn.setreg(vim.v.register, path)
       vim.notify('Copied: ' .. path)
