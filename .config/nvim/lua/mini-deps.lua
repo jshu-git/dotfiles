@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 now(function()
-  add({ source = 'catppuccin/nvim', name = 'catppuccin' })
+  -- add({ source = 'catppuccin/nvim', name = 'catppuccin' })
   -- require('plugins.catppuccin')
   -- vim.cmd.colorscheme('catppuccin')
   vim.cmd.colorscheme('binary')
@@ -81,6 +81,7 @@ later(function()
   add('nmac427/guess-indent.nvim')
   add('chrisgrieser/nvim-rip-substitute')
   add('alexghergh/nvim-tmux-navigation')
+  add('Goose97/timber.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- snacks
