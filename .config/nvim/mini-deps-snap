@@ -12,10 +12,10 @@ return {
   ["nvim-lspconfig"] = "7af2c37192deae28d1305ae9e68544f7fb5408e1",
   ["nvim-rip-substitute"] = "13aff77083c48e335ea71cd65033d829eb0c9566",
   ["nvim-tmux-navigation"] = "4898c98702954439233fdaf764c39636681e2861",
-  ["nvim-treesitter"] = "00a513f87ee3c339c2024b08db3eb63ba7736ed6",
+  ["nvim-treesitter"] = "b08ae25c473b0c63f5ef99f04b03fe66dfbd8f8d",
   ["nvim-treesitter-context"] = "03f382ef224c27a8508cdab2d0b463dcb8ca12a6",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
-  ["snacks.nvim"] = "3841a8705a5e433d88539176d7c67a0ee6a9a92c",
+  ["snacks.nvim"] = "55ffbcd6454f460904164aad2977955899b9213c",
   ["tabnine-nvim"] = "49be0a5c6c6662679074a2a560c80b7053de89d7",
   ["timber.nvim"] = "a9d87bba06d1459627cac265a49055f991fa6f88",
   ["tiny-inline-diagnostic.nvim"] = "576351d53c1f6bda70252c3aaa710b01472024aa"
