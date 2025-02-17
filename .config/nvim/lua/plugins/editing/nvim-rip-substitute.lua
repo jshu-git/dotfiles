@@ -15,7 +15,7 @@ rip.setup({
   },
   incrementalPreview = {
     rangeBackdrop = {
-      blend = 75,
+      blend = 50,
     },
   },
 })
