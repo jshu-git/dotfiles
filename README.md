@@ -2,11 +2,10 @@
 
 - browser: [zen](https://zen-browser.app/)
 - terminal: [ghostty](https://ghostty.org/)
-  - terminal multiplexer: [zellij](https://zellij.dev/)
+  - terminal multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
   - editor: [neovim](https://neovim.io/)
   - shell: [zsh](https://www.zsh.org/)
 
-- theme: [Catppuccin](https://catppuccin.com/)
 - font: [MesloLGS Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 - dotfile manager: [yadm](https://yadm.io/)
 - macapps:
