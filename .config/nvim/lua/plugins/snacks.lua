@@ -37,33 +37,7 @@ snacks.setup({
   picker = {
     prompt = '',
     sources = {
-      -- smart = {
-      --   matcher = { sort_empty = false },
-      --   hidden = vim.env.SSH_CLIENT == nil,
-      --
-      --   -- testing
-      --   -- follow = true
-      --
-      --   -- needed for ~/.local/share/nvim files to show
-      --   filter = false,
-      -- },
-      files = {
-        hidden = vim.env.SSH_CLIENT == nil,
-      },
-      recent = {
-        -- needed for ~/.local/share/nvim files to show
-        filter = false,
-      },
       grep = { hidden = vim.env.SSH_CLIENT == nil },
-      buffers = {
-        win = {
-          input = {
-            keys = {
-              ['<C-x>'] = { 'select_and_next', mode = { 'i', 'n' } },
-            },
-          },
-        },
-      },
     },
     layout = {
       cycle = false,
@@ -145,19 +119,24 @@ end, { desc = 'Blame' })
 local picker = snacks.picker
 
 -- files
--- vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
+vim.keymap.set('n', '<Tab>', function()
+  picker.smart({
+    -- for some reason, there is some insane slowdown when these are specified in picker.sources
+
+    matcher = { sort_empty = false },
+    hidden = vim.env.SSH_CLIENT == nil,
+
+    -- testing
+    -- follow = true
+
+    -- needed for ~/.local/share/nvim files to show
+    filter = false,
+  })
+end, { desc = 'Files (Smart)' })
 -- vim.keymap.set('n', '<leader><Tab>', function()
 --   picker.smart({ cwd = vim.fn.expand('%:p:h') })
 -- end, { desc = 'Files (Smart) (Relative)' })
-vim.keymap.set('n', '<leader>ff', picker.files, { desc = 'Files' })
-vim.keymap.set('n', '<leader>fF', function()
-  picker.files({ cwd = vim.fn.expand('%:p:h') })
-end, { desc = 'Files (Relative)' })
-vim.keymap.set('n', '<leader>fr', picker.recent, { desc = 'Files (Recent)' })
-vim.keymap.set('n', '<leader>fR', function()
-  picker.recent({ cwd = vim.fn.expand('%:p:h') })
-end, { desc = 'Files (Recent) (Relative)' })
-vim.keymap.set('n', '<leader>fb', picker.buffers, { desc = 'Buffers' })
+-- vim.keymap.set('n', '<leader>fb', picker.buffers, { desc = 'Buffers' })
 
 -- grep
 vim.keymap.set('n', '<leader>fw', picker.grep, { desc = 'Grep Live' })
