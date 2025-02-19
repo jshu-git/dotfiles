@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, {
 
 -- set wrap in some filetypes
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { '*.txt', '*.log', 'gitcommit', 'markdown', 'mininotify-history' },
+  pattern = { '*.txt', '*.log', 'gitcommit', 'markdown', 'mininotify-history', 'text' },
   callback = function()
     vim.wo.wrap = true
   end,

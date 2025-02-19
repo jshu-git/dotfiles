@@ -91,6 +91,7 @@ snacks.setup({
       },
     },
     previewers = {
+      diff = { native = true },
       git = { native = true },
     },
     win = {
@@ -203,7 +204,6 @@ vim.keymap.set('n', '<leader>fi', function()
     confirm = { action = { 'yank', 'close' } },
   })
 end, { desc = 'Icons' })
-vim.keymap.set('n', '<leader>fz', picker.zoxide, { desc = 'Zoxide' })
 
 -- git
 vim.keymap.set('n', '<leader>gl', function()
