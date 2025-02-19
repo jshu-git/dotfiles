@@ -107,8 +107,7 @@ snacks.setup({
           ['<C-space>'] = { 'cycle_win', mode = { 'i', 'n' } },
           ['<Up>'] = { 'history_back', mode = { 'i', 'n' } },
           ['<Down>'] = { 'history_forward', mode = { 'i', 'n' } },
-          ['<C-h>'] = false,
-          ['<C-l>'] = false,
+          ['<C-a>'] = false,
         },
       },
       list = {
