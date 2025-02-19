@@ -124,8 +124,8 @@ local highlights = {
   -- blink
   BlinkCmpLabel = { fg = p.bg50 },
   BlinkCmpLabelMatch = { fg = p.fg },
-  BlinkCmpDocBorder = { link = 'FloatBorder' },
-  BlinkCmpSignatureHelpBorder = { link = 'FloatBorder' },
+  -- BlinkCmpDocBorder = { link = 'FloatBorder' },
+  -- BlinkCmpSignatureHelpBorder = { link = 'FloatBorder' },
 
   -- mini
   MiniDepsChangeAdded = { link = 'DiagnosticOk' },
@@ -152,7 +152,7 @@ local highlights = {
   SnacksPickerMatch = { link = 'Search' },
   SnacksPickerListCursorLine = { link = 'CursorLine' },
   SnacksPickerPreviewCursorLine = { link = 'SnacksPickerListCursorLine' },
-  SnacksIndent = { fg = p.bg20 },
+  SnacksIndent = { fg = p.bg10 },
 
   -- treesitter
   TreesitterContext = { link = 'CursorLine' },
