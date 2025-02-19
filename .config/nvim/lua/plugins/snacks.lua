@@ -37,13 +37,20 @@ snacks.setup({
   picker = {
     prompt = '',
     sources = {
-      smart = {
-        matcher = { sort_empty = false },
+      -- smart = {
+      --   matcher = { sort_empty = false },
+      --   hidden = vim.env.SSH_CLIENT == nil,
+      --
+      --   -- testing
+      --   -- follow = true
+      --
+      --   -- needed for ~/.local/share/nvim files to show
+      --   filter = false,
+      -- },
+      files = {
         hidden = vim.env.SSH_CLIENT == nil,
-
-        -- testing
-        -- follow = true
-
+      },
+      recent = {
         -- needed for ~/.local/share/nvim files to show
         filter = false,
       },
@@ -91,8 +98,8 @@ snacks.setup({
       },
     },
     previewers = {
-      diff = { native = true },
-      git = { native = true },
+      diff = { builtin = false },
+      git = { builtin = false },
     },
     win = {
       input = {
@@ -138,10 +145,18 @@ end, { desc = 'Blame' })
 local picker = snacks.picker
 
 -- files
-vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
-vim.keymap.set('n', '<leader><Tab>', function()
-  picker.smart({ cwd = vim.fn.expand('%:p:h') })
-end, { desc = 'Files (Smart) (Relative)' })
+-- vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
+-- vim.keymap.set('n', '<leader><Tab>', function()
+--   picker.smart({ cwd = vim.fn.expand('%:p:h') })
+-- end, { desc = 'Files (Smart) (Relative)' })
+vim.keymap.set('n', '<leader>ff', picker.files, { desc = 'Files' })
+vim.keymap.set('n', '<leader>fF', function()
+  picker.files({ cwd = vim.fn.expand('%:p:h') })
+end, { desc = 'Files (Relative)' })
+vim.keymap.set('n', '<leader>fr', picker.recent, { desc = 'Files (Recent)' })
+vim.keymap.set('n', '<leader>fR', function()
+  picker.recent({ cwd = vim.fn.expand('%:p:h') })
+end, { desc = 'Files (Recent) (Relative)' })
 vim.keymap.set('n', '<leader>fb', picker.buffers, { desc = 'Buffers' })
 
 -- grep
