@@ -3,6 +3,10 @@ local extras = require('mini.extra').pickers
 vim.ui.select = pick.ui_select
 
 pick.setup({
+  delay = {
+    async = 1,
+    busy = 10,
+  },
   mappings = {
     delete_left = '', -- defaults to <C-u>
     move_start = '', -- defaults to <C-g>
@@ -12,6 +16,9 @@ pick.setup({
     refine_marked = '<C-S-g>',
     scroll_down = '<C-d>',
     scroll_up = '<C-u>',
+  },
+  options = {
+    use_cache = true,
   },
   window = {
     config = { row = vim.o.lines - 1 },
@@ -32,6 +39,7 @@ pick.setup({
 })
 
 -- files
+vim.keymap.set('n', '<Tab>', pick.builtin.buffers, { desc = 'Buffers' })
 vim.keymap.set('n', '<leader>ff', function()
   pick.builtin.files({ tool = 'fd' })
 end, { desc = 'Files' })
@@ -41,7 +49,9 @@ end, { desc = 'Files (Relative)' })
 vim.keymap.set('n', '<leader>fr', function()
   extras.oldfiles({ tool = 'fd' })
 end, { desc = 'Files (Recent)' })
-vim.keymap.set('n', '<leader>fb', pick.builtin.buffers, { desc = 'Buffers' })
+vim.keymap.set('n', '<leader>fR', function()
+  extras.oldfiles({ tool = 'fd' }, { source = { cwd = vim.fn.expand('%:p:h') } })
+end, { desc = 'Files (Recent) (Relative)' })
 
 -- grep (live)
 vim.keymap.set('n', '<leader>fw', pick.builtin.grep_live, { desc = 'Grep Live' })
@@ -109,25 +119,6 @@ vim.keymap.set('n', "'", function()
 end)
 
 -- git
--- files
--- vim.keymap.set('n', '<leader>gf', function()
---   extra.git_files({ scope = 'tracked' })
--- end, { desc = 'Files (Tracked)' })
--- vim.keymap.set('n', '<leader>gF', function()
---   extra.git_files({ scope = 'untracked' })
--- end, { desc = 'Files (Untracked)' })
--- vim.keymap.set('n', '<leader>gm', function()
---   extra.git_files({ scope = 'modified' })
--- end, { desc = 'Files (Modified)' })
--- vim.keymap.set('n', '<leader>gi', function()
---   extra.git_files({ scope = 'ignored' })
--- end, { desc = 'Files (Ignored)' })
--- vim.keymap.set('n', '<leader>gh', extra.git_hunks, { desc = 'Hunks' })
--- vim.keymap.set('n', '<leader>gH', function()
---   extra.git_hunks({ path = vim.fn.expand('%:p') })
--- end, { desc = 'Hunks (Buffer)' })
-
--- log (commits)
 vim.keymap.set('n', '<leader>gl', function()
   extras.git_commits({ path = vim.fn.expand('%') })
 end, { desc = 'Log (Buffer)' })
