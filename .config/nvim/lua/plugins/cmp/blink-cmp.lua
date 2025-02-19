@@ -6,9 +6,9 @@ require('blink.cmp').setup({
   end,
   keymap = {
     preset = 'enter',
-    ['<C-S-u>'] = { 'scroll_documentation_up', 'fallback' },
-    ['<C-S-d>'] = { 'scroll_documentation_down', 'fallback' },
-    ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
+    -- ['<C-S-u>'] = { 'scroll_documentation_up', 'fallback' },
+    -- ['<C-S-d>'] = { 'scroll_documentation_down', 'fallback' },
+    -- ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
     ['<C-k>'] = {},
   },
   completion = {
@@ -32,26 +32,26 @@ require('blink.cmp').setup({
         },
       },
     },
-    documentation = {
-      -- auto_show = true,
-      auto_show_delay_ms = 0,
-      window = {
-        border = 'single',
-      },
-    },
+    -- documentation = {
+    --   -- auto_show = true,
+    --   auto_show_delay_ms = 0,
+    --   window = {
+    --     border = 'single',
+    --   },
+    -- },
   },
-  signature = {
-    enabled = true,
-    trigger = {
-      enabled = false,
-      show_on_trigger_character = false,
-      show_on_insert_on_trigger_character = false,
-    },
-    window = {
-      border = 'single',
-      show_documentation = false,
-    },
-  },
+  -- signature = {
+  --   enabled = true,
+  --   trigger = {
+  --     enabled = false,
+  --     show_on_trigger_character = false,
+  --     show_on_insert_on_trigger_character = false,
+  --   },
+  --   window = {
+  --     border = 'single',
+  --     show_documentation = false,
+  --   },
+  -- },
   fuzzy = {
     -- work
     prebuilt_binaries = {
