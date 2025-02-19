@@ -37,6 +37,16 @@ snacks.setup({
   picker = {
     prompt = '',
     sources = {
+      smart = {
+        matcher = { sort_empty = false },
+        hidden = vim.env.SSH_CLIENT == nil,
+
+        -- testing
+        -- follow = true
+
+        -- needed for ~/.local/share/nvim files to show
+        filter = vim.env.SSH_CLIENT ~= nil,
+      },
       grep = { hidden = vim.env.SSH_CLIENT == nil },
     },
     layout = {
@@ -119,20 +129,7 @@ end, { desc = 'Blame' })
 local picker = snacks.picker
 
 -- files
-vim.keymap.set('n', '<Tab>', function()
-  picker.smart({
-    -- for some reason, there is some insane slowdown when these are specified in picker.sources
-
-    matcher = { sort_empty = false },
-    hidden = vim.env.SSH_CLIENT == nil,
-
-    -- testing
-    -- follow = true
-
-    -- needed for ~/.local/share/nvim files to show
-    filter = false,
-  })
-end, { desc = 'Files (Smart)' })
+vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
 -- vim.keymap.set('n', '<leader><Tab>', function()
 --   picker.smart({ cwd = vim.fn.expand('%:p:h') })
 -- end, { desc = 'Files (Smart) (Relative)' })
