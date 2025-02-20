@@ -92,25 +92,25 @@ later(function()
   vim.cmd('runtime! lua/plugins/git/*')
 
   -- leetcode
-  if vim.env.SSH_CLIENT == nil then
-    -- add({
-    --   source = 'kawre/leetcode.nvim',
-    --   depends = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim' },
-    -- })
-    -- require('leetcode').setup({
-    --   lang = 'python3',
-    --   injector = {
-    --     ['python3'] = {
-    --       before = { 'from pprint import pprint' },
-    --     },
-    --   },
-    --   console = {
-    --     result = { size = '50%' },
-    --     testcase = { size = '50%' },
-    --   },
-    --   description = { width = '50%' },
-    -- })
-    -- vim.keymap.set('n', '<leader>L', '<cmd>Leet<cr>')
-    -- vim.keymap.set('n', '<leader>fL', '<cmd>Leet list difficulty=easy<cr>')
-  end
+  -- if vim.env.SSH_CLIENT == nil then
+  -- add({
+  --   source = 'kawre/leetcode.nvim',
+  --   depends = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim' },
+  -- })
+  -- require('leetcode').setup({
+  --   lang = 'python3',
+  --   injector = {
+  --     ['python3'] = {
+  --       before = { 'from pprint import pprint' },
+  --     },
+  --   },
+  --   console = {
+  --     result = { size = '50%' },
+  --     testcase = { size = '50%' },
+  --   },
+  --   description = { width = '50%' },
+  -- })
+  -- vim.keymap.set('n', '<leader>L', '<cmd>Leet<cr>')
+  -- vim.keymap.set('n', '<leader>fL', '<cmd>Leet list difficulty=easy<cr>')
+  -- end
 end)
