@@ -40,12 +40,11 @@ snacks.setup({
       smart = {
         matcher = { sort_empty = false },
         hidden = vim.env.SSH_CLIENT == nil,
-
-        -- testing
         -- follow = true
 
-        -- needed for ~/.local/share/nvim files to show
-        filter = false,
+        -- filter=false needed for ~/.local/share/nvim files to show
+        -- for work, mounts cause slowness
+        filter = vim.env.SSH_CLIENT and { cwd = vim.env.HOME } or false,
       },
       grep = { hidden = vim.env.SSH_CLIENT == nil },
     },
@@ -88,16 +87,19 @@ snacks.setup({
     win = {
       input = {
         keys = {
-          ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
+          ['<Esc>'] = { 'close', mode = { 'i', 'n' } },
           ['<Tab>'] = { 'toggle_preview', mode = { 'i', 'n' } },
           ['<C-x>'] = { 'select_and_next', mode = { 'i', 'n' } },
-          ['<C-S-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
-          ['<C-S-d>'] = { 'preview_scroll_down', mode = { 'i', 'n' } },
-          ['<C-S-h>'] = { 'preview_scroll_left', mode = { 'i', 'n' } },
-          ['<C-S-l>'] = { 'preview_scroll_right', mode = { 'i', 'n' } },
           ['<C-space>'] = { 'cycle_win', mode = { 'i', 'n' } },
           ['<Up>'] = { 'history_back', mode = { 'i', 'n' } },
           ['<Down>'] = { 'history_forward', mode = { 'i', 'n' } },
+
+          -- scrolling
+          ['<C-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
+          ['<C-d>'] = { 'preview_scroll_down', mode = { 'i', 'n' } },
+          ['<C-h>'] = { 'preview_scroll_left', mode = { 'i', 'n' } },
+          ['<C-l>'] = { 'preview_scroll_right', mode = { 'i', 'n' } },
+
           ['<C-a>'] = false,
         },
       },
@@ -113,6 +115,36 @@ snacks.setup({
           ['<C-space>'] = 'cycle_win',
         },
       },
+    },
+    actions = {
+      preview_scroll_down = function(picker)
+        if picker.preview.win:valid() then
+          picker.preview.win:scroll()
+        else
+          picker.list:scroll(picker.list.state.scroll)
+        end
+      end,
+      preview_scroll_up = function(picker)
+        if picker.preview.win:valid() then
+          picker.preview.win:scroll(true)
+        else
+          picker.list:scroll(-picker.list.state.scroll)
+        end
+      end,
+      preview_scroll_left = function(picker)
+        if picker.preview.win:valid() then
+          picker.preview.win:hscroll(true)
+        else
+          vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Left>', true, false, true), 'n', false)
+        end
+      end,
+      preview_scroll_right = function(picker)
+        if picker.preview.win:valid() then
+          picker.preview.win:hscroll()
+        else
+          vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Right>', true, false, true), 'n', false)
+        end
+      end,
     },
   },
 })
