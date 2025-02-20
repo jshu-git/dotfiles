@@ -36,53 +36,53 @@ snacks.setup({
   -- pickers
   picker = {
     prompt = '',
-    sources = {
-      smart = {
-        matcher = { sort_empty = false },
-        hidden = vim.env.SSH_CLIENT == nil,
-
-        -- testing
-        -- follow = true
-
-        -- needed for ~/.local/share/nvim files to show
-        filter = vim.env.SSH_CLIENT ~= nil,
-      },
-      grep = { hidden = vim.env.SSH_CLIENT == nil },
-    },
+    -- sources = {
+    --   smart = {
+    --     matcher = { sort_empty = false },
+    --     hidden = vim.env.SSH_CLIENT == nil,
+    --
+    --     -- testing
+    --     -- follow = true
+    --
+    --     -- needed for ~/.local/share/nvim files to show
+    --     filter = false,
+    --   },
+    --   grep = { hidden = vim.env.SSH_CLIENT == nil },
+    -- },
     layout = {
       cycle = false,
       preset = 'default',
     },
-    layouts = {
-      default = { -- modified vertical
-        hidden = { 'preview' },
-        layout = {
-          backdrop = false,
-          width = 0.8,
-          height = 0.8,
-          box = 'vertical',
-          border = 'single',
-          title = '{source}',
-          title_pos = 'center',
-          { win = 'input', height = 1, border = 'bottom' },
-          { win = 'list', border = 'none' },
-          { win = 'preview', title = '{preview}', height = 0.5, border = 'top' },
-        },
-      },
-      select = {
-        layout = {
-          border = 'single',
-        },
-      },
-    },
-    formatters = {
-      file = {
-        -- filename_first = true,
-        truncate = 120,
-      },
-    },
+    -- layouts = {
+    --   default = { -- modified vertical
+    --     hidden = { 'preview' },
+    --     layout = {
+    --       backdrop = false,
+    --       width = 0.8,
+    --       height = 0.8,
+    --       box = 'vertical',
+    --       border = 'single',
+    --       title = '{source}',
+    --       title_pos = 'center',
+    --       { win = 'input', height = 1, border = 'bottom' },
+    --       { win = 'list', border = 'none' },
+    --       { win = 'preview', title = '{preview}', height = 0.5, border = 'top' },
+    --     },
+    --   },
+    --   select = {
+    --     layout = {
+    --       border = 'single',
+    --     },
+    --   },
+    -- },
+    -- formatters = {
+    --   file = {
+    --     -- filename_first = true,
+    --     truncate = 120,
+    --   },
+    -- },
     previewers = {
-      diff = { builtin = false },
+      -- diff = { builtin = false },
       git = { builtin = false },
     },
     win = {
@@ -127,64 +127,64 @@ end, { desc = 'Blame' })
 
 -- picker
 local picker = snacks.picker
-
--- files
-vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
--- vim.keymap.set('n', '<leader><Tab>', function()
---   picker.smart({ cwd = vim.fn.expand('%:p:h') })
--- end, { desc = 'Files (Smart) (Relative)' })
--- vim.keymap.set('n', '<leader>fb', picker.buffers, { desc = 'Buffers' })
-
--- grep
-vim.keymap.set('n', '<leader>fw', picker.grep, { desc = 'Grep Live' })
-vim.keymap.set('n', '<leader>fW', function()
-  picker.grep({ cwd = vim.fn.expand('%:p:h') })
-end, { desc = 'Grep Live (Relative)' })
-vim.keymap.set('n', '<leader>*', picker.grep_word, { desc = 'Grep cword' })
-vim.keymap.set('n', '<leader>#', function()
-  picker.grep_word({ cwd = vim.fn.expand('%:p:h') })
-end, { desc = 'Grep cword (Relative)' })
-vim.keymap.set('x', '<leader>fw', picker.grep_word, { desc = 'Grep' })
-vim.keymap.set('x', '<leader>fW', function()
-  picker.grep_word({ cwd = vim.fn.expand('%:p:h') })
-end, { desc = 'Grep (Relative)' })
-
--- lsp
-vim.keymap.set('n', 'gd', function()
-  picker.lsp_definitions({
-    auto_confirm = false,
-    layout = { hidden = {} },
-  })
-end, { desc = 'LSP: Goto Definition' })
-vim.keymap.set('n', 'gr', function()
-  picker.lsp_references({
-    auto_confirm = false,
-    layout = { hidden = {} },
-  })
-end, { desc = 'LSP: Goto References' })
-vim.keymap.set('n', '<leader>fd', picker.diagnostics_buffer, { desc = 'LSP: Diagnostics (Buffer)' })
-vim.keymap.set('n', '<leader>fD', picker.diagnostics, { desc = 'LSP: Diagnostics' })
-
--- misc
-vim.keymap.set('n', ',', function()
-  picker.lines({
-    layout = {
-      preview = false,
-      preset = 'select',
-    },
-  })
-  -- source = {
-  --   choose = function(item)
-  --     ---@diagnostic disable:param-type-mismatch
-  --     local query = table.concat(pick.get_picker_query())
-  --     if query ~= '' then
-  --       vim.fn.setreg('/', query)
-  --     end
-  --     pick.default_choose(item)
-  --   end,
-  -- },
-end)
-vim.keymap.set('n', "'", picker.resume)
+--
+-- -- files
+-- vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
+-- -- vim.keymap.set('n', '<leader><Tab>', function()
+-- --   picker.smart({ cwd = vim.fn.expand('%:p:h') })
+-- -- end, { desc = 'Files (Smart) (Relative)' })
+-- -- vim.keymap.set('n', '<leader>fb', picker.buffers, { desc = 'Buffers' })
+--
+-- -- grep
+-- vim.keymap.set('n', '<leader>fw', picker.grep, { desc = 'Grep Live' })
+-- vim.keymap.set('n', '<leader>fW', function()
+--   picker.grep({ cwd = vim.fn.expand('%:p:h') })
+-- end, { desc = 'Grep Live (Relative)' })
+-- vim.keymap.set('n', '<leader>*', picker.grep_word, { desc = 'Grep cword' })
+-- vim.keymap.set('n', '<leader>#', function()
+--   picker.grep_word({ cwd = vim.fn.expand('%:p:h') })
+-- end, { desc = 'Grep cword (Relative)' })
+-- vim.keymap.set('x', '<leader>fw', picker.grep_word, { desc = 'Grep' })
+-- vim.keymap.set('x', '<leader>fW', function()
+--   picker.grep_word({ cwd = vim.fn.expand('%:p:h') })
+-- end, { desc = 'Grep (Relative)' })
+--
+-- -- lsp
+-- vim.keymap.set('n', 'gd', function()
+--   picker.lsp_definitions({
+--     auto_confirm = false,
+--     layout = { hidden = {} },
+--   })
+-- end, { desc = 'LSP: Goto Definition' })
+-- vim.keymap.set('n', 'gr', function()
+--   picker.lsp_references({
+--     auto_confirm = false,
+--     layout = { hidden = {} },
+--   })
+-- end, { desc = 'LSP: Goto References' })
+-- vim.keymap.set('n', '<leader>fd', picker.diagnostics_buffer, { desc = 'LSP: Diagnostics (Buffer)' })
+-- vim.keymap.set('n', '<leader>fD', picker.diagnostics, { desc = 'LSP: Diagnostics' })
+--
+-- -- misc
+-- vim.keymap.set('n', ',', function()
+--   picker.lines({
+--     layout = {
+--       preview = false,
+--       preset = 'select',
+--     },
+--   })
+--   -- source = {
+--   --   choose = function(item)
+--   --     ---@diagnostic disable:param-type-mismatch
+--   --     local query = table.concat(pick.get_picker_query())
+--   --     if query ~= '' then
+--   --       vim.fn.setreg('/', query)
+--   --     end
+--   --     pick.default_choose(item)
+--   --   end,
+--   -- },
+-- end)
+-- vim.keymap.set('n', "'", picker.resume)
 vim.keymap.set('n', '<leader>u', function()
   picker.undo({ layout = { hidden = {} } })
 end, { desc = 'Undo Tree' })
@@ -194,35 +194,35 @@ vim.keymap.set('n', '<leader>fi', function()
     confirm = { action = { 'yank', 'close' } },
   })
 end, { desc = 'Icons' })
-
--- git
-vim.keymap.set('n', '<leader>gl', function()
-  picker.git_log_file({ layout = { hidden = {} } })
-end, { desc = 'Log' })
-vim.keymap.set('x', '<leader>gl', function()
-  picker.git_log_line({ layout = { hidden = {} } })
-end, { desc = 'Log' })
-
--- vim
-vim.keymap.set('n', '<leader>fh', function()
-  picker.help({ layout = { hidden = {} } })
-end, { desc = 'Help' })
-vim.keymap.set('n', '<leader>fl', function()
-  picker.highlights({
-    layout = { hidden = {} },
-    confirm = { action = { 'yank', 'close' } },
-  })
-end, { desc = 'Highlights' })
-vim.keymap.set('n', '<leader>ft', picker.colorschemes, { desc = 'Colorschemes' })
-vim.keymap.set('n', '<leader>fc', picker.commands, { desc = 'Commands' })
-vim.keymap.set('n', '<leader>fC', picker.pickers, { desc = 'Pickers' })
-vim.keymap.set('n', '<leader>fa', picker.autocmds, { desc = 'Autocommands' })
-vim.keymap.set('n', '<leader>fk', picker.keymaps, { desc = 'Keymaps' })
-vim.keymap.set('n', '<leader>fn', picker.notifications, { desc = 'Notifications' })
-vim.keymap.set('n', '<leader>"', picker.registers, { desc = 'Registers' })
-vim.keymap.set('n', '<leader>:', function()
-  picker.command_history({ layout = { preset = 'default' } })
-end, { desc = 'Command History' })
-vim.keymap.set('n', '<leader>/', function()
-  picker.search_history({ layout = { preset = 'default' } })
-end, { desc = 'Search History' })
+--
+-- -- git
+-- vim.keymap.set('n', '<leader>gl', function()
+--   picker.git_log_file({ layout = { hidden = {} } })
+-- end, { desc = 'Log' })
+-- vim.keymap.set('x', '<leader>gl', function()
+--   picker.git_log_line({ layout = { hidden = {} } })
+-- end, { desc = 'Log' })
+--
+-- -- vim
+-- vim.keymap.set('n', '<leader>fh', function()
+--   picker.help({ layout = { hidden = {} } })
+-- end, { desc = 'Help' })
+-- vim.keymap.set('n', '<leader>fl', function()
+--   picker.highlights({
+--     layout = { hidden = {} },
+--     confirm = { action = { 'yank', 'close' } },
+--   })
+-- end, { desc = 'Highlights' })
+-- vim.keymap.set('n', '<leader>ft', picker.colorschemes, { desc = 'Colorschemes' })
+-- vim.keymap.set('n', '<leader>fc', picker.commands, { desc = 'Commands' })
+-- vim.keymap.set('n', '<leader>fC', picker.pickers, { desc = 'Pickers' })
+-- vim.keymap.set('n', '<leader>fa', picker.autocmds, { desc = 'Autocommands' })
+-- vim.keymap.set('n', '<leader>fk', picker.keymaps, { desc = 'Keymaps' })
+-- vim.keymap.set('n', '<leader>fn', picker.notifications, { desc = 'Notifications' })
+-- vim.keymap.set('n', '<leader>"', picker.registers, { desc = 'Registers' })
+-- vim.keymap.set('n', '<leader>:', function()
+--   picker.command_history({ layout = { preset = 'default' } })
+-- end, { desc = 'Command History' })
+-- vim.keymap.set('n', '<leader>/', function()
+--   picker.search_history({ layout = { preset = 'default' } })
+-- end, { desc = 'Search History' })

@@ -39,7 +39,7 @@ pick.setup({
 })
 
 -- files
-vim.keymap.set('n', '<Tab>', pick.builtin.buffers, { desc = 'Buffers' })
+-- vim.keymap.set('n', '<Tab>', pick.builtin.buffers, { desc = 'Buffers' })
 vim.keymap.set('n', '<leader>ff', function()
   pick.builtin.files({ tool = 'fd' })
 end, { desc = 'Files' })
@@ -49,9 +49,6 @@ end, { desc = 'Files (Relative)' })
 vim.keymap.set('n', '<leader>fr', function()
   extras.oldfiles({ tool = 'fd' })
 end, { desc = 'Files (Recent)' })
-vim.keymap.set('n', '<leader>fR', function()
-  extras.oldfiles({ tool = 'fd' }, { source = { cwd = vim.fn.expand('%:p:h') } })
-end, { desc = 'Files (Recent) (Relative)' })
 
 -- grep (live)
 vim.keymap.set('n', '<leader>fw', pick.builtin.grep_live, { desc = 'Grep Live' })
