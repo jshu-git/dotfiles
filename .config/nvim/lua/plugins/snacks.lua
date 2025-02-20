@@ -82,7 +82,7 @@ snacks.setup({
     --   },
     -- },
     previewers = {
-      -- diff = { builtin = false },
+      diff = { builtin = false },
       git = { builtin = false },
     },
     win = {
