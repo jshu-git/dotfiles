@@ -21,7 +21,11 @@ pick.setup({
     use_cache = true,
   },
   window = {
-    config = { row = vim.o.lines - 1 },
+    config = {
+      row = vim.o.lines - 1,
+      height = math.floor(0.75 * vim.o.lines),
+      width = math.floor(0.75 * vim.o.columns),
+    },
     -- centered
     -- config = function()
     --   local popup = require('utils').popup
