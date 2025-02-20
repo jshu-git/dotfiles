@@ -42,7 +42,7 @@ local highlights = {
   Directory = { fg = p.blue },
   EndOfBuffer = { fg = p.bg20 },
   FloatBorder = { fg = p.bg30 },
-  Folded = { link = 'CursorLine' },
+  Folded = { bg = p.bg20 },
   LineNr = { fg = p.bg20 },
   MatchParen = { link = 'Underlined' },
   NonText = { fg = p.bg50 },
@@ -114,7 +114,7 @@ local highlights = {
   DiagnosticFloatingInfo = { link = 'DiagnosticInfo' },
   DiagnosticFloatingOk = { link = 'DiagnosticOk' },
   DiagnosticFloatingWarn = { link = 'DiagnosticWarn' },
-  DiagnosticDeprecated = { fg = p.yellow, strikethrough = true },
+  DiagnosticDeprecated = { sp = p.yellow, strikethrough = true },
   DiagnosticUnnecessary = { link = 'Comment' },
 
   -- lsp
