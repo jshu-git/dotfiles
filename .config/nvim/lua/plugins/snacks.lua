@@ -6,25 +6,6 @@ snacks.setup({
     size = 1.0 * 1024 * 1024, -- 1.0MB
   },
 
-  -- git
-  gitbrowse = {
-    open = function(url)
-      vim.fn.setreg(vim.v.register, url)
-    end,
-    remote_patterns = {
-      -- https://github.com/jshu-git/dotfiles.git/blob/main/.config/nvim/lua/plugins/git/snacks.lua#L21-L21
-      { '^https://github.com/(.*).git', 'https://github.com/%1' },
-
-      -- (https://bitbucket.ngage.netapp.com)/scm/(op)/(api).git -> (https://bitbucket.ngage.netapp.com)/projects/(op)/repos/(api)/browse
-      { '^(https://bitbucket%.ngage%.netapp%.com)/scm/(.*)/(.*).git$', '%1/projects/%2/repos/%3/browse' },
-    },
-    url_patterns = {
-      ['bitbucket.ngage.netapp.com'] = {
-        file = '/{file}#{line_start}-{line_end}',
-      },
-    },
-  },
-
   -- indent
   indent = {
     animate = { enabled = false },
@@ -151,11 +132,51 @@ snacks.setup({
 
 -- git
 vim.keymap.set({ 'n', 'x' }, '<leader>gy', function()
-  snacks.gitbrowse()
+  snacks.gitbrowse({
+    open = function(url)
+      vim.fn.setreg(vim.v.register, url)
+    end,
+    remote_patterns = {
+      -- https://github.com/jshu-git/dotfiles.git/blob/main/.config/nvim/lua/plugins/git/snacks.lua#L21-L21
+      { '^https://github.com/(.*).git', 'https://github.com/%1' },
+
+      -- (https://bitbucket.ngage.netapp.com)/scm/(op)/(api).git -> (https://bitbucket.ngage.netapp.com)/projects/(op)/repos/(api)/browse
+      { '^(https://bitbucket%.ngage%.netapp%.com)/scm/(.*)/(.*).git$', '%1/projects/%2/repos/%3/browse' },
+    },
+    url_patterns = {
+      ['bitbucket.ngage.netapp.com'] = {
+        file = '/{file}#{line_start}-{line_end}',
+      },
+    },
+  })
 end, { desc = 'Copy URL' })
 vim.keymap.set({ 'n', 'x' }, '<leader>gb', function()
-  snacks.git.blame_line({ win = { border = 'single' } })
+  snacks.git.blame_line({
+    win = {
+      width = 0.8,
+      height = 0.8,
+      border = 'single',
+      backdrop = 50,
+      keys = { ['<Esc>'] = 'close' },
+    },
+  })
 end, { desc = 'Blame' })
+
+-- zen
+vim.keymap.set('n', '<leader>z', function()
+  snacks.zen.zen({
+    toggles = {
+      dim = false,
+    },
+    win = {
+      width = 0.8,
+      height = 0.8,
+      border = 'single',
+      backdrop = 50,
+      keys = { ['<Esc>'] = 'close' },
+    },
+  })
+end, { desc = 'Zen' })
 
 -- picker
 local picker = snacks.picker
