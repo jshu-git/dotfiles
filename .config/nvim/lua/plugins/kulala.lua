@@ -2,7 +2,7 @@ local kulala = require('kulala')
 kulala.setup({
   ui = {
     default_view = 'headers_body',
-    default_winbar_panes = { 'body', 'headers', 'headers_body', 'verbose' },
+    default_winbar_panes = { 'headers_body', 'verbose' },
   },
   -- scratchpad_default_contents = {
   -- 'TODO',
