@@ -11,6 +11,12 @@ require('blink.cmp').setup({
     -- ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
     ['<C-k>'] = {},
   },
+  cmdline = {
+    keymap = {
+      preset = 'enter',
+      ['<CR>'] = { 'accept_and_enter', 'fallback' },
+    },
+  },
   completion = {
     list = {
       selection = {
@@ -58,10 +64,4 @@ require('blink.cmp').setup({
       download = vim.env.SSH_CLIENT == nil,
     },
   },
-  -- currently bugged
-  -- cmdline = {
-  -- keymap = {
-  --   ['<CR>'] = { 'accept_and_enter', 'fallback' },
-  -- },
-  -- },
 })
