@@ -45,6 +45,9 @@ end)
 later(function()
   -- work
   add('mistweaverco/kulala.nvim')
+  if vim.env.SSH_CLIENT ~= nil then
+    require('plugins.kulala')
+  end
 
   -- lsp
   add({
