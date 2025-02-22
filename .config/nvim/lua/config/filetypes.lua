@@ -7,6 +7,7 @@ vim.filetype.add({
     nxsuite = 'yaml',
     thpl = 'perl',
     thpy = 'python',
+    cnf = 'json',
   },
   filename = {
     ['.zshrc'] = 'sh',
