@@ -2,9 +2,9 @@ local snacks = require('snacks')
 
 snacks.setup({
   -- bigfile
-  bigfile = {
-    size = 1.0 * 1024 * 1024, -- 1.0MB
-  },
+  -- bigfile = {
+  --   size = 1.0 * 1024 * 1024, -- 1.0MB
+  -- },
 
   -- indent
   indent = {
@@ -186,7 +186,7 @@ vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
 -- vim.keymap.set('n', '<leader><Tab>', function()
 --   picker.smart({ cwd = vim.fn.expand('%:p:h') })
 -- end, { desc = 'Files (Smart) (Relative)' })
-vim.keymap.set('n', '<leader>fb', picker.buffers, { desc = 'Buffers' })
+-- vim.keymap.set('n', '<leader>fb', picker.buffers, { desc = 'Buffers' })
 
 -- grep
 vim.keymap.set('n', '<leader>fw', picker.grep, { desc = 'Grep Live' })
