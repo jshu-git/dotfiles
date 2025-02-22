@@ -47,10 +47,10 @@ map({ 'n', 'x', 'o' }, '0', function()
 end, { expr = true })
 
 -- editing
-map('n', 'O', 'o<Esc>')
+-- map('n', 'O', 'o<Esc>')
+map('n', 'O', ']<Space>', { remap = true })
 map('n', 'P', '<cmd>put<CR>')
 map('n', '<CR>', '"_ciw')
-map('n', '<S-CR>', '<CR>')
 map('n', 'U', '<C-r>')
 map('n', '<BS>', '<C-^>')
 map('n', 'i', function()
