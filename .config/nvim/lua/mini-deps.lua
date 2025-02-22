@@ -43,6 +43,9 @@ now(function()
 end)
 
 later(function()
+  -- work
+  add('mistweaverco/kulala.nvim')
+
   -- lsp
   add({
     source = 'neovim/nvim-lspconfig',
