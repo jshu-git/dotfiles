@@ -249,12 +249,12 @@ vim.keymap.set('n', '<leader>fi', function()
 end, { desc = 'Icons' })
 
 -- git
-vim.keymap.set('n', '<leader>gl', function()
-  picker.git_log_file({ layout = { hidden = {} } })
-end, { desc = 'Log' })
-vim.keymap.set('x', '<leader>gl', function()
+vim.keymap.set({ 'n', 'x' }, '<leader>gl', function()
   picker.git_log_line({ layout = { hidden = {} } })
-end, { desc = 'Log' })
+end, { desc = 'Log (Line)' })
+vim.keymap.set('n', '<leader>gL', function()
+  picker.git_log_file({ layout = { hidden = {} } })
+end, { desc = 'Log (File)' })
 
 -- vim
 vim.keymap.set('n', '<leader>fh', function()
