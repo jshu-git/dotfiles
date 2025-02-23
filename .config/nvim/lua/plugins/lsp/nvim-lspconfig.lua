@@ -14,7 +14,7 @@ end, { desc = 'LSP: Hover' })
 vim.keymap.set('n', 'gR', vim.lsp.buf.rename, { desc = 'LSP: Rename Variable' })
 
 -- diagnostics
-vim.keymap.set('n', 'gD', vim.diagnostic.open_float, { desc = 'LSP: Diagnostic' })
+vim.keymap.set('n', 'gD', vim.diagnostic.open_float, { desc = 'LSP: Hover Diagnostic' })
 vim.diagnostic.config({
   signs = false,
   float = { border = 'single' },
