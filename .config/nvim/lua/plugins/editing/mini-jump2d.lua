@@ -10,6 +10,7 @@ jump2d.setup({
   mappings = {
     start_jumping = ',',
   },
+  silent = true,
 })
 
 -- vim.keymap.set('n', 't', jump2d.start, { desc = 'Jump (Word)' })
