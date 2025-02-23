@@ -9,6 +9,9 @@ require('blink.cmp').setup({
     -- ['<C-S-u>'] = { 'scroll_documentation_up', 'fallback' },
     -- ['<C-S-d>'] = { 'scroll_documentation_down', 'fallback' },
     -- ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
+
+    ['<Tab>'] = {},
+    ['<S-Tab>'] = {},
     ['<C-k>'] = {},
   },
   cmdline = {
