@@ -38,6 +38,7 @@ local highlights = {
   Normal = { fg = p.fg, bg = p.bg },
 
   -- builtin
+  Cursor = { fg = p.bg, bg = p.fg },
   CursorLine = { bg = p.bg10 },
   Directory = { fg = p.blue },
   EndOfBuffer = { fg = p.bg20 },
