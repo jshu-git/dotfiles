@@ -7,17 +7,17 @@ return {
   ["guess-indent.nvim"] = "6cd61f7a600bb756e558627cd2e740302c58e32d",
   ["kulala.nvim"] = "3d7902b83a6334482c65d6204b41a3d2b1344aa5",
   ["lazydev.nvim"] = "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c",
-  ["mini.nvim"] = "f89f4e20dc998d8f0cb8b21734877a64a9adee92",
+  ["mini.nvim"] = "b612a069d1fe99300da43629e0e9c7a1a9b0acda",
   neocodeium = "8a0b9b872b7da673ad2f6f1c3d17ac5c338053a8",
   ["nvim-autopairs"] = "68f0e5c3dab23261a945272032ee6700af86227a",
   ["nvim-lspconfig"] = "6b63bdf2399b9bedf93297d98419550523a9ad68",
   ["nvim-rip-substitute"] = "13aff77083c48e335ea71cd65033d829eb0c9566",
   ["nvim-tmux-navigation"] = "4898c98702954439233fdaf764c39636681e2861",
-  ["nvim-treesitter"] = "5774e7d3da4f681296a87fcd85d17779ad362a4f",
+  ["nvim-treesitter"] = "f2bd62c6568de54ca1b8fb0a8de04a41442934cb",
   ["nvim-treesitter-context"] = "198720b4016af04c9590f375d714d5bf8afecc1a",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
-  ["snacks.nvim"] = "b100c937177536cf2aa634ddd2aa5b8a1dd23ace",
+  ["snacks.nvim"] = "70e7e081ee558eb3756aba02491f1bc84fb72ab0",
   ["tabnine-nvim"] = "49be0a5c6c6662679074a2a560c80b7053de89d7",
   ["timber.nvim"] = "a9d87bba06d1459627cac265a49055f991fa6f88",
-  ["tiny-inline-diagnostic.nvim"] = "4a141892840d2aa3bcc00be6fa958603485f612d"
+  ["tiny-inline-diagnostic.nvim"] = "aabfd85ba83d8cb8b97854dddb6345c7cf19fc2c"
 }
