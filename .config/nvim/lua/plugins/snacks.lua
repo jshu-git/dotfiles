@@ -219,7 +219,7 @@ vim.keymap.set('n', '<leader>fd', picker.diagnostics_buffer, { desc = 'LSP: Diag
 vim.keymap.set('n', '<leader>fD', picker.diagnostics, { desc = 'LSP: Diagnostics' })
 
 -- misc
-vim.keymap.set('n', ',', function()
+vim.keymap.set('n', '<', function()
   picker.lines({
     layout = {
       preview = false,
