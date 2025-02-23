@@ -62,6 +62,7 @@ map('n', '<C-S-c>', 'yygccp', { remap = true })
 
 -- visual
 map('x', '<CR>', '"_c')
+map('n', '<C-q>', '<C-v>j')
 map('x', '<C-q>', 'j')
 map('x', 'I', function()
   return vim.fn.mode() == 'V' and '0<C-v>I' or 'I'
@@ -99,6 +100,13 @@ map('x', 'sx', '*' .. '"_dgn', { desc = 'Delete (Instance)', remap = true })
 map('n', 'yp', function()
   -- absolute path
   local path = vim.fn.expand('%:p')
+
+  -- work
+  if vim.env.SSH_CLIENT ~= nil then
+    -- truncate BUILDROOT
+    path = path:match('.*(test/.+)') or path
+  end
+
   vim.fn.setreg(vim.v.register, path)
   vim.notify('Copied: ' .. path)
 end)
@@ -108,7 +116,7 @@ map('n', 'yP', function()
   vim.fn.setreg(vim.v.register, path)
   vim.notify('Copied: ' .. path)
 end)
-map('n', 'yf', function()
+map('n', 'yt', function()
   -- tail
   local path = vim.fn.expand('%:t')
   vim.fn.setreg(vim.v.register, path)
@@ -138,7 +146,6 @@ map({ 'i', 'c' }, '<C-j>', '<Down>')
 map({ 'i', 'c' }, '<C-a>', '<Home>')
 map({ 'i', 'c' }, '<C-e>', '<End>')
 map({ 'i', 'c' }, '<C-d>', '<Del>')
-map({ 'i', 'c' }, '<A-d>', '<C-Right><C-w>')
 
 -- undo points
 for _, key in ipairs({ ',', '.', '!', '?', ':', ';' }) do

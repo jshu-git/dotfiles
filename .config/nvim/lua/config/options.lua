@@ -64,4 +64,4 @@ vim.o.incsearch = false
 
 -- mouse
 vim.o.mouse = 'a'
-vim.o.mousescroll = 'ver:1,hor:0'
+vim.o.mousescroll = 'ver:1,hor:1'
