@@ -149,7 +149,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>gy', function()
       },
     },
   })
-end, { desc = 'Copy URL' })
+end, { desc = 'Git: Copy URL' })
 vim.keymap.set({ 'n', 'x' }, '<leader>gb', function()
   snacks.git.blame_line({
     win = {
@@ -160,7 +160,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>gb', function()
       keys = { ['<Esc>'] = 'close' },
     },
   })
-end, { desc = 'Blame' })
+end, { desc = 'Git: Blame' })
 
 -- zen
 vim.keymap.set('n', '<leader>z', function()
@@ -251,10 +251,10 @@ end, { desc = 'Icons' })
 -- git
 vim.keymap.set({ 'n', 'x' }, '<leader>gl', function()
   picker.git_log_line({ layout = { hidden = {} } })
-end, { desc = 'Log (Line)' })
+end, { desc = 'Git: Log (Line)' })
 vim.keymap.set('n', '<leader>gL', function()
   picker.git_log_file({ layout = { hidden = {} } })
-end, { desc = 'Log (File)' })
+end, { desc = 'Git: Log (File)' })
 
 -- vim
 vim.keymap.set('n', '<leader>fh', function()

@@ -80,12 +80,12 @@ end
 
 -- lspinfo
 require('lspconfig.ui.windows').default_options = { border = 'single' }
-vim.keymap.set('n', '<leader>li', '<cmd>LspInfo<CR>', { desc = 'Info' })
+vim.keymap.set('n', '<leader>li', '<cmd>LspInfo<CR>', { desc = 'LSP: Info' })
 vim.keymap.set('n', '<leader>lr', function()
   vim.notify('LSP: Restarting...')
   vim.cmd('LspRestart')
-end, { desc = 'Restart' })
-vim.keymap.set('n', '<leader>ll', '<cmd>LspLog<CR><cmd>norm! G<cr>', { desc = 'Log' })
+end, { desc = 'LSP: Restart' })
+vim.keymap.set('n', '<leader>ll', '<cmd>LspLog<CR><cmd>norm! G<cr>', { desc = 'LSP: Log' })
 
 -- delete bad defaults
 if vim.fn.has('nvim-0.11') == 1 then
