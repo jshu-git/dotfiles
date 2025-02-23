@@ -26,6 +26,9 @@ require('blink.cmp').setup({
         preselect = function(ctx)
           return ctx.mode ~= 'cmdline'
         end,
+        auto_insert = function(ctx)
+          return ctx.mode ~= 'cmdline'
+        end,
       },
     },
     accept = {
