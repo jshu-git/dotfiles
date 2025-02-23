@@ -58,7 +58,7 @@ end, { expr = true })
 map('n', '=', '<C-a>')
 map('n', '-', '<C-x>')
 map('n', 'X', 'mzA<BS><Esc>`z')
-map('n', '<C-S-c>', 'yygccp', { remap = true })
+map('n', '<C-S-c>', '"zyygcc"zp', { remap = true })
 
 -- visual
 map('x', '<CR>', '"_c')
