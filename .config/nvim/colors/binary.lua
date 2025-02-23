@@ -42,7 +42,7 @@ local highlights = {
   Directory = { fg = p.blue },
   EndOfBuffer = { fg = p.bg20 },
   FloatBorder = { fg = p.bg30 },
-  Folded = { bg = p.bg20 },
+  Folded = { bg = p.bg10 },
   LineNr = { fg = p.bg20 },
   MatchParen = { link = 'Underlined' },
   NonText = { fg = p.bg50 },
@@ -90,9 +90,9 @@ local highlights = {
   diffFile = { fg = p.yellow },
   diffLine = { fg = p.blue },
   diffRemoved = { fg = p.red },
-  -- Added = { link = 'diffAdded' },
-  -- Changed = { fg = p.cyan },
-  -- Removed = { link = 'diffRemoved' },
+  Added = { link = 'diffAdded' },
+  Changed = { link = 'diffChanged' },
+  Removed = { link = 'diffRemoved' },
   -- treesitter
   ['@diff.plus'] = { link = 'diffAdded' },
   ['@diff.minus'] = { link = 'diffRemoved' },
@@ -129,8 +129,8 @@ local highlights = {
   -- BlinkCmpSignatureHelpBorder = { link = 'FloatBorder' },
 
   -- mini
-  MiniDepsChangeAdded = { link = 'DiagnosticOk' },
-  MiniDepsChangeRemoved = { link = 'DiagnosticError' },
+  MiniDepsChangeAdded = { link = 'diffAdded' },
+  MiniDepsChangeRemoved = { link = 'diffRemoved' },
   MiniDepsHint = { link = 'DiagnosticHint' },
   MiniDepsInfo = { link = 'DiagnosticInfo' },
   MiniDepsMsgBreaking = { link = 'DiagnosticWarn' },
@@ -160,6 +160,7 @@ local highlights = {
 
   -- treesitter
   TreesitterContext = { link = 'CursorLine' },
+  TreesitterContextLineNumber = { link = 'CursorLine' },
 
   -- copilot
   CopilotSuggestion = { fg = p.bg30 },
