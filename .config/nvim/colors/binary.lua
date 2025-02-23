@@ -80,10 +80,10 @@ local highlights = {
   ['@string'] = { link = 'String' },
 
   -- diff
-  DiffText = { fg = p.bg, bg = p.yellow },
   DiffAdd = { fg = p.bg, bg = p.green },
-  DiffChange = { fg = p.fg, bg = p.bg20 },
+  DiffChange = { fg = p.fg, bg = p.bg20 }, -- changed line
   DiffDelete = { fg = p.bg, bg = p.red },
+  DiffText = { fg = p.bg, bg = p.yellow },
   -- patch diff
   diffAdded = { fg = p.green },
   -- diffChanged = { fg = p.cyan },
