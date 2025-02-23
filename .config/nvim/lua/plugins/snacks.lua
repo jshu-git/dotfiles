@@ -219,23 +219,20 @@ vim.keymap.set('n', '<leader>fd', picker.diagnostics_buffer, { desc = 'LSP: Diag
 vim.keymap.set('n', '<leader>fD', picker.diagnostics, { desc = 'LSP: Diagnostics' })
 
 -- misc
-vim.keymap.set('n', '<', function()
+vim.keymap.set('n', ',', function()
   picker.lines({
     layout = {
       preview = false,
       preset = 'select',
     },
+    -- confirm = function(picker, _)
+    --   local pattern = picker.finder.filter.pattern
+    --   if pattern ~= '' then
+    --     vim.fn.setreg('/', pattern)
+    --   end
+    --   picker:close()
+    -- end,
   })
-  -- source = {
-  --   choose = function(item)
-  --     ---@diagnostic disable:param-type-mismatch
-  --     local query = table.concat(pick.get_picker_query())
-  --     if query ~= '' then
-  --       vim.fn.setreg('/', query)
-  --     end
-  --     pick.default_choose(item)
-  --   end,
-  -- },
 end)
 vim.keymap.set('n', "'", picker.resume)
 vim.keymap.set('n', '<leader>u', function()

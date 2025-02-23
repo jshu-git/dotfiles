@@ -8,12 +8,12 @@ jump2d.setup({
     blank = false,
   },
   mappings = {
-    start_jumping = ',',
+    start_jumping = '',
   },
   silent = true,
 })
 
--- vim.keymap.set('n', 't', jump2d.start, { desc = 'Jump (Word)' })
+vim.keymap.set('n', 't', jump2d.start, { desc = 'Jump (Word)' })
 
 -- jump to any word
 -- vim.keymap.set({ 'n', 'x', 'o' }, 'gw', function()
