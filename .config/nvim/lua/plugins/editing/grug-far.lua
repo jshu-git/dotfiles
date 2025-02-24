@@ -31,6 +31,8 @@ grug.setup({
     previewLocation = { n = '<Tab>' },
     swapReplacementInterpreter = false,
   },
+  resultsHighlight = false,
+  icons = { enabled = false },
   resultLocation = {
     showNumberLabel = false,
   },
@@ -42,7 +44,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>r', function()
     startCursorRow = 3,
     prefills = {
       search = vim.fn.expand('<cword>'),
-      paths = vim.fn.expand('%p'),
+      paths = vim.fn.expand('%:p'),
     },
   })
 end, { desc = 'Replace cword (Buffer)' })
