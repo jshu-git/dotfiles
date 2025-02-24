@@ -11,11 +11,11 @@ grug.setup({
   -- wrap = false,
   transient = true,
   keymaps = {
-    replace = false,
+    replace = { n = '<leader>S' },
     qflist = false,
     syncLocations = { n = 'S' },
     syncLine = { n = 's' },
-    close = false,
+    close = { n = '<leader>q' },
     historyOpen = { n = 'gh' },
     historyAdd = false,
     refresh = { n = 'gr' },
