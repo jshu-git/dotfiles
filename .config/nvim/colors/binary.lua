@@ -162,6 +162,9 @@ local highlights = {
   TreesitterContext = { link = 'CursorLine' },
   TreesitterContextLineNumber = { link = 'CursorLine' },
 
+  -- grug
+  GrugFarResultsMatch = { link = 'Search' },
+
   -- copilot
   CopilotSuggestion = { fg = p.bg30 },
   CopilotAnnotation = { link = 'Search' },

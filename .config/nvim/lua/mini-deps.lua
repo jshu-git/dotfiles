@@ -85,9 +85,9 @@ later(function()
   add('nvim-treesitter/nvim-treesitter-context')
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
-  add('chrisgrieser/nvim-rip-substitute')
   add('alexghergh/nvim-tmux-navigation')
   add('Goose97/timber.nvim')
+  add('MagicDuck/grug-far.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- snacks
