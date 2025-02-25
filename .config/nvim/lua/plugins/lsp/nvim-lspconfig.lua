@@ -89,13 +89,9 @@ vim.keymap.set('n', '<leader>ll', '<cmd>LspLog<CR><cmd>norm! G<cr>', { desc = 'L
 
 -- delete bad defaults
 if vim.fn.has('nvim-0.11') == 1 then
-  -- vim.keymap.del('n', 'grr')
-  -- vim.keymap.del('n', 'grn')
-  -- vim.keymap.del('n', 'gri')
-  -- vim.keymap.del({ 'n', 'x' }, 'gra')
   pcall(vim.keymap.del, 'n', 'grr')
-  pcall(vim.keymap.del, 'n', 'gra')
   pcall(vim.keymap.del, 'n', 'gri')
   pcall(vim.keymap.del, 'n', 'grn')
   pcall(vim.keymap.del, { 'n', 'x' }, 'grr')
+  pcall(vim.keymap.del, { 'n', 'x' }, 'gra')
 end

@@ -86,7 +86,7 @@ map('n', 'n', 'nzzzv')
 map('n', 'N', 'Nzzzv')
 map('n', '*', '*``')
 map('x', '*', '"zy' .. '/<C-r>z<CR>``')
-map('x', 'g/', '<Esc>/\\%V')
+map('x', 'g/', '<Esc>/\\%V', { desc = 'Search (Selection)' })
 
 -- custom operators
 -- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
