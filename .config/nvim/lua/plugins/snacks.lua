@@ -67,9 +67,12 @@ snacks.setup({
           ['<Esc>'] = { 'close', mode = { 'i', 'n' } },
           ['<Tab>'] = { 'toggle_preview', mode = { 'i', 'n' } },
           ['<C-x>'] = { 'select_and_next', mode = { 'i', 'n' } },
-          ['<C-space>'] = { 'cycle_win', mode = { 'i', 'n' } },
           ['<Up>'] = { 'history_back', mode = { 'i', 'n' } },
           ['<Down>'] = { 'history_forward', mode = { 'i', 'n' } },
+
+          -- focus
+          ['<C-j>'] = { 'focus_list', mode = { 'i', 'n' } },
+          ['<C-k>'] = { 'focus_preview', mode = { 'i', 'n' } },
 
           -- scrolling
           ['<C-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
@@ -83,13 +86,15 @@ snacks.setup({
       list = {
         keys = {
           ['<Tab>'] = 'toggle_preview',
-          ['<C-space>'] = 'cycle_win',
+          ['<C-j>'] = 'focus_preview',
+          ['<C-k>'] = 'focus_input',
         },
       },
       preview = {
         keys = {
           ['<Tab>'] = 'toggle_preview',
-          ['<C-space>'] = 'cycle_win',
+          ['<C-j>'] = 'focus_input',
+          ['<C-k>'] = 'focus_list',
         },
       },
     },
