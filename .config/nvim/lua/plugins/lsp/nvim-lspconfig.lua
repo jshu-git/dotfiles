@@ -55,7 +55,7 @@ local servers = {
     settings = {
       basedpyright = {
         analysis = {
-          typeCheckingMode = 'off',
+          typeCheckingMode = 'basic',
           diagnosticMode = 'openFilesOnly',
         },
       },
