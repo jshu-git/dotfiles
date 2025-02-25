@@ -92,11 +92,14 @@ vim.api.nvim_create_autocmd('User', {
       files.reset()
       files.reveal_cwd()
     end, { buffer = buf_id, desc = 'Reset cwd' })
+  end,
+})
 
-    -- reset to cwd
-    vim.keymap.set('n', '_', function()
-      files.open(nil, false)
-    end, { buffer = buf_id, desc = 'Reset cwd' })
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'MiniFilesExplorerOpen',
+  callback = function()
+    files.set_bookmark("'", vim.fn.getcwd, { desc = 'cwd' })
+    files.set_bookmark('t', vim.fn.stdpath('data') .. '/mini.files/trash', { desc = 'Trash' })
   end,
 })
 
