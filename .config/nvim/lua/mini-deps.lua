@@ -91,7 +91,10 @@ later(function()
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- snacks
-  add({ source = 'folke/snacks.nvim' })
+  add({
+    source = 'folke/snacks.nvim',
+    checkout = '91c3da0b4b286967d6d0166c0fc5769795a78918',
+  })
   require('plugins.snacks')
 
   -- git

@@ -1,10 +1,6 @@
 local snacks = require('snacks')
 
 snacks.setup({
-  -- bigfile
-  -- bigfile = {
-  --   size = 1.0 * 1024 * 1024, -- 1.0MB
-  -- },
 
   -- indent
   indent = {
