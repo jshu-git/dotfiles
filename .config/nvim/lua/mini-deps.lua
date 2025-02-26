@@ -40,7 +40,6 @@ now(function()
   -- require('plugins.catppuccin')
   -- vim.cmd.colorscheme('catppuccin')
   vim.cmd.colorscheme('binary')
-  require('plugins.mini-statusline')
 end)
 
 later(function()
