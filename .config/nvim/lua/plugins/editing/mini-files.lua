@@ -105,6 +105,7 @@ vim.api.nvim_create_autocmd('User', {
   callback = function()
     files.set_bookmark('c', vim.fn.getcwd, { desc = 'cwd' })
     files.set_bookmark('t', vim.fn.stdpath('data') .. '/mini.files/trash', { desc = 'Trash' })
+    files.set_bookmark('s', vim.fn.stdpath('data'), { desc = 'Share' })
   end,
 })
 
