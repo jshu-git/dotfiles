@@ -6,7 +6,7 @@ return {
   ["fix-auto-scroll.nvim"] = "c211a42f4030c9ed03a1456919917cdf1a193bd9",
   ["grug-far.nvim"] = "0e391cc375702299b8dac101ff5a7d418fb193b9",
   ["guess-indent.nvim"] = "6cd61f7a600bb756e558627cd2e740302c58e32d",
-  ["kulala.nvim"] = "20595e88f223d1f2f9f0b49e0907ac78631463ea",
+  ["kulala.nvim"] = "13521c0ff302cbd2e5258c5d079b867ea96bc432",
   ["lazydev.nvim"] = "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c",
   ["mini.nvim"] = "e554890210cd29d017d6a0c1b1a46f995dcf9e64",
   neocodeium = "8a0b9b872b7da673ad2f6f1c3d17ac5c338053a8",
@@ -19,5 +19,5 @@ return {
   ["snacks.nvim"] = "1b63b1811c58f661ad22f390a52aa6723703dc3d",
   ["tabnine-nvim"] = "49be0a5c6c6662679074a2a560c80b7053de89d7",
   ["timber.nvim"] = "a9d87bba06d1459627cac265a49055f991fa6f88",
-  ["tiny-inline-diagnostic.nvim"] = "aabfd85ba83d8cb8b97854dddb6345c7cf19fc2c"
+  ["tiny-inline-diagnostic.nvim"] = "a9ccdfd1f5d922ca3474eace59dd3a883446800c"
 }
