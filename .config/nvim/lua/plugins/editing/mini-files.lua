@@ -88,7 +88,7 @@ vim.api.nvim_create_autocmd('User', {
     end, { buffer = buf_id, desc = 'Yank path' })
 
     -- open path
-    vim.keymap.set('n', 'gx', function()
+    vim.keymap.set('n', 'gX', function()
       os.execute('open -R ' .. files.get_fs_entry().path)
     end, { buffer = buf_id, desc = 'Reveal in Finder' })
 

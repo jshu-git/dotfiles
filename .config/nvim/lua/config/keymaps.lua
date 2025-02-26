@@ -19,9 +19,6 @@ map('n', '<leader>s', function()
   vim.notify('Sourced: ' .. vim.fn.expand('%:t'))
 end, { desc = 'Source File' })
 map('n', '<leader>nn', '<cmd>messages<CR>', { desc = 'Messages' })
-map('n', '<leader>o', function()
-  os.execute('open -R ' .. vim.api.nvim_buf_get_name(0))
-end, { desc = 'Reveal in Finder' })
 
 -- append
 map('n', '<leader>,', 'mzA,<Esc>`z', { desc = 'Append Comma' })
@@ -59,6 +56,9 @@ map('n', '=', '<C-a>')
 map('n', '-', '<C-x>')
 map('n', 'X', 'mzA<BS><Esc>`z')
 map('n', '<C-S-c>', '"zyygcc"zp', { remap = true })
+map('n', 'gX', function()
+  os.execute('open -R ' .. vim.api.nvim_buf_get_name(0))
+end, { desc = 'Reveal in Finder' })
 
 -- visual
 map('x', 'p', 'P', { remap = true })
