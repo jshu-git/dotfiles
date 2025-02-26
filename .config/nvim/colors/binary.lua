@@ -144,10 +144,9 @@ local highlights = {
   MiniJump2dSpot = { fg = p.red, bg = '#000000' },
   MiniJump2dSpotAhead = { link = 'MiniJump2dSpot' },
   MiniFilesTitleFocused = { link = 'Visual' },
-  MiniStatuslineModeInsert = { link = 'DiffText' },
-  MiniStatuslineModeNormal = { bg = p.bg20 },
-  MiniStatuslineDevinfo = { bg = p.bg10 },
-  MiniStatuslineFileinfo = { bg = p.bg10 },
+  MiniStatuslineModeInsert = { link = 'MiniStatuslineModeCommand' },
+  -- MiniStatuslineDevinfo = { bg = p.bg10 },
+  -- MiniStatuslineFileinfo = { bg = p.bg10 },
   -- MiniStatuslineFilename = { bg = p.bg },
 
   -- snacks

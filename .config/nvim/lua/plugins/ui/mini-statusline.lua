@@ -48,24 +48,40 @@ statusline.setup({
         end
       end
 
-      local lines = string.format('%d', vim.fn.line('$'))
+      local lines = string.format('%dL', vim.fn.line('$'))
+
+      -- return statusline.combine_groups({
+      --   { hl = mode_hl, strings = { mode } },
+      --   {
+      --     hl = 'MiniStatuslineDevinfo',
+      --     strings = {
+      --       statusline.section_git({ trunc_width = 40 }),
+      --       -- diff(),
+      --       statusline.section_diagnostics({ trunc_width = 75 }),
+      --     },
+      --   },
+      --   '%<', -- Mark general truncate point
+      --   { hl = 'MiniStatuslineFilename', strings = { statusline.section_filename({ trunc_width = 140 }) } },
+      --   '%=', -- End left alignment
+      --   { hl = 'MiniStatuslineFilename', strings = { file_size() } },
+      --   { hl = 'MiniStatuslineFileinfo', strings = { filetype() } },
+      --   { hl = 'MiniStatuslineModeNormal', strings = { progress() .. ' / ' .. lines } },
+      --   { strings = { filetype(), file_size(), progress(), lines } },
+      -- })
 
       return statusline.combine_groups({
         { hl = mode_hl, strings = { mode } },
         {
-          hl = 'MiniStatuslineDevinfo',
+          hl = 'NONE',
           strings = {
             statusline.section_git({ trunc_width = 40 }),
-            -- diff(),
             statusline.section_diagnostics({ trunc_width = 75 }),
+            statusline.section_filename({ trunc_width = 140 }),
           },
         },
         '%<', -- Mark general truncate point
-        { hl = 'MiniStatuslineFilename', strings = { statusline.section_filename({ trunc_width = 140 }) } },
         '%=', -- End left alignment
-        { hl = 'MiniStatuslineFilename', strings = { file_size() } },
-        { hl = 'MiniStatuslineFileinfo', strings = { filetype() } },
-        { hl = 'MiniStatuslineModeNormal', strings = { progress() .. ' / ' .. lines } },
+        { strings = { filetype(), file_size(), progress(), lines } },
       })
     end,
   },
