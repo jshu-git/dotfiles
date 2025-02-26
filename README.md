@@ -6,7 +6,7 @@
   - editor: [neovim](https://neovim.io/)
   - shell: [zsh](https://www.zsh.org/)
 
-- font: [MesloLGS Nerd Font](https://github.com/ryanoasis/nerd-fonts)
+- font: [MesloLGM Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 - dotfile manager: [yadm](https://yadm.io/)
 - macapps:
   - [Alfred](https://www.alfredapp.com/)
