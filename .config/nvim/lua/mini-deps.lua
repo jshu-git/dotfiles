@@ -90,6 +90,9 @@ later(function()
   add('MagicDuck/grug-far.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
 
+  -- operators
+  vim.cmd('runtime! lua/plugins/operators/*')
+
   -- snacks
   add({
     source = 'folke/snacks.nvim',
