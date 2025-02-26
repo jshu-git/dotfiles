@@ -144,6 +144,7 @@ local highlights = {
   MiniJump2dSpot = { fg = p.red, bg = '#000000' },
   MiniJump2dSpotAhead = { link = 'MiniJump2dSpot' },
   MiniFilesTitleFocused = { link = 'Visual' },
+  MiniStatuslineModeNormal = { link = 'Visual' },
   MiniStatuslineModeInsert = { link = 'MiniStatuslineModeCommand' },
   -- MiniStatuslineDevinfo = { bg = p.bg10 },
   -- MiniStatuslineFileinfo = { bg = p.bg10 },
