@@ -1,14 +1,12 @@
 require('blink.cmp').setup({
   enabled = function()
-    return not vim.tbl_contains({ 'rip-substitute' }, vim.bo.filetype)
-      and vim.bo.buftype ~= 'prompt'
-      and vim.b.completion ~= false
+    return not vim.tbl_contains({}, vim.bo.filetype) and vim.bo.buftype ~= 'prompt' and vim.b.completion ~= false
   end,
   keymap = {
     preset = 'enter',
     -- ['<C-S-u>'] = { 'scroll_documentation_up', 'fallback' },
     -- ['<C-S-d>'] = { 'scroll_documentation_down', 'fallback' },
-    -- ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
+    ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
 
     ['<Tab>'] = {},
     ['<S-Tab>'] = {},
@@ -16,8 +14,10 @@ require('blink.cmp').setup({
   },
   cmdline = {
     keymap = {
-      preset = 'enter',
       ['<CR>'] = { 'accept_and_enter', 'fallback' },
+    },
+    completion = {
+      menu = { auto_show = true },
     },
   },
   completion = {
@@ -44,26 +44,19 @@ require('blink.cmp').setup({
         },
       },
     },
-    -- documentation = {
-    --   -- auto_show = true,
-    --   auto_show_delay_ms = 0,
-    --   window = {
-    --     border = 'single',
-    --   },
-    -- },
+    documentation = {
+      auto_show_delay_ms = 0,
+      window = { border = 'single' },
+    },
   },
-  -- signature = {
-  --   enabled = true,
-  --   trigger = {
-  --     enabled = false,
-  --     show_on_trigger_character = false,
-  --     show_on_insert_on_trigger_character = false,
-  --   },
-  --   window = {
-  --     border = 'single',
-  --     show_documentation = false,
-  --   },
-  -- },
+  signature = {
+    enabled = true,
+    trigger = { enabled = false },
+    window = {
+      border = 'single',
+      show_documentation = false,
+    },
+  },
   fuzzy = {
     -- work
     prebuilt_binaries = {
