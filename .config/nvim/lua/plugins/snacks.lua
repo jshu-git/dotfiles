@@ -155,7 +155,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>gy', function()
       },
     },
   })
-end, { desc = 'Git: Copy URL' })
+end, { desc = 'Git: Yank URL' })
 vim.keymap.set({ 'n', 'x' }, '<leader>gb', function()
   snacks.git.blame_line({
     win = {

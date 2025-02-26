@@ -108,19 +108,19 @@ map('n', 'yp', function()
   end
 
   vim.fn.setreg(vim.v.register, path)
-  vim.notify('Copied: ' .. path)
+  vim.notify('Yanked: ' .. path)
 end)
 map('n', 'yP', function()
   -- relative
   local path = vim.fn.expand('%:.')
   vim.fn.setreg(vim.v.register, path)
-  vim.notify('Copied: ' .. path)
+  vim.notify('Yanked: ' .. path)
 end)
 map('n', 'yt', function()
   -- tail
   local path = vim.fn.expand('%:t')
   vim.fn.setreg(vim.v.register, path)
-  vim.notify('Copied: ' .. path)
+  vim.notify('Yanked: ' .. path)
 end)
 
 -- windows

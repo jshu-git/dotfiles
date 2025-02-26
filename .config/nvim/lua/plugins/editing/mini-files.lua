@@ -80,12 +80,17 @@ vim.api.nvim_create_autocmd('User', {
     -- preview
     vim.keymap.set('n', '<Tab>', toggle_preview, { buffer = buf_id, desc = 'Toggle Preview' })
 
-    -- copy path
+    -- yank path
     vim.keymap.set('n', 'yp', function()
       local path = files.get_fs_entry().path
       vim.fn.setreg(vim.v.register, path)
-      vim.notify('Copied: ' .. path)
-    end, { buffer = buf_id, desc = 'Copy path' })
+      vim.notify('Yanked: ' .. path)
+    end, { buffer = buf_id, desc = 'Yank path' })
+
+    -- open path
+    vim.keymap.set('n', 'gx', function()
+      vim.ui.open(files.get_fs_entry().path)
+    end, { buffer = buf_id, desc = 'Open path' })
 
     -- reset to first entry and reveal
     vim.keymap.set('n', '<BS>', function()
