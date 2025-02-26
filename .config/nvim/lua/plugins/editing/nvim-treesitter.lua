@@ -6,6 +6,7 @@ if vim.env.SSH_CLIENT ~= nil then
     yaml = { 'src/parser.c', 'src/scanner.cc' },
     perl = { 'src/parser.c', 'src/scanner.c' },
     http = { 'src/parser.c' },
+    json = { 'src/parser.c' },
   }) do
     parser_config[lang] = {
       install_info = {
@@ -17,7 +18,7 @@ if vim.env.SSH_CLIENT ~= nil then
 end
 
 require('nvim-treesitter.configs').setup({
-  ensure_installed = { 'python', 'yaml', 'perl', 'http' },
+  ensure_installed = { 'python', 'yaml', 'perl', 'http', 'json' },
   auto_install = vim.env.SSH_CLIENT == nil,
   ignore_install = { 'tmux' },
   incremental_selection = {
