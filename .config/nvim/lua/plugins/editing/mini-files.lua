@@ -32,9 +32,9 @@ end, { desc = 'Explorer(cwd)' })
 vim.keymap.set('n', "<leader>'", function()
   files.open(files.get_latest_path())
 end, { desc = 'Explorer (Latest)' })
-vim.keymap.set('n', '<leader>T', function()
-  vim.cmd('edit ' .. vim.fn.stdpath('data') .. '/mini.files/trash')
-end, { desc = 'Explorer (Trash)' })
+-- vim.keymap.set('n', '<leader>T', function()
+--   vim.cmd('edit ' .. vim.fn.stdpath('data') .. '/mini.files/trash')
+-- end, { desc = 'Explorer (Trash)' })
 
 -- toggle preview
 local show_preview = false
@@ -103,7 +103,7 @@ vim.api.nvim_create_autocmd('User', {
 vim.api.nvim_create_autocmd('User', {
   pattern = 'MiniFilesExplorerOpen',
   callback = function()
-    files.set_bookmark("'", vim.fn.getcwd, { desc = 'cwd' })
+    files.set_bookmark('c', vim.fn.getcwd, { desc = 'cwd' })
     files.set_bookmark('t', vim.fn.stdpath('data') .. '/mini.files/trash', { desc = 'Trash' })
   end,
 })
