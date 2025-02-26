@@ -61,6 +61,7 @@ map('n', 'X', 'mzA<BS><Esc>`z')
 map('n', '<C-S-c>', '"zyygcc"zp', { remap = true })
 
 -- visual
+map('x', 'p', 'P', { remap = true })
 map('x', '<CR>', '"_c')
 map('n', '<C-q>', '<C-v>j')
 map('x', '<C-q>', 'j')
@@ -82,11 +83,9 @@ map('n', 'dd', function()
 end, { expr = true })
 
 -- search
-map('n', 'n', 'nzzzv')
-map('n', 'N', 'Nzzzv')
 map('n', '*', '*``')
 map('x', '*', '"zy' .. '/<C-r>z<CR>``')
-map('x', 'g/', '<Esc>/\\%V', { desc = 'Search (Selection)' })
+map('x', 'g/', 'o<Esc>/\\%V', { desc = 'Search (Selection)' })
 
 -- custom operators
 -- https://old.reddit.com/r/neovim/comments/1dfvluw/share_your_favorite_settingsfeaturesexcerpts_from/l8qlbs8/
