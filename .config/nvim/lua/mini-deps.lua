@@ -40,6 +40,7 @@ now(function()
   -- require('plugins.catppuccin')
   -- vim.cmd.colorscheme('catppuccin')
   vim.cmd.colorscheme('binary')
+  require('plugins.mini-statusline')
 end)
 
 later(function()
@@ -96,7 +97,7 @@ later(function()
   -- snacks
   add({
     source = 'folke/snacks.nvim',
-    checkout = '91c3da0b4b286967d6d0166c0fc5769795a78918',
+    checkout = '1b63b1811c58f661ad22f390a52aa6723703dc3d',
   })
   require('plugins.snacks')
 
