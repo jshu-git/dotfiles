@@ -14,26 +14,29 @@ statusline.setup({
       --   return ' ' .. summary
       -- end
 
-      local file_size = function()
-        local size = vim.fn.getfsize(vim.fn.getreg('%'))
-        if size <= 0 then
-          return nil
-        elseif size < 1024 then
-          return string.format('%dB', size)
-        elseif size < 1048576 then
-          return string.format('%.2fKB', size / 1024)
-        else
-          return string.format('%.2fMB', size / 1048576)
+      local fileinfo = function()
+        -- type
+        local type = vim.bo.filetype
+        if type ~= '' then
+          type = require('mini.icons').get('filetype', type) .. ' ' .. type
         end
-      end
 
-      local filetype = function()
-        local filetype = vim.bo.filetype
-        if filetype == '' then
-          return ''
+        -- size
+        local fsize = math.max(vim.fn.line2byte(vim.fn.line('$') + 1) - 1, 0)
+        local size = nil
+        if fsize < 1024 then
+          size = string.format('%dB', fsize)
+        elseif fsize < 1048576 then
+          size = string.format('%.2fKB', fsize / 1024)
+        else
+          size = string.format('%.2fMB', fsize / 1048576)
         end
-        filetype = require('mini.icons').get('filetype', filetype) .. ' ' .. filetype
-        return string.format('%s', filetype)
+
+        -- encoding
+        local encoding = vim.bo.fileencoding or vim.bo.encoding
+        local format = vim.bo.fileformat
+
+        return string.format('%s %s[%s] %s', type, encoding, format, size)
       end
 
       local progress = function()
@@ -81,7 +84,7 @@ statusline.setup({
         },
         '%<', -- Mark general truncate point
         '%=', -- End left alignment
-        { strings = { filetype(), file_size(), progress(), lines } },
+        { strings = { fileinfo(), progress(), lines } },
       })
     end,
   },
