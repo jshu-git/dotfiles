@@ -15,6 +15,8 @@ require('blink.cmp').setup({
   cmdline = {
     keymap = {
       ['<CR>'] = { 'accept_and_enter', 'fallback' },
+      ['<Right>'] = {},
+      ['<Left>'] = {},
     },
     completion = {
       menu = { auto_show = true },
