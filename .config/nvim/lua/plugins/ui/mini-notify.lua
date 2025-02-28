@@ -20,8 +20,8 @@ notify.setup({
 })
 vim.notify = notify.make_notify()
 
-vim.keymap.set('n', '<leader>nN', function()
-  vim.cmd('split')
+vim.keymap.set('n', '<leader>nn', function()
+  vim.cmd('tabnew')
   notify.show_history()
   vim.cmd('norm! G')
   vim.wo.wrap = true
