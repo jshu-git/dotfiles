@@ -172,7 +172,6 @@ local highlights = {
   CopilotAnnotation = { link = 'Search' },
   NeocodeiumSuggestion = { fg = p.bg30 },
   NeocodeiumLabel = { link = 'Search' },
-  TabnineSuggestion = { fg = p.bg30, bg = p.bg10 },
 }
 
 -- set highlights

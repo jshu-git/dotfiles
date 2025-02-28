@@ -64,12 +64,10 @@ later(function()
   -- cmp
   add('windwp/nvim-autopairs')
   add('zbirenbaum/copilot.lua')
-  add('codota/tabnine-nvim')
   add('monkoose/neocodeium')
   -- work
   if vim.env.SSH_CLIENT ~= nil then
-    require('plugins.tabnine')
-    -- require('plugins.copilot')
+    require('plugins.copilot')
   else
     require('plugins.neocodeium')
   end
