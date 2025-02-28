@@ -55,7 +55,7 @@ local highlights = {
   -- msg
   ErrorMsg = { fg = p.red },
   WarningMsg = { fg = p.yellow },
-  MsgSeparator = { link = 'Underlined' },
+  MsgSeparator = { fg = p.bg30, underline = true },
 
   -- search
   CurSearch = { fg = p.bg, bg = p.yellow },
