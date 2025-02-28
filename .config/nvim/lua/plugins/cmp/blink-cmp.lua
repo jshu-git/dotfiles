@@ -58,9 +58,11 @@ require('blink.cmp').setup({
     },
   },
   fuzzy = {
+    implementation = 'rust',
     -- work
     prebuilt_binaries = {
       download = vim.env.SSH_CLIENT == nil,
+      ignore_version_mismatch = true,
     },
   },
 })

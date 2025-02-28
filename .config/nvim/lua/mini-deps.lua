@@ -54,7 +54,7 @@ later(function()
     source = 'neovim/nvim-lspconfig',
     depends = {
       'folke/lazydev.nvim',
-      { source = 'saghen/blink.cmp', checkout = 'v0.13.0' },
+      { source = 'saghen/blink.cmp', checkout = 'v0.13.1' },
     },
   })
   add('stevearc/conform.nvim')
