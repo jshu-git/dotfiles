@@ -1,11 +1,11 @@
 local snacks = require('snacks')
 snacks.picker.util.truncpath = function(path, _, opts)
   local cwd = svim.fs.normalize(opts and opts.cwd or vim.fn.getcwd(), { _fast = true, expand_env = false })
-  local home = svim.fs.normalize('~')
   path = svim.fs.normalize(path, { _fast = true, expand_env = false })
   if path:find(cwd .. '/', 1, true) == 1 and #path > #cwd then
     return path:sub(#cwd + 2)
   else
+    local home = svim.fs.normalize('~')
     return '~' .. path:sub(#home + 1)
   end
 end
