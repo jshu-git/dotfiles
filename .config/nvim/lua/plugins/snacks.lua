@@ -1,7 +1,16 @@
 local snacks = require('snacks')
+snacks.picker.util.truncpath = function(path, _, opts)
+  local cwd = svim.fs.normalize(opts and opts.cwd or vim.fn.getcwd(), { _fast = true, expand_env = false })
+  local home = svim.fs.normalize('~')
+  path = svim.fs.normalize(path, { _fast = true, expand_env = false })
+  if path:find(cwd .. '/', 1, true) == 1 and #path > #cwd then
+    return path:sub(#cwd + 2)
+  else
+    return '~' .. path:sub(#home + 1)
+  end
+end
 
 snacks.setup({
-
   -- indent
   indent = {
     animate = { enabled = false },
@@ -49,12 +58,6 @@ snacks.setup({
         layout = {
           border = 'single',
         },
-      },
-    },
-    formatters = {
-      file = {
-        -- filename_first = true,
-        truncate = 120,
       },
     },
     previewers = {
@@ -274,7 +277,6 @@ vim.keymap.set('n', '<leader>fc', picker.commands, { desc = 'Commands' })
 vim.keymap.set('n', '<leader>fC', picker.pickers, { desc = 'Pickers' })
 vim.keymap.set('n', '<leader>fa', picker.autocmds, { desc = 'Autocommands' })
 vim.keymap.set('n', '<leader>fk', picker.keymaps, { desc = 'Keymaps' })
-vim.keymap.set('n', '<leader>fn', picker.notifications, { desc = 'Notifications' })
 vim.keymap.set('n', '<leader>"', picker.registers, { desc = 'Registers' })
 vim.keymap.set('n', '<leader>:', function()
   picker.command_history({ layout = { preset = 'default' } })

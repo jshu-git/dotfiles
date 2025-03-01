@@ -89,7 +89,7 @@ later(function()
   -- snacks
   add({
     source = 'folke/snacks.nvim',
-    checkout = '1b63b1811c58f661ad22f390a52aa6723703dc3d',
+    -- checkout = '1b63b1811c58f661ad22f390a52aa6723703dc3d',
   })
   require('plugins.snacks')
 

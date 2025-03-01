@@ -16,7 +16,7 @@ return {
   ["nvim-treesitter"] = "c1efc9a9058bb54cfcb6f0a4fc14a4ac8a66bdaa",
   ["nvim-treesitter-context"] = "198720b4016af04c9590f375d714d5bf8afecc1a",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
-  ["snacks.nvim"] = "1b63b1811c58f661ad22f390a52aa6723703dc3d",
+  ["snacks.nvim"] = "453333530bf9cbb5930eae8471bc3a23149c9343",
   ["timber.nvim"] = "a9d87bba06d1459627cac265a49055f991fa6f88",
   ["tiny-inline-diagnostic.nvim"] = "de01d4c9cd032d4dac69bf64d5a184fbe62e1fd1"
 }
