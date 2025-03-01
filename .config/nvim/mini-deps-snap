@@ -8,15 +8,15 @@ return {
   ["guess-indent.nvim"] = "6cd61f7a600bb756e558627cd2e740302c58e32d",
   ["kulala.nvim"] = "13521c0ff302cbd2e5258c5d079b867ea96bc432",
   ["lazydev.nvim"] = "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c",
-  ["mini.nvim"] = "e554890210cd29d017d6a0c1b1a46f995dcf9e64",
+  ["mini.nvim"] = "3a354c754656538ad76d1add93ca21e75b7f3181",
   neocodeium = "8a0b9b872b7da673ad2f6f1c3d17ac5c338053a8",
   ["nvim-autopairs"] = "68f0e5c3dab23261a945272032ee6700af86227a",
-  ["nvim-lspconfig"] = "d793c5cb0206d976a38e70e62479a60ba87722ca",
+  ["nvim-lspconfig"] = "a3f8422b752e03334dbaf4a46940d8aee0acdebf",
   ["nvim-tmux-navigation"] = "4898c98702954439233fdaf764c39636681e2861",
-  ["nvim-treesitter"] = "8bc635a25f581d42b0a0e5ba8870bd73244dcdea",
+  ["nvim-treesitter"] = "c1efc9a9058bb54cfcb6f0a4fc14a4ac8a66bdaa",
   ["nvim-treesitter-context"] = "198720b4016af04c9590f375d714d5bf8afecc1a",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
   ["snacks.nvim"] = "1b63b1811c58f661ad22f390a52aa6723703dc3d",
   ["timber.nvim"] = "a9d87bba06d1459627cac265a49055f991fa6f88",
-  ["tiny-inline-diagnostic.nvim"] = "a9ccdfd1f5d922ca3474eace59dd3a883446800c"
+  ["tiny-inline-diagnostic.nvim"] = "de01d4c9cd032d4dac69bf64d5a184fbe62e1fd1"
 }

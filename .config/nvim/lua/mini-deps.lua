@@ -50,18 +50,13 @@ later(function()
   end
 
   -- lsp
-  add({
-    source = 'neovim/nvim-lspconfig',
-    depends = {
-      'folke/lazydev.nvim',
-      { source = 'saghen/blink.cmp', checkout = 'v0.13.1' },
-    },
-  })
+  add({ source = 'neovim/nvim-lspconfig', depends = { 'folke/lazydev.nvim' } })
   add('stevearc/conform.nvim')
   add('rachartier/tiny-inline-diagnostic.nvim')
   vim.cmd('runtime! lua/plugins/lsp/*')
 
   -- cmp
+  add({ source = 'saghen/blink.cmp', checkout = 'v0.13.1' })
   add('windwp/nvim-autopairs')
   add('zbirenbaum/copilot.lua')
   add('monkoose/neocodeium')
