@@ -163,11 +163,6 @@ local highlights = {
   TreesitterContext = { link = 'CursorLine' },
   TreesitterContextLineNumber = { link = 'CursorLine' },
 
-  -- grug
-  GrugFarResultsMatch = { link = 'Search' },
-  GrugFarResultsMatchAdded = { link = 'DiffAdd' },
-  GrugFarResultsMatchRemoved = { link = 'DiffDelete' },
-
   -- copilot
   CopilotSuggestion = { fg = p.bg30 },
   CopilotAnnotation = { link = 'Search' },

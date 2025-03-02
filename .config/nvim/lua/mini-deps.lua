@@ -80,7 +80,6 @@ later(function()
   add('nmac427/guess-indent.nvim')
   add('alexghergh/nvim-tmux-navigation')
   add('Goose97/timber.nvim')
-  add('MagicDuck/grug-far.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- operators
