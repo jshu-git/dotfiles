@@ -95,6 +95,7 @@ snacks.setup({
       preview = {
         keys = {
           ['<Tab>'] = 'toggle_preview',
+          ['<C-j>'] = 'focus_input',
           ['<C-k>'] = 'focus_list',
         },
       },
