@@ -75,6 +75,7 @@ snacks.setup({
 
           -- focus
           ['<C-j>'] = { 'focus_list', mode = { 'i', 'n' } },
+          ['<C-k>'] = { 'focus_preview', mode = { 'i', 'n' } },
 
           -- scrolling
           ['<C-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
