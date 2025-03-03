@@ -42,7 +42,7 @@ snacks.setup({
       default = { -- modified vertical
         hidden = { 'preview' },
         layout = {
-          backdrop = 50,
+          backdrop = false,
           width = 0.8,
           height = 0.8,
           box = 'vertical',
@@ -165,8 +165,8 @@ vim.keymap.set({ 'n', 'x' }, '<leader>gb', function()
       width = 0.8,
       height = 0.8,
       border = 'single',
-      backdrop = 50,
-      keys = { ['<Esc>'] = 'close' },
+      backdrop = false,
+      -- keys = { ['<Esc>'] = 'close' },
     },
   })
 end, { desc = 'Git: Blame' })
@@ -181,8 +181,8 @@ vim.keymap.set('n', '<leader>z', function()
       width = 0.8,
       height = 0.8,
       border = 'single',
-      backdrop = 50,
-      keys = { ['<Esc>'] = 'close' },
+      backdrop = false,
+      -- keys = { ['<Esc>'] = 'close' },
     },
   })
 end, { desc = 'Zen' })
