@@ -75,7 +75,7 @@ statusline.setup({
       return statusline.combine_groups({
         { hl = mode_hl, strings = { mode } },
         {
-          hl = 'NonText',
+          hl = '',
           strings = {
             statusline.section_git({ trunc_width = 40 }),
             statusline.section_diagnostics({ trunc_width = 75 }),
@@ -84,7 +84,7 @@ statusline.setup({
         },
         '%<', -- Mark general truncate point
         '%=', -- End left alignment
-        { strings = { fileinfo(), progress(), lines } },
+        { hl = 'NonText', strings = { fileinfo(), progress(), lines } },
       })
     end,
   },
