@@ -92,9 +92,9 @@ map('x', 'g/', 'o<Esc>/\\%V', { desc = 'Search (Selection)' })
 -- https://github.com/neovim/neovim/issues/21676
 -- https://vim.fandom.com/wiki/Search_and_replace
 map('n', 'sw', 'yiw' .. '*``' .. '"_cgn', { desc = 'Substitute cword (Instance)' })
-map('n', 'sx', '*``' .. '"_dgn', { desc = 'Delete cword (Instance)' })
+-- map('n', 'sx', '*``' .. '"_dgn', { desc = 'Delete cword (Instance)' })
 map('x', 'sw', 'y' .. '/<C-r>0<CR>``' .. '_cgn', { desc = 'Substitute (Instance)' })
-map('x', 'sx', '*' .. '"_dgn', { desc = 'Delete (Instance)', remap = true })
+-- map('x', 'sx', '*' .. '"_dgn', { desc = 'Delete (Instance)', remap = true })
 
 -- yanking
 map('n', 'yp', function()

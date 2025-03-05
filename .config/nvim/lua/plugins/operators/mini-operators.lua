@@ -1,7 +1,7 @@
 local operators = require('mini.operators')
 operators.setup({
   evaluate = { prefix = 'se' },
-  exchange = { prefix = '' },
+  exchange = { prefix = 'sx' },
   multiply = { prefix = 'sm' },
   replace = { prefix = '' },
   sort = { prefix = 'so' },
