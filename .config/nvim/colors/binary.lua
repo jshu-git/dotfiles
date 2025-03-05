@@ -2,16 +2,16 @@ vim.o.termguicolors = true
 vim.cmd('highlight clear')
 
 -- helpers
-local brighten = function(color, percentage)
-  local hsluv = require('hsluv')
-  local hsl = hsluv.hex_to_hsluv(color)
-  local larpSpace = 100 - hsl[3]
-  if percentage < 0 then
-    larpSpace = hsl[3]
-  end
-  hsl[3] = hsl[3] + larpSpace * percentage
-  return hsluv.hsluv_to_hex(hsl)
-end
+-- local brighten = function(color, percentage)
+--   local hsluv = require('hsluv')
+--   local hsl = hsluv.hex_to_hsluv(color)
+--   local larpSpace = 100 - hsl[3]
+--   if percentage < 0 then
+--     larpSpace = hsl[3]
+--   end
+--   hsl[3] = hsl[3] + larpSpace * percentage
+--   return hsluv.hsluv_to_hex(hsl)
+-- end
 
 -- palette
 local M = {
@@ -29,10 +29,15 @@ local p = {
   blue = '#89b4fa',
 
   syntax = '#5de4c7', -- poimandres
-  bg10 = brighten(M.bg, 0.1), -- CursorLine
-  bg20 = brighten(M.bg, 0.2), -- LineNr, Pmenu
-  bg30 = brighten(M.bg, 0.3), -- FloatBorder, Search, Visual, PmenuSel
-  bg50 = brighten(M.bg, 0.5), -- Comment, NonText
+  -- bg10 = brighten(M.bg, 0.1), -- CursorLine
+  -- bg20 = brighten(M.bg, 0.2), -- LineNr, Pmenu
+  -- bg30 = brighten(M.bg, 0.3), -- FloatBorder, Search, Visual, PmenuSel
+  -- bg50 = brighten(M.bg, 0.5), -- Comment, NonText
+
+  bg10 = '#2C303F', -- CursorLine
+  bg20 = '#3F4457', -- LineNr, Pmenu
+  bg30 = '#525970', -- FloatBorder, Search, Visual, PmenuSel
+  bg50 = '#7C85A3', -- Comment, NonText
 }
 
 local highlights = {
