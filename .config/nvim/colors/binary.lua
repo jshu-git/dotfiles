@@ -32,26 +32,28 @@ local p = {
   bg10 = brighten(M.bg, 0.1), -- CursorLine
   bg20 = brighten(M.bg, 0.2), -- LineNr, Pmenu
   bg30 = brighten(M.bg, 0.3), -- FloatBorder, Search, Visual, PmenuSel
-  bg50 = brighten(M.bg, 0.5), -- Comment, NonText, Whitespace
+  bg50 = brighten(M.bg, 0.5), -- Comment, NonText
 }
 
 local highlights = {
   Normal = { fg = p.fg, bg = p.bg },
+  Cursor = { fg = p.bg, bg = p.fg },
 
   -- builtin
-  Cursor = { fg = p.bg, bg = p.fg },
   CursorLine = { bg = p.bg10 },
   Directory = { fg = p.blue },
-  EndOfBuffer = { fg = p.bg20 },
   FloatBorder = { fg = p.bg30 },
   Folded = { bg = p.bg10 },
   LineNr = { fg = p.bg20 },
   MatchParen = { link = 'Underlined' },
-  NonText = { fg = p.bg50 },
   -- StatusLine = { bg = p.bg10 },
   TablineSel = { bg = p.bg20 },
   Visual = { bg = p.bg30 },
-  Whitespace = { fg = p.bg50 },
+
+  -- whitespace
+  EndOfBuffer = { fg = p.bg20 },
+  NonText = { fg = p.bg50 },
+  Whitespace = { link = 'NonText' },
 
   -- msg
   ErrorMsg = { fg = p.red },
@@ -65,7 +67,7 @@ local highlights = {
 
   -- pmenu
   Pmenu = { bg = p.bg20 },
-  PmenuSel = { bg = p.bg30 },
+  PmenuSel = { link = 'Visual' },
 
   -- syntax
   Boolean = { fg = p.syntax },
@@ -142,7 +144,7 @@ local highlights = {
   MiniDepsTitleUpdate = { link = 'DiffAdd' },
   MiniIconsAzure = { link = 'Directory' },
   MiniJump = { link = 'DiagnosticUnderlineWarn' },
-  MiniJump2dSpot = { fg = p.red, bg = '#000000' },
+  MiniJump2dSpot = { link = 'DiagnosticError' },
   MiniJump2dSpotAhead = { link = 'MiniJump2dSpot' },
   MiniFilesTitleFocused = { link = 'Visual' },
   MiniStatuslineModeNormal = { link = 'Visual' },
@@ -152,7 +154,6 @@ local highlights = {
   -- MiniStatuslineFilename = { bg = p.bg },
 
   -- snacks
-  SnacksPickerDir = { fg = p.bg50 },
   SnacksPickerFile = { link = 'SnacksPickerDir' },
   SnacksPickerMatch = { link = 'Search' },
   SnacksPickerListCursorLine = { link = 'CursorLine' },
@@ -166,8 +167,8 @@ local highlights = {
   -- copilot
   CopilotSuggestion = { fg = p.bg30 },
   CopilotAnnotation = { link = 'Search' },
-  NeocodeiumSuggestion = { fg = p.bg30 },
-  NeocodeiumLabel = { link = 'Search' },
+  NeocodeiumSuggestion = { link = 'CopilotSuggestion' },
+  NeocodeiumLabel = { link = 'CopilotAnnotation' },
 }
 
 -- set highlights
