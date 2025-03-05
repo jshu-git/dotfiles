@@ -14,3 +14,7 @@ operators.make_mappings('replace', {
 })
 vim.keymap.set('n', 'S', 's$', { remap = true })
 vim.keymap.set('n', 'sE', 'se$', { remap = true, desc = 'Evaluate (EOL)' })
+
+-- swap arguments
+vim.keymap.set('n', 'sl', 'sx' .. 'i' .. 'a' .. 'sx' .. 'in' .. 'a', { remap = true })
+vim.keymap.set('n', 'sh', 'sx' .. 'i' .. 'a' .. 'sx' .. 'il' .. 'a', { remap = true })

@@ -20,5 +20,3 @@ ai.setup({
 
 vim.keymap.set('n', '<S-CR>', 'ciq', { remap = true })
 -- vim.keymap.set('x', 'v', 'ilo', { remap = true })
-vim.keymap.set('n', 'sl', 'sx' .. 'i' .. 'a' .. 'sx' .. 'in' .. 'a', { remap = true })
-vim.keymap.set('n', 'sh', 'sx' .. 'i' .. 'a' .. 'sx' .. 'il' .. 'a', { remap = true })
