@@ -154,6 +154,7 @@ local highlights = {
   MiniFilesTitleFocused = { link = 'Visual' },
   MiniStatuslineModeNormal = { link = 'Visual' },
   MiniStatuslineModeInsert = { link = 'MiniStatuslineModeCommand' },
+  MiniTrailspace = { bg = p.red },
   -- MiniStatuslineDevinfo = { bg = p.bg10 },
   -- MiniStatuslineFileinfo = { bg = p.bg10 },
   -- MiniStatuslineFilename = { bg = p.bg },
