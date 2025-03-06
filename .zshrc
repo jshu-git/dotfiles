@@ -75,6 +75,7 @@ if command -v tmux >/dev/null 2>&1; then
 	function zd() {
 		tmux kill-server
 	}
+	alias clear="clear ; tmux clear-history"
 fi
 if command -v tmuxp >/dev/null 2>&1; then
 	function zz() {
