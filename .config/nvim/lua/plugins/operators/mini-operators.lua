@@ -16,5 +16,5 @@ vim.keymap.set('n', 'S', 's$', { remap = true })
 vim.keymap.set('n', 'sE', 'se$', { remap = true, desc = 'Evaluate (EOL)' })
 
 -- swap arguments
-vim.keymap.set('n', 'sl', 'sx' .. 'i' .. 'a' .. 'sx' .. 'in' .. 'a', { remap = true })
-vim.keymap.set('n', 'sh', 'sx' .. 'i' .. 'a' .. 'sx' .. 'il' .. 'a', { remap = true })
+vim.keymap.set('n', 'sxl', 'sx' .. 'i' .. 'a' .. 'sx' .. 'in' .. 'a', { desc = 'Swap Argument Right', remap = true })
+vim.keymap.set('n', 'sxh', 'sx' .. 'i' .. 'a' .. 'sx' .. 'il' .. 'a', { desc = 'Swap Argument Left', remap = true })
