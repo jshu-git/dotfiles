@@ -1,5 +1,4 @@
-local surround = require('mini.surround')
-surround.setup({
+require('mini.surround').setup({
   custom_surroundings = {
     -- reverse defaults
     ['('] = { output = { left = '(', right = ')' } },
@@ -12,11 +11,12 @@ surround.setup({
   mappings = {
     add = 'sS',
     -- delete = 'sd',
+    -- find = 'sf',
+    -- find_left = 'sF',
+    -- highlight = 'sh',
     -- replace = 'sr',
+
     update_n_lines = '',
-    highlight = 'sf',
-    find = '',
-    find_left = '',
     suffix_last = '',
     suffix_next = '',
   },
