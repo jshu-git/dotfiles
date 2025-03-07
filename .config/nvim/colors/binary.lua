@@ -59,6 +59,7 @@ local highlights = {
   EndOfBuffer = { fg = p.bg20 },
   NonText = { fg = p.bg50 },
   Whitespace = { link = 'NonText' },
+  SnippetTabstop = { link = 'Visual' },
 
   -- msg
   ErrorMsg = { fg = p.red },
