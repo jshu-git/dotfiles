@@ -161,6 +161,7 @@ local highlights = {
   -- MiniStatuslineFilename = { bg = p.bg },
 
   -- snacks
+  -- SnacksPickerDir = { fg = p.bg30 },
   SnacksPickerFile = { link = 'SnacksPickerDir' },
   SnacksPickerMatch = { link = 'Search' },
   SnacksPickerListCursorLine = { link = 'CursorLine' },
