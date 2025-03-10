@@ -5,7 +5,7 @@ hs.loadSpoon("EmmyLua")
 
 -- application switcher
 for key, name in pairs({
-	["1"] = "Zen Browser",
+	["1"] = "Google Chrome",
 	["2"] = "Ghostty",
 }) do
 	hs.hotkey.bind("alt", key, function()
