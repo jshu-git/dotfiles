@@ -1,6 +1,5 @@
 <img width="1472" alt="SCR-20250311-segj" src="https://github.com/user-attachments/assets/37600812-3532-4242-827c-ded3aab9829d" />
 
-- browser: [zen](https://zen-browser.app/)
 - terminal: [ghostty](https://ghostty.org/)
   - terminal multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
   - editor: [neovim](https://neovim.io/)
