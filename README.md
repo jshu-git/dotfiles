@@ -1,4 +1,4 @@
-<img width="1472" alt="SCR-20250302-pcyt" src="https://github.com/user-attachments/assets/757e3e93-bb18-4b4c-be87-103429e889cd" />
+<img width="1472" alt="SCR-20250311-segj" src="https://github.com/user-attachments/assets/37600812-3532-4242-827c-ded3aab9829d" />
 
 - browser: [zen](https://zen-browser.app/)
 - terminal: [ghostty](https://ghostty.org/)
