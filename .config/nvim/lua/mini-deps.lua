@@ -43,12 +43,6 @@ now(function()
 end)
 
 later(function()
-  -- work
-  add('mistweaverco/kulala.nvim')
-  if vim.env.SSH_CLIENT ~= nil then
-    require('plugins.kulala')
-  end
-
   -- lsp
   add({ source = 'neovim/nvim-lspconfig', depends = { 'folke/lazydev.nvim' } })
   add('stevearc/conform.nvim')

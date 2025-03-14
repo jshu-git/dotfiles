@@ -63,7 +63,6 @@ clue.setup({
     { mode = 'n', keys = '<leader>n', desc = 'Notifications…' },
     { mode = 'n', keys = '<leader>m', desc = 'mini.deps…' },
     { mode = 'n', keys = '<leader>l', desc = 'LSP…' },
-    { mode = 'n', keys = '<leader>k', desc = 'Kulala…' },
 
     -- submodes
     -- buffers
