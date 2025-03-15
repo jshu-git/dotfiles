@@ -47,6 +47,7 @@ later(function()
   add({ source = 'neovim/nvim-lspconfig', depends = { 'folke/lazydev.nvim' } })
   add('stevearc/conform.nvim')
   add('rachartier/tiny-inline-diagnostic.nvim')
+  add('Zeioth/garbage-day.nvim')
   vim.cmd('runtime! lua/plugins/lsp/*')
 
   -- cmp
