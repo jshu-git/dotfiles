@@ -32,3 +32,36 @@ vim.keymap.set('i', '<C-c>', function()
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-c>', true, false, true), 'n', false)
   end
 end)
+
+-- chat
+local chat = require('CopilotChat')
+chat.setup({
+  show_help = false,
+  chat_autocomplete = false,
+  separator = '',
+  mappings = {
+    complete = {
+      insert = '',
+    },
+    close = {
+      normal = '<leader>q',
+      insert = '',
+    },
+    reset = {
+      normal = '<leader>c',
+      insert = '',
+    },
+    submit_prompt = {
+      normal = '<leader>w',
+      insert = '',
+    },
+  },
+})
+
+vim.keymap.set({ 'n', 'x' }, '<leader>a', chat.toggle, { desc = 'CopilotChat' })
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = 'copilot-*',
+  callback = function()
+    vim.opt_local.conceallevel = 0
+  end,
+})

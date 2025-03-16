@@ -52,14 +52,21 @@ later(function()
   -- cmp
   add({ source = 'saghen/blink.cmp', checkout = 'v0.13.1' })
   add('windwp/nvim-autopairs')
-  add('zbirenbaum/copilot.lua')
   add('monkoose/neocodeium')
+  add('zbirenbaum/copilot.lua')
+  add({
+    source = 'CopilotC-Nvim/CopilotChat.nvim',
+    depends = {
+      'zbirenbaum/copilot.lua',
+      'nvim-lua/plenary.nvim',
+    },
+  })
   -- work
-  if vim.env.SSH_CLIENT ~= nil then
-    require('plugins.copilot')
-  else
-    require('plugins.neocodeium')
-  end
+  -- if vim.env.SSH_CLIENT ~= nil then
+  require('plugins.copilot')
+  -- else
+  -- require('plugins.neocodeium')
+  -- end
   vim.cmd('runtime! lua/plugins/cmp/*')
 
   -- ui
