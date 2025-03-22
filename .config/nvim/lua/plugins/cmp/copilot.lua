@@ -36,6 +36,7 @@ end)
 -- chat
 local chat = require('CopilotChat')
 chat.setup({
+  model = 'gpt-4',
   show_help = false,
   chat_autocomplete = false,
   separator = '',
