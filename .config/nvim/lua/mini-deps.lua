@@ -61,12 +61,6 @@ later(function()
       'nvim-lua/plenary.nvim',
     },
   })
-  -- work
-  -- if vim.env.SSH_CLIENT ~= nil then
-  require('plugins.copilot')
-  -- else
-  -- require('plugins.neocodeium')
-  -- end
   vim.cmd('runtime! lua/plugins/cmp/*')
 
   -- ui
