@@ -8,6 +8,7 @@ vim.schedule(function()
 end)
 vim.o.virtualedit = 'block'
 vim.o.scrolloff = 12
+vim.o.winborder = 'single'
 
 -- fold
 vim.o.foldmethod = 'expr'
