@@ -63,4 +63,13 @@ require('blink.cmp').setup({
       ignore_version_mismatch = true,
     },
   },
+  sources = {
+    providers = {
+      path = {
+        opts = {
+          show_hidden_files_by_default = true,
+        },
+      },
+    },
+  },
 })
