@@ -1,5 +1,4 @@
 -- misc
-vim.o.cursorline = true
 vim.o.undofile = true
 vim.o.swapfile = false
 vim.o.confirm = true
@@ -8,6 +7,9 @@ vim.schedule(function()
 end)
 vim.o.virtualedit = 'block'
 vim.o.scrolloff = 12
+
+-- ui
+vim.o.cursorline = true
 vim.o.winborder = 'single'
 
 -- fold
