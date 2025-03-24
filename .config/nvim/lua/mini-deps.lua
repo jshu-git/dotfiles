@@ -74,7 +74,6 @@ later(function()
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
   add('alexghergh/nvim-tmux-navigation')
-  add('Goose97/timber.nvim')
   add('stevearc/quicker.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
 
