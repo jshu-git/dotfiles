@@ -261,6 +261,9 @@ end, { desc = 'Git: Log (Line)' })
 vim.keymap.set('n', '<leader>gL', function()
   picker.git_log_file({ layout = { hidden = {} } })
 end, { desc = 'Git: Log (File)' })
+vim.keymap.set('n', '<leader>gh', function()
+  picker.git_diff({ layout = { hidden = {} } })
+end, { desc = 'Git: Hunks' })
 
 -- vim
 vim.keymap.set('n', '<leader>fh', function()
