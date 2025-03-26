@@ -1,4 +1,7 @@
-vim.diagnostic.config({ virtual_text = false })
+vim.diagnostic.config({
+  signs = false,
+  virtual_text = false,
+})
 require('tiny-inline-diagnostic').setup({
   preset = 'simple',
   options = {
