@@ -48,7 +48,6 @@ require('blink.cmp').setup({
     enabled = true,
     trigger = { enabled = false },
     window = {
-      border = 'single',
       show_documentation = false,
     },
   },
