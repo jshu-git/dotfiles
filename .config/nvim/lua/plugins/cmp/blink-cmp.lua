@@ -1,7 +1,4 @@
 require('blink.cmp').setup({
-  enabled = function()
-    return not vim.tbl_contains({}, vim.bo.filetype) and vim.bo.buftype ~= 'prompt' and vim.b.completion ~= false
-  end,
   keymap = {
     preset = 'enter',
     ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
@@ -34,6 +31,7 @@ require('blink.cmp').setup({
     },
     menu = {
       max_height = 5,
+      border = 'none',
       scrolloff = 3,
       draw = {
         columns = {
@@ -44,7 +42,6 @@ require('blink.cmp').setup({
     },
     documentation = {
       auto_show_delay_ms = 0,
-      window = { border = 'single' },
     },
   },
   signature = {

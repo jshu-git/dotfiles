@@ -50,7 +50,7 @@ later(function()
   vim.cmd('runtime! lua/plugins/lsp/*')
 
   -- cmp
-  add({ source = 'saghen/blink.cmp', checkout = 'v0.13.1' })
+  add({ source = 'saghen/blink.cmp', checkout = 'v1.0.0' })
   add('windwp/nvim-autopairs')
   add('monkoose/neocodeium')
   add('zbirenbaum/copilot.lua')
