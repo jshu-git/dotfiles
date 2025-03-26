@@ -170,7 +170,7 @@ local highlights = {
 
   -- treesitter
   TreesitterContext = { link = 'CursorLine' },
-  TreesitterContextLineNumber = { link = 'CursorLine' },
+  TreesitterContextLineNumber = { link = 'TreesitterContext' },
 
   -- copilot
   CopilotSuggestion = { fg = p.bg30 },
