@@ -53,16 +53,18 @@ later(function()
   add({ source = 'saghen/blink.cmp', checkout = 'v1.0.0' })
   add('windwp/nvim-autopairs')
   add('monkoose/neocodeium')
-  -- add('zbirenbaum/copilot.lua')
-  -- add({
-  --   source = 'CopilotC-Nvim/CopilotChat.nvim',
-  --   depends = {
-  --     'zbirenbaum/copilot.lua',
-  --     'nvim-lua/plenary.nvim',
-  --   },
-  -- })
-  -- require('plugins.copilot')
   vim.cmd('runtime! lua/plugins/cmp/*')
+
+  -- copilot
+  add('zbirenbaum/copilot.lua')
+  add({
+    source = 'CopilotC-Nvim/CopilotChat.nvim',
+    depends = {
+      'zbirenbaum/copilot.lua',
+      'nvim-lua/plenary.nvim',
+    },
+  })
+  -- require('plugins.copilot')
 
   -- ui
   add('utilyre/sentiment.nvim')
