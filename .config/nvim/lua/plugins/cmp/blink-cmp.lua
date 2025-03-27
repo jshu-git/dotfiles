@@ -6,7 +6,6 @@ require('blink.cmp').setup({
   },
   cmdline = {
     keymap = {
-      ['<CR>'] = { 'accept_and_enter', 'fallback' },
       ['<C-e>'] = { 'cancel', 'fallback' },
       ['<Right>'] = {},
       ['<Left>'] = {},
