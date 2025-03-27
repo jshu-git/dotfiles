@@ -64,7 +64,7 @@ later(function()
       'nvim-lua/plenary.nvim',
     },
   })
-  -- require('plugins.copilot')
+  require('plugins.copilot')
 
   -- ui
   add('utilyre/sentiment.nvim')

@@ -14,6 +14,7 @@ require('copilot').setup({
   filetypes = {
     ['*'] = true,
   },
+  lsp_binary = vim.env.SSH_CLIENT and '~/.packages/copilot-language-server' or nil,
 })
 
 local suggestion = require('copilot.suggestion')
