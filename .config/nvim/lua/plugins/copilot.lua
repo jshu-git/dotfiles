@@ -57,6 +57,9 @@ chat.setup({
       normal = '<leader>w',
       insert = '',
     },
+    show_help = {
+      normal = 'g?',
+    },
   },
 })
 
