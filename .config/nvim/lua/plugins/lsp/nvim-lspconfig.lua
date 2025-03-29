@@ -12,6 +12,16 @@ vim.keymap.set('n', 'gs', vim.lsp.buf.hover, { desc = 'LSP: Hover' })
 vim.keymap.set('n', 'gR', vim.lsp.buf.rename, { desc = 'LSP: Rename Variable' })
 
 -- diagnostics
+vim.diagnostic.config({
+  virtual_text = {
+    source = true,
+    spacing = 8,
+    prefix = '■ ',
+  },
+  signs = false,
+  severity_sort = true,
+  jump = { wrap = false, float = true },
+})
 vim.keymap.set('n', 'gD', vim.diagnostic.open_float, { desc = 'LSP: Hover Diagnostic' })
 vim.keymap.set('n', '<leader>td', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled(), { bufnr = 0 })
