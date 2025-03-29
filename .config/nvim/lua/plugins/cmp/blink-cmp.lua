@@ -6,25 +6,22 @@ require('blink.cmp').setup({
   },
   cmdline = {
     keymap = {
+      ['<CR>'] = { 'select_and_accept', 'fallback' },
       ['<C-e>'] = { 'cancel', 'fallback' },
       ['<Right>'] = {},
       ['<Left>'] = {},
     },
     completion = {
+      list = {
+        selection = {
+          preselect = false,
+          auto_insert = false,
+        },
+      },
       menu = { auto_show = true },
     },
   },
   completion = {
-    list = {
-      selection = {
-        preselect = function(ctx)
-          return ctx.mode ~= 'cmdline'
-        end,
-        auto_insert = function(ctx)
-          return ctx.mode ~= 'cmdline'
-        end,
-      },
-    },
     accept = {
       auto_brackets = { enabled = false },
     },
