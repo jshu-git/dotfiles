@@ -61,6 +61,10 @@ later(function()
   })
   vim.cmd('runtime! lua/plugins/cmp/*')
 
+  -- snacks
+  add('folke/snacks.nvim')
+  require('plugins.snacks')
+
   -- ui
   add('utilyre/sentiment.nvim')
   add('BranimirE/fix-auto-scroll.nvim')
@@ -77,10 +81,6 @@ later(function()
 
   -- operators
   vim.cmd('runtime! lua/plugins/operators/*')
-
-  -- snacks
-  add('folke/snacks.nvim')
-  require('plugins.snacks')
 
   -- git
   vim.cmd('runtime! lua/plugins/git/*')
