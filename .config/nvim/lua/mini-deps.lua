@@ -41,26 +41,25 @@ end)
 
 later(function()
   -- lsp
-  add({ source = 'neovim/nvim-lspconfig', depends = { 'folke/lazydev.nvim' } })
+  add({
+    source = 'neovim/nvim-lspconfig',
+    depends = { 'folke/lazydev.nvim' },
+  })
   add('stevearc/conform.nvim')
   vim.cmd('runtime! lua/plugins/lsp/*')
 
   -- cmp
-  add({ source = 'saghen/blink.cmp', checkout = 'v1.0.0' })
+  add({
+    source = 'saghen/blink.cmp',
+    checkout = 'v1.0.0',
+  })
   add('windwp/nvim-autopairs')
-  add('monkoose/neocodeium')
-  vim.cmd('runtime! lua/plugins/cmp/*')
-
-  -- copilot
   add('zbirenbaum/copilot.lua')
   add({
     source = 'CopilotC-Nvim/CopilotChat.nvim',
-    depends = {
-      'zbirenbaum/copilot.lua',
-      'nvim-lua/plenary.nvim',
-    },
+    depends = { 'zbirenbaum/copilot.lua', 'nvim-lua/plenary.nvim' },
   })
-  require('plugins.copilot')
+  vim.cmd('runtime! lua/plugins/cmp/*')
 
   -- ui
   add('utilyre/sentiment.nvim')
@@ -80,10 +79,7 @@ later(function()
   vim.cmd('runtime! lua/plugins/operators/*')
 
   -- snacks
-  add({
-    source = 'folke/snacks.nvim',
-    -- checkout = '1b63b1811c58f661ad22f390a52aa6723703dc3d',
-  })
+  add('folke/snacks.nvim')
   require('plugins.snacks')
 
   -- git
