@@ -21,16 +21,6 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
--- from LazyVim
--- close some filetypes with <esc>
--- vim.api.nvim_create_autocmd('FileType', {
---   pattern = { 'help', 'qf' },
---   callback = function(event)
---     vim.bo[event.buf].buflisted = false
---     vim.keymap.set('n', '<esc>', '<cmd>close<cr>', { buffer = event.buf })
---   end,
--- })
-
 -- Check if we need to reload the file when it changed
 vim.api.nvim_create_autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, {
   callback = function()
