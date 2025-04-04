@@ -71,33 +71,11 @@ if command -v fzf >/dev/null 2>&1; then
 fi
 
 # tmux
-if command -v tmux >/dev/null 2>&1; then
-	function zd() {
-		tmux kill-server
-	}
-	alias clear="clear ; tmux clear-history"
-fi
 if command -v tmuxp >/dev/null 2>&1; then
 	function zz() {
-		tmuxp load -y "~/.config/tmux/layouts/dev.yaml"
+		tmuxp load -y "$CONFIG/tmux/layouts/dev.yaml"
 	}
 fi
-
-# zellij
-# if command -v zellij >/dev/null 2>&1; then
-# 	function zz() {
-# 		# default to dev session
-# 		if [ -z "$1" ]; then
-# 			zellij a dev
-# 		# otherwise create/attach to a named session
-# 		else
-# 			zellij -s "$1"
-# 		fi
-# 	}
-# 	function zd() {
-# 		zellij delete-all-sessions
-# 	}
-# fi
 
 # bat
 if command -v bat >/dev/null 2>&1; then
