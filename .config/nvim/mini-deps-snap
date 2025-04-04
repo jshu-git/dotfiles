@@ -1,6 +1,6 @@
 return {
   ["Comment.nvim"] = "e30b7f2008e52442154b66f7c519bfd2f1e32acb",
-  ["CopilotChat.nvim"] = "23162ada224e858d0d60bbbf2a35f9b6c98427ce",
+  ["CopilotChat.nvim"] = "00bf27ed201b9509105afaac4d5bdcc46ce89f35",
   ["blink.cmp"] = "49f211fe5d729df53df4c042d7c3464cf47d199e",
   ["conform.nvim"] = "b1a75324ddf96b7bb84963a297b1ed334db087c0",
   ["copilot.lua"] = "5a8fdd34bb67eadc3f69e46870db0bed0cc9841c",
