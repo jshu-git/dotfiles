@@ -54,6 +54,7 @@ local highlights = {
   MatchParen = { link = 'Underlined' },
   -- StatusLine = { bg = p.bg10 },
   TablineSel = { bg = p.bg20 },
+  QuickFixLine = { bg = p.bg20 },
   Visual = { bg = p.bg30 },
 
   -- whitespace
