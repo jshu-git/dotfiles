@@ -12,7 +12,7 @@ return {
   ["nvim-lspconfig"] = "3e873195f501b1e02d9fd7e5af5cbe74fc2f98c1",
   ["nvim-tmux-navigation"] = "4898c98702954439233fdaf764c39636681e2861",
   ["nvim-treesitter"] = "523a9e148919f58eb5a013f76787e57696e00c93",
-  ["nvim-treesitter-context"] = "93b29a32d5f4be10e39226c6b796f28d68a8b483",
+  ["nvim-treesitter-context"] = "439789a9a8df9639ecd749bb3286b77117024a6f",
   ["plenary.nvim"] = "857c5ac632080dba10aae49dba902ce3abf91b35",
   ["quicker.nvim"] = "1798be71cdcb15fb84fa8054148a56e17fd391dc",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
