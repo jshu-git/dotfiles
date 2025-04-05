@@ -41,7 +41,8 @@ local p = {
 }
 
 local highlights = {
-  Normal = { fg = p.fg, bg = p.bg },
+  -- Normal = { fg = p.fg, bg = p.bg },
+  Normal = { fg = p.fg },
   Cursor = { fg = p.bg, bg = p.fg },
 
   -- builtin
