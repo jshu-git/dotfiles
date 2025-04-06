@@ -43,11 +43,12 @@ later(function()
 
   -- cmp
   add({ source = 'saghen/blink.cmp', checkout = 'v1.1.1' })
-  add('zbirenbaum/copilot.lua')
-  add({
-    source = 'CopilotC-Nvim/CopilotChat.nvim',
-    depends = { 'zbirenbaum/copilot.lua', 'nvim-lua/plenary.nvim' },
-  })
+  -- add('zbirenbaum/copilot.lua')
+  -- add({
+  --   source = 'CopilotC-Nvim/CopilotChat.nvim',
+  --   depends = { 'zbirenbaum/copilot.lua', 'nvim-lua/plenary.nvim' },
+  -- })
+  -- require('plugins.copilot')
   vim.cmd('runtime! lua/plugins/cmp/*')
 
   -- snacks
