@@ -125,14 +125,14 @@ snacks.setup({
         if picker.preview.win:valid() then
           picker.preview.win:hscroll(true)
         else
-          vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Left>', true, false, true), 'n', false)
+          picker.list.win:hscroll(true)
         end
       end,
       preview_scroll_right = function(picker)
         if picker.preview.win:valid() then
           picker.preview.win:hscroll()
         else
-          vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Right>', true, false, true), 'n', false)
+          picker.list.win:hscroll()
         end
       end,
     },
