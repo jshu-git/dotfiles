@@ -1,7 +1,7 @@
 -- yank highlight
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
-    vim.highlight.on_yank({ timeout = 250, higroup = 'Search' })
+    vim.hl.on_yank()
   end,
 })
 
