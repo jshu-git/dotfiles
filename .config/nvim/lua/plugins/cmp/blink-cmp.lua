@@ -59,7 +59,7 @@ require('blink.cmp').setup({
     providers = {
       path = {
         opts = {
-          show_hidden_files_by_default = true,
+          show_hidden_files_by_default = vim.env.SSH_CLIENT == nil,
         },
       },
     },
