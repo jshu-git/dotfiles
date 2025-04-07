@@ -34,10 +34,8 @@ end)
 
 later(function()
   -- lsp
-  add({
-    source = 'neovim/nvim-lspconfig',
-    depends = { 'folke/lazydev.nvim' },
-  })
+  add('neovim/nvim-lspconfig')
+  add('folke/lazydev.nvim')
   add('stevearc/conform.nvim')
   vim.cmd('runtime! lua/plugins/lsp/*')
 
