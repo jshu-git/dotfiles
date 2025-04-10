@@ -40,6 +40,7 @@ later(function()
   vim.cmd('runtime! lua/plugins/lsp/*')
 
   -- cmp
+  add('windwp/nvim-autopairs')
   add({ source = 'saghen/blink.cmp', checkout = 'v1.1.1' })
   -- add('zbirenbaum/copilot.lua')
   -- add({
