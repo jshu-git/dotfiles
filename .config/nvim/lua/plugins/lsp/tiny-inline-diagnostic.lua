@@ -8,7 +8,9 @@ vim.diagnostic.config({
 require('tiny-inline-diagnostic').setup({
   preset = 'classic',
   options = {
-    show_source = true,
+    show_source = {
+      enabled = true,
+    },
     throttle = 0,
     multilines = {
       enabled = true,
