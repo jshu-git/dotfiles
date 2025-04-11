@@ -242,19 +242,21 @@ vim.keymap.set('n', ',', function()
       preview = false,
       preset = 'select',
     },
-    confirm = function(picker, item)
-      local pattern = picker.finder.filter.pattern
-      if pattern ~= '' then
-        vim.fn.setreg('/', pattern)
-      end
-      -- picker:close()
-      -- picker:selected()
-      -- vim.schedule(function()
-      --   on_choice(item and item.item, item and item.idx)
-      -- end)
-      -- picker:close()
-      -- Snacks.picker.actions.jump(picker, item)
-    end,
+    -- confirm = function(picker, item)
+    --   local pattern = picker.finder.filter.pattern
+    --   if pattern ~= '' then
+    --     vim.fn.setreg('/', pattern)
+    --   end
+    --   -- Snacks.picker.actions.jump(item.idx)
+    --   -- picker:jump()
+    --   -- picker:selected()
+    --   -- vim.schedule(function()
+    --   --   on_choice(item and item.item, item and item.idx)
+    --   -- end)
+    --   -- picker:close()
+    --   -- Snacks.picker.actions.jump(picker, item)
+    --   -- Snacks.picker.lines.config
+    -- end,
   })
 end)
 vim.keymap.set('n', "'", picker.resume)
