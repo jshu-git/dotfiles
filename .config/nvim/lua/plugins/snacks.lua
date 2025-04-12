@@ -192,9 +192,9 @@ local picker = snacks.picker
 
 -- files
 vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
--- vim.keymap.set('n', '<leader><Tab>', function()
---   picker.smart({ cwd = vim.fn.expand('%:p:h') })
--- end, { desc = 'Files (Smart) (Relative)' })
+vim.keymap.set('n', '<leader><Tab>', function()
+  picker.smart({ cwd = vim.fn.expand('%:p:h') })
+end, { desc = 'Files (Smart) (Relative)' })
 -- vim.keymap.set('n', '<leader>fb', picker.buffers, { desc = 'Buffers' })
 
 -- grep
