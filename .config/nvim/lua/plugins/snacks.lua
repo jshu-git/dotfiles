@@ -24,13 +24,10 @@ snacks.setup({
     prompt = '',
     sources = {
       smart = {
-        multi = { 'buffers', 'files' },
         matcher = { sort_empty = false },
         hidden = vim.env.SSH_CLIENT == nil,
-      },
-      recent = {
-        -- matcher = { sort_empty = false },
-        hidden = vim.env.SSH_CLIENT == nil,
+        -- follow = true
+
         -- filter=false needed for ~/.local/share/nvim files to show
         -- for work, mounts cause slowness
         filter = vim.env.SSH_CLIENT and { cwd = vim.env.HOME } or false,
@@ -193,17 +190,12 @@ end, { desc = 'Zen' })
 -- picker
 local picker = snacks.picker
 
--- smart (buffers and files)
+-- files
 vim.keymap.set('n', '<Tab>', picker.smart, { desc = 'Files (Smart)' })
-vim.keymap.set('n', '<leader><Tab>', function()
-  picker.smart({ cwd = vim.fn.expand('%:p:h') })
-end, { desc = 'Files (Smart) (Relative)' })
-
--- recent
-vim.keymap.set('n', '<leader>fr', picker.recent, { desc = 'Files (Recent)' })
-vim.keymap.set('n', '<leader>fR', function()
-  picker.smart({ cwd = vim.fn.expand('%:p:h') })
-end, { desc = 'Files (Recent) (Relative)' })
+-- vim.keymap.set('n', '<leader><Tab>', function()
+--   picker.smart({ cwd = vim.fn.expand('%:p:h') })
+-- end, { desc = 'Files (Smart) (Relative)' })
+-- vim.keymap.set('n', '<leader>fb', picker.buffers, { desc = 'Buffers' })
 
 -- grep
 vim.keymap.set('n', '<leader>fw', picker.grep, { desc = 'Grep Live' })
@@ -242,20 +234,12 @@ vim.keymap.set('n', ',', function()
       preview = false,
       preset = 'select',
     },
-    -- confirm = function(picker, item)
+    -- confirm = function(picker, _)
     --   local pattern = picker.finder.filter.pattern
     --   if pattern ~= '' then
     --     vim.fn.setreg('/', pattern)
     --   end
-    --   -- Snacks.picker.actions.jump(item.idx)
-    --   -- picker:jump()
-    --   -- picker:selected()
-    --   -- vim.schedule(function()
-    --   --   on_choice(item and item.item, item and item.idx)
-    --   -- end)
-    --   -- picker:close()
-    --   -- Snacks.picker.actions.jump(picker, item)
-    --   -- Snacks.picker.lines.config
+    --   picker:close()
     -- end,
   })
 end)
