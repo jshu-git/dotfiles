@@ -72,9 +72,9 @@ fi
 
 # tmux
 if command -v tmux >/dev/null 2>&1; then
- 	function zd() {
- 		tmux kill-server
- 	}
+	function zd() {
+		tmux kill-server
+	}
 fi
 if command -v tmuxp >/dev/null 2>&1; then
 	function zz() {
@@ -136,9 +136,6 @@ fi
 # zoxide
 if command -v zoxide >/dev/null 2>&1; then
 	eval "$(zoxide init zsh)"
-	function Z() {
-		z "$1" && ls
-	}
 
 	# https://github.com/ajeetdsouza/zoxide/discussions/1007
 	function zoxide_fzf() {
