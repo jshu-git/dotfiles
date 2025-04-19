@@ -52,7 +52,7 @@ local highlights = {
   Folded = { bg = p.bg10 },
   LineNr = { fg = p.bg20 },
   MatchParen = { link = 'Underlined' },
-  StatusLine = { bg = p.bg10 },
+  -- StatusLine = { bg = p.bg10 },
   QuickFixLine = { bg = p.bg20 },
   TablineSel = { bg = p.bg20 },
   Visual = { bg = p.bg30 },

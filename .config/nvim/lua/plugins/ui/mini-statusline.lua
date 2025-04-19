@@ -75,7 +75,7 @@ statusline.setup({
       return statusline.combine_groups({
         { hl = mode_hl, strings = { mode } },
         {
-          hl = 'StatusLine',
+          hl = '',
           strings = {
             statusline.section_git({ trunc_width = 40 }),
             statusline.section_diagnostics({ trunc_width = 75 }),
