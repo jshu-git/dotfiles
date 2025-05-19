@@ -103,6 +103,8 @@ vim.api.nvim_create_autocmd('User', {
     files.set_bookmark('c', vim.fn.getcwd, { desc = 'cwd' })
     files.set_bookmark('t', vim.fn.stdpath('data') .. '/mini.files/trash', { desc = 'Trash' })
     files.set_bookmark('s', vim.fn.stdpath('data'), { desc = 'Share' })
+    files.set_bookmark('d', '~/Desktop/', { desc = 'Desktop' })
+    files.set_bookmark('D', '~/Library/CloudStorage/Dropbox/', { desc = 'Dropbox' })
   end,
 })
 
