@@ -178,9 +178,9 @@ local highlights = {
   -- copilot
   CopilotSuggestion = { fg = p.bg30 },
   CopilotAnnotation = { link = 'Search' },
-  CopilotChatHelp = { link = 'NonText' },
-  NeocodeiumSuggestion = { link = 'CopilotSuggestion' },
-  NeocodeiumLabel = { link = 'CopilotAnnotation' },
+  -- CopilotChatHelp = { link = 'NonText' },
+  -- NeocodeiumSuggestion = { link = 'CopilotSuggestion' },
+  -- NeocodeiumLabel = { link = 'CopilotAnnotation' },
 }
 
 -- set highlights
