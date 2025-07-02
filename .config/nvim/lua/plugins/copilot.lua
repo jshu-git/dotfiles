@@ -1,5 +1,11 @@
 require('copilot').setup({
-  panel = { enabled = false },
+  panel = {
+    auto_refresh = true,
+    layout = {
+      position = 'right',
+      width = 30,
+    },
+  },
   suggestion = {
     auto_trigger = true,
     hide_during_completion = false,
