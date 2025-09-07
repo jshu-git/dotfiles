@@ -59,6 +59,7 @@ map('n', '<C-S-c>', '"zyygcc"zp', { remap = true })
 map('n', 'gX', function()
   os.execute('open -R ' .. vim.api.nvim_buf_get_name(0))
 end, { desc = 'Reveal in Finder' })
+map('n', 'gp', '`[v`]', { desc = 'Select Recent Paste' })
 
 -- visual
 map('x', 'p', 'P', { remap = true })
