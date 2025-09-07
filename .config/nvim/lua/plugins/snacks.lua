@@ -159,33 +159,33 @@ vim.keymap.set({ 'n', 'x' }, '<leader>gy', function()
     },
   })
 end, { desc = 'Git: Yank URL' })
-vim.keymap.set({ 'n', 'x' }, '<leader>gb', function()
-  snacks.git.blame_line({
-    win = {
-      width = 0.8,
-      height = 0.8,
-      border = 'single',
-      backdrop = false,
-      -- keys = { ['<Esc>'] = 'close' },
-    },
-  })
-end, { desc = 'Git: Blame' })
+-- vim.keymap.set({ 'n', 'x' }, '<leader>gb', function()
+--   snacks.git.blame_line({
+--     win = {
+--       width = 0.8,
+--       height = 0.8,
+--       border = 'single',
+--       backdrop = false,
+--       -- keys = { ['<Esc>'] = 'close' },
+--     },
+--   })
+-- end, { desc = 'Git: Blame' })
 
 -- zen
-vim.keymap.set('n', '<leader>z', function()
-  snacks.zen.zen({
-    toggles = {
-      dim = false,
-    },
-    win = {
-      width = 0.8,
-      height = 0.8,
-      border = 'single',
-      backdrop = false,
-      -- keys = { ['<Esc>'] = 'close' },
-    },
-  })
-end, { desc = 'Zen' })
+-- vim.keymap.set('n', '<leader>z', function()
+--   snacks.zen.zen({
+--     toggles = {
+--       dim = false,
+--     },
+--     win = {
+--       width = 0.8,
+--       height = 0.8,
+--       border = 'single',
+--       backdrop = false,
+--       -- keys = { ['<Esc>'] = 'close' },
+--     },
+--   })
+-- end, { desc = 'Zen' })
 
 -- picker
 local picker = snacks.picker
@@ -278,12 +278,12 @@ end, { desc = 'Highlights' })
 vim.keymap.set('n', '<leader>ft', picker.colorschemes, { desc = 'Colorschemes' })
 vim.keymap.set('n', '<leader>fc', picker.commands, { desc = 'Commands' })
 vim.keymap.set('n', '<leader>fC', picker.pickers, { desc = 'Pickers' })
-vim.keymap.set('n', '<leader>fa', picker.autocmds, { desc = 'Autocommands' })
+-- vim.keymap.set('n', '<leader>fa', picker.autocmds, { desc = 'Autocommands' })
 vim.keymap.set('n', '<leader>fk', picker.keymaps, { desc = 'Keymaps' })
-vim.keymap.set('n', '<leader>"', picker.registers, { desc = 'Registers' })
-vim.keymap.set('n', '<leader>:', function()
-  picker.command_history({ layout = { preset = 'default' } })
-end, { desc = 'Command History' })
-vim.keymap.set('n', '<leader>/', function()
-  picker.search_history({ layout = { preset = 'default' } })
-end, { desc = 'Search History' })
+-- vim.keymap.set('n', '<leader>"', picker.registers, { desc = 'Registers' })
+-- vim.keymap.set('n', '<leader>:', function()
+--   picker.command_history({ layout = { preset = 'default' } })
+-- end, { desc = 'Command History' })
+-- vim.keymap.set('n', '<leader>/', function()
+--   picker.search_history({ layout = { preset = 'default' } })
+-- end, { desc = 'Search History' })
