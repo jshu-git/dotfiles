@@ -8,9 +8,9 @@ auto-update-channel = tip
 
 # font
 # font-family          = MesloLGS Nerd Font
-# font-family          = MesloLGM Nerd Font
+font-family          = MesloLGM Nerd Font
 # font-family          = MesloLGL Nerd Font
-font-family          = Hack Nerd Font
+# font-family          = Hack Nerd Font
 # font-family          = Menlo
 # font-family          = ZedMono Nerd Font
 font-synthetic-style = false
