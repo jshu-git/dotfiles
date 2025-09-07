@@ -42,7 +42,7 @@ later(function()
 
   -- cmp
   add('windwp/nvim-autopairs')
-  add({ source = 'saghen/blink.cmp', checkout = 'v1.1.1' })
+  add({ source = 'saghen/blink.cmp', checkout = 'v1.6.0' })
   add('zbirenbaum/copilot.lua')
   -- add({
   --   source = 'CopilotC-Nvim/CopilotChat.nvim',
