@@ -1,8 +1,6 @@
 require('blink.cmp').setup({
   keymap = {
     preset = 'enter',
-    ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
-    ['<C-k>'] = {},
   },
   cmdline = {
     keymap = {
@@ -22,9 +20,6 @@ require('blink.cmp').setup({
     },
   },
   completion = {
-    accept = {
-      auto_brackets = { enabled = false },
-    },
     menu = {
       max_height = 5,
       border = 'none',
