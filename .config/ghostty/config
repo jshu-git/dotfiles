@@ -40,7 +40,7 @@ keybind = ctrl+shift+tab=esc:[27;6;9~
 keybind = cmd+r=reload_config
 
 # theme
-theme        = catppuccin-mocha
+theme        = Catppuccin Mocha
 cursor-color = white
 cursor-text  = black
 background = #1b1e28
