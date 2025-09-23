@@ -7,6 +7,7 @@ hs.loadSpoon("EmmyLua")
 for key, name in pairs({
 	["1"] = "Google Chrome",
 	["2"] = "Ghostty",
+	["3"] = "Notes",
 }) do
 	hs.hotkey.bind("alt", key, function()
 		hs.application.launchOrFocus(name)
