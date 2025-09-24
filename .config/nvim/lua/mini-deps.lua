@@ -33,6 +33,8 @@ now(function()
 end)
 
 later(function()
+  require('plugins.mini-pick')
+
   -- lsp
   add('neovim/nvim-lspconfig')
   add('folke/lazydev.nvim')

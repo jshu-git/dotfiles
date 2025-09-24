@@ -156,6 +156,9 @@ local highlights = {
   MiniJump2dSpot = { link = 'DiagnosticError' },
   MiniJump2dSpotAhead = { link = 'MiniJump2dSpot' },
   MiniFilesTitleFocused = { link = 'Visual' },
+  MiniPickNormal = { fg = p.bg50 },
+  MiniPickMatchRanges = { fg = p.syntax },
+  MiniPickPreviewLine = { link = 'Search' },
   MiniStatuslineModeNormal = { link = 'Visual' },
   MiniStatuslineModeInsert = { link = 'MiniStatuslineModeCommand' },
   MiniTrailspace = { bg = p.red },
@@ -165,10 +168,10 @@ local highlights = {
 
   -- snacks
   -- SnacksPickerDir = { fg = p.bg30 },
-  SnacksPickerFile = { link = 'SnacksPickerDir' },
-  SnacksPickerMatch = { link = 'Search' },
-  SnacksPickerListCursorLine = { link = 'CursorLine' },
-  SnacksPickerPreviewCursorLine = { link = 'SnacksPickerListCursorLine' },
+  -- SnacksPickerFile = { link = 'SnacksPickerDir' },
+  -- SnacksPickerMatch = { link = 'Search' },
+  -- SnacksPickerListCursorLine = { link = 'CursorLine' },
+  -- SnacksPickerPreviewCursorLine = { link = 'SnacksPickerListCursorLine' },
   SnacksIndent = { fg = p.bg10 },
 
   -- treesitter
