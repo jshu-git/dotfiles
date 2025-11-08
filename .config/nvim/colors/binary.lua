@@ -140,6 +140,8 @@ local highlights = {
   BlinkCmpLabelMatch = { fg = p.fg },
   BlinkCmpDocBorder = { link = 'FloatBorder' },
   BlinkCmpSignatureHelpBorder = { link = 'FloatBorder' },
+  BlinkIndent = { fg = p.bg10 },
+  BlinkIndentScope = { fg = p.bg30 },
 
   -- mini
   MiniDepsChangeAdded = { link = 'diffAdded' },
@@ -153,8 +155,8 @@ local highlights = {
   MiniDepsTitleUpdate = { link = 'DiffAdd' },
   MiniIconsAzure = { link = 'Directory' },
   MiniJump = { link = 'DiagnosticUnderlineWarn' },
-  MiniJump2dSpot = { link = 'DiagnosticError' },
-  MiniJump2dSpotAhead = { link = 'MiniJump2dSpot' },
+  -- MiniJump2dSpot = { link = 'DiagnosticError' },
+  -- MiniJump2dSpotAhead = { link = 'MiniJump2dSpot' },
   MiniFilesTitleFocused = { link = 'Visual' },
   MiniPickNormal = { fg = p.bg50 },
   MiniPickMatchRanges = { fg = p.syntax },
@@ -172,7 +174,7 @@ local highlights = {
   -- SnacksPickerMatch = { link = 'Search' },
   -- SnacksPickerListCursorLine = { link = 'CursorLine' },
   -- SnacksPickerPreviewCursorLine = { link = 'SnacksPickerListCursorLine' },
-  SnacksIndent = { fg = p.bg10 },
+  -- SnacksIndent = { fg = p.bg10 },
 
   -- treesitter
   TreesitterContext = { link = 'CursorLine' },

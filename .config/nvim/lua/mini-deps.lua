@@ -55,6 +55,7 @@ later(function()
   -- ui
   add('utilyre/sentiment.nvim')
   add('BranimirE/fix-auto-scroll.nvim')
+  add('saghen/blink.indent')
   vim.cmd('runtime! lua/plugins/ui/*')
 
   -- editing

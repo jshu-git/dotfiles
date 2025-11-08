@@ -1,143 +1,4 @@
 local snacks = require('snacks')
--- snacks.picker.util.truncpath = function(path, _, opts)
---   local cwd = svim.fs.normalize(opts and opts.cwd or vim.fn.getcwd(), { _fast = true, expand_env = false })
---   path = svim.fs.normalize(path, { _fast = true, expand_env = false })
---   if path:find(cwd .. '/', 1, true) == 1 and #path > #cwd then
---     return path:sub(#cwd + 2)
---   else
---     local home = svim.fs.normalize('~')
---     return '~' .. path:sub(#home + 1)
---   end
--- end
-
-snacks.setup({
-  -- indent
-  indent = {
-    animate = { enabled = false },
-    scope = { enabled = false },
-  },
-  -- scope
-  scope = {},
-
-  -- pickers
-  -- picker = {
-  --   prompt = '',
-  --   sources = {
-  --     smart = {
-  --       matcher = { sort_empty = false },
-  --       hidden = vim.env.SSH_CLIENT == nil,
-  --       -- follow = true
-  --
-  --       -- filter=false needed for ~/.local/share/nvim files to show
-  --       -- for work, mounts cause slowness
-  --       filter = vim.env.SSH_CLIENT and { cwd = vim.env.HOME } or false,
-  --     },
-  --     grep = { hidden = vim.env.SSH_CLIENT == nil },
-  --   },
-  --   layout = {
-  --     cycle = false,
-  --     preset = 'default',
-  --   },
-  --   layouts = {
-  --     default = { -- modified vertical
-  --       hidden = { 'preview' },
-  --       layout = {
-  --         backdrop = false,
-  --         width = 0.8,
-  --         height = 0.8,
-  --         box = 'vertical',
-  --         border = 'single',
-  --         title = '{source}',
-  --         title_pos = 'center',
-  --         { win = 'input', height = 1, border = 'bottom' },
-  --         { win = 'list', border = 'none' },
-  --         { win = 'preview', title = '{preview}', height = 0.5, border = 'top' },
-  --       },
-  --     },
-  --     select = {
-  --       layout = {
-  --         border = 'single',
-  --       },
-  --     },
-  --   },
-  --   previewers = {
-  --     diff = { builtin = false },
-  --     git = { builtin = false },
-  --   },
-  --   win = {
-  --     input = {
-  --       keys = {
-  --         ['<Esc>'] = { 'close', mode = { 'i', 'n' } },
-  --         ['<Tab>'] = { 'toggle_preview', mode = { 'i', 'n' } },
-  --         ['<C-x>'] = { 'select_and_next', mode = { 'i', 'n' } },
-  --         ['<Up>'] = { 'history_back', mode = { 'i', 'n' } },
-  --         ['<Down>'] = { 'history_forward', mode = { 'i', 'n' } },
-  --
-  --         -- focus
-  --         ['<C-j>'] = { 'focus_list', mode = { 'i', 'n' } },
-  --         ['<C-k>'] = { 'focus_preview', mode = { 'i', 'n' } },
-  --
-  --         -- scrolling
-  --         ['<C-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
-  --         ['<C-d>'] = { 'preview_scroll_down', mode = { 'i', 'n' } },
-  --         ['<C-h>'] = { 'preview_scroll_left', mode = { 'i', 'n' } },
-  --         ['<C-l>'] = { 'preview_scroll_right', mode = { 'i', 'n' } },
-  --
-  --         ['<C-a>'] = false,
-  --       },
-  --     },
-  --     list = {
-  --       keys = {
-  --         ['<Tab>'] = 'toggle_preview',
-  --         ['<C-j>'] = 'focus_preview',
-  --         ['<C-k>'] = 'focus_input',
-  --       },
-  --     },
-  --     preview = {
-  --       keys = {
-  --         ['<Tab>'] = 'toggle_preview',
-  --         ['<C-j>'] = 'focus_input',
-  --         ['<C-k>'] = 'focus_list',
-  --       },
-  --     },
-  --   },
-  --   actions = {
-  --     focus_preview = function(picker)
-  --       if picker.preview.win:valid() then
-  --         picker:focus('preview', { show = true })
-  --       end
-  --     end,
-  --     preview_scroll_down = function(picker)
-  --       if picker.preview.win:valid() then
-  --         picker.preview.win:scroll()
-  --       else
-  --         picker.list:scroll(picker.list.state.scroll)
-  --       end
-  --     end,
-  --     preview_scroll_up = function(picker)
-  --       if picker.preview.win:valid() then
-  --         picker.preview.win:scroll(true)
-  --       else
-  --         picker.list:scroll(-picker.list.state.scroll)
-  --       end
-  --     end,
-  --     preview_scroll_left = function(picker)
-  --       if picker.preview.win:valid() then
-  --         picker.preview.win:hscroll(true)
-  --       else
-  --         picker.list.win:hscroll(true)
-  --       end
-  --     end,
-  --     preview_scroll_right = function(picker)
-  --       if picker.preview.win:valid() then
-  --         picker.preview.win:hscroll()
-  --       else
-  --         picker.list.win:hscroll()
-  --       end
-  --     end,
-  --   },
-  -- },
-})
 
 -- git
 vim.keymap.set({ 'n', 'x' }, '<leader>gy', function()
@@ -159,6 +20,147 @@ vim.keymap.set({ 'n', 'x' }, '<leader>gy', function()
     },
   })
 end, { desc = 'Git: Yank URL' })
+
+-- snacks.picker.util.truncpath = function(path, _, opts)
+--   local cwd = svim.fs.normalize(opts and opts.cwd or vim.fn.getcwd(), { _fast = true, expand_env = false })
+--   path = svim.fs.normalize(path, { _fast = true, expand_env = false })
+--   if path:find(cwd .. '/', 1, true) == 1 and #path > #cwd then
+--     return path:sub(#cwd + 2)
+--   else
+--     local home = svim.fs.normalize('~')
+--     return '~' .. path:sub(#home + 1)
+--   end
+-- end
+
+-- snacks.setup({
+-- indent
+-- indent = {
+--   animate = { enabled = false },
+--   scope = { enabled = false },
+-- },
+-- -- scope
+-- scope = {},
+
+-- pickers
+-- picker = {
+--   prompt = '',
+--   sources = {
+--     smart = {
+--       matcher = { sort_empty = false },
+--       hidden = vim.env.SSH_CLIENT == nil,
+--       -- follow = true
+--
+--       -- filter=false needed for ~/.local/share/nvim files to show
+--       -- for work, mounts cause slowness
+--       filter = vim.env.SSH_CLIENT and { cwd = vim.env.HOME } or false,
+--     },
+--     grep = { hidden = vim.env.SSH_CLIENT == nil },
+--   },
+--   layout = {
+--     cycle = false,
+--     preset = 'default',
+--   },
+--   layouts = {
+--     default = { -- modified vertical
+--       hidden = { 'preview' },
+--       layout = {
+--         backdrop = false,
+--         width = 0.8,
+--         height = 0.8,
+--         box = 'vertical',
+--         border = 'single',
+--         title = '{source}',
+--         title_pos = 'center',
+--         { win = 'input', height = 1, border = 'bottom' },
+--         { win = 'list', border = 'none' },
+--         { win = 'preview', title = '{preview}', height = 0.5, border = 'top' },
+--       },
+--     },
+--     select = {
+--       layout = {
+--         border = 'single',
+--       },
+--     },
+--   },
+--   previewers = {
+--     diff = { builtin = false },
+--     git = { builtin = false },
+--   },
+--   win = {
+--     input = {
+--       keys = {
+--         ['<Esc>'] = { 'close', mode = { 'i', 'n' } },
+--         ['<Tab>'] = { 'toggle_preview', mode = { 'i', 'n' } },
+--         ['<C-x>'] = { 'select_and_next', mode = { 'i', 'n' } },
+--         ['<Up>'] = { 'history_back', mode = { 'i', 'n' } },
+--         ['<Down>'] = { 'history_forward', mode = { 'i', 'n' } },
+--
+--         -- focus
+--         ['<C-j>'] = { 'focus_list', mode = { 'i', 'n' } },
+--         ['<C-k>'] = { 'focus_preview', mode = { 'i', 'n' } },
+--
+--         -- scrolling
+--         ['<C-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
+--         ['<C-d>'] = { 'preview_scroll_down', mode = { 'i', 'n' } },
+--         ['<C-h>'] = { 'preview_scroll_left', mode = { 'i', 'n' } },
+--         ['<C-l>'] = { 'preview_scroll_right', mode = { 'i', 'n' } },
+--
+--         ['<C-a>'] = false,
+--       },
+--     },
+--     list = {
+--       keys = {
+--         ['<Tab>'] = 'toggle_preview',
+--         ['<C-j>'] = 'focus_preview',
+--         ['<C-k>'] = 'focus_input',
+--       },
+--     },
+--     preview = {
+--       keys = {
+--         ['<Tab>'] = 'toggle_preview',
+--         ['<C-j>'] = 'focus_input',
+--         ['<C-k>'] = 'focus_list',
+--       },
+--     },
+--   },
+--   actions = {
+--     focus_preview = function(picker)
+--       if picker.preview.win:valid() then
+--         picker:focus('preview', { show = true })
+--       end
+--     end,
+--     preview_scroll_down = function(picker)
+--       if picker.preview.win:valid() then
+--         picker.preview.win:scroll()
+--       else
+--         picker.list:scroll(picker.list.state.scroll)
+--       end
+--     end,
+--     preview_scroll_up = function(picker)
+--       if picker.preview.win:valid() then
+--         picker.preview.win:scroll(true)
+--       else
+--         picker.list:scroll(-picker.list.state.scroll)
+--       end
+--     end,
+--     preview_scroll_left = function(picker)
+--       if picker.preview.win:valid() then
+--         picker.preview.win:hscroll(true)
+--       else
+--         picker.list.win:hscroll(true)
+--       end
+--     end,
+--     preview_scroll_right = function(picker)
+--       if picker.preview.win:valid() then
+--         picker.preview.win:hscroll()
+--       else
+--         picker.list.win:hscroll()
+--       end
+--     end,
+--   },
+-- },
+-- })
+
 -- vim.keymap.set({ 'n', 'x' }, '<leader>gb', function()
 --   snacks.git.blame_line({
 --     win = {
