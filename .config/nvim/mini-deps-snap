@@ -1,6 +1,7 @@
 return {
   ["Comment.nvim"] = "e30b7f2008e52442154b66f7c519bfd2f1e32acb",
   ["blink.cmp"] = "327fff91fe6af358e990be7be1ec8b78037d2138",
+  ["blink.indent"] = "a8feeeae8510d16f26afbb5c81f2ad1ccea38d62",
   ["conform.nvim"] = "b4aab989db276993ea5dcb78872be494ce546521",
   ["copilot.lua"] = "8aebaa3a102125fedf08c98773a0a8def92fff37",
   ["fix-auto-scroll.nvim"] = "c211a42f4030c9ed03a1456919917cdf1a193bd9",
@@ -12,7 +13,6 @@ return {
   ["nvim-tmux-navigation"] = "4898c98702954439233fdaf764c39636681e2861",
   ["nvim-treesitter"] = "42fc28ba918343ebfd5565147a42a26580579482",
   ["nvim-treesitter-context"] = "41847d3dafb5004464708a3db06b14f12bde548a",
-  ["quicker.nvim"] = "6b88ca4d70e35df877d9564beba83f00ba0c3133",
   ["sentiment.nvim"] = "ecde8d877881bb78fdb90060c0991e76770dbdbc",
   ["snacks.nvim"] = "da230e3ca8146da4b73752daaf0a1d07d343c12d",
   ["tiny-inline-diagnostic.nvim"] = "f64efd33a51ea89bdb847fb3aaf716e96b83ba1a"
