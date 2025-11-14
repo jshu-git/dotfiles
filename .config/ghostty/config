@@ -23,11 +23,12 @@ mouse-hide-while-typing = true
 
 # window
 maximize                  = true
-title                     = "👻 Ghostty"
-macos-titlebar-proxy-icon = hidden
-macos-titlebar-style      = native
+# title                     = "👻 Ghostty"
+# macos-titlebar-proxy-icon = hidden
+macos-titlebar-style      = hidden
+window-padding-x          = 4
+window-padding-y          = 4
 window-padding-balance    = true
-window-save-state         = always
 confirm-close-surface     = false
 
 # clipboard
