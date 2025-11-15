@@ -14,7 +14,7 @@ font-family          = MesloLGM Nerd Font
 # font-family          = Menlo
 # font-family          = ZedMono Nerd Font
 font-synthetic-style = false
-font-size            = 12
+font-size            = 14
 
 # cursor
 cursor-style            = bar
