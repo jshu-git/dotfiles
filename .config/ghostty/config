@@ -44,8 +44,8 @@ keybind = cmd+r=reload_config
 theme        = Catppuccin Mocha
 cursor-color = white
 cursor-text  = black
-background = #1b1e28
-foreground = #cdd6f4
+# background = #1b1e28
+# foreground = #cdd6f4
 
 # shaders
 custom-shader = shaders/cursor_smear_fade.glsl

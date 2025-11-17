@@ -29,7 +29,10 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 now(function()
-  vim.cmd.colorscheme('binary')
+  add({ source = 'catppuccin/nvim', name = 'catppuccin' })
+  require('plugins.catppuccin')
+  vim.cmd.colorscheme('catppuccin')
+  -- vim.cmd.colorscheme('binary')
 end)
 
 later(function()

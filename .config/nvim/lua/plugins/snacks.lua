@@ -72,6 +72,7 @@ snacks.setup({
       default = {
         hidden = { 'preview' },
         layout = {
+          backdrop = false,
           width = 0.9,
           height = 0.9,
         },
