@@ -32,7 +32,6 @@ now(function()
   add({ source = 'catppuccin/nvim', name = 'catppuccin' })
   require('plugins.catppuccin')
   vim.cmd.colorscheme('catppuccin')
-  -- vim.cmd.colorscheme('binary')
 end)
 
 later(function()
