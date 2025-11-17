@@ -1,4 +1,4 @@
-<img width="1472" alt="SCR-20250311-segj" src="https://github.com/user-attachments/assets/37600812-3532-4242-827c-ded3aab9829d" />
+<img width="1472" height="921" alt="SCR-20251117-qkgt" src="https://github.com/user-attachments/assets/565edfd5-7255-4439-8c7f-a143d667ce70" />
 
 - terminal: [ghostty](https://ghostty.org/)
   - terminal multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
