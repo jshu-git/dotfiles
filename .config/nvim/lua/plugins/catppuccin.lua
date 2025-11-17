@@ -36,7 +36,8 @@
 
 require('catppuccin').setup({
   flavour = 'mocha',
-  float = { transparent = true },
+  -- transparent_background = true,
+  -- float = { transparent = true },
   show_end_of_buffer = true,
   no_bold = true,
   styles = { conditionals = {} },
@@ -56,7 +57,9 @@ require('catppuccin').setup({
       FloatBorder = { link = 'NonText' },
 
       -- blink
-      BlinkCmpLabel = { fg = c.overlay1 },
+      -- BlinkCmpLabel = { fg = c.overlay1 },
+      BlinkCmpMenu = { bg = c.surface0 },
+      BlinkCmpMenuSelection = { bg = c.surface2 },
       BlinkIndent = { fg = c.surface0 },
       BlinkIndentScope = { fg = c.overlay0 },
 
