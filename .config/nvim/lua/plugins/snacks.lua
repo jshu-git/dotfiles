@@ -57,7 +57,7 @@ snacks.setup({
     },
     sources = {
       smart = {
-        -- matcher = { sort_empty = false },
+        matcher = { sort_empty = false },
         hidden = vim.env.SSH_CLIENT == nil,
         -- follow = true
 
