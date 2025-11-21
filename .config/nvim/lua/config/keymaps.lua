@@ -52,8 +52,6 @@ map('n', '<BS>', '<C-^>')
 map('n', 'i', function()
   return vim.fn.getline('.') == '' and '"_cc' or 'i'
 end, { expr = true })
-map('n', '=', '<C-a>')
-map('n', '-', '<C-x>')
 map('n', 'X', 'mzA<BS><Esc>`z')
 map('n', '<C-S-c>', '"zyygcc"zp', { remap = true })
 map('n', 'gX', function()

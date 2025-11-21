@@ -64,6 +64,7 @@ later(function()
   add('numToStr/Comment.nvim')
   add('nmac427/guess-indent.nvim')
   add('alexghergh/nvim-tmux-navigation')
+  add('monaqa/dial.nvim')
   vim.cmd('runtime! lua/plugins/editing/*')
 
   -- operators
