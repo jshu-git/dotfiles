@@ -18,6 +18,11 @@ require('dial.config').augends:register_group({
       word = false,
       cyclic = true,
     }),
+    augend.constant.new({
+      elements = { '<=', '==', '>=', '!=' },
+      word = false,
+      cyclic = true,
+    }),
   },
 })
 vim.keymap.set('n', '=', require('dial.map').inc_normal())
