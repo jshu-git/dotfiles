@@ -4,6 +4,11 @@ require('dial.config').augends:register_group({
     augend.integer.alias.decimal,
     augend.constant.alias.bool,
     augend.constant.new({
+      elements = { 'True', 'False' },
+      word = true,
+      cyclic = true,
+    }),
+    augend.constant.new({
       elements = { 'and', 'or' },
       word = true,
       cyclic = true,
